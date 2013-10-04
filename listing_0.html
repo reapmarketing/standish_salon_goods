@@ -1,0 +1,1220 @@
+<link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
+
+		<!--START: BREADCRUMBS-->
+			<!-- [product_Header-breadcrumbs] -->
+			<!--START: CATEGORY_BREADCRUMBS-->
+				<!-- <div>[CATEGORY_BREADCRUMBS]</div> -->
+			<!--END: CATEGORY_BREADCRUMBS--> 
+		<!--END: BREADCRUMBS-->
+
+<!-- Breadcrumbs / Seach Meta Section -->
+
+<div class="grid_8 breadcrumbs">
+	<!-- These appear to be the actual breadcrumbs -->
+	<span class="allcaps"><!--START: CATEGORY_FULLINE-->[CATEGORY_FULLLINE]<!--END: CATEGORY_FULLINE--></span>
+</div>
+
+<div class="grid_4 search">
+	<form method="get" name="searchForm" action="search.asp">
+		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
+	</form>
+</div>
+
+<!-- End of Meta Section -->
+
+<div itemscope itemtype="http://schema.org/Product">
+	<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
+		<input type="hidden" name="item_id" value="[catalogid]" />
+		<input type="hidden" name="itemid" value="[id]" ID="itemid" />
+		<input type="hidden" name="category_id" value="[catid]" />
+
+		<!--START: CATEGORY_HEADER-->
+			[CONTENT]
+		<!--END: CATEGORY_HEADER-->
+
+		<!-- The Left Side -->
+		<div class="grid_5 suffix_1 product_left">
+			<div class="showcase">
+
+			<!--START: image1--> 
+				<a href="[image1]" class="[3dzoom_class]"  id="listing_main_image_link"><img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" align="middle" border="0" id="large" name="large" alt="[name]" width="380" height="500" /></a>
+				<!-- <div name="imagecaptiont" id="imagecaptiont" class="item">[imagecaption1]</div> -->
+			<!--END: image1-->
+
+				<a href="[image1]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(1);return false;"><img src="thumbnail.asp?file=[image1]&maxx=75&maxy=0" alt="" border="0" name="pimage1" /></a>
+
+			<!--START: image2-->
+				<a href="[image2]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image2]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(2);return false;"><img src="thumbnail.asp?file=[image2]&maxx=75&maxy=0" alt="" border="0" name="pimage2" /></a>
+			<!--END: image2-->
+
+			<!--START: image3-->
+				<a href="[image3]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image3]&maxx=[image_medium_w]&maxy=[image_medium_h]" onclick="javascript:image_click(3);return false;"><img border="0" src="thumbnail.asp?file=[image3]&maxx=75&maxy=0" alt="" name="pimage3" /></a>
+			<!--END: image3-->
+
+			<!--START: image4-->
+				<a href="[image4]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image4]&maxx=[image_medium_w]&maxy=[image_medium_h]"  onclick="javascript:image_click(4);return false;"><img border="0" src="thumbnail.asp?file=[image4]&maxx=75&maxy=0" alt="" name="pimage4" /></a>
+			<!--END: image4-->
+
+			<!--START: image5-->
+				<input type="button" onclick="popupsimple('gallery.asp?catalogid=[catalogid]',650,550)" name="IMG" value="[product_imagegallery]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+			<!--END: image5-->
+
+
+<!--
+				Images
+				<img width="380" height="500" />
+				<img height="60" class="grid_1 alpha" />
+				<img height="60" class="grid_1" />
+				<img height="60" class="grid_1" />
+				<img height="60" class="grid_1" />
+				<img height="60" class="grid_1 omega" />
+				<img height="60" class="grid_1 alpha" />
+				<img height="60" class="grid_1" />
+				<img height="60" class="grid_2 omega" />
+-->
+				<div class="clear"></div>
+			</div>
+			<div class="sharebox">
+				Social Stuff
+				<ul>
+					<li>Pin</li>
+					<li>Tweet</li>
+					<li>Like</li>
+					<!--START: email_friend-->
+						<img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" />
+						<a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a>
+					<!--END: email_friend-->
+					<li><i class="icon-plus-sign"></i></li>
+				</ul>
+			</div>
+
+
+
+			<!--START: reviews-->
+				<h4>!Review Stuff Here</h4>
+				[reviews_header]
+				[review_link]
+				<!--START: user_reviews-->
+					<img src="assets/templates/common/images/star[rating].png" alt="Rating" />
+					<strong itemprop="name">[short_review]</strong>
+					<div itemprop="description">[long_review]</div>
+					<em>Reviewed by:  <span itemprop="author">[user_name]</span> from [user_city]. 
+					<!--START: user_email--> 
+						<a href="mailto:[user_email]">[user_email]</a> 
+					<!--END: user_email--> 
+					on [review_date]</em>
+					<div style="display: none;" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">[rating]</span>/<span itemprop="bestRating">5</span> </div>
+				<!--END: user_reviews-->
+			<!--END: reviews-->
+
+			<!--START: create_first_review-->
+				<img src="assets/templates/common/images/productpage_check.png" alt="[reviews_first]" border="0" />
+				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_first]</a>
+			<!--END: create_first_review-->
+	
+			<!--START: create_review_link-->
+				<img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
+				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a>
+			<!--END: create_review_link-->
+	
+			<!--START: qaLinkFirst-->
+				<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_firstquestion]" border="0" />
+				<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_firstquestion]</a>
+			<!--END: qaLinkFirst-->
+	
+			<!--START: qaLinkNew-->
+				<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_newquestion]" border="0" />
+				<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_newquestion]</a>
+				<a href="#qa">(<i>[productqa_jump-to-qa]</i>)</a>
+			<!--END: qaLinkNew-->
+
+
+
+
+<!--
+			<div class="reviews">
+				<div class="review">
+					<div class="rating">
+						<span class="stars">
+							<span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+						</span> - Megan T. from Rome, NY
+					</div>
+					<span class="bold">LOVE this chair!</span>
+					<p>Oh my goodness, this chair is just awesome. It's so uniquely shaped, and has such a modern feel to it. The white is my favorite one, because it has this shine to it that really makes you want to go to THAT station to get your hair done.</p>
+				</div>
+				<div class="review">
+					<div class="rating">
+						<span class="stars">
+							<span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+						</span> -  jana from Media PA
+					</div>
+					<span class="bold">a chair</span>
+					<p>I am very pleased. It's better than i even expected. Very sleak, modern and very very specious!</p>
+				</div>
+				<div class="review">
+					<div class="rating">
+						<span class="stars">
+							<span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+						</span> -  Angela M. from Chicago, IL
+					</div>
+					<span class="bold">Simple, yet elegant!</span>
+					<p>What a magnificent chair! My clients adore this drying machine, and I must agree with them. Its design isn't too out there, but it's classy enough for a nice salon environment.</p>
+				</div>
+				<div class="add-rating-link"><i class="icon-plus"></i> <a href="#addRating">Add A Rating &amp; Review</a></div>
+			</div>
+-->
+		
+<!--
+			<div class="related-accessories">
+				<h4>Related Accessories</h4>
+				<a href="#viewMore">View More</a>
+				<div class="listing grid_2 alpha">
+					<img src="" alt="">
+					<p class="title">A Classic Affair</p>
+					<p class="msrp">Your Price: $932</p>
+					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
+					<button>Add to Cart</button>
+				</div>
+				<div class="listing grid_2 omega">
+					<img src="" alt="">
+					<p class="title">A Classic Affair with a long title</p>
+					<p class="msrp">Your Price: $932</p>
+					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
+					<button>Add to Cart</button>
+				</div>
+			</div>
+-->
+
+		<!--START: accessories_0-->
+			<div class="related-accessories">
+				<h4>Related Accessories</h4><!-- [product_Header-accessories] -->
+				<a href="#viewMore">View More</a>
+				
+				
+				
+				
+<!--
+				<div class="listing grid_2 alpha">
+					<img src="" alt="">
+					<p class="title">A Classic Affair</p>
+					<p class="msrp">Your Price: $932</p>
+					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
+					<button>Add to Cart</button>
+				</div>
+				<div class="listing grid_2 omega">
+					<img src="" alt="">
+					<p class="title">A Classic Affair with a long title</p>
+					<p class="msrp">Your Price: $932</p>
+					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
+					<button>Add to Cart</button>
+				</div>
+-->
+
+
+
+
+			<!--START: accessories_items0-->
+				<div class="grid_2 listing">
+					<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+					<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+					<!--START: ITEMPRICE-->
+						<!-- [product_yourprice] -->
+						<p class="price">[product_yourprice] [ITEMPRICE]</p>
+					<!--END: ITEMPRICE-->
+					<!--START: SALEPRICE-->
+						<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
+						<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+						<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+					<!--END: SALEPRICE-->
+					<!-- <button>Add to Cart</button> -->
+
+					<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
+					<input type="hidden" name="qty-[counter]" value="1" />
+
+					<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+				</div>
+			<!--END: accessories_items0-->
+			
+			
+			<!--START: accessories_items1-->
+				<div class="grid_2 listing">
+					<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+					<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+					<!--START: ITEMPRICE-->
+						<!-- [product_yourprice] -->
+						<p class="price">[product_yourprice] [ITEMPRICE]</p>
+					<!--END: ITEMPRICE-->
+					<!--START: SALEPRICE-->
+						<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
+						<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+						<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+					<!--END: SALEPRICE-->
+					<!-- <button>Add to Cart</button> -->
+
+					<input type="checkbox" name="item_id" value="[catalogid]" />
+					<input type="hidden" name="qty-[counter]" value="1" />
+
+					<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+				</div>
+
+
+			<!--END: accessories_items1-->
+
+
+			<!--START: accessories_items2-->
+				<!-- <a href="product.asp?itemid=[catalogid]">[name]</a> -->
+				<!--START: ITEMPRICE--> 
+					<!-- [ITEMPRICE]  -->
+				<!--END: ITEMPRICE--> 
+				<!--START: SALEPRICE--> 
+					<!-- [ITEMPRICE] -->
+					<!-- [ITEMSALEPRICE]  -->
+				<!--END: SALEPRICE-->
+				<!-- <input type="hidden" name="item_id" value="[catalogid]" /> -->
+				<!-- <input type="text" size="2" name="qty-[counter]" value="0" /> -->
+			<!--END: accessories_items2-->
+
+
+		</div><!-- related-accessories -->
+		<!--END: accessories_0-->
+
+
+		</div>
+	<!-- End of the left side -->
+
+
+	<!-- The right side -->
+		<div class="grid_6 product_right">
+
+			<h1 itemprop="name" class="product-title">[name]</h1>
+			<!--START: id-->
+				<!-- [product_id] -->
+				<p class="part-no">Part Number [id]</p>
+			<!--END: id--> 
+
+			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="pricebox">
+				<!--START: pricing-->
+					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
+					<!-- [product_Header-price] -->
+					<!--START: ITEMPRICE-->
+					<!--END: ITEMPRICE-->
+					<!--START: ITEMPRICE-->
+					<div class="left-price">[price]</div>
+					<!--END: ITEMPRICE-->
+					<div class="right-price">
+						<!--START: price2-->
+							<p><span itemprop="price" class="label">[product_retailprice]</span> [price2]</p>
+						<!--END: price2-->
+						<!-- [product_yourprice] -->
+						<!--START: ITEMPRICE-->
+							<p><span class="label">Our Price:</span> [price]</p>
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+							<!-- [product_onsale] -->
+							<p><span itemprop="price" class="label">Sale Price:</span> [saleprice]</p>
+						<!--END: SALEPRICE-->
+						<!--START: SAVINGS-->
+							<!-- [product_savings] -->
+							<p><span itemprop="price" class="label">You Save:</span> [savings]</p>
+						<!--END: SAVINGS-->
+					</div>
+					<div style="clear:both"></div>
+					<!--START: product_availability-->
+						<!-- <strong>[product_Header-availability]</strong> -->
+						<!-- <div id="availability">[availability_itemprop]</div> -->
+						<!--span style="display: inline;" id="product_inventory">[stock]</span-->
+						<!--START: waitinglist-->
+							<!-- <input type="button" value="Put me on the Waiting List" class="btn" onclick="javascript:window.open('notify.asp?catalogid=[catalogid]','popup','height=350,width=540,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
+						<!--END: waitinglist-->
+					<!--END: product_availability-->
+					<!--START: freeshippingblock-->
+						<!-- [freeshipping] -->
+					<!--END: freeshippingblock-->
+					<!--START: product_social-bookmarking-->
+						<!-- [product_social-bookmarking] -->
+					<!--END: product_social-bookmarking-->
+					<!--START: frame_likebutton-->
+						<!-- [frame_likebutton] -->
+					<!--END: frame_likebutton-->
+				<!--END: pricing-->
+			</div>
+
+			<div class="product-options">
+			
+			
+		<!--START: PRODUCT_OPTIONS_BLOCK-->
+			<!-- [product_optionheader] -->
+
+			<!-- <div id="divOptionsBlock"> -->
+			<div class="product-form">
+				<fieldset>
+				<!--START: divOptionsBlock-->
+					<!--START: optionstemplate--> 
+
+						<!--START: textarea-format--> 
+							[value]: [oprice]
+							<textarea cols="30" rows="5" name="textarea[oname]" class="txtareaStyle">[option_value]</textarea>
+						<!--END: textarea-format--> 
+
+						<!--START: text-format--> 
+							[value]: [oprice]
+							<input type="text" size="30" name="text[oname]" value="[option_value]" class="txtBoxStyle" />
+						<!--END: text-format-->
+
+						<!--START: qty-format-->
+							[value]
+							[oprice]
+							<input type="text" size="3" name="text[oname]" value="[option_value]" class="txtBoxStyle" />
+						<!--END: qty-format-->
+
+						<!--START: file-format-->
+							[value]: [oprice]
+							<input type="file" name="file[oname]" size="20" class="txtBoxStyle" />
+						<!--END: file-format-->
+
+						<!--START: title-format-->
+							[feature]
+						<!--END: title-format-->
+
+						<!--START: checkbox-format-->
+							<label for="warranty" class="checkbox">
+								<input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] > [feature]: <span>+ [oprice]</span>
+							</label>
+							<!-- <input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] />[feature] [oprice] -->
+						<!--END: checkbox-format-->
+
+						<!--START: radio-format-->
+							<div><input type="radio" name="[oname]" value="[value]" onclick="validateValues(document.add,1);selectOption(this);" [selected] />[feature] [oprice]</div>
+						<!--END: radio-format-->
+
+						<!--START: dropdown-format-->
+							<div class="fancy-select">
+								<select name="[oname]" onchange="validateValues(document.add,1);selectOption(this);">
+									<!--START: option-->
+									<option value="[value]" [selected]>[feature] [oprice]</option>
+									<!--END: option-->
+								</select>
+								<i class="icon-caret-down"></i>
+							</div>
+						<!--END: dropdown-format-->
+
+						<!--START: dropdownimage-format-->
+							<div class="fancy-select">
+								<select name="[oname]" onchange="validateValues(document.add,1);selectOption(this);">
+									<!--START: option-->
+									<option value="[value]" [selected]>[feature] [oprice]</option>
+									<!--END: option-->
+								</select>
+								<i class="icon-caret-down"></i>
+							</div>
+						<!--END: dropdownimage-format-->
+					<!--END: optionstemplate-->
+
+					<!--START: options--> 
+						<!--START: opt-title-->
+							<!-- [OPTIONLABEL] [OPTIONFIELD] -->
+						<!--END: opt-title-->
+						<!--START: opt-regular-->
+							<div class="option-row">
+								<label for="name">[OPTIONLABEL]: </label>
+								[OPTIONFIELD]
+							</div>
+							<!--START: help--> 
+								<a href="#" onclick="popup('optionhelp.asp?optionid=[optid]',300,200)"><img src="assets/templates/common/images/help_icon.gif" border="0" alt="help" /></a> 
+							<!--END: help-->
+						<!--END: opt-regular--> 
+					<!--END: options-->
+				<!--END: divOptionsBlock--> 
+				</div><!-- product-form -->
+			<!--END: PRODUCT_OPTIONS_BLOCK-->
+			
+			
+			
+			
+				<!-- <form class="product-form"> -->
+				<div class="product-form">
+					<fieldset>
+	<!--
+					<div class="option-row">
+							<label for="name">Choose Seat Color: </label>
+							<div class="fancy-select">
+								<select>
+									<option>Brown</option>
+									<option>Expresso</option>
+									<option>Black</option>
+								</select>
+								<i class="icon-caret-down"></i>
+							</div>
+						</div>
+
+						<div class="option-row">
+							<label for="name">Choose Base Shape: </label>
+							<div class="fancy-select">
+								<select>
+									<option>5 Star</option>
+									<option>Square</option>
+									<option>Round</option>
+								</select>
+								<i class="icon-caret-down"></i>
+							</div>
+						</div>
+
+
+						<div class="option-row">
+							<label for="warranty">Extend Your 2 Year Warranty: </label>
+							<label for="warranty" class="checkbox">
+								<input id="warranty" type="checkbox"> Add 1 Extra Year: <span>+ $10</span>
+							</label>
+						</div>
+-->
+
+						<!--START: addtocart-->
+							<!--START: quantity-->
+								<!-- [product_quantitypricing-quantity] -->
+								<!-- [product_quantitypricing-price] -->
+								<!--START: quantity_items-->
+									<!-- [lowbound][highbound] -->
+									<!-- [PRICE] -->
+								<!--END: quantity_items-->
+							<!--END: quantity-->
+								<div class="option-row">
+									<label for="quantity">[product_quantity]: </label>
+									<!-- <input id="quantity" type="text" placeholder="1" value="1"> -->
+									<input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" />
+									<div class="questions"><span class="coral-text">Questions?</span> Call <span class="bold">888.271.8434</span></div>
+								</div>
+								
+								
+							<!--END: qtybox-->
+				
+							<!--START: reminders_block-->
+							<!-- [product_reminder] -->
+							<!-- <select name="reminder" class="txtBoxStyle" id="reminder"> -->
+								<!--START: reminders_frequency_option-->
+									<!-- <option value="[optionvalue]" [selected]>[optiontext]</option> -->
+								<!--END: reminders_frequency_option-->
+							<!-- </select> -->
+							<!--END: reminders_block-->
+				
+							<!-- <input type="button" onclick="check_and_add(document.add);" name="Add" value="[product_addtocart]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
+				
+							<!--START: make_an_offer-->
+								<!-- <input type="button" onclick="javascript:popup('makeanoffer.asp?action=newOffer&catalogid=[catalogid]',640,410,false);" name="makeonoffer" value="[product_make-an-offer]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
+							<!--END: make_an_offer-->
+				
+							<!--START: addGiftRegistry-->
+								<!-- <img src="assets/templates/common/images/productpage_gift_registry.png" alt="" border="0" /> -->
+								<!-- <a href="javascript:add_giftregistry();">[product_addtogiftregistry]</a> -->
+							<!--END: addGiftRegistry-->
+							<!--START: addWishlist-->
+								<!-- <img src="assets/templates/common/images/productpage_wishlist.png" alt="" border="0" /> -->
+								<!-- <a href="javascript:add_wishlist();">[product_addtowishlist]</a> -->
+							<!--END: addWishlist-->
+						<!--END: addtocart-->
+						<div class="option-row last">
+							<label>
+								<span>Availability: </span>Usually Ships<br /> in 2-3 Business Days
+							</label>
+							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
+							<div class="clearfix"></div>
+						</div>
+					</fieldset>
+				</div>
+				<!-- </form> -->
+			</div>
+		
+			<div class="badges">
+				<h4>Benefits and Features for this product</h4>
+				<div class="badges-list"></div>
+				<div class="clear"></div>
+			</div>
+		
+			<div class="product-details">
+				<h4>Product Details</h4>
+				<div class="brochure-download"><a href="#catalogDownload">Download Catalog</a>&nbsp;<i class="icon-cloud-download"></i></div>
+				<ul class="details-list"></ul>
+			</div>
+		
+			<div itemprop="description" class="product-description">
+				<!--START: extended_description-->
+				<h4>Product Description</h4><!-- [product_Header-description] -->
+				<div >[extended_description]</div>
+				<!--END: extended_description-->
+			</div>
+		
+			<div class="related-products">
+				<h4>Related Products</h4>
+				<a href="#viewMoreRelated">View More</a>
+		
+				<div class="listing grid_2 alpha">
+					<img src="" alt="">
+					<p class="title">A Classic Affair</p>
+					<p class="msrp">Your Price: $932</p>
+					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
+					<button>Add to Cart</button>
+				</div>
+				<div class="listing grid_2">
+					<img src="" alt="">
+					<p class="title">A Classic Affair with a long title</p>
+					<p class="msrp">Your Price: $932</p>
+					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
+					<button>Add to Cart</button>
+				</div>
+				<div class="listing grid_2 omega">
+					<img src="" alt="">
+					<p class="title">A Classic Affair</p>
+					<p class="msrp">Your Price: $932</p>
+					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
+					<button>Add to Cart</button>
+				</div>
+			</div>
+		
+		</div>
+		<!-- End of the Right Side -->
+
+
+
+
+
+
+
+
+
+		
+		<!--START: PREV_PROD-->
+			<a href="[prevprodlink]"><img src="thumbnail.asp?file=[prevprodthumb]&maxx=20&maxy=20" border="0" alt="" />Prev</a>
+		<!--END: PREV_PROD-->
+		<!--START: NEXT_PROD-->
+			<a href="[nextprodlink]"><img src="thumbnail.asp?file=[nextprodthumb]&maxx=20&maxy=20" border="0" alt="" />Next</a>
+		<!--END: NEXT_PROD--> 
+
+
+		<!--START: totalrating-->
+			<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+				[totalrating]<span itemprop="reviewCount">[review_count]</span> Review(s)
+				<div itemprop="ratingValue">[review_average]</div>
+			</div>
+		<!--END: totalrating--> 
+		
+		
+		
+		
+		<!--START: email_friend-->
+<!--
+			<img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" />
+			<a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a>
+-->
+		<!--END: email_friend-->
+
+		<!--START: giftcertificate_block-->
+<!--
+			Gift Certificate Information
+			<strong>From</strong>
+			<input type="text" size="43" name="gc_fromname" class="txtBoxStyle">
+			<br />
+			(Sender's name)
+
+			<strong>To</strong>
+			<input type="text" size="43" name="gc_toname" class="txtBoxStyle">(Recipient's name)
+			<strong>Email</strong>
+			<input type="text" size="43" name="gc_toemail" class="txtBoxStyle">(Recipient's email address)
+			<strong>Message </strong>
+			<textarea cols="45" rows="5" name="gc_tomessage" class="txtareaStyle"></textarea>
+			(optional, max. length 500 characters) 
+-->
+		<!--END: giftcertificate_block-->
+
+		<!--START: LOGIN_REQUIRED-->
+			<!-- [product_login-message] -->
+		<!--END: LOGIN_REQUIRED--> 
+
+		<!--START: MULTIPLESHIPTO-->
+<!--
+			[product_multiple-send-to]
+			<select name="recipientselect" class="txtBoxStyle">
+-->
+				<!--beginFixup-->
+<!--
+					<option value="select" selected>[product_multiple-select-name]</option>
+					<option value="myself">[product_multiple-myself]</option>
+					[shiptolist]
+					<option value="selectother">[product_multiple-other]</option>
+-->
+				<!--endFixup-->
+<!--
+			</select>
+			[product_multiple-add-name]
+			<input type="text" name="add_name"class="txtBoxStyle"/>
+			<a href="#" onclick="popup('optionhelp.asp?help=multiple',300,200)"><img src="assets/templates/common/images/help_icon.gif" border="0" alt="help" /></a>
+			*[product_multiple-note]
+-->
+		<!--END: MULTIPLESHIPTO--> 
+
+		<!--START: RECURRINGORDER-->
+<!--
+			<div>
+				<strong>[recurringorders_addcart-question]</strong>
+				<select name="recurring_frequency" class="txtBoxStyle" id="recurring_frequency">
+					<option value="">[recurringorders_select-frequency]</option>
+					[recurring_frequency]
+				</select>
+			</div>
+			<div align="center">[recurringorders_addcart-bottom-message]</div>
+-->
+		<!--END: RECURRINGORDER-->
+
+
+		<!--START: extended_description-->
+<!--
+			[product_Header-description]
+			<div itemprop="description">[extended_description]</div>
+-->
+		<!--END: extended_description--> 
+
+		<!--START: realmedia-->
+<!--
+			[product_Header-video]
+			<div style="text-align: center; margin: auto;">
+				<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="[realmedia]" wmode="transparent" id="realmedia">
+					<param name="movie" value="[realmedia]" />
+					<param name="wmode" value="transparent" />
+				</object>
+			</div>
+-->
+		<!--END: realmedia--> 
+
+		<!--START: rewardsPoints-->
+			[product_Header-rewards]
+			[product_rewardsDescription]
+		<!--END: rewardsPoints-->
+
+		<!--START: extrafields-->
+			<!--START: extra_field_1-->
+				<div class="item"><strong>[product_extrafield1]</strong> [extra_field_1]</div>
+			<!--END: extra_field_1--> 
+			<!--START: extra_field_2-->
+				<div class="item"><strong>[product_extrafield2]</strong> [extra_field_2]</div>
+			<!--END: extra_field_2--> 
+			<!--START: extra_field_3-->
+				<div class="item"><strong>[product_extrafield3]</strong> [extra_field_3]</div>
+			<!--END: extra_field_3--> 
+			<!--START: extra_field_4-->
+				<div class="item"><strong>[product_extrafield4]</strong> [extra_field_4]</div>
+			<!--END: extra_field_4--> 
+			<!--START: extra_field_5-->
+				<div class="item"><strong>[product_extrafield5]</strong> [extra_field_5]</div>
+			<!--END: extra_field_5--> 
+			<!--START: extra_field_6-->
+				<strong>[product_extrafield6]</strong> [extra_field_6]
+			<!--END: extra_field_6--> 
+			<!--START: extra_field_7-->
+				<strong>[product_extrafield7]</strong> [extra_field_7]
+			<!--END: extra_field_7--> 
+			<!--START: extra_field_8-->
+				<strong>[product_extrafield8]</strong> [extra_field_8]
+			<!--END: extra_field_8--> 
+			<!--START: extra_field_9-->
+				<strong>[product_extrafield9]</strong> [extra_field_9]
+			<!--END: extra_field_9--> 
+			<!--START: extra_field_10-->
+				<strong>[product_extrafield10]</strong> [extra_field_10]
+			<!--END: extra_field_10--> 
+			<!--START: extra_field_11-->
+				<strong>[product_extrafield11]</strong> [extra_field_11]
+			<!--END: extra_field_11--> 
+			<!--START: extra_field_12-->
+				<strong>[product_extrafield12]</strong> [extra_field_12]
+			<!--END: extra_field_12--> 
+			<!--START: extra_field_13-->
+				<strong>[product_extrafield13]</strong> [extra_field_13]
+			<!--END: extra_field_13-->
+		<!--END: extrafields-->
+
+		<!--START: PRODUCT_FEATURES_BLOCK-->
+			<!--START: PRODUCT_FEATURES-->
+				<!-- <li>[product_feature_name]</li> -->
+			<!--END: PRODUCT_FEATURES-->
+		<!--END: PRODUCT_FEATURES_BLOCK-->
+
+		<!--START: qa-->
+			<a name="qa"></a>
+			<div itemprop="qa" itemscope itemtype="http://schema.org/QA">
+				[productqa_header]
+				[qa_link]
+				<!--START: qa_list-->
+					[productqa_q]
+					<strong itemprop="name">[question]</strong>
+					<em>[productqa_question-submit-by]: <span itemprop="author">[q_user_name]</span> 
+					<!--START: q_user_email--> 
+						<a href="mailto:[q_user_email]">[q_user_email]</a> 
+					<!--END: q_user_email--> 
+					- [q_date_added]</em>
+					<!--START: qa_allowuserresponse-->
+						<a rel="nofollow" style="cursor:pointer" onclick="javascript:popup('productqa.asp?action=newAns&catalogid=[catalogid]&qa_id=[qa_id]',650,550,false);"><b>([productqa_submit-answer])</b></a>
+					<!--END: qa_allowuserresponse-->
+					<div itemprop="description">
+					<!--START: qa_answers-->
+						[productqa_a] [answer]
+						[productqa_answer-submit-by]:  <span itemprop="author">[a_user_name] ([a_date_added])
+						<!--START: qa_allowratings-->
+							- <b>[productqa_answer-helpful]</b> <input type="button" id="btnYes" style="cursor:pointer" value="[productqa_helpyes]" onclick="updateQAStats([a_id],1,'[userid]')" /> <input type="button" id="btnNo" style="cursor:pointer" value="[productqa_helpno]" onclick="updateQAStats([a_id],-1,'[userid]')" /> <em><b><span id="spn[a_id]">[a_helpful] [productqa_of] [a_votes]</span></b> [productqa_found-helpful]</em>
+						<!--END: qa_allowratings-->
+					</div>
+					<!--END: qa_answers-->
+					<!--START: qa_noanswers-->
+						<div style="margin-left:2em;">[productqa_no-answers]</div>
+					<!--END: qa_noanswers-->
+				<!--END: qa_list-->
+			</div>
+		<!--END: qa-->
+
+
+
+		<!--START: related_0-->
+			[product_Header-relateditems]
+			<!--START: related_items0-->
+				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+				<a href="product.asp?itemid=[catalogid]">[name]</a>
+				<!--START: product_review-->
+					<!--START: product_review_average-->
+						<img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" />
+						[review_count] Review(s)
+					<!--END: product_review_average-->
+				<!--END: product_review-->
+
+				<!--START: ITEMPRICE-->
+					[product_yourprice] [ITEMPRICE] 
+				<!--END: ITEMPRICE--> 
+				<!--START: SALEPRICE-->
+					[product_yourprice] [ITEMPRICE]
+					[product_onsale]: [ITEMSALEPRICE]
+					<img src="assets/templates/common/images/on_sale.png" alt="On Sale" hspace="5" border="0" />
+				<!--END: SALEPRICE-->
+				<input  type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+			<!--END: related_items0--> 
+
+			<!--START: related_items1-->
+				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=0&maxy=150" alt="[name]" border="0" /></a>
+				[name]
+				<!--START: ITEMPRICE--> 
+					[ITEMPRICE] 
+				<!--END: ITEMPRICE--> 
+				<!--START: SALEPRICE--> 
+					[ITEMPRICE]
+					[ITEMSALEPRICE] 
+				<!--END: SALEPRICE-->
+				<input type="checkbox" name="item_id" value="[catalogid]" />
+				<input type="hidden" name="qty-[counter]" value="1" />
+			<!--END: related_items1--> 
+
+			<!--START: related_items2-->
+				<a href="product.asp?itemid=[catalogid]">[name]</a>
+				<!--START: ITEMPRICE--> 
+					[ITEMPRICE] 
+				<!--END: ITEMPRICE--> 
+				<!--START: SALEPRICE--> 
+					[ITEMPRICE]
+					[ITEMSALEPRICE] 
+				<!--END: SALEPRICE-->
+				<input type="hidden" name="item_id" value="[catalogid]" />
+				<input type="text" size="2" name="qty-[counter]" value="0" />
+			<!--END: related_items2-->
+		<!--END: related_0-->
+
+		<!--START: browsing_history-->
+			[product_browsing-history-header]
+			<input type="button" onclick="window.location.href='product.asp?itemid=[catalogid]&delhist=0';" name="" value="<!--START: browsing_history_enable-->[product_browsing-history-disable]<!--END: browsing_history_enable-->" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+			<!--START: browsing_history_items-->
+				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=150" alt="[name]" border="0" /></a>
+				<a href="product.asp?itemid=[catalogid]">[name]</a>
+				<!--START: ITEMPRICE-->
+					[ITEMPRICE]
+				<!--END: ITEMPRICE-->
+				<!--START: SALEPRICE-->
+					[ITEMPRICE]
+					[ITEMSALEPRICE]
+				<!--END: SALEPRICE-->
+				<input type="button" onclick="window.location.href='product.asp?itemid=[item_id]&delhist=[catalogid]';" name="" value="Clear" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+			<!--END: browsing_history_items-->
+		<!--END: browsing_history--> 
+
+
+
+
+
+
+
+
+
+
+		<!--START: CATEGORY_FOOTER-->
+			[CONTENT]
+		<!--END: CATEGORY_FOOTER-->
+
+	</form>
+</div>
+
+
+
+
+<!--START: extra_field_2-->
+<div class="hidden field2" field2="[extra_field_2]"></div>
+<!--END: extra_field_2-->
+<!--START: extra_field_7-->
+<div class="hidden field7" field7="[extra_field_7]"></div>
+<!--END: extra_field_7-->
+<!--START: extra_field_8-->
+<div class="hidden field8" field8="[extra_field_8]"></div>
+<!--END: extra_field_8-->
+
+<script>
+jQuery(function(){
+	// Brochure Link
+	var brochure = jQuery( '.field2' ).attr( 'field2' );
+	var brochureLink = jQuery( '.brochure-download a' );
+	if( brochure !== '' ){
+		brochureLink.text( 'Download Brochure' ).attr( 'href', brochure );
+	}
+	// Product Details List
+	var details = jQuery( '.field7' ).attr( 'field7' );
+	var $detailsList = jQuery( '.details-list' );
+	jQuery.each( details.split( '\n' ), function( i, v ){
+		$detailsList.append( '<li><span>' + v + '</li></span>' );
+	});
+	// Badges
+	var badges = jQuery( '.field8' ).attr( 'field8' );
+	var $badges = jQuery( '.badges-list' );
+	var badgetext = {
+		'free-shipping': 'Free Shipping',
+		'fire-retardant': 'Fire Retardant',
+		'heavy-duty': 'Heavy Duty Hardware',
+		'iron-life': '50% Longer Iron Life',
+		'no-sales-tax': 'No Sales Tax',
+		'ten-thousand-rub': '10,000 Rub Count',
+		'swap-base': 'Swappable Bases for Free',
+		'new-arrival': 'New Arrival',
+		'service': 'Personal Service',
+		'warranty': '2-5 Yr. Warranty',
+		'color': 'Free Color Variations',
+		'returns': 'No Hassle Return Policy',
+		'hardwood': 'Real Hardwood',
+		'extra-wide': 'Extra Wide',
+		'double-stiched': 'Double Stiching',
+		'inspected': 'Guaranteed To Pass Inspection'
+	}
+	jQuery.each( badges.split( '\n' ), function( i, v ){
+		if( typeof( badgetext[v] ) != 'undefined' ){
+			$badges.append( '<div class="badge badge-' + v + '"><i></i><div class="badge-text">' + badgetext[v] + '</div></div>' );
+		}
+	});
+});
+</script>
+
+
+
+
+
+<script type="text/javascript" src="assets/templates/common/js/listing.js"></script>
+<script type="text/javascript" src="assets/templates/common/3dzoom/magiczoomplus.js"></script>
+<script type="text/javascript">
+	if (typeof jQuery == 'undefined') {
+		document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
+	}
+	MagicZoomPlus.options = {
+		'opacity':'65',
+		'expand-effect':'elastic',
+		'background-opacity':'50',
+		'zoom-fade':'true',
+		'zoom-position':'right',
+		'fit-zoom-window':'false',
+		'hint':'false'
+	}
+</script>
+<!--START: qaScript-->
+<script type="text/javascript">
+	function updateQAStats(id, vote, user){
+
+		var url = '';
+		var params = '';
+
+		if (user == '') user = 0;
+		
+		params = 'id=' + id;
+		params += '&vote=' + vote;
+		params += '&userid=' + user;
+		
+		url = 'productqaVote_ajax.asp?' + params + '&no-cache='+Math.random();
+
+		//window.location = url;
+		
+		jQuery.ajax({
+			url: url,
+			dataType: 'html',
+			type: 'GET',
+			cache: false,
+			success: function (strResult) {
+				if (strResult == '') {
+					alert('[productqa_helpful-notupdated]');
+				}
+				else {
+					jQuery('#spn' + id).html(strResult);
+					alert('[productqa_update-helpful]');
+				}
+			
+			},
+			error: reportQAError
+		});
+		
+	}
+
+	function reportQAError(jqXHR, textStatus) {
+		if (jqXHR.status > 0)
+		{
+			alert(jqXHR.responseText);
+			alert("Error processing request " + jqXHR.status + " - " + jqXHR);
+			
+		}
+	}
+</script>
+<!--END: qaScript-->
+<script language="javascript">
+	//thumbnail script
+	var image1,image2,image3,image4,selectedimage;
+	var imagemaxwidth, imagemaxheight
+
+	imagemaxwidth=[image_medium_w];
+	imagemaxheight=0;
+
+	image1="[image1]";
+	image2="[image2]";
+	image3="[image3]";
+	image4="[image4]";
+	imagecaption1="[imagecaption1]";
+	imagecaption2="[imagecaption2]";
+	imagecaption3="[imagecaption3]";
+	imagecaption4="[imagecaption4]";
+	selectedimage='[image1]'; //pre load image1
+	zoom_enable=[3dzoom_enabled]; //0 = zoomify | 1 = magiczoom
+
+	function image_click(clicks)
+	{
+		if (document.getElementById('listing_main_image_link')!=undefined)
+		{
+			if (zoom_enable==1)
+			{
+				selectedimage=eval('image'+clicks);
+				MagicZoomPlus.update('listing_main_image_link', selectedimage, 'thumbnail.asp?file=' + selectedimage + '&maxx='+imagemaxwidth+'&maxy='+imagemaxheight, 'show-title: false');
+				changecontent("imagecaptiont",eval('imagecaption'+clicks));
+				document.getElementById('listing_main_image_link').href=this.name;
+			}else
+			{
+		
+				selectedimage=eval('image'+clicks);
+				document.getElementById('large').src='thumbnail.asp?file=' + selectedimage + '&maxx='+imagemaxwidth+'&maxy='+imagemaxheight;
+				document.getElementById('listing_main_image_link').href='#';
+				document.getElementById('listing_main_image_link').onclick=zoomify_popup;
+				changecontent("imagecaptiont",eval('imagecaption'+clicks));
+			}}
+	}
+	function zoomify_popup()
+	{
+		popupsimple('zoomify.asp?catalogid=[catalogid]&img=' + selectedimage ,500,500);
+	}
+
+	function check_stock(what,partnum)
+	{
+		var soption;
+		var i;
+		var product_availability='[availability]';
+		var backordermode='[allowbackorder]';
+		var avail_instock='[productAvailability-Instock]';
+		var avail_outofstock='[productAvailability-Outofstock]';
+		var avail_backorder='[productAvailability-Backorder]';
+		var optionfound=0;
+
+		if (inventoryarray[catalogid].length==0) //if there is no advanced options, don't look for stock
+		{
+			return true;
+		}
+		else
+		{
+			for(i=0;i<inventoryarray[catalogid].length;i++) 
+			{
+				soption=inventoryarray[catalogid][i];
+				field_array=soption.split("-");
+				//Dynamic Part for advanced options
+				if (typeof((idarray[catalogid])) != "undefined")
+				{
+					soptionid=idarray[catalogid][i]; 
+					aoprice=aopricearray[catalogid][i]; 
+					if (field_array[0]==partnum)
+					{
+						if (soptionid != '')
+							changeid(soptionid); 
+						if (aoprice != '0')
+							changeprice(aoprice);
+					}
+				}
+			
+				if ((field_array[0]==partnum))
+				{	
+					changecontent("product_inventory",field_array[1]);
+					if (eval(GetValue(what,"qty-0"))>field_array[1]) 
+					{
+						optionfound=optionfound+1;
+						if (backordermode==1)
+						{
+							changecontent("availability",avail_backorder); 
+							return true;
+							optionfound=optionfound+1;
+						}
+						else 
+						{
+							changecontent("availability",avail_outofstock);
+							alert("The options you selected are not currently available.");
+							optionfound=optionfound+2;
+							return false;
+						}
+					}
+
+				}
+			}
+
+			if (optionfound==0)
+			{ 
+				changecontent("availability",product_availability);
+				return true;
+			}
+		
+			if (optionfound==1)
+			{
+				changecontent("availability",avail_instock);
+				return true;
+			}
+		}
+	}
+
+
+	function add_wishlist()
+	{
+		document.add.action = "add_cart.asp?action=addWishList";
+		document.add.submit();
+	}
+
+	function add_giftregistry()
+	{
+		document.add.action = "add_cart.asp?action=addGiftRegistry";
+		document.add.submit();
+	}
+
+	function check_and_add(formx)
+	{
+
+		if (document.add.std_price==null)
+		{
+			document.add.submit();
+		}
+		else
+		{
+			var readytoadd=validateValues(formx,1)
+			if (readytoadd==true)
+			{
+				document.add.submit();
+			}
+		}
+	}
+
+	// --></script> 
+<script language="javascript">
+	var currency_symbol='[currency]';
+	var prod_decimal_places='[prod_decimal_places]';
+	validateValues(document.add,1);
+	window.setTimeout("image_click(1)", 1000);
+</script>
+<script type="text/javascript">
+	function selectOption(objElement) {
+
+		var strElementName = "";
+		var strElementType = "";
+		var intHasRules = "[has_rules]";
+		objElement = null;
+
+		if (intHasRules != "1") {
+			return;
+		}
+
+		add_overlay("divOptionsBlock", 1);
+		var url = 'prod_options.asp?ajax=1&action=buildOptions&strElementType=' + escape(strElementType) + '&strElementName=' + escape(strElementName) + '&no-cache=' + Math.random();
+
+		jQuery.ajax({
+			url: url,
+			dataType: 'html',
+			type: 'POST',
+			data: jQuery(add).serialize(),
+			cache: false,
+			success: function (strResult) {
+				jQuery("#divOptionsBlock").html(strResult);
+			},
+			complete: afterOptionSelection,
+			error: reportError
+		});
+	}
+
+	function afterOptionSelection(req) {
+		remove_overlay("divOptionsBlock");
+		return;
+	}
+
+	function getElementById_s(strId) {
+		var obj = null;
+		if (document.getElementById) {
+			obj = get_Element(strId);
+		} else if (document.all) {
+			obj = document.all[strId];
+		}
+		return obj;
+	}
+
+	function remove_overlay(panel) {
+		var objBody = getElementById_s('overlay_' + panel);
+		if (objBody != null && objBody != 'null' && objBody != undefined && objBody != 'undefined')
+			objBody.style.display = 'none';
+	}
+
+	function add_overlay(panel, loading) {
+		var objBody = getElementById_s(panel);
+		var objOverlay = document.createElement("div");
+
+		objOverlay.setAttribute('id', 'overlay_' + panel);
+		objOverlay.className = 'overlay';
+		objOverlay.style.position = 'absolute';
+		objOverlay.style.textAlign = 'center';
+		objOverlay.style.width = objBody.clientWidth + "px";
+		objOverlay.style.height = objBody.clientHeight + "px";
+		//alert(objOverlay.style.height);
+		objBody.insertBefore(objOverlay, objBody.firstChild);
+		objOverlay.style.display = 'block';
+
+		if (loading == 1) {
+			get_Element('overlay_' + panel).innerHTML = '<table border=0 width=100% height=100%><td style="text-align: center;"><img src="assets/templates/common/images/loading.gif">';
+		}
+		else {
+			get_Element('overlay_' + panel).innerHTML = '<table border=0 width=100% height=100%>';
+		}
+	}
+
+	function get_Element(i) {
+	
+	}
+
+	function reportError(jqXHR, textStatus) {
+		remove_overlay("divOptionsBlock");
+
+		//jqXHR.responseText
+		if (jqXHR.status > 0)
+			alert("Error processing request " + jqXHR.status + " - " + textStatus);	
+	}
+
+	selectOption(null);
+</script>
