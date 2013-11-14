@@ -331,7 +331,7 @@ jQuery( function(){
 							<p><span itemprop="price" class="label">You Save:</span> [savings]</p>
 						<!--END: SAVINGS-->
 					</div>
-					<div style="clear:both"></div>
+					<div class="clearboth"></div>
 					<!--START: product_availability-->
 						<!-- <strong>[product_Header-availability]</strong> -->
 						<!-- <div id="availability">[availability_itemprop]</div> -->
@@ -527,6 +527,7 @@ jQuery( function(){
 						<div class="option-row last">
 							<label>
 								<span>Availability: </span>Usually Ships<br /> in 2-3 Business Days
+								
 							</label>
 							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
 							<div class="clearfix"></div>
@@ -890,7 +891,7 @@ jQuery( function(){
 
 
 
-
+<!-- CUSTOM PRODUCT FIELD SETUP HACKS -->
 <!--START: extra_field_2-->
 <div class="hidden field2" field2="[extra_field_2]"></div>
 <!--END: extra_field_2-->
@@ -933,7 +934,7 @@ jQuery(function(){
 		'returns': 'No Hassle Return Policy',
 		'hardwood': 'Real Hardwood',
 		'extra-wide': 'Extra Wide',
-		'double-stiched': 'Double Stiching',
+		'double-stitched': 'Double Stitching',
 		'inspected': 'Guaranteed To Pass Inspection'
 	}
 	jQuery.each( badges.split( '\n' ), function( i, v ){

@@ -1059,6 +1059,8 @@ li.first.far a {
   -webkit-appearance: none;
   position: absolute;
   z-index: 2;
+  line-height: 25px;
+  padding: 0 10px;
 }
 .fancy-select {
   margin-right: 10px;
@@ -1387,11 +1389,7 @@ fieldset {
   right: 0;
 }
 */
-.sharebox {
-  background: #dcdcdc;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
+
 .review {
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 25px;
@@ -1727,11 +1725,17 @@ input {
 }
 
 
-
 .sharebox {
+  background: #dcdcdc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 	padding: 20px;
 }
+.sharebox .like {
+	position: absolute;
+}
 .sharebox ul {
+	position: relative;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -1742,7 +1746,7 @@ input {
 }
 li.like {
 	position: relative;
-	top: 2px;
+	top: -2px;
 }
 .fb-like span {
 	width: 50px !important;
@@ -1751,8 +1755,8 @@ li.like {
 li.email {
 	position: relative;
 	top: -4px;
+	left: 70px
 }
-
 
 
 .fancy-select.wide {
@@ -1763,4 +1767,9 @@ li.email {
 .fancy-select.wide select {
 	width: 210px;
 }
+
+.clearboth {
+	clear: both;
+}
+
 
