@@ -1,8 +1,21 @@
-
 <!-- Template: home.html -->
+<div class="template" style="display:none" data-template="home"></div>
+
 	<!--START: CATEGORY_HEADER-->
 		[CONTENT]
 	<!--END: CATEGORY_HEADER--> 
+
+<div class="grid_8 filter">
+	Filters
+</div>
+
+<div class="grid_4 search">
+	<form method="get" name="searchForm" action="search.asp">
+		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
+	</form>
+</div>
+
 	<!--START: FEATURE_MENU-->
 		<!--START: CATEGORY_ITEMS-->
 			<!--START: ITEM_TEMPLATE_0-->
@@ -13,7 +26,7 @@
 					<!--END: product_review_average-->
 				<!--END: product_review-->
 				<div class="grid_2 listing">
-					<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+					<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 					<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 					<!--START: ITEMPRICE-->
 						<!-- [product_yourprice] -->
@@ -31,6 +44,9 @@
 		<!--END: CATEGORY_ITEMS-->
 	<!--END: FEATURE_MENU--> 
 	
+</div>
+
+<div class="container_12">
 	
 	<h2>Top Sellers</h2>
 

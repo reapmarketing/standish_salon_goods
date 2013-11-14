@@ -1,13 +1,22 @@
+<!-- Template: category_0.html -->
+<div class="template" style="display:none" data-template="category"></div>
+
+<script>
+jQuery( function(){
+	jQuery('.productContainer').remove();
+});
+</script>
+
 <form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
 	<!--START: BODY_HEADER-->
-		[CATEGORY_FULLLINE]
+		<!-- [CATEGORY_FULLLINE] -->
 	<!--END: BODY_HEADER-->
-	<h1 class="page_headers">[categoryname]</h1>
+	<!-- <h1 class="page_headers">[categoryname]</h1> -->
 	<!--START: CATEGORY_HEADER-->
-		<div id="categoryHeader" class="data">[CONTENT]</div>
+		<div id="categoryHeader" class="data grid_10">[CONTENT]</div>
 	<!--END: CATEGORY_HEADER--> 
 	<!--START: SUB_CATEGORIES-->
-		<div class="titles" colspan="5">&nbsp;[category_Header-subcategories]</div>
+		<!-- <div class="titles" colspan="5">&nbsp;[category_Header-subcategories]</div> -->
 		<!--START: SUB_CATEGORIES_FORMAT-->
 			<!--START: SUB_CATEGORY_IMAGE-->
 				<a href="view_category.asp?cat=[CATID]"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" border="0" /></a> 
@@ -19,9 +28,10 @@
 		<!--END: SUB_CATEGORIES_FORMAT-->
 	<!--END: SUB_CATEGORIES-->
 
+
+
 	<!--START: FEATURE_MENU-->
 		<div class="titles">[category_Header-specials]</div>
-		FEATURED ITEMS
 		<!--START: FEATURE_ITEMS-->
 			<!--START: FEATURE_ITEM_TEMPLATE_0-->
 				<!--START: product_review-->
@@ -109,41 +119,21 @@
 	<!--END: catFilterMainBlock-->
 
 	<!--START: ITEMS-->
-		<div class="titles">&nbsp;[category_Header-products] (Total Items: [productnumber])</div>
+		<!-- <div class="titles">&nbsp;[category_Header-products] (Total Items: [productnumber])</div> -->
 
-		<!--START: sortbylist-->
-			<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle">
-				[sortbylist]
-			</select>
-		<!--END: sortbylist-->
-
-		<!--START: PAGING-->
-			[category_moreresults]
-			<!--START: PREV--> 
-				<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">[category_previouspage]</a>&nbsp; 
-			<!--END: PREV--> 
-			<!--START: PAGES--> 
-				<!--START: FIRST_PAGE--> 
-					<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE"><strong>[PAGE]</strong></a>... 
-				<!--END: FIRST_PAGE--> 
-				<!--START: PAGES_SELECTED--> 
-					<strong>[PAGE]</strong> 
-				<!--END: PAGES_SELECTED--> 
-				<!--START: PAGES_NOTSELECTED--> 
-					<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
-				<!--END: PAGES_NOTSELECTED--> 
-				<!--START: LAST_PAGE--> 
-					...<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE"><strong>[PAGE]</strong></a> 
-				<!--END: LAST_PAGE--> 
-			<!--END: PAGES--> 
-			<!--START: NEXT--> 
-				&nbsp;<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">[category_nextpage]</a>
-				&nbsp;<a href="view_category.asp?viewall=1&cat=[catid]">View All</a>&nbsp;&nbsp; 
-			<!--END: NEXT-->
-		<!--END: PAGING-->
+		<div class="grid_10">
+			<!--START: sortbylist-->
+			<div class="fancy-select wide">
+				<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle" style="float:right">
+					[sortbylist]
+				</select>
+				<i class="icon-caret-down"></i>
+			</div>
+			<!--END: sortbylist-->
+		</div>
 
 		<!--START: UNDOVIEWALL-->
-			<a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a>
+			<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
 		<!--END: UNDOVIEWALL-->
 
 		<!--START: CATEGORY_ITEMS-->
@@ -175,36 +165,41 @@
 		<!--END: CATEGORY_ITEMS-->
 
 		<!--START: PAGING-->
-			[category_moreresults]
-			<!--START: PREV-->
-				<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">[category_previouspage]</a>
-			<!--END: PREV--> 
-			<!--START: PAGES--> 
-				<!--START: FIRST_PAGE--> 
-					<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE"><strong>[PAGE]</strong></a>... 
-				<!--END: FIRST_PAGE--> 
-				<!--START: PAGES_SELECTED--> 
-					<strong>[PAGE]</strong> 
-				<!--END: PAGES_SELECTED--> 
-				<!--START: PAGES_NOTSELECTED--> 
-					<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
-				<!--END: PAGES_NOTSELECTED--> 
-				<!--START: LAST_PAGE--> 
-					...<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE"><strong>[PAGE]</strong></a> 
-				<!--END: LAST_PAGE--> 
-			<!--END: PAGES--> 
-			<!--START: NEXT--> 
-				&nbsp;<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">[category_nextpage]</a>
-				&nbsp;<a href="view_category.asp?viewall=1&cat=[catid]">View All</a>&nbsp;
-			<!--END: NEXT-->
+		<div class="grid_10">
+			<!-- [category_moreresults] -->
+			<div class="pagination">
+				<!--START: PREV-->
+					<a class="btn first" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">&laquo;</a>
+					<!-- [category_previouspage] -->
+				<!--END: PREV-->
+				<!--START: PAGES-->
+					<!--START: FIRST_PAGE-->
+						<a class="btn active first" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<!--END: FIRST_PAGE-->
+					<!--START: PAGES_SELECTED-->
+						<a class="btn active" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<!--END: PAGES_SELECTED-->
+					<!--START: PAGES_NOTSELECTED-->
+						<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<!--END: PAGES_NOTSELECTED-->
+					<!--START: LAST_PAGE-->
+						<a class="btn active last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<!--END: LAST_PAGE-->
+				<!--END: PAGES-->
+				<!--START: NEXT-->
+					<a class="btn last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">&raquo;</a>
+					<!-- [category_nextpage] -->
+				<!--END: NEXT-->
+			</div>
+		</div>
 		<!--END: PAGING-->
 
 		<!--START: UNDOVIEWALL-->
-			<a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a>&nbsp;&nbsp;
+			<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a>&nbsp;&nbsp; -->
 		<!--END: UNDOVIEWALL-->
 	<!--END: ITEMS-->
 
 	<!--START: CATEGORY_FOOTER-->
-		[CONTENT] 
+		<div class="grid_10">[CONTENT]</div>
 	<!--END: CATEGORY_FOOTER-->
 </form>

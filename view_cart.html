@@ -1,11 +1,10 @@
+
+
 <script language="javascript">
 function buySAFEOnClick(wantsbond) {
 	document.location.href='view_cart.asp?wantsbond=' + wantsbond;
 }
-</script>
 
-<script>
-/* More Hacks */
 jQuery(function(){
 	// Fix [OPTIONS] logic to deal with [OPTION]
 	jQuery.each( jQuery('.cart_item'), function( i, v ){
@@ -13,9 +12,11 @@ jQuery(function(){
 		var $itemName = $item.find('.item-name')
 		var $optionsList = $item.find( '.options-list' );
 		var itemText = $itemName.html().split( '<br>' );
+		console.log( itemText );
 		if( itemText[1] ){
 			$itemName.text( itemText[0] );
 			$optionsList.html( itemText[1] );
+			console.log( itemText );
 		}
 		else{
 			if( $optionsList.text() === '[OPTIONS]' ){

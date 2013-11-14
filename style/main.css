@@ -1,4 +1,5 @@
 /* normalize.css v2.1.2 | MIT License | git.io/normalize */
+
 article,
 aside,
 details,
@@ -26,7 +27,8 @@ audio:not([controls]) {
   display: none;
 }
 html {
-  font-family: sans-serif;
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  /* font-family: sans-serif; */
 /* 1 */
   -ms-text-size-adjust: 100%;
 /* 2 */
@@ -522,6 +524,9 @@ body {
 }
 .standishgold-text {
   color: #c5ac29;
+}
+.black-text {
+  color: #000;
 }
 p,
 ul,
@@ -1209,7 +1214,7 @@ fieldset {
 .listing {
   margin-top: 20px;
   margin-bottom: 20px;
-  min-height: 310px;
+  min-height: 330px;
 }
 .listing .product_thumb {
   width: 138px;
@@ -1372,6 +1377,7 @@ fieldset {
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 10px;
 }
+/*
 .related-products a,
 .related-accessories a {
   font-family: "PT Sans Narrow";
@@ -1380,6 +1386,7 @@ fieldset {
   top: 2px;
   right: 0;
 }
+*/
 .sharebox {
   background: #dcdcdc;
   -webkit-border-radius: 3px;
@@ -1696,3 +1703,64 @@ input {
 	font-size: 24px;
 	padding-bottom: 10px;
 }
+
+.left-bar {
+	display: none;
+	min-height: 800px;
+}
+
+.left-bar ul {
+	margin: 0;
+	padding: 0 0 0 5px;
+	list-style: none;
+}
+.left-bar .allcaps {
+	margin: 10px 0 0 0;
+}
+.left-bar a {
+	text-decoration: none;
+	color: #a9a9a9;
+}
+.left-bar a:hover {
+	font-weight: bold;
+	color: #ff7f50;
+}
+
+
+
+.sharebox {
+	padding: 20px;
+}
+.sharebox ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.sharebox li {
+	display: inline;
+	margin: 0 6px;
+}
+li.like {
+	position: relative;
+	top: 2px;
+}
+.fb-like span {
+	width: 50px !important;
+	overflow: hidden;
+}
+li.email {
+	position: relative;
+	top: -4px;
+}
+
+
+
+.fancy-select.wide {
+	float: right;
+	margin-right: 0;
+	width: 180px;
+}
+.fancy-select.wide select {
+	width: 210px;
+}
+

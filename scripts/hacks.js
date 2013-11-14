@@ -1,6 +1,7 @@
 jQuery( function($) {
 
 	// unWrappers
+/* 	$( '.productBlockContainer').unwrap(); */
 	$( '.productContainer' ).unwrap();
 	$( '.listing' ).unwrap();
 

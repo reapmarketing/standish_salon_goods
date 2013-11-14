@@ -1,17 +1,53 @@
+
+<script type="text/javascript">
+
+jQuery( function(){
+
+	image = encodeURIComponent( 'http://' + document.domain + '/' + jQuery( '.product-image' ).first().attr( 'href' ) );
+	short_description = jQuery('.extended-description').text().split('.')[0] + '.';
+	
+	console.log( image );
+	
+	jQuery( '.pinit a' ).attr('href', 'http://www.pinterest.com/pin/create/button/?url=' + image + '&description=' + short_description );
+});
+
+// Async Loading of Pinterest Pin-It Button Script
+(function(d){
+	var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+	p.type = 'text/javascript';
+	p.async = true;
+	p.src = '//assets.pinterest.com/js/pinit.js';
+	f.parentNode.insertBefore(p, f);
+}(document));
+
+
+// Async Tweet This Button Script
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}
+}(document, 'script', 'twitter-wjs');
+
+// Facebook Like Button Script
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=163542803667984";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Template: listing_0.php -->
+<div class="template" style="display:none" data-template="listing"></div>
+
 <link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
 
-		<!--START: BREADCRUMBS-->
-			<!-- [product_Header-breadcrumbs] -->
-			<!--START: CATEGORY_BREADCRUMBS-->
-				<!-- <div>[CATEGORY_BREADCRUMBS]</div> -->
-			<!--END: CATEGORY_BREADCRUMBS--> 
-		<!--END: BREADCRUMBS-->
-
-<!-- Breadcrumbs / Seach Meta Section -->
-
 <div class="grid_8 breadcrumbs">
-	<!-- These appear to be the actual breadcrumbs -->
-	<span class="allcaps"><!--START: CATEGORY_FULLINE-->[CATEGORY_FULLLINE]<!--END: CATEGORY_FULLINE--></span>
+	<span class="allcaps">
+	<!--START: CATEGORY_FULLINE-->
+		[CATEGORY_FULLLINE]
+	<!--END: CATEGORY_FULLINE-->
+	</span>
 </div>
 
 <div class="grid_4 search">
@@ -20,8 +56,6 @@
 		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
 	</form>
 </div>
-
-<!-- End of Meta Section -->
 
 <div itemscope itemtype="http://schema.org/Product">
 	<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
@@ -38,11 +72,11 @@
 			<div class="showcase">
 
 			<!--START: image1--> 
-				<a href="[image1]" class="[3dzoom_class]"  id="listing_main_image_link"><img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" align="middle" border="0" id="large" name="large" alt="[name]" width="380" height="500" /></a>
+				<a href="[image1]" class="[3dzoom_class]"  id="listing_main_image_link"><img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" align="middle" border="0" id="large" name="large" alt="[name]" width="380" /></a>
 				<!-- <div name="imagecaptiont" id="imagecaptiont" class="item">[imagecaption1]</div> -->
 			<!--END: image1-->
 
-				<a href="[image1]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(1);return false;"><img src="thumbnail.asp?file=[image1]&maxx=75&maxy=0" alt="" border="0" name="pimage1" /></a>
+				<a href="[image1]" class="product-image" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(1);return false;"><img src="thumbnail.asp?file=[image1]&maxx=75&maxy=0" alt="" border="0" name="pimage1" /></a>
 
 			<!--START: image2-->
 				<a href="[image2]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image2]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(2);return false;"><img src="thumbnail.asp?file=[image2]&maxx=75&maxy=0" alt="" border="0" name="pimage2" /></a>
@@ -57,7 +91,7 @@
 			<!--END: image4-->
 
 			<!--START: image5-->
-				<input type="button" onclick="popupsimple('gallery.asp?catalogid=[catalogid]',650,550)" name="IMG" value="[product_imagegallery]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+				<!-- <input type="button" onclick="popupsimple('gallery.asp?catalogid=[catalogid]',650,550)" name="IMG" value="[product_imagegallery]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
 			<!--END: image5-->
 
 
@@ -75,17 +109,21 @@
 -->
 				<div class="clear"></div>
 			</div>
+
 			<div class="sharebox">
-				Social Stuff
 				<ul>
-					<li>Pin</li>
-					<li>Tweet</li>
-					<li>Like</li>
+					<li class="pinit"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
+
+					<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="StandishStuff" data-related="StandishStuff" data-count="none">Tweet</a></li>
+
+					<li class="like"><div class="fb-like" data-href="https://standishsalongoods.com" data-colorscheme="light" data-layout="button" data-action="like" data-show-faces="false" data-send="false"></div></li>
+
 					<!--START: email_friend-->
-						<img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" />
-						<a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a>
+						<!-- <img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" /> -->
+						<li class="email"><i class="icon-envelope coral-text"></i> <a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a></li>
 					<!--END: email_friend-->
-					<li><i class="icon-plus-sign"></i></li>
+
+					<!-- <i class="icon-plus-sign"></i> -->
 				</ul>
 			</div>
 
@@ -109,8 +147,10 @@
 			<!--END: reviews-->
 
 			<!--START: create_first_review-->
-				<img src="assets/templates/common/images/productpage_check.png" alt="[reviews_first]" border="0" />
+				<!--
+<img src="assets/templates/common/images/productpage_check.png" alt="[reviews_first]" border="0" />
 				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_first]</a>
+-->
 			<!--END: create_first_review-->
 	
 			<!--START: create_review_link-->
@@ -189,94 +229,66 @@
 		<!--START: accessories_0-->
 			<div class="related-accessories">
 				<h4>Related Accessories</h4><!-- [product_Header-accessories] -->
-				<a href="#viewMore">View More</a>
-				
-				
-				
-				
-<!--
-				<div class="listing grid_2 alpha">
-					<img src="" alt="">
-					<p class="title">A Classic Affair</p>
-					<p class="msrp">Your Price: $932</p>
-					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
-					<button>Add to Cart</button>
-				</div>
-				<div class="listing grid_2 omega">
-					<img src="" alt="">
-					<p class="title">A Classic Affair with a long title</p>
-					<p class="msrp">Your Price: $932</p>
-					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
-					<button>Add to Cart</button>
-				</div>
--->
+				<!-- <a href="#viewMore">View More</a> -->
 
+				<!--START: accessories_items0-->
+					<div class="grid_2 listing alpha">
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+						<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price">[product_yourprice] [ITEMPRICE]</p>
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+							<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+						<!--END: SALEPRICE-->
+						<!-- <button>Add to Cart</button> -->
 
+						<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
+						<input type="hidden" name="qty-[counter]" value="1" />
 
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+					</div>
+				<!--END: accessories_items0-->
 
-			<!--START: accessories_items0-->
-				<div class="grid_2 listing">
-					<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
-					<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-					<!--START: ITEMPRICE-->
-						<!-- [product_yourprice] -->
-						<p class="price">[product_yourprice] [ITEMPRICE]</p>
-					<!--END: ITEMPRICE-->
-					<!--START: SALEPRICE-->
-						<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
-						<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-						<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+				<!--START: accessories_items1-->
+					<div class="grid_2 listing omega">
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+						<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price">[product_yourprice] [ITEMPRICE]</p>
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+							<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+						<!--END: SALEPRICE-->
+						<!-- <button>Add to Cart</button> -->
+
+						<input type="checkbox" name="item_id" value="[catalogid]" />
+						<input type="hidden" name="qty-[counter]" value="1" />
+	
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+					</div>
+				<!--END: accessories_items1-->
+
+				<!--START: accessories_items2-->
+					<!-- <a href="product.asp?itemid=[catalogid]">[name]</a> -->
+					<!--START: ITEMPRICE--> 
+						<!-- [ITEMPRICE]  -->
+					<!--END: ITEMPRICE--> 
+					<!--START: SALEPRICE--> 
+						<!-- [ITEMPRICE] -->
+						<!-- [ITEMSALEPRICE]  -->
 					<!--END: SALEPRICE-->
-					<!-- <button>Add to Cart</button> -->
+					<!-- <input type="hidden" name="item_id" value="[catalogid]" /> -->
+					<!-- <input type="text" size="2" name="qty-[counter]" value="0" /> -->
+				<!--END: accessories_items2-->
 
-					<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
-					<input type="hidden" name="qty-[counter]" value="1" />
-
-					<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
-				</div>
-			<!--END: accessories_items0-->
-			
-			
-			<!--START: accessories_items1-->
-				<div class="grid_2 listing">
-					<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
-					<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-					<!--START: ITEMPRICE-->
-						<!-- [product_yourprice] -->
-						<p class="price">[product_yourprice] [ITEMPRICE]</p>
-					<!--END: ITEMPRICE-->
-					<!--START: SALEPRICE-->
-						<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
-						<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-						<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
-					<!--END: SALEPRICE-->
-					<!-- <button>Add to Cart</button> -->
-
-					<input type="checkbox" name="item_id" value="[catalogid]" />
-					<input type="hidden" name="qty-[counter]" value="1" />
-
-					<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
-				</div>
-
-
-			<!--END: accessories_items1-->
-
-
-			<!--START: accessories_items2-->
-				<!-- <a href="product.asp?itemid=[catalogid]">[name]</a> -->
-				<!--START: ITEMPRICE--> 
-					<!-- [ITEMPRICE]  -->
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE--> 
-					<!-- [ITEMPRICE] -->
-					<!-- [ITEMSALEPRICE]  -->
-				<!--END: SALEPRICE-->
-				<!-- <input type="hidden" name="item_id" value="[catalogid]" /> -->
-				<!-- <input type="text" size="2" name="qty-[counter]" value="0" /> -->
-			<!--END: accessories_items2-->
-
-
-		</div><!-- related-accessories -->
+			</div><!-- related-accessories -->
 		<!--END: accessories_0-->
 
 
@@ -539,10 +551,11 @@
 			<div itemprop="description" class="product-description">
 				<!--START: extended_description-->
 				<h4>Product Description</h4><!-- [product_Header-description] -->
-				<div >[extended_description]</div>
+				<div class="extended-description">[extended_description]</div>
 				<!--END: extended_description-->
 			</div>
-		
+
+<!--
 			<div class="related-products">
 				<h4>Related Products</h4>
 				<a href="#viewMoreRelated">View More</a>
@@ -569,6 +582,78 @@
 					<button>Add to Cart</button>
 				</div>
 			</div>
+-->
+
+
+
+		<!--START: related_0-->
+			<div class="related-products">
+				<h4>Related Products</h4>
+				<!-- [product_Header-relateditems] -->
+
+				<!--START: related_items0-->
+					<div class="grid_2 listing alpha">
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=140&maxy=0" alt="[name]" border="0" /></a>
+						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+						<!--START: product_review-->
+							<!--START: product_review_average-->
+								<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+								<!-- [review_count] Review(s) -->
+							<!--END: product_review_average-->
+						<!--END: product_review-->
+						<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price">[product_yourprice] [ITEMPRICE]</p>
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+							<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+						<!--END: SALEPRICE-->
+						<!-- <button>Add to Cart</button> -->
+
+						<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
+						<!-- <input type="hidden" name="qty-[counter]" value="1" /> -->
+
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+					</div>
+				<!--END: related_items0-->
+
+
+
+
+			<!--START: related_items1-->
+				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=0&maxy=150" alt="[name]" border="0" /></a>
+				[name]
+				<!--START: ITEMPRICE--> 
+					[ITEMPRICE] 
+				<!--END: ITEMPRICE--> 
+				<!--START: SALEPRICE--> 
+					[ITEMPRICE]
+					[ITEMSALEPRICE] 
+				<!--END: SALEPRICE-->
+				<input type="checkbox" name="item_id" value="[catalogid]" />
+				<input type="hidden" name="qty-[counter]" value="1" />
+			<!--END: related_items1--> 
+
+			<!--START: related_items2-->
+				<a href="product.asp?itemid=[catalogid]">[name]</a>
+				<!--START: ITEMPRICE--> 
+					[ITEMPRICE] 
+				<!--END: ITEMPRICE--> 
+				<!--START: SALEPRICE--> 
+					[ITEMPRICE]
+					[ITEMSALEPRICE] 
+				<!--END: SALEPRICE-->
+				<input type="hidden" name="item_id" value="[catalogid]" />
+				<input type="text" size="2" name="qty-[counter]" value="0" />
+			<!--END: related_items2-->
+
+			</div>
+		<!--END: related_0-->
+
+
+
 		
 		</div>
 		<!-- End of the Right Side -->
@@ -769,58 +854,6 @@
 			</div>
 		<!--END: qa-->
 
-
-
-		<!--START: related_0-->
-			[product_Header-relateditems]
-			<!--START: related_items0-->
-				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
-				<a href="product.asp?itemid=[catalogid]">[name]</a>
-				<!--START: product_review-->
-					<!--START: product_review_average-->
-						<img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" />
-						[review_count] Review(s)
-					<!--END: product_review_average-->
-				<!--END: product_review-->
-
-				<!--START: ITEMPRICE-->
-					[product_yourprice] [ITEMPRICE] 
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE-->
-					[product_yourprice] [ITEMPRICE]
-					[product_onsale]: [ITEMSALEPRICE]
-					<img src="assets/templates/common/images/on_sale.png" alt="On Sale" hspace="5" border="0" />
-				<!--END: SALEPRICE-->
-				<input  type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
-			<!--END: related_items0--> 
-
-			<!--START: related_items1-->
-				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=0&maxy=150" alt="[name]" border="0" /></a>
-				[name]
-				<!--START: ITEMPRICE--> 
-					[ITEMPRICE] 
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE--> 
-					[ITEMPRICE]
-					[ITEMSALEPRICE] 
-				<!--END: SALEPRICE-->
-				<input type="checkbox" name="item_id" value="[catalogid]" />
-				<input type="hidden" name="qty-[counter]" value="1" />
-			<!--END: related_items1--> 
-
-			<!--START: related_items2-->
-				<a href="product.asp?itemid=[catalogid]">[name]</a>
-				<!--START: ITEMPRICE--> 
-					[ITEMPRICE] 
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE--> 
-					[ITEMPRICE]
-					[ITEMSALEPRICE] 
-				<!--END: SALEPRICE-->
-				<input type="hidden" name="item_id" value="[catalogid]" />
-				<input type="text" size="2" name="qty-[counter]" value="0" />
-			<!--END: related_items2-->
-		<!--END: related_0-->
 
 		<!--START: browsing_history-->
 			[product_browsing-history-header]

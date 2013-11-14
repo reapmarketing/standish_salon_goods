@@ -1,25 +1,49 @@
-<!-- Template: search_group.html -->
-<div class="template" style="display:none" data-template="search_group"></div>
+<!-- Template: search.html -->
+<div class="template" style="display:none" data-template="search"></div>
+
+<div class="grid_6 breadcrumbs">
+	<span class="allcaps">
+	<!--START: BODY_HEADER-->
+		<a href="">[frame_breadcrumb-home]</a> > <a href="search.asp?keyword=[keyword]">[keyword]</a>
+	<!--END: BODY_HEADER-->
+	</span>
+</div>
+
+<div class="grid_4 search">
+	<form method="get" name="searchForm" action="search.asp">
+		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
+	</form>
+</div>
+
+	<!--START: CATEGORY_HEADER-->
+		[CONTENT]
+	<!--END: CATEGORY_HEADER-->
 	
-	<!--START: MANUFACTURER_HEADER-->
-		<!--START: logo-->
-			<img src="[logo]" border="0">
-		<!--END: logo-->
-		<!--START: header-->
-			[header]
-		<!--END: header-->
-	<!--END: MANUFACTURER_HEADER-->
+	<!--START: SEARCH_PAGES-->
+	[Search_Header-pages]
+		<!--START: SEARCH_PAGES_FORMAT-->
+			<a href="[page_link]">[page_name]</a>
+			<p>[page_content]</p>
+		<!--END: SEARCH_PAGES_FORMAT-->
+		<!--START: SEARCH_PAGES_MORERESULTS-->
+			<a href="search.asp?keyword=[keyword_search]&amp;stype=1">[Search_pages-moreresults]</a>
+		<!--END: SEARCH_PAGES_MORERESULTS-->
+	<!--END: SEARCH_PAGES-->
 
-	<!-- [Search_header] -->
+	<!--START: SEARCH_CATEGORIES-->
+		[Search_Header-categories]
+		<!--START: SEARCH_CATEGORIES_FORMAT-->
+			<a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;catid=[thiscatid]">[cat_name] ([cat_items])</a>
+		<!--END: SEARCH_CATEGORIES_FORMAT-->
+	<!--END: SEARCH_CATEGORIES-->
 
-	<div class="grid_6" style="min-height: 36px">
-		<!--START: BODY_HEADER-->
-			[CATEGORY_FULLLINE]<br />[category_Header-products] (Total Items: [productnumber])
-		<!--END: BODY_HEADER-->
-	</div>
-
-	<div class="grid 4">
-		<form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
+	<!--START: SEARCH_BAR-->
+	<form action="search.asp?keyword=[keyword_search]&amp;catid=[catid]" method="post" name="frmsortby">
+		<div class="grid_6">
+			[Search_header] ([productnumber] Matches found [CATEGORY_FULLLINE])
+		</div>
+		<div class="grid_4">
 			<!--START: sortbylist-->
 			<div class="fancy-select wide">
 				<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle" style="float:right">
@@ -28,40 +52,15 @@
 				<i class="icon-caret-down"></i>
 			</div>
 			<!--END: sortbylist-->
-		</form>
-	</div>
-
-	<!--START: PAGING-->
-	<div class="grid_12">
-		<!-- [category_moreresults] -->
-		<div class="pagination">
-			<!--START: PREV-->
-				<a class="btn first" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">&laquo;</a>
-				<!-- [category_previouspage] -->
-			<!--END: PREV-->
-			<!--START: PAGES-->
-				<!--START: FIRST_PAGE-->
-					<a class="btn active first" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
-				<!--END: FIRST_PAGE-->
-				<!--START: PAGES_SELECTED-->
-					<a class="btn active" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
-				<!--END: PAGES_SELECTED-->
-				<!--START: PAGES_NOTSELECTED-->
-					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
-				<!--END: PAGES_NOTSELECTED-->
-				<!--START: LAST_PAGE-->
-					<a class="btn active last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
-				<!--END: LAST_PAGE-->
-			<!--END: PAGES-->
-			<!--START: NEXT-->
-				<a class="btn last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">&raquo;</a>
-				<!-- [category_nextpage] -->
-			<!--END: NEXT-->
 		</div>
+	</form>
+	<!--END: SEARCH_BAR-->
+
+	<div class="grid_10">
+		<!--START: NO_RESULTS-->
+			[Search_no-results]
+		<!--END: NO_RESULTS-->
 	</div>
-	<!--END: PAGING-->
-
-
 
 	<!--START: CATEGORY_ITEMS-->
 		<!--START: ITEM_TEMPLATE-->
@@ -87,13 +86,10 @@
 				<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
 			</div>
 		<!--END: ITEM_TEMPLATE-->
-	<!--END: CATEGORY_ITEMS-->	
-	
-	
-	
-	
+	<!--END: CATEGORY_ITEMS-->
+
 	<!--START: PAGING-->
-	<div class="grid_12">
+	<div class="grid_10">
 		<!-- [category_moreresults] -->
 		<div class="pagination">
 			<!--START: PREV-->
@@ -118,23 +114,11 @@
 				<a class="btn last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">&raquo;</a>
 				<!-- [category_nextpage] -->
 			<!--END: NEXT-->
+	
 		</div>
 	</div>
-	<!--END: PAGING-->	
-	
-	
-	
-	
-	
-	<tr>
-		<td colspan="5">&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="5"><img src="assets/spacer.gif" width="1" height="1" alt="" border="0"></td>
-	</tr>
+	<!--END: PAGING-->
+
 	<!--START: CATEGORY_FOOTER-->
-	<tr>
-		<td>[CONTENT]</td>
-	</tr>
+		[CONTENT]
 	<!--END: CATEGORY_FOOTER-->
-</table>
