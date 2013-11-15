@@ -5,6 +5,14 @@ function buySAFEOnClick(wantsbond) {
 	document.location.href='view_cart.asp?wantsbond=' + wantsbond;
 }
 
+// Standish Stuff - Taylor
+
+// Check for placeholder attribute support
+jQuery.support.placeholder = (function(){
+	var i = document.createElement('input');
+	return 'placeholder' in i;
+})();
+
 jQuery(function(){
 	// Fix [OPTIONS] logic to deal with [OPTION]
 	jQuery.each( jQuery('.cart_item'), function( i, v ){
@@ -24,7 +32,16 @@ jQuery(function(){
 			}
 		}
 	});
+	
+	// Remove zip helper text if placeholder support is present
+	if( jQuery.support.placeholder ) {
+		jQuery('.zip_helper_text').remove();
+	}
 });
+
+
+
+
 </script>
 
 
@@ -99,7 +116,7 @@ jQuery(function(){
 				<i class="icon-reload"></i>
 			</div>
 			<div class="cart_col3">
-				<div class="price">[ITEM_PRICE]</div>
+				<!-- <div class="price">[ITEM_PRICE]</div> --><!--  Price before qty -->
 				<div class="price">[ITEM_SUBTOTAL]</div>
 				<a href="#" onClick="document.recalculate.qtyitemnum.value=0;document.recalculate.submit();">Remove</a>
 			</div>
@@ -109,17 +126,20 @@ jQuery(function(){
 
 
 	</div><!-- .cart-items -->
+	<br />
 	<a class="button standishgray" style="color:white;" href="[continue_url]"><span class="add-on-left"><i class="icon-arrow-left"></i></span>Continue Shopping</a>
 	<!-- <button class="standish-green"><span class="add-on-left"><i class="icon-save"></i></span>Save for Later</button> -->
 <!-- 	<input type="submit" name="Add" value="[shoppingcart_updatecart]" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit2"> -->
-	<button class="gainsboro" onclick="document.recalculate.submit();"><span class="add-on-left"><i class="icon-repeat"></i></span>Update Cart</button>
+	<button class="gainsboro" style="margin-left: 225px;" onclick="document.recalculate.submit();"><span class="add-on-left"><i class="icon-repeat"></i></span>Update Cart</button>
+	<br />
+	<br />
 </div>
 <!-- End of the left side -->
 
 <!-- The right side -->
 <div class="grid_5">
-	<div class="total lightgray">
-		<p>Subtotal<span>[CARTSUBTOTAL]</span></p>
+	<div class="total lightgray" style="border-radius: 3px;">
+<!-- 		<p>Subtotal<span>[CARTSUBTOTAL]</span></p> -->
 
 		<!--START: BUYSAFE_CONTROL-->
 			<!--START: BUYSAFE_LEARNMORE-->
@@ -132,68 +152,78 @@ jQuery(function(){
 		<!--END: BUYSAFE_CONTROL-->
 
 		<!--START: DISCOUNTS-->
-			[checkout1_discounts]
-			[DISCOUNTS]
+			<hr />
+			<p>[checkout1_discounts]</p>
+			<p>[DISCOUNTS]</p>
+			<hr />
 		<!--END: DISCOUNTS-->
-
-		<p><strong>[shoppingcart_total]</strong><span class="bold">[CARTTOTAL]</span></p>
-		<p>[viewcart_total-note]</p>
-
+		
+		<!-- [shoppingcart_total] -->
+		<div class="subtotal white" style="padding: 10px 30px; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
+			<p style="text-align: center; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ............................. <span class="bold">[CARTTOTAL]</span></p>
+		</div>
+		<p style="text-align: center;">[viewcart_total-note]</p><hr />
 
 		<!--START: ShipQuote-->
-			<strong>[viewcart_shipping-header]</strong>
-			<input type="text" name="shipping_zip" size="14" value="[shipping_zip]" class="txtBoxStyle" id="Text3">
-			<input type="button" value="Go!" class="btn" onClick="document.shipquote.shipping_zip.value=document.recalculate.shipping_zip.value;document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4">
-			[viewcart_shipping-message]
+		<div style="text-align: center;">
+			<p class="bold" style="text-align: center; font-size: 18px; margin-bottom: 5px; margin-top: 28px;">[viewcart_shipping-header]</p>
+			<input type="text" name="shipping_zip" size="10" value="[shipping_zip]" class="txtBoxStyle white" id="Text3" style="position: relative;
+top: 2px;" placeholder="Zip Code">
+			<input type="button" value="Go!" class="btn" onClick="document.shipquote.shipping_zip.value=document.recalculate.shipping_zip.value;document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4"><br />
+			<span class="zip_helper_text">[viewcart_shipping-message]</span>
 			<!--START: viewcart_ship-->
-			[shipping_city] [shipping_state] [shipping_zip]
-					<select class="txtBoxStyle">
+				<p>[shipping_city] [shipping_state] [shipping_zip]</p>
+				<div class="fancy-select" style="width: 290px; background: white;">
+					<select class="txtBoxStyle" style="width: 290px; left: 0;">
 						<!--START: Shippers-->
 						<option><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</option>
 						<!--END: Shippers-->
 					</select>
-					<input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button5" name="Button5">
+					<i class="icon-caret-down"></i>
+				</div>
+				<!-- <input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button5" name="Button5"> -->
 			<!--END: viewcart_ship-->
+			<br />
+			<hr />
+			<br />
+		</div>
 		<!--END: ShipQuote-->
 
+		<!--START: ShipQuoteInternational-->
+			<strong>[viewcart_shipping-header]</strong>
+			<script type="text/javascript" src="state_countryjs.asp"></script>
+			<script>
+				function get_Element(i)
+				{
+					return document.getElementById(i) || document.getElementsByName(i).item(0);
+				}								
+				function getInternationalQuote()
+				{
+					var strAction = "shipquote.asp?shipping_country=" + get_Element("shipping_country").value;
+					strAction = strAction + "&shipping_state=" + get_Element("shipping_state").value;
+					document.shipquote.action = strAction;
+					
+					document.shipquote.shipping_zip.value = document.recalculate.shipping_zip.value
+					document.shipquote.submit();
+				}
+			</script>
+			<select name="shipping_country" onChange="this.form.shipping_zip.value='';populateState('shipping_state','shipping_country');" class="txtBoxStyle" id="shipping_country"></select>
+			<span><select id="shipping_state" onChange="this.form.shipping_zip.value='';" name="shipping_state" class="txtBoxStyle"></select></span>
+			<input type="text" name="shipping_zip" size="14" value="[shipping_zip]" class="txtBoxStyle" id="shipping_zip">
+			<input type="button" value="Go!" class="btn" onClick="getInternationalQuote();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4" ID="Button1">
+			[viewcart_shipping-message]
+		<!--START: viewcart_ship-->
+		[shipping_city] [shipping_state] [shipping_zip]
+				<select class="txtBoxStyle" ID="Select1" NAME="Select1">
+					<!--START: Shippers-->
+					<option><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</option>
+					<!--END: Shippers-->
+				</select>
+				<input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button2" name="Button5">
+		<!--END: viewcart_ship-->
+		<!--END: ShipQuoteInternational-->
 
-
-					<!--START: ShipQuoteInternational-->
-						<strong>[viewcart_shipping-header]</strong>
-						<script type="text/javascript" src="state_countryjs.asp"></script>
-						<script>
-							function get_Element(i)
-							{
-								return document.getElementById(i) || document.getElementsByName(i).item(0);
-							}								
-							function getInternationalQuote()
-							{
-								var strAction = "shipquote.asp?shipping_country=" + get_Element("shipping_country").value;
-								strAction = strAction + "&shipping_state=" + get_Element("shipping_state").value;
-								document.shipquote.action = strAction;
-								
-								document.shipquote.shipping_zip.value = document.recalculate.shipping_zip.value
-								document.shipquote.submit();
-							}
-						</script>
-						<select name="shipping_country" onChange="this.form.shipping_zip.value='';populateState('shipping_state','shipping_country');" class="txtBoxStyle" id="shipping_country"></select>
-						<span><select id="shipping_state" onChange="this.form.shipping_zip.value='';" name="shipping_state" class="txtBoxStyle"></select></span>
-						<input type="text" name="shipping_zip" size="14" value="[shipping_zip]" class="txtBoxStyle" id="shipping_zip">
-						<input type="button" value="Go!" class="btn" onClick="getInternationalQuote();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4" ID="Button1">
-						[viewcart_shipping-message]
-					<!--START: viewcart_ship-->
-					[shipping_city] [shipping_state] [shipping_zip]
-							<select class="txtBoxStyle" ID="Select1" NAME="Select1">
-								<!--START: Shippers-->
-								<option><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</option>
-								<!--END: Shippers-->
-							</select>
-							<input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button2" name="Button5">
-					<!--END: viewcart_ship-->
-					<!--END: ShipQuoteInternational-->
-
-					<!--START: savecart--><input type="button" value="[viewcart_save-cart]" onclick="document.location.href='myaccount.asp?action=save_cart';" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button3" name="Button6"><!--END: savecart-->
-
+		<!--START: savecart--><input type="button" value="[viewcart_save-cart]" onclick="document.location.href='myaccount.asp?action=save_cart';" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button3" name="Button6"><!--END: savecart-->
 
 
 		<!--START: INTERNATIONAL_CHECKOUT-->
@@ -278,16 +308,18 @@ jQuery(function(){
 	
 	</form>
 
+		<!-- [viewcart_checkout-button] -->
+		<!-- onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" -->
+		<input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large" id="Button7" name="Button7">
 
-		<input type="button" onclick="window.location='checkout.asp?step=1'" value="[viewcart_checkout-button]" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button7" name="Button7">
-
-		<button class="coral large" onclick="window.location='checkout.asp?step=1'">Proceed to Secure Checkout</button>
+		<!-- <button class="coral large" onclick="window.location='checkout.asp?step=1'"></button> -->
 	</div>
 </div>
 <!-- End of the Right Side -->
 
 <!-- Coupon Codes -->
 <div class="grid_12 coupon">
+	<br />
 	<!--START: apply_coupon-->
 	Apply an Order Code: 
 	<strong>[viewcart_coupon-header]</strong>
@@ -297,6 +329,8 @@ jQuery(function(){
 	<!--END: apply_coupon-->
 
 	<button class="standishgreen">APPLY</button>
+	<br />
+	<br />
 </div>
 <!-- End of Coupon Codes -->
 

@@ -526,8 +526,7 @@ jQuery( function(){
 						<!--END: addtocart-->
 						<div class="option-row last">
 							<label>
-								<span>Availability: </span>Usually Ships<br /> in 2-3 Business Days
-								
+								<span>Availability: </span><span class="availability">Usually Ships<br /> in 2-3 Business Days</span>
 							</label>
 							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
 							<div class="clearfix"></div>
@@ -893,31 +892,49 @@ jQuery( function(){
 
 <!-- CUSTOM PRODUCT FIELD SETUP HACKS -->
 <!--START: extra_field_2-->
-<div class="hidden field2" field2="[extra_field_2]"></div>
+<div class="hidden field2" data-field2="[extra_field_2]"></div>
 <!--END: extra_field_2-->
+<!--START: extra_field_3-->
+<div class="hidden field3" data-field3="[extra_field_3]"></div>
+<!--END: extra_field_3-->
 <!--START: extra_field_7-->
-<div class="hidden field7" field7="[extra_field_7]"></div>
+<div class="hidden field7" data-field7="[extra_field_7]"></div>
 <!--END: extra_field_7-->
 <!--START: extra_field_8-->
-<div class="hidden field8" field8="[extra_field_8]"></div>
+<div class="hidden field8" data-field8="[extra_field_8]"></div>
 <!--END: extra_field_8-->
+<!--START: extra_field_9-->
+<div class="hidden field9" data-field9="[extra_field_9]"></div>
+<!--END: extra_field_9-->
+<!--START: extra_field_10-->
+<div class="hidden field10" data-field10="[extra_field_10]"></div>
+<!--END: extra_field_10-->
 
 <script>
 jQuery(function(){
 	// Brochure Link
-	var brochure = jQuery( '.field2' ).attr( 'field2' );
+	var brochure = jQuery( '.field2' ).data( 'field2' );
 	var brochureLink = jQuery( '.brochure-download a' );
 	if( brochure !== '' ){
 		brochureLink.text( 'Download Brochure' ).attr( 'href', brochure );
 	}
+
+	// Availability Text
+	var availability = jQuery( '.field3' ).data( 'field3' );
+	var availabilityText = jQuery( '.availability' );
+	if( availability !== '' ){
+		availabilityText.text( availability );
+	}
+
 	// Product Details List
-	var details = jQuery( '.field7' ).attr( 'field7' );
+	var details = jQuery( '.field7' ).data( 'field7' );
 	var $detailsList = jQuery( '.details-list' );
 	jQuery.each( details.split( '\n' ), function( i, v ){
 		$detailsList.append( '<li><span>' + v + '</li></span>' );
 	});
+
 	// Badges
-	var badges = jQuery( '.field8' ).attr( 'field8' );
+	var badges = jQuery( '.field8' ).data( 'field8' );
 	var $badges = jQuery( '.badges-list' );
 	var badgetext = {
 		'free-shipping': 'Free Shipping',
@@ -942,6 +959,27 @@ jQuery(function(){
 			$badges.append( '<div class="badge badge-' + v + '"><i></i><div class="badge-text">' + badgetext[v] + '</div></div>' );
 		}
 	});
+
+	// Field 9 - Tweet/SocialMedia
+	var tweet_text = jQuery( '.field9' ).data( 'field9' );
+	console.log( 'tweet: ' + tweet_text );
+/*
+	var $detailsList = jQuery( '.details-list' );
+	jQuery.each( details.split( '\n' ), function( i, v ){
+		$detailsList.append( '<li><span>' + v + '</li></span>' );
+	});
+*/
+
+	// Field 10 - Video
+	var video_code = jQuery( '.field10' ).data( 'field10' );
+	console.log( 'video code: ' + video_code );
+/*
+	var $detailsList = jQuery( '.details-list' );
+	jQuery.each( details.split( '\n' ), function( i, v ){
+		$detailsList.append( '<li><span>' + v + '</li></span>' );
+	});
+*/
+
 });
 </script>
 
