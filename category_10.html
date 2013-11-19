@@ -1,0 +1,248 @@
+<!-- Template: category_0.html -->
+<div class="template" style="display:none" data-template="category"></div>
+
+<script>
+jQuery( function($) {
+	jQuery('.productContainer').remove();
+	
+	// Adjust left side column height - right-side margin left is a better solution
+	// console.log( jQuery('.main_content').height() );
+	// jQuery('.left-bar').css( 'min-height', jQuery('.main_content').height() );
+	$selected = jQuery('.selected');
+	if( $selected.text() === "1" ) {
+	console.log('this one');
+		$selected.addClass('first');
+	}
+	$pagination_links = jQuery('.pagination a');
+	if( $pagination_links.last().hasClass('active') ) {
+		$pagination_links.last().addClass('last');
+	}
+	
+});
+</script>
+
+<div class="right-side">
+
+	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
+		<!--START: BODY_HEADER-->
+			<!-- [CATEGORY_FULLLINE] -->
+		<!--END: BODY_HEADER-->
+		<!-- <h1 class="page_headers">[categoryname]</h1> -->
+		<!--START: CATEGORY_HEADER-->
+			<div id="categoryHeader" class="data grid_10">[CONTENT]</div>
+		<!--END: CATEGORY_HEADER--> 
+		<!--START: SUB_CATEGORIES-->
+			<!-- <div class="titles" colspan="5">&nbsp;[category_Header-subcategories]</div> -->
+			<h3>[category_Header-subcategories]</h3>
+			<!--START: SUB_CATEGORIES_FORMAT-->
+				<ul>
+				<!-- SubCat Image appears to be unused -->
+				<!--START: SUB_CATEGORY_IMAGE-->
+					<a href="view_category.asp?cat=[CATID]"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" border="0" /></a>
+				<!--END: SUB_CATEGORY_IMAGE-->
+	
+				<!--START: SUB_CATEGORY_NAME-->
+					<li><a href="view_category.asp?cat=[CATID]">[SUB_CATEGORY_NAME]</a></li>
+				<!--START: SUB_CATEGORY_NAME-->
+				</ul>
+				
+				<!-- <p>[SUB_CATEGORY_DESCRIPTION]</p> -->
+	
+			<!--END: SUB_CATEGORIES_FORMAT-->
+		<!--END: SUB_CATEGORIES-->
+	
+		<!--START: FEATURE_MENU-->
+			<div class="titles">[category_Header-specials]</div>
+			<!--START: FEATURE_ITEMS-->
+				<!--START: FEATURE_ITEM_TEMPLATE_0-->
+					<!--START: product_review-->
+						<!--START: product_review_average-->
+							<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+							<!-- <div class="item">[review_count] Review(s)</div> -->
+						<!--END: product_review_average-->
+					<!--END: product_review-->
+					<div class="grid_2 listing">
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+						<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price">[product_yourprice] [ITEMPRICE]</p>
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+							<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+						<!--END: SALEPRICE-->
+						<!-- <button>Add to Cart</button> -->
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+					</div>
+				<!--END: FEATURE_ITEM_TEMPLATE_0-->
+			<!--END: FEATURE_ITEMS-->
+		<!--END: FEATURE_MENU-->
+	
+		<!--START: catFilterMainBlock--> 
+			<!-- filter block starts here-->
+		
+			<!--START: catFilter-->
+				[category_Header-Filters]
+				<!--START: catFilterCrumb--> 
+				: 
+					<!--START: catFilterCrumbItem--> 
+						<a href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a> 
+					<!--END: catFilterCrumbItem--> 
+				<!--END: catFilterCrumb-->
+				<!--START: catFilterRemoveLink--> 
+					<a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a> 
+				<!--END: catFilterRemoveLink-->
+			<!--END: catFilter-->
+		
+		
+		
+			<div class="grid_10">
+				<!--START: catFilter_Filter-->
+				<!-- the filter title can be outside: [catFilterName]--> 
+					<!-- Use this block if you want to show filters as a list--> 
+					
+					<!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
+		
+					<div class="fancy-select wide">
+						<select name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
+							<option value="">Filter by [catFilterName]</option> 
+							<!--START: catFilter_Filter_Item--> 
+							<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
+							<!--END: catFilter_Filter_Item--> 
+						</select>
+						<i class="icon-caret-down"></i>
+					</div> &nbsp;
+					<!--------------------------------------------------------->
+				<!--END: catFilter_Filter-->
+			</div>
+		
+		
+		
+			<input type="hidden" name="hdnCatFilter" id="hdnCatFilter" value="[catFilter]" />
+			<script type="text/javascript">
+				function setCatFilter(strFilter, objForm, removeSubsequent)
+				{
+					if (removeSubsequent)
+					{
+						//alert(strFilter);
+						objForm.hdnCatFilter.value = strFilter;
+					}
+					else
+					{
+						objForm.hdnCatFilter.value = objForm.hdnCatFilter.value + '@' + strFilter;
+					}
+					//alert(objForm.hdnCatFilter.value);
+					objForm.submit();
+				}
+				function removeCatFilter()
+				{
+					var objForm = document.frmsortby;
+					objForm.hdnCatFilter.value = "";
+					objForm.submit();
+				}
+			</script>
+			<!-- filter block ends here--> 
+		<!--END: catFilterMainBlock-->
+	
+		<!--START: ITEMS-->
+			<!-- <div class="titles">&nbsp;[category_Header-products] (Total Items: [productnumber])</div> -->
+	
+	
+	
+	
+	<!-- We're using the other filters above instead -->
+	
+	<!-- 		<div class="grid_10"> -->
+				<!--START: sortbylist-->
+	<!--
+				<div class="fancy-select wide">
+					<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle" style="float:right">
+						[sortbylist]
+					</select>
+					<i class="icon-caret-down"></i>
+				</div>
+	-->
+				<!--END: sortbylist-->
+	<!-- 		</div> -->
+	
+	
+	
+	
+			<!--START: UNDOVIEWALL-->
+				<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
+			<!--END: UNDOVIEWALL-->
+	
+			<!--START: CATEGORY_ITEMS-->
+	
+				<!--START: ITEM_TEMPLATE_0-->
+					<!--START: product_review-->
+						<!--START: product_review_average-->
+							<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+							<!-- <div class="item">[review_count] Review(s)</div> -->
+						<!--END: product_review_average-->
+					<!--END: product_review-->
+					<div class="grid_2 listing">
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+						<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price">[product_yourprice] [ITEMPRICE]</p>
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+							<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+						<!--END: SALEPRICE-->
+						<!-- <button>Add to Cart</button> -->
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+					</div>
+				<!--END: ITEM_TEMPLATE_0--> 
+			<!--END: CATEGORY_ITEMS-->
+	
+			<!--START: CATEGORY_FOOTER-->
+				<div class="grid_10">[CONTENT]</div>
+			<!--END: CATEGORY_FOOTER-->
+	</form>
+
+</div>
+
+	<!--START: PAGING-->
+	<div class="grid_12">
+		<!-- [category_moreresults] -->
+		<div class="pagination">
+			<!--START: PREV-->
+				<a class="btn first" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">&laquo;</a>
+				<!-- [category_previouspage] -->
+			<!--END: PREV-->
+			<!--START: PAGES--> 
+				<!--START: FIRST_PAGE--> 
+					<a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a>
+				<!--END: FIRST_PAGE--> 
+				<!--START: PAGES_SELECTED--> 
+					<a class="btn active selected" href="#">PAGE</a>
+				<!--END: PAGES_SELECTED--> 
+				<!--START: PAGES_NOTSELECTED--> 
+					<a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+				<!--END: PAGES_NOTSELECTED--> 
+				<!--START: LAST_PAGE--> 
+					<a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+				<!--END: LAST_PAGE--> 
+			<!--END: PAGES--> 
+			<!--START: NEXT--> 
+				<a class="btn last" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">&raquo;</a>
+				<!-- [category_nextpage] -->
+				<div class="clearboth"></div>
+				<a href="view_category.asp?viewall=1&cat=[catid]">View All</a>
+			<!--END: NEXT-->
+		</div>
+	</div>
+	<!--END: PAGING-->              
+
+	<!--START: UNDOVIEWALL-->
+		<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
+	<!--END: UNDOVIEWALL-->
+
+<!--END: ITEMS-->
+

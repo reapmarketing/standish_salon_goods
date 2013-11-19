@@ -545,7 +545,13 @@ jQuery( function(){
 			<div class="product-details">
 				<h4>Product Details</h4>
 				<div class="brochure-download"><a href="#catalogDownload">Download Catalog</a>&nbsp;<i class="icon-cloud-download"></i></div>
-				<ul class="details-list"></ul>
+				<ul class="details-list">
+					<!--START: PRODUCT_FEATURES_BLOCK-->
+						<!--START: PRODUCT_FEATURES-->
+							<li>[product_feature_name]</li>
+						<!--END: PRODUCT_FEATURES-->
+					<!--END: PRODUCT_FEATURES_BLOCK-->
+				</ul>
 			</div>
 		
 			<div itemprop="description" class="product-description">
@@ -657,9 +663,6 @@ jQuery( function(){
 		
 		</div>
 		<!-- End of the Right Side -->
-
-
-
 
 
 
@@ -812,15 +815,9 @@ jQuery( function(){
 				<strong>[product_extrafield12]</strong> [extra_field_12]
 			<!--END: extra_field_12--> 
 			<!--START: extra_field_13-->
-				<strong>[product_extrafield13]</strong> [extra_field_13]
+				<!-- <strong>[product_extrafield13]</strong> [extra_field_13] -->
 			<!--END: extra_field_13-->
 		<!--END: extrafields-->
-
-		<!--START: PRODUCT_FEATURES_BLOCK-->
-			<!--START: PRODUCT_FEATURES-->
-				<!-- <li>[product_feature_name]</li> -->
-			<!--END: PRODUCT_FEATURES-->
-		<!--END: PRODUCT_FEATURES_BLOCK-->
 
 		<!--START: qa-->
 			<a name="qa"></a>
@@ -929,13 +926,17 @@ jQuery(function(){
 	// Product Details List
 	var details = jQuery( '.field7' ).data( 'field7' );
 	var $detailsList = jQuery( '.details-list' );
-	jQuery.each( details.split( '\n' ), function( i, v ){
-		$detailsList.append( '<li><span>' + v + '</li></span>' );
-	});
+	if( details ){
+		$detailsList.find( 'li' ).remove();
+		jQuery.each( details.split( '\n' ), function( i, v ){
+			$detailsList.append( '<li><span>' + v + '</li></span>' );
+		});
+	}
 
 	// Badges
 	var badges = jQuery( '.field8' ).data( 'field8' );
-	var $badges = jQuery( '.badges-list' );
+	var $badges = jQuery( '.badges' );
+	var $badges_list = jQuery( '.badges-list' );
 	var badgetext = {
 		'free-shipping': 'Free Shipping',
 		'fire-retardant': 'Fire Retardant',
@@ -954,11 +955,15 @@ jQuery(function(){
 		'double-stitched': 'Double Stitching',
 		'inspected': 'Guaranteed To Pass Inspection'
 	}
-	jQuery.each( badges.split( '\n' ), function( i, v ){
-		if( typeof( badgetext[v] ) != 'undefined' ){
-			$badges.append( '<div class="badge badge-' + v + '"><i></i><div class="badge-text">' + badgetext[v] + '</div></div>' );
-		}
-	});
+	if( badges ) {
+		jQuery.each( badges.split( '\n' ), function( i, v ) {
+			if( typeof( badgetext[v] ) != 'undefined' ){
+				$badges_list.append( '<div class="badge badge-' + v + '"><i></i><div class="badge-text">' + badgetext[v] + '</div></div>' );
+			}
+		});
+	} else {
+		$badges.remove();
+	}
 
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
