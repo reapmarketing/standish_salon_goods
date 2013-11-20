@@ -1037,7 +1037,7 @@ li.first.far a {
 .search {
   height: 40px;
   position: relative;
-  margin-bottom: 40px;
+/*   margin-bottom: 40px; */
 }
 .search input {
   font-size: 14px;
@@ -1060,9 +1060,11 @@ li.first.far a {
   position: absolute;
   right: 0;
 }
+/*
 .filter {
   margin-bottom: 40px;
 }
+*/
 .filter span {
   line-height: 36px;
   display: block;
@@ -1110,7 +1112,7 @@ li.first.far a {
 }
 .breadcrumbs {
   min-height: 40px;
-  margin-bottom: 40px;
+/*   margin-bottom: 40px; */
 }
 .cycle-slideshow {
   margin-bottom: 40px;
@@ -1794,4 +1796,9 @@ li.email {
 	clear: both;
 }
 
-
+.indent {
+	padding-left: 10px;
+}
+.hide {
+	display: none;
+}

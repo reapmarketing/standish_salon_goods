@@ -1,4 +1,4 @@
-<!-- Template: category_0.html -->
+<!-- Template: category_10.html -->
 <div class="template" style="display:none" data-template="category"></div>
 
 <script>
@@ -8,9 +8,10 @@ jQuery( function($) {
 	// Adjust left side column height - right-side margin left is a better solution
 	// console.log( jQuery('.main_content').height() );
 	// jQuery('.left-bar').css( 'min-height', jQuery('.main_content').height() );
+	
+	// Pagination helper
 	$selected = jQuery('.selected');
 	if( $selected.text() === "1" ) {
-	console.log('this one');
 		$selected.addClass('first');
 	}
 	$pagination_links = jQuery('.pagination a');
@@ -25,30 +26,31 @@ jQuery( function($) {
 
 	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
 		<!--START: BODY_HEADER-->
-			<!-- [CATEGORY_FULLLINE] -->
+		<div class="grid_10 cat_breadcrumbs">
+			[CATEGORY_FULLLINE]
+		</div>
 		<!--END: BODY_HEADER-->
 		<!-- <h1 class="page_headers">[categoryname]</h1> -->
 		<!--START: CATEGORY_HEADER-->
 			<div id="categoryHeader" class="data grid_10">[CONTENT]</div>
 		<!--END: CATEGORY_HEADER--> 
 		<!--START: SUB_CATEGORIES-->
+		<div class="grid_10 hide">
 			<!-- <div class="titles" colspan="5">&nbsp;[category_Header-subcategories]</div> -->
 			<h3>[category_Header-subcategories]</h3>
+			<ul>
 			<!--START: SUB_CATEGORIES_FORMAT-->
-				<ul>
 				<!-- SubCat Image appears to be unused -->
 				<!--START: SUB_CATEGORY_IMAGE-->
 					<a href="view_category.asp?cat=[CATID]"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" border="0" /></a>
 				<!--END: SUB_CATEGORY_IMAGE-->
-	
 				<!--START: SUB_CATEGORY_NAME-->
 					<li><a href="view_category.asp?cat=[CATID]">[SUB_CATEGORY_NAME]</a></li>
 				<!--START: SUB_CATEGORY_NAME-->
-				</ul>
-				
 				<!-- <p>[SUB_CATEGORY_DESCRIPTION]</p> -->
-	
 			<!--END: SUB_CATEGORIES_FORMAT-->
+			</ul>
+		</div>
 		<!--END: SUB_CATEGORIES-->
 	
 		<!--START: FEATURE_MENU-->
@@ -84,15 +86,14 @@ jQuery( function($) {
 			<!-- filter block starts here-->
 		
 			<!--START: catFilter-->
-				[category_Header-Filters]
+				[category_Header-Filters]: 
 				<!--START: catFilterCrumb--> 
-				: 
-					<!--START: catFilterCrumbItem--> 
-						<a href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a> 
-					<!--END: catFilterCrumbItem--> 
+					<!--START: catFilterCrumbItem-->
+						<a href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a>
+					<!--END: catFilterCrumbItem-->
 				<!--END: catFilterCrumb-->
-				<!--START: catFilterRemoveLink--> 
-					<a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a> 
+				<!--START: catFilterRemoveLink-->
+					<br /><a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a>
 				<!--END: catFilterRemoveLink-->
 			<!--END: catFilter-->
 		
@@ -234,11 +235,11 @@ jQuery( function($) {
 				<a class="btn last" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">&raquo;</a>
 				<!-- [category_nextpage] -->
 				<div class="clearboth"></div>
-				<a href="view_category.asp?viewall=1&cat=[catid]">View All</a>
+				<!-- <a href="view_category.asp?viewall=1&cat=[catid]">View All</a> -->
 			<!--END: NEXT-->
 		</div>
 	</div>
-	<!--END: PAGING-->              
+	<!--END: PAGING-->
 
 	<!--START: UNDOVIEWALL-->
 		<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->

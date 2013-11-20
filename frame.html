@@ -27,15 +27,37 @@
 -->
 	
 	<script>
-		jQuery(function(){
-			console.log( jQuery('.template').first().data('template') );
-			template_slug = jQuery('.template').data('template');
-			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' ){
-				jQuery('.left-bar').show();
+		jQuery( function($) {
+
+			// Template Name Finder/Helper
+			template_slug = $('.template').first().data('template');
+			console.log( 'Template: ' + template_slug );
+
+			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' ) {
+
+				// Show left bar on select pages... Perhaps a bad idea for SEO
+				$('.left-bar').show();
+
+				// Pagination corner helpers
+				$selected = $('.selected');
+				if( $selected.first().text() === "1" ) {
+					$selected.addClass('first');
+				}
+
+				$pagination_blocks = $('.pagination');
+
+				$pagination_blocks.each( function( i , v ) {
+					$pagination_links = $(v).find( 'a' );
+					if( $pagination_links.last().hasClass('active') ) {
+						$pagination_links.last().addClass('last');
+					}
+				});
+
 			}
-			
-			// Remove clears
+
+			// Remove 3DCart clears (use the 'clearfix' class instead)
 			$('div[style*=both]').remove();
+
 		});
 	</script>
 	
@@ -260,6 +282,8 @@
 			-->
 			<!--END: FRAME_SEARCH-->
 
+			<div class="filters"></div>
+
 			<!--START: FRAME_MANUFACTURER-->
 				<!--[frame_manufacturer]-->
 				<div class="allcaps serif black-text bold">Brand</div>
@@ -279,7 +303,7 @@
 					<!--END: CATEGORY_FORMAT-->
 					
 					<!--START: SUB_CATEGORY_FORMAT-->
-						<li><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
+						<li class="indent"><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
 					<!--END: SUB_CATEGORY_FORMAT-->
 					</ul>
 				<!--END: CATEGORIES-->
@@ -306,9 +330,13 @@
 			MIDDLE
 	<!-- End of Main Content -->
 
+	<div class="clearboth"></div>
+
 	<h2>Sidebar Blocks</h2>
 
-                        <!--START: RIGHT BAR-->
+			<!--START: RIGHT BAR-->
+			Top Sellers
+
                         <td valign="top" align="center" width="12"><img src="assets/templates/[template]/images/spacer.gif" width="12" height="1" alt="" /></td>
                         <td valign="top" width="190" class="frame"><div class="column" id="column2">
                             <!--START: RIGHT_BAR_BLOCKS-->
@@ -394,6 +422,9 @@
                             </table>
                             <div><img src="assets/templates/[template]/images/spacer.gif" width="1" height="15" alt="" /></div>
                             <!--END: TOP_SELLERS_BLOCK-->
+
+							New Releases
+
                             <!--START: NEW_RELEASES_BLOCK-->
                             <table width="190" cellpadding="0" cellspacing="0" border="0">
                               <tr>

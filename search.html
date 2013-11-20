@@ -1,42 +1,52 @@
 <!-- Template: search.html -->
 <div class="template" style="display:none" data-template="search"></div>
 
-<div class="grid_6 breadcrumbs">
-	<span class="allcaps">
-	<!--START: BODY_HEADER-->
-		<a href="">[frame_breadcrumb-home]</a> > <a href="search.asp?keyword=[keyword]">[keyword]</a>
-	<!--END: BODY_HEADER-->
-	</span>
-</div>
-
-<div class="grid_4 search">
-	<form method="get" name="searchForm" action="search.asp">
-		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
-		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-	</form>
-</div>
+<div class="right-side">
+	
+	<div class="grid_6 breadcrumbs">
+		<!--START: BODY_HEADER-->
+			<a href="">[frame_breadcrumb-home]</a> / <a href="search.asp?keyword=[keyword]">[keyword]</a>
+		<!--END: BODY_HEADER-->
+	</div>
+	
+	<div class="grid_4 search">
+		<form method="get" name="searchForm" action="search.asp">
+			<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+			<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
+		</form>
+	</div>
 
 	<!--START: CATEGORY_HEADER-->
 		[CONTENT]
 	<!--END: CATEGORY_HEADER-->
-	
-	<!--START: SEARCH_PAGES-->
-	[Search_Header-pages]
-		<!--START: SEARCH_PAGES_FORMAT-->
-			<a href="[page_link]">[page_name]</a>
-			<p>[page_content]</p>
-		<!--END: SEARCH_PAGES_FORMAT-->
-		<!--START: SEARCH_PAGES_MORERESULTS-->
-			<a href="search.asp?keyword=[keyword_search]&amp;stype=1">[Search_pages-moreresults]</a>
-		<!--END: SEARCH_PAGES_MORERESULTS-->
-	<!--END: SEARCH_PAGES-->
 
-	<!--START: SEARCH_CATEGORIES-->
-		[Search_Header-categories]
-		<!--START: SEARCH_CATEGORIES_FORMAT-->
-			<a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;catid=[thiscatid]">[cat_name] ([cat_items])</a>
-		<!--END: SEARCH_CATEGORIES_FORMAT-->
-	<!--END: SEARCH_CATEGORIES-->
+	<div class="grid_10">
+		<!--START: NO_RESULTS-->
+			[Search_no-results]
+		<!--END: NO_RESULTS-->
+	</div>
+
+	<div class="grid_10">
+		<!--START: SEARCH_PAGES-->
+		<h4>[Search_Header-pages]</h4>
+			<!--START: SEARCH_PAGES_FORMAT-->
+				<a href="[page_link]">[page_name]</a>
+				<p>[page_content]</p>
+			<!--END: SEARCH_PAGES_FORMAT-->
+			<!--START: SEARCH_PAGES_MORERESULTS-->
+				<a href="search.asp?keyword=[keyword_search]&amp;stype=1">[Search_pages-moreresults]</a>
+			<!--END: SEARCH_PAGES_MORERESULTS-->
+		<!--END: SEARCH_PAGES-->
+	</div>
+
+	<div class="grid_10">
+		<!--START: SEARCH_CATEGORIES-->
+			<h4>[Search_Header-categories]</h4>
+			<!--START: SEARCH_CATEGORIES_FORMAT-->
+				<a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;catid=[thiscatid]">[cat_name] ([cat_items])</a>
+			<!--END: SEARCH_CATEGORIES_FORMAT-->
+		<!--END: SEARCH_CATEGORIES-->
+	</div>
 
 	<!--START: SEARCH_BAR-->
 	<form action="search.asp?keyword=[keyword_search]&amp;catid=[catid]" method="post" name="frmsortby">
@@ -56,11 +66,36 @@
 	</form>
 	<!--END: SEARCH_BAR-->
 
+	<!--START: PAGING-->
 	<div class="grid_10">
-		<!--START: NO_RESULTS-->
-			[Search_no-results]
-		<!--END: NO_RESULTS-->
+		<!-- [category_moreresults] -->
+		<div class="pagination">
+			<!--START: PREV-->
+				<a class="btn first" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">&laquo;</a>
+				<!-- [category_previouspage] -->
+			<!--END: PREV-->
+			<!--START: PAGES-->
+				<!--START: FIRST_PAGE-->
+					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE...</a>
+				<!--END: FIRST_PAGE-->
+				<!--START: PAGES_SELECTED-->
+					<a class="btn active selected" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+				<!--END: PAGES_SELECTED-->
+				<!--START: PAGES_NOTSELECTED-->
+					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+				<!--END: PAGES_NOTSELECTED-->
+				<!--START: LAST_PAGE-->
+					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">...PAGE</a>
+				<!--END: LAST_PAGE-->
+			<!--END: PAGES-->
+			<!--START: NEXT-->
+				<a class="btn last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">&raquo;</a>
+				<!-- [category_nextpage] -->
+			<!--END: NEXT-->
+	
+		</div>
 	</div>
+	<!--END: PAGING-->
 
 	<!--START: CATEGORY_ITEMS-->
 		<!--START: ITEM_TEMPLATE-->
@@ -98,16 +133,16 @@
 			<!--END: PREV-->
 			<!--START: PAGES-->
 				<!--START: FIRST_PAGE-->
-					<a class="btn active first" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE...</a>
 				<!--END: FIRST_PAGE-->
 				<!--START: PAGES_SELECTED-->
-					<a class="btn active" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn active selected" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
 				<!--END: PAGES_SELECTED-->
 				<!--START: PAGES_NOTSELECTED-->
 					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
 				<!--END: PAGES_NOTSELECTED-->
 				<!--START: LAST_PAGE-->
-					<a class="btn active last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">...PAGE</a>
 				<!--END: LAST_PAGE-->
 			<!--END: PAGES-->
 			<!--START: NEXT-->
@@ -122,3 +157,5 @@
 	<!--START: CATEGORY_FOOTER-->
 		[CONTENT]
 	<!--END: CATEGORY_FOOTER-->
+
+</div>
