@@ -11,13 +11,18 @@ jQuery( function() {
 	jQuery('.brochure-download a').on( 'click', function( e ) {
 		e.preventDefault();
 		vex.open({
-			content: '<p>Please provide your email address</p>',
+			// content: '<p>Please provide your email address</p>',
 			afterOpen: function() {
 				hbspt.forms.create({ 
 					portalId: '239485',
 					formId: '253a1f08-bebc-40c3-ab80-88ac7e518e74',
 					target: '.vex-content',
-					redirectUrl: jQuery( '.brochure-download a' ).attr('href')
+					redirectUrl: jQuery( '.brochure-download a' ).attr('href'),
+					onFormReady: function() {
+						if( !jQuery( '.vex-content .hs-input' ).length > 0 ) {
+							jQuery( '.vex-content .hs-button' ).click();
+						}
+					}
 				});
 			}
 		});
