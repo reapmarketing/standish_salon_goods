@@ -24,19 +24,19 @@ jQuery( function($) {
 
 <div class="right-side">
 
-	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
-		<!--START: BODY_HEADER-->
-		<div class="grid_6 cat_breadcrumbs">
-			[CATEGORY_FULLLINE]
-		</div>
+	<!--START: BODY_HEADER-->
+	<div class="grid_6 cat_breadcrumbs">
+		[CATEGORY_FULLLINE]
+	</div>
 
-		<div class="grid_4 search">
-			<form method="get" name="searchForm" action="search.asp">
-				<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
-				<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-			</form>
-		</div>
-		
+	<div class="grid_4 search">
+		<form method="get" name="searchForm" action="search.asp">
+			<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+			<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
+		</form>
+	</div>
+
+	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
 		<!--END: BODY_HEADER-->
 		<!-- <h1 class="page_headers">[categoryname]</h1> -->
 		<!--START: CATEGORY_HEADER-->
