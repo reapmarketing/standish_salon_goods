@@ -1,7 +1,27 @@
+<script src="/assets/templates/standish/scripts/vex.combined.min.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
+<link rel="stylesheet" href="/assets/templates/standish/style/vex.css" />
+<link rel="stylesheet" href="/assets/templates/standish/style/vex-theme-flat-attack.css" />
 
 <script type="text/javascript">
 
 jQuery( function() {
+
+	// Hubspot + Vex Popup form
+	jQuery('.brochure-download a').on( 'click', function( e ) {
+		e.preventDefault();
+		vex.open({
+			content: '<p>Please provide your email address</p>',
+			afterOpen: function() {
+				hbspt.forms.create({ 
+					portalId: '239485',
+					formId: '253a1f08-bebc-40c3-ab80-88ac7e518e74',
+					target: '.vex-content',
+					redirectUrl: jQuery( '.brochure-download a' ).attr('href')
+				});
+			}
+		});
+	});
 
 	// Brochure Link
 	var brochure = jQuery( '.field2' ).data( 'field2' );
@@ -627,7 +647,8 @@ jQuery( function() {
 		
 			<div class="product-details">
 				<h4>Product Details</h4>
-				<div class="brochure-download"><a href="#catalogDownload">Download Catalog</a>&nbsp;<i class="icon-cloud-download"></i></div>
+				<!-- Absolute link path here because the link is snorked up and used as the HubSpot form redirect -->
+				<div class="brochure-download"><a href="http://standishsalongoods.com/assets/images/brochure/standish-brochure.pdf">Download Catalog</a>&nbsp;<i class="icon-cloud-download"></i></div>
 				<ul class="details-list">
 					<!--START: PRODUCT_FEATURES_BLOCK-->
 						<!--START: PRODUCT_FEATURES-->

@@ -39,21 +39,21 @@
 		<!--END: SEARCH_PAGES-->
 	</div>
 
-	<div class="grid_10">
+	<div class="grid_10" style="margin-bottom: 10px">
 		<!--START: SEARCH_CATEGORIES-->
 			<h4>[Search_Header-categories]</h4>
 			<!--START: SEARCH_CATEGORIES_FORMAT-->
-				<a href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;catid=[thiscatid]">[cat_name] ([cat_items])</a>
+				<div style="float: left; margin: 4px 4px 8px 0"><a class="button" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;catid=[thiscatid]">[cat_name] ([cat_items])</a></div>
 			<!--END: SEARCH_CATEGORIES_FORMAT-->
 		<!--END: SEARCH_CATEGORIES-->
 	</div>
 
 	<!--START: SEARCH_BAR-->
 	<form action="search.asp?keyword=[keyword_search]&amp;catid=[catid]" method="post" name="frmsortby">
-		<div class="grid_6">
+		<div class="grid_8">
 			[Search_header] ([productnumber] Matches found [CATEGORY_FULLLINE])
 		</div>
-		<div class="grid_4">
+		<div class="grid_2">
 			<!--START: sortbylist-->
 			<div class="fancy-select wide">
 				<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle" style="float:right">

@@ -26,9 +26,17 @@ jQuery( function($) {
 
 	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
 		<!--START: BODY_HEADER-->
-		<div class="grid_10 cat_breadcrumbs">
+		<div class="grid_6 cat_breadcrumbs">
 			[CATEGORY_FULLLINE]
 		</div>
+
+		<div class="grid_4 search">
+			<form method="get" name="searchForm" action="search.asp">
+				<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+				<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
+			</form>
+		</div>
+		
 		<!--END: BODY_HEADER-->
 		<!-- <h1 class="page_headers">[categoryname]</h1> -->
 		<!--START: CATEGORY_HEADER-->
@@ -93,7 +101,7 @@ jQuery( function($) {
 					<!--END: catFilterCrumbItem-->
 				<!--END: catFilterCrumb-->
 				<!--START: catFilterRemoveLink-->
-					<br /><a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a>
+					<br /><br /><a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a>
 				<!--END: catFilterRemoveLink-->
 			<!--END: catFilter-->
 		
@@ -106,7 +114,7 @@ jQuery( function($) {
 					
 					<!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
 		
-					<div class="fancy-select wide">
+					<div class="fancy-select wide" style="margin-left: 10px">
 						<select name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
 							<option value="">Filter by [catFilterName]</option> 
 							<!--START: catFilter_Filter_Item--> 

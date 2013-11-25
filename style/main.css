@@ -597,10 +597,15 @@ strong {
   font-family: 'PT Sans', Arial, Helvetica, sans-serif;
 }
 a.button,
-a:link.button {
+a:link.button,
+a:visited.button {
   color: #FFF;
   text-decoration: none;
   padding: 5px 10px;
+}
+a:hover.button,
+a:active.button {
+	text-decoration: underline;
 }
 button,
 .button,
@@ -911,7 +916,7 @@ button.cart i {
 .cart-number {
   margin-left: 18px;
   background-color: #ffb79d;
-  padding: 13px 18px;
+  padding: 14px 18px;
   border-radius: 0px 3px 3px 0;
 }
 .navigation {
@@ -1791,6 +1796,17 @@ li.email {
 .fancy-select.wide select {
 	width: 210px;
 }
+
+body .vex.vex-theme-flat-attack .vex-content {
+	padding-bottom: 1em;
+}
+
+/* kludgy hack to fix contact page hubspot form... https://devstandishsalongoods.3dcartstores.com/contact-us.html */
+/*
+.hs-form .clearfix:after, .hs-form .field:after, .hs-form .hs-form-field:after {
+	display: inline !important;
+}
+*/
 
 .clearboth {
 	clear: both;

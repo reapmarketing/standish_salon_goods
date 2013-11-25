@@ -16,8 +16,15 @@
 	<script src="/assets/templates/standish/scripts/bundle.js"></script>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
 	<script src="/assets/templates/standish/scripts/hacks.js"></script>
-	<script src="assets/templates/common/js/utilities.js"></script>
+	<script src="/assets/templates/common/js/utilities.js"></script>
 	<script charset="utf-8" src="//js.hubspot.com/forms/current.js"></script>
+
+<!--Adobe Edge Runtime-->
+	<script type="text/javascript" charset="utf-8" src="/assets/templates/standish/scripts/TailoredStandishAnimation_edgePreload.js"></script>
+	<style>
+		.edgeLoad-taglines { visibility:hidden; }
+	</style>
+<!--Adobe Edge Runtime End-->
 
 	[META]
 
@@ -33,7 +40,7 @@
 			template_slug = $('.template').first().data('template');
 			console.log( 'Template: ' + template_slug );
 
-			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' ) {
+			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' || template_slug === 'extrapage' ) {
 
 				// Show left bar on select pages... Perhaps a bad idea for SEO
 				$('.left-bar').show();
@@ -81,11 +88,11 @@
 
 	<div class="header">
 		<div class="container_12">
-			<div class="grid_4">
+			<div class="grid_5">
 				<a href="/"><h2 class="logo">Standish Salon Furniture</h2></a>
 			</div>
-			<div class="grid_4">
-				<p> </p>
+			<div class="grid_3">
+				<div id="Stage" class="taglines" style="margin-top: 24px"></div>
 			</div>
 			<div class="grid_4">
 				<a href="/view_cart.asp"><button class="cart large"><i class="icon-shopping-cart"></i> Your Cart<span class="cart-number">[ITEMSINCART]</span></button></a>
@@ -97,9 +104,6 @@
 	<div class="navigation">
 		<div class="container_12">
 			<div class="main-navigation">
-
-
-
 				<ul class="nav-menu">
 					<li class="allcaps shop-menu"><a href="/">Shop Type</a>
 						<div class="column col1">
@@ -120,8 +124,7 @@
 						<li class="undefined"><a href="/salon-accessories.html">Accessories</a></li>
 						</ul>
 						</div>
-					
-					
+
 						<div class="column col2">
 						<ul class="sub-menu">
 						<li class="allcaps"><a href="/blow-dry-bar-equipment.html">Blow Dry Bar</a></li>
@@ -138,8 +141,7 @@
 						<li class="undefined"><a href="/spa-equipment-accessories.html">Spa Equipment</a></li>
 						</ul>
 						</div>
-					
-					
+
 						<div class="column col3">
 						<ul class="sub-menu">
 						<li class="allcaps"><a href="/salon-color-bar-equipment.html">Color Bar</a></li>
@@ -151,9 +153,9 @@
 						<li class="undefined"><a href="/salon-color-trays.html">Color Trays</a></li>
 						</ul>
 						</div>
-					
+
 					</li><li class="allcaps equipment-menu"><a href="/">Equipment</a>
-					
+
 						<div class="column col1">
 						<ul class="sub-menu">
 						<li class="allcaps"><a href="/salon-packages.html">PACKAGES</a></li>
@@ -240,12 +242,8 @@
 							<li class="undefined"><a href="/safe-secure.html">Safe & Secure</a></li>
 							<li class="undefined"><a href="/Standish_Salon_Goods_Client_Testimonials.html">Testimonials</a></li>
 						</ul>
-					</li><li class="allcaps"><a href="/contact-us.html">Contact</a></li><li class="allcaps"><a href="/blog.asp">Blog</a></li><li class="allcaps"><a href="/Catalog_ep_74-1.html">Catalog</a></li>
-					
+					</li><li class="allcaps"><a href="/contact-us.html">Contact</a></li><li class="first far"><a href="/blog.asp">Blog</a></li><li class="far"><a href="/Catalog_ep_74-1.html">Catalog</a></li>
 				</ul>
-
-				
-	
 			</div>
 		</div>
 	</div>

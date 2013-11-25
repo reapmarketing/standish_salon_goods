@@ -5,20 +5,24 @@
 jQuery( function(){
 	// [htmlpage] will only return "My Account" so this is a hack to fix it using the breadcrumbs.
 	// console.log( jQuery( '.data a' ).last().text() );
-	jQuery( '.page_headers' ).text( jQuery( '.data a' ).last().text() );
+	// jQuery( '.page_headers' ).text( jQuery( '.data a' ).last().text() );
 });
 </script>
 
-<!--START: BODY_HEADER-->
-	<div class="data"> [PAGE_FULLLINE] </div>
-	<h1 class="page_headers">[htmlpage]</h1>
-<!--END: BODY_HEADER-->
+<div class="right-side">
 
-<!--START: SUB_PAGES-->
-	<!--START: SUB_PAGES_FORMAT-->
-		<!-- This part is untested -->
-		<div class="data"> - <a href="infopage.asp?page=[id]&amp;extra=[extra]">[sub_pages_title]</a></div>
-	<!--END: SUB_PAGES_FORMAT-->
-<!--END: SUB_PAGES-->
+	<!--START: BODY_HEADER-->
+		<div class="data"> [PAGE_FULLLINE] </div>
+		<h1 class="page_headers">[htmlpage]</h1>
+	<!--END: BODY_HEADER-->
+	
+	<!--START: SUB_PAGES-->
+		<!--START: SUB_PAGES_FORMAT-->
+			<!-- This part is untested -->
+			<div class="data"> - <a href="infopage.asp?page=[id]&amp;extra=[extra]">[sub_pages_title]</a></div>
+		<!--END: SUB_PAGES_FORMAT-->
+	<!--END: SUB_PAGES-->
+	
+	[content]
 
-[content]
+</div><!-- .right-side -->

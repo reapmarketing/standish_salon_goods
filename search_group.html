@@ -1,21 +1,32 @@
 <!-- Template: search_group.html -->
 <div class="template" style="display:none" data-template="search_group"></div>
+
+<!-- This is very similar, but different from the category templates. The Category Template should be treated as the master, with changes carefully integrated here too. Pagination is unique to this template. -->
+
+<div class="right-side">
+
+	<!--START: BODY_HEADER-->
+	<div class="grid_6 cat_breadcrumbs">
+		[CATEGORY_FULLLINE]<br />
+	</div>
+	<div class="grid_4 search">
+		<form method="get" name="searchForm" action="search.asp">
+			<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+			<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
+		</form>
+	</div>
+	<!-- [Search_header] -->
+
+	<!--END: BODY_HEADER-->
 	
 	<!--START: MANUFACTURER_HEADER-->
 		<!--START: logo-->
-			<img src="[logo]" border="0">
+			<!-- <img src="[logo]" border="0"> -->
 		<!--END: logo-->
 		<!--START: header-->
-			[header]
+			<div id="categoryHeader" class="data grid_10">[header]</div>
 		<!--END: header-->
 	<!--END: MANUFACTURER_HEADER-->
-
-	<!-- [Search_header] -->
-
-	<!--START: BODY_HEADER-->
-		[CATEGORY_FULLLINE]<br />
-	<!--END: BODY_HEADER-->
-
 
 	<div class="grid_6" style="min-height: 36px">
 		[category_Header-products] (Total Items: [productnumber])
@@ -24,7 +35,7 @@
 	<div class="grid 4">
 		<form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
 			<!--START: sortbylist-->
-			<div class="fancy-select wide">
+			<div class="fancy-select wide" style="margin-right: 10px;">
 				<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle" style="float:right">
 					[sortbylist]
 				</select>
@@ -35,29 +46,29 @@
 	</div>
 
 	<!--START: PAGING-->
-	<div class="grid_12">
+	<div class="grid_10">
 		<!-- [category_moreresults] -->
 		<div class="pagination">
 			<!--START: PREV-->
-				<a class="btn first" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">&laquo;</a>
+				<a class="btn first" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=[prev]">&laquo;</a>
 				<!-- [category_previouspage] -->
 			<!--END: PREV-->
 			<!--START: PAGES-->
 				<!--START: FIRST_PAGE-->
-					<a class="btn active first" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search_groups.asp?keyword=[keyword]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=PAGE">PAGE...</a>
 				<!--END: FIRST_PAGE-->
 				<!--START: PAGES_SELECTED-->
-					<a class="btn active" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn active selected" href="#">PAGE</a>
 				<!--END: PAGES_SELECTED-->
 				<!--START: PAGES_NOTSELECTED-->
-					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=PAGE">PAGE</a>
 				<!--END: PAGES_NOTSELECTED-->
 				<!--START: LAST_PAGE-->
-					<a class="btn active last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=PAGE">...PAGE</a>
 				<!--END: LAST_PAGE-->
 			<!--END: PAGES-->
 			<!--START: NEXT-->
-				<a class="btn last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">&raquo;</a>
+				<a class="btn last" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=[next]">&raquo;</a>
 				<!-- [category_nextpage] -->
 			<!--END: NEXT-->
 		</div>
@@ -91,36 +102,36 @@
 	<!--END: CATEGORY_ITEMS-->	
 
 	<!--START: PAGING-->
-	<div class="grid_12">
+	<div class="grid_10">
 		<!-- [category_moreresults] -->
 		<div class="pagination">
 			<!--START: PREV-->
-				<a class="btn first" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[prev]&amp;catid=[catid]">&laquo;</a>
+				<a class="btn first" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=[prev]">&laquo;</a>
 				<!-- [category_previouspage] -->
 			<!--END: PREV-->
 			<!--START: PAGES-->
 				<!--START: FIRST_PAGE-->
-					<a class="btn active first" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search_groups.asp?keyword=[keyword]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=PAGE">PAGE...</a>
 				<!--END: FIRST_PAGE-->
 				<!--START: PAGES_SELECTED-->
-					<a class="btn active" href="search.asp?keyword=[keyword_search]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn active selected" href="#">PAGE</a>
 				<!--END: PAGES_SELECTED-->
 				<!--START: PAGES_NOTSELECTED-->
-					<a class="btn" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=PAGE">PAGE</a>
 				<!--END: PAGES_NOTSELECTED-->
 				<!--START: LAST_PAGE-->
-					<a class="btn active last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=PAGE&amp;catid=[catid]">PAGE</a>
+					<a class="btn" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=PAGE">...PAGE</a>
 				<!--END: LAST_PAGE-->
 			<!--END: PAGES-->
 			<!--START: NEXT-->
-				<a class="btn last" href="search.asp?keyword=[keyword_search]&amp;sortby=[sortby]&amp;page=[next]&amp;catid=[catid]">&raquo;</a>
+				<a class="btn last" href="search_groups.asp?keyword=[keyword]&amp;sortby=[sortby]&amp;manf=[manf]&amp;byprice=[byprice]&amp;page=[next]">&raquo;</a>
 				<!-- [category_nextpage] -->
 			<!--END: NEXT-->
 		</div>
 	</div>
-	<!--END: PAGING-->	
+	<!--END: PAGING-->
 
 	<!--START: CATEGORY_FOOTER-->
 		[CONTENT]
 	<!--END: CATEGORY_FOOTER-->
-</table>
+</div><!-- .right-side -->
