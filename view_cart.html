@@ -24,7 +24,7 @@ jQuery(function(){
 		if( itemText[1] ){
 			$itemName.text( itemText[0] );
 			$optionsList.html( itemText[1] );
-			console.log( itemText );
+			// console.log( itemText );
 		}
 		else{
 			if( $optionsList.text() === '[OPTIONS]' ){
@@ -80,7 +80,7 @@ jQuery(function(){
 	<div class="cart_items">
 		<div class="cart_items_header">
 			<div class='cart_col1'>Description</div>
-			<div class='cart_col2'>Quantity</div>
+			<div class='cart_col2'>Qty.</div>
 			<div class='cart_col3'>Price</div>
 			<div class='clear'></div>
 		</div>
@@ -89,9 +89,9 @@ jQuery(function(){
 		<div class="cart_item">
 			<div class='cart_col1'>
 				<!--START: itemthumbnail-->
-					<a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]" border="0" height="55" width="55"></a>
+					<a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=160&maxy=160" border="0" height="160" width="160"></a>
 				<!--END: itemthumbnail-->
-				<div class="bold serif coral-text"><a href="product.asp?itemid=[ITEM_CATALOGID]" class="item-name">[ITEM_NAME]</a></div>
+				<div class="bold serif coral-text" style="margin-bottom:8px;"><a href="product.asp?itemid=[ITEM_CATALOGID]" class="item-name">[ITEM_NAME]</a></div>
 				<!--START: itemoptions-->
 					<!-- <a href='#' onClick="toggle('opt[ITEM_ID]')">View/Hide options</a> -->
 					<!-- <div id=opt[ITEM_ID] name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div> -->
@@ -117,7 +117,7 @@ jQuery(function(){
 			</div>
 			<div class="cart_col3">
 				<!-- <div class="price">[ITEM_PRICE]</div> --><!--  Price before qty -->
-				<div class="price">[ITEM_SUBTOTAL]</div>
+				<div class="price nozero">[ITEM_SUBTOTAL]</div>
 				<a href="#" onClick="document.recalculate.qtyitemnum.value=0;document.recalculate.submit();">Remove</a>
 			</div>
 			<div class="clear"></div>
@@ -128,9 +128,10 @@ jQuery(function(){
 	</div><!-- .cart-items -->
 	<br />
 	<a class="button standishgray" style="color:white;" href="[continue_url]"><span class="add-on-left"><i class="icon-arrow-left"></i></span>Continue Shopping</a>
-	<!-- <button class="standish-green"><span class="add-on-left"><i class="icon-save"></i></span>Save for Later</button> -->
+	<a class="button standish-green" href ="/myaccount.asp?action=save_cart"><span class="add-on-left"><i class="icon-save"></i></span>Save for Later</a>
 <!-- 	<input type="submit" name="Add" value="[shoppingcart_updatecart]" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit2"> -->
-	<button class="gainsboro" style="margin-left: 225px;" onclick="document.recalculate.submit();"><span class="add-on-left"><i class="icon-repeat"></i></span>Update Cart</button>
+
+	<button class="gainsboro" style="margin-left: 80px;" onclick="document.recalculate.submit();"><span class="add-on-left"><i class="icon-repeat"></i></span>Update Cart</button>
 	<br />
 	<br />
 </div>
@@ -151,18 +152,15 @@ jQuery(function(){
 			<!--END: BUYSAFE_BONDCOST-->
 		<!--END: BUYSAFE_CONTROL-->
 
-		<!--START: DISCOUNTS-->
-			<hr />
-			<p>[checkout1_discounts]</p>
-			<p>[DISCOUNTS]</p>
-			<hr />
-		<!--END: DISCOUNTS-->
-		
+		<p style="text-align: center;">[viewcart_total-note]</p><br />
+
 		<!-- [shoppingcart_total] -->
 		<div class="subtotal white" style="padding: 10px 30px; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
-			<p style="text-align: center; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ............................. <span class="bold">[CARTTOTAL]</span></p>
+			<!--START: DISCOUNTS--><p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>[checkout1_discounts]</strong> ...................... <span class="bold nozero">- [DISCOUNTS]</span></p><!--END: DISCOUNTS-->
+			<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ...................... <span class="bold nozero">[CARTTOTAL]</span></p>
 		</div>
-		<p style="text-align: center;">[viewcart_total-note]</p><hr />
+		<br />
+		<hr />
 
 		<!--START: ShipQuote-->
 		<div style="text-align: center;">
@@ -183,6 +181,7 @@ top: 2px;" placeholder="Zip Code">
 				</div>
 				<!-- <input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button5" name="Button5"> -->
 			<!--END: viewcart_ship-->
+			<br />
 			<br />
 			<hr />
 			<br />
@@ -236,13 +235,8 @@ top: 2px;" placeholder="Zip Code">
 		<!--END: BONGO_INTERNATIONAL-->
 		<!--START: GOOGLECHECKOUT-->
 		- Or use -
-		<a href="google_checkout.asp"><img name="Google Checkout" alt="Google Checkout" src="https://checkout.google.com/buttons/checkout.gif?merchant_id=[gc_merchantid]&w=180&h=46&style=trans&variant=text&loc=en_US" height="46" width="180" border="0"></a> 
+		<a href="google_checkout.asp"><img name="Google Checkout" alt="Google Checkout" src="https://checkout.google.com/buttons/checkout.gif?merchant_id=[gc_merchantid]&w=180&h=46&style=trans&variant=text&loc=en_US" height="46" width="180" border="0"></a>
 		<!--END: GOOGLECHECKOUT-->
-		<!--START: paypalexpress-->
-		<br />-- or -- <br /><a href="paypal_express.asp?ch=1"> <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" ></a>
-		Save time. Checkout securely.<br />
-		Pay without sharing your financial information.
-		<!--END: paypalexpress-->
 
 		<!--START: vMeByVisa-->
 		[vMeByVisaButton]
@@ -308,11 +302,20 @@ top: 2px;" placeholder="Zip Code">
 	
 	</form>
 
+		<!--START: paypalexpress-->
+		<div style='text-align: center'>
+			<a href="paypal_express.asp?ch=1"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" ></a>
+			<p>Save time. Checkout securely.<br /> Pay without sharing your financial information.</p>
+			<h4>-- or --</h4>
+		</div>
+		<!--END: paypalexpress-->
+
 		<!-- [viewcart_checkout-button] -->
 		<!-- onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" -->
 		<input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large" id="Button7" name="Button7">
 
 		<!-- <button class="coral large" onclick="window.location='checkout.asp?step=1'"></button> -->
+
 	</div>
 </div>
 <!-- End of the Right Side -->
@@ -321,14 +324,11 @@ top: 2px;" placeholder="Zip Code">
 <div class="grid_12 coupon">
 	<br />
 	<!--START: apply_coupon-->
-	Apply an Order Code: 
 	<strong>[viewcart_coupon-header]</strong>
 		<input type="text" name="coupon_code" class="txtBoxStyle" size="14">
 		<input type="submit" value="Go!" id="Submit1" name="Submit1" />
 		[viewcart_coupon-message]
 	<!--END: apply_coupon-->
-
-	<button class="standishgreen">APPLY</button>
 	<br />
 	<br />
 </div>
@@ -349,15 +349,19 @@ top: 2px;" placeholder="Zip Code">
 </script>
 
 	<!--START: PROMOTIONS-->
-		[viewcart_discounts-header]
+<!-- 		[viewcart_discounts-header] -->
 		<!--START: DISPLAY_PROMOS-->
+<!--
 			<form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
 				<input type="hidden" name="coupon" value="[id]" id="Hidden4">
 				<b>[promotion_name]</b>
 				[promotion_description]<br>
 				<b>Valid from: [promotion_start] - [promotion_end]</b>
-				<!--START: REMOVE_PROMO--><input type="submit" value="Remove" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit3" name="Submit3"><!--END: REMOVE_PROMO-->
-			</form>
+-->
+				<!--START: REMOVE_PROMO-->
+<!-- 				<input type="submit" value="Remove" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit3" name="Submit3"> -->
+				<!--END: REMOVE_PROMO-->
+<!-- 			</form> -->
 		<!--END: DISPLAY_PROMOS-->
 	<!--END: PROMOTIONS-->
 	<!--START: GIFTCERTIFICATES-->
@@ -372,17 +376,19 @@ top: 2px;" placeholder="Zip Code">
 		<!--END: DISPLAY_GIFTCERTIFICATES-->
 	<!--END: GIFTCERTIFICATES-->
 	<!--START: FEATURE_MENU-->
-	[viewcart_feature-header]
+<!-- 	[viewcart_feature-header] -->
 	<!--START: CATEGORY_ITEMS-->
 	<!--START: ITEM_TEMPLATE_0-->
+<!--
 	<a href="product.asp?itemid=[catalogid]"><img src="[THUMBNAIL]" alt="[name]" border="0"></a>
 	<a href="product.asp?itemid=[catalogid]">[name]</a>
 	[ITEMPRICE]
+-->
 	<!--END: ITEM_TEMPLATE_0-->
 	<!--END: CATEGORY_ITEMS-->
 	<!--END: FEATURE_MENU-->
 	<!--START: CATEGORY_FOOTER-->
-	[CONTENT]
+<!-- 	[CONTENT] -->
 	<!--END: CATEGORY_FOOTER-->
 
 <!--START: ShipQuoteInternationalScript-->

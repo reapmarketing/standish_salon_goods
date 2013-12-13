@@ -88,15 +88,15 @@
 				<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 				<!--START: ITEMPRICE-->
 					<!-- [product_yourprice] -->
-					<p class="price">[product_yourprice] [ITEMPRICE]</p>
+					<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
 				<!--END: ITEMPRICE-->
 				<!--START: SALEPRICE-->
-					<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
-					<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+					<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+					<p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
 					<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
 				<!--END: SALEPRICE-->
 				<!-- <button>Add to Cart</button> -->
-				<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+				<input type="button" value="See Details" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
 			</div>
 		<!--END: ITEM_TEMPLATE-->
 	<!--END: CATEGORY_ITEMS-->	

@@ -26,19 +26,6 @@
 		<!--END: NO_RESULTS-->
 	</div>
 
-	<div class="grid_10">
-		<!--START: SEARCH_PAGES-->
-		<h4>[Search_Header-pages]</h4>
-			<!--START: SEARCH_PAGES_FORMAT-->
-				<a href="[page_link]">[page_name]</a>
-				<p>[page_content]</p>
-			<!--END: SEARCH_PAGES_FORMAT-->
-			<!--START: SEARCH_PAGES_MORERESULTS-->
-				<a href="search.asp?keyword=[keyword_search]&amp;stype=1">[Search_pages-moreresults]</a>
-			<!--END: SEARCH_PAGES_MORERESULTS-->
-		<!--END: SEARCH_PAGES-->
-	</div>
-
 	<div class="grid_10" style="margin-bottom: 10px">
 		<!--START: SEARCH_CATEGORIES-->
 			<h4>[Search_Header-categories]</h4>
@@ -110,7 +97,7 @@
 				<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 				<!--START: ITEMPRICE-->
 					<!-- [product_yourprice] -->
-					<p class="price">[product_yourprice] [ITEMPRICE]</p>
+					<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
 				<!--END: ITEMPRICE-->
 				<!--START: SALEPRICE-->
 					<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
@@ -118,7 +105,8 @@
 					<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
 				<!--END: SALEPRICE-->
 				<!-- <button>Add to Cart</button> -->
-				<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+				<!-- value="[category_buyitlink]" -->
+				<input type="button" value="See Details" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
 			</div>
 		<!--END: ITEM_TEMPLATE-->
 	<!--END: CATEGORY_ITEMS-->
@@ -153,6 +141,19 @@
 		</div>
 	</div>
 	<!--END: PAGING-->
+
+	<div class="grid_10">
+		<!--START: SEARCH_PAGES-->
+		<h4>[Search_Header-pages]</h4>
+			<!--START: SEARCH_PAGES_FORMAT-->
+				<a href="[page_link]">[page_name]</a>
+				<p>[page_content]</p>
+			<!--END: SEARCH_PAGES_FORMAT-->
+			<!--START: SEARCH_PAGES_MORERESULTS-->
+				<a href="search.asp?keyword=[keyword_search]&amp;stype=1">[Search_pages-moreresults]</a>
+			<!--END: SEARCH_PAGES_MORERESULTS-->
+		<!--END: SEARCH_PAGES-->
+	</div>
 
 	<!--START: CATEGORY_FOOTER-->
 		[CONTENT]

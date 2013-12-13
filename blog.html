@@ -1,0 +1,93 @@
+
+	<!--START: CATEGORY_HEADER-->
+		[CONTENT]
+	<!--END: CATEGORY_HEADER-->
+
+	<div class="grid_9">
+	<!--START: blog_post-->
+		<h3><a href="[pagename]">[subject]</a></h3>
+		<div class="item">Posted by [post_author] on [post_date]
+			<!--START: POST_CATEGORY-->
+				to <a href="[post_category_link]">[post_category_name]</a>
+			<!--END: POST_CATEGORY-->
+		</div>
+
+		[post]
+
+		[product_social-bookmarking]
+
+		<!--START: read-more-->
+			<a href="[pagename]" title="[subject]">[blog_read-more]</a>
+		<!--END: read-more-->
+		<!--START: blog_comments-->
+		<div><a href="[pagename]#comments">([numcomments]) [blog_total-comments]</a></div>
+		<!--END: blog_comments-->
+
+		<!--START: blog_comments_list-->
+			<div class="page_headers">[blog_comments-header]<a name="comments" id="comments"></a></div>
+			<!--START: comments-->
+				<div class="item"><span class="blog-hilite">[name]</span> <em>[blog_comments-date]</em> [datentime]</div>
+				<div class="item">[comment]</div>
+			<!--END: comments-->
+		<!--END: blog_comments_list-->
+
+		<!--START: blog_add_comments-->
+			<form action="blog.asp?action=comment&articleid=[id]" method="post">
+				<input type=text name="info" value="[idenc]" style="display:none;">
+				<input type=text name="email" value="" style="display:none;">
+				<p>[blog_comments-addcomment]</p>
+				<p>[blog_comments-name]</p>
+				<input name="blog_comment_name" type="text" class="txtBoxStyle" value="[name]" size="50">
+				<p>[blog_comments-email]</p>
+				<input name="blog_comment_email" type="text" class="txtBoxStyle" value="[email]" size="50">
+				<p>[blog_comments-body]</p>
+				<textarea cols=60 rows=8 name="blog_comment_comment" class="txtareaStyle"></textarea>
+				<input type="submit"  value="[blog_comments-submit]" class="btn" onMouseOver="this.className='btn_over'" onmouseout="this.className='btn'">
+			</form>
+		<!--END: blog_add_comments-->
+
+	<!--END: blog_post-->
+	</div>
+
+	<div class="grid_3 blog-nav">
+	<!--START: blog_topnav-->
+		[blog_topnav]
+	<!--END: blog_topnav-->
+	
+	<a href="blog.asp" class="cat"><strong>&laquo; [blog_home]</strong></a>
+	
+	<!--START: categories_block-->
+		<div width="180" class="menu-headers serif black-text bold">[blog_categories]</div>
+		<ul>
+		<!--START: categories-->
+			<li><a href='[categorylink]' class="cat">[categorylabel]</a></li>
+		<!--END: categories-->
+		</ul>
+	<!--END: categories_block-->
+
+	<!--START: posts_block-->
+		<div width="180" class="menu-headers serif black-text bold">[blog_recentposts]</div>
+		<ul>
+		<!--START: posts-->
+			<li><a href='[postlink]' class="cat">[postlabel]</a></li>
+		<!--END: posts-->
+		</ul>
+	<!--END: posts_block-->
+	<!--START: archives_block-->
+		<div width="180" class="menu-headers allcaps serif black-text bold">[blog_archives]</div>
+		<ul>
+		<!--START: archives-->
+			<li><a href='[archivelink]' class="cat">[archivelabel]</a></li>
+		<!--END: archives-->
+		</ul>
+	<!--END: archives_block-->
+	</div>
+
+	<!--START: blog_bottomnav-->
+		[blog_bottomnav]
+	<!--END: blog_bottomnav-->
+
+	<!--START: CATEGORY_FOOTER-->
+		[CONTENT]
+	<!--END: CATEGORY_FOOTER-->
+

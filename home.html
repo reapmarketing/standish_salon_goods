@@ -2,16 +2,21 @@
 <div class="template" style="display:none" data-template="home"></div>
 
 	<!--START: CATEGORY_HEADER-->
-		[CONTENT]
+		<!-- [CONTENT] -->
 	<!--END: CATEGORY_HEADER--> 
 
-<div class="grid_8 filter">
-	&nbsp;
-</div>
+<!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
+<!--
+<script type="text/javascript">$('.left-bar').show();</script>
+<div class="right-side">
+<div class="grid_6">&nbsp;</div>
+-->
+
+<div class="grid_8 filter">&nbsp;</div>
 
 <div class="grid_4 search">
 	<form method="get" name="searchForm" action="search.asp">
-		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
+		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="off">
 		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
 	</form>
 </div>
@@ -30,15 +35,16 @@
 					<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 					<!--START: ITEMPRICE-->
 						<!-- [product_yourprice] -->
-						<p class="price">[product_yourprice] [ITEMPRICE]</p>
+						<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
 					<!--END: ITEMPRICE-->
 					<!--START: SALEPRICE-->
-						<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
-						<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+						<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+						<p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
 						<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
 					<!--END: SALEPRICE-->
 					<!-- <button>Add to Cart</button> -->
-					<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+					<!-- [category_buyitlink] -->
+					<input type="button" value="See Details" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
 				</div>
 			<!--END: ITEM_TEMPLATE_0-->
 		<!--END: CATEGORY_ITEMS-->
@@ -54,3 +60,5 @@
 
 <!-- END Template: home.html -->
 
+<!-- </div> -->
+<!-- right-side -->

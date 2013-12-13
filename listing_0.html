@@ -8,7 +8,7 @@
 jQuery( function() {
 
 	// Hubspot + Vex Popup form
-	jQuery('.brochure-download a').on( 'click', function( e ) {
+	jQuery('.brochure-download a').first().on( 'click', function( e ) {
 		e.preventDefault();
 		vex.open({
 			// content: '<p>Please provide your email address</p>',
@@ -34,7 +34,7 @@ jQuery( function() {
 	if( brochure !== '' ){
 		brochureLink.text( 'Download Brochure' ).attr( 'href', brochure );
 	}
-
+	
 	// Availability Text
 	var availability = jQuery( '.field3' ).data( 'field3' );
 	var availabilityText = jQuery( '.availability' );
@@ -87,6 +87,9 @@ jQuery( function() {
 	// @todo!
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
+	
+	// Default Share Message
+	
 	// console.log( 'tweet: ' + tweet_text );
 /*
 	var $detailsList = jQuery( '.details-list' );
@@ -104,16 +107,17 @@ jQuery( function() {
 	// Field 10 - Video
 	var video_embed_codes = jQuery( '.field10' ).data( 'field10' ).split( '\n' );
 	var video_markup = '';
-	
+	console.log(video_embed_codes);
 	if( video_embed_codes ) {
-		video_markup = '<div class="video"><h4>Videos</h4>';
+		video_markup = '<div class=""><h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">Product Video</h4>';
 		jQuery.each( video_embed_codes, function( i, v ) {
 			if( v ) {
+/* 				video_markup += '<iframe src="https://fast.wistia.net/embed/iframe/' + v + '" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="460" height="286"></iframe>'; */
 				video_markup += '<iframe src="https://fast.wistia.net/embed/iframe/' + v + '" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="460" height="286"></iframe>';
 			}
 		});
 		video_markup += '</div>';
-		jQuery( '.product-description' ).before( video_markup );
+		jQuery( '.sharebox' ).after( video_markup );
 	}
 
 });
@@ -176,7 +180,7 @@ jQuery( function() {
 		<!--END: CATEGORY_HEADER-->
 
 		<!-- The Left Side -->
-		<div class="grid_5 suffix_1 product_left">
+		<div class="grid_6 product_left">
 			<div class="showcase">
 
 			<!--START: image1--> 
@@ -238,20 +242,27 @@ jQuery( function() {
 
 
 			<!--START: reviews-->
-				<h4>!Review Stuff Here</h4>
-				[reviews_header]
-				[review_link]
+			<div class="reviews">
+				<h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">[reviews_header]</h4>
+				<!--START: create_review_link-->
+					<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
+					<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
+				<!--END: create_review_link-->
+
+				<!-- [review_link] -->
 				<!--START: user_reviews-->
-					<img src="assets/templates/common/images/star[rating].png" alt="Rating" />
-					<strong itemprop="name">[short_review]</strong>
-					<div itemprop="description">[long_review]</div>
-					<em>Reviewed by:  <span itemprop="author">[user_name]</span> from [user_city]. 
-					<!--START: user_email--> 
-						<a href="mailto:[user_email]">[user_email]</a> 
-					<!--END: user_email--> 
-					on [review_date]</em>
-					<div style="display: none;" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">[rating]</span>/<span itemprop="bestRating">5</span> </div>
+					<div class="review">
+						<div class="rating">
+							<span class="stars">
+							<img src="assets/templates/common/images/star[rating].png" alt="Rating" />
+							</span> - <span itemprop="author">[user_name]</span> from [user_city]
+						</div>
+						<span itemprop="name" class="bold">[short_review]</span>
+						<p itemprop="description">[long_review]</p>
+					</div>
+					<!-- <div class="add-rating-link"><i class="icon-plus"></i> <a href="#addRating">Add A Rating &amp; Review</a></div> -->
 				<!--END: user_reviews-->
+			</div>
 			<!--END: reviews-->
 
 			<!--START: create_first_review-->
@@ -260,12 +271,7 @@ jQuery( function() {
 				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_first]</a>
 -->
 			<!--END: create_first_review-->
-	
-			<!--START: create_review_link-->
-				<img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
-				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a>
-			<!--END: create_review_link-->
-	
+
 			<!--START: qaLinkFirst-->
 				<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_firstquestion]" border="0" />
 				<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_firstquestion]</a>
@@ -410,8 +416,9 @@ jQuery( function() {
 			<h1 itemprop="name" class="product-title">[name]</h1>
 			<!--START: id-->
 				<!-- [product_id] -->
-				<p class="part-no">Part Number [id]</p>
-			<!--END: id--> 
+				<p class="part-no">Part Number <span id="product_id">[id]</span></p>
+			<!--END: id-->
+			
 
 			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="pricebox">
 				<!--START: pricing-->
@@ -419,24 +426,24 @@ jQuery( function() {
 					<!-- [product_Header-price] -->
 					<!--START: ITEMPRICE-->
 					<!--END: ITEMPRICE-->
-					<!--START: ITEMPRICE-->
-					<div class="left-price">[price]</div>
-					<!--END: ITEMPRICE-->
+					<div class="left-price">
+						<!--START: ITEMPRICE--><span id="price" class="price nozero">[price]</span><!--END: ITEMPRICE-->
+					</div>
 					<div class="right-price">
 						<!--START: price2-->
-							<p><span itemprop="price" class="label">[product_retailprice]</span> [price2]</p>
+							<p><span itemprop="price" class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
 						<!--END: price2-->
 						<!-- [product_yourprice] -->
 						<!--START: ITEMPRICE-->
-							<p><span class="label">Our Price:</span> [price]</p>
+							<p><span class="label">Our Price:</span> <span class="nozero">[price]</span></p>
 						<!--END: ITEMPRICE-->
 						<!--START: SALEPRICE-->
 							<!-- [product_onsale] -->
-							<p><span itemprop="price" class="label">Sale Price:</span> [saleprice]</p>
+							<p><span itemprop="price" class="label">Sale Price:</span> <span class="nozero">[saleprice]</span></p>
 						<!--END: SALEPRICE-->
 						<!--START: SAVINGS-->
 							<!-- [product_savings] -->
-							<p><span itemprop="price" class="label">You Save:</span> [savings]</p>
+							<p><span itemprop="price" class="label">You Save:</span> <span class="nozero">[savings]</span></p>
 						<!--END: SAVINGS-->
 					</div>
 					<div class="clearboth"></div>
@@ -499,20 +506,20 @@ jQuery( function() {
 
 						<!--START: checkbox-format-->
 							<label for="warranty" class="checkbox">
-								<input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] > [feature]: <span>+ [oprice]</span>
+								<input type="checkbox" name="cb[oname]" value="[value]" onclick="nozeros();validateValues(document.add,1);" [selected] > [feature]: <span class="nozero">+ [oprice]</span>
 							</label>
 							<!-- <input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] />[feature] [oprice] -->
 						<!--END: checkbox-format-->
 
 						<!--START: radio-format-->
-							<div><input type="radio" name="[oname]" value="[value]" onclick="validateValues(document.add,1);selectOption(this);" [selected] />[feature] [oprice]</div>
+							<div><input type="radio" name="[oname]" value="[value]" onclick="nozeros();validateValues(document.add,1);selectOption(this);" [selected] />[feature] <span class="nozero">[oprice]</span></div>
 						<!--END: radio-format-->
 
 						<!--START: dropdown-format-->
 							<div class="fancy-select">
-								<select name="[oname]" onchange="validateValues(document.add,1);selectOption(this);">
+								<select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
 									<!--START: option-->
-									<option value="[value]" [selected]>[feature] [oprice]</option>
+									<option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
 									<!--END: option-->
 								</select>
 								<i class="icon-caret-down"></i>
@@ -521,12 +528,15 @@ jQuery( function() {
 
 						<!--START: dropdownimage-format-->
 							<div class="fancy-select">
-								<select name="[oname]" onchange="validateValues(document.add,1);selectOption(this);">
+								<!-- note: image_click function changes image with option position -->
+								<!-- image_click($(this).find(':selected').index()+1); -->
+								<select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
 									<!--START: option-->
-									<option value="[value]" [selected]>[feature] [oprice]</option>
+									<option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
 									<!--END: option-->
 								</select>
 								<i class="icon-caret-down"></i>
+								<img name="img_[oname]" src="assets/templates/common/images/spacer.gif" alt="" border="0">
 							</div>
 						<!--END: dropdownimage-format-->
 					<!--END: optionstemplate-->
@@ -601,7 +611,7 @@ jQuery( function() {
 								<div class="option-row">
 									<label for="quantity">[product_quantity]: </label>
 									<!-- <input id="quantity" type="text" placeholder="1" value="1"> -->
-									<input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" />
+									<input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
 									<div class="questions"><span class="coral-text">Questions?</span> Call <span class="bold">888.271.8434</span></div>
 								</div>
 								
@@ -664,10 +674,11 @@ jQuery( function() {
 			</div>
 		
 			<div itemprop="description" class="product-description">
-				<!--START: extended_description-->
-				<h4>Product Description</h4><!-- [product_Header-description] -->
+				<!-- START: extended_description -->
+				<h4>Product Description</h4>
+				<!-- [product_Header-description] -->
 				<div class="extended-description">[extended_description]</div>
-				<!--END: extended_description-->
+				<!-- END: extended_description -->
 			</div>
 
 <!--
@@ -786,147 +797,7 @@ jQuery( function() {
 			<a href="[nextprodlink]"><img src="thumbnail.asp?file=[nextprodthumb]&maxx=20&maxy=20" border="0" alt="" />Next</a>
 		<!--END: NEXT_PROD--> 
 
-
-		<!--START: totalrating-->
-			<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-				[totalrating]<span itemprop="reviewCount">[review_count]</span> Review(s)
-				<div itemprop="ratingValue">[review_average]</div>
-			</div>
-		<!--END: totalrating--> 
-		
-		
-		
-		
-		<!--START: email_friend-->
-<!--
-			<img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" />
-			<a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a>
--->
-		<!--END: email_friend-->
-
-		<!--START: giftcertificate_block-->
-<!--
-			Gift Certificate Information
-			<strong>From</strong>
-			<input type="text" size="43" name="gc_fromname" class="txtBoxStyle">
-			<br />
-			(Sender's name)
-
-			<strong>To</strong>
-			<input type="text" size="43" name="gc_toname" class="txtBoxStyle">(Recipient's name)
-			<strong>Email</strong>
-			<input type="text" size="43" name="gc_toemail" class="txtBoxStyle">(Recipient's email address)
-			<strong>Message </strong>
-			<textarea cols="45" rows="5" name="gc_tomessage" class="txtareaStyle"></textarea>
-			(optional, max. length 500 characters) 
--->
-		<!--END: giftcertificate_block-->
-
-		<!--START: LOGIN_REQUIRED-->
-			<!-- [product_login-message] -->
-		<!--END: LOGIN_REQUIRED--> 
-
-		<!--START: MULTIPLESHIPTO-->
-<!--
-			[product_multiple-send-to]
-			<select name="recipientselect" class="txtBoxStyle">
--->
-				<!--beginFixup-->
-<!--
-					<option value="select" selected>[product_multiple-select-name]</option>
-					<option value="myself">[product_multiple-myself]</option>
-					[shiptolist]
-					<option value="selectother">[product_multiple-other]</option>
--->
-				<!--endFixup-->
-<!--
-			</select>
-			[product_multiple-add-name]
-			<input type="text" name="add_name"class="txtBoxStyle"/>
-			<a href="#" onclick="popup('optionhelp.asp?help=multiple',300,200)"><img src="assets/templates/common/images/help_icon.gif" border="0" alt="help" /></a>
-			*[product_multiple-note]
--->
-		<!--END: MULTIPLESHIPTO--> 
-
-		<!--START: RECURRINGORDER-->
-<!--
-			<div>
-				<strong>[recurringorders_addcart-question]</strong>
-				<select name="recurring_frequency" class="txtBoxStyle" id="recurring_frequency">
-					<option value="">[recurringorders_select-frequency]</option>
-					[recurring_frequency]
-				</select>
-			</div>
-			<div align="center">[recurringorders_addcart-bottom-message]</div>
--->
-		<!--END: RECURRINGORDER-->
-
-
-		<!--START: extended_description-->
-<!--
-			[product_Header-description]
-			<div itemprop="description">[extended_description]</div>
--->
-		<!--END: extended_description--> 
-
-		<!--START: realmedia-->
-<!--
-			[product_Header-video]
-			<div style="text-align: center; margin: auto;">
-				<object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="[realmedia]" wmode="transparent" id="realmedia">
-					<param name="movie" value="[realmedia]" />
-					<param name="wmode" value="transparent" />
-				</object>
-			</div>
--->
-		<!--END: realmedia--> 
-
-		<!--START: rewardsPoints-->
-			[product_Header-rewards]
-			[product_rewardsDescription]
-		<!--END: rewardsPoints-->
-
-		<!--START: extrafields-->
-			<!--START: extra_field_1-->
-				<div class="item"><strong>[product_extrafield1]</strong> [extra_field_1]</div>
-			<!--END: extra_field_1--> 
-			<!--START: extra_field_2-->
-				<div class="item"><strong>[product_extrafield2]</strong> [extra_field_2]</div>
-			<!--END: extra_field_2--> 
-			<!--START: extra_field_3-->
-				<div class="item"><strong>[product_extrafield3]</strong> [extra_field_3]</div>
-			<!--END: extra_field_3--> 
-			<!--START: extra_field_4-->
-				<div class="item"><strong>[product_extrafield4]</strong> [extra_field_4]</div>
-			<!--END: extra_field_4--> 
-			<!--START: extra_field_5-->
-				<div class="item"><strong>[product_extrafield5]</strong> [extra_field_5]</div>
-			<!--END: extra_field_5--> 
-			<!--START: extra_field_6-->
-				<strong>[product_extrafield6]</strong> [extra_field_6]
-			<!--END: extra_field_6--> 
-			<!--START: extra_field_7-->
-				<strong>[product_extrafield7]</strong> [extra_field_7]
-			<!--END: extra_field_7--> 
-			<!--START: extra_field_8-->
-				<strong>[product_extrafield8]</strong> [extra_field_8]
-			<!--END: extra_field_8--> 
-			<!--START: extra_field_9-->
-				<strong>[product_extrafield9]</strong> [extra_field_9]
-			<!--END: extra_field_9--> 
-			<!--START: extra_field_10-->
-				<strong>[product_extrafield10]</strong> [extra_field_10]
-			<!--END: extra_field_10--> 
-			<!--START: extra_field_11-->
-				<strong>[product_extrafield11]</strong> [extra_field_11]
-			<!--END: extra_field_11--> 
-			<!--START: extra_field_12-->
-				<strong>[product_extrafield12]</strong> [extra_field_12]
-			<!--END: extra_field_12--> 
-			<!--START: extra_field_13-->
-				<!-- <strong>[product_extrafield13]</strong> [extra_field_13] -->
-			<!--END: extra_field_13-->
-		<!--END: extrafields-->
+		<!-- was: listing_blocks.html (unused stuff) -->
 
 		<!--START: qa-->
 			<a name="qa"></a>
@@ -977,13 +848,6 @@ jQuery( function() {
 				<input type="button" onclick="window.location.href='product.asp?itemid=[item_id]&delhist=[catalogid]';" name="" value="Clear" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
 			<!--END: browsing_history_items-->
 		<!--END: browsing_history--> 
-
-
-
-
-
-
-
 
 
 
@@ -1121,7 +985,8 @@ jQuery( function() {
 				document.getElementById('listing_main_image_link').href='#';
 				document.getElementById('listing_main_image_link').onclick=zoomify_popup;
 				changecontent("imagecaptiont",eval('imagecaption'+clicks));
-			}}
+			}
+		}
 	}
 	function zoomify_popup()
 	{
