@@ -12,9 +12,6 @@ $( function() {
 	// if( $('#divCheckoutQuestions input[type=checkbox]').length ) {}
 	$('#divCheckoutQuestions input[type=checkbox]').prop('checked', true);
 	$('#pass').parent().parent().parent().prepend('<tr><td width="20%" align="right" class="item"><strong>(Optional)</strong></td><td	x></td></tr>');
-	console.log('login boom');
-	console.log('login boom');
-	console.log('login boom');
 	$('input').each( function() {
 		if( $(this).attr('value') === 'Log in to your account' ) {
 			console.log( $(this).parent().parent().parent().parent().parent().parent().parent().remove() ); 
@@ -965,7 +962,7 @@ $( function() {
                 </tr>
                 <!--START: SHOPPING_CART_ITEM-->
                 <tr>
-                  <td width="15%" height="60" valign="middle"><!--START: itemthumbnail--><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&amp;maxx=160&amp;maxy=160" border="0" height="160" width="160" id="tl"></a><!--END: itemthumbnail--> 
+                  <td width="15%" height="60" valign="middle"><!--START: itemthumbnail--><a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&amp;maxx=160&amp;maxy=160" border="0" height="160" width="160" id="tl" style="margin-right: 10px;"></a><!--END: itemthumbnail--> 
                     <!--START: thumbnailnolink--><img src="thumbnail.asp?file=[THUMBNAIL]" border="0" height="55" width="55" id="tnl"><!--END: thumbnailnolink--></td>
                   <td class="item" valign="middle" align="left" width="55%"><!--START: itemnamelink--><a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a><!--END: itemnamelink--> 
                     <!--START: itemnamenolink--><span id="spnItemName">[ITEM_NAME]</span><!--END: itemnamenolink--> 
@@ -2642,8 +2639,9 @@ function confirmationValidation()
 
 <!--START: VME_SELECTED_SCRIPT--> 
 <script>
-    function add_vme_overlay(panel)
-    {
+	showDiscountDetails();
+
+    function add_vme_overlay(panel) {
         var objBody = getElementById_s(panel);
         var objOverlay = document.createElement("div");
 		

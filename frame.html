@@ -2,43 +2,16 @@
 <html>
 <head>
 	<title>[TITLE]</title>
+	<style>
+	/* Not sure what this is for... */
+	html.wait{
+		cursor: wait !important;
+		opacity: 0;
+		transition: opacity 0.5s ease;
+	}
+	</style>
 	<meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
 	<link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
-	<style>
-	html.wait{
-	cursor: wait !important;
-	opacity: 0;
-	transition: opacity 0.5s ease;
-	}
-	/*
-#custom-footer { width: 100%; position: relative; overflow: hidden;}
-#cf-left { width: 690px; float: left; position: relative; overflow: hidden;}
-#cf-right { float: right; position: relative; overflow: hidden; width: 250px;}
-#cf-top, #cf-bottom { width: 100%; clear: both; position: relative; overflow: hidden; }
-#cf-top { margin-bottom: 30px;}
-#cf-top ul, #cf-bottom ul { display: block; list-style: none; position: relative; overflow: hidden; margin: 0; padding: 0;}
-#cf-top ul li { display: block; position: relative; overflow: hidden; height: 82px; float: left; margin-right: 28px;}
-*/
-#cf-bottom ul li { display: block; position: relative; overflow: hidden; height: 61px; float: left; margin-right: 10px;}
-/*
-#cfr-bottom ul { display: block; position: relative; overflow: hidden; list-style: none; margin: 0; padding: 0;}
-#cfr-bottom ul li { display: block; position: relative; overflow: hidden; float: left; width: 32px; height: 32px; margin-right: 8px;}
-#cfr-bottom ul li a { background-image: url(../images/footer-sprite.png); background-repeat: no-repeat; display: block; text-indent: -999em; position: relative; overflow: hidden; width: 100%; height: 100%;}
-*/
-#google { background-position: -234px -51px;}
-#facebook { background-position: -272px -51px;}
-#twitter { background-position: -311px -51px;}
-#yelp { background-position: -350px -51px;}
-#pinterest { background-position: -390px -51px;}
-#pbm, #mc { margin-right: 30px;}
-#boa { margin-right: 0!important;}
-#mic { display: block; overflow: hidden; position: relative; text-indent: -999em; width: 149px; height: 83px; background-image: url(../images/footer-sprite.png); background-repeat: no-repeat; background-position: -77px 0;}
-#boa-merchant { display: block; overflow: hidden; position: relative; text-indent: -999em; width: 133px; height: 53px; background-image: url(../images/footer-sprite.png); background-repeat: no-repeat; background-position: -322px -96px;}
-#pba-member { text-indent: -999em; display: block; position: relative; overflow: hidden; width: 67px; height: 82px; background-image: url(../images/footer-sprite.png); background-repeat: no-repeat; background-position: 0 -1px;}
-#cfr-top { width: 100%; position: relative; height: 41px; overflow: hidden; clear: both; margin-bottom: 33px; margin-top: 21px; background-image: url(../images/footer-sprite.png); background-repeat: no-repeat; background-position: -234px -1px;} 
-#qualg { width: 92px; background-image: url(../images/footer-sprite.png); background-repeat: no-repeat; background-position: -470px -66px; } 
-#bravo { width: 92px; background-image: url(../images/footer-sprite.png); background-repeat: no-repeat; background-position: -564px -66px; height: 83px; display: block; } 
-	</style>
 	<link rel="stylesheet" href="/assets/templates/standish/style/main.css" />
 	<!-- <link rel="stylesheet" href="/assets/templates/standish/style/hellobar.css" /> -->
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
@@ -57,6 +30,42 @@
 	<script src="/assets/templates/common/js/utilities.js"></script>
 	<script charset="utf-8" src="//js.hubspot.com/forms/current.js"></script>
 
+	<script>
+		// Hack to prevent errors, may break things
+		adroll_adv_id = ''; adroll_pix_id = '';
+	</script>
+	
+
+	
+	<!-- <script type="text/javascript" src="assets/templates/common/js/jquery-1.3.2.min.js"></script> -->
+	<script type="text/javascript" src="/assets/templates/standish/scripts/3dquicksearch.js"></script>
+	<link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
+	<script type="text/javascript">
+		jQuery(function() {
+			
+			// Check for the element
+			if( jQuery('#searchlight').length ) {
+				// See if the function loaded properly
+				if( typeof jQuery('#searchlight').searchlight === 'function' ) {
+					jQuery('#searchlight').searchlight('/search_quick.asp');
+					$('.searchlight-balloon').css({'top': '80px' });
+				} else {
+					// console.log( 'There was an issue loading the searchlight scripts' );
+				}
+			}
+
+			// Download Spec Sheet button:
+	/*
+			jQuery('.spec_link').click(function() {
+				popup(jQuery(this).attr('href'),600,450);
+				return false;
+			});
+	*/
+		});
+	</script>
+
+	<!--START: quicksearch-->
+	<!--END: quicksearch-->
 
 <!--Adobe Edge Runtime-->
 	<script type="text/javascript" charset="utf-8" src="/assets/templates/standish/scripts/TailoredStandishAnimation_edgePreload.js"></script>
@@ -117,34 +126,17 @@
 			// Remove 3DCart clears (use the 'clearfix' class instead)
 			$('div[style*=both]').remove();
 
+/*
+			// Test code for getting external data
 			$.getJSON( "http://standish.herokuapp.com/data.json" + "?callback=?", null,  function( data, textStatus, jqXHR ) {
 				console.log( data );
 			});
+*/
 			
 			
 
 		});
 	</script>
-
-
-<!--START: quicksearch-->
-<!-- <script type="text/javascript" src="assets/templates/common/js/jquery-1.3.2.min.js"></script> -->
-<script type="text/javascript" src="assets/templates/the-brac/js/quicksearch/jquery.quicksearch.js"></script>
-<link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
-<script type="text/javascript">
-	jQuery(function() {
-		if( jQuery('#searchlight').length ){
-			jQuery('#searchlight').searchlight('/search_quick.asp');
-		}
-		// Download Spec Sheet button:
-/*
-		jQuery('.spec_link').click(function() {
-			popup(jQuery(this).attr('href'),600,450);
-			return false;
-		});
-*/
-	});
-</script>
 
 <!-- IBF SWAPPER -->
 <!-- <script type="text/JavaScript" src="https://secure.ifbyphone.com/js/ibp_clickto_referral.js"></script>
@@ -154,7 +146,7 @@
    var _ibp_keyword_set = 34811;
 </script> -->
 
-<!--END: quicksearch-->
+
 
 
 </head>
@@ -165,7 +157,7 @@
 	<div class="hello">
 		<div class="container_12">
 			<div class="grid_8">
-				<p class="left-hello"><img src="/assets/templates/standish/images/this-month.png" alt="This Month!" class="hello-tag"><img src="/assets/templates/standish/images/free-shipping.png" alt="Free Shipping" class="hello-icon"><span class="allcaps bold">Free Shipping</span> for orders over $250   <a href="spend-more-save-more.html">View all deals</a></p>
+				<p class="left-hello"><img src="/assets/templates/standish/images/this-month.png" alt="This Month!" class="hello-tag"><img src="/assets/templates/standish/images/free-shipping.png" alt="Free Shipping" class="hello-icon"><span class="allcaps bold">Free Shipping</span> Over $500 <span class="allcaps bold">Plus</span> Up To <span class="allcaps bold">15% OFF!</span> &nbsp;&nbsp;<a href="spend-more-save-more.html">View all deals</a></p>
 			</div>
 			<div class="grid_4">
 				<p class="right-hello"><span class="coral-text">Need Help?</span> Call <span class="bold">888.271.8434</span></p>
@@ -183,8 +175,8 @@
 				<div id="Stage" class="taglines" style="margin-top: 24px"></div>
 			</div>
 			<div class="grid_4">
-				<a href="/checkout_one.asp">
-				<!-- <a href="/view_cart.asp"> --><button class="cart large"><i class="icon-shopping-cart"></i> Your Cart<span class="cart-number">[ITEMSINCART]</span></button></a>
+				<!-- <a href="/checkout_one.asp"> -->
+				<a href="/view_cart.asp"><button class="cart large"><i class="icon-shopping-cart"></i> Your Cart<span class="cart-number">[ITEMSINCART]</span></button></a>
 			</div>
 		</div>
 	</div>
@@ -373,12 +365,12 @@
 
 			<!--START: FRAME_MANUFACTURER-->
 				<!--[frame_manufacturer]-->
-				<div class="allcaps serif black-text bold">Brand</div>
-				<ul>
+<!-- 				<div class="allcaps serif black-text bold">Brand</div> -->
+<!-- 				<ul> -->
 					<!--START: manufacturer_format-->
-						<li><a href="search_groups.asp?manf=[mfgid]" class="cat">[manufacturer]</a>
+<!-- 						<li><a href="search_groups.asp?manf=[mfgid]" class="cat">[manufacturer]</a> -->
 					<!--END: manufacturer_format-->
-				</ul>
+<!-- 				</ul> -->
 			<!--END: FRAME_MANUFACTURER-->
 
 			<!--START: FRAME_CATEGORY-->
@@ -397,16 +389,16 @@
 			<!--END: FRAME_CATEGORY-->
 
 			<!--START: FRAME_BYPRICE-->
-				<div class="allcaps serif black-text bold">[frame_byprice]</div>
-				<ul>
+<!-- 				<div class="allcaps serif black-text bold">[frame_byprice]</div> -->
+<!-- 				<ul> -->
 					<!--START: byprice_format-->
-						<li><a href="search_groups.asp?keyword=[id]&byprice=[id]" class="cat">[title]</a>
+<!-- 						<li><a href="search_groups.asp?keyword=[id]&byprice=[id]" class="cat">[title]</a> -->
 					<!--END: byprice_format-->
-				</ul>
+<!-- 				</ul> -->
 			<!--END: FRAME_BYPRICE-->
 
 			<!--START: LEFT_BANNER-->
-				[LEFT_BANNER]
+<!-- 				[LEFT_BANNER] -->
 			<!--END: LEFT_BANNER-->
 		<!--END: LEFT_BAR_BLOCKS-->
 	</div>
@@ -455,8 +447,35 @@
 		hbspt.forms.create({ 
 			portalId: '239485',
 			formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
-			css: ''
+			css: '',
+			onFormReady: function() {
+				// Clear Placeholder on click of email element
+				$('.hbspt-form input[type=email]').each( function () {
+					if( $(this).val() == 'Enter Email' ) {
+						var element = $(this);
+						element.one( 'click', function() {
+							element.val('');
+						});
+					}
+				});
+			}
 		});
+		
+		$( '#FRAME_CATEGORY ul' ).each( function() {
+			// console.log( $(this).find('li').length );
+			if( $(this).find('li').length !== 1 ) {
+				$("<style>")
+					.prop("type", "text/css")
+					.html("\
+					.hiddencat {\
+						display: none;\
+					}")
+					.appendTo("head");
+			} else {
+				$(this).addClass('hiddencat');
+			}
+		});
+
 		</script>
 <!--
 		<input class="" placeholder="Enter your email address">
@@ -481,53 +500,10 @@
 	
 	<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
 
-
-
-
-
-
-<div id="custom-footer">
-	<div id="cf-top">
-		<ul>
-			<li id="pbm">
-				<a href="http://www.probeauty.org" id="pba-member" target="_blank">pba member</a>
-			</li>
-			<li id="mc">
-				<a id="mic" href="http://www.interestingcompanies.com" target="_blank">2012 Most Interesting Companies</a>
-			</li>
-			<li id="qualg"></li>
-			<li><a id="bravo" href="http://www.standishsalongoods.com/margaux_styling_chair_styled_to_rock_bravo.html"></a></li>
-		</ul>
-	</div><!-- cf-top -->
-	<div id="cf-bottom">
-		<ul>
-			<li>
-				<script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.standishsalongoods.com&size=S&use_flash=YES&use_transparent=YES&lang=en"></script><a href="http://www.symantec.com/ssl-certificates" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a>
-			</li>
-			<li id="geotrust">
-				<SCRIPT LANGUAGE="JavaScript"  TYPE="text/javascript" SRC="//smarticon.geotrust.com/si.js"></SCRIPT><!-- end  GeoTrust Smart Icon tag -->
-			</li>
-			<li>
-				<script src="https://seal.buysafe.com/private/rollover/rollover.js"></script><span id="BuySafeSealSpan"><script type="text/javascript">WriteBuySafeSeal('BuySafeSealSpan', 'PersistentSeal', 'HASH=jBQcJJC0uEGjrZjEt49g3rWfsf9iTzLPhGy63CjM5mn%2fg4mB2D3552SwnqS3LO0R57s4QSUh4x3W89toKq7gMQ%3d%3d');</script></span>
-				<a href="//privacy-policy.truste.com/click-to-verify/www.standishsalongoods.com" title="Privacy Policy by TRUSTe" target="_blank"><img style="border: none" alt="Privacy Policy by TRUSTe" src="//privacy-policy.truste.com/verified-seal/www.standishsalongoods.com/green/h.png"><br></a>  
-			</li>
-			<li>
-				<a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;"><img style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" width="200" height="45" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" /></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
-			</li>
-			<li id="boa">
-				<a href="http://merch.bankofamerica.com/web/pages" id="boa-merchant" target="_blank">Bank of America Merchant Services</a>
-			</li>
-		</ul>
-	</div><!-- cf-bottom -->
-</div><!-- custom-footer -->
-
-
 <!-- begin olark code --><script data-cfasync="false" type="text/javascript">/*{literal}<![CDATA[*/
 window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
 /* custom configuration goes here (www.olark.com/documentation) */
 olark.identify('6778-882-10-3773');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/6778-882-10-3773/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->
-
-
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
@@ -540,31 +516,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 
-
-
-
-
-
-
-
-
-
-
 		<div class="container_12">
 			<div class="grid_12">
 <!-- 				<script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.standishsalongoods.com&size=S&use_flash=YES&use_transparent=YES&lang=en"></script><a href="http://www.symantec.com/ssl-certificates" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a> -->
-			
-<!--
 				<a href="#norton" class="footer-logo norton"></a>
 				<a href="#truste" class="footer-logo truste"></a>
 				<a href="#interesting" class="footer-logo interesting"></a>
 				<a href="#pba" class="footer-logo pba"></a>
 				<a href="#bofa" class="footer-logo bofa"></a>
 				<a href="#bbb" class="footer-logo bbb"></a>
--->
+				<a href="#bbb" class="footer-logo bravo"></a>
+				
+
 			</div>
 			<div class="grid_12">
-				<p class="footer-copy">© 2013 Standish Salon Goods | <a href="/dallas-salon-furniture-showroom.html">Dallas Showroom</a> | <a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a></p>
+				<p class="footer-copy">ï¿½ 2013 Standish Salon Goods | <a href="/dallas-salon-furniture-showroom.html">Dallas Showroom</a> | <a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a> | 888.271.8434</p>
 			</div>
 		</div>
 	</div>

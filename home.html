@@ -1,24 +1,27 @@
 <!-- Template: home.html -->
 <div class="template" style="display:none" data-template="home"></div>
 
-	<!--START: CATEGORY_HEADER-->
-		<!-- [CONTENT] -->
-	<!--END: CATEGORY_HEADER--> 
 
 <!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
-<!--
 <script type="text/javascript">$('.left-bar').show();</script>
 <div class="right-side">
 <div class="grid_6">&nbsp;</div>
--->
 
-<div class="grid_8 filter">&nbsp;</div>
+<!-- <div class="grid_8 filter">&nbsp;</div> -->
 
 <div class="grid_4 search">
 	<form method="get" name="searchForm" action="search.asp">
 		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="off">
 		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
 	</form>
+</div>
+
+	<!-- [category_Header-specials] -->
+
+<div class="grid_10">
+	<!--START: CATEGORY_HEADER-->
+		[CONTENT]
+	<!--END: CATEGORY_HEADER-->
 </div>
 
 	<!--START: FEATURE_MENU-->
@@ -39,8 +42,8 @@
 					<!--END: ITEMPRICE-->
 					<!--START: SALEPRICE-->
 						<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-						<p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-						<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+						<!-- <span class="coral-text">[product_onsale]: </span> -->
+						<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
 					<!--END: SALEPRICE-->
 					<!-- <button>Add to Cart</button> -->
 					<!-- [category_buyitlink] -->
@@ -52,13 +55,17 @@
 	
 </div>
 
-<div class="container_12">
+<div class="container_10 clearboth">
 
 	<!--START: CATEGORY_FOOTER-->
-		[CONTENT]
+<!-- 		[CONTENT] -->
 	<!--END: CATEGORY_FOOTER-->
 
 <!-- END Template: home.html -->
 
-<!-- </div> -->
+
+
+</div>
+
+
 <!-- right-side -->

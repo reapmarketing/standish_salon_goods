@@ -87,6 +87,7 @@ jQuery( function() {
 	// @todo!
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
+	console.log( tweet_text );
 	
 	// Default Share Message
 	
@@ -105,6 +106,9 @@ jQuery( function() {
 	jQuery( '.pinit a' ).attr('href', 'http://www.pinterest.com/pin/create/button/?url=' + image + '&description=' + short_description );
 
 	// Field 10 - Video
+	
+	console.log( jQuery( '.field10' ).data( 'field10' ) );
+	
 	var video_embed_codes = jQuery( '.field10' ).data( 'field10' ).split( '\n' );
 	var video_markup = '';
 	console.log(video_embed_codes);
@@ -437,8 +441,8 @@ jQuery( function() {
 						<!--START: ITEMPRICE-->
 							<p><span class="label">Our Price:</span> <span class="nozero">[price]</span></p>
 						<!--END: ITEMPRICE-->
+						<!-- [product_onsale] -->
 						<!--START: SALEPRICE-->
-							<!-- [product_onsale] -->
 							<p><span itemprop="price" class="label">Sale Price:</span> <span class="nozero">[saleprice]</span></p>
 						<!--END: SALEPRICE-->
 						<!--START: SAVINGS-->
@@ -652,6 +656,8 @@ jQuery( function() {
 					</fieldset>
 				</div>
 				<!-- </form> -->
+				<!-- Absolute link path here because the link is snorked up and used as the HubSpot form redirect -->
+				<div class="brochure-download"><a href="http://standishsalongoods.com/assets/images/brochure/standish-brochure.pdf">Download Catalog</a>&nbsp;<i class="icon-cloud-download"></i></div>
 			</div>
 		
 			<div class="badges">
@@ -662,8 +668,6 @@ jQuery( function() {
 		
 			<div class="product-details">
 				<h4>Product Details</h4>
-				<!-- Absolute link path here because the link is snorked up and used as the HubSpot form redirect -->
-				<div class="brochure-download"><a href="http://standishsalongoods.com/assets/images/brochure/standish-brochure.pdf">Download Catalog</a>&nbsp;<i class="icon-cloud-download"></i></div>
 				<ul class="details-list">
 					<!--START: PRODUCT_FEATURES_BLOCK-->
 						<!--START: PRODUCT_FEATURES-->

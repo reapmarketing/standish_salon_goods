@@ -45,7 +45,13 @@ jQuery(function(){
 </script>
 
 
-	<h2>Your Cart</h2>
+	<div class="grid_7">
+		<h2>Your Cart</h2>
+	</div>
+	<div class="grid_5 cartsprite">
+		<div class="cards"></div>
+		<div class="norton"></div>
+	</div>
 	<!--START: CATEGORY_HEADER-->
 		[CONTENT]
 	<!--END: CATEGORY_HEADER-->
@@ -152,8 +158,6 @@ jQuery(function(){
 			<!--END: BUYSAFE_BONDCOST-->
 		<!--END: BUYSAFE_CONTROL-->
 
-		<p style="text-align: center;">[viewcart_total-note]</p><br />
-
 		<!-- [shoppingcart_total] -->
 		<div class="subtotal white" style="padding: 10px 30px; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
 			<!--START: DISCOUNTS--><p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>[checkout1_discounts]</strong> ...................... <span class="bold nozero">- [DISCOUNTS]</span></p><!--END: DISCOUNTS-->
@@ -161,32 +165,6 @@ jQuery(function(){
 		</div>
 		<br />
 		<hr />
-
-		<!--START: ShipQuote-->
-		<div style="text-align: center;">
-			<p class="bold" style="text-align: center; font-size: 18px; margin-bottom: 5px; margin-top: 28px;">[viewcart_shipping-header]</p>
-			<input type="text" name="shipping_zip" size="10" value="[shipping_zip]" class="txtBoxStyle white" id="Text3" style="position: relative;
-top: 2px;" placeholder="Zip Code">
-			<input type="button" value="Go!" class="btn" onClick="document.shipquote.shipping_zip.value=document.recalculate.shipping_zip.value;document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4"><br />
-			<span class="zip_helper_text">[viewcart_shipping-message]</span>
-			<!--START: viewcart_ship-->
-				<p>[shipping_city] [shipping_state] [shipping_zip]</p>
-				<div class="fancy-select" style="width: 290px; background: white;">
-					<select class="txtBoxStyle" style="width: 290px; left: 0;">
-						<!--START: Shippers-->
-						<option><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</option>
-						<!--END: Shippers-->
-					</select>
-					<i class="icon-caret-down"></i>
-				</div>
-				<!-- <input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button5" name="Button5"> -->
-			<!--END: viewcart_ship-->
-			<br />
-			<br />
-			<hr />
-			<br />
-		</div>
-		<!--END: ShipQuote-->
 
 		<!--START: ShipQuoteInternational-->
 			<strong>[viewcart_shipping-header]</strong>
@@ -302,19 +280,47 @@ top: 2px;" placeholder="Zip Code">
 	
 	</form>
 
-		<!--START: paypalexpress-->
-		<div style='text-align: center'>
-			<a href="paypal_express.asp?ch=1"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" ></a>
-			<p>Save time. Checkout securely.<br /> Pay without sharing your financial information.</p>
-			<h4>-- or --</h4>
-		</div>
-		<!--END: paypalexpress-->
+		<br />
 
 		<!-- [viewcart_checkout-button] -->
 		<!-- onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" -->
 		<input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large" id="Button7" name="Button7">
 
+		<!--START: paypalexpress-->
+		<div style='text-align: center'>
+			<h4>-- or --</h4>
+			<p style="font-size: 14px;">Pay without sharing your financial information.</p>
+			<a href="paypal_express.asp?ch=1"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" ></a>
+		</div>
+		<!--END: paypalexpress-->
+
 		<!-- <button class="coral large" onclick="window.location='checkout.asp?step=1'"></button> -->
+
+		<br />
+		<hr />
+
+		<!--START: ShipQuote-->
+		<div style="text-align: center;">
+			<p class="bold" style="text-align: center; font-size: 18px; margin-bottom: 5px; margin-top: 28px;">[viewcart_shipping-header]</p>
+			<input type="text" name="shipping_zip" size="10" value="[shipping_zip]" class="txtBoxStyle white" id="Text3" style="position: relative;
+top: 2px;" placeholder="Zip Code">
+			<input type="button" value="Go!" class="btn" onClick="document.shipquote.shipping_zip.value=document.recalculate.shipping_zip.value;document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4"><br />
+			<span class="zip_helper_text">[viewcart_shipping-message]</span>
+			<!--START: viewcart_ship-->
+				<p>[shipping_city] [shipping_state] [shipping_zip]</p>
+				<div class="fancy-select" style="width: 290px; background: white;">
+					<select class="txtBoxStyle" style="width: 290px; left: 0;">
+						<!--START: Shippers-->
+						<option><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</option>
+						<!--END: Shippers-->
+					</select>
+					<i class="icon-caret-down"></i>
+				</div>
+				<!-- <input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button5" name="Button5"> -->
+			<!--END: viewcart_ship-->
+		</div>
+		<!--END: ShipQuote-->
+
 
 	</div>
 </div>
@@ -333,8 +339,9 @@ top: 2px;" placeholder="Zip Code">
 	<br />
 </div>
 <!-- End of Coupon Codes -->
-
-
+<div class="clearboth"></div>
+<br />
+<p style="text-align: center;">[viewcart_total-note]</p>
 
 
 <script language="javascript" type="text/javascript">
