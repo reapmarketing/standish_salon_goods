@@ -99,14 +99,14 @@
 					<!-- [product_yourprice] -->
 					<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
 				<!--END: ITEMPRICE-->
-				<!--START: SALEPRICE-->
-					<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
-					<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-					<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
-				<!--END: SALEPRICE-->
+					<!--START: SALEPRICE-->
+						<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+						<!-- <span class="coral-text">[product_onsale]: </span> -->
+						<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+					<!--END: SALEPRICE-->
 				<!-- <button>Add to Cart</button> -->
 				<!-- value="[category_buyitlink]" -->
-				<input type="button" value="See Details" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+				<input type="button" value="See Details" onclick="window.location='add_cart.asp?quick=1&amp;item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
 			</div>
 		<!--END: ITEM_TEMPLATE-->
 	<!--END: CATEGORY_ITEMS-->
