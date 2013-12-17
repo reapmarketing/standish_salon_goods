@@ -529,7 +529,7 @@ body {
   color: #c5ac29;
 }
 .black-text {
-  color: #000;
+  color: #4d4d4d;
 }
 p,
 ul,
@@ -574,6 +574,9 @@ h6 {
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+.strike {
+	text-decoration:line-through
 }
 .bold {
   font-weight: 700;
@@ -1276,8 +1279,8 @@ fieldset {
   margin-top: 20px;
   margin-bottom: 20px;
 /*   min-height: 335px; */
-/*   min-height: 350px; */
-  min-height: 363px;
+  min-height: 350px;
+/*   min-height: 363px; */
 }
 .listing .product_thumb {
   width: 138px;
@@ -2053,4 +2056,24 @@ body {
 	width: 90px;
 	float: right;
 	margin-top: 24px;
+}
+
+.sale-cornertag {
+	position: relative;
+}
+.sale-cornertag .cornersprite {
+	display: block;
+}
+.cornersprite {
+	display: none;
+	background-image: url("/assets/templates/standish/images/corner-tag-sprite.png");
+	width: 75px;
+	height: 75px;
+	background-position: -76px 0;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+}
+.cornersprite.new {
+	background-position: 0 0;
 }

@@ -10,6 +10,12 @@
 		transition: opacity 0.5s ease;
 	}
 	</style>
+
+	<!-- Author Stuff -->
+	<meta name="signet:authors" content="Taylor Young">
+	<script src="/assets/templates/standish/scripts/signet.min.js"></script>
+	<!-- End of Author Stuff -->
+
 	<meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
 	<link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
 	<link rel="stylesheet" href="/assets/templates/standish/style/main.css" />
@@ -33,121 +39,33 @@
 	<script>
 		// Hack to prevent errors, may break things
 		adroll_adv_id = ''; adroll_pix_id = '';
+		// I have no idea who or what this tracking code is, but it throws errors and stops execution without the above hacks
 	</script>
-	
-
 	
 	<!-- <script type="text/javascript" src="assets/templates/common/js/jquery-1.3.2.min.js"></script> -->
 	<script type="text/javascript" src="/assets/templates/standish/scripts/3dquicksearch.js"></script>
 	<link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
-	<script type="text/javascript">
-		jQuery(function() {
-			
-			// Check for the element
-			if( jQuery('#searchlight').length ) {
-				// See if the function loaded properly
-				if( typeof jQuery('#searchlight').searchlight === 'function' ) {
-					jQuery('#searchlight').searchlight('/search_quick.asp');
-					$('.searchlight-balloon').css({'top': '80px' });
-				} else {
-					// console.log( 'There was an issue loading the searchlight scripts' );
-				}
-			}
-
-			// Download Spec Sheet button:
-	/*
-			jQuery('.spec_link').click(function() {
-				popup(jQuery(this).attr('href'),600,450);
-				return false;
-			});
-	*/
-		});
-	</script>
-
 	<!--START: quicksearch-->
 	<!--END: quicksearch-->
 
-<!--Adobe Edge Runtime-->
+	<!--Adobe Edge Runtime-->
 	<script type="text/javascript" charset="utf-8" src="/assets/templates/standish/scripts/TailoredStandishAnimation_edgePreload.js"></script>
 	<style>
 		.edgeLoad-taglines { visibility:hidden; }
 	</style>
-<!--Adobe Edge Runtime End-->
+	<!--Adobe Edge Runtime End-->
 
 	[META]
-
-	<meta name="signet:authors" content="Taylor Young">
-	<script src="/assets/templates/standish/scripts/signet.min.js"></script>
 	
-<!-- 	<script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/758d19e09dc0c002101c748165d0a254b4ec93fa.js"></script> -->
-
+	<!-- <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/758d19e09dc0c002101c748165d0a254b4ec93fa.js"></script> -->
 	
-	<script type="text/javascript">
-		function nozeros() {
-			window.setTimeout( function () { 
-				$('.nozero').each( function() {
-					$(this).text( $(this).text().replace(/\.00/g, '') );
-				});
-			}, 1 );
-		}
-		jQuery( function($) {
-			nozeros();
-
-			// Hellobar Animation
-			$('body').delay(3000).animate({'margin-top': '60px'});
-			$('.hello').delay(3000).animate({'top': '0'});
-
-			// Template Name Finder/Helper
-			template_slug = $('.template').first().data('template');
-			console.log( 'Template: ' + template_slug );
-
-			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' || template_slug === 'extrapage' ) {
-
-				// Show left bar on select pages... Perhaps a bad idea for SEO
-				$('.left-bar').show();
-
-				// Pagination corner helpers
-				$selected = $('.selected');
-				if( $selected.first().text() === "1" ) {
-					$selected.addClass('first');
-				}
-
-				$pagination_blocks = $('.pagination');
-
-				$pagination_blocks.each( function( i , v ) {
-					$pagination_links = $(v).find( 'a' );
-					if( $pagination_links.last().hasClass('active') ) {
-						$pagination_links.last().addClass('last');
-					}
-				});
-
-			}
-
-			// Remove 3DCart clears (use the 'clearfix' class instead)
-			$('div[style*=both]').remove();
-
-/*
-			// Test code for getting external data
-			$.getJSON( "http://standish.herokuapp.com/data.json" + "?callback=?", null,  function( data, textStatus, jqXHR ) {
-				console.log( data );
-			});
-*/
-			
-			
-
-		});
-	</script>
-
-<!-- IBF SWAPPER -->
-<!-- <script type="text/JavaScript" src="https://secure.ifbyphone.com/js/ibp_clickto_referral.js"></script>
-<script type="text/JavaScript">
-   var _ibp_public_key = "962b453a0efe61d97e1d0c783ec175d555de0cdc";
-   var _ibp_formatting = true;
-   var _ibp_keyword_set = 34811;
-</script> -->
-
-
-
+	<!-- IBF SWAPPER -->
+	<!-- <script type="text/JavaScript" src="https://secure.ifbyphone.com/js/ibp_clickto_referral.js"></script>
+	<script type="text/JavaScript">
+	   var _ibp_public_key = "962b453a0efe61d97e1d0c783ec175d555de0cdc";
+	   var _ibp_formatting = true;
+	   var _ibp_keyword_set = 34811;
+	</script> -->
 
 </head>
 <body>
@@ -411,39 +329,18 @@
 
 	<div class="clearboth"></div>
 
-<!-- 	<h2>Sidebar Blocks</h2> -->
-
-
-
-<!-- chunks_o_code/SIDEBAR.HTML -->
-<!-- chunks_o_code/SIDEBAR.HTML -->
-<!-- chunks_o_code/SIDEBAR.HTML -->
-<!-- chunks_o_code/SIDEBAR.HTML -->
-<!-- chunks_o_code/SIDEBAR.HTML -->
-<!-- chunks_o_code/SIDEBAR.HTML -->
+	<!-- 	<h2>Sidebar Blocks</h2> -->
+	<!-- chunks_o_code/SIDEBAR.HTML -->
 
 </div>
-
-
 
 	<!-- Footer -->
 
 	<!--START: FRAME_MAILLIST-->
 	<div class="newsletter-signup">
 		<h5>Get Awesome Offers & Product News Via Email!</h5>
-		<!-- [frame_mailinglist] -->
-		<!-- [mailinglist_text] -->
-<!--
-		<form class="frame_mailing_list_form" method="post" name="mailing" action="mailing_list.asp?action=add" onsubmit="return mailing_list();">
-			<input type="text" size="16" name="email" placeholder="Enter your email address" />
-			<input type="submit" name="www" value="Subscribe for Special Savings" class="go_btn button large" />
-			<div style="display:none;">
-				<input type="radio" name="subscribe" value="1" checked="checked" /> [mailinglist_subscribe]
-				<input type="radio" name="subscribe" value="0" /> [mailinglist_unsubscribe]
-			</div>
-		</form>
--->
-		<script>
+		<script type="text/javascript">
+		// Footer HubSpot form
 		hbspt.forms.create({ 
 			portalId: '239485',
 			formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
@@ -460,27 +357,8 @@
 				});
 			}
 		});
-		
-		$( '#FRAME_CATEGORY ul' ).each( function() {
-			// console.log( $(this).find('li').length );
-			if( $(this).find('li').length !== 1 ) {
-				$("<style>")
-					.prop("type", "text/css")
-					.html("\
-					.hiddencat {\
-						display: none;\
-					}")
-					.appendTo("head");
-			} else {
-				$(this).addClass('hiddencat');
-			}
-		});
-
 		</script>
-<!--
-		<input class="" placeholder="Enter your email address">
-		<button class="large">Subscribe for <span class="bold">Special Savings</span></button>
--->
+
 		<div class="social-icons">
 			<a href="http://pinterest.com/standishstuff"><i class="icon-pinterest-sign"></i></a>
 			<a href="http://twitter.com/StandishStuff"><i class="icon-twitter-sign"></i></a>
@@ -497,24 +375,22 @@
 	</div>
 	
 	<div class="footer">
-	
-	<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
+		<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
 
-<!-- begin olark code --><script data-cfasync="false" type="text/javascript">/*{literal}<![CDATA[*/
-window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
-/* custom configuration goes here (www.olark.com/documentation) */
-olark.identify('6778-882-10-3773');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/6778-882-10-3773/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PPSN');</script>
-<!-- End Google Tag Manager -->
-
+		<!-- begin olark code --><script data-cfasync="false" type="text/javascript">/*{literal}<![CDATA[*/
+		window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+		/* custom configuration goes here (www.olark.com/documentation) */
+		olark.identify('6778-882-10-3773');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/6778-882-10-3773/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->
+		
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PPSN');</script>
+		<!-- End Google Tag Manager -->
 
 		<div class="container_12">
 			<div class="grid_12">
@@ -526,14 +402,98 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<a href="#bofa" class="footer-logo bofa"></a>
 				<a href="#bbb" class="footer-logo bbb"></a>
 				<a href="#bbb" class="footer-logo bravo"></a>
-				
 
 			</div>
 			<div class="grid_12">
-				<p class="footer-copy">� 2013 Standish Salon Goods | <a href="/dallas-salon-furniture-showroom.html">Dallas Showroom</a> | <a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a> | 888.271.8434</p>
+				<p class="footer-copy">&copy; 2013 Standish Salon Goods | <a href="/dallas-salon-furniture-showroom.html">Dallas Showroom</a> | <a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a> | 888.271.8434</p>
 			</div>
 		</div>
 	</div>
 	<!-- End of Footer Content -->
+
+	<script type="text/javascript">
+		function nozeros() {
+			window.setTimeout( function () { 
+				$('.nozero').each( function() {
+					$(this).text( $(this).text().replace(/\.00/g, '') );
+				});
+			}, 1 );
+		}
+
+		jQuery( function($) {
+
+			// Initialize the Zero Remover
+			nozeros();
+
+			// SearchLight - 3DCart Suggestive Search 
+			// Check for the element
+			if( jQuery('#searchlight').length ) {
+				// See if the function loaded properly
+				if( typeof jQuery('#searchlight').searchlight === 'function' ) {
+					jQuery('#searchlight').searchlight('/search_quick.asp');
+					$('.searchlight-balloon').css({'top': '80px' });
+				} else {
+					// console.log( 'There was an issue loading the searchlight scripts' );
+				}
+			}
+
+			// Sidebar Customizations
+			$( '#FRAME_CATEGORY ul' ).each( function() {
+				// console.log( $(this).find('li').length );
+				if( $(this).find('li').length !== 1 ) {
+					$("<style>")
+						.prop("type", "text/css")
+						.html("\
+						.hiddencat {\
+							display: none;\
+						}")
+						.appendTo("head");
+				} else {
+					$(this).addClass('hiddencat');
+				}
+			});
+
+			// Hellobar Animation
+			$('body').delay(3000).animate({'margin-top': '60px'});
+			$('.hello').delay(3000).animate({'top': '0'});
+
+			// Template Name Finder/Helper
+			template_slug = $('.template').first().data('template');
+			console.log( 'Template: ' + template_slug );
+
+			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' || template_slug === 'extrapage' ) {
+
+				// Show left bar on select pages... Perhaps a bad idea for SEO
+				$('.left-bar').show();
+
+				// Pagination corner helpers
+				$selected = $('.selected');
+				if( $selected.first().text() === "1" ) {
+					$selected.addClass('first');
+				}
+
+				$pagination_blocks = $('.pagination');
+
+				$pagination_blocks.each( function( i , v ) {
+					$pagination_links = $(v).find( 'a' );
+					if( $pagination_links.last().hasClass('active') ) {
+						$pagination_links.last().addClass('last');
+					}
+				});
+
+			}
+
+			// Remove 3DCart clears (use the 'clearfix' class instead)
+			$('div[style*=both]').remove();
+
+/*
+			// Test code for getting external data
+			$.getJSON( "http://standish.herokuapp.com/data.json" + "?callback=?", null,  function( data, textStatus, jqXHR ) {
+				console.log( data );
+			});
+*/
+
+		});
+	</script>
 </body>
 </html>

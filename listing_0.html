@@ -7,6 +7,32 @@
 
 jQuery( function() {
 
+	// Console-polyfill. MIT license.
+	// https://github.com/paulmillr/console-polyfill
+	// Make it safe to do console.log() always.
+	(function (con) {
+		'use strict';
+		var prop, method;
+		var empty = {};
+		var dummy = function() {};
+		var properties = 'memory'.split(',');
+		var methods = ('assert,count,debug,dir,dirxml,error,exception,group,' +
+			 'groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,' +
+			 'time,timeEnd,trace,warn').split(',');
+		while (prop = properties.pop()) con[prop] = con[prop] || empty;
+		while (method = methods.pop()) con[method] = con[method] || dummy;
+	})(window.console = window.console || {});
+	// End of Console-polyfill
+
+	// SalePrice display and sale cornertag activation on Listing Page
+	if( $('#saleprice').text() === "0" ) {
+		$('#saleprice').parent().hide();
+		
+	} else {
+		$('.pricebox').addClass('sale-cornertag');
+		$('.strike-perhaps').addClass('strike');
+	}
+
 	// Hubspot + Vex Popup form
 	jQuery('.brochure-download a').first().on( 'click', function( e ) {
 		e.preventDefault();
@@ -88,10 +114,18 @@ jQuery( function() {
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
 	console.log( tweet_text );
-	
+
 	// Default Share Message
-	
-	// console.log( 'tweet: ' + tweet_text );
+
+	short_description = 'Standish Salon Goods is a seller of uncommonly cool salon chairs, salon furniture, and salon goods at great prices.';
+	console.log( tweet_text );
+
+	if( tweet_text != null ) {
+		short_description = tweet_text;
+	}
+
+	console.log( 'tweet: ' + short_description );
+
 /*
 	var $detailsList = jQuery( '.details-list' );
 	jQuery.each( details.split( '\n' ), function( i, v ){
@@ -101,17 +135,22 @@ jQuery( function() {
 
 	// Pin-it Link helper
 	image = encodeURIComponent( 'http://' + document.domain + '/' + jQuery( '.product-image' ).first().attr( 'href' ) );
-	short_description = jQuery('.extended-description').text().split('.')[0] + '.';
+	// Pulls first sentance from the description (Old way)
+	// short_description = jQuery('.extended-description').text().split('.')[0] + '.';
+
+	
 	// console.log( image );
 	jQuery( '.pinit a' ).attr('href', 'http://www.pinterest.com/pin/create/button/?url=' + image + '&description=' + short_description );
 
 	// Field 10 - Video
 	
-	console.log( jQuery( '.field10' ).data( 'field10' ) );
-	
-	var video_embed_codes = jQuery( '.field10' ).data( 'field10' ).split( '\n' );
+	// console.log( jQuery( '.field10' ).data( 'field10' ) );
+	var video_embed_codes = '';
+	if( embed_data = jQuery( '.field10' ).data( 'field10' ) ) {
+		video_embed_codes = embed_data.split( '\n' );
+	}
 	var video_markup = '';
-	console.log(video_embed_codes);
+	// console.log(video_embed_codes);
 	if( video_embed_codes ) {
 		video_markup = '<div class=""><h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">Product Video</h4>';
 		jQuery.each( video_embed_codes, function( i, v ) {
@@ -425,6 +464,7 @@ jQuery( function() {
 			
 
 			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="pricebox">
+				<div class="cornersprite"></div>
 				<!--START: pricing-->
 					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
 					<!-- [product_Header-price] -->
@@ -435,19 +475,19 @@ jQuery( function() {
 					</div>
 					<div class="right-price">
 						<!--START: price2-->
-							<p><span itemprop="price" class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
+							<p class="darkgray-text"><span itemprop="price" class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
 						<!--END: price2-->
 						<!-- [product_yourprice] -->
 						<!--START: ITEMPRICE-->
-							<p><span class="label">Our Price:</span> <span class="nozero">[price]</span></p>
+							<p class="darkgray-text"><span class="label">Our Price:</span> <span class="nozero strike-perhaps">[price]</span></p>
 						<!--END: ITEMPRICE-->
 						<!-- [product_onsale] -->
 						<!--START: SALEPRICE-->
-							<p><span itemprop="price" class="label">Sale Price:</span> <span class="nozero">[saleprice]</span></p>
+							<p class="darkgray-text"><span itemprop="price" class="label">Sale Price:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
 						<!--END: SALEPRICE-->
 						<!--START: SAVINGS-->
 							<!-- [product_savings] -->
-							<p><span itemprop="price" class="label">You Save:</span> <span class="nozero">[savings]</span></p>
+							<p class="coral-text italic bold"><span itemprop="price" class="label">You Save:</span> <span class="nozero">[savings]</span></p>
 						<!--END: SAVINGS-->
 					</div>
 					<div class="clearboth"></div>
@@ -733,11 +773,11 @@ jQuery( function() {
 						<!--END: product_review-->
 						<!--START: ITEMPRICE-->
 							<!-- [product_yourprice] -->
-							<p class="price">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
 						<!--END: ITEMPRICE-->
 						<!--START: SALEPRICE-->
-							<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
-							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
 							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
 						<!--END: SALEPRICE-->
 						<!-- <button>Add to Cart</button> -->
@@ -884,14 +924,13 @@ jQuery( function() {
 <div class="hidden field10" data-field10="[extra_field_10]"></div>
 <!--END: extra_field_10-->
 
-
-
-
-
-
 <script type="text/javascript" src="assets/templates/common/js/listing.js"></script>
 <script type="text/javascript" src="assets/templates/common/3dzoom/magiczoomplus.js"></script>
 <script type="text/javascript">
+	// What is this???!!! todo: make sure JQuery is alway loaded (version 10.x with JQuery Migrate shim for 3DCart Code)
+
+	console.log(typeof jQuery == 'undefined');
+
 	if (typeof jQuery == 'undefined') {
 		document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
 	}
