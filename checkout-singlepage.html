@@ -1136,6 +1136,19 @@ $( function() {
                                 <td align="right" class="item"><input type="checkbox" value="1" name="maillist" [maillist] id="Checkbox1"></td>
                                 <td class="item">[checkout1_joinmailinglist]</td>
                               </tr>
+                              
+                              
+                              <tr>
+                                <td align="right" class="item bold">Account Password (optional): </td>
+								<td class="item">
+									<input type="password" size="12" name="pass" class="txtBoxStyle" id="pass" autocomplete="off">
+									<!--START: passwordrequired--> 
+									<!--START: req_pass--> 
+									<img src="assets/templates/common/images/error2.gif" width="12" height="12"> 
+									<!--END: req_pass--> 
+									<!--END: passwordrequired-->
+								</td>
+                              </tr>
                             </table>
                             <br />
                           </div></td>
@@ -1301,6 +1314,7 @@ $( function() {
           <!-- start left bar2-->
           <td valign="top" width="50%"><table width="100%" cellpadding="0" cellspacing="0">
            <!--START: account_login2-->
+<!--
                       <tr>
                         <td colspan="2" class="checkout-headers"> [checkout1_Header-createnewaccount] </td>
                       </tr>
@@ -1313,22 +1327,27 @@ $( function() {
                             <tr class="item">
                               <td align="right" class="item"><strong>[CustomerInfo_password]: </strong></td>
                               <td nowrap><input type="password" size="12" name="pass" class="txtBoxStyle" id="pass" autocomplete="off">
+-->
                                 
                                 <!--START: passwordrequired--> 
                                 <!--START: req_pass--> 
-                                <img src="assets/templates/common/images/error2.gif" width="12" height="12"> 
+<!--                                 <img src="assets/templates/common/images/error2.gif" width="12" height="12">  -->
                                 <!--END: req_pass--> 
-                                <!--END: passwordrequired--></td>
-                            </tr>
+                                <!--END: passwordrequired--><!-- </td> -->
+<!--                             </tr> -->
                             <!--START: recurmessage-->
+<!--
                             <tr>
                               <td colspan="2"><em class="error">[recurringorders_login-required]</em></td>
                             </tr>
+-->
                             <!--END: recurmessage-->
                             
+<!--
                           </table>
                           <br /></td>
                       </tr>
+-->
                       <!--END: account_login2-->
               <tr>
                 <td class="checkout-headers">[checkout3_Header-shippingmethodinfo]</td>

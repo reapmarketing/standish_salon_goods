@@ -5,6 +5,32 @@
 
 <script type="text/javascript">
 
+// Async Loading of Pinterest Pin-It Button Script
+(function(d){
+	var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
+	p.type = 'text/javascript';
+	p.async = true;
+	p.src = '//assets.pinterest.com/js/pinit.js';
+	f.parentNode.insertBefore(p, f);
+}(document));
+
+// Async Tweet This Button Script
+/* // Twitter implementation has been manually create to support changing the message after DOM load.
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}
+}(document, 'script', 'twitter-wjs');
+*/
+
+// Async Facebook Like Button Script
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=163542803667984";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
 jQuery( function() {
 
 	// Console-polyfill. MIT license.
@@ -113,12 +139,11 @@ jQuery( function() {
 	// @todo!
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
-	console.log( tweet_text );
+	// console.log( tweet_text );
 
 	// Default Share Message
 
-	short_description = 'Standish Salon Goods is a seller of uncommonly cool salon chairs, salon furniture, and salon goods at great prices.';
-	console.log( tweet_text );
+	short_description = 'Standish Salon Goods is a seller of uncommonly cool salon chairs, salon furniture, and salon goods at great prices';
 
 	if( tweet_text != null ) {
 		short_description = tweet_text;
@@ -134,13 +159,19 @@ jQuery( function() {
 */
 
 	// Pin-it Link helper
-	image = encodeURIComponent( 'http://' + document.domain + '/' + jQuery( '.product-image' ).first().attr( 'href' ) );
+	pinimage = encodeURIComponent( 'http://' + document.domain + '/' + jQuery( '.product-image' ).first().attr( 'href' ) );
+	pindescription = encodeURIComponent( short_description );
+	pinurl = encodeURIComponent( document.URL );
+
 	// Pulls first sentance from the description (Old way)
 	// short_description = jQuery('.extended-description').text().split('.')[0] + '.';
 
-	
-	// console.log( image );
-	jQuery( '.pinit a' ).attr('href', 'http://www.pinterest.com/pin/create/button/?url=' + image + '&description=' + short_description );
+	jQuery( '.pinit a' ).attr('href', 'http://www.pinterest.com/pin/create/button/?url=' + pinurl + '&amp;media=' + pinimage + '&amp;description=' + pindescription );
+
+	// Twitter Implementation
+	jQuery( '.tweet_button' ).attr('href', 'https://twitter.com/intent/tweet?url=' + pinurl + '&text=' + pindescription );
+	// Reload the button, after change above
+	// twttr.widgets.load();
 
 	// Field 10 - Video
 	
@@ -165,30 +196,6 @@ jQuery( function() {
 
 });
 
-// Async Loading of Pinterest Pin-It Button Script
-(function(d){
-	var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
-	p.type = 'text/javascript';
-	p.async = true;
-	p.src = '//assets.pinterest.com/js/pinit.js';
-	f.parentNode.insertBefore(p, f);
-}(document));
-
-
-// Async Tweet This Button Script
-!function(d,s,id){
-	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-	if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}
-}(document, 'script', 'twitter-wjs');
-
-// Facebook Like Button Script
-(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=163542803667984";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
 
 </script>
 
@@ -267,9 +274,15 @@ jQuery( function() {
 
 			<div class="sharebox">
 				<ul>
-					<li class="pinit"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
+					<li class="pinit"><a href="" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
 
-					<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="StandishStuff" data-related="StandishStuff" data-count="none">Tweet</a></li>
+
+
+
+					<li>
+						<a class="tweet_button" target="_blank" href="#tweet"></a>
+					<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-via="StandishStuff" data-related="StandishStuff" data-count="none">Tweet</a> -->
+					</li>
 
 					<li class="like"><div class="fb-like" data-href="https://standishsalongoods.com" data-colorscheme="light" data-layout="button" data-action="like" data-show-faces="false" data-send="false"></div></li>
 
@@ -777,8 +790,8 @@ jQuery( function() {
 						<!--END: ITEMPRICE-->
 						<!--START: SALEPRICE-->
 							<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
-							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" style="position: relative;top: 4px;" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+							
 						<!--END: SALEPRICE-->
 						<!-- <button>Add to Cart</button> -->
 

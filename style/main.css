@@ -2077,3 +2077,14 @@ body {
 .cornersprite.new {
 	background-position: 0 0;
 }
+
+
+.tweet_button {
+	background: url("/assets/templates/standish/images/tweet-sprite.png");
+	width: 56px;
+	height: 21px;
+	display: inline-block;
+}
+.tweet_button:hover {
+	background-position: 0 -21px;
+}

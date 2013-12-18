@@ -158,10 +158,30 @@ jQuery(function(){
 			<!--END: BUYSAFE_BONDCOST-->
 		<!--END: BUYSAFE_CONTROL-->
 
+	<!--START: PROMOTIONS-->
+		<hr />
+		<p class="coral-text">* Valid Promotions:</p>
+		<!--START: DISPLAY_PROMOS-->
+			<form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
+				<input type="hidden" name="coupon" value="[id]" id="Hidden4">
+				<span class="bold">[promotion_name]</span> -[promotion_description]<br /> Valid: [promotion_start] - [promotion_end]
+				<br />
+				<!--START: REMOVE_PROMO-->
+				<input type="submit" value="Remove" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit3" name="Submit3">
+				<!--END: REMOVE_PROMO-->
+			</form>
+			<br />
+		<!--END: DISPLAY_PROMOS-->
+		<br />
+		<hr />
+		<br />
+	<!--END: PROMOTIONS-->
+
 		<!-- [shoppingcart_total] -->
+		<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ...................... <span class="bold nozero">[shoppingcart_total]</span></p>
 		<div class="subtotal white" style="padding: 10px 30px; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
 			<!--START: DISCOUNTS--><p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>[checkout1_discounts]</strong> ...................... <span class="bold nozero">- [DISCOUNTS]</span></p><!--END: DISCOUNTS-->
-			<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ...................... <span class="bold nozero">[CARTTOTAL]</span></p>
+			<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Total</strong> ...................... <span class="bold nozero">[CARTTOTAL]</span></p>
 		</div>
 		<br />
 		<hr />
@@ -277,8 +297,6 @@ jQuery(function(){
 	<!--START: shopatron-->
 		<input type="button" value="Checkout with Shopatron" name="B1" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" onClick="window.location='shopatron.asp'"/>
 	<!--END: shopatron-->
-	
-	</form>
 
 		<br />
 
@@ -339,6 +357,9 @@ top: 2px;" placeholder="Zip Code">
 	<br />
 </div>
 <!-- End of Coupon Codes -->
+
+</form>
+
 <div class="clearboth"></div>
 <br />
 <p style="text-align: center;">[viewcart_total-note]</p>
@@ -355,22 +376,6 @@ top: 2px;" placeholder="Zip Code">
 	//<!--END: apply_coupon_validation-->
 </script>
 
-	<!--START: PROMOTIONS-->
-<!-- 		[viewcart_discounts-header] -->
-		<!--START: DISPLAY_PROMOS-->
-<!--
-			<form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
-				<input type="hidden" name="coupon" value="[id]" id="Hidden4">
-				<b>[promotion_name]</b>
-				[promotion_description]<br>
-				<b>Valid from: [promotion_start] - [promotion_end]</b>
--->
-				<!--START: REMOVE_PROMO-->
-<!-- 				<input type="submit" value="Remove" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit3" name="Submit3"> -->
-				<!--END: REMOVE_PROMO-->
-<!-- 			</form> -->
-		<!--END: DISPLAY_PROMOS-->
-	<!--END: PROMOTIONS-->
 	<!--START: GIFTCERTIFICATES-->
 	[viewcart_giftcertificates-header]
 		<!--START: DISPLAY_GIFTCERTIFICATES-->
