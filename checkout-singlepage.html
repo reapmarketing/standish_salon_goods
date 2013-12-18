@@ -11,7 +11,7 @@ $( function() {
 	// Checkout page hacks
 	// if( $('#divCheckoutQuestions input[type=checkbox]').length ) {}
 	$('#divCheckoutQuestions input[type=checkbox]').prop('checked', true);
-	$('#pass').parent().parent().parent().prepend('<tr><td width="20%" align="right" class="item"><strong>(Optional)</strong></td><td	x></td></tr>');
+	// $('#pass').parent().parent().parent().prepend('<tr><td width="20%" align="right" class="item"><strong>(Optional)</strong></td><td	x></td></tr>');
 	$('input').each( function() {
 		if( $(this).attr('value') === 'Log in to your account' ) {
 			console.log( $(this).parent().parent().parent().parent().parent().parent().parent().remove() ); 

@@ -2033,7 +2033,7 @@ body {
 .checkout-headers .checkout-headers:first-child {
 	width: 240px;
 }
-#FRAME_CATEGORY ul li {
+#catframe ul li {
 	border-bottom: 1px solid #dcdcdc;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -2087,4 +2087,9 @@ body {
 }
 .tweet_button:hover {
 	background-position: 0 -21px;
+}
+
+
+.promotions {
+	font-size: 14px;
 }

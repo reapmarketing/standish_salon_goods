@@ -1,6 +1,8 @@
 
 
 <script language="javascript">
+// Adding promotions borked the form for the coupon codes
+
 function buySAFEOnClick(wantsbond) {
 	document.location.href='view_cart.asp?wantsbond=' + wantsbond;
 }
@@ -65,7 +67,7 @@ jQuery(function(){
 	<!-- <input type="button" onclick="window.location='checkout.asp?step=1'" value="[viewcart_checkout-button]" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'"> -->
 
 
-	<form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
+
 		<!--START: SHOPPING_CART_SHIPMENT_INFO-->
 		Ship To [name] [address]
 		<!--START: EDITADDRESS-->
@@ -83,6 +85,7 @@ jQuery(function(){
 
 <!-- The Left Side -->
 <div class="grid_7">
+<form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
 	<div class="cart_items">
 		<div class="cart_items_header">
 			<div class='cart_col1'>Description</div>
@@ -140,6 +143,7 @@ jQuery(function(){
 	<button class="gainsboro" style="margin-left: 80px;" onclick="document.recalculate.submit();"><span class="add-on-left"><i class="icon-repeat"></i></span>Update Cart</button>
 	<br />
 	<br />
+</form>
 </div>
 <!-- End of the left side -->
 
@@ -159,26 +163,26 @@ jQuery(function(){
 		<!--END: BUYSAFE_CONTROL-->
 
 	<!--START: PROMOTIONS-->
-		<hr />
-		<p class="coral-text">* Valid Promotions:</p>
-		<!--START: DISPLAY_PROMOS-->
-			<form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
-				<input type="hidden" name="coupon" value="[id]" id="Hidden4">
-				<span class="bold">[promotion_name]</span> -[promotion_description]<br /> Valid: [promotion_start] - [promotion_end]
+		<div class="promotions">
+			<hr />
+			<span class="coral-text">* Valid Promotions:</span><br />
+			<!--START: DISPLAY_PROMOS-->
+				<form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
+					<input type="hidden" name="coupon" value="[id]" id="Hidden4">
+					<span class="bold">[promotion_name]</span> -[promotion_description]<br /> Valid: [promotion_start] - [promotion_end]
+					<!--START: REMOVE_PROMO-->
+					<input type="submit" value="Remove" class="btn" style="height:auto;background:none;border:0;color:#ff7f50;padding:0;margin:0;display:inline;text-decoration:underline;min-height:0;" id="Submit3" name="Submit3">
+					<!--END: REMOVE_PROMO-->
+				</form>
 				<br />
-				<!--START: REMOVE_PROMO-->
-				<input type="submit" value="Remove" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit3" name="Submit3">
-				<!--END: REMOVE_PROMO-->
-			</form>
-			<br />
-		<!--END: DISPLAY_PROMOS-->
+			<!--END: DISPLAY_PROMOS-->
+			<hr />
+		</div>
 		<br />
-		<hr />
-		<br />
-	<!--END: PROMOTIONS-->
 
+	<!--END: PROMOTIONS-->
 		<!-- [shoppingcart_total] -->
-		<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ...................... <span class="bold nozero">[shoppingcart_total]</span></p>
+<!-- 		<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ...................... <span class="bold nozero">[shoppingcart_total]</span></p> -->
 		<div class="subtotal white" style="padding: 10px 30px; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
 			<!--START: DISCOUNTS--><p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>[checkout1_discounts]</strong> ...................... <span class="bold nozero">- [DISCOUNTS]</span></p><!--END: DISCOUNTS-->
 			<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Total</strong> ...................... <span class="bold nozero">[CARTTOTAL]</span></p>
@@ -345,20 +349,22 @@ top: 2px;" placeholder="Zip Code">
 <!-- End of the Right Side -->
 
 <!-- Coupon Codes -->
-<div class="grid_12 coupon">
-	<br />
-	<!--START: apply_coupon-->
-	<strong>[viewcart_coupon-header]</strong>
-		<input type="text" name="coupon_code" class="txtBoxStyle" size="14">
-		<input type="submit" value="Go!" id="Submit1" name="Submit1" />
-		[viewcart_coupon-message]
-	<!--END: apply_coupon-->
-	<br />
-	<br />
-</div>
+<form action="recalculate.asp" method="post">
+	<div class="grid_12 coupon">
+		<br />
+		<!--START: apply_coupon-->
+		<strong>[viewcart_coupon-header]</strong>
+			<input type="text" name="coupon_code" class="txtBoxStyle" size="14">
+			<input type="submit" value="Go!" id="Submit1" name="Submit1" />
+			[viewcart_coupon-message]
+		<!--END: apply_coupon-->
+		<br />
+		<br />
+	</div>
+</form>
 <!-- End of Coupon Codes -->
 
-</form>
+
 
 <div class="clearboth"></div>
 <br />

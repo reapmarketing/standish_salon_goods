@@ -293,6 +293,7 @@
 
 			<!--START: FRAME_CATEGORY-->
 				<div class="allcaps serif black-text bold">[frame_categories]</div>
+				<div id="catframe">
 				<!--START: CATEGORIES-->
 					<ul>
 					<!--START: CATEGORY_FORMAT-->
@@ -304,6 +305,7 @@
 					<!--END: SUB_CATEGORY_FORMAT-->
 					</ul>
 				<!--END: CATEGORIES-->
+				</div>
 			<!--END: FRAME_CATEGORY-->
 
 			<!--START: FRAME_BYPRICE-->
@@ -438,7 +440,7 @@
 			}
 
 			// Sidebar Customizations
-			$( '#FRAME_CATEGORY ul' ).each( function() {
+			$( '#catframe ul' ).each( function() {
 				// console.log( $(this).find('li').length );
 				if( $(this).find('li').length !== 1 ) {
 					$("<style>")
