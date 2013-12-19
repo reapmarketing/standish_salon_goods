@@ -1,7 +1,5 @@
-<!-- Template: category_0.html -->
+<!-- Template: category_10.html -->
 <div class="template" style="display:none" data-template="category"></div>
-
-<h1>This is category_1.html and NEEDS UPDATED WITH CHANGES TO category_10.html where development will progress.</h1>
 
 <script>
 jQuery( function($) {
@@ -45,22 +43,26 @@ jQuery( function($) {
 			<div id="categoryHeader" class="data grid_10">[CONTENT]</div>
 		<!--END: CATEGORY_HEADER--> 
 		<!--START: SUB_CATEGORIES-->
-		<div class="grid_10 hide">
+<!-- 		<div class="grid_10"> -->
 			<!-- <div class="titles" colspan="5">&nbsp;[category_Header-subcategories]</div> -->
+<!--
 			<h3>[category_Header-subcategories]</h3>
 			<ul>
+-->
 			<!--START: SUB_CATEGORIES_FORMAT-->
 				<!-- SubCat Image appears to be unused -->
 				<!--START: SUB_CATEGORY_IMAGE-->
-					<a href="view_category.asp?cat=[CATID]"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" border="0" /></a>
+<!-- 					<a href="view_category.asp?cat=[CATID]"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" border="0" /></a> -->
 				<!--END: SUB_CATEGORY_IMAGE-->
 				<!--START: SUB_CATEGORY_NAME-->
-					<li><a href="view_category.asp?cat=[CATID]">[SUB_CATEGORY_NAME]</a></li>
+<!-- 					<li><a href="view_category.asp?cat=[CATID]">[SUB_CATEGORY_NAME]</a></li> -->
 				<!--START: SUB_CATEGORY_NAME-->
 				<!-- <p>[SUB_CATEGORY_DESCRIPTION]</p> -->
 			<!--END: SUB_CATEGORIES_FORMAT-->
+<!--
 			</ul>
 		</div>
+-->
 		<!--END: SUB_CATEGORIES-->
 	
 		<!--START: FEATURE_MENU-->
@@ -74,7 +76,7 @@ jQuery( function($) {
 						<!--END: product_review_average-->
 					<!--END: product_review-->
 					<div class="grid_2 listing">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
 							<!-- [product_yourprice] -->
@@ -82,8 +84,8 @@ jQuery( function($) {
 						<!--END: ITEMPRICE-->
 						<!--START: SALEPRICE-->
 							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+							<!-- <span class="coral-text">[product_onsale]: </span> -->
+							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
 						<!--END: SALEPRICE-->
 						<!-- <button>Add to Cart</button> -->
 						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
@@ -195,33 +197,27 @@ jQuery( function($) {
 						<!--END: product_review_average-->
 					<!--END: product_review-->
 					<div class="grid_2 listing">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
 							<!-- [product_yourprice] -->
-							<p class="price">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
 						<!--END: ITEMPRICE-->
 						<!--START: SALEPRICE-->
-							<p class="msrp">[product_yourprice] [ITEMPRICE]</p>
-							<p class="price bold allcaps"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
 							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
 						<!--END: SALEPRICE-->
 						<!-- <button>Add to Cart</button> -->
 						<!-- value="[category_buyitlink]" -->
-						<input type="button" value="Add to Cart" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+						<input type="button" value="See Details" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
 					</div>
 				<!--END: ITEM_TEMPLATE_0--> 
 			<!--END: CATEGORY_ITEMS-->
-	
-			<!--START: CATEGORY_FOOTER-->
-				<div class="grid_10">[CONTENT]</div>
-			<!--END: CATEGORY_FOOTER-->
 	</form>
 
-</div>
-
 	<!--START: PAGING-->
-	<div class="grid_12">
+	<div class="grid_10">
 		<!-- [category_moreresults] -->
 		<div class="pagination">
 			<!--START: PREV-->
@@ -258,3 +254,8 @@ jQuery( function($) {
 
 <!--END: ITEMS-->
 
+	<!--START: CATEGORY_FOOTER-->
+		<div class="grid_10">[CONTENT]</div>
+	<!--END: CATEGORY_FOOTER-->
+
+</div>

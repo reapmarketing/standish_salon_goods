@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>[TITLE]</title>
+	<title>404 - Standish Salon Goods</title>
 	<style>
 	/* Not sure what this is for... */
 	html.wait{
@@ -54,8 +54,6 @@
 		.edgeLoad-taglines { visibility:hidden; }
 	</style>
 	<!--Adobe Edge Runtime End-->
-
-	[META]
 	
 	<!-- <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/758d19e09dc0c002101c748165d0a254b4ec93fa.js"></script> -->
 	
@@ -97,7 +95,7 @@
 			</div>
 			<div class="grid_4">
 				<!-- <a href="/checkout_one.asp"> -->
-				<a href="/view_cart.asp"><button class="cart large"><i class="icon-shopping-cart"></i> Your Cart<span class="cart-number">[ITEMSINCART]</span></button></a>
+				<a href="/view_cart.asp"><button class="cart large"><i class="icon-shopping-cart"></i> Your Cart<span class="cart-number">_</span></button></a>
 			</div>
 		</div>
 	</div>
@@ -254,83 +252,12 @@
 	<!-- End of Header -->
 <div class="container_12 main_content">
 
-<!--
-	<div class="grid_8 filter">
-		Filters Go Here if Possible
-	</div>
+
+	<h1>404! :O</h1>
 	
-	<div class="grid_4 search">
-		<form method="get" name="searchForm" action="search.asp">
-			<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
-			<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-		</form>
-	</div>
--->
+	<p>Sorry, but we can't seem to find the page you are looking for... </p>
+	<p>Perhaps you would like to take look at our <a href="http://www.standishsalongoods.com/salon-seating.html">Salon Seating</a>?</p>
 
-	
-	<!--START: LEFT BAR-->
-
-	<div class="grid_2 left-bar">
-		<!--START: LEFT_BAR_BLOCKS-->
-			<!--START: FRAME_SEARCH-->
-			<!--
-			<div class="texturedBG">
-				<form method="get" name="searchForm" action="search.asp" style="margin: 0px; padding: 7px 8px;">
-					<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};"  onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" />
-					<input type="image" src="assets/templates/[template]/images/search_btn.png" name="search" value="GO" />
-				</form>
-			</div>
-			-->
-			<!--END: FRAME_SEARCH-->
-
-			<div class="filters"></div>
-
-			<!--START: FRAME_MANUFACTURER-->
-				<!--[frame_manufacturer]-->
-<!-- 				<div class="allcaps serif black-text bold">Brand</div> -->
-<!-- 				<ul> -->
-					<!--START: manufacturer_format-->
-<!-- 						<li><a href="search_groups.asp?manf=[mfgid]" class="cat">[manufacturer]</a> -->
-					<!--END: manufacturer_format-->
-<!-- 				</ul> -->
-			<!--END: FRAME_MANUFACTURER-->
-
-			<!--START: FRAME_CATEGORY-->
-				<div class="allcaps serif black-text bold">[frame_categories]</div>
-				<div id="catframe">
-				<!--START: CATEGORIES-->
-					<ul>
-					<!--START: CATEGORY_FORMAT-->
-						<li><a href="view_category.asp?cat=CATID" class="cat">CATEGORY</a></li>
-					<!--END: CATEGORY_FORMAT-->
-					
-					<!--START: SUB_CATEGORY_FORMAT-->
-						<li class="indent"><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
-					<!--END: SUB_CATEGORY_FORMAT-->
-					</ul>
-				<!--END: CATEGORIES-->
-				</div>
-			<!--END: FRAME_CATEGORY-->
-
-			<!--START: FRAME_BYPRICE-->
-<!-- 				<div class="allcaps serif black-text bold">[frame_byprice]</div> -->
-<!-- 				<ul> -->
-					<!--START: byprice_format-->
-<!-- 						<li><a href="search_groups.asp?keyword=[id]&byprice=[id]" class="cat">[title]</a> -->
-					<!--END: byprice_format-->
-<!-- 				</ul> -->
-			<!--END: FRAME_BYPRICE-->
-
-			<!--START: LEFT_BANNER-->
-<!-- 				[LEFT_BANNER] -->
-			<!--END: LEFT_BANNER-->
-		<!--END: LEFT_BAR_BLOCKS-->
-	</div>
-	<!--END: LEFT BAR-->
-	
-	<!-- Main Content -->
-
-			MIDDLE
 	<!-- End of Main Content -->
 
 	<div class="clearboth"></div>
@@ -392,100 +319,5 @@
 	</div>
 	<!-- End of Footer Content -->
 
-	<script type="text/javascript">
-		function nozeros() {
-			window.setTimeout( function () { 
-				$('.nozero').each( function() {
-					$(this).text( $(this).text().replace(/\.00/g, '') );
-				});
-			}, 1 );
-		}
-
-		jQuery( function($) {
-
-			// Initialize the Zero Remover
-			nozeros();
-
-			// SearchLight - 3DCart Suggestive Search 
-			// Check for the element
-			if( jQuery('#searchlight').length ) {
-				// See if the function loaded properly
-				if( typeof jQuery('#searchlight').searchlight === 'function' ) {
-					jQuery('#searchlight').searchlight('/search_quick.asp');
-					$('.searchlight-balloon').css({'top': '80px' });
-				} else {
-					// console.log( 'There was an issue loading the searchlight scripts' );
-				}
-			}
-
-			// Sidebar Customizations
-			// console.log( $(this).find('li').length );
-
-
-// Big Issues
-/*
-				$( '#catframe ul' ).each( function( i, v ) {
-					console.log(i);
-					if( $(v).find('li').length !== 1 && i != 1) {
-						$("<style>")
-							.prop("type", "text/css")
-							.html("\
-							.hiddencat {\
-								display: none;\
-							}")
-							.appendTo("head");
-					} else {
-						$(this).addClass('hiddencat');
-					}
-				});
-*/
-
-			// Cart Price Thing
-			if( !$('.discount').length ) {
-				$('.subtotes').hide();
-			}
-
-			// Hellobar Animation
-			$('body').delay(3000).animate({'margin-top': '60px'});
-			$('.hello').delay(3000).animate({'top': '0'});
-
-			// Template Name Finder/Helper
-			template_slug = $('.template').first().data('template');
-			console.log( 'Template: ' + template_slug );
-
-			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' || template_slug === 'extrapage' ) {
-
-				// Show left bar on select pages... Perhaps a bad idea for SEO
-				$('.left-bar').show();
-
-				// Pagination corner helpers
-				$selected = $('.selected');
-				if( $selected.first().text() === "1" ) {
-					$selected.addClass('first');
-				}
-
-				$pagination_blocks = $('.pagination');
-
-				$pagination_blocks.each( function( i , v ) {
-					$pagination_links = $(v).find( 'a' );
-					if( $pagination_links.last().hasClass('active') ) {
-						$pagination_links.last().addClass('last');
-					}
-				});
-
-			}
-
-			// Remove 3DCart clears (use the 'clearfix' class instead)
-			$('div[style*=both]').remove();
-
-/*
-			// Test code for getting external data
-			$.getJSON( "http://standish.herokuapp.com/data.json" + "?callback=?", null,  function( data, textStatus, jqXHR ) {
-				console.log( data );
-			});
-*/
-
-		});
-	</script>
 </body>
 </html>
