@@ -92,7 +92,7 @@ jQuery( function() {
 					target: '.vex-content',
 					redirectUrl: jQuery( '.brochure-download a' ).attr('href'),
 					onFormReady: function() {
-						if( !jQuery( '.vex-content .hs-input' ).length > 0 ) {
+						if( !jQuery( '.vex-content .hs_email' ).length > 0 ) {
 							jQuery( '.vex-content .hs-button' ).click();
 						}
 					}
@@ -130,27 +130,102 @@ jQuery( function() {
 	var $badges = jQuery( '.badges' );
 	var $badges_list = jQuery( '.badges-list' );
 	var badgetext = {
-		'free-shipping': 'Free Shipping',
-		'fire-retardant': 'Fire Retardant',
-		'heavy-duty': 'Heavy Duty Hardware',
-		'iron-life': '50% Longer Iron Life',
-		'no-sales-tax': 'No Sales Tax',
-		'ten-thousand-rub': '10,000 Rub Count',
-		'swap-base': 'Swappable Bases for Free',
-		'new-arrival': 'New Arrival',
-		'service': 'Personal Service',
-		'warranty': '2-5 Yr. Warranty',
-		'color': 'Free Color Variations',
-		'returns': 'No Hassle Return Policy',
-		'hardwood': 'Real Hardwood',
-		'extra-wide': 'Extra Wide',
-		'double-stitched': 'Double Stitching',
-		'inspected': 'Guaranteed To Pass Inspection'
+		'free-shipping': {
+			'title': 'Free Shipping',
+			'class': 'free-shipping',
+			'tooltip': 'This product qualifies for free shipping!'
+		},
+		'fire-retardant': {
+			'title': 'Fire Retardant',
+			'class': 'fire-retardant',
+			'tooltip': 'When you shop at Standish, you can rest assured that your chairs meet the California TB117 Fire Retardant Standards.'
+		},
+		'heavy-duty': {
+			'title': 'Heavy Duty Hardware',
+			'class': 'heavy-duty',
+			'tooltip': 'At Standish, we provide you with quality parts on your equipment, such as cabinet hinges that are able to withstand everyday salon and spa use.'
+		},
+		'iron-life': {
+			'title': '50% Longer Iron Life',
+			'class': 'iron-life',
+			'tooltip': 'On many of our stations, the appliance holders are made of iron, and powder-coated steel. Even better, they\'re ventilated.'
+		},
+		'no-sales-tax': {
+			'title': 'No Sales Tax',
+			'class': 'no-sales-tax',
+			'tooltip': ''
+		},
+		'ten-thousand-rub': {
+			'title': '10,000 Rub Count',
+			'class': 'ten-thousand-rub',
+			'tooltip': 'Leather chairs are not build to withstand the salon lifestyle--they will not hold up. We use vinyl that is certified over 10,000 rubs on the Wyzenbeek rub test.'
+		},
+		'swap-base': {
+			'title': 'Swappable Bases for Free',
+			'class': 'swap-base',
+			'tooltip': 'At Standish, we let you pick out whichever base you want for your chair top, at no extra charge!'
+		},
+		'new-arrival': {
+			'title': 'New Arrival',
+			'class': 'new-arrival',
+			'tooltip': ''
+		},
+		'service': {
+			'title': 'Personal Service',
+			'class': 'service',
+			'tooltip': ''
+		},
+		'warranty': {
+			'title': '2-5 Yr. Warranty',
+			'class': 'warranty',
+			'tooltip': 'We understand that products need some love in order to stay looking new and beautiful. The quality of our products is something that we stand firmly behind, which is why we have the best warranty out there.'
+		},
+		'color': {
+			'title': 'Free Color Variations',
+			'class': 'color',
+			'tooltip': ''
+		},
+		'returns': {
+			'title': 'No Hassle Return Policy',
+			'class': 'returns',
+			'tooltip': 'At Standish, we will offer you a 30-day money-back guarantee on all products.'
+		},
+		'hardwood': {
+			'title': 'Real Hardwood',
+			'class': 'hardwood',
+			'tooltip': ''
+		},
+		'extra-wide': {
+			'title': 'Extra Wide',
+			'class': 'extra-wide',
+			'tooltip': ''
+		},
+		'double-stitched': {
+			'title': 'Double Stitching',
+			'class': 'double-stitched',
+			'tooltip': ''
+		},
+		'inspected': {
+			'title': 'Guaranteed To Pass Inspection',
+			'class': 'inspected',
+			'tooltip': 'All of our products pass fire retardant codes and meet Universal Plumbing Code (UPC) specifications.'
+		}
 	}
+	
+	
+/*
+Industrial Slides		Standish's salon equipment is made with full-extension drawer glides that will last, on average, about 5-10 times longer than what's available through a general contractor.
+		
+2x Quality		We have two quality checkpoints that our furniture goes through: one at our manufacturing warehouse and one at the shipping center.
+*/
+	
+	
 	if( badges ) {
 		jQuery.each( badges.split( '\n' ), function( i, v ) {
 			if( typeof( badgetext[v] ) != 'undefined' ){
-				$badges_list.append( '<div class="badge badge-' + v + '"><i></i><div class="badge-text">' + badgetext[v] + '</div></div>' );
+				console.log( badgetext[v] );
+				console.log( badgetext[v].title );
+				$badges_list.append( '<a href="http://www.standishsalongoods.com/quality#' + badgetext[v].class + '" style="display:block;color:#696969;" class="badge badge-' + badgetext[v].class + '" title="' + badgetext[v].tooltip + '"><i></i><div class="badge-text">' + badgetext[v].title + '</div></a>' );
 			}
 		});
 	} else {
@@ -256,112 +331,87 @@ jQuery( function() {
 		<div class="grid_6 product_left">
 			<div class="showcase">
 
-			<!--START: image1--> 
-				<a href="[image1]" class="[3dzoom_class]"  id="listing_main_image_link"><img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" align="middle" border="0" id="large" name="large" alt="[name]" width="380" /></a>
-				<!-- <div name="imagecaptiont" id="imagecaptiont" class="item">[imagecaption1]</div> -->
-			<!--END: image1-->
+				<!--START: image1--> 
+					<a href="[image1]" class="[3dzoom_class]"  id="listing_main_image_link"><img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" align="middle" border="0" id="large" name="large" alt="[name]" width="380" /></a>
+					<!-- <div name="imagecaptiont" id="imagecaptiont" class="item">[imagecaption1]</div> -->
+				<!--END: image1-->
 
-			<div class="clearboth"></div>
+					<div class="clearboth"></div>
 
-				<a data-caption="[imagecaption1]" href="[image1]" class="product-image" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(1);return false;"><img src="thumbnail.asp?file=[image1]&maxx=75&maxy=0" alt="" border="0" name="pimage1" /></a>
+					<a data-caption="[imagecaption1]" href="[image1]" class="product-image" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(1);return false;"><img src="thumbnail.asp?file=[image1]&maxx=75&maxy=0" alt="" border="0" name="pimage1" /></a>
 
-			<!--START: image2-->
-				<a data-caption="[imagecaption2]" href="[image2]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image2]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(2);return false;"><img src="thumbnail.asp?file=[image2]&maxx=75&maxy=0" alt="" border="0" name="pimage2" /></a>
-			<!--END: image2-->
+				<!--START: image2-->
+					<a data-caption="[imagecaption2]" href="[image2]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image2]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(2);return false;"><img src="thumbnail.asp?file=[image2]&maxx=75&maxy=0" alt="" border="0" name="pimage2" /></a>
+				<!--END: image2-->
 
-			<!--START: image3-->
-				<a data-caption="[imagecaption3]" href="[image3]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image3]&maxx=[image_medium_w]&maxy=[image_medium_h]" onclick="javascript:image_click(3);return false;"><img border="0" src="thumbnail.asp?file=[image3]&maxx=75&maxy=0" alt="" name="pimage3" /></a>
-			<!--END: image3-->
+				<!--START: image3-->
+					<a data-caption="[imagecaption3]" href="[image3]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image3]&maxx=[image_medium_w]&maxy=[image_medium_h]" onclick="javascript:image_click(3);return false;"><img border="0" src="thumbnail.asp?file=[image3]&maxx=75&maxy=0" alt="" name="pimage3" /></a>
+				<!--END: image3-->
 
-			<!--START: image4-->
-				<a data-caption="[imagecaption4]" href="[image4]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image4]&maxx=[image_medium_w]&maxy=[image_medium_h]"  onclick="javascript:image_click(4);return false;"><img border="0" src="thumbnail.asp?file=[image4]&maxx=75&maxy=0" alt="" name="pimage4" /></a>
-			<!--END: image4-->
+				<!--START: image4-->
+					<a data-caption="[imagecaption4]" href="[image4]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image4]&maxx=[image_medium_w]&maxy=[image_medium_h]"  onclick="javascript:image_click(4);return false;"><img border="0" src="thumbnail.asp?file=[image4]&maxx=75&maxy=0" alt="" name="pimage4" /></a>
+				<!--END: image4-->
 
-			<!--START: image5-->
-				<a data-caption="[imagecaption5]" href="[image5]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image5]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(5);return false;"><img border="0" src="thumbnail.asp?file=[image5]&amp;maxx=75&amp;maxy=0" alt="" name="pimage5" /></a>
-			<!--END: image5-->
+				<!--START: image5-->
+					<a data-caption="[imagecaption5]" href="[image5]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image5]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(5);return false;"><img border="0" src="thumbnail.asp?file=[image5]&amp;maxx=75&amp;maxy=0" alt="" name="pimage5" /></a>
+				<!--END: image5-->
 
-			<!--START: image6-->
-				<a data-caption="[imagecaption6]" href="[image6]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image6]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(6);return false;"><img border="0" src="thumbnail.asp?file=[image6]&amp;maxx=75&amp;maxy=0" alt="" name="pimage6" /></a>
-			<!--END: image6-->
+				<!--START: image6-->
+					<a data-caption="[imagecaption6]" href="[image6]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image6]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(6);return false;"><img border="0" src="thumbnail.asp?file=[image6]&amp;maxx=75&amp;maxy=0" alt="" name="pimage6" /></a>
+				<!--END: image6-->
 
-			<!--START: image7-->
-				<a data-caption="[imagecaption7]" href="[image7]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image7]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(7);return false;"><img border="0" src="thumbnail.asp?file=[image7]&amp;maxx=75&amp;maxy=0" alt="" name="pimage7" /></a>
-			<!--END: image7-->
+				<!--START: image7-->
+					<a data-caption="[imagecaption7]" href="[image7]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image7]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(7);return false;"><img border="0" src="thumbnail.asp?file=[image7]&amp;maxx=75&amp;maxy=0" alt="" name="pimage7" /></a>
+				<!--END: image7-->
 
-			<!--START: image8-->
-				<a data-caption="[imagecaption8]" href="[image8]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image8]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(8);return false;"><img border="0" src="thumbnail.asp?file=[image8]&amp;maxx=75&amp;maxy=0" alt="" name="pimage8" /></a>
-			<!--END: image8-->
+				<!--START: image8-->
+					<a data-caption="[imagecaption8]" href="[image8]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image8]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(8);return false;"><img border="0" src="thumbnail.asp?file=[image8]&amp;maxx=75&amp;maxy=0" alt="" name="pimage8" /></a>
+				<!--END: image8-->
 
-			<!--START: image9-->
-				<a data-caption="[imagecaption9]" href="[image9]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image9]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(9);return false;"><img border="0" src="thumbnail.asp?file=[image9]&amp;maxx=75&amp;maxy=0" alt="" name="pimage9" /></a>
-			<!--END: image9-->
+				<!--START: image9-->
+					<a data-caption="[imagecaption9]" href="[image9]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image9]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(9);return false;"><img border="0" src="thumbnail.asp?file=[image9]&amp;maxx=75&amp;maxy=0" alt="" name="pimage9" /></a>
+				<!--END: image9-->
 
-			<!--START: image10-->
-				<a data-caption="[imagecaption10]" href="[image10]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image10]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(10);return false;"><img border="0" src="thumbnail.asp?file=[image10]&amp;maxx=75&amp;maxy=0" alt="" name="pimage10" /></a>
-			<!--END: image10-->
+				<!--START: image10-->
+					<a data-caption="[imagecaption10]" href="[image10]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image10]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(10);return false;"><img border="0" src="thumbnail.asp?file=[image10]&amp;maxx=75&amp;maxy=0" alt="" name="pimage10" /></a>
+				<!--END: image10-->
 
-			<!--START: image11-->
-				<a data-caption="[imagecaption11]" href="[image11]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image11]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(11);return false;"><img border="0" src="thumbnail.asp?file=[image11]&amp;maxx=75&amp;maxy=0" alt="" name="pimage11" /></a>
-			<!--END: image11-->
+				<!--START: image11-->
+					<a data-caption="[imagecaption11]" href="[image11]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image11]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(11);return false;"><img border="0" src="thumbnail.asp?file=[image11]&amp;maxx=75&amp;maxy=0" alt="" name="pimage11" /></a>
+				<!--END: image11-->
 
-			<!--START: image12-->
-				<a data-caption="[imagecaption12]" href="[image12]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image12]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(12);return false;"><img border="0" src="thumbnail.asp?file=[image12]&amp;maxx=75&amp;maxy=0" alt="" name="pimage12" /></a>
-			<!--END: image12-->
+				<!--START: image12-->
+					<a data-caption="[imagecaption12]" href="[image12]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image12]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(12);return false;"><img border="0" src="thumbnail.asp?file=[image12]&amp;maxx=75&amp;maxy=0" alt="" name="pimage12" /></a>
+				<!--END: image12-->
 
-			<!--START: image13-->
-				<a data-caption="[imagecaption13]" href="[image13]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image13]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(13);return false;"><img border="0" src="thumbnail.asp?file=[image13]&amp;maxx=75&amp;maxy=0" alt="" name="pimage13" /></a>
-			<!--END: image13-->
+				<!--START: image13-->
+					<a data-caption="[imagecaption13]" href="[image13]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image13]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(13);return false;"><img border="0" src="thumbnail.asp?file=[image13]&amp;maxx=75&amp;maxy=0" alt="" name="pimage13" /></a>
+				<!--END: image13-->
 
-			<!--START: image14-->
-				<a data-caption="[imagecaption14]" href="[image14]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image14]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(14);return false;"><img border="0" src="thumbnail.asp?file=[image14]&amp;maxx=75&amp;maxy=0" alt="" name="pimage14" /></a>
-			<!--END: image14-->
+				<!--START: image14-->
+					<a data-caption="[imagecaption14]" href="[image14]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image14]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(14);return false;"><img border="0" src="thumbnail.asp?file=[image14]&amp;maxx=75&amp;maxy=0" alt="" name="pimage14" /></a>
+				<!--END: image14-->
 
-			<!--START: image15-->
-				<a data-caption="[imagecaption15]" href="[image15]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image15]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(15);return false;"><img border="0" src="thumbnail.asp?file=[image15]&amp;maxx=75&amp;maxy=0" alt="" name="pimage15" /></a>
-			<!--END: image15-->
+				<!--START: image15-->
+					<a data-caption="[imagecaption15]" href="[image15]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image15]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(15);return false;"><img border="0" src="thumbnail.asp?file=[image15]&amp;maxx=75&amp;maxy=0" alt="" name="pimage15" /></a>
+				<!--END: image15-->
 
-
-
-<!--
-				Images
-				<img width="380" height="500" />
-				<img height="60" class="grid_1 alpha" />
-				<img height="60" class="grid_1" />
-				<img height="60" class="grid_1" />
-				<img height="60" class="grid_1" />
-				<img height="60" class="grid_1 omega" />
-				<img height="60" class="grid_1 alpha" />
-				<img height="60" class="grid_1" />
-				<img height="60" class="grid_2 omega" />
--->
 				<div class="clear"></div>
 			</div>
 
 			<div class="sharebox">
 				<ul>
 					<li class="pinit"><a href="" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
-
-
-
-
-					<li>
-						<a class="tweet_button" target="_blank" href="#tweet"></a>
+					<li><a class="tweet_button" target="_blank" href="#tweet"></a></li>
 					<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-via="StandishStuff" data-related="StandishStuff" data-count="none">Tweet</a> -->
-					</li>
-
 					<li class="like"><div class="fb-like" data-href="https://standishsalongoods.com" data-colorscheme="light" data-layout="button" data-action="like" data-show-faces="false" data-send="false"></div></li>
-
 					<!--START: email_friend-->
 						<!-- <img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" /> -->
 						<li class="email"><i class="icon-envelope coral-text"></i> <a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a></li>
 					<!--END: email_friend-->
-
 					<!-- <i class="icon-plus-sign"></i> -->
 				</ul>
 			</div>
-
-
 
 			<!--START: reviews-->
 			<div class="reviews">
@@ -405,63 +455,6 @@ jQuery( function() {
 				<a href="#qa">(<i>[productqa_jump-to-qa]</i>)</a>
 			<!--END: qaLinkNew-->
 
-
-
-
-<!--
-			<div class="reviews">
-				<div class="review">
-					<div class="rating">
-						<span class="stars">
-							<span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-						</span> - Megan T. from Rome, NY
-					</div>
-					<span class="bold">LOVE this chair!</span>
-					<p>Oh my goodness, this chair is just awesome. It's so uniquely shaped, and has such a modern feel to it. The white is my favorite one, because it has this shine to it that really makes you want to go to THAT station to get your hair done.</p>
-				</div>
-				<div class="review">
-					<div class="rating">
-						<span class="stars">
-							<span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-						</span> -  jana from Media PA
-					</div>
-					<span class="bold">a chair</span>
-					<p>I am very pleased. It's better than i even expected. Very sleak, modern and very very specious!</p>
-				</div>
-				<div class="review">
-					<div class="rating">
-						<span class="stars">
-							<span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
-						</span> -  Angela M. from Chicago, IL
-					</div>
-					<span class="bold">Simple, yet elegant!</span>
-					<p>What a magnificent chair! My clients adore this drying machine, and I must agree with them. Its design isn't too out there, but it's classy enough for a nice salon environment.</p>
-				</div>
-				<div class="add-rating-link"><i class="icon-plus"></i> <a href="#addRating">Add A Rating &amp; Review</a></div>
-			</div>
--->
-		
-<!--
-			<div class="related-accessories">
-				<h4>Related Accessories</h4>
-				<a href="#viewMore">View More</a>
-				<div class="listing grid_2 alpha">
-					<img src="" alt="">
-					<p class="title">A Classic Affair</p>
-					<p class="msrp">Your Price: $932</p>
-					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
-					<button>Add to Cart</button>
-				</div>
-				<div class="listing grid_2 omega">
-					<img src="" alt="">
-					<p class="title">A Classic Affair with a long title</p>
-					<p class="msrp">Your Price: $932</p>
-					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
-					<button>Add to Cart</button>
-				</div>
-			</div>
--->
-
 		<!--START: accessories_0-->
 			<div class="related-accessories">
 				<h4>Related Accessories</h4><!-- [product_Header-accessories] -->
@@ -469,7 +462,7 @@ jQuery( function() {
 
 				<!--START: accessories_items0-->
 					<div class="grid_2 listing alpha">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
 							<!-- [product_yourprice] -->
@@ -526,7 +519,6 @@ jQuery( function() {
 
 			</div><!-- related-accessories -->
 		<!--END: accessories_0-->
-
 
 		</div>
 	<!-- End of the left side -->
@@ -688,39 +680,6 @@ jQuery( function() {
 				<!-- <form class="product-form"> -->
 				<div class="product-form">
 					<fieldset>
-	<!--
-					<div class="option-row">
-							<label for="name">Choose Seat Color: </label>
-							<div class="fancy-select">
-								<select>
-									<option>Brown</option>
-									<option>Expresso</option>
-									<option>Black</option>
-								</select>
-								<i class="icon-caret-down"></i>
-							</div>
-						</div>
-
-						<div class="option-row">
-							<label for="name">Choose Base Shape: </label>
-							<div class="fancy-select">
-								<select>
-									<option>5 Star</option>
-									<option>Square</option>
-									<option>Round</option>
-								</select>
-								<i class="icon-caret-down"></i>
-							</div>
-						</div>
-
-
-						<div class="option-row">
-							<label for="warranty">Extend Your 2 Year Warranty: </label>
-							<label for="warranty" class="checkbox">
-								<input id="warranty" type="checkbox"> Add 1 Extra Year: <span>+ $10</span>
-							</label>
-						</div>
--->
 
 						<!--START: addtocart-->
 							<!--START: quantity-->
@@ -767,7 +726,7 @@ jQuery( function() {
 						<!--END: addtocart-->
 						<div class="option-row last">
 							<label>
-								<span>Availability: </span><span class="availability">Usually Ships<br /> in 2-3 Business Days</span>
+								<span>Quick Shipping: </span><span class="availability">Usually <br /> Arrives in 2 Weeks!</span>
 							</label>
 							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
 							<div class="clearfix"></div>
@@ -804,37 +763,6 @@ jQuery( function() {
 				<!-- END: extended_description -->
 			</div>
 
-<!--
-			<div class="related-products">
-				<h4>Related Products</h4>
-				<a href="#viewMoreRelated">View More</a>
-		
-				<div class="listing grid_2 alpha">
-					<img src="" alt="">
-					<p class="title">A Classic Affair</p>
-					<p class="msrp">Your Price: $932</p>
-					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
-					<button>Add to Cart</button>
-				</div>
-				<div class="listing grid_2">
-					<img src="" alt="">
-					<p class="title">A Classic Affair with a long title</p>
-					<p class="msrp">Your Price: $932</p>
-					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
-					<button>Add to Cart</button>
-				</div>
-				<div class="listing grid_2 omega">
-					<img src="" alt="">
-					<p class="title">A Classic Affair</p>
-					<p class="msrp">Your Price: $932</p>
-					<p class="price bold allcaps"><span class="coral-text">On Sale!</span> $863</p>
-					<button>Add to Cart</button>
-				</div>
-			</div>
--->
-
-
-
 		<!--START: related_0-->
 			<div class="related-products">
 				<h4>Related Products</h4>
@@ -868,9 +796,6 @@ jQuery( function() {
 					</div>
 				<!--END: related_items0-->
 
-
-
-
 			<!--START: related_items1-->
 				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=0&maxy=150" alt="[name]" border="0" /></a>
 				[name]
@@ -901,18 +826,9 @@ jQuery( function() {
 			</div>
 		<!--END: related_0-->
 
-
-
-		
 		</div>
 		<!-- End of the Right Side -->
 
-
-
-
-
-
-		
 		<!--START: PREV_PROD-->
 			<a href="[prevprodlink]"><img src="thumbnail.asp?file=[prevprodthumb]&maxx=20&maxy=20" border="0" alt="" />Prev</a>
 		<!--END: PREV_PROD-->
@@ -954,7 +870,6 @@ jQuery( function() {
 			</div>
 		<!--END: qa-->
 
-
 		<!--START: browsing_history-->
 			[product_browsing-history-header]
 			<input type="button" onclick="window.location.href='product.asp?itemid=[catalogid]&delhist=0';" name="" value="<!--START: browsing_history_enable-->[product_browsing-history-disable]<!--END: browsing_history_enable-->" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
@@ -972,8 +887,6 @@ jQuery( function() {
 			<!--END: browsing_history_items-->
 		<!--END: browsing_history--> 
 
-
-
 		<!--START: CATEGORY_FOOTER-->
 			[CONTENT]
 		<!--END: CATEGORY_FOOTER-->
@@ -981,9 +894,7 @@ jQuery( function() {
 	</form>
 </div>
 
-
-
-<!-- CUSTOM PRODUCT FIELD SETUP HACKS -->
+<!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
 <!--START: extra_field_2-->
 <div class="hidden field2" data-field2="[extra_field_2]"></div>
 <!--END: extra_field_2-->
@@ -1003,13 +914,10 @@ jQuery( function() {
 <div class="hidden field10" data-field10="[extra_field_10]"></div>
 <!--END: extra_field_10-->
 
-<script type="text/javascript" src="assets/templates/common/js/listing.js"></script>
-<script type="text/javascript" src="assets/templates/common/3dzoom/magiczoomplus.js"></script>
+<script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
+<script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
 <script type="text/javascript">
-	// What is this???!!! todo: make sure JQuery is alway loaded (version 10.x with JQuery Migrate shim for 3DCart Code)
-
-	console.log(typeof jQuery == 'undefined');
-
+	// 3DCart Code
 	if (typeof jQuery == 'undefined') {
 		document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
 	}

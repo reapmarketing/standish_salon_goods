@@ -59,7 +59,7 @@ jQuery(function(){
 	<!--END: CATEGORY_HEADER-->
 	<form action="shipquote.asp" method="post" name="shipquote" onSubmit="return submitForm();">
 		<input type="hidden" name="thispage" value="">
-		<input type="hidden" name="shipping_zip" value="[shipping_zip]" id="Hidden2">
+		<input type="hidden" name="shipping_zip" value="[shipping_zip]" id="Hidden2" style="min-height: 27px;">
 		<script language="javascript">document.shipquote.thispage.value = window.location.href;</script>
 	</form>
 	
@@ -164,7 +164,7 @@ jQuery(function(){
 
 	<!--START: PROMOTIONS-->
 		<div class="promotions">
-			<span class="coral-text">* Valid Promotions:</span><br />
+			<span class="coral-text" style="font-size: 13px;">* Promotions Applied In Addition to Sale Prices:</span><br />
 			<!--START: DISPLAY_PROMOS-->
 				<!-- <form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply> -->
 				<form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
@@ -186,9 +186,9 @@ jQuery(function(){
 
 		<!-- [shoppingcart_total] -->
 		<div class="subtotal white" style="padding: 10px 30px; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
-			<p class="subtotes" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> ...................... <span class="bold nozero">[CARTSUBTOTAL]</span></p>
-			<!--START: DISCOUNTS--><p class="discount" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>[checkout1_discounts]</strong> ...................... <span class="bold nozero">- [DISCOUNTS]</span></p><!--END: DISCOUNTS-->
-			<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Total</strong> ...................... <span class="bold nozero">[CARTTOTAL]</span></p>
+			<p class="subtotes" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Subtotal</strong> <span class="bold nozero">&nbsp;[CARTSUBTOTAL]</span></p>
+			<!--START: DISCOUNTS--><p class="discount" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong style="width: 157px;"><!-- [checkout1_discounts] -->Additional Discounts</strong><span class="bold nozero">-[DISCOUNTS]</span></p><!--END: DISCOUNTS-->
+			<p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;"><strong>Total</strong> <span class="bold nozero">&nbsp;[CARTTOTAL]</span></p>
 		</div>
 		<br />
 		<hr />
@@ -360,7 +360,7 @@ top: 2px;" placeholder="Zip Code">
 	<div class="grid_12 coupon">
 		<br />
 		<!--START: apply_coupon-->
-		<strong>[viewcart_coupon-header]</strong>
+		<strong class="dimgray-text">[viewcart_coupon-header]</strong>
 			<input type="text" name="coupon_code" class="txtBoxStyle" size="14">
 			<input type="submit" class="standishgreen" value="Go!" id="Submit1" name="Submit1" />
 			[viewcart_coupon-message]
@@ -393,7 +393,7 @@ top: 2px;" placeholder="Zip Code">
 	[viewcart_giftcertificates-header]
 		<!--START: DISPLAY_GIFTCERTIFICATES-->
 		<form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply id="Form4">
-			<input type="hidden" name="coupon" value="[id]" id="Hidden5">
+			<input type="hidden" name="coupon" value="[id]" id="Hidden5" style="min-height: 27px;">
 			<b>[certificate_name]</b>
 			<b>Amount:</b> [discount_amount] 
 			<input type="submit" value="Remove" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit4" name="Submit4">

@@ -923,6 +923,18 @@ body {
   top: 7px;
   left: -10px;
 }
+/*
+.logo {
+  display: block;
+  background: url("/assets/templates/standish/images/standish.svg");
+  width: 140px;
+  height: 34px;
+  text-indent: -9999em;
+  position: relative;
+  top: 7px;
+  left: -10px;
+}
+*/
 button.cart {
   padding: 0 0 0 18px;
   margin: 25px 0 0 0;
@@ -1128,6 +1140,7 @@ li.first.far a {
   line-height: 28px;
   padding: 0 10px;
   -moz-appearance: window;
+/*   padding: 6px 0 0 3px; */
 }
 .fancy-select {
   margin-right: 10px;
@@ -1549,7 +1562,7 @@ input {
   border-radius: 3px;
   border: 1px solid #dcdcdc;
   background: #efefef;
-  min-height: 27px;
+  min-height: 20px;
   padding: 0 10px;
 }
 .coupon {
@@ -2131,4 +2144,14 @@ body {
 .button.standishgreen {
   background-color: #c2d3bd;
   color: #696969 !important;
+}
+
+.subtotal strong {
+	width: 155px;
+	display: inline-block;
+}
+
+
+.blog img {
+	max-width: 700px;
 }
