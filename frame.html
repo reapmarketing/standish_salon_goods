@@ -73,17 +73,7 @@
 	<!-- Header -->
 	<div class="hello">
 		<div class="container_12">
-			<div class="grid_8">
-<!--
-				<i class="icon-lightbulb" style="font-size: 36px;float: left;position: relative;top: 13px;"></i>
-				<p style="line-height:16px;padding-left: 32px;"><span class="bold">TIP:</span> Ask Your CPA About <span class="bold coral-text">Tax Benefits</span> for Buying <span class="bold">Before End of Year!</span><br /><a href="/spend-more-save-more.html">See Other Current Year-End Deals</a>
--->
-<!--
-				<p><span class="coral-text italic">NEW LOOK!</span>&nbsp;&nbsp; Same Great Brand With a <span class="bold">Fresh</span> New Style! &nbsp;&nbsp;<a href="/contact-us.html?hellobar">Tell Us What You Think.</a></p>
-TIP: Ask Your CPA About Tax Benefits for Buying Before End of Year!  See Other Current Year-End Deals
--->
-				<!-- <p><span class="bold">Welcome!</span> We've recently updated the look of our site. <a href="/contact-us.html">Let us know what you think!</a></p> -->
-				<p class="left-hello"><img src="/assets/templates/standish/images/this-month.png" alt="This Month!" class="hello-tag"><img src="/assets/templates/standish/images/free-shipping.png" alt="Free Shipping" class="hello-icon"><span class="allcaps bold">Free Shipping</span> Over $500 <span class="allcaps bold">Plus</span> Up To <span class="allcaps bold">15% OFF!</span> &nbsp;&nbsp;<a href="spend-more-save-more.html">View details</a></p>
+			<div class="grid_8 hbar_content">
 			</div>
 			<div class="grid_3">
 				<p class="right-hello"><span class="coral-text">Need Help?</span> Call <span class="bold">888.271.8434</span></p>
@@ -507,8 +497,26 @@ TIP: Ask Your CPA About Tax Benefits for Buying Before End of Year!  See Other C
 			}
 
 			// Hellobar Animation
-			$('body').delay(3000).animate({'margin-top': '60px'});
-			$('.hello').delay(3000).animate({'top': '0'});
+/*
+			var scrollfixdone = false;
+			$(window).on('scroll', function () {
+				if ( $(window).scrollTop() > 60 ){
+					if( !scrollfixdone ) {
+						$('body').css({'margin-top':'60px'});
+						$("html, body").scrollTop( 120 );
+						console.log( $("body").scrollTop() );
+						scrollfixdone = true;
+					}
+				}
+			});
+*/
+			$('.hello').delay(3000).animate({'top': '0'}, function() {
+/*
+				if( !scrollfixdone ) {
+					$('body').css({'margin-top':'60px'});
+				}
+*/
+			});
 
 			// Template Name Finder/Helper
 			template_slug = $('.template').first().data('template');
@@ -533,18 +541,16 @@ TIP: Ask Your CPA About Tax Benefits for Buying Before End of Year!  See Other C
 						$pagination_links.last().addClass('last');
 					}
 				});
-
 			}
 
 			// Remove 3DCart clears (use the 'clearfix' class instead)
 			$('div[style*=both]').remove();
 
 			// Test code for getting external data
-/*
-			$.getJSON( "http://standish.herokuapp.com/data.json",  function( data ) {
-				console.log( data.responseText );
+			$.getJSON( "http://hyprtxt.com/standish/data.json", function( data ) {
+				// console.log( data.content );
+				$('.hbar_content').html( data.content );
 			});
-*/
 
 		});
 	</script>

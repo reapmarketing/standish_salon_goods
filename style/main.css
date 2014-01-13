@@ -140,7 +140,6 @@ select {
 }
 button,
 html input[type="button"],
-/* 1 */,
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
@@ -440,7 +439,7 @@ body {
 }
 .clearfix,
 .container_12 {
-  zoom: 1;
+/*   zoom: 1; */
 }
 .clear,
 .clearfix,
@@ -857,7 +856,7 @@ a:active {
 }
 body {
   color: #696969;
-/*   margin-top: 60px; */
+  margin-top: 60px;
 }
 .hello {
   height: 60px;
@@ -868,6 +867,12 @@ body {
 /*   top: 0; */
   box-shadow: 0 0 2px 0 #4d4d4d;
   top: -60px;
+}
+.hello i {
+	font-size: 36px;
+	float: left;
+	position: relative;
+	top: 13px;
 }
 .hello p {
   line-height: 32px;
@@ -2078,7 +2083,8 @@ body {
 	line-height: 14px;
 }
 #catframe .indent {
-	list-style-type: circle outside;
+	list-style-type: circle;
+	list-style-position: outside;
 }
 
 /*
