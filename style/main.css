@@ -2152,7 +2152,10 @@ body {
 	display: inline-block;
 }
 
-
 .blog img {
 	max-width: 700px;
+}
+
+.custom_bar {
+	display: none;
 }

@@ -553,10 +553,24 @@
 			// Remove 3DCart clears (use the 'clearfix' class instead)
 			$('div[style*=both]').remove();
 
+			// Start of Hellobar code
+			var hbar_slug = 'default';
+			// This code will change the slug if it finds an override.
+			// <span class="custom_bar" data-bar="OverrideBarName"></span>
+			if( $('.custom_bar').length ) {
+				hbar_slug = $('.custom_bar').first().data('bar');
+			}
 			// Hellobar code for getting external data
 			$.getJSON( "http://hyprtxt.com/standish/data.json", function( data ) {
 				// console.log( data.content );
-				$('.hbar_content').html( data.content );
+				console.log( data[hbar_slug] );
+				console.log( hbar_slug in data );
+				if( hbar_slug in data ) {
+					$('.hbar_content').html( data[hbar_slug] );
+				} else {
+					$('.hbar_content').html( data['default'] );
+				}
+				
 			});
 			
 			// Change Account link when user is logged in.
