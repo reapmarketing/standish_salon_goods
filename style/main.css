@@ -2085,14 +2085,8 @@ body {
 }
 #catframe .indent {
 	list-style-type: circle;
-	list-style-position: outside;
+	list-style-position: inside;
 }
-
-/*
-#catframe ul li.indent {
-	border-bottom: none;
-}
-*/
 
 .cartsprite div {
 	background-image: url("/assets/templates/standish/images/cart-sprite.png");
