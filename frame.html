@@ -392,6 +392,13 @@
 
 </div>
 
+<!--START: username-->
+<script type="text/javascript">
+	var account_greeting = '[account_greeting]'; 
+	var username = '[username]';
+</script>
+<!--END: username-->
+
 	<!-- Footer -->
 
 	<!--START: FRAME_MAILLIST-->
@@ -427,7 +434,7 @@
 	<!--END: FRAME_MAILLIST-->
 	
 	<div class="footer-navigation">
-		<a href="/myaccount.asp?secure" class="account-button login"><i class="icon-user"></i> Login to your account</a>
+		<a href="/myaccount.asp?secure" class="account-button login"><i class="icon-user"></i> <span>Login to your account<span></a>
 		<a href="/affiliate-marketing" class="account-button affiliate"><i class="icon-money"></i> Become an Affiliate</a>
 		<a href="/contact-us.html?contact" class="account-button contact"><i class="icon-bullhorn"></i> Contact Us</a>
 	</div>
@@ -546,11 +553,17 @@
 			// Remove 3DCart clears (use the 'clearfix' class instead)
 			$('div[style*=both]').remove();
 
-			// Test code for getting external data
+			// Hellobar code for getting external data
 			$.getJSON( "http://hyprtxt.com/standish/data.json", function( data ) {
 				// console.log( data.content );
 				$('.hbar_content').html( data.content );
 			});
+			
+			// Change Account link when user is logged in.
+			if ( typeof username !== 'undefined' ) {
+				$('.account-button span').text('View Your Profile/Logout');
+				$('.account-button').attr('href', '/myaccount.asp');
+			}
 
 		});
 	</script>
