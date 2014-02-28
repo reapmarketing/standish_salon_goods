@@ -32,6 +32,18 @@
 }(document, 'script', 'facebook-jssdk'));
 
 jQuery( function() {
+	// Pricebox financing feature
+	var interest_rate, term_years, price, yearly_interest, total_interest, payment;
+	interest_rate = 0.12;
+	term_years = 3;
+	price = Number( $('#price').text().replace("$", "").replace(",", "") );
+	yearly_interest = Math.round( ( price * interest_rate ) * 100 ) / 100;
+	total_interest = Math.round( ( yearly_interest * term_years ) * 100 ) / 100;
+	payment = ( Math.round( ( ( total_interest + price ) / ( term_years * 12 ) ) * 100 ) / 100 ).toFixed(2);
+	// console.log( "PRICE: ", price, yearly_interest, total_interest, payment );
+	if( price > 1000 ) {
+		$(".pricebox .left-price").append('<a href="/financing.html" class="financing">* or as low as $' + payment + '/month</a>');
+	}
 
 	// Image Color Changer
 	color_list = [];
