@@ -230,8 +230,8 @@
   -ms-perspective-origin: 50% 150px;
   -o-perspective-origin: 50% 150px;
   perspective-origin: 50% 150px;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 1.5em;
 }
 /* line 38, ../sass/vex-theme-flat-attack.sass */
