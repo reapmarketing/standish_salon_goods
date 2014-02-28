@@ -297,7 +297,22 @@
             <td>[CONTENT]</td>
           </tr>
         </table>
-        <script src="googleanalytics.asp?orderid=[orderid]&as=1" type="text/javascript"></script>
+        <!-- <script src="googleanalytics.asp?orderid=[orderid]&as=1" type="text/javascript"></script> -->
+        <script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-27463434-1']);
+		  _gaq.push(['_trackPageview']);
+		  _gaq.push(['_addTrans',
+		    '[invoice-prefix][invoice-number]', // transaction ID - required
+		    'Standish Salon Goods', // affiliation or store name
+		    '[total_noformat]', // total - required
+		    '[tax]', // tax
+		    '[shipping]', // shipping,
+		    '[oshipcity]', // city
+		    '[oshipstate]', // state or province
+		    '[oshipcountry]' // country
+		  ]);
+		</script>
         <!--END: CATEGORY_FOOTER--></td>
     </tr>
   </table>
