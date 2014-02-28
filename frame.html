@@ -481,7 +481,11 @@
 				}
 			});
 */
+			var JSON_LOADED = false;
 			$('.hello').delay(3000).animate({'top': '0'}, function() {
+				if( JSON_LOADED === false ) {
+					$('.hbar_content').html('<p class="left-hello"><img src="/assets/templates/standish/images/this-month.png" alt="This Month!" class="hello-tag"><img src="/assets/templates/standish/images/free-shipping.png" alt="Free Shipping" class="hello-icon"><span class="allcaps bold">Free Shipping</span> Over $500 <span class="allcaps bold">Plus</span> Up To <span class="allcaps bold">15% OFF!</span> &nbsp;&nbsp;<a href="spend-more-save-more.html">View details</a></p>');
+				}
 /*
 				if( !scrollfixdone ) {
 					$('body').css({'margin-top':'60px'});
@@ -526,17 +530,21 @@
 			if( $('.custom_bar').length ) {
 				hbar_slug = $('.custom_bar').first().data('bar');
 			}
+			
+			var url = "http://json.stand.sh/standish/data.json";
+			
 			// Hellobar code for getting external data
-			$.getJSON( "http://hyprtxt.com/taylor/data.json", function( data ) {
+			$.getJSON( url, function( data ) {
+				JSON_LOADED = true;
 				// console.log( data.content );
-				console.log( data[hbar_slug] );
-				console.log( hbar_slug in data );
+				// console.log( data );
+				// console.log( data[hbar_slug] );
+				// console.log( hbar_slug in data );
 				if( hbar_slug in data ) {
 					$('.hbar_content').html( data[hbar_slug] );
 				} else {
 					$('.hbar_content').html( data['default'] );
 				}
-				
 			});
 			
 			// Change Account link when user is logged in.
