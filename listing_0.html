@@ -277,8 +277,9 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	// autoPlay=true
 
 	function getData(embed_code) {
-		var wistia_api = 'http://fast.wistia.com/oembed?url=' + encodeURIComponent( 'http://home.wistia.com/medias/' + embed_code + '?autoPlay=true' );
-		return $.getJSON(wistia_api);  // this returns a "promise"
+		var baseUrl = "https://fast.wistia.com/oembed/?url=";
+		var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
+		return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
 	}
 
 	var AJAX = [];
