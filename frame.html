@@ -85,7 +85,6 @@
 	   var _ibp_keyword_set = 34811;
 	</script> -->
 
-	<!-- HEADER IMAGE ROTATOR -->
 	<script src="//unslider.com/unslider.min.js"></script>
 
 	<script>
@@ -557,7 +556,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					if( $(v).find('li').length !== 1 && i != 1) {
 						$("<style>")
 							.prop("type", "text/css")
-							.html("							.hiddencat {								display: none;							}")
+							.html("\
+							.hiddencat {\
+								display: none;\
+							}")
 							.appendTo("head");
 					} else {
 						$(this).addClass('hiddencat');
