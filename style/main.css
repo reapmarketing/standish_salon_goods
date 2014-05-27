@@ -1,5 +1,41 @@
 /* normalize.css v2.1.2 | MIT License | git.io/normalize */
 
+
+
+/* Header Image Rotator Styles  */
+/*.rotator-container {
+	overflow: auto;
+} */
+
+.banner ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.banner ul li a span {
+line-height: 260px;
+display: block;
+overflow: hidden;
+text-indent: 100%;
+white-space: nowrap;
+}
+
+.banner { 
+height: 260px;
+position: relative; 
+overflow: auto; 
+}
+    .banner li { 
+    list-style: none;
+    }
+        .banner ul li { 
+        float: left; 
+        display: block;
+        background-repeat: no-repeat;
+        }
+
+
+
 article,
 aside,
 details,
@@ -1770,7 +1806,6 @@ input {
   text-align: center;
 }
 
-
 /* Table Based Page Styles */
 .page_headers,
 .checkout-headers {
@@ -2280,3 +2315,5 @@ margin-right: 150px;
 .page-column-two {
 	
 }
+
+
