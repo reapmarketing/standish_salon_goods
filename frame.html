@@ -41,6 +41,23 @@
 		// adroll_adv_id = ''; adroll_pix_id = '';
 		// I have no idea who or what this tracking code is, but it throws errors and stops execution without the above hacks
 		
+		
+		adroll_adv_id = "QKPAWPSEO5ETRJDJ2LA5OR";
+		adroll_pix_id = "XAFMSLOA7ZHDZH7A75RILZ";
+		(function () {
+		var oldonload = window.onload;
+		window.onload = function(){
+		   __adroll_loaded=true;
+		   var scr = document.createElement("script");
+		   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+		   scr.setAttribute('async', 'true');
+		   scr.type = "text/javascript";
+		   scr.src = host + "/j/roundtrip.js";
+		   ((document.getElementsByTagName('head') || [null])[0] ||
+		    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+		   if(oldonload){oldonload()}};
+		}());
+		
 		// Console-polyfill. MIT license.
 		// https://github.com/paulmillr/console-polyfill
 		// Make it safe to do console.log() always.
@@ -96,7 +113,7 @@
 </head>
 <body>
 
-<!-- Google Tag Manager -->
+<!-- Google Tag Manager 
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -204,84 +221,88 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li><a href="/hair-salon-chairs">Chairs</a></li>
 						<li><a href="/salon-styling-stations">Styling Stations</a></li>
 						<li><a href="/salon-hair-dryers">Dryers</a></li>
-						<li><a href="/shampoo-stations">Shampoo Stations</a></li>
+						<li><a href="/salon-shampoo-area">Shampoo Area</a></li>
 						<li><a href="/hair-salon-color-bars">Color Bars</a></li>
 						<li><a href="/salon-accessories">Accessories</a></li>
 						<li><a href="/salon-trays-trolleys">Trolleys & Trays</a></li>
 						<li><a href="/salon-floor-mats">Floor Mats</a></li>
 						<li class="allcaps"><a href="/barber-shop-equipment">Barber Shop</a></li>
-						<li><a href="/barber-chairs">Barber Chairs</a></li>
-						<li><a href="/salon-styling-stations">Styling Stations</a></li>
+						<li><a href="/barber-shop-chairs">Barber Chairs</a></li>
+						<li><a href="/barber-shop-stations">Barber Stations</a></li>
 						<li><a href="/shampoo-stations">Shampoo Stations</a></li>
-						<li><a href="/salon-accessories">Accessories</a></li>
+						<li><a href="/barber-shop-supplies-online">Supplies</a></li>
 						</ul>
 						</div>
 
 						<div class="column col2">
 						<ul class="sub-menu">
-						<li class="allcaps"><a href="/blow-dry-bar-equipment">Blow Dry Bar</a></li>
+						 <li class="allcaps"><a href="/blow-dry-bar-equipment">Blow Dry Bar</a></li>
 						<li><a href="/glass-stations-mirrors">Glass Stations with Mirrors</a></li>
                                                 <li><a href="/salon-mirrors">Mirrors</a></li>
 						<li><a href="/blow-dry-bar-accessories">Accessories</a></li>
-						<li class="allcaps"><a href="/manicure-pedicure-equipment">Manicure & Pedicure</a></li>
-						<li><a href="/manicure-tables">Manicure Tables</a></li>
-						<li><a href="/pedicure-chairs">Pedicure Chairs</a></li>
-						<li><a href="/nail-tech-chairs">Nail Tech Chairs</a></li>
-                                         	<li><a href="/pedicure-carts-trolleys">Carts & Trolleys</a></li>
-                                                <li><a href="/manicure-pedicure-supplies">Supplies</a></li>
-						<li class="allcaps"><a href="/salon-spa-equipment.html">Spa</a></li>
-						<li><a href="/spa-beds-massage-tables.html">Spa Beds & Tables</a></li>
-						<li><a href="/spa-equipment-accessories.html">Spa Equipment</a></li>
+						<li class="allcaps"><a href="/salon-spa-equipment">Spa</a></li>
+						<li><a href="/spa-equipment-packages">Packages</a></li>
+                                                <li><a href="/facial-beds">Facial Beds</a></li>
+						<li><a href="/massage-beds-chairs">Massage Beds & Chairs</a></li>
+                                                <li><a href="/spa-accessories">Spa Accessories</a></li>
+				                <li><a href="/salon-trays-trolleys">Trays & Trolleys</a></li>
 						</ul>
 						</div>
 
 						<div class="column col3">
 						<ul class="sub-menu">
-						<li class="allcaps"><a href="/salon-color-bar-equipment.html">Color Bar</a></li>
-						<li><a href="/hair-salon-color-bars.html">Color Storage</a></li>
-						<li><a href="/salon-seating.html">Salon Chairs</a></li>
-						<li><a href="/salon-shampoo-area.html">Shampoo Area</a></li>
-						<li><a href="/salon-dryer-chairs-color-processors.html">Color Processors</a></li>
-						<li><a href="/plastic-salon-chair-covers.html">Chair Covers</a></li>
-						<li><a href="/salon-color-trays.html">Color Trays</a></li>
+						<li class="allcaps"><a href="/salon-color-bar-equipment-supplies">Color Bars</a></li>
+						<li><a href="/salon-color-bar-storage">Storage</a></li>
+						<li><a href="/hair-salon-chairs">Chairs</a></li>
+						<li><a href="/shampoo-stations">Shampoo Stations</a></li>
+						<li><a href="/salon-hair-dryers">Dryers</a></li>
+						<li><a href="/salon-chair-covers">Chair Covers</a></li>
+						<li><a href="/salon-color-trays">Color Trays</a></li>
+                                                <li class="allcaps"><a href="/manicure-pedicure-equipment">Manicure & Pedicure</a></li>
+						<li><a href="/manicure-tables">Manicure Tables</a></li>
+						<li><a href="/pedicure-chairs">Pedicure Chairs</a></li>
+						<li><a href="/nail-tech-chairs">Nail Tech Chairs</a></li>
+                                         	<li><a href="/pedicure-carts-trolleys">Carts & Trolleys</a></li>
+                                                <li><a href="/manicure-pedicure-supplies">Supplies</a></li>
 						</ul>
 						</div>
 
-					</li><li class="allcaps equipment-menu"><a href="#">Equipment</a>
+					</li>
+					<li class="allcaps equipment-menu"><a href="#">Equipment</a>
 
 						<div class="column col1">
 						<ul class="sub-menu">
-						<li class="allcaps"><a href="/salon-packages.html">PACKAGES</a></li>
-						<li class="allcaps"><a href="/salon-seating.html">CHAIRS</a></li>
-						<li><a href="/salon-styling-chairs.html">Styling Chairs</a></li>
-						<li><a href="/all-purpose-salon-chairs.html">All Purpose Chairs</a></li>
-						<li><a href="/barber-chairs.html">Barber Chairs</a></li>
-						<li><a href="/salon-shampoo-chairs.html">Shampoo Chairs</a></li>
-						<li><a href="/salon-dryer-chairs-color-processors.html">Dryer Chairs</a></li>
-						<li><a href="/salon-reception-seating.html">Reception Chairs</a></li>
-						<li><a href="/pedicure-spa-chairs.html">Pedicure Spa Chairs</a></li>
-						<li><a href="/salon-stools.html">Stools</a></li>
-						<li><a href="/plastic-salon-chair-covers.html">Chair Covers</a></li>
-						<li class="allcaps"><a href="/hair-salon-color-bars.html">COLOR BARS</a></li>
+						<li class="allcaps"><a href="/salon-furniture-packages">Furniture PACKAGES</a></li>
+						<li class="allcaps"><a href="/hair-salon-chairs">CHAIRS</a></li>
+						<li><a href="/salon-styling-chairs">Styling Chairs</a></li>
+						<li><a href="/all-purpose-salon-chairs">All Purpose Chairs</a></li>
+						<li><a href="/barber-shop-chairs">Barber Chairs</a></li>
+						<li><a href="/salon-shampoo-chairs">Shampoo Chairs</a></li>
+						<li><a href="/salon-dryer-chairs">Dryer Chairs</a></li>
+						<li><a href="/salon-reception-chairs">Reception Chairs</a></li>
+						<li><a href="/pedicure-chairs">Pedicure Chairs</a></li>
+						<li><a href="/salon-stools">Stools</a></li>
+						<li><a href="/salon-chair-covers">Chair Covers</a></li>
+						<li class="allcaps"><a href="/salon-color-bar-equipment-supplies">COLOR BARS</a></li>
 						</ul>
 						</div>
 					
 						<div class="column col2">
 						<ul class="sub-menu">
 						<!-- <li class="allcaps hidden"><a href="/">Featured</a></li> -->
-						<li class="allcaps"><a href="/salon-styling-stations.html">STATIONS</a></li>
-						<li><a href="/single-salon-styling-stations.html">Single Stations</a></li>
-						<li><a href="/back-to-back-salon-styling-stations.html">Back-to-back Stations</a></li>
-						<li><a href="/salon-tower-stations.html">Tower Stations</a></li>
-						<li><a href="/salon-wet-stations.html">Wet Stations</a></li>
+						<li class="allcaps"><a href="/salon-styling-stations">STATIONS</a></li>
+						<li><a href="/single-salon-stations">Single Stations</a></li>
+						<li><a href="/back-to-back-salon-stations">Back-to-back Stations</a></li>
+						<li><a href="/tower-salon-stations">Tower Stations</a></li>
+						<li><a href="/salon-wet-stations">Wet Stations</a></li>
+                                                <li><a href="/glass-stations-mirrors">Glass Stations with Mirrors</a></li>
 
-
-						<li class="allcaps"><a href="salon-manicure-pedicure.html" class="cat">Manicure &amp; Pedicure</a></li>
-						<li><a href="salon-manicure-tables.html" class="subcat">Manicure Tables</a></li>
-						<li><a href="Pedicure_Spa_Chairs.html" class="subcat">Pedicure Spa Chairs</a></li>
-						<li><a href="nail-technician-chairs-stools.html" class="subcat">Nail Tech Chairs</a></li>
-						<li><a href="pedicure-carts-trolleys.html" class="subcat">Pedi Carts &amp; Trolleys</a></li>
-						<li><a href="manicure-pedicure-accessories.html" class="subcat">Mani &amp; Pedi Accessories</a></li>
+						<li class="allcaps"><a href="/manicure-pedicure-equipment" class="cat">Manicure & Pedicure</a></li>
+						<li><a href="/manicure-tables" class="subcat">Manicure Tables</a></li>
+						<li><a href="/pedicure-chairs" class="subcat">Pedicure Chairs</a></li>
+						<li><a href="/nail-tech-chairs" class="subcat">Nail Tech Chairs</a></li>
+						<li><a href="/pedicure-carts-trolleys" class="subcat">Carts & Trolleys</a></li>
+						<li><a href="/manicure-pedicure-supplies" class="subcat">Supplies</a></li>
 
 						
 						</ul>
@@ -289,84 +310,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					
 						<div class="column col3">
 						<ul class="sub-menu">
-						<li class="allcaps"><a href="/salon-shampoo-area.html">SHAMPOO</a></li>
-						<li><a href="/salon-shampoo-chairs.html">Shampoo Chairs</a></li>
-						<li><a href="/salon-wet-stations.html">Wet Stations</a></li>
-						<li><a href="/salon-shampoo-shuttles.html">Shampoo Shuttles</a></li>
-						<li><a href="/salon-shampoo-bowls.html">Wall Mount Shampoo Bowls</a></li>
-						<li><a href="/shampoo-cabinet-units.html">Cabinet Units</a></li>
-						<li><a href="/salon-shampoo-accessories.html">Parts & Accessories</a></li>
-						<li class="allcaps"><a href="/salon-dryer-chairs-color-processors.html">DRYERS</a></li>
-						<li><a href="/salon-dryer-chairs">Dryer Chairs</a></li>
-						<li><a href="/salon-dryer-chairs-color-processors.html">Color Processors</a></li>
-						<!-- <li class="allcaps hidden"><a href="/">Sale & Closeout</a></li> -->
-						</ul>
+						<li class="allcaps"><a href="/salon-shampoo-area">SHAMPOO</a></li>
+						<li><a href="/salon-shampoo-chairs">Shampoo Chairs</a></li>
+						<li><a href="/salon-wet-stations">Wet Stations</a></li>
+						<li><a href="/shampoo-shuttles">Shampoo Shuttles</a></li>
+						<li><a href="/salon-shampoo-bowls">Shampoo Bowls</a></li>
+						<li><a href="/salon-shampoo-cabinets">Cabinet Units</a></li>
+						<li><a href="/shampoo-parts-accessories">Parts & Accessories</a></li>
+						<li class="allcaps"><a href="/salon-reception-furniture">RECEPTION</a></li>
+						<li><a href="/salon-reception-desks">Desks</a></li>
+						<li><a href="/salon-reception-chairs">Chairs</a></li>
+						<li><a href="/salon-retail-displays">Retail Displays</a></li>
+                                                <li><a href="/salon-reception-accessories">Accessories</a></li>
+                                                <li class="allcaps"><a href="/salon-appliances">APPLIANCES</a></li>
+                                             	</ul>
 						</div>
 					
 						<div class="column col4">
 						<ul class="sub-menu">
-						<li class="allcaps"><a href="/salon-accessories.html">Accessories</a>
-						<li><a href="/salon-retail-displays.html">Retail Displays</a></li>
-						<li><a href="/salon-color-trays.html">Trays</a></li>
-						<li><a href="/salon-trolleys.html">Trolleys</a></li>
-						<li><a href="/salon-stools.html">Stools</a></li>
-						<li><a href="/salon-floor-mats.html">Floor Mats</a></li>
-						<li><a href="/salon-mirrors.html">Mirrors</a></li>
-						<li><a href="/plastic-salon-chair-covers.html">Chair Covers</a></li>
-						<li><a href="/replace-bits-pieces.html">Replacement Parts</a></li>
+						<li class="allcaps"><a href="/salon-accessories">Accessories</a>
+						<li><a href="/salon-retail-displays">Retail Displays</a></li>
+						<li><a href="/salon-trays-trolleys">Trays & Trolleys</a></li>
+						<li><a href="/salon-stools">Stools</a></li>
+						<li><a href="/salon-floor-mats">Floor Mats</a></li>
+						<li><a href="/salon-mirrors">Mirrors</a></li>
+						<li><a href="/salon-chair-covers">Chair Covers</a></li>
+						<li><a href="/replacement-parts">Replacement Parts</a></li>
+	                                        <li><a href="/salon-trolleys">Trolleys</a></li>
 						
-						<li class="allcaps"><a href="/salon-reception.html">RECEPTION</a></li>
-						<li><a href="/salon-reception-desks.html">Desks</a></li>
-						<li><a href="/salon-reception-seating.html">Chairs</a></li>
-						<li><a href="/salon-retail-displays.html">Retail Displays</a></li>
+                                                <li class="allcaps"><a href="/salon-hair-dryers">DRYERS</a></li>
+						<li><a href="/salon-dryer-chairs">Dryer Chairs</a></li>
+ 						<li><a href="/salon-hair-dryers">Color Processors</a></li>
+                                                <li class="allcaps"><a href="/break-room-appliances">BREAK ROOM</a></li> 
+						<!-- <li class="allcaps hidden"><a href="/">Sale & Closeout</a></li> -->
+						
 						<!-- <li class="allcaps hidden"><a href="/">Sale</a></li> -->
 						</ul>
 						</div>
-					
-					</li><li class="allcaps"><a href="#">Brands</a>
+					</li>
+					<li class="allcaps"><a href="/salon-supplies-online">Supplies</a></li>
+					<li class="allcaps"><a href="#">Brands</a>
 						<ul class="sub-menu">
-							<li><a href="/Standish_bymfg_1-0-1.html">Standish</a></li>
-							<li><a href="/Continuum_bymfg_8-0-1.html">Continuum</a></li>
-							<li><a href="/Savvy_bymfg_3-0-1.html">Savvy</a></li>
-							<li><a href="/Kaemark_bymfg_2-0-1.html">Kaemark</a></li>
-							<li><a href="/andrea.html">Andrea</a></li>
-							<li><a href="/betty-dain.html">Betty Dain</a></li>
-							<li><a href="/burmax.html">Burmax</a></li>
-							<li><a href="/cardinal.html">Cardinal</a></li>
-							<li><a href="/diane.html">Diane</a></li>
-							<li><a href="/fromm.html">Fromm</a></li>
-							<li><a href="/graham.html">Graham</a></li>
-							<li><a href="/helen-of-troy.html">Helen of Troy</a></li>
-							<li><a href="/inspire.html">Inspire</a></li>
-							<li><a href="/isabell-christina.html">Isabell Christina</a></li>
-							<li><a href="/king.html">King</a></li>
-							<li><a href="/marianna.html">Marianna</a></li>
-							<li><a href="/partex.html">Partex</a></li>
+							<li><a href="/standish">Standish</a></li>
+							<li><a href="/continuum-foot-spas">Continuum</a></li>
+							<li><a href="/savvy-salon-equipment">Savvy</a></li>
+							<li><a href="/kaemark-salon-furnishings">Kaemark</a></li>
+							<li><a href="/andrea-lashes">Andrea</a></li>
+							<li><a href="/betty-dain">Betty Dain</a></li>
+							<li><a href="/burmax">Burmax</a></li>
+							<li><a href="/cardinal-salon-combs">Cardinal</a></li>
+							<li><a href="/diane-salon-supplies">Diane</a></li>
+							<li><a href="/fromm-salon-supplies">Fromm</a></li>
+							<li><a href="/graham-professional-beauty-products">Graham</a></li>
+							<li><a href="/helen-of-troy">Helen of Troy</a></li>
+							<li><a href="/inspire">Inspire</a></li>
+							<li><a href="/isabel-cristina">Isabel-Cristina</a></li>
+							<li><a href="/king">King</a></li>
+							<li><a href="/marianna">Marianna</a></li>
+							<li><a href="/partex-towels">Partex</a></li>
 						</ul>
-					</li><li class="allcaps"><a href="/financing.html">Financing</a></li><li class="allcaps"><a href="/dallas-salon-furniture-showroom.html">Showroom</a></li><li class="allcaps"><a href="/why-standish.html">About</a>
+					</li><li class="allcaps"><a href="/salon-equipment-financing">Financing</a></li><li class="allcaps"><a href="/dallas-salon-furniture-showroom">Showroom</a></li><li class="allcaps"><a href="#">About</a>
 						<ul class="sub-menu">
-							<li><a href="/meet-the-team.html">Meet the Team</a></li>
-							<li><a href="/whats-a-standish.html">What's a Standish</a></li>
-							<li><a href="/real-ecommerce-store.html">A Real eCommerce Store</a></li>
+							<li><a href="/meet-the-team">Meet the Team</a></li>
+							<li><a href="/whats-a-standish">What's a Standish</a></li>
+							<li><a href="/a-real-ecommerce-store">A Real eCommerce Store</a></li>
 							<li><a href="http://www.standishsalongoods.com/affiliate-marketing">Affiliate Program</a></li>
-							<li><a href="/receiving-freight.html">Receiving Shipping</a></li>
+							<li><a href="/receiving-freight">Receiving Shipping</a></li>
 						</ul>
 					</li><li class="allcaps"><a href="#">Why Buy Standish?</a>
 						<ul class="sub-menu">
-							<li class="allcaps"><a href="/why-standish.html">Why Buy Standish?</a>
-							<li><a href="/service.html">Service</a></li>
+							<li class="allcaps"><a href="/why-standish">Why Buy Standish?</a>
+							<li><a href="/service">Service</a></li>
 							<li><a href="/quality">Quality</a></li>
-							<li><a href="/craftmanship.html">Craftmanship</a></li>
-							<li><a href="/warranty.html">Warranty</a></li>
-							<li><a href="/return-policy.html">Return Policy</a></li>
-							<li><a href="/safe-secure.html">Safe & Secure</a></li>
-							<li><a href="/Standish_Salon_Goods_Client_Testimonials.html">Testimonials</a></li>
+							<li><a href="/craftmanship">Craftmanship</a></li>
+							<li><a href="/warranty">Warranty</a></li>
+							<li><a href="/return-policy">Return Policy</a></li>
+							<li><a href="/safe-secure">Safe & Secure</a></li>
+							<li><a href="/client-testimonials">Testimonials</a></li>
 						</ul>
 					</li>
-					<li class="allcaps"><a href="/contact-us.html">Contact</a></li>
-					<li class="allcaps"><a href="/frequently-asked-questions.html">FAQ</a></li>
+					<li class="allcaps"><a href="/contact-us">Contact</a></li>
+					<li class="allcaps"><a href="/frequently-asked-questions">FAQ</a></li>
 					<li class="first far"><a href="/blog.asp">Blog</a></li>
-					<li class="far"><a href="/Catalog_ep_74-1.html">Catalog</a></li>
+					<li class="far"><a href="/catalog">Catalog</a></li>
 				</ul>
 			</div>
 		</div>
@@ -505,7 +531,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="footer-navigation">
 		<a href="/myaccount.asp?secure" class="account-button login"><i class="icon-user"></i> <span>Login to your account<span></a>
 		<a href="/affiliate-marketing" class="account-button affiliate"><i class="icon-money"></i> Become an Affiliate</a>
-		<a href="/contact-us.html?contact" class="account-button contact"><i class="icon-bullhorn"></i> Contact Us</a>
+		<a href="/contact-us" class="account-button contact"><i class="icon-bullhorn"></i> Contact Us</a>
 	</div>
 	
 	<div class="footer">
