@@ -1717,11 +1717,18 @@ input {
   background: #f5f5dc;
   color: #4d4d4d;
 }
+.footer .container_12 {
+  text-align: center;
+}
 .footer-logo {
-  display: block;
+  /*display: block;*/
+  /*float: left;*/
   background-image: url("/assets/templates/standish/images/footer-sprite.png");
-  float: left;
   margin: 44px 16px 20px 16px;
+
+  display: inline-block;
+  float: none;
+  vertical-align: top;
 }
 .norton {
   margin-top: 63px;
