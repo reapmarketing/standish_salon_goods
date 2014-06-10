@@ -2287,4 +2287,16 @@ margin-right: 150px;
 	
 }
 
-
+.navigation ul ul a span,
+.cat span {
+	background: #dfe133;
+	padding: 2px 5px;
+	border-radius: 2px;
+	margin-left: 5px;
+	color: #696969;
+}
+.navigation ul ul a span {
+	position: absolute;
+	padding: 2px 2px 0px 2px;
+	top: 2px;
+}
