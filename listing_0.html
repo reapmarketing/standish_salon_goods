@@ -104,9 +104,11 @@ jQuery( function() {
 	
 	// Availability Text
 	var availability = jQuery( '.field3' ).data( 'field3' );
-	var availabilityText = jQuery( '.availability' );
-	if( availability !== '' ){
-		availabilityText.text( availability );
+	if( availability != null ) {
+		var availabilityText = jQuery( '.availability' );
+		if( availability != '' ){
+			availabilityText.text( availability.replace() );
+		}
 	}
 
 	// Product Details List
@@ -808,7 +810,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<!--END: addtocart-->
 						<div class="option-row last">
 							<label>
-								<span>Quick Shipping: </span><span class="availability">Usually <br /> Arrives in 2 Weeks!</span>
+								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 2 Weeks!</span>
 							</label>
 							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
 							<div class="clearfix"></div>
