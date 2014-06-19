@@ -10,12 +10,15 @@ jQuery( function($) {
 		$('br').first().remove();
 	}
 	
+	
 	$("a.cat:contains(Supplies)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a:contains(Break Room)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a:contains(Helen of Troy)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a:contains(Betty Dain)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a:contains(Fromm)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a:contains(King)").append('<span><i class="icon icon-star"></i> New</span>');
+	$("a.cat:contains(Breakroom)").append('<span><i class="icon icon-star"></i> New</span>');
+
+	$nav = $('.navigation');
+	$nav.find("a:contains(Helen of Troy)").append('<span><i class="icon icon-star"></i> New</span>');
+	$nav.find("a:contains(Betty Dain)").append('<span><i class="icon icon-star"></i> New</span>');
+	$nav.find("a:contains(Fromm)").append('<span><i class="icon icon-star"></i> New</span>');
+	$nav.find("a:contains(King)").append('<span><i class="icon icon-star"></i> New</span>');
 
 });
 
