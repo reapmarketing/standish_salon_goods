@@ -2300,3 +2300,11 @@ margin-right: 150px;
 	padding: 2px 2px 0px 2px;
 	top: 2px;
 }
+
+.filterslist {
+	width: 200px;
+	float: right;
+	position: absolute;
+	bottom: 155px;
+	right: 250px;
+}
