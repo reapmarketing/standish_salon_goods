@@ -136,18 +136,21 @@ jQuery( function($) {
 							<option value="">Filter by [catFilterName]</option> 
 							<!--START: catFilter_Filter_Item--> 
 							<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
-							<!--END: catFilter_Filter_Item--> 
+							<!--END: catFilter_Filter_Item-->
+							    <div class="cat-filters">
+
+
+
 						</select>
 						<i class="icon-caret-down"></i>
 					</div> &nbsp;
 					<!--------------------------------------------------------->
 				<!--END: catFilter_Filter-->
+					<input id="hdnCatFilter" type="hidden" name="hdnCatFilter" value="[catFilter]"/>
+				<!--END: catFilterMainBlock-->
 			</div>
-		
-		
-		
-			<input type="hidden" name="hdnCatFilter" id="hdnCatFilter" value="[catFilter]" />
 			<script type="text/javascript">
+			
 				function setCatFilter(strFilter, objForm, removeSubsequent)
 				{
 					if (removeSubsequent)
@@ -159,7 +162,7 @@ jQuery( function($) {
 					{
 						objForm.hdnCatFilter.value = objForm.hdnCatFilter.value + '@' + strFilter;
 					}
-					//alert(objForm.hdnCatFilter.value);
+/* 					 alert(objForm.hdnCatFilter.value); */
 					objForm.submit();
 				}
 				function removeCatFilter()
@@ -170,8 +173,9 @@ jQuery( function($) {
 				}
 			</script>
 			<!-- filter block ends here--> 
-		<!--END: catFilterMainBlock-->
-	
+	</form>
+
+
 		<!--START: ITEMS-->
 			<!-- <div class="titles">&nbsp;[category_Header-products] (Total Items: [productnumber])</div> -->
 	
@@ -226,7 +230,7 @@ jQuery( function($) {
 					</div>
 				<!--END: ITEM_TEMPLATE_0--> 
 			<!--END: CATEGORY_ITEMS-->
-	</form>
+
 
 	<!--START: PAGING-->
 	<div class="grid_10">
