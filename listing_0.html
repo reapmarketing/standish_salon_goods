@@ -114,11 +114,14 @@ jQuery( function() {
 	// Product Details List
 	var details = jQuery( '.field7' ).data( 'field7' );
 	var $detailsList = jQuery( '.details-list' );
+
 	if( details ){
 		$detailsList.find( 'li' ).remove();
 		jQuery.each( details.split( '\n' ), function( i, v ){
 			$detailsList.append( '<li><span>' + v + '</li></span>' );
 		});
+	} else {
+		$('.product-details').hide();
 	}
 
 	// Badges

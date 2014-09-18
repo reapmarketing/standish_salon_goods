@@ -10,6 +10,14 @@
 		transition: opacity 0.5s ease;
 	}
 	</style>
+	
+	<!-- ifbyphone scripts -->
+	<script type="text/JavaScript" src="https://secure.ifbyphone.com/js/ibp_clickto_referral.js"></script>
+	<script type="text/JavaScript">
+	    var _ibp_public_key = "962b453a0efe61d97e1d0c783ec175d555de0cdc";
+	    var _ibp_formatting = true;
+	    var _ibp_keyword_set = 34811;
+	</script>
 
 	<!-- Author Stuff -->
 	<meta name="signet:authors" content="Taylor Young">
@@ -74,9 +82,21 @@
 			while (method = methods.pop()) con[method] = con[method] || dummy;
 		})(window.console = window.console || {});
 		// End of Console-polyfill
-		
+
+		// Begin Inspectlet Embed Code
+		window.__insp = window.__insp || [];
+		__insp.push(['wid', 1419991297]);
+		(function() {
+			function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https': 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+			if (window.attachEvent){
+				window.attachEvent('onload', __ldinsp);
+			}else{
+				window.addEventListener('load', __ldinsp, false);
+			}
+		})();
+		// End Inspectlet Embed Code
 	</script>
-	
+
 	<!-- <script type="text/javascript" src="assets/templates/common/js/jquery-1.3.2.min.js"></script> -->
 	<script type="text/javascript" src="/assets/templates/standish/scripts/3dquicksearch.js"></script>
 	<link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
@@ -95,20 +115,6 @@
 	<!-- <script type="text/javascript" src="//s3.amazonaws.com/scripts.hellobar.com/758d19e09dc0c002101c748165d0a254b4ec93fa.js"></script> -->
 	
 	<!-- IBF SWAPPER -->
-	<!-- <script type="text/JavaScript" src="https://secure.ifbyphone.com/js/ibp_clickto_referral.js"></script>
-	<script type="text/JavaScript">
-	   var _ibp_public_key = "962b453a0efe61d97e1d0c783ec175d555de0cdc";
-	   var _ibp_formatting = true;
-	   var _ibp_keyword_set = 34811;
-	</script> -->
-
-	<!-- Use Cycle instead
-	<script src="//unslider.com/unslider.min.js"></script>
-	<script>
-	$(function() {
-	    $('.banner').unslider();
-	});
-	</script> -->
 
 </head>
 <body>
@@ -130,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="grid_8 hbar_content">
 			</div>
 			<div class="grid_3">
-				<p class="right-hello"><span class="coral-text">Need Help?</span> Call <span class="bold">888.271.8434</span></p>
+				<p class="right-hello"><span class="coral-text">Need Help?</span> Call <span class="bold"><script type="text/JavaScript" src="https://secure.ifbyphone.com/js/keyword_replacement.js"></script></span></p>
 			</div>
 		</div>
 	</div>
@@ -208,13 +214,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 	</div>
 
-
-
-	<div class="navigation">
-		<div class="container_12">
-			<div class="main-navigation">
-				<ul class="nav-menu">
-					<li class="allcaps"><a href="/spend-more-save-more.html" style="color:#dfe133;">Deals</a></li><li class="allcaps shop-menu"><a href="#">Shop Type</a>
+				
+				
+				
+					
+					<!--
+					<li class="allcaps shop-menu"><a href="#">Shop Type</a>
 						<div class="column col1">
 						<ul class="sub-menu">
 						<li class="allcaps"><a href="/hair-salon-equipment">Hair Salon</a></li>
@@ -238,14 +243,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<ul class="sub-menu">
 						 <li class="allcaps"><a href="/blow-dry-bar-equipment">Blow Dry Bar</a></li>
 						<li><a href="/glass-stations-mirrors">Glass Stations with Mirrors</a></li>
-                                                <li><a href="/salon-mirrors">Mirrors</a></li>
+						<li><a href="/salon-mirrors">Mirrors</a></li>
 						<li><a href="/blow-dry-bar-accessories">Accessories</a></li>
 						<li class="allcaps"><a href="/salon-spa-equipment">Spa</a></li>
 						<li><a href="/spa-equipment-packages">Packages</a></li>
-                                                <li><a href="/facial-beds">Facial Beds</a></li>
+						<li><a href="/facial-beds">Facial Beds</a></li>
 						<li><a href="/massage-beds-chairs">Massage Beds & Chairs</a></li>
-                                                <li><a href="/spa-accessories">Spa Accessories</a></li>
-				                <li><a href="/salon-trays-trolleys">Trays & Trolleys</a></li>
+						<li><a href="/spa-accessories">Spa Accessories</a></li>
+						<li><a href="/salon-trays-trolleys">Trays & Trolleys</a></li>
 						</ul>
 						</div>
 
@@ -254,24 +259,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li class="allcaps"><a href="/salon-color-bar-equipment-supplies">Color Bars</a></li>
 						<li><a href="/salon-color-bar-storage">Storage</a></li>
 						<li><a href="/hair-salon-chairs">Chairs</a></li>
-						<li><a href="/shampoo-stations">Shampoo Stations</a></li>
+						<li><a href="/salon-wet-stations">Shampoo Stations</a></li>
 						<li><a href="/salon-hair-dryers">Dryers</a></li>
 						<li><a href="/salon-chair-covers">Chair Covers</a></li>
 						<li><a href="/salon-color-trays">Color Trays</a></li>
-                                                <li class="allcaps"><a href="/manicure-pedicure-equipment">Manicure & Pedicure</a></li>
+						<li class="allcaps"><a href="/manicure-pedicure-equipment">Manicure & Pedicure</a></li>
 						<li><a href="/manicure-tables">Manicure Tables</a></li>
 						<li><a href="/pedicure-chairs">Pedicure Chairs</a></li>
 						<li><a href="/nail-tech-chairs">Nail Tech Chairs</a></li>
-                                         	<li><a href="/pedicure-carts-trolleys">Carts & Trolleys</a></li>
-                                                <li><a href="/manicure-pedicure-supplies">Supplies</a></li>
+						<li><a href="/pedicure-carts-trolleys">Carts & Trolleys</a></li>
+						<li><a href="/manicure-pedicure-supplies">Supplies</a></li>
 						</ul>
 						</div>
-
 					</li>
-					<li class="allcaps equipment-menu"><a href="#">Equipment</a>
+-->
+<!-- <li class="allcaps hidden"><a href="/">Featured</a></li> -->
 
-						<div class="column col1">
-						<ul class="sub-menu">
+
+					<!--
+					<li class="allcaps"><a href="/salon-supplies-online">Supplies</a></li>
+					-->
+
+	<div class="navigation">
+		<div class="container_12">
+			<div class="main-navigation">
+				<ul class="nav-menu">
+					<li class="allcaps"><a href="/standish-salon-equipment-sale" style="color:#dfe133;">Deals</a>
+					<ul class="sub-menu">
+						<li><a href="/standish-salon-equipment-sale">Promotions and Discounts</a></li>
+						<li><a href="/free-salon-space-planning">FREE Layout & Space Planning</a></li>
+						<li><a href="/free-salon-equipment-checklist">FREE Salon Equipment Checklist</a></li>
+						<li><a href="/guide-to-starting-a-salon">FREE Guide to Starting a Salon</a></li>
+						<li><a href="/salon-showroom-flight-reimbursement">Fly & Buy Reimbursement</a></li>
+						<li><a href="/free-salon-promotion">FREE Salon Promotion</a></li>
+					</ul>
+					</li>
+					<li class="allcaps equipment-menu"><a href="#">Equipment</a><div class="column col1"><ul class="sub-menu">
 						<li class="allcaps"><a href="/salon-furniture-packages">Furniture PACKAGES</a></li>
 						<li class="allcaps"><a href="/hair-salon-chairs">CHAIRS</a></li>
 						<li><a href="/salon-styling-chairs">Styling Chairs</a></li>
@@ -289,7 +312,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					
 						<div class="column col2">
 						<ul class="sub-menu">
-						<!-- <li class="allcaps hidden"><a href="/">Featured</a></li> -->
+						
 						<li class="allcaps"><a href="/salon-styling-stations">STATIONS</a></li>
 						<li><a href="/single-salon-stations">Single Stations</a></li>
 						<li><a href="/back-to-back-salon-stations">Back-to-back Stations</a></li>
@@ -335,25 +358,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li><a href="/salon-mirrors">Mirrors</a></li>
 						<li><a href="/salon-chair-covers">Chair Covers</a></li>
 						<li><a href="/replacement-parts">Replacement Parts</a></li>
-	                                        <li><a href="/salon-trolleys">Trolleys</a></li>
-						
-                                                <li class="allcaps"><a href="/salon-hair-dryers">DRYERS</a></li>
+						<li><a href="/salon-trolleys">Trolleys</a></li>
+						<li class="allcaps"><a href="/salon-hair-dryers">DRYERS</a></li>
 						<li><a href="/salon-dryer-chairs">Dryer Chairs</a></li>
- 						<li><a href="/salon-hair-dryers">Color Processors</a></li>
-                                                <li class="allcaps"><a href="/break-room-appliances">BREAK ROOM</a></li> 
-						<!-- <li class="allcaps hidden"><a href="/">Sale & Closeout</a></li> -->
-						
-						<!-- <li class="allcaps hidden"><a href="/">Sale</a></li> -->
+						<li><a href="/salon-hair-dryers">Color Processors</a></li>
+						<li class="allcaps"><a href="/break-room-appliances">BREAK ROOM</a></li>
 						</ul>
 						</div>
-					</li>
-					<li class="allcaps"><a href="/salon-supplies-online">Supplies</a></li>
-					<li class="allcaps"><a href="#">Brands</a>
+					</li><li class="allcaps tools-menu"><a href="#">Tools</a><div class="column col1"><ul class="sub-menu">
+						<li class="allcaps"><a href="/hair-salon-supplies-online">Hair Tools</a></li>
+						<li><a href="/hair-salon-irons">Irons</a></li>
+						<li><a href="/salon-handheld-hair-dryers">Hair Dryers</a></li>
+						<li><a href="/salon-hair-brushes-combs">Brushes & Combs</a></li>
+						<li><a href="/salon-spray-bottles">Spray Bottles</a></li>
+						<li><a href="/salon-color-bowls">Color Bowls</a></li>
+						<li><a href="/salon-color-brush-whisks">Color Brushes & Whisks</a></li>
+						<li><a href="/hair-salon-color-foil">Foil</a></li>
+						</ul>
+						</div>
+
+						<div class="column col2">
 						<ul class="sub-menu">
+						<li><a href="/salon-color-gloves">Gloves</a></li>
+						<li><a href="/hair-salon-manikins">Manikins</a></li>
+						<li><a href="/hair-salon-rollers">Rollers</a></li>
+						<li><a href="/salon-pins-clips">Pins & Clips</a></li>
+						<li><a href="/salon-neck-dusters">Neck Dusters</a></li>
+						<li><a href="/salon-handheld-mirrors">Handheld Mirrors</a></li>
+						<li><a href="/salon-color-timers">Timers</a></li>
+						<li><a kref=“/hair-salon-shears-razors”>Shears & Razors</a></li>
+						</ul>
+						</div>
+
+						<div class="column col3">
+						<ul class="sub-menu">
+						<li class="allcaps"><a href="/hair-salon-towels">Towels</a></li>
+						<li class="allcaps"><a href="/nail-salon-supplies-accessories">Nail Tools</a></li>
+						<li><a href="/professional-nail-clippers">Clippers</a></li>
+						<li><a href="/professional-tweezers">Tweezers</a></li>
+						<li><a href="/professional-nail-files">Files</a></li>
+						<li><a href="/salon-nail-disinfectant">Disinfectant</a></li>
+						<li><a href="/salon-nail-polish-remover">Polish Removal</a></li>
+						<li><a href="/nail-practice-hands-feet">Practice</a></li>
+						<li class="allcaps"><a href="/hair-inspiration">Inspiration</a></li>
+						</ul>
+						</div>
+
+						<div class="column col4">
+						<ul class="sub-menu">
+						<li class="allcaps"><a href="/makeup-supplies-accessories">Makeup</a></li>
+						<li class="allcaps"><a href="/hair-salon-apparel">Apparel</a></li>
+						<li><a href="/hair-salon-capes">Capes</a></li>
+						<li><a href="/hair-salon-aprons">Aprons</a></li>
+						<li><a href="/salon-jackets-vests">Jackets & Vests</a></li>
+						<li><a href="/hair-salon-caps-hats">Caps & Hats</a></li>
+						<li><a href="/spa-body-wrap-towels">Spa Wraps</a></li>
+						<li><a href="/spa-booties-mitts">Hands & Feet</a></li>
+						</ul>
+						</div>
+					</li><li class="allcaps"><a href="#">Brands</a><ul class="sub-menu">
 							<li><a href="/standish">Standish</a></li>
 							<li><a href="/continuum-foot-spas">Continuum</a></li>
 							<li><a href="/savvy-salon-equipment">Savvy</a></li>
-                                                        <li><a href="/Oakworks">Oakworks</a></li>
+							<li><a href="/oakworks">Oakworks</a></li>
 							<li><a href="/kaemark-salon-furnishings">Kaemark</a></li>
 							<li><a href="/andrea-lashes">Andrea</a></li>
 							<li><a href="/betty-dain">Betty Dain</a></li>
@@ -369,16 +436,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<li><a href="/marianna">Marianna</a></li>
 							<li><a href="/partex-towels">Partex</a></li>
 						</ul>
-					</li><li class="allcaps"><a href="/salon-equipment-financing">Financing</a></li><li class="allcaps"><a href="/dallas-salon-furniture-showroom">Showroom</a></li><li class="allcaps"><a href="#">About</a>
-						<ul class="sub-menu">
+					</li><li class="allcaps"><a href="/salon-equipment-financing">Financing</a></li><li class="allcaps"><a href="/dallas-salon-furniture-showroom">Showroom</a></li><li class="allcaps"><a href="#">About</a><ul class="sub-menu">
 							<li><a href="/meet-the-team">Meet the Team</a></li>
 							<li><a href="/whats-a-standish">What's a Standish</a></li>
 							<li><a href="/a-real-ecommerce-store">A Real eCommerce Store</a></li>
-							<li><a href="http://www.standishsalongoods.com/affiliate-marketing">Affiliate Program</a></li>
+							<li><a href="/salon-showroom-flight-reimbursement">Fly & Buy</a></li>
 							<li><a href="/receiving-freight">Receiving Shipping</a></li>
 						</ul>
-					</li><li class="allcaps"><a href="#">Why Buy Standish?</a>
-						<ul class="sub-menu">
+					</li><li class="allcaps"><a href="#">Why Buy Standish?</a><ul class="sub-menu">
 							<li class="allcaps"><a href="/why-standish">Why Buy Standish?</a>
 							<li><a href="/service">Service</a></li>
 							<li><a href="/quality">Quality</a></li>
@@ -540,7 +605,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
 			</div>
 			<div class="grid_12">
-				<p class="footer-copy">&copy; 2014 Standish Salon Goods | <a href="/dallas-salon-furniture-showroom.html">Dallas Showroom</a> | <a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a> | 888.271.8434</p>
+				<p class="footer-copy">&copy; 2014 Standish Salon Goods | <a href="/dallas-salon-furniture-showroom.html">Dallas Showroom</a> | <a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a> | <span class="bold"><script type="text/JavaScript" src="https://secure.ifbyphone.com/js/keyword_replacement.js"></script></span></p>
 			</div>
 		</div>
 	</div>
@@ -582,10 +647,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					if( $(v).find('li').length !== 1 && i != 1) {
 						$("<style>")
 							.prop("type", "text/css")
-							.html("\
-							.hiddencat {\
-								display: none;\
-							}")
+							.html("							.hiddencat {								display: none;							}")
 							.appendTo("head");
 					} else {
 						$(this).addClass('hiddencat');
@@ -598,33 +660,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				$('.subtotes').hide();
 			}
 
-			// Hellobar Animation
-/*
-			var scrollfixdone = false;
-			$(window).on('scroll', function () {
-				if ( $(window).scrollTop() > 60 ){
-					if( !scrollfixdone ) {
-						$('body').css({'margin-top':'60px'});
-						$("html, body").scrollTop( 120 );
-						console.log( $("body").scrollTop() );
-						scrollfixdone = true;
-					}
-				}
-			});
-*/
-			var JSON_LOADED = false;
-			$('.hello').delay(3000).animate({'top': '0'}, function() {
-				if( JSON_LOADED === false ) {
-					$('.hbar_content').html('<p class="left-hello"><img src="/assets/templates/standish/images/this-month.png" alt="This Month!" class="hello-tag"><img src="/assets/templates/standish/images/free-shipping.png" alt="Free Shipping" class="hello-icon"><span class="allcaps bold">Free Shipping</span> Over $500 <span class="allcaps bold">Plus</span> Up To <span class="allcaps bold">15% OFF!</span> &nbsp;&nbsp;<a href="spend-more-save-more.html">View details</a></p>');
-				}
-/*
-				if( !scrollfixdone ) {
-					$('body').css({'margin-top':'60px'});
-					// Test this bit, animate so nothing gets covered
-					// $("html, body").scrollTop( 0 );
-				}
-*/
-			});
 
 			// Template Name Finder/Helper
 			template_slug = $('.template').first().data('template');
@@ -655,6 +690,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			$('div[style*=both]').remove();
 
 			// Start of Hellobar code
+			
+						// Hellobar Animation
+/*
+			var scrollfixdone = false;
+			$(window).on('scroll', function () {
+				if ( $(window).scrollTop() > 60 ){
+					if( !scrollfixdone ) {
+						$('body').css({'margin-top':'60px'});
+						$("html, body").scrollTop( 120 );
+						console.log( $("body").scrollTop() );
+						scrollfixdone = true;
+					}
+				}
+			});
+*/
+			var JSON_LOADED = false;
+			$('.hello').delay(3000).animate({'top': '0'}, function() {
+  			console.log( 'JSON', JSON_LOADED );
+				if( JSON_LOADED === false ) {
+					$('.hbar_content').html('<p class="left-hello"><img src="/assets/templates/standish/images/this-month.png" alt="This Month!" class="hello-tag"><img src="/assets/templates/standish/images/free-shipping.png" alt="Free Shipping" class="hello-icon"><span class="allcaps bold">Free Shipping</span> Over $500 <span class="allcaps bold">Plus</span> Up To <span class="allcaps bold">15% OFF!</span> &nbsp;&nbsp;<a href="spend-more-save-more.html">View details</a></p>');
+				}
+/*
+				if( !scrollfixdone ) {
+					$('body').css({'margin-top':'60px'});
+					// Test this bit, animate so nothing gets covered
+					// $("html, body").scrollTop( 0 );
+				}
+*/
+			});
+			
 			var hbar_slug = 'default';
 			// This code will change the slug if it finds an override.
 			// <span class="custom_bar" data-bar="OverrideBarName"></span>
@@ -668,7 +733,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			$.getJSON( url, function( data ) {
 				JSON_LOADED = true;
 				// console.log( data.content );
-				// console.log( data );
+				console.log( data );
 				// console.log( data[hbar_slug] );
 				// console.log( hbar_slug in data );
 				if( hbar_slug in data ) {
