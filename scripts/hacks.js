@@ -26,20 +26,12 @@ jQuery( function($) {
 		$('.hello').hide();
 	}
 
-	$("a.cat:contains(Supplies)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a.cat:contains(Breakroom)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a.cat:contains(Breakroom)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a.cat:contains(Tools & Equipment)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a.cat:contains(Salon Air Conditioners)").append('<span><i class="icon icon-star"></i> New</span>');
-	$("a.cat:contains(Salon Wine Coolers)").append('<span><i class="icon icon-star"></i> New</span>');
+	$("a.cat:contains(Barber Poles)").append('<span><i class="icon icon-star"></i> New</span>');
 
 	$nav = $('.navigation');
-	$nav.find("a:contains(Helen of Troy)").append('<span><i class="icon icon-star"></i> New</span>');
-	$nav.find("a:contains(Betty Dain)").append('<span><i class="icon icon-star"></i> New</span>');
-	$nav.find("a:contains(Fromm)").append('<span><i class="icon icon-star"></i> New</span>');
-	$nav.find("a:contains(King)").append('<span><i class="icon icon-star"></i> New</span>');
 	$nav.find("a:contains(Oakworks)").append('<span><i class="icon icon-star"></i> New</span>');
-	
+	$nav.find("a:contains(William Marvy)").append('<span><i class="icon icon-star"></i> New</span>');
+	$nav.find("a:contains(Adjust-a-Sink)").append('<span><i class="icon icon-star"></i> New</span>');
 
 });
 
