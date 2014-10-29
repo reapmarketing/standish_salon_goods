@@ -862,25 +862,26 @@ body {
 }
 .hello {
   height: 60px;
-  background-color: #0976BE;
+  background-color: #EBE8BD;
   width: 100%;
   position: fixed;
   z-index: 20;
 /*   top: 0; */
   box-shadow: 0 0 2px 0 white;
   top: -60px;
-  color:white;
+  color: #821512;
 }
 
 .hello .coral-text{
-	color:white;	
+	color: #821512;	
 }
 
 .hello i {
-	font-size: 36px;
-	float: left;
+	font-size: 22px;
 	position: relative;
-	top: 13px;
+	color: #c2d3bd;
+	text-shadow: 1px 1px 0 #888;
+	margin: 0 4px;
 }
 .hello p {
   line-height: 32px;
@@ -893,7 +894,7 @@ body {
   position: relative;
 }
 .left-hello {
-  margin-left: 160px;
+  margin-left: 60px;
 }
 .hello-tag {
   position: absolute;
@@ -903,7 +904,7 @@ body {
 .hello-icon {
   position: absolute;
   top: 16px;
-  left: 114px;
+  left: 24px;
 }
 .hello-tab {
   background: #f5f5dc;
@@ -1130,6 +1131,10 @@ li.first.far a {
   margin-bottom: 40px;
 }
 */
+.fancy-select i {
+	pointer-events: none;
+}
+
 .filter span {
   line-height: 36px;
   display: block;
@@ -1872,8 +1877,7 @@ input {
 }
 li.email {
 	position: relative;
-	top: -4px;
-	left: 70px
+	top: -6px;
 }
 
 .right-side {
@@ -2328,6 +2332,11 @@ margin-right: 150px;
 	
 }
 
+.navigation ul ul a span.green,
+.cat span.green {
+	background: #c2d3bd;
+}
+
 .navigation ul ul a span,
 .cat span {
 	background: #dfe133;
@@ -2367,3 +2376,28 @@ margin-right: 150px;
 	}
 }
 */
+.hr {
+  margin: 10px 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+body .update_cart_button:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  content: "\f01e";
+}
+body .update_cart_button {
+  background-color: #dcdcdc;
+  color: #696969;
+  border-color: #a9a9a9;
+  margin-left: 124px;
+}
+
+
+/* Instagram 3 picture limit */
+#instafeed a:nth-child(n+4) {
+	display: none;
+}

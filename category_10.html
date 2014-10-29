@@ -43,29 +43,6 @@ jQuery( function($) {
 			<div id="categoryHeader" class="data grid_10">[CONTENT]</div>
 			<div class="hidden" data-catname="[categoryname]">[catid]</div>
 		<!--END: CATEGORY_HEADER--> 
-		<!--START: SUB_CATEGORIES-->
-<!-- 		<div class="grid_10"> -->
-			<!-- <div class="titles" colspan="5">&nbsp;[category_Header-subcategories]</div> -->
-<!--
-			<h3>[category_Header-subcategories]</h3>
-			<ul>
--->
-			<!--START: SUB_CATEGORIES_FORMAT-->
-				<!-- SubCat Image appears to be unused -->
-				<!--START: SUB_CATEGORY_IMAGE-->
-<!-- 					<a href="view_category.asp?cat=[CATID]"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" border="0" /></a> -->
-				<!--END: SUB_CATEGORY_IMAGE-->
-				<!--START: SUB_CATEGORY_NAME-->
-<!-- 					<li><a href="view_category.asp?cat=[CATID]">[SUB_CATEGORY_NAME]</a></li> -->
-				<!--START: SUB_CATEGORY_NAME-->
-				<!-- <p>[SUB_CATEGORY_DESCRIPTION]</p> -->
-			<!--END: SUB_CATEGORIES_FORMAT-->
-<!--
-			</ul>
-		</div>
--->
-		<!--END: SUB_CATEGORIES-->
-	
 		<!--START: FEATURE_MENU-->
 			<div class="titles">[category_Header-specials]</div>
 			<!--START: FEATURE_ITEMS-->
@@ -99,7 +76,6 @@ jQuery( function($) {
 			<!-- filter block starts here-->
 		
 			<!--START: catFilter-->
-			<div class="filterslist">
 				[category_Header-Filters]: 
 				<!--START: catFilterCrumb--> 
 					<!--START: catFilterCrumbItem-->
@@ -107,24 +83,13 @@ jQuery( function($) {
 					<!--END: catFilterCrumbItem-->
 				<!--END: catFilterCrumb-->
 				<!--START: catFilterRemoveLink-->
-				<br /><a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a>
-			</div>
+					<br /><br /><a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a>
 				<!--END: catFilterRemoveLink-->
 			<!--END: catFilter-->
 		
 		
 		
 			<div class="grid_10">
-				<!--START: sortbylist-->
-				<div class="fancy-select wide" style="float: left">
-					<select name="sortby" onChange="frmsortby.submit();" class="txtBoxStyle">
-						<option value="">Sort By: </option> 
-						[sortbylist]
-					</select>
-					<i class="icon-caret-down"></i>
-				</div>
-				<!--END: sortbylist-->
-
 				<!--START: catFilter_Filter-->
 				<!-- the filter title can be outside: [catFilterName]--> 
 					<!-- Use this block if you want to show filters as a list--> 
@@ -136,21 +101,18 @@ jQuery( function($) {
 							<option value="">Filter by [catFilterName]</option> 
 							<!--START: catFilter_Filter_Item--> 
 							<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
-							<!--END: catFilter_Filter_Item-->
-							    <div class="cat-filters">
-
-
-
+							<!--END: catFilter_Filter_Item--> 
 						</select>
 						<i class="icon-caret-down"></i>
 					</div> &nbsp;
 					<!--------------------------------------------------------->
 				<!--END: catFilter_Filter-->
-					<input id="hdnCatFilter" type="hidden" name="hdnCatFilter" value="[catFilter]"/>
-				<!--END: catFilterMainBlock-->
 			</div>
+		
+		
+		
+			<input type="hidden" name="hdnCatFilter" id="hdnCatFilter" value="[catFilter]" />
 			<script type="text/javascript">
-			
 				function setCatFilter(strFilter, objForm, removeSubsequent)
 				{
 					if (removeSubsequent)
@@ -162,7 +124,7 @@ jQuery( function($) {
 					{
 						objForm.hdnCatFilter.value = objForm.hdnCatFilter.value + '@' + strFilter;
 					}
-/* 					 alert(objForm.hdnCatFilter.value); */
+					//alert(objForm.hdnCatFilter.value);
 					objForm.submit();
 				}
 				function removeCatFilter()
@@ -173,9 +135,8 @@ jQuery( function($) {
 				}
 			</script>
 			<!-- filter block ends here--> 
-	</form>
-
-
+		<!--END: catFilterMainBlock-->
+	
 		<!--START: ITEMS-->
 			<!-- <div class="titles">&nbsp;[category_Header-products] (Total Items: [productnumber])</div> -->
 	
@@ -222,7 +183,8 @@ jQuery( function($) {
 						<!--END: ITEMPRICE-->
 						<!--START: SALEPRICE-->
 							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+							<p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
 						<!--END: SALEPRICE-->
 						<!-- <button>Add to Cart</button> -->
 						<!-- value="[category_buyitlink]" -->
@@ -230,7 +192,7 @@ jQuery( function($) {
 					</div>
 				<!--END: ITEM_TEMPLATE_0--> 
 			<!--END: CATEGORY_ITEMS-->
-
+	</form>
 
 	<!--START: PAGING-->
 	<div class="grid_10">

@@ -110,6 +110,22 @@ jQuery( function() {
 			availabilityText.text( availability.replace() );
 		}
 	}
+	
+	// Instagram Hashtag
+	var instagramHashtag = jQuery( '.field4' ).data( 'field4' );
+	if( instagramHashtag != null ) {
+		var instaText = "<h6 style='text-align:center; text-transform: uppercase;'>TAG PHOTOS OF YOUR SALON WITH #"+instagramHashtag+" AND MENTION @STANDISHSTUFF TO SEE YOUR PHOTOS BELOW!</h6>";
+		console.log( 'Instagram', instagramHashtag, instaText );
+		$('.product-description').after( instaText );
+		// The limit parameter does not seem to work, this is an Instagram API issue. (not an issue with instafeed) I've implemented a bit of css to limit the display to 3 instead.
+		var feed = new Instafeed({
+			get: 'tagged',
+			tagName: instagramHashtag,
+			clientId: '87b875b4c64341998ef11099c0a71f76',
+			limit: 3
+		});
+		feed.run();
+	}
 
 	// Product Details List
 	var details = jQuery( '.field7' ).data( 'field7' );
@@ -489,17 +505,27 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			</div>
 
 			<div class="sharebox">
+				<!--START: frame_likebutton-->
+					[frame_likebutton]
+				<!--END: frame_likebutton-->
 				<ul>
 					<li class="pinit"><a href="" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
 					<li><a class="tweet_button" target="_blank" href="#tweet"></a></li>
 					<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-via="StandishStuff" data-related="StandishStuff" data-count="none">Tweet</a> -->
+<!--
+
 					<li class="like"><div class="fb-like" data-href="https://standishsalongoods.com" data-colorscheme="light" data-layout="button" data-action="like" data-show-faces="false" data-send="false"></div></li>
+
+-->
 					<!--START: email_friend-->
 						<!-- <img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" /> -->
 						<li class="email"><i class="icon-envelope coral-text"></i> <a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a></li>
 					<!--END: email_friend-->
 					<!-- <i class="icon-plus-sign"></i> -->
 				</ul>
+				<!--START: product_social-bookmarking-->
+					[product_social-bookmarking]
+				<!--END: product_social-bookmarking-->
 			</div>
 
 			<!--START: reviews-->
@@ -660,12 +686,6 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!--START: freeshippingblock-->
 						<!-- [freeshipping] -->
 					<!--END: freeshippingblock-->
-					<!--START: product_social-bookmarking-->
-						<!-- [product_social-bookmarking] -->
-					<!--END: product_social-bookmarking-->
-					<!--START: frame_likebutton-->
-						<!-- [frame_likebutton] -->
-					<!--END: frame_likebutton-->
 				<!--END: pricing-->
 			</div>
 
@@ -759,11 +779,24 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!--END: options-->
 				<!--END: divOptionsBlock--> 
 				</div><!-- product-form -->
+
 			<!--END: PRODUCT_OPTIONS_BLOCK-->
-			
-			
-			
-			
+
+			<!--START: RECURRINGORDER-->
+				<div class="option-row">
+					<label>[recurringorders_addcart-question]</label>
+					<div class="fancy-select">
+						<select name="recurring_frequency" class="txtBoxStyle" id="recurring_frequency">
+							<option value="">[recurringorders_select-frequency]</option>
+							[recurring_frequency]
+						</select>
+						<i class="icon-caret-down"></i>
+					</div>
+					<p style="display: none">[recurringorders_addcart-bottom-message]</p>
+				</div><!-- .option-row -->
+				<div class="clearfix"></div>
+			<!--END: RECURRINGORDER-->
+
 				<!-- <form class="product-form"> -->
 				<div class="product-form">
 					<fieldset>
@@ -849,6 +882,8 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 				<div class="extended-description">[extended_description]</div>
 				<!-- END: extended_description -->
 			</div>
+
+			<div id="instafeed"></div>
 
 		<!--START: related_0-->
 			<div class="related-products">
@@ -988,6 +1023,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 <!--START: extra_field_3-->
 <div class="hidden field3" data-field3="[extra_field_3]"></div>
 <!--END: extra_field_3-->
+
+<!--START: extra_field_4-->
+<div class="hidden field4" data-field4="[extra_field_4]"></div>
+<!--END: extra_field_4-->
+
 <!--START: extra_field_7-->
 <div class="hidden field7" data-field7="[extra_field_7]"></div>
 <!--END: extra_field_7-->

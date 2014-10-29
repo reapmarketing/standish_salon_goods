@@ -27,6 +27,10 @@ jQuery( function($) {
 	}
 
 	$("a.cat:contains(Barber Poles)").append('<span><i class="icon icon-star"></i> New</span>');
+	$("a.cat:contains(Sale!)").append('<span><i class="icon icon-star"></i> New</span>');
+
+/* 	Alternate Green Callout */
+/* 	$("a.cat:contains(Sale!)").append('<span class="green"><i class="icon icon-dollar"></i> Sale</span>'); */
 
 	$nav = $('.navigation');
 	$nav.find("a:contains(Oakworks)").append('<span><i class="icon icon-star"></i> New</span>');
