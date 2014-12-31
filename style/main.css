@@ -2597,3 +2597,7 @@ body .update_cart_button {
 }
 
 /* End of Price Drop Feature Styles */
+
+#searchResults .grid_2.listing {
+	width: 136px;
+}
