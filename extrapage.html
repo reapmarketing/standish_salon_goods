@@ -3,9 +3,12 @@
 
 <script>
 jQuery( function(){
-	// [htmlpage] will only return "My Account" so this is a hack to fix it using the breadcrumbs.
-	// console.log( jQuery( '.data a' ).last().text() );
-	// jQuery( '.page_headers' ).text( jQuery( '.data a' ).last().text() );
+	if( window.location.pathname === '/quality' && window.location.hash ) {
+		setTimeout( function(){
+			console.log( 'quality page push' );
+			$('body').scrollTop( $('body').scrollTop() - 100 );
+		}, 1000 );
+	}
 });
 </script>
 

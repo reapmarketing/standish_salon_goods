@@ -1,3 +1,25 @@
+<script type="text/javascript">
+var product = {};
+$( function(){
+	product = {
+		'id': '[id]',
+		'name': '[name]',
+		'category': $('.breadcrumbs a').last().text().toString(),
+		'list': 'PDP',
+		'position': 1,
+	};
+	// GA Enhanced ECom Tracking
+	ga('require', 'ec');
+	// console.log( ga, $ );
+
+	// PDP Viewed
+	ga('ec:addProduct', product);
+	ga('ec:setAction', 'detail');
+	ga('send', 'pageview');
+
+});
+</script>
+
 <script src="/assets/templates/standish/scripts/vex.combined.min.js"></script>
 <script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
 <link rel="stylesheet" href="/assets/templates/standish/style/vex.css" />
@@ -127,6 +149,37 @@ jQuery( function() {
 		});
 		feed.run();
 	}
+
+
+	// Price Drop Notification Form
+	var priceDropForm = jQuery( '.field5' ).data( 'field5' );
+	if( priceDropForm != null ) { 
+		var priceDropTitle = $('<h4 class="priceDropTitle">Notify Me When The Price Drops!</h4><div class="priceDropForm"></div>');
+		var priceDropButton = $('<a class="button medium priceDropButton">I want to be the first to know &raquo;</a>');
+		$('.product-options').append( priceDropTitle, priceDropButton );
+	}
+
+	jQuery(document).on('click', '.priceDropButton', function( e ) {
+		console.log( e );
+		e.preventDefault();
+		vex.open({
+			// content: '<p>Please provide your email address</p>',
+			afterOpen: function() {
+				hbspt.forms.create({
+					css: '',
+					portalId: '239485',
+					formId: priceDropForm,
+					target: '.vex-content',
+					submitButtonClass: 'hs-button primary medium button',
+					onFormReady: function() {
+						$( '.vex-content .hs-input' ).first().focus();
+					}
+				});
+			}
+		});
+	});
+
+
 
 	// Product Details List
 	var details = jQuery( '.field7' ).data( 'field7' );
@@ -539,11 +592,13 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 				<!-- [review_link] -->
 				<!--START: user_reviews-->
-					<div class="review">
+					<div class="review" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
 						<div class="rating">
+							<span class="hidden" itemprop="ratingValue">[rating]</span>
 							<span class="stars">
 							<img src="assets/templates/common/images/star[rating].png" alt="Rating" />
-							</span> - <span itemprop="author">[user_name]</span> from [user_city]
+							</span> - <span>[user_name]</span> from [user_city]
+							<!-- itemprop="author" -->
 						</div>
 						<span itemprop="name" class="bold">[short_review]</span>
 						<p itemprop="description">[long_review]</p>
@@ -648,19 +703,25 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--END: id-->
 			
 
-			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="pricebox">
+			<div class="pricebox">
 				<div class="cornersprite"></div>
+
 				<!--START: pricing-->
 					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
 					<!-- [product_Header-price] -->
 					<!--START: ITEMPRICE-->
 					<!--END: ITEMPRICE-->
 					<div class="left-price">
-						<!--START: ITEMPRICE--><span id="price" class="price nozero">[price]</span><!--END: ITEMPRICE-->
+						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
+						</div>
+						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+							<span class="hidden" itemprop="price" content="[saleprice]"></span>
+						</div>
 					</div>
 					<div class="right-price">
 						<!--START: price2-->
-							<p class="darkgray-text"><span itemprop="price" class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
+							<p class="darkgray-text"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
 						<!--END: price2-->
 						<!-- [product_yourprice] -->
 						<!--START: ITEMPRICE-->
@@ -668,11 +729,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<!--END: ITEMPRICE-->
 						<!-- [product_onsale] -->
 						<!--START: SALEPRICE-->
-							<p class="darkgray-text"><span itemprop="price" class="label">Sale Price:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
+							<p class="darkgray-text"><span class="label">Sale Price:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
 						<!--END: SALEPRICE-->
 						<!--START: SAVINGS-->
 							<!-- [product_savings] -->
-							<p class="coral-text italic bold"><span itemprop="price" class="label">You Save:</span> <span class="nozero">[savings]</span></p>
+							<p class="coral-text italic bold"><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
 						<!--END: SAVINGS-->
 					</div>
 					<div class="clearboth"></div>
@@ -1029,6 +1090,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 <div class="hidden field4" data-field4="[extra_field_4]"></div>
 <!--END: extra_field_4-->
 
+<!--START: extra_field_5-->
+<div class="hidden field5" data-field5="[extra_field_5]"></div>
+<!--END: extra_field_5-->
+
+
 <!--START: extra_field_7-->
 <div class="hidden field7" data-field7="[extra_field_7]"></div>
 <!--END: extra_field_7-->
@@ -1261,9 +1327,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 	function check_and_add(formx)
 	{
-
+		// This is a 3DCart Function
+		// Modifed to report Cart Addition to GA EECom Tracking
 		if (document.add.std_price==null)
 		{
+			GAEEC_addToCart(product)
 			document.add.submit();
 		}
 		else
@@ -1271,12 +1339,25 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			var readytoadd=validateValues(formx,1)
 			if (readytoadd==true)
 			{
+				GAEEC_addToCart(product)
 				document.add.submit();
 			}
 		}
 	}
 
-	// --></script> 
+	function GAEEC_addToCart(product) {
+		var purchasedProduct = product;
+		purchasedProduct['price'] = '[price]';
+		purchasedProduct['quantity'] = $('#quantity').val();
+		console.log( purchasedProduct );
+		ga( 'ec:addProduct', purchasedProduct );
+		ga( 'ec:setAction', 'add' );
+		ga( 'send', 'event', 'UX', 'click', 'add to cart' );
+	}
+
+</script>
+
+
 <script language="javascript">
 	var currency_symbol='[currency]';
 	var prod_decimal_places='[prod_decimal_places]';

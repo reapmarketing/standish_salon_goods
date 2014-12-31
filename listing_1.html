@@ -128,6 +128,37 @@ jQuery( function() {
 		feed.run();
 	}
 
+
+	// Price Drop Notification Form
+	var priceDropForm = jQuery( '.field5' ).data( 'field5' );
+	if( priceDropForm != null ) { 
+		var priceDropTitle = $('<h4 class="priceDropTitle">Notify Me When The Price Drops!</h4><div class="priceDropForm"></div>');
+		var priceDropButton = $('<a class="button medium priceDropButton">I want to be the first to know &raquo;</a>');
+		$('.product-options').append( priceDropTitle, priceDropButton );
+	}
+
+	jQuery(document).on('click', '.priceDropButton', function( e ) {
+		console.log( e );
+		e.preventDefault();
+		vex.open({
+			// content: '<p>Please provide your email address</p>',
+			afterOpen: function() {
+				hbspt.forms.create({
+					css: '',
+					portalId: '239485',
+					formId: priceDropForm,
+					target: '.vex-content',
+					submitButtonClass: 'hs-button primary medium button',
+					onFormReady: function() {
+						$( '.vex-content .hs-input' ).first().focus();
+					}
+				});
+			}
+		});
+	});
+
+
+
 	// Product Details List
 	var details = jQuery( '.field7' ).data( 'field7' );
 	var $detailsList = jQuery( '.details-list' );
@@ -539,11 +570,13 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 				<!-- [review_link] -->
 				<!--START: user_reviews-->
-					<div class="review">
+					<div class="review" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
 						<div class="rating">
+							<span class="hidden" itemprop="ratingValue">[rating]</span>
 							<span class="stars">
 							<img src="assets/templates/common/images/star[rating].png" alt="Rating" />
-							</span> - <span itemprop="author">[user_name]</span> from [user_city]
+							</span> - <span>[user_name]</span> from [user_city]
+							<!-- itemprop="author" -->
 						</div>
 						<span itemprop="name" class="bold">[short_review]</span>
 						<p itemprop="description">[long_review]</p>
@@ -656,11 +689,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!--START: ITEMPRICE-->
 					<!--END: ITEMPRICE-->
 					<div class="left-price">
-						<!--START: ITEMPRICE--><span id="price" class="price nozero">[price]</span><!--END: ITEMPRICE-->
+						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
 					</div>
 					<div class="right-price">
 						<!--START: price2-->
-							<p class="darkgray-text"><span itemprop="price" class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
+							<p class="darkgray-text"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
 						<!--END: price2-->
 						<!-- [product_yourprice] -->
 						<!--START: ITEMPRICE-->
@@ -668,11 +701,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<!--END: ITEMPRICE-->
 						<!-- [product_onsale] -->
 						<!--START: SALEPRICE-->
-							<p class="darkgray-text"><span itemprop="price" class="label">Sale Price:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
+							<p class="darkgray-text"><span class="label">Sale Price:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
 						<!--END: SALEPRICE-->
 						<!--START: SAVINGS-->
 							<!-- [product_savings] -->
-							<p class="coral-text italic bold"><span itemprop="price" class="label">You Save:</span> <span class="nozero">[savings]</span></p>
+							<p class="coral-text italic bold"><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
 						<!--END: SAVINGS-->
 					</div>
 					<div class="clearboth"></div>
@@ -1028,6 +1061,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 <!--START: extra_field_4-->
 <div class="hidden field4" data-field4="[extra_field_4]"></div>
 <!--END: extra_field_4-->
+
+<!--START: extra_field_5-->
+<div class="hidden field5" data-field5="[extra_field_5]"></div>
+<!--END: extra_field_5-->
+
 
 <!--START: extra_field_7-->
 <div class="hidden field7" data-field7="[extra_field_7]"></div>
