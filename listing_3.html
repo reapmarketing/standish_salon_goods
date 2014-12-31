@@ -1,3 +1,25 @@
+<script type="text/javascript">
+var product = {};
+$( function(){
+	product = {
+		'id': '[id]',
+		'name': '[name]',
+		'category': $('.breadcrumbs a').last().text().toString(),
+		'list': 'PDP',
+		'position': 1,
+	};
+	// GA Enhanced ECom Tracking
+	ga('require', 'ec');
+	// console.log( ga, $ );
+
+	// PDP Viewed
+	ga('ec:addProduct', product);
+	ga('ec:setAction', 'detail');
+	ga('send', 'pageview');
+
+});
+</script>
+
 <script src="/assets/templates/standish/scripts/vex.combined.min.js"></script>
 <script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
 <link rel="stylesheet" href="/assets/templates/standish/style/vex.css" />
@@ -681,15 +703,21 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--END: id-->
 			
 
-			<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="pricebox">
+			<div class="pricebox">
 				<div class="cornersprite"></div>
+
 				<!--START: pricing-->
 					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
 					<!-- [product_Header-price] -->
 					<!--START: ITEMPRICE-->
 					<!--END: ITEMPRICE-->
 					<div class="left-price">
+						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
+						</div>
+						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+							<span class="hidden" itemprop="price" content="[saleprice]"></span>
+						</div>
 					</div>
 					<div class="right-price">
 						<!--START: price2-->
@@ -1050,6 +1078,17 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	</form>
 </div>
 
+
+<!--START: totalrating-->
+<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="hidden">
+	<div itemprop="ratingValue">[review_average]</div>
+	<div itemprop="reviewCount">[review_count]</div>
+	<div itemprop="bestRating">5</div>
+</div>
+<!--END: totalrating-->
+
+
+
 <!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
 <!--START: extra_field_2-->
 <div class="hidden field2" data-field2="[extra_field_2]"></div>
@@ -1299,9 +1338,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 	function check_and_add(formx)
 	{
-
+		// This is a 3DCart Function
+		// Modifed to report Cart Addition to GA EECom Tracking
 		if (document.add.std_price==null)
 		{
+			GAEEC_addToCart(product)
 			document.add.submit();
 		}
 		else
@@ -1309,12 +1350,25 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			var readytoadd=validateValues(formx,1)
 			if (readytoadd==true)
 			{
+				GAEEC_addToCart(product)
 				document.add.submit();
 			}
 		}
 	}
 
-	// --></script> 
+	function GAEEC_addToCart(product) {
+		var purchasedProduct = product;
+		purchasedProduct['price'] = '[price]';
+		purchasedProduct['quantity'] = $('#quantity').val();
+		console.log( purchasedProduct );
+		ga( 'ec:addProduct', purchasedProduct );
+		ga( 'ec:setAction', 'add' );
+		ga( 'send', 'event', 'UX', 'click', 'add to cart' );
+	}
+
+</script>
+
+
 <script language="javascript">
 	var currency_symbol='[currency]';
 	var prod_decimal_places='[prod_decimal_places]';

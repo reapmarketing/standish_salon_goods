@@ -1,56 +1,6 @@
 <!-- Template: home.html -->
 <div class="template" style="display:none" data-template="home"></div>
 
-<script src="/assets/templates/standish/scripts/vex.combined.min.js"></script>
-<script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
-<link rel="stylesheet" href="/assets/templates/standish/style/vex.css" />
-<link rel="stylesheet" href="/assets/templates/standish/style/vex-theme-flat-attack.css" />
-<script>
-// December 2014, 31 Days Scripts
-jQuery( function($) {
-	jQuery('.enroll').first().on( 'click', function( e ) {
-		e.preventDefault();
-		vex.open({
-			// content: '<p>Please provide your email address</p>',
-			afterOpen: function() {
-				hbspt.forms.create({ 
-					portalId: '239485',
-					formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
-					css: '',
-					target: '.vex-content',
-					redirectUrl: 'http://standishsalongoods.com',
-					onFormReady: function() {
-						if( !jQuery( '.vex-content .hs_email' ).length > 0 ) {
-							jQuery( '.vex-content .hs-button' ).click();
-						}
-					}
-				});
-			}
-		});
-	});
-	
-	var progress = $('#progress'),
-		slideshow = $( '.cycle-slideshow' );
-
-	slideshow.on( 'cycle-initialized cycle-before', function( e, opts ) {
-		progress.stop(true).css( 'width', 0 );
-	});
-
-	slideshow.on( 'cycle-initialized cycle-after', function( e, opts ) {
-		if ( ! slideshow.is('.cycle-paused') )
-			progress.animate({ width: '100%' }, opts.timeout, 'linear' );
-	});
-
-	slideshow.on( 'cycle-paused', function( e, opts ) {
-	   progress.stop(); 
-	});
-
-	slideshow.on( 'cycle-resumed', function( e, opts, timeoutRemaining ) {
-		progress.animate({ width: '100%' }, timeoutRemaining, 'linear' );
-	});
-});
-</script>
-
 <!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
 <script type="text/javascript">$('.left-bar').show();</script>
 <div class="right-side">
@@ -68,27 +18,8 @@ jQuery( function($) {
 	<!-- [category_Header-specials] -->
 
 <div class="grid_10">
-	<div class="homeslider_container">
-		<div class="homeslider cycle-slideshow"
-			data-cycle-fx="scrollHorz"
-			data-cycle-slides="> .slide"
-			data-cycle-pause-on-hover="true"
-			data-cycle-pager=".homeslider_nav"
-			data-cycle-pager-template="<div class='nav_{{slideNum}}'><div class='arrow'></div></div>"
-		>
-			<div class="slide"><img src="/assets/templates/standish/images/slide1.png" /><a href="/standish-salon-equipment-sale" class="details"></a></div>
-			<div class="slide"><img src="/assets/templates/standish/images/slide2.png" /></div>
-			<div class="slide"><img src="/assets/templates/standish/images/slide3.png" /><a href="#enroll" class="enroll"></a><a href="/standish-salon-equipment-sale" class="learn"></a></div>
-			<div class="slide"><img src="/assets/templates/standish/images/slide4.png" /></div>
-			<div class="slide"><img src="/assets/templates/standish/images/slide5.png" /><a href="/salon-equipment-financing" class="application"></a></div>
-			
-		</div>
-		<div class="slider_message"></div>
-		<div class="homeslider_nav"></div>
-		<div id="progress"></div>
-	</div>
 	<!--START: CATEGORY_HEADER-->
-		<!-- [CONTENT] -->
+		[CONTENT]
 	<!--END: CATEGORY_HEADER-->
 </div>
 

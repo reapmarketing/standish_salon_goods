@@ -861,27 +861,45 @@ body {
   margin-top: 60px;
 }
 .hello {
-  height: 60px;
-  background-color: #EBE8BD;
-  width: 100%;
-  position: fixed;
-  z-index: 20;
-/*   top: 0; */
-  box-shadow: 0 0 2px 0 white;
-  top: -60px;
-  color: #821512;
+	height: 60px;
+	background-color: #F8BC32;
+	background: url(/assets/templates/standish/images/gold_texture.png);
+	width: 100%;
+	position: fixed;
+	z-index: 20;
+	/* top: 0; */
+	box-shadow: 0 0 2px 0 white;
+	top: -60px;
+	color: black;
 }
 
 .hello .coral-text{
-	color: #821512;	
+	/* color: #821512; */
+	color: black;
+	font-style: italic;
 }
-
+.hello a, .hello a:link {
+	color: black;
+	font-style: italic;
+/* 	text-shadow: 1px 1px 0 #888; */
+}
+.hello a strong {
+	color: black;
+	font-style: italic;
+}
 .hello i {
 	font-size: 22px;
 	position: relative;
-	color: #c2d3bd;
-	text-shadow: 1px 1px 0 #888;
+/* 	color: #c2d3bd; // Standish Green */
+	color: #bb8600;
+	text-shadow: 1px 1px 0 white;
 	margin: 0 4px;
+}
+.hello .bold {
+	color: white;
+}
+.hello strong {
+	color: black;
 }
 .hello p {
   line-height: 32px;
@@ -902,9 +920,16 @@ body {
   left: 0;
 }
 .hello-icon {
+/*
   position: absolute;
   top: 16px;
   left: 24px;
+*/
+	position: absolute;
+	top: 0;
+	left: -20px;
+	width: 100px;
+	height: 60px;
 }
 .hello-tab {
   background: #f5f5dc;
