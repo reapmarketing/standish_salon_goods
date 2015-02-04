@@ -860,94 +860,7 @@ body {
   color: #696969;
   margin-top: 60px;
 }
-.hello {
-	height: 60px;
-	background-color: #F8BC32;
-	background: url(/assets/templates/standish/images/gold_texture.png);
-	width: 100%;
-	position: fixed;
-	z-index: 20;
-	/* top: 0; */
-	box-shadow: 0 0 2px 0 white;
-	top: -60px;
-	color: black;
-}
 
-.hello .coral-text{
-	/* color: #821512; */
-	color: black;
-	font-style: italic;
-}
-.hello a, .hello a:link {
-	color: black;
-	font-style: italic;
-/* 	text-shadow: 1px 1px 0 #888; */
-}
-.hello a strong {
-	color: black;
-	font-style: italic;
-}
-.hello i {
-	font-size: 22px;
-	position: relative;
-/* 	color: #c2d3bd; // Standish Green */
-	color: #bb8600;
-	text-shadow: 1px 1px 0 white;
-	margin: 0 4px;
-}
-.hello .bold {
-	color: white;
-}
-.hello strong {
-	color: black;
-}
-.hello p {
-  line-height: 32px;
-}
-.right-hello {
-  text-align: right;
-  width:240px;
-}
-.hello .container_12 {
-  position: relative;
-}
-.left-hello {
-  margin-left: 60px;
-}
-.hello-tag {
-  position: absolute;
-  top: 19px;
-  left: 0;
-}
-.hello-icon {
-/*
-  position: absolute;
-  top: 16px;
-  left: 24px;
-*/
-	position: absolute;
-	top: 0;
-	left: -20px;
-	width: 100px;
-	height: 60px;
-}
-.hello-tab {
-  background: #f5f5dc;
-  width: 25px;
-  height: 25px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  position: absolute;
-  top: -5px;
-  right: 100px;
-  z-index: 1;
-}
-.hello-tab i {
-  font-size: 20px;
-  position: relative;
-  top: 5px;
-  left: 7px;
-}
 .header {
   height: 100px;
   background-color: #fff;
@@ -2625,4 +2538,105 @@ body .update_cart_button {
 
 #searchResults .grid_2.listing {
 	width: 136px;
+}
+
+
+
+
+.hello {
+	height: 60px;
+	background-color: #fdcfd1;
+/* 	background: url(/assets/templates/standish/images/gold_texture.png); */
+	width: 100%;
+	position: fixed;
+	z-index: 20;
+	/* top: 0; */
+	box-shadow: 0 0 2px 0 white;
+	top: -60px;
+	color: black;
+}
+
+.hello .coral-text{
+	/* color: #821512; */
+	color: black;
+	font-style: italic;
+}
+.hello a, .hello a:link {
+	color: black;
+	font-style: italic;
+/* 	text-shadow: 1px 1px 0 #888; */
+}
+.hello a strong {
+	color: black;
+	font-style: italic;
+}
+.hello i {
+	font-size: 22px;
+	position: relative;
+	color: #c2d3bd; /* Standish Green */
+	color: #bb8600; /*  Gold */
+	color: #a30935;
+	text-shadow: 1px 1px 0 white;
+	margin: 0 4px;
+}
+.hello .bold {
+	color: white;
+	color: #a30935;
+}
+.hello strong {
+	color: black;
+}
+.hello p {
+  line-height: 32px;
+}
+.right-hello {
+  text-align: right;
+  width:240px;
+}
+.hello .container_12 {
+  position: relative;
+}
+.left-hello {
+  margin-left: 60px;
+}
+.hello-tag {
+  position: absolute;
+  top: 19px;
+  left: 0;
+}
+.hello-icon {
+	position: absolute;
+	top: 0;
+	left: -20px;
+	width: 100px;
+	height: 60px;
+}
+.hello-tab {
+  background: #f5f5dc;
+  width: 25px;
+  height: 25px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  position: absolute;
+  top: -5px;
+  right: 100px;
+  z-index: 1;
+}
+.hello-tab i {
+  font-size: 20px;
+  position: relative;
+  top: 5px;
+  left: 7px;
+}
+
+
+
+
+
+
+.product-form input[type=file] {
+	float: right;
+	width: 283px;
+	padding: 5px;
+	margin-bottom: 12px;
 }
