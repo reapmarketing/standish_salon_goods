@@ -1,3 +1,10 @@
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
 jQuery( function($) {
 
 	// unWrappers
@@ -36,6 +43,35 @@ jQuery( function($) {
 	$nav.find("a:contains(Oakworks)").append('<span><i class="icon icon-star"></i> New</span>');
 	$nav.find("a:contains(William Marvy)").append('<span><i class="icon icon-star"></i> New</span>');
 	$nav.find("a:contains(Adjust-a-Sink)").append('<span><i class="icon icon-star"></i> New</span>');
+
+
+	$('.nextnav a').click( function() {
+		ga('send', 'event', 'pdp-button', 'click', 'nextnav-link');
+	});
+	
+	$('.backnav a').click( function() {
+		ga('send', 'event', 'pdp-button', 'click', 'backnav-link');
+	});
+	
+	$('.breadcrumbs a').click( function() {
+		ga('send', 'event', 'pdp-button', 'click', 'breadcrumbs-link');
+	});
+	
+	$('.brochure-download a').click( function() {
+		ga('send', 'event', 'pdp-button', 'click', 'brochure-download-link');
+	});
+	
+	$('.listing a').click( function() {
+		ga('send', 'event', 'product', 'click', 'listing-item-link');
+	});
+	
+	$('#catframe a').click( function() {
+		ga('send', 'event', 'navigation', 'click', 'category-sidebar-link');
+	});
+	
+	$('.main-navigation a').click( function() {
+		ga('send', 'event', 'navigation', 'click', 'main-navigation-link');
+	});
 
 });
 

@@ -102,7 +102,7 @@ jQuery( function() {
 		vex.open({
 			// content: '<p>Please provide your email address</p>',
 			afterOpen: function() {
-				hbspt.forms.create({ 
+				hbspt.forms.create({
 					portalId: '239485',
 					formId: '253a1f08-bebc-40c3-ab80-88ac7e518e74',
 					target: '.vex-content',
@@ -278,9 +278,13 @@ jQuery( function() {
 			'title': 'Guaranteed To Pass Inspection',
 			'class': 'inspected',
 			'tooltip': 'All of our products pass fire retardant codes and meet Universal Plumbing Code (UPC) specifications.'
-		}
-	}
-	
+		},
+        'hidden-clover': {
+            'title': '',
+            'class': 'hidden-clover',
+            'tooltip': ''
+        }
+    }	
 	
 /*
 Industrial Slides		Standish's salon equipment is made with full-extension drawer glides that will last, on average, about 5-10 times longer than what's available through a general contractor.
@@ -301,6 +305,9 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		$badges.remove();
 	}
 
+    if($('.badge-hidden-clover').attr('href')) {
+    	$('.badge-hidden-clover').attr('href', '#modal');
+    }
 	// @todo!
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
@@ -585,6 +592,17 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--START: reviews-->
 			<div class="reviews">
 				<h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">[reviews_header]</h4>
+
+
+				<!--START: totalrating-->
+				<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+					<p>Average Rating: <span itemprop="ratingValue">[review_average]</span> (<span itemprop="reviewCount">[review_count]</span> Reviews)</p>
+					<meta itemprop="bestRating" content="5">
+				</div>
+				<!--END: totalrating-->
+
+
+
 				<!--START: create_review_link-->
 					<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
 					<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
@@ -592,12 +610,15 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 				<!-- [review_link] -->
 				<!--START: user_reviews-->
-					<div class="review" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+
+					<div class="review" itemprop="review" itemscope itemtype="http://schema.org/Review">
 						<div class="rating">
+							<meta itemprop="worstRating" content="1">
 							<span class="hidden" itemprop="ratingValue">[rating]</span>
+							<meta itemprop="bestRating" content="5">
 							<span class="stars">
 							<img src="assets/templates/common/images/star[rating].png" alt="Rating" />
-							</span> - <span>[user_name]</span> from [user_city]
+							</span> - <span itemprop="author">[user_name]</span> from [user_city]
 							<!-- itemprop="author" -->
 						</div>
 						<span itemprop="name" class="bold">[short_review]</span>
@@ -780,8 +801,9 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<!--END: qty-format-->
 
 						<!--START: file-format-->
-							[value]: [oprice]
-							<input type="file" name="file[oname]" size="20" class="txtBoxStyle" />
+							<!-- [value]: -->
+							<!-- [oprice] -->
+							<input type="file" name="file[oname]" size="20" />
 						<!--END: file-format-->
 
 						<!--START: title-format-->
@@ -1077,17 +1099,6 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 	</form>
 </div>
-
-
-<!--START: totalrating-->
-<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="hidden">
-	<div itemprop="ratingValue">[review_average]</div>
-	<div itemprop="reviewCount">[review_count]</div>
-	<div itemprop="bestRating">5</div>
-</div>
-<!--END: totalrating-->
-
-
 
 <!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
 <!--START: extra_field_2-->
@@ -1456,7 +1467,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 		//jqXHR.responseText
 		if (jqXHR.status > 0)
-			alert("Error processing request " + jqXHR.status + " - " + textStatus);	
+			alert("Error processing request " + jqXHR.status + " - " + textStatus);
 	}
 
 	selectOption(null);

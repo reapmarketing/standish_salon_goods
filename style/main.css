@@ -514,7 +514,7 @@ body {
   color: #696969;
 }
 .coral-text {
-  color: #ff7f50;
+  color: white;
 }
 .standishgray-text {
   color: #4d4d4d;
@@ -808,6 +808,9 @@ a:active {
 .badge-inspected i {
   background-position: -180px -180px;
 }
+.badge-hidden-clover i {
+    background-position: -180px -242px;
+}
 .badge-free-shipping:hover i {
   background-position: -240px 0;
 }
@@ -855,6 +858,9 @@ a:active {
 }
 .badge-inspected:hover i {
   background-position: -420px -180px;
+}
+.badge-hidden-clover:hover i {
+    background-position: -240px -242px;
 }
 body {
   color: #696969;
@@ -947,7 +953,8 @@ button.cart i {
   top: 60px;
   padding: 15px 0 20px 0;
   left: 0;
-  z-index: 99999;
+  z-index: 19;
+  width: 250px;
 }
 .navigation li li {
   display: block;
@@ -1801,7 +1808,7 @@ input {
   background: #dcdcdc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  padding: 20px 20px 16px 20px;
+  padding: 0px 20px 16px 20px;
 }
 .sharebox .like {
 	position: absolute;
@@ -1980,13 +1987,13 @@ form.hs-form .hs-button {
 }
 
 .tools-menu .column ul {
-	height: 230px;
+	/*height: 230px;*/
 }
 .shop-menu .column ul {
 	height: 354px;
 }
 .equipment-menu .column ul {
-	height: 322px;
+	/*height: 322px;*/
 }
 
 .newsletter-signup .hs-form fieldset {
@@ -2351,7 +2358,6 @@ body .update_cart_button {
   background-color: #dcdcdc;
   color: #696969;
   border-color: #a9a9a9;
-  margin-left: 124px;
 }
 
 
@@ -2545,7 +2551,7 @@ body .update_cart_button {
 
 .hello {
 	height: 60px;
-	background-color: #fdcfd1;
+	background-color: #0068BA;
 /* 	background: url(/assets/templates/standish/images/gold_texture.png); */
 	width: 100%;
 	position: fixed;
@@ -2558,7 +2564,7 @@ body .update_cart_button {
 
 .hello .coral-text{
 	/* color: #821512; */
-	color: black;
+	color: white;
 	font-style: italic;
 }
 .hello a, .hello a:link {
@@ -2581,7 +2587,7 @@ body .update_cart_button {
 }
 .hello .bold {
 	color: white;
-	color: #a30935;
+	color: #FF2723;
 }
 .hello strong {
 	color: black;
@@ -2592,6 +2598,7 @@ body .update_cart_button {
 .right-hello {
   text-align: right;
   width:240px;
+  color:white;
 }
 .hello .container_12 {
   position: relative;
