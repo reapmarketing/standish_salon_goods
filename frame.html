@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="//cdn.optimizely.com/js/228130168.js"></script>
 	<title>[TITLE]</title>
+    <meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
 	<style>
 	/* Not sure what this is for... */
 	html.wait{
@@ -11,6 +11,33 @@
 		transition: opacity 0.5s ease;
 	}
 	</style>
+    
+    <!------- CSS -------->
+    <link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
+	<link rel="stylesheet" href="/assets/templates/standish/style/main.css?cachebuster=20150007" />
+	<link rel="stylesheet" href="/assets/templates/standish/style/hellobar.css?cachebuster=20150007" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
+    
+    <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
+
+    
+    <!------- JS --------->
+    
+    <!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="/assets/templates/standish/scripts/jquery.migrate.js"></script>
+	<script src="/assets/templates/standish/scripts/jquery.cycle2.min.js"></script>
+    
+    <!-- loaded to measure how far the user scrolls on the page -->
+    <script src="/assets/templates/standish/scripts/scrollDepth.js"></script>
+    
+    
+    <!-- optimizely -->
+    <script src="//cdn.optimizely.com/js/228130168.js"></script>
 	
 	<!-- ifbyphone scripts -->
 	<script type="text/JavaScript" src="https://secure.ifbyphone.com/js/ibp_clickto_referral.js"></script>
@@ -20,29 +47,37 @@
 		var _ibp_keyword_set = 34811;
 	</script>
 
-	<meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
-	<link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
-	<link rel="stylesheet" href="/assets/templates/standish/style/main.css?cachebuster=20150007" />
-	<link rel="stylesheet" href="/assets/templates/standish/style/hellobar.css?cachebuster=20150007" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
-	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
-	<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<!-- <script src="/assets/templates/standish/scripts/standish_snow.js"></script> -->
-	<script src="/assets/templates/standish/scripts/jquery.migrate.js"></script>
-	<script src="/assets/templates/standish/scripts/jquery.cycle2.min.js"></script>
-	<!-- <script src="/assets/templates/standish/scripts/hellobar.js"></script> -->
-
-	<!-- <script src="/assets/templates/standish/scripts/bundle.js"></script> -->
-	<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
 	<script src="/assets/templates/standish/scripts/hacks.js"></script>
 	<script src="/assets/templates/common/js/utilities.js"></script>
 	<script charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
 	<script src="/assets/templates/standish/scripts/instafeed.js"></script>
-	
 
+	<script type="text/javascript">
+		//check if page is a checkout page and if true then add no index no follow
+		if (window.location.href.indexOf("thankyou") > -1) {
+		    $('meta[name=ROBOTS]').attr('CONTENT', 'NOINDEX, NOFOLLOW');
+		}
+	</script>
+    <!-- 3d quick search -->
+    <script type="text/javascript" src="/assets/templates/standish/scripts/3dquicksearch.js"></script>
+    
+    <script type="application/ld+json">
+	{
+	   "@context": "http://schema.org",
+	   "@type": "WebSite",
+	   "url": "http://www.standishsalongoods.com",
+	   "potentialAction": {
+		 "@type": "SearchAction",
+		 "target": "http://www.standishsalongoods.com/search.asp?keyword={search_term_string}",
+		 "query-input": "required name=search_term_string"
+	   }
+	}
+	</script>
+    
+    <!---- Custom ajax script that takes in json from custom top bar content -->
+    <script src="/assets/templates/standish/scripts/top-bar-custom-content.js"></script>
+    <!-- Tracks scrolling -- allows top bar to animate. -->
+    <script src="/assets/templates/standish/scripts/scroll-tracking.js"></script>
 
 	<script>
 		// Hack to prevent errors, may break things
@@ -97,11 +132,6 @@
 		// End Inspectlet Embed Code
 	</script>
 
-	<!-- <script type="text/javascript" src="assets/templates/common/js/jquery-1.3.2.min.js"></script> -->
-	<script type="text/javascript" src="/assets/templates/standish/scripts/3dquicksearch.js"></script>
-	<link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
-	<!--START: quicksearch-->
-	<!--END: quicksearch-->
 
 	<!--Adobe Edge Runtime-->
 	<script type="text/javascript" charset="utf-8" src="/assets/templates/standish/scripts/TailoredStandishAnimation_edgePreload.js"></script>
@@ -117,22 +147,103 @@
 	<!-- IBF SWAPPER -->
 
 
-<script type="application/ld+json">
-{
-   "@context": "http://schema.org",
-   "@type": "WebSite",
-   "url": "http://www.standishsalongoods.com",
-   "potentialAction": {
-     "@type": "SearchAction",
-     "target": "http://www.standishsalongoods.com/search.asp?keyword={search_term_string}",
-     "query-input": "required name=search_term_string"
-   }
-}
-</script>
-
 </head>
 <body>
+<script>
+    
+    //*******SCROLL TRACKING CODE*****
+       jQuery(function($) {
+    // Debug flag
+    var debugMode = false;
 
+    // Default time delay before checking location
+    var callBackTime = 100;
+
+    // # px before tracking a reader
+    var readerLocation = 150;
+
+    // Set some flags for tracking & execution
+    var timer = 0;
+    var scroller = false;
+    var endContent = false;
+    var didComplete = false;
+
+    // Set some time variables to calculate reading time
+    var startTime = new Date();
+    var beginning = startTime.getTime();
+    var totalTime = 0;
+    
+    // Get some information about the current page
+    var pageTitle = document.title;
+
+    // Track the aticle load
+    if (!debugMode) {
+        ga('send', 'event', 'Reading', 'ArticleLoaded', pageTitle, {'nonInteraction': 1});
+    } else {
+           
+    }
+
+    // Check the location and track user
+    function trackLocation() {
+        bottom = $(window).height() + $(window).scrollTop();
+        height = $(document).height();
+
+        // If user starts to scroll send an event
+        if (bottom > readerLocation && !scroller) {
+            currentTime = new Date();
+            scrollStart = currentTime.getTime();
+            timeToScroll = Math.round((scrollStart - beginning) / 1000);
+            if (!debugMode) {
+                ga('send', 'event', 'Scroll', 'StartReading', pageTitle, timeToScroll, {'metric1' : timeToScroll});
+            } else {
+                ga('send', 'event', 'Scroll', 'StartReading', pageTitle, timeToScroll, {'metric1' : timeToScroll});
+            }
+            scroller = true;
+        }
+
+        // If user has hit the bottom of the content send an event
+        if (bottom >= $('.product-details').scrollTop() + $('.product-details').innerHeight() && !endContent) {
+            currentTime = new Date();
+            contentScrollEnd = currentTime.getTime();
+            timeToContentEnd = Math.round((contentScrollEnd - scrollStart) / 1000);
+            if (!debugMode) {
+                 if (timeToContentEnd < 60) {
+                    ga('set', 'dimension5', 'Scanner'); 
+                } else {
+                    ga('set', 'dimension5', 'Reader'); 
+                }
+                ga('send', 'event', 'Scroll', 'ContentBottom', pageTitle, timeToContentEnd, {'metric2' : timeToContentEnd});
+            } else {
+               ga('send', 'event', 'Scroll', 'ContentBottom', pageTitle, timeToContentEnd, {'metric2' : timeToContentEnd});
+            }
+            endContent = true;
+        }
+
+        // If user has hit the bottom of page send an event
+        if (bottom >= height && !didComplete) {
+            currentTime = new Date();
+            end = currentTime.getTime();
+            totalTime = Math.round((end - scrollStart) / 1000);
+            if (!debugMode) {
+                ga('send', 'event', 'Scroll', 'PageBottom', pageTitle, totalTime, {'metric3' : totalTime});
+            } else {
+                ga('send', 'event', 'Scroll', 'PageBottom', pageTitle, totalTime, {'metric3' : totalTime});
+            }
+            didComplete = true;
+        }
+    }
+
+    // Track the scrolling and track location
+    $(window).scroll(function() {
+        if (timer) {
+            clearTimeout(timer);
+        }
+
+        // Use a buffer so we don't call trackLocation too often.
+        timer = setTimeout(trackLocation, callBackTime);
+    });
+});
+</script>
 <!-- Google Tag Manager 
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -162,138 +273,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<a href="/"><h2 class="logo">Standish Salon Furniture</h2></a>
 				<div class="credentials"></div>
 			</div>
-<!--
-			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-				 width="130px" height="34px" viewBox="0 0 130 34" enable-background="new 0 0 130 34" xml:space="preserve">
-			<g>
-				<path fill="#4d4d4d" d="M12.224,28.253c-1.441,2.587-2.416,3.519-5.468,3.519c-3.476,0-6.147-2.077-6.147-5.935
-					c0-0.466,0-1.824,0-2.373c0-0.382,0.381-0.425,2.077-0.425c1.697,0,2.501,0,2.501,0.339c0,0.551,0,1.357,0,1.781
-					c0,1.568,0.296,2.5,1.568,2.5c1.145,0,1.442-0.848,1.527-1.568c0.042-0.72,0.085-1.356,0.085-1.95
-					c0-3.687-8.012-8.816-8.012-15.175c0-1.187,0.509-3.137,1.06-4.112c0.551-0.976,2.077-2.756,4.959-2.756
-					c3.603,0,6.02,2.671,6.02,5.765c0,0.636,0,1.357,0,2.078c0,0.295-0.594,0.253-2.035,0.253c-1.611,0-2.459,0-2.459-0.296
-					c0-0.551,0-1.568,0-1.949c0-1.188-0.806-1.908-1.526-1.908c-0.763,0-1.357,0.678-1.442,1.356C4.848,8.034,4.806,8.541,4.806,9.092
-					c0,5.002,8.096,8.436,8.096,15.346C12.903,25.709,12.733,27.321,12.224,28.253z"/>
-				<path fill="#4d4d4d" d="M27.696,6.253c-0.508,0-1.102,0-1.823,0c-0.466,0-1.017,0-1.229,0.085
-					c-0.382,0.297-0.297,1.017-0.297,1.568c0,9.369,0,14.159,0,23.442c0,0.382-0.466,0.424-2.458,0.424c-1.781,0-2.162,0-2.162-0.424
-					c0-9.283,0-14.116,0-23.442c0-0.551,0.085-1.271-0.296-1.568c-0.212-0.085-0.763-0.085-1.229-0.085c-0.593,0-1.187,0-1.568,0
-					c-0.636,0-0.763-0.297-0.763-2.077c0-1.78,0.085-2.077,0.593-2.077c2.671,0,8.521,0,11.191,0c0.508,0,0.55,0.382,0.55,1.993
-					C28.205,6.041,28.163,6.253,27.696,6.253z"/>
-				<path fill="#4d4d4d" d="M41.516,31.772c-1.23,0-2.035,0.085-2.12-0.509c-0.339-2.374-0.508-3.985-0.847-6.316
-					c-0.043-0.424-0.551-0.338-1.229-0.338c-0.805,0-1.229-0.085-1.272,0.338c-0.254,2.374-0.424,3.943-0.636,6.401
-					c-0.042,0.466-0.975,0.424-2.332,0.424c-0.636,0-2.119,0-2.077-0.382c1.568-11.064,2.67-18.483,4.069-28.698
-					c0.085-0.593,1.272-0.636,2.205-0.636c1.059,0,2.205,0.042,2.29,0.762c1.652,10.852,2.585,17.466,4.281,28.529
-					C43.932,31.814,42.661,31.772,41.516,31.772z M37.658,12.866c0-0.212-0.085-1.145-0.381-1.145c-0.213,0-0.297,1.059-0.297,1.229
-					c-0.212,3.307-0.382,5.427-0.551,8.139c-0.042,0.297,0.212,0.339,0.848,0.339c0.551,0,0.975,0.085,0.932-0.296
-					C37.998,17.994,37.87,16.215,37.658,12.866z"/>
-				<path fill="#4d4d4d" d="M60.464,31.772c-1.102,0-1.569-0.085-1.865-1.145c-1.4-4.917-1.908-7.163-3.392-12.504
-					c-0.255-0.934-0.594-2.501-0.89-2.501c-0.297,0-0.297,0.891-0.297,1.441c0,5.51,0,8.139,0,13.946c0,0.679-0.127,0.764-2.331,0.764
-					c-2.12,0-2.12-0.085-2.12-0.721c0-10.597,0-18.228,0-28.359c0-0.593,0.085-0.593,1.95-0.593c1.822,0,2.035,0.169,2.374,1.357
-					c0.89,3.475,2.119,8.012,3.433,12.505c0.085,0.424,0.255,1.102,0.509,1.102c0.297,0,0.297-0.805,0.297-1.272
-					c0-4.494,0-8.054,0-12.93c0-0.677,0.127-0.762,2.246-0.762c2.162,0,2.204,0.043,2.204,0.72c0,6.867,0,17.126,0,27.724
-					C62.584,31.644,62.626,31.772,60.464,31.772z"/>
-				<path fill="#4d4d4d" d="M79.879,29.948c-1.358,1.399-3.307,1.823-4.875,1.823c-1.399,0-3.306,0-4.409,0
-					c-0.551,0-0.89,0.042-1.059-0.297c-0.17-0.212-0.17-0.592-0.17-1.016c0-8.394,0-18.822,0-27.045c0-0.466,0-0.848,0.17-1.06
-					c0.255-0.297,0.551-0.255,1.102-0.255c1.017,0,3.179,0,4.324,0c1.822,0,3.687,0.509,5.002,1.738
-					c1.229,1.145,1.737,2.839,1.737,4.662c0,6.444,0,10.386,0,16.828C81.701,26.897,81.32,28.464,79.879,29.948z M77.124,9.389
-					c0-0.89-0.043-1.695-0.551-2.332c-0.339-0.338-0.636-0.508-1.399-0.508c-0.678,0-1.017,0-1.144,0.17
-					c-0.127,0.169-0.127,0.338-0.127,0.593c0,6.613,0,12.589,0,19.075c0,0.382,0,0.68,0.169,0.848c0.127,0.128,0.593,0.085,0.975,0.085
-					c0.509,0,1.145-0.17,1.611-0.764c0.509-0.72,0.466-1.441,0.466-2.077C77.124,18.8,77.124,15.07,77.124,9.389z"/>
-				<path fill="#4d4d4d" d="M90.35,31.729c-2.078,0-2.163,0-2.163-0.593c0-10.64,0-18.143,0-28.318c0-0.635,0.17-0.677,2.163-0.677
-					c2.246,0,2.373,0.042,2.373,0.719c0,6.825,0,17.424,0,28.19C92.724,31.687,92.681,31.729,90.35,31.729z"/>
-				<path fill="#4d4d4d" d="M110.485,28.253c-1.442,2.587-2.416,3.519-5.468,3.519c-3.477,0-6.147-2.077-6.147-5.935
-					c0-0.466,0-1.824,0-2.373c0-0.382,0.381-0.425,2.076-0.425c1.696,0,2.501,0,2.501,0.339c0,0.551,0,1.357,0,1.781
-					c0,1.568,0.298,2.5,1.57,2.5c1.144,0,1.44-0.848,1.525-1.568c0.044-0.72,0.086-1.356,0.086-1.95c0-3.687-8.012-8.816-8.012-15.175
-					c0-1.187,0.508-3.137,1.06-4.112c0.551-0.976,2.076-2.756,4.959-2.756c3.604,0,6.019,2.671,6.019,5.765c0,0.636,0,1.357,0,2.078
-					c0,0.295-0.593,0.253-2.034,0.253c-1.612,0-2.459,0-2.459-0.296c0-0.551,0-1.568,0-1.949c0-1.188-0.806-1.908-1.526-1.908
-					c-0.763,0-1.356,0.678-1.441,1.356c-0.084,0.636-0.127,1.144-0.127,1.695c0,5.002,8.097,8.436,8.097,15.346
-					C111.164,25.709,110.994,27.321,110.485,28.253z"/>
-				<path fill="#4d4d4d" d="M127.398,31.729c-2.246,0-2.332-0.042-2.332-0.847c0-4.028,0-7.207,0-11.234c0-0.509,0-0.934-0.381-0.976
-					c-0.508-0.127-2.374-0.042-2.543,0c-0.339,0.128-0.339,0.509-0.339,1.061c0,4.111,0,7.206,0,11.317
-					c0,0.679-0.127,0.679-2.332,0.679c-2.078,0-2.163,0-2.163-0.593c0-10.64,0-18.058,0-28.232c0-0.636,0.127-0.763,2.163-0.763
-					c2.246,0,2.373,0.126,2.373,0.805c0,3.476,0,6.484,0,9.92c0,0.721,0,1.186,0.552,1.356c0.381,0.042,1.865,0.127,2.331,0
-					c0.339-0.128,0.339-0.594,0.339-1.229c0-3.562,0-7.164,0-10.216c0-0.721,0.255-0.636,2.29-0.636c2.162,0,2.289,0,2.289,0.677
-					c0,10.048,0,17.593,0,28.064C129.646,31.687,129.646,31.729,127.398,31.729z"/>
-			</g>
-			</svg>
--->
-
-			<!-- <span class="allcaps serif bold" style="letter-spacing: 1.5px; font-size: 10px;">Salon Furntiture</span> -->
 			
 			<div class="grid_3">
 				<div id="Stage" class="taglines" style="margin-top: 24px"></div>
 			</div>
 			<div class="grid_4">
-				<!-- <a href="/checkout_one.asp"> -->
+
 				<a href="/view_cart.asp"><button class="cart large"><i class="icon-shopping-cart"></i> Your Cart<span class="cart-number">[ITEMSINCART]</span></button></a>
 			</div>
 		</div>
 	</div>
-
-				
-				
-				
-					
-					<!--
-					<li class="allcaps shop-menu"><a href="#">Shop Type</a>
-						<div class="column col1">
-						<ul class="sub-menu">
-						<li class="allcaps"><a href="/hair-salon-equipment">Hair Salon</a></li>
-						<li><a href="/hair-salon-chairs">Salon Chairs</a></li>
-						<li><a href="/salon-styling-stations">Styling Stations</a></li>
-						<li><a href="/salon-hair-dryers">Dryers</a></li>
-						<li><a href="/salon-shampoo-area">Shampoo Area</a></li>
-						<li><a href="/hair-salon-color-bars">Color Bars</a></li>
-						<li><a href="/salon-accessories">Accessories</a></li>
-						<li><a href="/salon-trays-trolleys">Trolleys & Trays</a></li>
-						<li><a href="/salon-floor-mats">Floor Mats</a></li>
-						<li class="allcaps"><a href="/barber-shop-equipment">Barber Shop</a></li>
-						<li><a href="/barber-shop-chairs">Barber Chairs</a></li>
-						<li><a href="/barber-shop-stations">Barber Stations</a></li>
-						<li><a href="/salon-shampoo-area">Shampoo Area</a></li>
-						<li><a href="/barber-shop-supplies-online">Supplies</a></li>
-						</ul>
-						</div>
-
-						<div class="column col2">
-						<ul class="sub-menu">
-						 <li class="allcaps"><a href="/blow-dry-bar-equipment">Blow Dry Bar</a></li>
-						<li><a href="/glass-stations-mirrors">Glass Stations with Mirrors</a></li>
-						<li><a href="/salon-mirrors">Mirrors</a></li>
-						<li><a href="/blow-dry-bar-accessories">Accessories</a></li>
-						<li class="allcaps"><a href="/salon-spa-equipment">Spa</a></li>
-						<li><a href="/spa-equipment-packages">Packages</a></li>
-						<li><a href="/facial-beds">Facial Beds</a></li>
-						<li><a href="/massage-beds-chairs">Massage Beds & Chairs</a></li>
-						<li><a href="/spa-accessories">Spa Accessories</a></li>
-						<li><a href="/salon-trays-trolleys">Trays & Trolleys</a></li>
-						</ul>
-						</div>
-
-						<div class="column col3">
-						<ul class="sub-menu">
-						<li class="allcaps"><a href="/salon-color-bar-equipment-supplies">Color Bars</a></li>
-						<li><a href="/salon-color-bar-storage">Storage</a></li>
-						<li><a href="/hair-salon-chairs">Chairs</a></li>
-						<li><a href="/salon-wet-stations">Shampoo Stations</a></li>
-						<li><a href="/salon-hair-dryers">Dryers</a></li>
-						<li><a href="/salon-chair-covers">Chair Covers</a></li>
-						<li><a href="/salon-color-trays">Color Trays</a></li>
-						<li class="allcaps"><a href="/manicure-pedicure-equipment">Manicure & Pedicure</a></li>
-						<li><a href="/manicure-tables">Manicure Tables</a></li>
-						<li><a href="/pedicure-chairs">Pedicure Chairs</a></li>
-						<li><a href="/nail-tech-chairs">Nail Tech Chairs</a></li>
-						<li><a href="/pedicure-carts-trolleys">Carts & Trolleys</a></li>
-						<li><a href="/manicure-pedicure-supplies">Supplies</a></li>
-						</ul>
-						</div>
-					</li>
--->
-<!-- <li class="allcaps hidden"><a href="/">Featured</a></li> -->
-
-
-					<!--
-					<li class="allcaps"><a href="/salon-supplies-online">Supplies</a></li>
-					-->
 
 	<div class="navigation">
 		<div class="container_12">
@@ -322,7 +311,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li><a href="/pedicure-chairs">Pedicure Chairs</a></li>
 						<li><a href="/salon-stools">Stools</a></li>
 						<li><a href="/salon-chair-covers">Chair Covers</a></li>
-						<li class="allcaps"><a href="/salon-color-bar-equipment-supplies">COLOR BARS</a></li>
+						<li class="allcaps"><a href="/hair-salon-color-bars">COLOR BARS</a></li>
 						</ul>
 						</div>
 					
@@ -334,7 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li><a href="/back-to-back-salon-stations">Back-to-back Stations</a></li>
 						<li><a href="/tower-salon-stations">Tower Stations</a></li>
 						<li><a href="/salon-wet-stations">Wet Stations</a></li>
-                                                <li><a href="/glass-stations-mirrors">Glass Stations with Mirrors</a></li>
+                        <li><a href="/glass-stations-mirrors">Glass Stations with Mirrors</a></li>
 
 						<li class="allcaps"><a href="/manicure-pedicure-equipment" class="cat">Manicure & Pedicure</a></li>
 						<li><a href="/manicure-tables" class="subcat">Manicure Tables</a></li>
@@ -436,8 +425,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<li><a href="/continuum-foot-spas">Continuum</a></li>
 							<li><a href="/savvy-salon-equipment">Savvy</a></li>
 							<li><a href="/oakworks">Oakworks</a></li>
+							<li><a href="/one-world-inspired-custom-salon-furniture">One World Inspired</a></li>
 							<li><a href="/kaemark-salon-furnishings">Kaemark</a></li>
 							<li><a href="/william-marvy">William Marvy</a></li>
+							<li><a href="/kayline-beauty-supply">Kayline</a></li>
 							<li><a href="/adjust-a-sink">Adjust-a-Sink</a></li>
 							<li><a href="/andrea-lashes">Andrea</a></li>
 							<li><a href="/betty-dain">Betty Dain</a></li>
@@ -579,7 +570,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="newsletter-signup">
 		<h5>Get Awesome Offers & Product News Via Email!</h5>
 		<script type="text/javascript">
-		// Footer HubSpot form
+
+		// Footer HubSpot newsletter sign up form
 		hbspt.forms.create({ 
 			portalId: '239485',
 			formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
@@ -625,148 +617,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</div>
 	<!-- End of Footer Content -->
 
-	<script type="text/javascript">
-		function nozeros() {
-			window.setTimeout( function () { 
-				$('.nozero').each( function() {
-					$(this).text( $(this).text().replace(/\.00/g, '') );
-				});
-			}, 1 );
-		}
-
-		jQuery( function($) {
-
-			// Initialize the Zero Remover
-			nozeros();
-
-			// SearchLight - 3DCart Suggestive Search 
-			// Check for the element
-			if( jQuery('#searchlight').length ) {
-				// See if the function loaded properly
-				if( typeof jQuery('#searchlight').searchlight === 'function' ) {
-					jQuery('#searchlight').searchlight('/search_quick.asp');
-					$('.searchlight-balloon').css({'top': '80px' });
-				} else {
-					// console.log( 'There was an issue loading the searchlight scripts' );
-				}
-			}
-
-			// Sidebar Customizations
-			// console.log( $(this).find('li').length );
-
-// Big Issues with this code, does not work as expected, sidebar is a little wonky with current 'static nav' hacks
-/*
-				$( '#catframe ul' ).each( function( i, v ) {
-					console.log(i);
-					if( $(v).find('li').length !== 1 && i != 1) {
-						$("<style>")
-							.prop("type", "text/css")
-							.html("							.hiddencat {								display: none;							}")
-							.appendTo("head");
-					} else {
-						$(this).addClass('hiddencat');
-					}
-				});
-*/
-
-			// Cart Price Thing
-			if( !$('.discount').length ) {
-				$('.subtotes').hide();
-			}
-
-
-			// Template Name Finder/Helper
-			template_slug = $('.template').first().data('template');
-			console.log( 'Template: ' + template_slug );
-
-			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' || template_slug === 'extrapage' ) {
-
-				// Show left bar on select pages... Perhaps a bad idea for SEO
-				$('.left-bar').show();
-
-				// Pagination corner helpers
-				$selected = $('.selected');
-				if( $selected.first().text() === "1" ) {
-					$selected.addClass('first');
-				}
-
-				$pagination_blocks = $('.pagination');
-
-				$pagination_blocks.each( function( i , v ) {
-					$pagination_links = $(v).find( 'a' );
-					if( $pagination_links.last().hasClass('active') ) {
-						$pagination_links.last().addClass('last');
-					}
-				});
-			}
-
-			// Remove 3DCart clears (use the 'clearfix' class instead)
-			$('div[style*=both]').remove();
-
-			// Start of Hellobar code
-			
-						// Hellobar Animation
-/*
-			var scrollfixdone = false;
-			$(window).on('scroll', function () {
-				if ( $(window).scrollTop() > 60 ){
-					if( !scrollfixdone ) {
-						$('body').css({'margin-top':'60px'});
-						$("html, body").scrollTop( 120 );
-						console.log( $("body").scrollTop() );
-						scrollfixdone = true;
-					}
-				}
-			});
-*/
-			var JSON_LOADED = false;
-			$('.hello').delay(3000).animate({'top': '0'}, function() {
-  			console.log( 'JSON', JSON_LOADED );
-				if( JSON_LOADED === false ) {
-					$('.hbar_content').html('<p style="line-height:32px;"><i class="icon icon-dollar"></i> <a href="/standish-salon-equipment-sale" class="allcaps bold">Huge Savings</a> This Month + <a href="/salon-equipment-financing" class="allcaps bold">90 Days Deferred Payments</a> for Qualified Buyers <i class="icon icon-calendar"></i></p>');
-				}
-/*
-				if( !scrollfixdone ) {
-					$('body').css({'margin-top':'60px'});
-					// Test this bit, animate so nothing gets covered
-					// $("html, body").scrollTop( 0 );
-				}
-*/
-			});
-			
-			var hbar_slug = 'default';
-			// This code will change the slug if it finds an override.
-			// <span class="custom_bar" data-bar="OverrideBarName"></span>
-			if( $('.custom_bar').length ) {
-				hbar_slug = $('.custom_bar').first().data('bar');
-			}
-			
-			var url = "//json.stand.sh/standish/data.json";
-			
-			// Hellobar code for getting external data
-			$.getJSON( url, function( data ) {
-				JSON_LOADED = true;
-				// console.log( data.content );
-				console.log( data );
-				// console.log( data[hbar_slug] );
-				// console.log( hbar_slug in data );
-				if( hbar_slug in data ) {
-					$('.hbar_content').html( data[hbar_slug] );
-				} else {
-					$('.hbar_content').html( data['default'] );
-				}
-			});
-			
-			// Change Account link when user is logged in.
-			if ( typeof username !== 'undefined' ) {
-				$('.account-button span').text('Logout of your account');
-				$('.account-button').attr('href', '/logout.asp');
-			}
-
-		});
-	</script>
 	<!-- ####### BEGIN DATAFEEDEXPERTS.COM CLICK TRACKING CODE ######## -->
 	<script type="text/javascript" src="https://track.datafeedexperts.com/jclick/312"></script>
+    <!-- HEAP tracking code -->
+    <script type="text/javascript">
+	window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+	heap.load("3950494447");
+  	</script>
+
 	<script type="text/javascript">
 	dfe.click();
 	</script>
