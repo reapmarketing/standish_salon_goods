@@ -50,7 +50,7 @@
 			// Template Name Finder/Helper
 			template_slug = $('.template').first().data('template');
 			console.log( 'Template: ' + template_slug );
-
+			// @TODO remove template finder.
 			if( template_slug === 'category' || template_slug === 'search' || template_slug === 'search_group' || template_slug === 'extrapage' ) {
 
 				// Show left bar on select pages... Perhaps a bad idea for SEO
@@ -93,7 +93,7 @@
 */
 			var JSON_LOADED = false;
 			$('.hello').delay(3000).animate({'top': '0'}, function() {
-  			console.log( 'JSON', JSON_LOADED );
+  			// console.log( 'JSON', JSON_LOADED );
 				if( JSON_LOADED === false ) {
 					$('.hbar_content').html('<img src="/assets/templates/standish/images/truck.svg" alt="Free Shipping" class="hello-icon"><p style="margin-left: 60px;"><strong>Free Shipping</strong> when you spend $500! <a href="/standish-salon-equipment-sale">See how</a> you can get <strong>Instant Savings</strong>!<i class="icon icon-dollar"></i></p>');
 				}
@@ -119,7 +119,7 @@
 			$.getJSON( url, function( data ) {
 				JSON_LOADED = true;
 				// console.log( data.content );
-				console.log( data );
+				// console.log( data );
 				// console.log( data[hbar_slug] );
 				// console.log( hbar_slug in data );
 				if( hbar_slug in data ) {
