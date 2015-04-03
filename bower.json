@@ -10,6 +10,8 @@
     "tests"
   ],
   "dependencies": {
-    "sidr": "~1.2.1"
+    "sidr": "~1.2.1",
+    "instafeed.js": "stevenschobert/instafeed.js#~1.3.2",
+    "matchHeight": "liabru/jquery-match-height#~0.6.0"
   }
 }
