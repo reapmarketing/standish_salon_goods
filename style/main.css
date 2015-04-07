@@ -1,5 +1,6 @@
 /* normalize.css v2.1.2 | MIT License | git.io/normalize */
 
+
 article,
 aside,
 details,
@@ -38,7 +39,13 @@ html {
 }
 body {
   margin: 0;
+  padding-left: 0px;
+  padding-right: 0px;
 }
+.container-fluid {
+    padding: 0px;
+}
+
 a:focus {
   outline: thin dotted;
 }
@@ -101,7 +108,9 @@ sub {
   bottom: -0.25em;
 }
 img {
-  border: 0;
+	display: inline-block;
+	height: auto;
+	max-width: 100%;
 }
 svg:not(:root) {
   overflow: hidden;
@@ -179,19 +188,6 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
-}
-textarea {
-  overflow: auto;
-/* 1 */
-  vertical-align: top;
-/* 2 */
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-body {
-  min-width: 960px;
 }
 .container_12 {
   margin-left: auto;
@@ -864,13 +860,12 @@ a:active {
 }
 body {
   color: #696969;
-  margin-top: 60px;
 }
 
 .header {
-  height: 100px;
   background-color: #fff;
   width: 100%;
+  min-height: 100px;
 }
 .logo {
   display: block;
@@ -882,22 +877,8 @@ body {
   top: -15px;
   left: -10px;
 }
-/*
-.logo {
-  display: block;
-  background: url("/assets/templates/standish/images/standish.svg");
-  width: 140px;
-  height: 34px;
-  text-indent: -9999em;
-  position: relative;
-  top: 7px;
-  left: -10px;
-}
-*/
 button.cart {
-  padding: 0 0 0 18px;
-  margin: 25px 0 0 0;
-  float: right;
+  margin-top: 25px;
 }
 button.cart i {
   font-size: 20px;
@@ -909,11 +890,8 @@ button.cart i {
   border-radius: 0px 3px 3px 0;
 }
 .navigation {
-  height: 60px;
   background-color: #4d4d4d;
-  width: 100%;
   text-transform: capitalize;
-  margin-bottom: 50px;
 }
 .navigation ul {
   list-style: none;
@@ -1267,8 +1245,6 @@ fieldset {
 /*   min-height: 363px; */
 }
 .listing .product_thumb {
-  width: 138px;
-  height: 178px;
   border: 1px solid #dcdcdc;
 }
 .listing button {
@@ -1832,12 +1808,6 @@ li.email {
 	top: -6px;
 }
 
-.right-side {
-/* 	margin-left: 160px; */
-	float: right;
-	width: 800px;
-}
-
 .fancy-select.wide {
 	float: right;
 	margin-right: 0;
@@ -2007,8 +1977,8 @@ form.hs-form .hs-button {
 	background-size: contain;
 	height: 40px;
 	background-repeat: no-repeat;
-	top: 52px;
-	left: -50px;	
+	left: -34px;
+	top: 44px;
 }
 .header .grid_5 {
 	position: relative;
@@ -2078,15 +2048,6 @@ body {
 .footer ul {
 	margin: 0;
 }
-.listing {
-	position: relative;
-}
-.listing .button {
-	bottom: 0;
-	position: absolute;
-}
-
-
 
 /* Sidebar Styles */
 .checkout-headers .item {
@@ -2548,18 +2509,15 @@ body .update_cart_button {
 
 
 
-
-.hello {
-	height: 60px;
+.hello-container {
 	background-color: #0068BA;
-/* 	background: url(/assets/templates/standish/images/gold_texture.png); */
-	width: 100%;
-	position: fixed;
 	z-index: 20;
-	/* top: 0; */
 	box-shadow: 0 0 2px 0 white;
-	top: -60px;
 	color: black;
+	height: 60px;
+	right: 0px;
+}
+.hello {
 }
 
 .hello .coral-text{
@@ -2612,11 +2570,9 @@ body .update_cart_button {
   left: 0;
 }
 .hello-icon {
-	position: absolute;
-	top: 0;
-	left: -20px;
-	width: 100px;
-	height: 60px;
+  display: inline-block;
+  top: 0;
+  float: left;
 }
 .hello-tab {
   background: #f5f5dc;

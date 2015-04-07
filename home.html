@@ -3,58 +3,56 @@
 
 <!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
 <script type="text/javascript">$('.left-bar').show();</script>
-<div class="right-side">
-<div class="grid_6">&nbsp;</div>
+<div class="pull-right col-md-10">
 
-<!-- <div class="grid_8 filter">&nbsp;</div> -->
-
-<div class="grid_4 search">
-	<form method="get" name="searchForm" action="search.asp">
-		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="off">
-		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-	</form>
-</div>
-
-	<!-- [category_Header-specials] -->
-
-<div class="grid_10">
-	<!--START: CATEGORY_HEADER-->
-		[CONTENT]
-	<!--END: CATEGORY_HEADER-->
-</div>
-
-	<!--START: FEATURE_MENU-->
-		<!--START: CATEGORY_ITEMS-->
-			<!--START: ITEM_TEMPLATE_0-->
-				<!--START: product_review-->
-					<!--START: product_review_average-->
-						<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-						<!-- <div class="item">[review_count] Review(s)</div> -->
-					<!--END: product_review_average-->
-				<!--END: product_review-->
-				<div class="grid_2 listing">
-					<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-					<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-					<!--START: ITEMPRICE-->
-						<!-- [product_yourprice] -->
-						<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-					<!--END: ITEMPRICE-->
-					<!--START: SALEPRICE-->
-						<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-						<!-- <span class="coral-text">[product_onsale]: </span> -->
-						<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-					<!--END: SALEPRICE-->
-					<!-- <button>Add to Cart</button> -->
-					<!-- [category_buyitlink] -->
-					<input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button" style="display:block; width: 100%;">
-				</div>
-			<!--END: ITEM_TEMPLATE_0-->
-		<!--END: CATEGORY_ITEMS-->
-	<!--END: FEATURE_MENU--> 
+    
+    <div class="col-md-4 pull-right">
+        <form method="get" name="searchForm" action="search.asp">
+            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="off">
+            <button name="search" class="search-button gainsboro btn"><i class="icon-search icon-flip-horizontal"></i></button>
+        </form>
+    </div>
+    
+        <!-- [category_Header-specials] -->
+    
+        <!--START: CATEGORY_HEADER-->
+        <div class="col-md-12">
+            [CONTENT]
+        </div>
+        <!--END: CATEGORY_HEADER-->
+    
+        <!--START: FEATURE_MENU-->
+            <!--START: CATEGORY_ITEMS-->
+                <!--START: ITEM_TEMPLATE_0-->
+                    <!--START: product_review-->
+                        <!--START: product_review_average-->
+                            <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+                            <!-- <div class="item">[review_count] Review(s)</div> -->
+                        <!--END: product_review_average-->
+                    <!--END: product_review-->
+                    <div class="col-md-3 col-sm-4 col-xs-6 listing">
+                        <a href="product.asp?itemid=[catalogid]"><img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" /></a>
+                        <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+                        <!--START: ITEMPRICE-->
+                            <!-- [product_yourprice] -->
+                            <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                            <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+                            <!-- <span class="coral-text">[product_onsale]: </span> -->
+                            <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+                        <!--END: SALEPRICE-->
+                        <!-- <button>Add to Cart</button> -->
+                        <!-- [category_buyitlink] -->
+                        <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button" style="display:block; width: 100%;">
+                    </div>
+                <!--END: ITEM_TEMPLATE_0-->
+            <!--END: CATEGORY_ITEMS-->
+        <!--END: FEATURE_MENU-->
 	
 </div>
 
-<div class="container_10 clearboth">
+<div class="col-md-10">
 
 	<!--START: CATEGORY_FOOTER-->
 <!-- 		[CONTENT] -->
