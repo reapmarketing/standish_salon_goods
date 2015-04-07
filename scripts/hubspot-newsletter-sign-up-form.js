@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		css: '',
 		target: '#newsletter-target',
 		onFormReady: function() {
-			console.log('ready');
 			// Clear Placeholder on click of email element
 			$('.hbspt-form input[type=email]').each( function () {
 				if( $(this).val() == 'Enter Email' ) {
@@ -21,5 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			});
 		}
-	}).done(function() {console.log('done');});
+	});
 });

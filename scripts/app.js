@@ -1,7 +1,18 @@
-$ = require('jquery-browserify');
+// Activation and app code
 
-$('.newsletter-signup button').on( 'click', function(){
-	console.log( $( '.newsletter-signup input' ).attr('value') );
-});
-
-require('./hellobar.js');
+;(function($) {
+	$(function(){
+		$('.listing').matchHeight({
+			byRow: true,
+			property: 'height',
+			target: null,
+			remove: false
+		});
+		/*$('.listing').matchHeight({
+			byRow: true,
+			property: 'height',
+			target: null,
+			remove: false
+		});*/
+	});
+})(jQuery)
