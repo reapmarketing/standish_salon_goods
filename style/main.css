@@ -42,6 +42,10 @@ body {
   padding-left: 0px;
   padding-right: 0px;
 }
+html,
+body {
+  font-size: 100%;
+}
 .container-fluid {
     padding: 0px;
 }
@@ -189,6 +193,16 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
+/*Override bootstrap container class...*/
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+  }
+}
+
+
+
 .container_12 {
   margin-left: auto;
   margin-right: auto;
@@ -531,7 +545,7 @@ p,
 ul,
 ol {
   font-family: 'PT Sans', Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -539,38 +553,106 @@ ol li,
 ul li {
   margin: 3px 0;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+ul,
+ol {
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
   font-weight: 700;
   line-height: 1.25;
 }
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-size: 60%;
+  color: #6f6f6f;
+  line-height: 0;
+}
+
 h1 {
-  font-size: 44px;
+  font-size: 2.125rem;
 }
+
 h2 {
-  font-size: 32px;
+  font-size: 1.6875rem;
 }
+
 h3 {
-  font-size: 24px;
+  font-size: 1.375rem;
 }
+
 h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
+
 h5 {
-  font-size: 14px;
+  font-size: 1.125rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
 h6 {
-  font-size: 12px;
+  font-size: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+p {
+	font-size: 1.125rem;
+}
+
+@media only screen and (max-width: 61.9375em) {
+
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 2.3125rem;
+  }
+
+  h3 {
+    font-size: 1.6875rem;
+  }
+
+  h4 {
+    font-size: 1.4375rem;
+  }
+
+  h5 {
+    font-size: 1.4375rem;
+  }
+
+  h6 {
+    font-size: 1.4375rem;
+  }
+  p {
+	font-size: 1.4375rem;
+  }
+  .btn, input, button, button.cart, button.large, .button.large {
+		font-size: 1.6875rem;
+  }
+	.hello p {
+		font-size: 1.25rem;
+	}
+	
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+
+
+
 .strike {
 	text-decoration:line-through
 }
@@ -623,18 +705,14 @@ input[type=submit] {
   border-left: none;
   font-family: 'PT Sans';
   font-weight: 400;
-  font-size: 14px;
-  padding: 0 12px;
-  height: 30px;
   margin: 3px 0;
   color: #fff;
   background-color: #ff7f50;
   border-bottom: 1px solid #a0522d;
 }
+
 input[type=button]:hover,
-input[type=submit]:hover {
-  text-decoration: underline;
-}
+input[type=submit]:hover,
 button:hover,
 .button:hover {
 	background-color: #ffa07a;
@@ -648,7 +726,6 @@ button.medium {
 .button.large,
 button.large {
   font-size: 18px;
-  padding: 0 35px;
   height: 50px;
 }
 .btn.standishgreen,
@@ -870,6 +947,7 @@ body {
 .logo {
   display: block;
   background: url("/assets/templates/standish/images/standish-logo.png");
+  background-repeat: no-repeat;
   width: 277px;
   height: 34px;
   text-indent: -9999em;
@@ -877,11 +955,32 @@ body {
   top: -15px;
   left: -10px;
 }
-button.cart {
+@media only screen and (max-width: 61.9375em) {
+	.logo {
+	  width: 115%;
+	  height: 115%;
+	}
+	.toggle-navigation, .site-branding {
+	  margin-top: 20px;
+	}
+	.toggle-navigation {
+		padding: 0;
+	}
+	.toggle-navigation a.btn {
+		color: #474747;
+	}
+	.toggle-navigation a.btn:hover,.toggle-navigation a.btn:focus, .toggle-navigation a.btn:active {
+		color: #333;
+	}
+}
+header button.cart {
   margin-top: 25px;
+  margin-right: 0;
+  padding-right: 0;
 }
 button.cart i {
-  font-size: 20px;
+  font-size: 1.250rem;
+  padding-right: 12px;
 }
 .cart-number {
   margin-left: 18px;
@@ -892,6 +991,8 @@ button.cart i {
 .navigation {
   background-color: #4d4d4d;
   text-transform: capitalize;
+	border-radius: 0;
+	moz-border-radius: 0;
 }
 .navigation ul {
   list-style: none;
@@ -907,8 +1008,11 @@ button.cart i {
   position: relative;
   font-family: 'PT Sans Narrow';
 }
-.navigation ul > li {
+.navigation ul.nav-menu > li {
   border-right: 1px solid #696969;
+}
+.navigation ul.nav-menu > li > a {
+  padding: 0 16px;
 }
 .navigation a {
 	font-size: 13px;
@@ -955,7 +1059,7 @@ button.cart i {
   color: #c2d3bd;
 }
 .navigation ul ul a {
-  width: 170px;
+  min-width: 170px;
   line-height: 16px;
   font-size: 14px;
   text-transform: uppercase;
@@ -1023,6 +1127,8 @@ li.far a {
 li.first.far a {
   padding: 0 0px 0 14px;
 }
+.search-container {
+}
 .search {
   height: 40px;
   position: relative;
@@ -1048,6 +1154,12 @@ li.first.far a {
   border-radius: 0 3px 3px 0;
   position: absolute;
   right: 0;
+  margin: 0;
+  padding: 5px 12px;
+}
+.form-group-lg .search-button {
+  padding: 10px 25px;
+  font-size: 17px;
 }
 /*
 .filter {
@@ -1246,12 +1358,16 @@ fieldset {
 }
 .listing .product_thumb {
   border: 1px solid #dcdcdc;
+  width: 100%;
 }
 .listing button {
   width: 100%;
 }
 .listing p {
   margin: 5px 0;
+}
+.listing p.price {
+  margin: 6px 0;
 }
 .listing p.title {
   font-family: "PT Sans Narrow";
@@ -1260,6 +1376,11 @@ fieldset {
 .listing p.msrp {
   color: #a9a9a9;
   text-decoration: line-through;
+}
+.listing .button {
+  width: 100%;
+  position: relative;
+  bottom: 0;
 }
 .product-title {
   font-size: 24px;
@@ -1629,7 +1750,6 @@ input {
 }
 .footer-navigation {
   height: 50px;
-  width: 100%;
 }
 .account-button {
   display: block;
@@ -1656,9 +1776,10 @@ input {
   background: #f5f5dc;
   color: #4d4d4d;
 }
-.footer .container_12 {
-  text-align: center;
+.footer-child {
+  background-color: #4d4d4d;
 }
+
 .footer-logo {
   /*display: block;*/
   /*float: left;*/
@@ -2517,7 +2638,8 @@ body .update_cart_button {
 	height: 60px;
 	right: 0px;
 }
-.hello {
+.hello p {
+	font-size: 1rem;
 }
 
 .hello .coral-text{
@@ -2554,8 +2676,6 @@ body .update_cart_button {
   line-height: 32px;
 }
 .right-hello {
-  text-align: right;
-  width:240px;
   color:white;
 }
 .hello .container_12 {

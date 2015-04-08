@@ -1,5 +1,8 @@
 {
-  "Deals": {
+  "Current Deals": {
+		"order": 0,
+		"show_mobile": true,
+		"show_children_mobile": false,
     "subcategories": {
       "Promotions and Discounts": {
         "url": "standish-salon-equipment-sale"
@@ -27,9 +30,12 @@
       }
     }
   },
-  "Equipment": {
+  "Shop Equipment": {
+		"order": 1,
+		"show_mobile":true,
+		"show_children_mobile": true,
     "subcategories": {
-      "Furniture PACKAGES": {},
+      "Packages": {},
       "Chairs": {
         "url": "hair-salon-chairs",
         "subcategories": {
@@ -186,7 +192,10 @@
       }
     }
   },
-  "Tools": {
+  "Shop Tools and Accessories": {
+		"order": 2,
+		"show_mobile": true,
+		"show_children_mobile":true,
     "subcategories": {
       "Hair Tools": {
         "url": "hair-salon-supplies-online",
@@ -247,9 +256,6 @@
           }
         }
       },
-      "Inspiration": {
-        "url": "hair-inspiration"
-      },
       "Makeup": {
         "url": "makeup-supplies-accessories"
       },
@@ -279,6 +285,9 @@
     }
   },
   "Brands": {
+		"order": 3,
+		"show_mobile": true,
+		"show_children_mobile": false,
     "subcategories": {
       "Standish": {
         "url": "standish"
@@ -349,14 +358,21 @@
     }
   },
   "Financing": {
+		"order": 4,
+		"show_mobile": true,
     "single": true,
     "url": "salon-equipment-financing"
   },
   "Showroom": {
+		"order": 5,
+		"show_mobile": true,
     "single": true,
     "url": "dallas-salon-furniture-showroom"
   },
   "About": {
+		"order": 6,
+		"show_mobile": true,
+		"show_children_mobile": true,
     "subcategories": {
       "Meet the Team": {
         "url": "meet-the-team"
@@ -370,15 +386,18 @@
       "Fly & Buy": {
         "url": "salon-showroom-flight-reimbursement"
       },
-      "Receiving Shipping": {
+      "Freight": {
         "url": "receiving-freight"
       },
-      "About Shipping": {
+      "Shipping": {
         "url": "about-shipping"
       }
     }
   },
   "Why Buy Standish?": {
+		"order": 7,
+		"show_mobile": false,
+		"show_children_mobile": false,
     "subcategories": {
       "Why Buy Standish?": {
         "url": "why-standish"
@@ -407,19 +426,27 @@
     }
   },
   "Contact": {
+		"order": 8,
+		"show_mobile": true,
     "single": true,
     "url": "contact-us"
   },
   "FAQ": {
+		"order": 9,
+		"show_mobile": true,
     "single": true,
     "url": "frequently-asked-questions"
   },
   "Blog": {
+		"order": 10,
+		"show_mobile": true,
     "class": "min small",
     "single": true,
     "url": "blog.asp"
   },
   "Catalog": {
+		"order": 11,
+		"show_mobile": true,
     "class": "min small",
     "single": true,
     "url": "catalog"
