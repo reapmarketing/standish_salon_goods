@@ -91,7 +91,7 @@
 				}
 			});
 */
-			var JSON_LOADED = false;
+			/* var JSON_LOADED = false;
 			$('.hello-container').delay(2000).animate({'top': '0'}, function() {
   			// console.log( 'JSON', JSON_LOADED );
 				if( JSON_LOADED === false ) {
@@ -104,7 +104,7 @@
 					// $("html, body").scrollTop( 0 );
 				}
 */
-			});
+			/*}); */
 			
 			var hbar_slug = 'default';
 			// This code will change the slug if it finds an override.
