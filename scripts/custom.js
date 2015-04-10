@@ -24,14 +24,24 @@
 		resizeColumns(groups);
 	}
 	
-	Standish.CollapseMenus = function() {
-			
+	// Do different things based on the template slug
+	Standish.TemplateSwitcher = function() {
+			template_slug = $('.template').first().data('template');
+			switch(template_slug) {
+				case 'home':
+					// Remove breadcrumbs from home page because
+					// it is not a valid variable and shows an ugly
+					// bracket listing on this page:
+					$('.breadcrumb').hide();
+				return;
+			}
 	}
 	
 
 	// Events
 	$(function() {
 		Standish.EqualHeights();
+		Standish.TemplateSwitcher();
 	});
 	// Add callback to window resize event
 	$(window).on('resize', function() {
