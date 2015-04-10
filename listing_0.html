@@ -32,7 +32,7 @@ $( function(){
 	var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');
 	p.type = 'text/javascript';
 	p.async = true;
-	p.src = '//assets.pinterest.com/js/pinit.js';
+	p.src = 'https://assets.pinterest.com/js/pinit.js';
 	f.parentNode.insertBefore(p, f);
 }(document));
 
@@ -278,13 +278,8 @@ jQuery( function() {
 			'title': 'Guaranteed To Pass Inspection',
 			'class': 'inspected',
 			'tooltip': 'All of our products pass fire retardant codes and meet Universal Plumbing Code (UPC) specifications.'
-		},
-        'hidden-clover': {
-            'title': '',
-            'class': 'hidden-clover',
-            'tooltip': ''
-        }
-    }
+		}
+	}
 	
 	
 /*
@@ -295,8 +290,9 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	
 	
 	if( badges ) {
-		jQuery.each( badges.split( '\n' ), function( i, v ) {
+		jQuery.each( badges.split( ' ' ), function( i, v ) {
 			var badgeslug = v.trim();
+			console.log(badgeslug);
 			if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
 //				console.log( badgetext[badgeslug].title );
 				$badges_list.append( '<a href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" class="badge badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].tooltip + '"><i></i><div class="badge-text">' + badgetext[badgeslug].title + '</div></a>' );
@@ -305,9 +301,6 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	} else {
 		$badges.remove();
 	}
-    if($('.badge-hidden-clover').attr('href')) {
-        $('.badge-hidden-clover').attr('href', '#modal');
-    }
 	// @todo!
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
@@ -464,26 +457,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 </script>
 
 <!-- Template: listing_0.php -->
-<div class="template" style="display:none" data-template="listing"></div>
+<div class="template" style="display:none" data-template="listing_0"></div>
 
 <link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
 
-<div class="grid_8 breadcrumbs">
-	<span class="allcaps">
-	<!--START: CATEGORY_FULLINE-->
-		[CATEGORY_FULLLINE]
-	<!--END: CATEGORY_FULLINE-->
-	</span>
-</div>
-
-<div class="grid_4 search">
-	<form method="get" name="searchForm" action="search.asp">
-		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
-		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-	</form>
-</div>
-
-<div itemscope itemtype="http://schema.org/Product">
+<article itemscope itemtype="http://schema.org/Product">
 	<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
 		<input type="hidden" name="item_id" value="[catalogid]" />
 		<input type="hidden" name="itemid" value="[id]" ID="itemid" />
@@ -494,7 +472,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		<!--END: CATEGORY_HEADER-->
 
 		<!-- The Left Side -->
-		<div class="grid_6 product_left">
+		<div class="col-md-6 col-sm-6 product_left">
 			<div class="showcase">
 
 				<!--START: image1--> 
@@ -502,7 +480,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!-- <div name="imagecaptiont" id="imagecaptiont" class="item">[imagecaption1]</div> -->
 				<!--END: image1-->
 
-					<div class="clearboth"></div>
+					<div class="clearfix"></div>
 
 					<a data-caption="[imagecaption1]" href="[image1]" class="product-image" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(1);return false;"><img src="thumbnail.asp?file=[image1]&amp;maxx=75&amp;maxy=75" alt="" border="0" name="pimage1" /></a>
 
@@ -562,7 +540,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<a data-caption="[imagecaption15]" href="[image15]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image15]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(15);return false;"><img border="0" src="thumbnail.asp?file=[image15]&amp;maxx=75&amp;maxy=75" alt="" name="pimage15" /></a>
 				<!--END: image15-->
 
-				<div class="clear"></div>
+				<div class="clearfix"></div>
 			</div>
 
 			<div class="sharebox">
@@ -714,7 +692,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 
 	<!-- The right side -->
-		<div class="grid_6 product_right">
+		<div class="col-md-6 col-sm-6 product_right">
 
 			<h1 itemprop="name" class="product-title">[name]</h1>
 			<!--START: id-->
@@ -731,7 +709,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!-- [product_Header-price] -->
 					<!--START: ITEMPRICE-->
 					<!--END: ITEMPRICE-->
-					<div class="left-price">
+					<div class="left-price col-md-6 col-sm-6 pricebox-eqhgt">
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
 						</div>
@@ -739,7 +717,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 							<span class="hidden" itemprop="price" content="[saleprice]"></span>
 						</div>
 					</div>
-					<div class="right-price">
+					<div class="right-price col-md-6 col-sm-6 pricebox-eqhgt">
 						<!--START: price2-->
 							<p class="darkgray-text"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
 						<!--END: price2-->
@@ -756,7 +734,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 							<p class="coral-text italic bold"><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
 						<!--END: SAVINGS-->
 					</div>
-					<div class="clearboth"></div>
+					<div class="clearfix"></div>
 					<!--START: product_availability-->
 						<!-- <strong>[product_Header-availability]</strong> -->
 						<!-- <div id="availability">[availability_itemprop]</div> -->
