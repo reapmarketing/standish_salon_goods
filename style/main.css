@@ -198,11 +198,15 @@ input::-moz-focus-inner {
 @media (max-width: 1000px) {
   .container {
     width: 100%;
+		padding: 0;
   }
 }
-
-
-
+/* Override bootstrap container in large width so it doesn't look stretched out */
+@media (min-width: 1200px) {
+	.container {
+		width: 1000px;
+	}
+}
 .container_12 {
   margin-left: auto;
   margin-right: auto;
@@ -942,7 +946,7 @@ body {
 .header {
   background-color: #fff;
   width: 100%;
-  min-height: 100px;
+  min-height: 110px;
 }
 .logo {
   display: block;
@@ -956,10 +960,15 @@ body {
   left: -10px;
 }
 @media only screen and (max-width: 61.9375em) {
-	.logo {
-	  width: 115%;
-	  height: 115%;
-	}
+.logo {
+  background: url("/assets/templates/standish/images/Standish-Logo-Mobile.png");
+	background-size: 277px auto;
+  height: 100px;
+  top: -28px;
+  left: -10px;
+}
+}
+@media only screen and (max-width: 61.9375em) {
 	.toggle-navigation, .site-branding {
 	  margin-top: 20px;
 	}
