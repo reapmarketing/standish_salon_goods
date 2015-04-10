@@ -1844,6 +1844,15 @@ input {
   text-align: center;
 }
 
+/* Sidr Side mobile menu */
+.sidr-inner .sidr-class-hidden {
+	display: none;
+}
+
+.sidr ul li.sidr-class-subcategories a.sidr-class-menu-open {
+	color: #676767;
+}
+
 /* Table Based Page Styles */
 .page_headers,
 .checkout-headers {
