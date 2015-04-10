@@ -294,7 +294,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	
 	
 	if( badges ) {
-		jQuery.each( badges.split( '\n' ), function( i, v ) {
+		jQuery.each( badges.split( ' ' ), function( i, v ) {
 			var badgeslug = v.trim();
 			if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
 //				console.log( badgetext[badgeslug].title );
@@ -304,10 +304,6 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	} else {
 		$badges.remove();
 	}
-
-    if($('.badge-hidden-clover').attr('href')) {
-    	$('.badge-hidden-clover').attr('href', '#modal');
-    }
 	// @todo!
 	// Field 9 - Tweet/SocialMedia
 	var tweet_text = jQuery( '.field9' ).data( 'field9' );
@@ -464,26 +460,12 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 </script>
 
 <!-- Template: listing_0.php -->
-<div class="template" style="display:none" data-template="listing"></div>
+<div class="template" style="display:none" data-template="listing_1"></div>
 
 <link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
 
-<div class="grid_8 breadcrumbs">
-	<span class="allcaps">
-	<!--START: CATEGORY_FULLINE-->
-		[CATEGORY_FULLLINE]
-	<!--END: CATEGORY_FULLINE-->
-	</span>
-</div>
 
-<div class="grid_4 search">
-	<form method="get" name="searchForm" action="search.asp">
-		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
-		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-	</form>
-</div>
-
-<div itemscope itemtype="http://schema.org/Product">
+<article itemscope itemtype="http://schema.org/Product">
 	<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
 		<input type="hidden" name="item_id" value="[catalogid]" />
 		<input type="hidden" name="itemid" value="[id]" ID="itemid" />
@@ -494,7 +476,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		<!--END: CATEGORY_HEADER-->
 
 		<!-- The Left Side -->
-		<div class="grid_6 product_left">
+		<div class="col-md-6 product_left">
 			<div class="showcase">
 
 				<!--START: image1--> 
@@ -647,11 +629,11 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 		<!--START: accessories_0-->
 			<div class="related-accessories">
-				<h4>Related Accessories</h4><!-- [product_Header-accessories] -->
+				<h4>[product_Header-accessories]</h4><!--  -->
 				<!-- <a href="#viewMore">View More</a> -->
 
 				<!--START: accessories_items0-->
-					<div class="grid_2 listing alpha">
+					<div class="col-md-3 col-sm-4 col-xs-6 listing alpha">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -673,7 +655,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 				<!--END: accessories_items0-->
 
 				<!--START: accessories_items1-->
-					<div class="grid_2 listing omega">
+					<div class="col-md-3 col-sm-4 col-xs-6 listing omega">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -715,7 +697,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 
 	<!-- The right side -->
-		<div class="grid_6 product_right">
+		<div class="col-md-6 product_right">
 
 			<h1 itemprop="name" class="product-title">[name]</h1>
 			<!--START: id-->
@@ -969,66 +951,35 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 			<div id="instafeed"></div>
 
-		<!--START: related_0-->
-			<div class="related-products">
-				<h4>Related Products</h4>
-				<!-- [product_Header-relateditems] -->
+			<!--START: related_0-->
+      <h4>[product_Header-relateditems] </h4>
 
-				<!--START: related_items0-->
-					<div class="grid_2 listing alpha">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-						<!--START: product_review-->
-							<!--START: product_review_average-->
-								<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-								<!-- [review_count] Review(s) -->
-							<!--END: product_review_average-->
-						<!--END: product_review-->
-						<!--START: ITEMPRICE-->
-							<!-- [product_yourprice] -->
-							<p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-						<!--END: ITEMPRICE-->
-						<!--START: SALEPRICE-->
-							<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" style="position: relative;top: 4px;" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-							
+			<div class="related-products row">
+
+      	<!--START: related_items0-->
+					<div class="col-md-4 col-sm-6 col-xs-6 listing alpha">
+          	<div class="listing-container">
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+              <!--START: product_review-->
+                <!--START: product_review_average-->
+                  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+                  <!-- [review_count] Review(s) -->
+                <!--END: product_review_average-->
+              <!--END: product_review-->
+              <!--START: ITEMPRICE-->
+                <!-- [product_yourprice] -->
+                <p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+              <!--END: ITEMPRICE-->
+              <!--START: SALEPRICE-->
+                <p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" style="position: relative;top: 4px;" /> <span class="nozero">[ITEMSALEPRICE]</span></p>							
 						<!--END: SALEPRICE-->
-						<!-- <button>Add to Cart</button> -->
-
-						<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
-						<!-- <input type="hidden" name="qty-[counter]" value="1" /> -->
-
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
-					</div>
-				<!--END: related_items0-->
-
-			<!--START: related_items1-->
-				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=0&maxy=150" alt="[name]" border="0" /></a>
-				[name]
-				<!--START: ITEMPRICE--> 
-					[ITEMPRICE] 
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE--> 
-					[ITEMPRICE]
-					[ITEMSALEPRICE] 
-				<!--END: SALEPRICE-->
-				<input type="checkbox" name="item_id" value="[catalogid]" />
-				<input type="hidden" name="qty-[counter]" value="1" />
-			<!--END: related_items1--> 
-
-			<!--START: related_items2-->
-				<a href="product.asp?itemid=[catalogid]">[name]</a>
-				<!--START: ITEMPRICE--> 
-					[ITEMPRICE] 
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE--> 
-					[ITEMPRICE]
-					[ITEMSALEPRICE] 
-				<!--END: SALEPRICE-->
-				<input type="hidden" name="item_id" value="[catalogid]" />
-				<input type="text" size="2" name="qty-[counter]" value="0" />
-			<!--END: related_items2-->
-
+            </div>
+        	<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn btn-lg" style="display:block; width: 100%;">
+          </div>
+          
+          <!--END: related_items0-->
 			</div>
 		<!--END: related_0-->
 
@@ -1041,9 +992,8 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		<!--START: NEXT_PROD-->
 			<a href="[nextprodlink]"><img src="thumbnail.asp?file=[nextprodthumb]&maxx=20&maxy=20" border="0" alt="" />Next</a>
 		<!--END: NEXT_PROD--> 
-
-		<!-- was: listing_blocks.html (unused stuff) -->
-
+    
+    <!-- was: listing_blocks.html (unused stuff) -->
 		<!--START: qa-->
 			<a name="qa"></a>
 			<div itemprop="qa" itemscope itemtype="http://schema.org/QA">
@@ -1098,7 +1048,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		<!--END: CATEGORY_FOOTER-->
 
 	</form>
-</div>
+</article>
 
 <!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
 <!--START: extra_field_2-->

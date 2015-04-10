@@ -19,7 +19,7 @@
 					jQuery('#searchlight').searchlight('/search_quick.asp');
 					$('.searchlight-balloon').css({'top': '80px' });
 				} else {
-					// console.log( 'There was an issue loading the searchlight scripts' );
+					console.log( 'There was an issue loading the searchlight scripts' );
 				}
 			}
 

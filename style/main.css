@@ -78,6 +78,10 @@ hr {
   box-sizing: content-box;
   height: 0;
 }
+label, .label {
+	font-weight: normal;
+	color: inherit;
+}
 mark {
   background: #ff0;
   color: #000;

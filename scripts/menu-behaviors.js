@@ -109,12 +109,12 @@
 		});
 	}
 
-})(window.MobileMenu = window.MobileMenu || {}, jQuery);
+})(window.Standish.MobileMenu = window.Standish.MobileMenu || {}, jQuery);
 
 // Activate My Class
 (function($) {
 	// Document Ready
 	$(function() {
-		MobileMenu.init();
+		Standish.MobileMenu.init();
 	});
 } (jQuery));
