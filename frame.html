@@ -88,11 +88,8 @@
     <script type="text/javascript" src="/assets/templates/standish/scripts/3dquicksearch.js"></script>
     <!---- Custom ajax script that takes in json from custom top bar content -->
     <script src="/assets/templates/standish/scripts/top-bar-custom-content.js"></script>
-
-    <!------- EXTERNAL OPTIMIZATIONS AND TRACKING SCRIPTS ------->
-    <!--Adobe Edge Runtime-->
-		<script type="text/javascript" charset="utf-8" src="/assets/templates/standish/scripts/TailoredStandishAnimation_edgePreload.js"></script>
-    <!--Adobe Edge Runtime End-->
+    
+    <!-- TRACKING SCRIPTS THAT NEED TO GO IN THE HEADER -->
     <!-- ifbyphone scripts -->
     <script type="text/javascript">
 		var _ibp_public_key = "962b453a0efe61d97e1d0c783ec175d555de0cdc",
@@ -100,43 +97,7 @@
 				_ibp_keyword_set = 34811;
     </script>
 		<script type="text/javascript" src="https://secure.ifbyphone.com/js/ibp_clickto_referral.js"></script>
-    <!-- Start of Async HubSpot Analytics Code -->
-		<script async type="text/javascript" src="/assets/templates/standish/scripts/async-hubspot-analytics.js"></script>
-    <!-- End of Async HubSpot Analytics Code -->
 
-		<!-- optimizely -->
-    <script src="//cdn.optimizely.com/js/2743921241.js"></script>
-    <!--  Enversa Global Tracking Pixel -->
-    <script type="text/javascript" src="/assets/templates/standish/scripts/enversa-global-tracking-pixel.js"></script>
-    <!-- End of Enversa Global Tracking Pixel -->
-    <!-- Adroll -->
-		<script src="/assets/templates/standish/scripts/adroll-script.js"></script>
-	
-		<!-- Scroll Tracking Code -- Tracks scrolling and sends to GA -->
-    <script type="text/javascript" src="/assets/templates/standish/scripts/scroll-tracking.js"></script>
-	
-		<!-- datafeedexperts.com click tracking code -->
-		<script type="text/javascript" src="https://track.datafeedexperts.com/jclick/312"></script>
-    <!-- HEAP tracking code -->
-    <script type="text/javascript">
-		window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-		heap.load("3950494447");
-  	</script>
-
-    <!-- dfe, will try to find out what this means -->
-		<script type="text/javascript">
-      dfe.click();
-    </script>
-    
-    <!-- Google Tag Manager>
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PPSN');</script>
-    <!-- End Google Tag Manager -->
 
 </head>
 <body>
@@ -374,16 +335,16 @@
     <!-- navbar -->
 
 	<!-- End of Header -->
-    <section class="container">
+    <section class="container" id="prime-content">
           <div class="container search-container">
               <!--START: CATEGORY_FULLINE-->
                   <!-- display breadcrumbs in the main template if they exist -->
-                  <div class="col-md-8 col-sm-6 breadcrumb hidden-xs">
+                  <div class="col-md-8 breadcrumb hidden-xs">
                   		[CATEGORY_FULLLINE]
                   </div>
               <!--END: CATEGORY_FULLINE-->
 
-          		<div class="col-md-4 col-sm-6 pull-right">
+          		<div class="col-md-4 pull-right">
                 <form method="get" name="searchForm" action="search.asp">
                     <div class="input-group">
                       <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
@@ -505,6 +466,48 @@
   <nav id="mobile-menu" style="display:none;">
   </nav>
   <!-- End of Footer Content -->
+	
+  <!------- EXTERNAL OPTIMIZATIONS AND TRACKING SCRIPTS ------->
+    <!--Adobe Edge Runtime-->
+		<script type="text/javascript" charset="utf-8" src="/assets/templates/standish/scripts/TailoredStandishAnimation_edgePreload.js"></script>
+    <!--Adobe Edge Runtime End-->
+    <!-- Start of Async HubSpot Analytics Code -->
+		<script async type="text/javascript" src="/assets/templates/standish/scripts/async-hubspot-analytics.js"></script>
+    <!-- End of Async HubSpot Analytics Code -->
 
+		<!-- optimizely -->
+    <script src="//cdn.optimizely.com/js/2743921241.js"></script>
+    <!--  Enversa Global Tracking Pixel -->
+    <script type="text/javascript" src="/assets/templates/standish/scripts/enversa-global-tracking-pixel.js"></script>
+    <!-- End of Enversa Global Tracking Pixel -->
+    <!-- Adroll -->
+		<script src="/assets/templates/standish/scripts/adroll-script.js"></script>
+	
+		<!-- Scroll Tracking Code -- Tracks scrolling and sends to GA -->
+    <script type="text/javascript" src="/assets/templates/standish/scripts/scroll-tracking.js"></script>
+	
+		<!-- datafeedexperts.com click tracking code -->
+		<script type="text/javascript" src="https://track.datafeedexperts.com/jclick/312"></script>
+    <!-- HEAP tracking code -->
+    <script type="text/javascript">
+		window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+		heap.load("3950494447");
+  	</script>
+
+    <!-- dfe, will try to find out what this means -->
+		<script type="text/javascript">
+      dfe.click();
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPSN');</script>
+    <!-- End Google Tag Manager -->
+  
 </body>
 </html>
