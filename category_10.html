@@ -1,5 +1,5 @@
 <!-- Template: category_10.html -->
-<div class="template" style="display:none" data-template="category"></div>
+<div class="template" style="display:none" data-template="category_10"></div>
 
 <script>
 jQuery( function($) {
@@ -22,25 +22,13 @@ jQuery( function($) {
 });
 </script>
 
-<div class="right-side">
-
-	<!--START: BODY_HEADER-->
-	<div class="grid_6 cat_breadcrumbs">
-		[CATEGORY_FULLLINE]
-	</div>
-
-	<div class="grid_4 search">
-		<form method="get" name="searchForm" action="search.asp">
-			<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
-			<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-		</form>
-	</div>
+<div class="right-side col-md-10">
 
 	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
 		<!--END: BODY_HEADER-->
 		<!-- <h1 class="page_headers">[categoryname]</h1> -->
 		<!--START: CATEGORY_HEADER-->
-			<div id="categoryHeader" class="data grid_10">[CONTENT]</div>
+			<div id="categoryHeader" class="data col-md-12">[CONTENT]</div>
 			<div class="hidden" data-catname="[categoryname]">[catid]</div>
 		<!--END: CATEGORY_HEADER--> 
 		<!--START: FEATURE_MENU-->
@@ -53,7 +41,7 @@ jQuery( function($) {
 							<!-- <div class="item">[review_count] Review(s)</div> -->
 						<!--END: product_review_average-->
 					<!--END: product_review-->
-					<div class="grid_2 listing">
+					<div class="col-md-3 col-sm-4 col-xs-6 listing">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -83,21 +71,21 @@ jQuery( function($) {
 					<!--END: catFilterCrumbItem-->
 				<!--END: catFilterCrumb-->
 				<!--START: catFilterRemoveLink-->
-					<br /><br /><a href="#" onclick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a>
+					<span class="label label-danger"><a href="#" onclick="javascript:removeCatFilter();" style="color: white"><i class="fa fa-times-circle"></i> [category_Header-RemoveFilters]</a></span>
 				<!--END: catFilterRemoveLink-->
 			<!--END: catFilter-->
 		
 		
 		
-			<div class="grid_10">
+			<div class="col-md-12">
 				<!--START: catFilter_Filter-->
 				<!-- the filter title can be outside: [catFilterName]--> 
 					<!-- Use this block if you want to show filters as a list--> 
 					
 					<!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
 		
-					<div class="fancy-select wide" style="margin-left: 10px">
-						<select name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
+					<div class="form-group col-md-4 col-sm-4 col-xs-4 wide" style="margin-left: 10px">
+						<select class="form-control" name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
 							<option value="">Filter by [catFilterName]</option> 
 							<!--START: catFilter_Filter_Item--> 
 							<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
@@ -174,7 +162,7 @@ jQuery( function($) {
 							<!-- <div class="item">[review_count] Review(s)</div> -->
 						<!--END: product_review_average-->
 					<!--END: product_review-->
-					<div class="grid_2 listing">
+					<div class="col-md-3 col-sm-4 col-xs-6 listing">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -195,7 +183,7 @@ jQuery( function($) {
 	</form>
 
 	<!--START: PAGING-->
-	<div class="grid_10">
+	<div class="col-md-12">
 		<!-- [category_moreresults] -->
 		<div class="pagination">
 			<!--START: PREV-->
@@ -233,7 +221,7 @@ jQuery( function($) {
 <!--END: ITEMS-->
 
 	<!--START: CATEGORY_FOOTER-->
-		<div class="grid_10">[CONTENT]</div>
+		<div class="col-md-12">[CONTENT]</div>
 	<!--END: CATEGORY_FOOTER-->
 
 </div>
