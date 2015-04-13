@@ -46,7 +46,7 @@ html,
 body {
   font-size: 100%;
 }
-.container-fluid {
+.container-fluid, .no-padd {
     padding: 0px;
 }
 
@@ -572,7 +572,7 @@ p,
 ul,
 ol {
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.25;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -713,7 +713,6 @@ input[type=submit] {
   border-left: none;
   font-family: 'PT Sans';
   font-weight: 400;
-  margin: 3px 0;
   color: #fff;
   background-color: #ff7f50;
   border-bottom: 1px solid #a0522d;
@@ -735,6 +734,11 @@ button.medium {
 button.large {
   font-size: 18px;
   height: 50px;
+}
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+	font-size: 15px;
 }
 .btn.standishgreen,
 input[type=button].standishgreen,
@@ -770,7 +774,7 @@ button .add-on-left {
 button .add-on-left i {
   position: relative;
   top: 2px;
-  font-size: 18px;
+  font-size: 15px;
 }
 .medium .add-on-left {
   position: relative;
@@ -1372,6 +1376,7 @@ fieldset {
 .listing .product_thumb {
   border: 1px solid #dcdcdc;
   width: 100%;
+	max-height: 510px;
 }
 .listing button {
   width: 100%;
@@ -1662,21 +1667,26 @@ input {
 .cart_items_header {
   border-top: 1px solid #dcdcdc;
   border-bottom: 1px solid #dcdcdc;
-  margin: 15px 0 0 0;
-  padding: 16px 0;
+  margin: 15px 0;
+	padding: 15px 15px;
   font-size: 14px;
+}
+.cart_items_header > div {
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 .cart_item {
   border-bottom: 1px solid #dcdcdc;
   padding: 16px 0;
   font-size: 14px;
 }
+.cart_item > div {
+	padding-left: 0;
+	padding-rigt: 0;
+}
 .cart_item img {
   margin-right: 16px;
   float: left;
-}
-.cart_item input {
-	width: 17px;
 }
 .cart_col1 {
   width: 390px;
@@ -2221,7 +2231,9 @@ body {
 	list-style-type: circle;
 	list-style-position: inside;
 }
-
+#cart-header {
+	padding-bottom: 10px;
+}
 .cartsprite div {
 	background-image: url("/assets/templates/standish/images/cart-sprite.png");
 }
@@ -2238,6 +2250,15 @@ body {
 	width: 90px;
 	float: right;
 	margin-top: 24px;
+}
+@media only screen and (max-width: 767px) {
+	.cartsprite .cards {
+		margin-top: -12px;
+	}
+	.cartsprite .norton {
+		margin-top: -40px;
+	}
+	
 }
 
 .sale-cornertag {
@@ -2279,11 +2300,6 @@ body {
 .button.standishgreen {
   background-color: #c2d3bd;
   color: #696969 !important;
-}
-
-.subtotal strong {
-	width: 155px;
-	display: inline-block;
 }
 
 .blog img {
