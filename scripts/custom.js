@@ -43,8 +43,8 @@
 	// Do different things based on the template slug
 	Standish.TemplateSwitcher = function() {
 			template_slug = $('.template').first().data('template');
-			switch(template_slug) {
-				case 'home':
+			switch ( template_slug ) {
+				case 'home' || '':
 					// Remove breadcrumbs from home page because
 					// it is not a valid variable and shows an ugly
 					// bracket listing on this page:
@@ -52,12 +52,36 @@
 				return;
 			}
 	}
+	
+	Standish.EmptyCart = function() {
+		$('button.cart').on('click', function(event) {
+			if ( $(this).children('.cart-number').html() === "0" ) {
+				event.preventDefault();
+				
+				var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">\
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">\
+						<span aria-hidden="true">&times;</span>\
+					</button>\
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>\
+					<span class="sr-only">Error:</span>\
+					Please choose one or more items to put in your cart.\
+				</div>';
+				$('section#prime-content').prepend(s);
+				
+				$('#cart-error').show();
+				
+				var timedResponse = setTimeout( function () {$('#cart-error').alert('close');}, 1000 );
+			}
+		})	
+		
+	}
 
 	// Events
 	$(function() {
 		Standish.EqualHeights();
 		Standish.TemplateSwitcher();
 		Standish.SearchForm();
+		Standish.EmptyCart();
 	});
 	// Add callback to window resize event
 	$(window).on('resize', function() {
