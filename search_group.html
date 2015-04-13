@@ -6,10 +6,10 @@
 <div class="right-side">
 
 	<!--START: BODY_HEADER-->
-	<div class="grid_6 cat_breadcrumbs">
+	<div class="col-md-8 col-sm-6 cat_breadcrumbs">
 		[CATEGORY_FULLLINE]<br />
 	</div>
-	<div class="grid_4 search">
+	<div class="col-md-4 col-sm-6 search">
 		<form method="get" name="searchForm" action="search.asp">
 			<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
 			<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
@@ -28,11 +28,11 @@
 		<!--END: header-->
 	<!--END: MANUFACTURER_HEADER-->
 
-	<div class="grid_6" style="min-height: 36px">
+	<div class="col-md-8 col-sm-6" style="min-height: 36px">
 		[category_Header-products] (Total Items: [productnumber])
 	</div>
 
-	<div class="grid 4">
+	<div class="col-md-4 col-sm-6">
 		<form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
 			<!--START: sortbylist-->
 			<div class="fancy-select wide" style="margin-right: 10px;">
@@ -46,7 +46,7 @@
 	</div>
 
 	<!--START: PAGING-->
-	<div class="grid_10">
+	<div class="col-md-10">
 		<!-- [category_moreresults] -->
 		<div class="pagination">
 			<!--START: PREV-->
@@ -83,7 +83,7 @@
 					<!-- <div class="item">[review_count] Review(s)</div> -->
 				<!--END: product_review_average-->
 			<!--END: product_review-->
-			<div class="grid_2 listing">
+			<div class="col-md-3 col-sm-4 col-xs-6 listing">
 				<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 				<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 				<!--START: ITEMPRICE-->
@@ -102,7 +102,7 @@
 	<!--END: CATEGORY_ITEMS-->	
 
 	<!--START: PAGING-->
-	<div class="grid_10">
+	<div class="col-md-10">
 		<!-- [category_moreresults] -->
 		<div class="pagination">
 			<!--START: PREV-->
