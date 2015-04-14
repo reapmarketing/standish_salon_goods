@@ -44,10 +44,10 @@
 	Standish.TemplateSwitcher = function() {
 			template_slug = $('.template').first().data('template');
 			switch ( template_slug ) {
-				case 'home' || '':
-					// Remove breadcrumbs from home page because
+				default:
+					// Remove breadcrumbs from most pagesbecause
 					// it is not a valid variable and shows an ugly
-					// bracket listing on this page:
+					// bracket listing:
 					$('.breadcrumb').hide();
 				return;
 			}

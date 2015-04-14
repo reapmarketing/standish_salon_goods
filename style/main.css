@@ -211,6 +211,10 @@ input::-moz-focus-inner {
 		width: 1000px;
 	}
 }
+
+.top-margin {
+	margin-top: 15px;
+}
 .container_12 {
   margin-left: auto;
   margin-right: auto;
@@ -645,7 +649,7 @@ p {
   p {
 	font-size: 1.4375rem;
   }
-  .btn, input, button, button.cart, button.large, .button.large {
+  button.cart, button.large, .button.large {
 		font-size: 1.6875rem;
   }
 	.hello p {
@@ -1178,6 +1182,9 @@ li.first.far a {
   padding: 10px 25px;
   font-size: 17px;
 }
+.panel {
+	padding: 10px;
+}
 /*
 .filter {
   margin-bottom: 40px;
@@ -1707,7 +1714,6 @@ input {
 }
 .pagination {
   margin: 0 auto 0 auto;
-  width: 370px;
 }
 .pagination .btn {
   display: block;
@@ -1877,6 +1883,17 @@ input {
 }
 
 /* Table Based Page Styles */
+.borderless td, .borderless th {
+	border: none;
+}
+.borderless .table>tbody>tr>td,
+.borderless .table>tbody>tr>th,
+.borderless .table>tfoot>tr>td,
+.borderless .table>tfoot>tr>th,
+.borderless .table>thead>tr>td,
+.borderless .table>thead>tr>th {
+	border: none;
+}
 .page_headers,
 .checkout-headers {
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
