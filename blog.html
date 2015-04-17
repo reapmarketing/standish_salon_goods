@@ -1,8 +1,34 @@
-	<!--START: CATEGORY_HEADER-->
+	<div class="template" style="display:none" data-template="blog"></div>
+  
+  <!--START: CATEGORY_HEADER-->
 		[CONTENT]
 	<!--END: CATEGORY_HEADER-->
 
 	<div class="col-md-9 blog">
+  	<div class="col-md-12 search-container">
+      <!--START: CATEGORY_FULLINE-->
+        <!--IF: CATEGORY_FULLINE-->
+          <!-- display breadcrumbs in the main template if they exist -->
+          
+            <!--chunks_o_code/navigation.html-->
+          <div class="col-md-8 breadcrumb hidden-xs">
+              [CATEGORY_FULLLINE]
+          </div>
+        <!--ENDIF: CATEGORY_FULLINE-->
+      <!--END: CATEGORY_FULLINE-->
+    
+      <div class="col-md-4 pull-right search">
+        <form method="get" name="searchForm" action="search.asp">
+            <div class="input-group">
+              <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+              <span class="input-group-btn">
+                  <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+                </span>
+            </div>
+        </form>
+      </div>
+    </div>
+  
 	<!--START: blog_post-->
     <article class="blog-item panel">
       <h3 class="panel-header"><a href="[pagename]">[subject]</a></h3>
