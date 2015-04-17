@@ -16,6 +16,19 @@ jQuery( function($) {
 </script>
 
 <div class="col-md-10">
+	<div class="col-md-12 search-container">
+    <div class="col-md-4 pull-right search">
+      <form method="get" name="searchForm" action="search.asp">
+          <div class="input-group">
+            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+            <span class="input-group-btn">
+                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+              </span>
+          </div>
+      </form>
+    </div>
+  </div>
+
   <div class="col-md-12">
     <!--START: BODY_HEADER-->
     <div class= "panel panel-default top-margin">
@@ -78,7 +91,7 @@ jQuery( function($) {
           <!-- <div class="item">[review_count] Review(s)</div> -->
         <!--END: product_review_average-->
       <!--END: product_review-->
-      <div class="col-md-3 col-sm-4 col-xs-6 listing">
+      <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
         <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
         <div class="listing-container">
           <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
@@ -94,7 +107,7 @@ jQuery( function($) {
           <!-- <button>Add to Cart</button> -->
         </div>
         <!-- [category_buyitlink] -->
-        <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn btn-lg">
+        <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn">
       </div>
     <!--END: ITEM_TEMPLATE-->
   </div>
