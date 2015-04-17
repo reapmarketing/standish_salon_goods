@@ -4,6 +4,19 @@
 	var passwordReq = 0;
 </script>
 <div class="col-md-10">
+	<div class="col-md-12 search-container">
+  	<div class="col-md-4 pull-right search">
+      <form method="get" name="searchForm" action="search.asp">
+          <div class="input-group">
+            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+            <span class="input-group-btn">
+                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+              </span>
+          </div>
+      </form>
+    </div>
+  </div>
+
   <form action="register.asp?action=register" method="post" name="registrationform">
     <input type="hidden" name="view_cart" value="[view_cart]" />
     <input type="hidden" name="catalogid" value="[catalogid]" id="Hidden2" />

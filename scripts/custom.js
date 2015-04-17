@@ -45,10 +45,6 @@
 			template_slug = $('.template').first().data('template');
 			switch ( template_slug ) {
 				default:
-					// Remove breadcrumbs from most pagesbecause
-					// it is not a valid variable and shows an ugly
-					// bracket listing:
-					$('.breadcrumb').hide();
 				return;
 			}
 	}
@@ -57,7 +53,6 @@
 		$('button.cart').on('click', function(event) {
 			if ( $(this).children('.cart-number').html() === "0" ) {
 				event.preventDefault();
-				
 				var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">\
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">\
 						<span aria-hidden="true">&times;</span>\
