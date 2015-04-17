@@ -1,6 +1,21 @@
 /**
  *  @Author Lurn
  **/
+(function($) {
+	
+	// Call Once Function if it needs to be used for ajax purposes
+	var callOnce = function(selector, processed, context, callback) {
+		var element = $(selector, context);
+		if ((element.length > 0) && !element.hasClass(processed)) {
+			callback(element.addClass(processed));
+		}
+	};
+	 
+	 
+}(jQuery));
+ 
+
+
 /* MobileMenu custom class */
 // Get custom menu from menu-options.json and aggregate it into a div container
 (function( MobileMenu, $, undefined ) {
@@ -90,13 +105,26 @@
 			}
 		});
 	}
+	
+	MobileMenu.closeMenu = function() {
+		
+		
+	}
 
 	MobileMenu.init = function() {	
 		var el = this;		
 		return el.getItems().done(function(context) {
 			$('.toggle-navigation').sidr({
 				name: 'mobile-open',
-				source: '#mobile-menu'
+				source: '#mobile-menu',
+				onOpen: function() {
+					var el = this;
+					$('body').on('click', "#mobile-open", function(event) {
+						this.stopPropagation();
+					}).on('click', this, function() {
+						$.sidr('close', 'mobile-open');
+					});
+				}
 			});
 			$('.sidr-inner > ul > li.sidr-class-subcategories').each(function() {
 				var el = this;
@@ -106,6 +134,8 @@
 					$(el).siblings().children('.sidr-class-mobile-menu').hide();
 				});
 			});
+			
+			
 		});
 	}
 
