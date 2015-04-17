@@ -28,6 +28,15 @@ audio:not([controls]) {
 .hidden {
   display: none;
 }
+body {
+	font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  /* font-family: sans-serif; */
+/* 1 */
+  -ms-text-size-adjust: 100%;
+/* 2 */
+  -webkit-text-size-adjust: 100%;
+/* 2 */
+}
 html {
   font-family: 'PT Sans', Arial, Helvetica, sans-serif;
   /* font-family: sans-serif; */
@@ -47,7 +56,11 @@ body {
   font-size: 100%;
 }
 .container-fluid, .no-padd {
-    padding: 0px;
+	padding: 0px;
+}
+/* Primary Content Section */
+body section#prime-content {
+	margin-top: 40px;
 }
 
 a:focus {
@@ -56,10 +69,6 @@ a:focus {
 a:active,
 a:hover {
   outline: 0;
-}
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -197,6 +206,22 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+/* bootstrap override */
+.alert-danger {
+  background: transparent none;
+}
+
+/*Add 5-col class...*/
+@media (min-width: 992px) {
+	.col-md-2-2 {
+		width: 20%;
+		position: relative;
+		padding-left: 15px;
+		padding-right: 15px;
+		float: left;
+	}
+}
+
 
 /*Override bootstrap container class...*/
 @media (max-width: 1000px) {
@@ -205,13 +230,18 @@ input::-moz-focus-inner {
 		padding: 0;
   }
 }
+
 /* Override bootstrap container in large width so it doesn't look stretched out */
 @media (min-width: 1200px) {
 	.container {
 		width: 1000px;
 	}
 }
-
+@media (min-width: 1000px) {
+	header {
+		min-height: 150px;
+	}
+}
 .top-margin {
 	margin-top: 15px;
 }
@@ -557,7 +587,7 @@ p,
 ul,
 ol {
   font-family: 'PT Sans', Arial, Helvetica, sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -571,12 +601,10 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p,
-ul,
-ol {
+h6
+{
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.25;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -586,15 +614,16 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1 {
-  font-size: 2.125rem;
+  font-size: 2.750em;
 }
 
 h2 {
-  font-size: 1.6875rem;
+  font-size: 2.000rem;
 }
 
 h3 {
-  font-size: 1.375rem;
+  font-size: 1.500rem;
+	font-weight: 700;
 }
 
 h4 {
@@ -613,11 +642,10 @@ h6 {
   text-transform: uppercase;
 }
 p {
-	font-size: 1.125rem;
+	font-size: 1em;
 }
 
 @media only screen and (max-width: 61.9375em) {
-
 
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
@@ -647,15 +675,17 @@ p {
     font-size: 1.4375rem;
   }
   p {
-	font-size: 1.4375rem;
+		font-size: 1.125rem;
   }
+	p.title {
+		font-size: 1.4375rem;
+	}
   button.cart, button.large, .button.large {
 		font-size: 1.6875rem;
   }
 	.hello p {
 		font-size: 1.25rem;
 	}
-	
 }
 
 p {
@@ -722,6 +752,12 @@ input[type=submit] {
   border-bottom: 1px solid #a0522d;
 }
 
+btn.focus, .btn:focus, .btn:hover {
+  color: white;
+  text-decoration: underline;
+	font-weight: bold;
+}
+
 input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
@@ -738,6 +774,9 @@ button.medium {
 button.large {
   font-size: 18px;
   height: 50px;
+}
+.total .button.large {
+	padding: 0 35px;
 }
 .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle {
   border-top-right-radius: 3px;
@@ -820,13 +859,13 @@ a:active {
   background-size: 800%;
   float: left;
 }
-.badge {
-  height: 60px;
+.badge-product {
+	height: 60px;
   width: 220px;
   float: left;
   margin: 5px;
 }
-.badge div {
+.badge-product div {
   display: block;
   line-height: 54px;
   float: left;
@@ -954,11 +993,9 @@ a:active {
 body {
   color: #696969;
 }
-
 .header {
   background-color: #fff;
   width: 100%;
-  min-height: 110px;
 }
 .logo {
   display: block;
@@ -968,16 +1005,33 @@ body {
   height: 34px;
   text-indent: -9999em;
   position: relative;
-  top: -15px;
-  left: -10px;
+  top: -12px;
+  left: -25px;
 }
 @media only screen and (max-width: 61.9375em) {
+header {
+	min-height: 80px;
+}
 .logo {
   background: url("/assets/templates/standish/images/Standish-Logo-Mobile.png");
-	background-size: 277px auto;
-  height: 100px;
+	background-size: 200px auto;
+	background-repeat: no-repeat;
+  height: 80px;
   top: -28px;
   left: -10px;
+}
+.searchlight-result-text {
+	font-size: 15px;
+}
+table.searchlight-results {
+	width: 90%;
+
+}
+
+}
+@media only screen and (max-width: 31.250em) {
+.logo {
+	background-size: 50% auto;
 }
 }
 @media only screen and (max-width: 61.9375em) {
@@ -1013,7 +1067,6 @@ button.cart i {
   background-color: #4d4d4d;
   text-transform: capitalize;
 	border-radius: 0;
-	moz-border-radius: 0;
 }
 .navigation ul {
   list-style: none;
@@ -1152,6 +1205,7 @@ li.first.far a {
 }
 .search {
   height: 40px;
+	top: -10px;
   position: relative;
 /*   margin-bottom: 40px; */
 }
@@ -1162,9 +1216,6 @@ li.first.far a {
   -webkit-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
   margin: 0;
-  position: absolute;
-  left: 64px;
-  top: 3px;
   width: 200px;
   height: 16px;
   min-height: 28px;
@@ -1176,7 +1227,7 @@ li.first.far a {
   position: absolute;
   right: 0;
   margin: 0;
-  padding: 5px 12px;
+  padding: 2px 12px;
 }
 .form-group-lg .search-button {
   padding: 10px 25px;
@@ -1209,12 +1260,13 @@ li.first.far a {
 .fancy-select select {
   background: transparent;
   color: #4d4d4d;
-  width: 150px;
   padding: 5px 10px;
   font-size: 16px;
   border: none;
+	width: 100%;
   height: 34px;
   -webkit-appearance: none;
+	box-shadow: none;
   position: absolute;
   line-height: 28px;
   padding: 0 10px;
@@ -1226,7 +1278,6 @@ li.first.far a {
   border: 1px solid #dcdcdc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  width: 120px;
   height: 34px;
   overflow: hidden;
   background: #efefef;
@@ -1242,9 +1293,12 @@ li.first.far a {
   border-left: 1px solid #dcdcdc;
   padding: 9px 12px;
 }
-.breadcrumbs {
-  min-height: 40px;
+.breadcrumb {
+  background: transparent none;
 /*   margin-bottom: 40px; */
+}
+.breadcrumb a {
+	text-decoration: underline;
 }
 /*
 .cycle-slideshow {
@@ -1373,6 +1427,9 @@ fieldset {
 .form-stacked textarea {
   display: block;
 }
+.listing-container {
+	margin-bottom: 10px;
+}
 .listing {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1421,13 +1478,11 @@ fieldset {
   border-radius: 3px;
 }
 .pricebox .left-price {
-  float: left;
-  width: 278px;
   font-size: 42px;
   text-align: center;
   font-family: "PT Sans Narrow";
   line-height: 110px;
-  	position: relative;
+  position: relative;
 }
 .pricebox .financing {
 	font-size: 12px;
@@ -1438,8 +1493,6 @@ fieldset {
 	width: 280px;
 }
 .pricebox .right-price {
-  float: right;
-  width: 160px;
   border-left: 1px solid #dcdcdc;
   padding: 10px;
 }
@@ -1471,27 +1524,27 @@ fieldset {
   margin-bottom: 10px;
   border-bottom: 1px solid #dcdcdc;
 }
-.product-form .option-row {
-  height: 30px;
-  margin-bottom: 10px;
-}
 .product-form label {
-  width: 165px;
+	font-size: small;
+}
+.product-form .option-row {
+  margin-bottom: 10px;
+	padding: 10px;
+}
+
+.product-form label {
   font-family: "PT Sans Narrow";
-  display: block;
-  float: left;
-  padding: 5px 0 0 0;
 }
 .product-form .fancy-select {
   margin-right: 0;
   width: 293px;
-  height: 25px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  height: 28px;
 }
 .product-form .fancy-select select {
   width: 293px;
-  height: 28px;
+	height: auto;
 }
 .product-form .fancy-select i {
   padding: 4px 12px;
@@ -1513,11 +1566,10 @@ fieldset {
   font-family: "PT Sans Narrow";
   text-align: center;
   float: right;
-  width: 246px;
   line-height: 27px;
 }
 .option-row.last {
-  height: 60px;
+  padding: 40px 10px 10px;
 }
 .product_right h4 {
   clear: both;
@@ -1666,10 +1718,16 @@ input {
   min-height: 20px;
   padding: 0 10px;
 }
+input.form-control {
+	background: #efefef;
+}
 .coupon {
   border-top: 1px solid #dcdcdc;
   border-bottom: 1px solid #dcdcdc;
   margin-top: 30px;
+}
+.buttons-order {
+	padding: 10px 0;
 }
 .cart_items_header {
   border-top: 1px solid #dcdcdc;
@@ -1679,8 +1737,8 @@ input {
   font-size: 14px;
 }
 .cart_items_header > div {
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-top: 10px;
+  padding-bottom: 10px;
 }
 .cart_item {
   border-bottom: 1px solid #dcdcdc;
@@ -1689,7 +1747,7 @@ input {
 }
 .cart_item > div {
 	padding-left: 0;
-	padding-rigt: 0;
+	padding-right: 0;
 }
 .cart_item img {
   margin-right: 16px;
@@ -1753,7 +1811,7 @@ input {
 }
 .newsletter-signup input {
   display: block;
-  width: 300px;
+  width: 320px;
   height: 50px;
   margin: 30px auto;
   -webkit-border-radius: 4px;
@@ -1805,10 +1863,9 @@ input {
   background: #f5f5dc;
   color: #4d4d4d;
 }
-.footer-child {
+footer .container-fluid, .footer-child {
   background-color: #4d4d4d;
 }
-
 .footer-logo {
   /*display: block;*/
   /*float: left;*/
@@ -1954,20 +2011,17 @@ input {
   background: #dcdcdc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  padding: 0px 20px 16px 20px;
+  padding: 20px 5px 33px;
+}
+.sharebox * {
+  display: inline;
 }
 .sharebox .like {
-	position: absolute;
 }
 .sharebox ul {
-	position: relative;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-}
-.sharebox li {
-	display: inline;
-	margin: 0 6px;
 }
 .fb-like span {
 	width: 50px !important;
@@ -2008,6 +2062,10 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 .hide {
 	display: none;
+}
+
+.blog-item.panel .panel-body {
+  padding: 15px 0;
 }
 
 .blog-nav li {
@@ -2236,10 +2294,12 @@ body {
 }
 #catframe ul {
 	padding: 0;
+	list-style-type: none;
 }
 #catframe ul li {
 /* 	border-bottom: 1px solid #dcdcdc; */
 	margin: 0;
+	list-style-type: none;
 	padding-top: 4px;
 	padding-bottom: 4px;
 	line-height: 14px;
@@ -2693,6 +2753,11 @@ body .update_cart_button {
 	height: 60px;
 	right: 0px;
 }
+.hello.container, hbar_content {
+	height: 100%;
+	vertical-align: middle;
+	position:relative;
+}
 .hello p {
 	font-size: 1rem;
 }
@@ -2729,6 +2794,7 @@ body .update_cart_button {
 }
 .hello p {
   line-height: 32px;
+	margin-top: 15px;
 }
 .right-hello {
   color:white;
@@ -2748,6 +2814,8 @@ body .update_cart_button {
   display: inline-block;
   top: 0;
   float: left;
+	left: -24px;
+	position: relative;
 }
 .hello-tab {
   background: #f5f5dc;
