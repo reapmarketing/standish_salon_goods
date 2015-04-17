@@ -590,6 +590,7 @@ ol {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
+	margin-bottom: 0;
 }
 ol li,
 ul li {
