@@ -2131,12 +2131,12 @@ $( function() {
             
             <div class="col-md-12 center-block clearfix hidden" id="divCheckoutQuestions"> 
               <!--START: checkout_questions-->
-              <table border="0">
+              <table>
                 <tr>
                   <td class="checkout-headers">[checkout1_checkoutquestions]</td>
                 </tr>
                 <tr>
-                  <td ><table class="table" cellpadding="2" cellspacing="0" class="alternative" id="Table3">
+                  <td ><table class="table" id="Table3">
                       <tr>
                         <td><!--START: questions--> 
                           [questions] 
@@ -2147,34 +2147,19 @@ $( function() {
               </table>
               <!--END: checkout_questions--> 
             </div>
-            <div class="col-md-12 borderless center-block clearfix">
-              <table class="table" border="0">
-                <tr>
-                  <td class="checkout-headers">[checkout3_Header-comment]</td>
-                </tr>
-                <tr>
-                  <td>
-                    <table class="table panel panel-default" cellpadding="4" cellspacing="0" class="alternative" id="Table19">
-                      <tr>
-                        <td class="item">[checkout3_commentmessage]</td>
-                      </tr>
-                      <tr>
-                        <td><textarea onChange="clearContent(this);" name="ocomment" class="txtBoxStyle" cols="55" rows="3"></textarea></td>
-                      </tr>
-                   </table> 
-                  </td>
-                </tr>
-                <tr>
-                  <td align="right"><div id="spanCheckout">
-  
-          <h4>By purchasing, you understand that you must report any items damaged during shipping to Standish within 1 day of receipt according to the terms of our return policy. Call us with any issues! </h4>
-                      <div id="divCheckout" name="divCheckout" style="width:80%;display:none;background:#ffffff;border:0px solid black;text-align:center;padding:10px;"> <br />
-                        Processing... </div>
-                      <a name="checkoutButton"></a>
-                      <input type="button" value="[checkout3_submitbutton]" name="btnCheckout" id="btnCheckout" class="btn" onClick="doCheckout(this.form);"/>
-                    </div></td>
-                </tr>
-              </table>
+            <div class="col-md-12 borderless center-block">
+							<h3>[checkout3_Header-comment]</h3>
+              <div class="panel panel-default">
+								<textarea onChange="clearContent(this);" name="ocomment" class="txtBoxStyle form-control" cols="55" rows="3"></textarea>
+              </div>
+              <div class="panel panel-default">
+              <h4>By purchasing, you understand that you must report any items damaged during shipping to Standish within 1 day of receipt according to the terms of our return policy. Call us with any issues! </h4>
+              </div>
+              <div id="spanCheckout">
+								<div id="divCheckout" name="divCheckout" style="width:80%;display:none;background:#ffffff;border:0px solid black;text-align:center;padding:10px;"> <br />Processing... </div>
+                <a name="checkoutButton"></a>
+								<input type="button" value="[checkout3_submitbutton]" name="btnCheckout" id="btnCheckout" class="btn col-md-4 col-sm-12 col-xs-12" onClick="doCheckout(this.form);"/>
+              </div>
             </div>
 
           	<div class="col-md-12 clearfix center-block">
@@ -2418,7 +2403,7 @@ function confirmationValidation()
   <!--END: CARRIER--> 
   
   <!--START: INSURANCE-->
-  <div style="padding: 5px 0px 5px 0px;">
+  <div>
     <table border="0">
       <tr>
         <td class="checkout-headers">[checkout2_insurance]</td>
