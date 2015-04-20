@@ -13,10 +13,6 @@
 		formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
 		css: '',
 		target: '#newsletter-target',
-		onFormReady: function() {
-			// Clear Placeholder on click of email element
-			
-		}
 	}).done(function() {
 		$('.hs-form input[type=email]').each( function () {
 				if( $(this).val() == 'Enter Email' ) {

@@ -1,5 +1,5 @@
 <div class="template" style="display:none" data-template="message"></div>
-<div class="col-md-12 table-responsive">
+<div class="col-md-10">
 	<div class="col-md-12 search-container">
     <div class="col-md-4 pull-right search">
       <form method="get" name="searchForm" action="search.asp">
@@ -13,22 +13,23 @@
     </div>
   </div>
 
-
-  <form method="post" action="[dberror_returnpage]">
-  <table border="0" width="450" cellspacing="0" cellpadding="4" class="alternative">
-    <tr>
-      <td class="titles" width="26" align="center"><img src="assets/templates/common/images/error2.png" align="absmiddle" width="26"></td>
-      <td class="titles" align="left" width="418">[dberror_name]</td>
-    </tr>
-    <tr>
-      <td class="item" colspan="2"> [dberror]</td>
-    </tr>
-    <tr>
-      <td align="left" colspan="2"><!--START: RETURNMESSAGE-->
-        <input type="button" value='[error_returnmessage]' class="btn button gainsburro" onClick="location.href='[dberror_returnpage]';">
-        <!--END: RETURNMESSAGE-->
-      </td>
-    </tr>
-  </table>
-  </form>
+	<div class="col-md-12 table-responsive">
+    <form method="post" action="[dberror_returnpage]">
+    <table border="0" width="450" cellspacing="0" cellpadding="4" class="alternative">
+      <tr>
+        <td class="titles" width="26" align="center"><img src="assets/templates/common/images/error2.png" align="absmiddle" width="26"></td>
+        <td class="titles" align="left" width="418">[dberror_name]</td>
+      </tr>
+      <tr>
+        <td class="item" colspan="2"> [dberror]</td>
+      </tr>
+      <tr>
+        <td align="left" colspan="2"><!--START: RETURNMESSAGE-->
+          <input type="button" value='[error_returnmessage]' class="btn button gainsburro" onClick="location.href='[dberror_returnpage]';">
+          <!--END: RETURNMESSAGE-->
+        </td>
+      </tr>
+    </table>
+    </form>
+	</div>
 </div>

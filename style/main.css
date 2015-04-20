@@ -755,7 +755,6 @@ input[type=submit] {
 
 btn.focus, .btn:focus, .btn:hover {
   color: white;
-  text-decoration: underline;
 	font-weight: bold;
 }
 
