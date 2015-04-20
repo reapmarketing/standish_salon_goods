@@ -928,7 +928,7 @@ $( function() {
 <h1>Order Review & Checkout</h1>
 
   <form action="checkout_one.asp" method="post" name="billing" id="billing">
-    <div id="billing_div" class="table-responsive">
+    <div id="billing_div">
       <div class="table-responsive">
               <!--START: SHOPPING_CART_TEMP-->
               <table class="table">
@@ -947,10 +947,10 @@ $( function() {
                 </tr>
                 <!--END: CATEGORY_HEADER-->
                 <tr>
-                  <td class="titles2" align="left"><strong>[shoppingcart_items]</strong></td>
-                  <td class="titles2" align="center"><strong>[shoppingcart_quantity]</strong></td>
-                  <td class="titles2" align="right"><strong>[shoppingcart_price]</strong></td>
-                  <td class="titles2" align="right"><strong>[shoppingcart_total]</strong></td>
+                  <th class="titles2"><strong>[shoppingcart_items]</strong></th>
+                  <th class="titles2"><strong>[shoppingcart_quantity]</strong></th>
+                  <th class="titles2"><strong>[shoppingcart_price]</strong></th>
+                  <th colspan="2" class="titles2"><strong>[shoppingcart_total]</strong> </th>
                 </tr>
                 <!--START: SHOPPING_CART_ITEM-->
                 <tr>
@@ -983,12 +983,8 @@ $( function() {
 
           <!-- start left bar-->
           <div class="table-responsive borderless col-md-6">
-            <table class="table">
-                <tr>
-                  <td class="checkout-headers"> [account_billing-info] </td>
-                </tr>
-                <tr>
-                  <td><div id="billing_info">
+						<h3 class="checkout-headers">[account_billing-info]</h3>
+							<div id="billing_info">
                       <table class="table" cellpadding="0" cellspacing="0">
                         <tr>
                           <td>
@@ -1121,7 +1117,8 @@ $( function() {
                       
                       </table>
                     </div>
-              </table>
+                   </td>
+                   </tr>
            </div>
           <!-- end left bar--> 
           <!-- start right bar-->
@@ -1137,12 +1134,13 @@ $( function() {
             <input type="hidden" name="giftreg_shipping_zip" id="giftreg_shipping_zip" value="[giftreg_shipping_zip]">
             <input type="hidden" name="giftreg_shipping_country" id="giftreg_shipping_country" value="[giftreg_shipping_country]">
             <input type="hidden" name="giftreg_shipping_state" id="giftreg_shipping_state" value="[giftreg_shipping_state]">
-            <table cellpadding="0" cellspacing="0">
+            <table class="table">
               <tr>
                 <td class="checkout-headers">[checkout1_Header-giftreg]</td>
               </tr>
-              <tr>
-                <td align="left"><table class="table" cellpadding="3" cellspacing="0" class="alternative">
+								<tr>
+								<td align="left">
+									<table class="table" cellpadding="3" cellspacing="0" class="alternative">
                     <tr>
                       <td class="item">[checkout1_Header-giftreg-instructions]</td>
                     </tr>
@@ -1150,10 +1148,10 @@ $( function() {
                       <td class="item"><input type="button" id="cmdRegShip" onclick="javascript:selectGiftRegAddress();" name="cmdRegShip" value="Select Registry Address" class="btn"></td>
                     </tr>
                   </table>
-                  <br /></td>
+                  <br />
+                </td>
               </tr>
             </table>
-            
             <!--END: GIFT_REGISTRY_SHIPPING-->
             
             <table class="table" cellpadding="0" cellspacing="0">
@@ -1396,7 +1394,7 @@ $( function() {
           </div>
           <!--END: echoFreightOptions-->
           <div id="shipping_div" class="col-md-12 table-responsive" font-size:10pt;">
-            <table class="table alternative" cellpadding="0" cellspacing="4">
+            <table class="table alternative borderless" cellpadding="0" cellspacing="4">
               <tr>
                 <td class="item"><div id="shipResult">
                   <p class="item">[checkout3_shippinginstructions]</P>
@@ -1414,7 +1412,7 @@ $( function() {
         <!-- start right bar2-->
           <div class="col-md-6 table-responsive">
           
-            <table class="table" cellpadding="0" cellspacing="0">
+            <table class="table alternative borderless" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="checkout-headers" colspan="3" valign="top">[checkout3_orderTotal]</td>
                 </tr>
@@ -1553,7 +1551,7 @@ $( function() {
         	<div class="col-md-12 table-responsive">
           	<div id="divPayment"> 
               <!--START: PAYMENT_BLOCK-->
-              <table border="0" id="Table13">
+              <table class="table borderless" id="Table13">
                 <tr>
                   <td class="checkout-headers">[checkout3_methodofpaymentselect]</td>
                 </tr>
@@ -1644,7 +1642,7 @@ $( function() {
                           <td class="item">[payment_description_message]</td>
                         </tr>
                         <tr>
-                          <td class="item"><table cellpadding="2" cellspacing="0" border="0">
+                          <td class="item"><table class="table" cellspacing="0" border="0">
                               <tr>
                                 <td><input name="payment" onClick="window.location.href='shopatron.asp';" type="button" class="btn" onmouseover=="this.className='btn_over'" onmouseout="this.className='btn'" value="Checkout with Shopatron"></td>
                                 <td class="item">[payment_description]</td>
@@ -1673,7 +1671,7 @@ $( function() {
                         </tr>
                         <tr>
                           <td class="item"><div id="divPaymentOption[id]invoice" name="divPaymentOption" style="display:none;">
-                              <table cellpadding="2" cellspacing="0" border="0">
+                              <table class="table" cellspacing="0" border="0">
                                 <!--START: KLARNA_INVOICE_GD-->
                                 <tr>
                                   <td class="item"><strong>Gender:</strong></td>
@@ -1743,7 +1741,7 @@ $( function() {
                         </tr>
                         <tr>
                           <td class="item"><div id="divPaymentOption[id]account" name="divPaymentOption" style="display:none;">
-                              <table cellpadding="2" cellspacing="0" border="0">
+                              <table class="table" cellspacing="0" border="0">
                                 <!--START: KLARNA_ACCOUNT_GD-->
                                 <tr>
                                   <td class="item"><strong>Gender:</strong></td>
@@ -2131,7 +2129,7 @@ $( function() {
             
             <div class="col-md-12 center-block clearfix hidden" id="divCheckoutQuestions"> 
               <!--START: checkout_questions-->
-              <table>
+              <table class="table">
                 <tr>
                   <td class="checkout-headers">[checkout1_checkoutquestions]</td>
                 </tr>
@@ -2404,7 +2402,7 @@ function confirmationValidation()
   
   <!--START: INSURANCE-->
   <div>
-    <table border="0">
+    <table class="table">
       <tr>
         <td class="checkout-headers">[checkout2_insurance]</td>
       </tr>
@@ -2429,7 +2427,7 @@ function confirmationValidation()
   
   <!--START: checkout_questions_templates--> 
   <!--START: textarea-format-->
-  <table>
+  <table class="table">
     <tr>
       <td align="right" class="item"><!--START: req[id]--> 
         <img src="assets/templates/common/images/error2.gif" width="12" height="12"> 
@@ -2440,7 +2438,7 @@ function confirmationValidation()
   </table>
   <!--END: textarea-format--> 
   <!--START: text-format-->
-  <table id="Table8">
+  <table class="table" id="Table8">
     <tr>
       <td align="right" class="item"><!--START: req[id]--> 
         <img src="assets/templates/common/images/error2.gif" width="12" height="12"> 
@@ -2451,7 +2449,7 @@ function confirmationValidation()
   </table>
   <!--END: text-format--> 
   <!--START: checkbox-format-->
-  <table id="Table10">
+  <table class="table" id="Table10">
     <tr>
       <td><!--START: req[id]--> 
         <img src="assets/templates/common/images/error2.gif" width="12" height="12"> 
@@ -2463,7 +2461,7 @@ function confirmationValidation()
   </table>
   <!--END: checkbox-format--> 
   <!--START: radio-format-->
-  <table id="Table11">
+  <table class="table" id="Table11">
     <tr>
       <td align="right" class="item"><!--START: req[id]--> 
         <img src="assets/templates/common/images/error2.gif" width="12" height="12"> 
@@ -2479,7 +2477,7 @@ function confirmationValidation()
   </table>
   <!--END: radio-format--> 
   <!--START: dropdown-format-->
-  <table>
+  <table class="table">
     <tr>
       <td align="right" class="item"><!--START: req[id]--> 
         <img src="assets/templates/common/images/error2.gif" width="12" height="12"> 

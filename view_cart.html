@@ -90,14 +90,14 @@ jQuery(function(){
       <div>
         <div class="cart_items row">
           <div class="cart_items_header row">
-            <div class='col-md-8 col-sm-8 col-xs-8'><span class="pull-right">Description</div>
-            <div class='col-md-1 col-sm-1 col-xs-1'>Qty.</div>
+            <div class='col-md-7 col-sm-7 col-xs-7'><span class="pull-right">Description</div>
+            <div class='col-md-2 col-sm-2 col-xs-2'>Qty.</div>
             <div class='col-md-3 col-sm-3 col-xs-3'>Price</div>
           </div>
           <!--START: SHOPPING_CART_ITEM-->
       
           <div class="cart_item row">
-            <div class='col-md-8 col-sm-8 col-xs-8'>
+            <div class='col-md-7 col-sm-7 col-xs-7'>
               <!--START: itemthumbnail-->
                 <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=160&maxy=160" border="0" height="160" width="160"></a>
               <!--END: itemthumbnail-->
@@ -120,12 +120,12 @@ jQuery(function(){
               <div class="options-list"><span class="bold">Base:</span> Square</div>
       -->
             </div><!-- .cart_col1 -->
-            <div class="col-md-1 col-sm-2 col-xs-1">
+            <div class="col-md-2 col-sm-2 col-xs-2">
               <input type="text" name="qtyitemnum" value="[ITEM_QUANTITY]" size="3" maxlength="5" class="txtBoxStyle form-control">
               <input type="hidden" name="coliditemnum" value="[ITEM_ID]" size="3" maxlength="5" id="Hidden3">
               <i class="icon-reload"></i>
             </div>
-            <div class="col-md-3 col-sm-2 col-xs-3">
+            <div class="col-md-3 col-sm-3 col-xs-3">
               <!-- <div class="price">[ITEM_PRICE]</div> --><!--  Price before qty -->
               <div class="price nozero">[ITEM_SUBTOTAL]</div>
               <a href="#" onClick="document.recal.qtyitemnum.value=0;document.recal.submit();">Remove</a>
@@ -169,12 +169,14 @@ jQuery(function(){
     
       <!--START: PROMOTIONS-->
         <div class="promotions">
-          <span class="coral-text" style="font-size: 13px;">* Promotions Applied In Addition to Sale Prices:</span><br />
+          <span style="font-size: 13px;">* Promotions Applied In Addition to Sale Prices:</span><br />
           <!--START: DISPLAY_PROMOS-->
             <!-- <form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply> -->
             <form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
               <input type="hidden" name="coupon" value="[id]" id="Hidden4">
-              <span class="bold">[promotion_name]</span><br />-[promotion_description]<br /> Valid: [promotion_start] - [promotion_end]
+              <p>
+								<span class="bold">[promotion_name]</span><br />-[promotion_description]<br /> Valid: [promotion_start] - [promotion_end]
+              </p>
               <!--START: REMOVE_PROMO-->
               <input type="submit" value="Remove" class="btn" style="height:auto;background:none;border:0;color:#ff7f50;padding:0;margin:0;display:inline;text-decoration:underline;min-height:0;" id="Submit3" name="Submit3">
               <!--END: REMOVE_PROMO-->
@@ -190,7 +192,7 @@ jQuery(function(){
     <form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
     
         <!-- [shoppingcart_total] -->
-        <div class="subtotal white" style="padding: 10px 30px; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
+        <div class="subtotal white" style="padding: 10px 0; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
           <p class="subtotes" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;">
           	<strong class="col-md-8 col-sm-8 col-xs-8">Subtotal</strong> <span class="bold nozero">&nbsp;[CARTSUBTOTAL]</span>
           </p>
@@ -326,7 +328,7 @@ jQuery(function(){
     
         <!-- [viewcart_checkout-button] -->
         <!-- onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" -->
-        <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large btn btn-lg" id="Button7" name="Button7">
+        <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg" id="Button7" name="Button7">
     
         <!--START: paypalexpress-->
         <div style='text-align: center'>

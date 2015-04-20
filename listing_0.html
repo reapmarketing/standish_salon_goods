@@ -644,12 +644,12 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--END: qaLinkNew-->
 
 		<!--START: accessories_0-->
-			<div class="related-accessories">
+			<div class="related-accessories row clearfix hidden-sm hidden-xs">
 				<h4>Related Accessories</h4><!-- [product_Header-accessories] -->
 				<!-- <a href="#viewMore">View More</a> -->
 
 				<!--START: accessories_items0-->
-					<div class="col-md-6 listing alpha">
+					<div class="col-md-4 listing alpha">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -705,7 +705,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!-- <input type="text" size="2" name="qty-[counter]" value="0" /> -->
 				<!--END: accessories_items2-->
 
-			</div><!-- related-accessories -->
+			</div><!-- related-accessories row clearfix hidden-sm hidden-xs -->
 		<!--END: accessories_0-->
 
 		</div>
@@ -755,7 +755,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 							<p class="coral-text italic bold"><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
 						<!--END: SAVINGS-->
 					</div>
-					<div class="clearfix"></div>
+					<div class="clearboth"></div>
 					<!--START: product_availability-->
 						<!-- <strong>[product_Header-availability]</strong> -->
 						<!-- <div id="availability">[availability_itemprop]</div> -->
@@ -934,7 +934,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 3 Weeks!</span>
 							</label>
               <div class="col-md-6 col-sm-6">
-								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
+								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add);"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
               </div>
 						</div>
 					</fieldset>
@@ -1109,6 +1109,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	if (typeof jQuery == 'undefined') {
 		document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
 	}
+	var width = document.body.clientWidth;
 	
 	MagicZoomPlus.options = {
 		'opacity':'65',
@@ -1119,6 +1120,13 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		'fit-zoom-window':'false',
 		'hint':'false'
 	}
+	
+	if (width < 750) {
+		//mobile only
+		MagicZoomPlus.options = {
+			 'disable-zoom': true
+		 };
+	 }
 </script>
 <!--START: qaScript-->
 <script type="text/javascript">

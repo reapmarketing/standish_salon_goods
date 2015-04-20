@@ -24,25 +24,24 @@
 			<!-- <img src="[logo]" border="0"> -->
 		<!--END: logo-->
 		<!--START: header-->
-			<div id="categoryHeader" class="data grid_10">[header]</div>
+			<div id="categoryHeader" class="data col-md-12 hidden">[header]</div>
 		<!--END: header-->
 	<!--END: MANUFACTURER_HEADER-->
 	<hr />
 	<div class="col-md-8 col-sm-6 col-xs-6">
 		[category_Header-products] (Total Items: [productnumber])
 	</div>
-<form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
-	<div class="form-group col-md-3 col-sm-4 col-xs-4 fancy-select pull-right">
-		
-			<!--START: sortbylist-->
-				<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle form-control">
+  <div class="form-group col-md-3 col-sm-4 col-xs-4 fancy-select pull-right">
+    <form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
+      <!--START: sortbylist-->
+        <select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle form-control">
         [sortbylist]
-				</select>
+        </select>
         <i class="fa fa-caret-down fa-sm"></i>
-			<!--END: sortbylist-->
-	</div>
-</form>
-
+      <!--END: sortbylist-->
+    </form>
+  </div>
+  
 	<!--START: PAGING-->
 	<div class="col-md-12">
 		<!-- [category_moreresults] -->
@@ -72,7 +71,7 @@
 		</div>
 	</div>
 	<!--END: PAGING-->
-	<div class="row">
+	<div class="row clearfix">
     <!--START: CATEGORY_ITEMS-->
       <!--START: ITEM_TEMPLATE-->
         <!--START: product_review-->

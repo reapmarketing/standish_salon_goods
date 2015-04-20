@@ -862,9 +862,9 @@ a:active {
 }
 .badge-product {
 	height: 60px;
-  width: 220px;
+  width: 50%;
   float: left;
-  margin: 5px;
+  margin: 10px 0;
 }
 .badge-product div {
   display: block;
@@ -1205,10 +1205,9 @@ li.first.far a {
 .search-container {
 }
 .search {
-  height: 40px;
 	top: -10px;
   position: relative;
-/*   margin-bottom: 40px; */
+	margin-bottom: 20px;
 }
 .search input {
   font-size: 14px;
@@ -1230,7 +1229,8 @@ li.first.far a {
   margin: 0;
   padding: 2px 12px;
 }
-.form-group-lg .search-button {
+
+.input-group.form-group-lg .search-button {
   padding: 10px 25px;
   font-size: 17px;
 }
@@ -1746,10 +1746,6 @@ input.form-control {
   padding: 16px 0;
   font-size: 14px;
 }
-.cart_item > div {
-	padding-left: 0;
-	padding-right: 0;
-}
 .cart_item img {
   margin-right: 16px;
   float: left;
@@ -1941,6 +1937,24 @@ footer .container-fluid, .footer-child {
 }
 
 /* Table Based Page Styles */
+/*override mobile bootstrap table styles*/
+@media screen and (max-width: 767px) {
+	.table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th {
+  	white-space: normal;
+	}
+	.table-responsive {
+		border: 0 none;
+	}
+}
+@media screen and (max-width: 767px) {
+	.product-form .MagicZoomPlus, .MagicZoomPlus:hover {
+		cursor: pointer !important;
+	}
+}
+
+.table .table.alternative, .table.alternative {
+  background-color: #EFEFEF;
+}
 .borderless td, .borderless th {
 	border: none;
 }

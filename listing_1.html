@@ -652,12 +652,12 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--END: qaLinkNew-->
 
 		<!--START: accessories_0-->
-			<div class="related-accessories">
+			<div class="related-accessories row clearfix hidden-sm hidden-xs">
 				<h4>[product_Header-accessories]</h4><!--  -->
 				<!-- <a href="#viewMore">View More</a> -->
 
 				<!--START: accessories_items0-->
-					<div class="col-md-3 col-sm-4 col-xs-6 listing alpha">
+					<div class="col-md-4 listing alpha">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -713,7 +713,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!-- <input type="text" size="2" name="qty-[counter]" value="0" /> -->
 				<!--END: accessories_items2-->
 
-			</div><!-- related-accessories -->
+			</div><!-- related-accessories row clearfix hidden-sm hidden-xs -->
 		<!--END: accessories_0-->
 
 		</div>
@@ -738,7 +738,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!-- [product_Header-price] -->
 					<!--START: ITEMPRICE-->
 					<!--END: ITEMPRICE-->
-					<div class="left-price">
+					<div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
 						</div>
@@ -746,7 +746,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 							<span class="hidden" itemprop="price" content="[saleprice]"></span>
 						</div>
 					</div>
-					<div class="right-price">
+					<div class="right-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
 						<!--START: price2-->
 							<p class="darkgray-text"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
 						<!--END: price2-->
@@ -940,7 +940,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 							<label>
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 3 Weeks!</span>
 							</label>
-							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
+							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 							<div class="clearfix"></div>
 						</div>
 					</fieldset>
@@ -1325,6 +1325,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 	function check_and_add(formx)
 	{
+		
 		// This is a 3DCart Function
 		// Modifed to report Cart Addition to GA EECom Tracking
 		if (document.add.std_price==null)
