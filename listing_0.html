@@ -1109,7 +1109,6 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	if (typeof jQuery == 'undefined') {
 		document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
 	}
-	var width = document.body.clientWidth;
 	
 	MagicZoomPlus.options = {
 		'opacity':'65',
@@ -1120,7 +1119,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		'fit-zoom-window':'false',
 		'hint':'false'
 	}
-	
+	var width = document.body.clientWidth;
 	if (width < 750) {
 		//mobile only
 		MagicZoomPlus.options = {

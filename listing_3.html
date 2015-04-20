@@ -1159,6 +1159,13 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		'fit-zoom-window':'false',
 		'hint':'false'
 	}
+	var width = document.body.clientWidth;
+	if (width < 750) {
+		//mobile only
+		MagicZoomPlus.options = {
+			 'disable-zoom': true
+		 };
+	 }
 </script>
 <!--START: qaScript-->
 <script type="text/javascript">
