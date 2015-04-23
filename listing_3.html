@@ -102,7 +102,7 @@ jQuery( function() {
 		vex.open({
 			// content: '<p>Please provide your email address</p>',
 			afterOpen: function() {
-				hbspt.forms.create({ 
+				hbspt.forms.create({
 					portalId: '239485',
 					formId: '253a1f08-bebc-40c3-ab80-88ac7e518e74',
 					target: '.vex-content',
@@ -278,8 +278,13 @@ jQuery( function() {
 			'title': 'Guaranteed To Pass Inspection',
 			'class': 'inspected',
 			'tooltip': 'All of our products pass fire retardant codes and meet Universal Plumbing Code (UPC) specifications.'
-		}
-	}
+		},
+        'hidden-clover': {
+            'title': '',
+            'class': 'hidden-clover',
+            'tooltip': ''
+        }
+    }
 	
 	
 /*
@@ -289,12 +294,14 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 */
 	
 	
+	
 	if( badges ) {
-		jQuery.each( badges.split( '\n' ), function( i, v ) {
+		jQuery.each( badges.split( ' ' ), function( i, v ) {
 			var badgeslug = v.trim();
+			console.log(badgeslug);
 			if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
 //				console.log( badgetext[badgeslug].title );
-				$badges_list.append( '<a href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" class="badge badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].tooltip + '"><i></i><div class="badge-text">' + badgetext[badgeslug].title + '</div></a>' );
+				$badges_list.append( '<a href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" class="badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].tooltip + '"><i></i><div class="badge-text">' + badgetext[badgeslug].title + '</div></a>' );
 			}
 		});
 	} else {
@@ -457,26 +464,35 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 </script>
 
 <!-- Template: listing_0.php -->
-<div class="template" style="display:none" data-template="listing"></div>
+<div class="template" style="display:none" data-template="listing_3"></div>
 
 <link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
 
-<div class="grid_8 breadcrumbs">
-	<span class="allcaps">
-	<!--START: CATEGORY_FULLINE-->
-		[CATEGORY_FULLLINE]
-	<!--END: CATEGORY_FULLINE-->
-	</span>
-</div>
 
-<div class="grid_4 search">
-	<form method="get" name="searchForm" action="search.asp">
-		<input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword">
-		<button name="search" class="search-button gainsboro"><i class="icon-search icon-flip-horizontal"></i></button>
-	</form>
-</div>
-
-<div itemscope itemtype="http://schema.org/Product">
+<div class="col-md-12" itemscope itemtype="http://schema.org/Product">
+	<div class="col-md-12 search-container">
+    <!--START: CATEGORY_FULLINE-->
+      <!--IF: CATEGORY_FULLINE-->
+        <!-- display breadcrumbs in the main template if they exist -->
+        
+          <!--chunks_o_code/navigation.html-->
+        <div class="col-md-8 breadcrumb hidden-xs">
+            [CATEGORY_FULLLINE]
+        </div>
+      <!--ENDIF: CATEGORY_FULLINE-->
+    <!--END: CATEGORY_FULLINE-->
+  
+    <div class="col-md-4 pull-right search">
+      <form method="get" name="searchForm" action="search.asp">
+          <div class="input-group">
+            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+            <span class="input-group-btn">
+                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+              </span>
+          </div>
+      </form>
+    </div>
+  </div>
 	<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
 		<input type="hidden" name="item_id" value="[catalogid]" />
 		<input type="hidden" name="itemid" value="[id]" ID="itemid" />
@@ -486,8 +502,8 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			[CONTENT]
 		<!--END: CATEGORY_HEADER-->
 
-		<!-- The Left Side -->
-		<div class="grid_6 product_left">
+		<!-- The Left Side -->rid
+		<div class="col-md-6 col-sm-6 product_left">
 			<div class="showcase">
 
 				<!--START: image1--> 
@@ -585,6 +601,17 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--START: reviews-->
 			<div class="reviews">
 				<h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">[reviews_header]</h4>
+
+
+				<!--START: totalrating-->
+				<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+					<p>Average Rating: <span itemprop="ratingValue">[review_average]</span> (<span itemprop="reviewCount">[review_count]</span> Reviews)</p>
+					<meta itemprop="bestRating" content="5">
+				</div>
+				<!--END: totalrating-->
+
+
+
 				<!--START: create_review_link-->
 					<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
 					<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
@@ -592,12 +619,15 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 				<!-- [review_link] -->
 				<!--START: user_reviews-->
-					<div class="review" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+
+					<div class="review" itemprop="review" itemscope itemtype="http://schema.org/Review">
 						<div class="rating">
+							<meta itemprop="worstRating" content="1">
 							<span class="hidden" itemprop="ratingValue">[rating]</span>
+							<meta itemprop="bestRating" content="5">
 							<span class="stars">
 							<img src="assets/templates/common/images/star[rating].png" alt="Rating" />
-							</span> - <span>[user_name]</span> from [user_city]
+							</span> - <span itemprop="author">[user_name]</span> from [user_city]
 							<!-- itemprop="author" -->
 						</div>
 						<span itemprop="name" class="bold">[short_review]</span>
@@ -625,34 +655,34 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--END: qaLinkNew-->
 
 		<!--START: accessories_0-->
-			<div class="related-accessories">
+			<div class="related-accessories row clearfix hidden-sm hidden-xs row clearfix hidden-sm hidden-xs">
 				<h4>Related Accessories</h4><!-- [product_Header-accessories] -->
 				<!-- <a href="#viewMore">View More</a> -->
 
 				<!--START: accessories_items0-->
-					<div class="grid_2 listing alpha">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-						<!--START: ITEMPRICE-->
-							<!-- [product_yourprice] -->
-							<p class="price">[product_yourprice] [ITEMPRICE]</p>
-						<!--END: ITEMPRICE-->
-						<!--START: SALEPRICE-->
-							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<!-- <span class="coral-text">[product_onsale]: </span> -->
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-						<!--END: SALEPRICE-->
-						<!-- <button>Add to Cart</button> -->
-
-						<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
-						<input type="hidden" name="qty-[counter]" value="1" />
-
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+					<div class="col-md-4 listing alpha">
+						<div class="listing-container">
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+              <!--START: ITEMPRICE-->
+                <!-- [product_yourprice] -->
+                <p class="price">[product_yourprice] [ITEMPRICE]</p>
+              <!--END: ITEMPRICE-->
+              <!--START: SALEPRICE-->
+                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+                <!-- <span class="coral-text">[product_onsale]: </span> -->
+                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+              <!--END: SALEPRICE-->
+              <!-- <button>Add to Cart</button> -->
+              <!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
+              <input type="hidden" name="qty-[counter]" value="1" />
+						</div>
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: accessories_items0-->
 
 				<!--START: accessories_items1-->
-					<div class="grid_2 listing omega">
+					<div class="col-md-2-2 col-sm-4 col-xs-6 listing omega">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -669,7 +699,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<input type="checkbox" name="item_id" value="[catalogid]" />
 						<input type="hidden" name="qty-[counter]" value="1" />
 	
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: accessories_items1-->
 
@@ -686,7 +716,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!-- <input type="text" size="2" name="qty-[counter]" value="0" /> -->
 				<!--END: accessories_items2-->
 
-			</div><!-- related-accessories -->
+			</div><!-- related-accessories row clearfix hidden-sm hidden-xs -->
 		<!--END: accessories_0-->
 
 		</div>
@@ -694,7 +724,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 
 	<!-- The right side -->
-		<div class="grid_6 product_right">
+		<div class="col-md-6 col-sm-6 product_right">
 
 			<h1 itemprop="name" class="product-title">[name]</h1>
 			<!--START: id-->
@@ -711,7 +741,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 					<!-- [product_Header-price] -->
 					<!--START: ITEMPRICE-->
 					<!--END: ITEMPRICE-->
-					<div class="left-price">
+					<div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
 						</div>
@@ -719,7 +749,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 							<span class="hidden" itemprop="price" content="[saleprice]"></span>
 						</div>
 					</div>
-					<div class="right-price">
+					<div class="right-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
 						<!--START: price2-->
 							<p class="darkgray-text"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
 						<!--END: price2-->
@@ -780,8 +810,9 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<!--END: qty-format-->
 
 						<!--START: file-format-->
-							[value]: [oprice]
-							<input type="file" name="file[oname]" size="20" class="txtBoxStyle" />
+							<!-- [value]: -->
+							<!-- [oprice] -->
+							<input type="file" name="file[oname]" size="20" />
 						<!--END: file-format-->
 
 						<!--START: title-format-->
@@ -800,18 +831,18 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<!--END: radio-format-->
 
 						<!--START: dropdown-format-->
-							<div class="fancy-select">
+							<div class="fancy-select form-group pull-right col-md-6">
 								<select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
 									<!--START: option-->
 									<option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
 									<!--END: option-->
 								</select>
-								<i class="icon-caret-down"></i>
+								<i class="fa fa-caret-down fa-sm"></i>
 							</div>
 						<!--END: dropdown-format-->
 
 						<!--START: dropdownimage-format-->
-							<div class="fancy-select">
+							<div class="fancy-select form-group pull-right col-md-6">
 								<!-- note: image_click function changes image with option position -->
 								<!-- image_click($(this).find(':selected').index()+1); -->
 								<select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
@@ -819,7 +850,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 									<option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
 									<!--END: option-->
 								</select>
-								<i class="icon-caret-down"></i>
+								<i class="fa fa-caret-down fa-sm"></i>
 								<img name="img_[oname]" src="assets/templates/common/images/spacer.gif" alt="" border="0">
 							</div>
 						<!--END: dropdownimage-format-->
@@ -847,12 +878,12 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 			<!--START: RECURRINGORDER-->
 				<div class="option-row">
 					<label>[recurringorders_addcart-question]</label>
-					<div class="fancy-select">
+					<div class="fancy-select form-group pull-right col-md-6">
 						<select name="recurring_frequency" class="txtBoxStyle" id="recurring_frequency">
 							<option value="">[recurringorders_select-frequency]</option>
 							[recurring_frequency]
 						</select>
-						<i class="icon-caret-down"></i>
+						<i class="fa fa-caret-down fa-sm"></i>
 					</div>
 					<p style="display: none">[recurringorders_addcart-bottom-message]</p>
 				</div><!-- .option-row -->
@@ -872,11 +903,14 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 									<!-- [PRICE] -->
 								<!--END: quantity_items-->
 							<!--END: quantity-->
-								<div class="option-row">
-									<label for="quantity">[product_quantity]: </label>
-									<!-- <input id="quantity" type="text" placeholder="1" value="1"> -->
-									<input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
-									<div class="questions"><span class="coral-text">Questions?</span> Call <span class="bold">888.271.8434</span></div>
+              	<div class="option-row">
+                	<div class="col-md-4 col-sm-6 col-xs-6">
+                  	<label for="quantity">[product_quantity]: </label>
+                    <!-- <input id="quantity" type="text" placeholder="1" value="1"> -->
+                    <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
+                  </div>
+									
+									<div class="questions text-right col-md-8 col-sm-6 col-xs-6"><span>Questions?</span> Call <span class="bold">888.271.8434</span></div>
 								</div>
 								
 								
@@ -906,18 +940,18 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 								<!-- <a href="javascript:add_wishlist();">[product_addtowishlist]</a> -->
 							<!--END: addWishlist-->
 						<!--END: addtocart-->
-						<div class="option-row last">
+						<div class="option-row last row clearfix">
 							<label>
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 3 Weeks!</span>
 							</label>
-							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="icon-shopping-cart"></i> Add to Cart</button>
+							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 							<div class="clearfix"></div>
 						</div>
 					</fieldset>
 				</div>
 				<!-- </form> -->
 				<!-- Absolute link path here because the link is snorked up and used as the HubSpot form redirect -->
-				<div class="brochure-download"><a href="http://standishsalongoods.com/assets/images/brochure/standish-brochure.pdf">Download Catalog</a>&nbsp;<i class="icon-cloud-download"></i></div>
+				<div class="brochure-download text-right hidden-sm hidden-xs"><a href="http://standishsalongoods.com/assets/images/brochure/standish-brochure.pdf"><small>Download Catalog</a>&nbsp;<i class="fa fa-cloud-download"></i></small></div>
 			</div>
 		
 			<div class="badges">
@@ -945,6 +979,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 				<!-- END: extended_description -->
 			</div>
 
+			<!-- INSTAFEED -->
 			<div id="instafeed"></div>
 
 		<!--START: related_0-->
@@ -953,7 +988,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 				<!-- [product_Header-relateditems] -->
 
 				<!--START: related_items0-->
-					<div class="grid_2 listing alpha">
+					<div class="col-md-2-2 col-sm-4 col-xs-6 listing alpha">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: product_review-->
@@ -976,7 +1011,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
 						<!-- <input type="hidden" name="qty-[counter]" value="1" /> -->
 
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: related_items0-->
 
@@ -1078,17 +1113,6 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 	</form>
 </div>
 
-
-<!--START: totalrating-->
-<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="hidden">
-	<div itemprop="ratingValue">[review_average]</div>
-	<div itemprop="reviewCount">[review_count]</div>
-	<div itemprop="bestRating">5</div>
-</div>
-<!--END: totalrating-->
-
-
-
 <!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
 <!--START: extra_field_2-->
 <div class="hidden field2" data-field2="[extra_field_2]"></div>
@@ -1135,6 +1159,13 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 		'fit-zoom-window':'false',
 		'hint':'false'
 	}
+	var width = document.body.clientWidth;
+	if (width < 750) {
+		//mobile only
+		MagicZoomPlus.options = {
+			 'disable-zoom': true
+		 };
+	 }
 </script>
 <!--START: qaScript-->
 <script type="text/javascript">
@@ -1456,7 +1487,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 		//jqXHR.responseText
 		if (jqXHR.status > 0)
-			alert("Error processing request " + jqXHR.status + " - " + textStatus);	
+			alert("Error processing request " + jqXHR.status + " - " + textStatus);
 	}
 
 	selectOption(null);

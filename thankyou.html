@@ -1,9 +1,23 @@
+ <!-- Template: checkout-singlepage.html -->
+<div class="template" style="display:none" data-template="thankyou"></div>
+ 
  <!--START: CATEGORY_HEADER-->              
-  <table width="98%" cellspacing="0" cellpadding="2" border="0">
-    <tr> 
-		<td class="data">&nbsp;[CONTENT]</td>
-    </tr>
-  </table>
+  <div class="col-md-10">
+  
+  	<div class="col-md-12 search-container">
+      <div class="col-md-4 pull-right search">
+        <form method="get" name="searchForm" action="search.asp">
+            <div class="input-group">
+              <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+              <span class="input-group-btn">
+                  <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+                </span>
+            </div>
+        </form>
+      </div>
+    </div>
+		<div class="data">&nbsp;[CONTENT]</div>
+  </div>
  <!--END: CATEGORY_HEADER-->
 
 
@@ -19,41 +33,39 @@ jQuery('#spButton').on('click', function() {
 </script>
 
 
-  <table width="98%" cellspacing="0" cellpadding="2" border="0">
-<tr><td class="data">
-	<p>
-    [billing_firstname] [billing_lastname]<br>
+<div class="col-md-6 col-sm-6">
+	[billing_firstname] [billing_lastname] 
   [billing_address] [billing_address2]<br>
-[billing_city], [billing_state]. [billing_zip] [billing_country]</p>
-<strong>Email:</strong> [email]<br>
-      <strong>Password:</strong> [pass]<br>
+  [billing_city], [billing_state]. [billing_zip] [billing_country]</p>
+  <strong>Email:</strong> [email]<br>
+  <strong>Password:</strong> [pass]<br>
 
+</div>
+  
+<div class="col-md-6 col-sm-6">
+  <!--START: billing_company-->
+  <div class="panel panel-default">
+    <strong>Company:</strong> [billing_company]<br>
+    <!--END: billing_company-->
+    <!--START: accountno-->
+    <strong>Tax id:</strong> [accountno]
+  </div>
+  <!--END: accountno-->
+  <!--START: customergroup-->
+  <div class="panel panel-default">
+  	<strong>Customer Group:</strong> [groupname]<br>
+  	<!--START: description-->  <em>[description]</em><br><!--END: description-->
+    	<strong>Minimum Order:</strong> [minimumorder]<br>
+  	<!--END: customergroup-->
+    <br>
+    <!--START: comments-->
+    <strong>Comments:</strong> [comments]
+    <!--END: comments-->
+  </div>
 
-
-
-
-<p><!--START: billing_company-->
-  <strong>Company:</strong> [billing_company]<br>
-  <!--END: billing_company-->
-<!--START: accountno-->
-<strong>Tax id:</strong> [accountno]<!--END: accountno-->
-</p>
-<!--START: customergroup-->
-<p><strong>Customer Group:</strong> [groupname]<br>
-<!--START: description-->  <em>[description]</em><br><!--END: description-->
-  <strong>Minimum Order:</strong> [minimumorder]<br>
-<!--END: customergroup-->
-  <br>
-  <!--START: comments-->
-  <strong>Comments:</strong> [comments]
-  <!--END: comments-->
-</p>
-	</td></tr></table>
-</p>
-	 <!--START: CATEGORY_FOOTER-->              
-		  <table width="98%" cellspacing="0" cellpadding="2" border="0">
-		    <tr> 
-				<td  class="data">[CONTENT]</td>
-		    </tr>
-		  </table>
-	 <!--END: CATEGORY_FOOTER--> 
+</div>
+<!--START: CATEGORY_FOOTER-->              
+  <div class="col-md-12">
+    [CONTENT]
+  </div>
+<!--END: CATEGORY_FOOTER--> 

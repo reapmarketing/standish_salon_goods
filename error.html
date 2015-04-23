@@ -1,0 +1,51 @@
+
+<div class="template" style="display:none" data-template="error"></div>
+<div class="col-md-10 table-respoinsive">
+  <div class="col-md-12 search-container">
+    <div class="col-md-4 pull-right search">
+      <form method="get" name="searchForm" action="search.asp">
+          <div class="input-group">
+            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+            <span class="input-group-btn">
+                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+              </span>
+          </div>
+      </form>
+    </div>
+  </div>
+
+
+<!--END: BODY_HEADER-->
+<!--START: CATEGORY_HEADER-->
+<table class="table">
+	<tr>
+		<td class="data">&nbsp;[CONTENT]</td>
+	</tr>
+</table>
+<!--END: CATEGORY_HEADER-->
+<form method="post" action="[dberror_returnpage]">
+<table class="alternative table">
+	<tr>
+		<td class="titles" width="26" align="center"><img src="assets/templates/common/images/error2.png" align="absmiddle" width="26"></td>
+		<td class="titles" align="left" width="418">[dberror_name]</td>
+	</tr>
+	<tr>
+		<td class="item" align="left" colspan="2">[dberror]</td>
+	</tr>
+	<tr>
+		<td align="left" colspan="2"><!--START: RETURNMESSAGE-->
+			<input type="button" value='[error_returnmessage]' class="btn" onClick="location.href='[dberror_returnpage]';" onMouseOut="this.className='btn'">
+			<!--END: RETURNMESSAGE-->
+		</td>
+	</tr>
+</table>
+</form>
+<!--START: CATEGORY_FOOTER-->
+<table class="table">
+	<tr>
+		<td class="font2">[CONTENT]</td>
+	</tr>
+</table>
+<!--END: CATEGORY_FOOTER-->
+
+</div>
