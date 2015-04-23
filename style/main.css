@@ -778,6 +778,10 @@ button.large {
 .total .button.large {
 	padding: 0 35px;
 }
+/* Button bootstrap overrides */
+.btn-group-lg>.btn, .btn-lg {
+	border-radius: 3px;
+}
 .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
