@@ -21,17 +21,17 @@
 	
 	<!--START: MANUFACTURER_HEADER-->
 		<!--START: logo-->
-			<!-- <img src="[logo]" border="0"> -->
+			<img src="[logo]" border="0">
 		<!--END: logo-->
 		<!--START: header-->
-			<div id="categoryHeader" class="data col-md-12 hidden">[header]</div>
+			<div id="categoryHeader" class="data col-md-12 clearfix">[header]</div>
 		<!--END: header-->
 	<!--END: MANUFACTURER_HEADER-->
 	<hr />
-	<div class="col-md-8 col-sm-6 col-xs-6">
+	<div class="col-md-8 col-sm-6">
 		[category_Header-products] (Total Items: [productnumber])
 	</div>
-  <div class="form-group col-md-3 col-sm-4 col-xs-4 fancy-select pull-right">
+  <div class="form-group col-md-3 col-sm-4 col-xs-12 fancy-select">
     <form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
       <!--START: sortbylist-->
         <select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle form-control">

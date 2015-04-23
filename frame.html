@@ -28,6 +28,7 @@
 
     <link rel="stylesheet" href="assets/templates/[template]/style/main.css?cachebuster=20150007" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
@@ -76,7 +77,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
     <!-- Sidr -->
     
-    <script type="text/javascript" language="javascript" src="//cdn.lukej.me/jquery.sidr/1.2.1/jquery.sidr.js"></script>
+    <script type="text/javascript" language="javascript" src="assets/templates/[template]/scripts/jquery.sidr.min.js"></script>
     <!-- Custom Stuff -->
     <script type="text/javascript" src="assets/templates/[template]/scripts/scrollDepth.js"></script>
 		<script type="text/javascript" src="assets/templates/[template]/scripts/hacks.js"></script>
@@ -85,15 +86,17 @@
     <script type="text/javascript" src="assets/templates/[template]/scripts/menu-behaviors.js"></script>
     <!-- Set up customer account variables -->
     <script type="text/javascript">
-		 var account_greeting = '[account_greeting]';
-		 var username = '[username]';
-			console.log(typeof username);
-			// Change Account link when user is logged in.
-			if ( typeof username !== 'undefined' ) {
-				$('.account-button.login').text('Logout of your account');
-				$('.account-button.login').attr('href', '/logout.asp');
-			}
-
+			var account_greeting = '[account_greeting]';
+			var username = '[username]';
+		 	(function($) {
+				$(function() {
+					// Change Account link when user is logged in.
+					if ( username !== 'Guest' ) {
+						$('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');
+						$('.account-button.login').attr('href', '/logout.asp');
+					}
+				});
+			})(jQuery);
     </script>
 
     <!-- Hubspot Form Script -->
@@ -139,7 +142,7 @@
         </div>
         <div class="header center-block row">
             <div class="container">
-                <div class="col-md-5 col-sm-8 col-xs-7">
+                <div class="col-md-5 col-sm-8 col-xs-8">
                 		<div class="toggle-navigation hidden-md hidden-lg col-sm-3 col-xs-3">
                     		<a class="btn btn-default gainsboro"><i class="fa fa-bars fa-1x"></i></a>
                     </div>
@@ -150,7 +153,7 @@
                 <div class="col-md-3 hidden-sm hidden-xs">
                     <div id="Stage" class="taglines" style="margin-top: 24px"></div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-5 text-center">
+                <div class="col-md-4 col-sm-4 col-xs-4 text-center">
                     <a href="/view_cart.asp"><button class="button cart large btn"><i class="fa fa-shopping-cart"></i><span class="hidden-xs hidden-s">Your Cart</span><span class="cart-number">[ITEMSINCART]</span></button></a>
                 </div>
             </div>

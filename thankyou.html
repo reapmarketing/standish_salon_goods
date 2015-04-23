@@ -2,20 +2,9 @@
 <div class="template" style="display:none" data-template="thankyou"></div>
  
  <!--START: CATEGORY_HEADER-->              
-  <div class="col-md-12">
+  <div class="col-md-10">
   
   	<div class="col-md-12 search-container">
-      <!--START: CATEGORY_FULLINE-->
-        <!--IF: CATEGORY_FULLINE-->
-          <!-- display breadcrumbs in the main template if they exist -->
-          
-            <!--chunks_o_code/navigation.html-->
-          <div class="col-md-8 hidden-xs">
-              [CATEGORY_FULLLINE]
-          </div>
-        <!--ENDIF: CATEGORY_FULLINE-->
-      <!--END: CATEGORY_FULLINE-->
-    
       <div class="col-md-4 pull-right search">
         <form method="get" name="searchForm" action="search.asp">
             <div class="input-group">
@@ -54,13 +43,14 @@ jQuery('#spButton').on('click', function() {
 </div>
   
 <div class="col-md-6 col-sm-6">
-  
-  <div class="panel panel-default"><!--START: billing_company-->
+  <!--START: billing_company-->
+  <div class="panel panel-default">
     <strong>Company:</strong> [billing_company]<br>
     <!--END: billing_company-->
     <!--START: accountno-->
-    <strong>Tax id:</strong> [accountno]<!--END: accountno-->
+    <strong>Tax id:</strong> [accountno]
   </div>
+  <!--END: accountno-->
   <!--START: customergroup-->
   <div class="panel panel-default">
   	<strong>Customer Group:</strong> [groupname]<br>
