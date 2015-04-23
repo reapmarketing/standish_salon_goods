@@ -128,11 +128,4 @@
 					$('.hbar_content').html( data['default'] );
 				}
 			});
-			
-			// Change Account link when user is logged in.
-			if ( typeof username !== 'undefined' ) {
-				$('.account-button span').text('Logout of your account');
-				$('.account-button').attr('href', '/logout.asp');
-			}
-
 		});
