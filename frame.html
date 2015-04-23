@@ -24,9 +24,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     
-    <link rel="stylesheet" href="assets/templates/standish/style/jquery.sidr.light.css?cachebuster=20150007">
+    <link rel="stylesheet" href="assets/templates/[template]/style/jquery.sidr.light.css">
 
-    <link rel="stylesheet" href="assets/templates/standish/style/main.css?cachebuster=20150007" />
+    <link rel="stylesheet" href="assets/templates/[template]/style/main.css?cachebuster=20150007" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -37,6 +37,13 @@
     <style>
 			#spButton{
 				display:none;
+			}
+			.sharebox {
+				max-height: 25px;
+			}
+			.sharebox ul {
+				top: -20px;
+				left: 130px;
 			}
 		</style>
       
@@ -54,38 +61,46 @@
 			 }
 		}
 		</script>
-     <!-- Set up customer account variables -->
-    <script type="text/javascript">
-		 var account_greeting = '[account_greeting]';
-		 var username = '[username]';
-    </script>
+
     <!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
     <!-- SITE PLUGINS AND CUSTOM SCRIPTS -->
     <!-- jQuery -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/templates/standish/scripts/jquery.migrate.js"></script>
-    <script type="text/javascript" src="assets/templates/standish/scripts/jquery.cycle2.min.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/jquery.migrate.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/scripts/jquery.cycle2.min.js"></script>
     <!-- Bootstrap -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<!-- Equal Heights -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
     <!-- Sidr -->
     
-    <script type="text/javascript" language="javascript" src="http://cdn.lukej.me/jquery.sidr/1.2.1/jquery.sidr.js"></script>
+    <script type="text/javascript" language="javascript" src="//cdn.lukej.me/jquery.sidr/1.2.1/jquery.sidr.js"></script>
     <!-- Custom Stuff -->
-    <script type="text/javascript" src="assets/templates/standish/scripts/scrollDepth.js"></script>
-		<script type="text/javascript" src="assets/templates/standish/scripts/hacks.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/scripts/scrollDepth.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/hacks.js"></script>
     <script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
-    <script type="text/javascript" src="assets/templates/standish/scripts/custom.js"></script>
-    <script type="text/javascript" src="assets/templates/standish/scripts/menu-behaviors.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/scripts/custom.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/scripts/menu-behaviors.js"></script>
+    <!-- Set up customer account variables -->
+    <script type="text/javascript">
+		 var account_greeting = '[account_greeting]';
+		 var username = '[username]';
+			console.log(typeof username);
+			// Change Account link when user is logged in.
+			if ( typeof username !== 'undefined' ) {
+				$('.account-button.login').text('Logout of your account');
+				$('.account-button.login').attr('href', '/logout.asp');
+			}
+
+    </script>
 
     <!-- Hubspot Form Script -->
 		<script charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
     <!-- Newsletter Signup -- Load after hubspot --> 
-		<script type="text/javascript" src="assets/templates/standish/scripts/hubspot-newsletter-sign-up-form.js"></script>
-		<script type="text/javascript" src="assets/templates/standish/scripts/instafeed.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/hubspot-newsletter-sign-up-form.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/instafeed.js"></script>
     <!-- discourage robots from indexing check out page -->
 		<script type="text/javascript">
 			//check if page is a checkout page and if true then add no index no follow
@@ -94,9 +109,9 @@
 			}
 		</script>
     <!-- 3d quick search -- search the site -->
-    <script type="text/javascript" src="assets/templates/standish/scripts/3dquicksearch.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/scripts/3dquicksearch.js"></script>
     <!---- Custom ajax script that takes in json from custom top bar content -->
-    <script type="text/javascript" src="assets/templates/standish/scripts/top-bar-custom-content.js"></script>
+    <script type="text/javascript" src="assets/templates/[template]/scripts/top-bar-custom-content.js"></script>
     
     <!-- TRACKING SCRIPTS THAT NEED TO GO IN THE HEADER -->
     <!-- ifbyphone scripts -->
@@ -438,20 +453,19 @@
             <div id="newsletter-target"></div>
 
             <div class="social-icons">
-                <a target="_blank" href="http://pinterest.com/standishstuff"><i class="icon-pinterest-sign"></i></a>
-                <a target="_blank" href="http://twitter.com/StandishStuff"><i class="icon-twitter-sign"></i></a>
-                <a target="_blank" href="http://www.facebook.com/standishstuff"><i class="icon-facebook-sign"></i></a>
-                <a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="icon-google-plus-sign"></i></a>
+                <a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest-square"></i></a>
+                <a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter-square"></i></a>
+                <a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook-square"></i></a>
+                <a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus-square"></i></a>
             </div>
         </div>
     </div>
         <!--END: FRAME_MAILLIST-->
-
     <div class="container-fluid">
           <div class="footer-navigation footer-child">
-                <a href="/myaccount.asp?secure" class="account-button login"><i class="icon-user"></i> <span>Login to your account<span></a>
-                <a href="/affiliate-marketing" class="account-button affiliate"><i class="icon-money"></i> Become an Affiliate</a>
-                <a href="/contact-us" class="account-button contact"><i class="icon-bullhorn"></i> Contact Us</a>
+                <a href="/myaccount.asp?secure" class="account-button login"><i class="fa fa-user"></i>Login to your account</a>
+                <a href="/affiliate-marketing" class="account-button affiliate"><i class="fa fa-money"></i> Become an Affiliate</a>
+                <a href="/contact-us" class="account-button contact"><i class="fa fa-bullhorn"></i> Contact Us</a>
             </div>
       <div class="col-md-12 text-center footer-child">
         <!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
@@ -467,22 +481,22 @@
 	
   <!------- EXTERNAL OPTIMIZATIONS AND TRACKING SCRIPTS ------->
     <!--Adobe Edge Runtime-->
-		<script type="text/javascript" charset="utf-8" src="/assets/templates/standish/scripts/TailoredStandishAnimation_edgePreload.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/assets/templates/[template]/scripts/TailoredStandishAnimation_edgePreload.js"></script>
     <!--Adobe Edge Runtime End-->
     <!-- Start of Async HubSpot Analytics Code -->
-		<script async type="text/javascript" src="/assets/templates/standish/scripts/async-hubspot-analytics.js"></script>
+		<script async type="text/javascript" src="/assets/templates/[template]/scripts/async-hubspot-analytics.js"></script>
     <!-- End of Async HubSpot Analytics Code -->
 
 		<!-- optimizely -->
     <script src="//cdn.optimizely.com/js/2743921241.js"></script>
     <!--  Enversa Global Tracking Pixel -->
-    <script type="text/javascript" src="/assets/templates/standish/scripts/enversa-global-tracking-pixel.js"></script>
+    <script type="text/javascript" src="/assets/templates/[template]/scripts/enversa-global-tracking-pixel.js"></script>
     <!-- End of Enversa Global Tracking Pixel -->
     <!-- Adroll -->
-		<script src="/assets/templates/standish/scripts/adroll-script.js"></script>
+		<script src="/assets/templates/[template]/scripts/adroll-script.js"></script>
 	
 		<!-- Scroll Tracking Code -- Tracks scrolling and sends to GA -->
-    <script type="text/javascript" src="/assets/templates/standish/scripts/scroll-tracking.js"></script>
+    <script type="text/javascript" src="/assets/templates/[template]/scripts/scroll-tracking.js"></script>
 	
 		<!-- datafeedexperts.com click tracking code -->
 		<script type="text/javascript" src="https://track.datafeedexperts.com/jclick/312"></script>
@@ -537,7 +551,7 @@ var google_remarketing_only = true;
 </script>
 <noscript>
 <div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/950640180/?value=0&guid=ON&script=0"/>
+<img height="1" width="1" style="border-style:none; display:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/950640180/?value=0&guid=ON&script=0"/>
 </div>
 </noscript>
 

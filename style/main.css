@@ -999,7 +999,7 @@ body {
 }
 .logo {
   display: block;
-  background: url("/assets/templates/standish/images/standish-logo.png");
+  background: url("/assets/templates/standish-responsive/images/standish-logo.png");
   background-repeat: no-repeat;
   width: 277px;
   height: 34px;
@@ -1013,7 +1013,7 @@ header {
 	min-height: 80px;
 }
 .logo {
-  background: url("/assets/templates/standish/images/Standish-Logo-Mobile.png");
+  background: url("/assets/templates/standish-responsive/images/Standish-Logo-Mobile.png");
 	background-size: 200px auto;
 	background-repeat: no-repeat;
   height: 80px;
@@ -2000,7 +2000,6 @@ footer .container-fluid, .footer-child {
 }
 
 .left-bar {
-	display: none;
 	min-height: 800px;
 }
 
@@ -2139,13 +2138,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 .hbspt-form li input {
 	margin-right: 10px;
 }
-.hs-input[type='text'],
-.hs-input[type='email'] {
-	min-width: 280px;
-}
 textarea.hs-input {
-	width: 280px;
-	height: 140px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border: 1px solid #dcdcdc;
@@ -2161,7 +2154,7 @@ textarea.hs-input {
 	-khtml-border-radius: 5px;
 	border-radius: 5px;
 /* 	padding: 15px 40px 40px 40px; */
-	padding: 60px;
+	padding: 60px 0;
 	border-bottom: 1px solid #696969;
 }
 
@@ -2416,9 +2409,6 @@ body {
 .custom_bar {
 	display: none;
 }
-
-
-
 
 /* Landing Page Styles */
 .page-header-bg {

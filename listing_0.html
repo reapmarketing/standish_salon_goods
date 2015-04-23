@@ -650,23 +650,23 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 
 				<!--START: accessories_items0-->
 					<div class="col-md-4 listing alpha">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-						<!--START: ITEMPRICE-->
-							<!-- [product_yourprice] -->
-							<p class="price">[product_yourprice] [ITEMPRICE]</p>
-						<!--END: ITEMPRICE-->
-						<!--START: SALEPRICE-->
-							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<!-- <span class="coral-text">[product_onsale]: </span> -->
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-						<!--END: SALEPRICE-->
-						<!-- <button>Add to Cart</button> -->
-
-						<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
-						<input type="hidden" name="qty-[counter]" value="1" />
-
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+						<div class="listing-container">
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+              <!--START: ITEMPRICE-->
+                <!-- [product_yourprice] -->
+                <p class="price">[product_yourprice] [ITEMPRICE]</p>
+              <!--END: ITEMPRICE-->
+              <!--START: SALEPRICE-->
+                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+                <!-- <span class="coral-text">[product_onsale]: </span> -->
+                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+              <!--END: SALEPRICE-->
+              <!-- <button>Add to Cart</button> -->
+              <!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
+              <input type="hidden" name="qty-[counter]" value="1" />
+						</div>
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: accessories_items0-->
 
@@ -688,7 +688,7 @@ Industrial Slides		Standish's salon equipment is made with full-extension drawer
 						<input type="checkbox" name="item_id" value="[catalogid]" />
 						<input type="hidden" name="qty-[counter]" value="1" />
 	
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: accessories_items1-->
 
