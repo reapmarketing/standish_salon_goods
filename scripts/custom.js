@@ -44,6 +44,7 @@
 	Standish.TemplateSwitcher = function() {
 			template_slug = $('.template').first().data('template');
 			switch ( template_slug ) {
+				// case for product pages
 				default:
 				return;
 			}

@@ -178,6 +178,7 @@ button[disabled],
 html input[disabled] {
   cursor: default;
 }
+
 input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
@@ -852,7 +853,9 @@ a:active {
   color: #ffa483;
 }
 [class^="badge-"] i,
-[class*=" badge-"] i {
+[class*="badge-"] i,
+[class^="badge-"] span,
+[class*="badge-"] span {
   display: block;
   height: 60px;
   width: 60px;
@@ -861,6 +864,10 @@ a:active {
   -moz-background-size: 800%;
   background-size: 800%;
   float: left;
+}
+[class^="badge-"] span,
+[class*="badge-"] span {
+	  margin: 20px;
 }
 .badge-product {
 	height: 60px;
@@ -879,31 +886,19 @@ a:active {
   max-width: 140px;
   margin-left: 15px;
 }
-.badge-heavy-duty div,
-.badge-swap-base div,
-.badge-iron-life div,
-.badge-color div,
-.badge-inspected div,
-.badge-returns div,
-.badge-service div,
-.badge-warranty div,
-.badge-double-stitched div {
-  line-height: 1.25;
-  padding-top: 11px;
-}
-.badge-free-shipping i {
+.badge-free-shipping i, .badge-free-shipping span {
   background-position: 0 0;
 }
-.badge-fire-retardant i {
+.badge-fire-retardant i, .badge-fire-retardant span {
   background-position: 0 -60px;
 }
-.badge-heavy-duty i {
+.badge-heavy-duty i, .badge-heavy-duty span {
   background-position: 0 -120px;
 }
-.badge-iron-life i {
+.badge-iron-life i, .badge-iron-life span {
   background-position: 0 -180px;
 }
-.badge-no-sales-tax i {
+.badge-no-sales-tax i, .badge-no-sales-tax span {
   background-position: -60px 0;
 }
 .badge-ten-thousand-rub i {
@@ -912,19 +907,19 @@ a:active {
 .badge-swap-base i {
   background-position: -60px -120px;
 }
-.badge-new-arrival i {
+.badge-new-arrival i, .badge-new-arrival span {
   background-position: -60px -180px;
 }
-.badge-service i {
+.badge-service i, .badge-service span {
   background-position: -120px 0;
 }
-.badge-warranty i {
+.badge-warranty i, .badge-warranty span {
   background-position: -120px -60px;
 }
-.badge-color i {
+.badge-color i, .badge-color span {
   background-position: -120px -120px;
 }
-.badge-returns i {
+.badge-returns i, .badge-returns span {
   background-position: -120px -180px;
 }
 .badge-hardwood i {
@@ -936,7 +931,7 @@ a:active {
 .badge-double-stitched i {
   background-position: -180px -120px;
 }
-.badge-inspected i {
+.badge-inspected i, .badge-inspected span {
   background-position: -180px -180px;
 }
 .badge-hidden-clover i {
@@ -1574,15 +1569,6 @@ fieldset {
   width: 295px;
   height: 50px;
 }
-.product-form .checkbox {
-  width: 273px;
-  padding: 3px 10px;
-  height: 20px;
-  background: #efefef;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid #dcdcdc;
-}
 .product-form .questions {
   font-family: "PT Sans Narrow";
   text-align: center;
@@ -2044,7 +2030,7 @@ footer .container-fluid, .footer-child {
   background: #dcdcdc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  padding: 20px 5px 33px;
+  padding: 5px 5px 29px;
 }
 .sharebox * {
   display: inline;
@@ -2055,6 +2041,9 @@ footer .container-fluid, .footer-child {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+.fb_iframe_widget {
+	top: -5px;
 }
 .fb-like span {
 	width: 50px !important;
@@ -2745,7 +2734,6 @@ body .update_cart_button {
 	display: block;
 	text-align: center;
 	line-height: 40px;
-	width: 240px;
 	margin-bottom: 10px;
 	margin-top: 0px;
 }
@@ -2765,7 +2753,7 @@ body .update_cart_button {
 
 
 .hello-container {
-	background-color: #0068BA;
+	background-color: #6479bb;
 	z-index: 20;
 	box-shadow: 0 0 2px 0 white;
 	color: black;
@@ -2789,6 +2777,7 @@ body .update_cart_button {
 .hello a, .hello a:link {
 	color: black;
 	font-style: italic;
+	text-decoration: underline;
 /* 	text-shadow: 1px 1px 0 #888; */
 }
 .hello a strong {
@@ -2805,8 +2794,7 @@ body .update_cart_button {
 	margin: 0 4px;
 }
 .hello .bold {
-	color: white;
-	color: #FF2723;
+	color: #ee9e50;;
 }
 .hello strong {
 	color: black;
