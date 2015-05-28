@@ -46,7 +46,7 @@
 			template_slug = $('.template').first().data('template');
 			switch ( template_slug ) {
 				// case for product pages
-				case ('listing_0', 'listing_1', 'listing_2', 'listing_3'):
+				case ('listing_0' || 'listing_1' || 'listing_2' || 'listing_3'):
 					console.log('hello from listing 0.');
 					var script = document.createElement('script');
 					script.id = 'listing';
