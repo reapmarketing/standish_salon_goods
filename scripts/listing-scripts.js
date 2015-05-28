@@ -271,12 +271,9 @@
 			'tooltip': 'Made in USA - Instant Savings!'
 		}
 	}
-	
-	
-	
-	
+
 	if( badges ) {
-		badges = badges.split( ' ' );
+		badges = badges.split(/(\s+)/);
 		$.each( badges, function( i, v ) {
 			var badgeslug = v.trim();
 			if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
