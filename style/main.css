@@ -1109,7 +1109,7 @@ button.cart i {
   padding: 0 15px;
 }
 .navigation a {
-	font-size: 13px;
+	font-size: .8em;
   color: #fff;
   display: inline-block;
 /*   padding: 0 37px 0 34px; */
@@ -1209,14 +1209,14 @@ ul.nav-menu li:hover > div ul {
   color: #5ff23d;
 }
 .navigation li.far {
-  border: none;
+  border: 0 none !important;
 }
 li.far a:hover {
   color: #fff;
 }
 li.far a {
   color: #a9a9a9;
-  padding: 0 0px 0 14px;
+  padding: 0 0px 0 14px !important;
 }
 li.first.far a {
   padding: 0 0px 0 14px;
