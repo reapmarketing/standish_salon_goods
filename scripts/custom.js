@@ -41,10 +41,19 @@
 	}
 	
 	// Do different things based on the template slug
+	// @todo Activate class functions based on template slug here
 	Standish.TemplateSwitcher = function() {
 			template_slug = $('.template').first().data('template');
 			switch ( template_slug ) {
 				// case for product pages
+				case ('listing_0', 'listing_1', 'listing_2', 'listing_3'):
+					console.log('hello from listing 0.');
+					var script = document.createElement('script');
+					script.id = 'listing';
+					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
+					console.log(script);
+					document.head.appendChild(script);
+				return;
 				default:
 				return;
 			}

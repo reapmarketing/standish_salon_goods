@@ -877,13 +877,12 @@ a:active {
 }
 .badge-product div {
   display: block;
-  line-height: 54px;
   float: left;
   font-family: 'PT Serif';
   font-size: 14px;
-  letter-spacing: 1px;
+  letter-spacing: 1	px;
   text-transform: uppercase;
-  max-width: 140px;
+  max-width: 60%;
   margin-left: 15px;
 }
 .badge-free-shipping i, .badge-free-shipping span {
@@ -2841,15 +2840,78 @@ body .update_cart_button {
   top: 5px;
   left: 7px;
 }
-
-
-
-
-
-
 .product-form input[type=file] {
 	float: right;
 	width: 283px;
 	padding: 5px;
 	margin-bottom: 12px;
+}
+
+/* -- Modal Stuff-- Remove when 4th of July promotion ends -- */
+h3.header-patriot {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 2.5em;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
+  color: white;
+}
+.modal-patriot a, .modal-patriot a:hover, .modal-patriot a:visited, .modal-patriot a.active {
+	color: white;
+	text-decoration: none;
+}
+
+.modal-patriot .modal-body, .modal-patriot .modal-footer {
+	background-color: #222e69;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.modal-patriot button.close {
+  margin-top: -20px;
+  margin-right: -20px;
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  background-color: #666;
+  color: white;
+}
+.modal-patriot strong {
+  color: white;
+}
+.modal-patriot button.button-patriot {
+	text-transform: uppercase;
+	font-weight: bold;
+	 -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 5px 0px #4f0507;
+  -moz-box-shadow: 0px 5px 0px #4f0507;
+  box-shadow: 0px 5px 0px #4f0507;
+	border: 0 none;	
+  color: #ffffff;
+  font-size: 20px;
+  background: #9e0b0f;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.modal-patriot button.button-patriot:hover {
+  background: #4f0507;
+	border: 0 none;	
+  text-decoration: none;
+}
+.modal-patriot .modal-header {
+	border-bottom: 0 none;
+	background-color: #031d48;
+}
+
+.modal-patriot .modal-footer {
+	border-top: 0 none;
+	text-align: center;
+}
+
+.modal-patriot ol li, .modal-patriot ul li {
+  color: white;
+  font-size: 1.15em;
 }
