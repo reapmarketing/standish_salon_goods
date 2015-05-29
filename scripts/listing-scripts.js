@@ -286,9 +286,10 @@
 		if ( badges.indexOf( 'made-usa' ) >= 0 ) {
 			$('article').after('<div class="modal-standish"></div>');
 			var htmlStuff = $('.modal-standish').load('assets/templates/standish-responsive/chunks_o_code/modal-usa.html', function(data) {
-				setTimeout(function() {
-					$('.modal').modal();
-				}, 2000);			
+					$('.badge-made-usa').on('click', function(e) {
+						e.preventDefault();
+						$('.modal').modal();
+					});
 			});
 		};
 
