@@ -1498,6 +1498,16 @@ fieldset {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+.pricebox.quote-box {
+	background: transparent none;
+	text-align: left;
+}
+.pricebox.quote-box h3 {
+	display: inline-block;
+}
+.pricebox-quote-box {
+	text-align: left !important;
+}
 .pricebox .left-price {
   font-size: 42px;
   text-align: center;
@@ -2758,7 +2768,7 @@ body .update_cart_button {
 
 
 .hello-container {
-	background-color: #6479bb;
+	background-color: rgb(33, 107, 181);
 	z-index: 20;
 	box-shadow: 0 0 2px 0 white;
 	color: black;
@@ -2799,7 +2809,7 @@ body .update_cart_button {
 	margin: 0 4px;
 }
 .hello .bold {
-	color: #ee9e50;;
+	color: rgb(235, 79, 60);
 }
 .hello strong {
 	color: black;

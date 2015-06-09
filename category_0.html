@@ -66,19 +66,21 @@ jQuery( function($) {
 						<!--END: product_review_average-->
 					<!--END: product_review-->
 					<div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-						<!--START: ITEMPRICE-->
-							<!-- [product_yourprice] -->
-							<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-						<!--END: ITEMPRICE-->
-						<!--START: SALEPRICE-->
-							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<!-- <span class="coral-text">[product_onsale]: </span> -->
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-						<!--END: SALEPRICE-->
+          	<div class="listing-container">
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+              <!--START: ITEMPRICE-->
+                <!-- [product_yourprice] -->
+                <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+              <!--END: ITEMPRICE-->
+              <!--START: SALEPRICE-->
+                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+                <!-- <span class="coral-text">[product_onsale]: </span> -->
+                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+              <!--END: SALEPRICE-->
+            </div>
 						<!-- <button>Add to Cart</button> -->
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button" style="display:block; width: 100%;">
+						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: FEATURE_ITEM_TEMPLATE_0-->
 			<!--END: FEATURE_ITEMS-->
@@ -186,20 +188,22 @@ jQuery( function($) {
 						<!--END: product_review_average-->
 					<!--END: product_review-->
 					<div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-						<!--START: ITEMPRICE-->
-							<!-- [product_yourprice] -->
-							<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-						<!--END: ITEMPRICE-->
-						<!--START: SALEPRICE-->
-							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-							<img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
-						<!--END: SALEPRICE-->
-						<!-- <button>Add to Cart</button> -->
-						<!-- value="[category_buyitlink]" -->
-						<input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button" style="display:block; width: 100%;">
+          	<div class="listing-container">
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+              <!--START: ITEMPRICE-->
+                <!-- [product_yourprice] -->
+                <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+              <!--END: ITEMPRICE-->
+              <!--START: SALEPRICE-->
+                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+                <p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
+                <img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+              <!--END: SALEPRICE-->
+              <!-- <button>Add to Cart</button> -->
+              <!-- value="[category_buyitlink]" -->
+            </div>
+						<input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: ITEM_TEMPLATE_0--> 
 			<!--END: CATEGORY_ITEMS-->

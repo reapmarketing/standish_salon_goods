@@ -158,7 +158,6 @@ $( function(){
 					[product_social-bookmarking]
 				<!--END: product_social-bookmarking-->
 			</div>
-
 			<!--START: reviews-->
 			<div class="reviews">
 				<h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">[reviews_header]</h4>
@@ -197,7 +196,6 @@ $( function(){
 				<!--END: user_reviews-->
 			</div>
 			<!--END: reviews-->
-
 			<!--START: create_first_review-->
 				<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
 				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
@@ -278,7 +276,6 @@ $( function(){
 
 			</div><!-- related-accessories row clearfix hidden-sm hidden-xs -->
 		<!--END: accessories_0-->
-
 		</div>
 	<!-- End of the left side -->
 
@@ -675,6 +672,7 @@ $( function(){
 
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
 <script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
+<!-- Scripts are put in template because they are dependent on template vars -->
 <script>
 	// 3DCart Code
 	if (typeof jQuery == 'undefined') {
@@ -698,53 +696,11 @@ $( function(){
 		 };
 	 }
 </script>
+
 <!--START: qaScript-->
-<script type="text/javascript">
-	function updateQAStats(id, vote, user){
-
-		var url = '';
-		var params = '';
-
-		if (user == '') user = 0;
-		
-		params = 'id=' + id;
-		params += '&vote=' + vote;
-		params += '&userid=' + user;
-		
-		url = 'productqaVote_ajax.asp?' + params + '&no-cache='+Math.random();
-
-		//window.location = url;
-		
-		jQuery.ajax({
-			url: url,
-			dataType: 'html',
-			type: 'GET',
-			cache: false,
-			success: function (strResult) {
-				if (strResult == '') {
-					alert('[productqa_helpful-notupdated]');
-				}
-				else {
-					jQuery('#spn' + id).html(strResult);
-					alert('[productqa_update-helpful]');
-				}
-			
-			},
-			error: reportQAError
-		});
-		
-	}
-
-	function reportQAError(jqXHR, textStatus) {
-		if (jqXHR.status > 0)
-		{
-			alert(jqXHR.responseText);
-			alert("Error processing request " + jqXHR.status + " - " + jqXHR);
-			
-		}
-	}
-</script>
+<script type="text/javascript" src="updateQaStats.js"></script>
 <!--END: qaScript-->
+
 <script language="javascript">
 	//thumbnail script
 	var image1,image2,image3,image4,selectedimage;

@@ -1,3 +1,6 @@
+<!-- Template: listing_3.html -->
+<div class="template" style="display:none" data-template="listing_3"></div>
+
 <script type="text/javascript">
 var product = {};
 $( function(){
@@ -707,6 +710,8 @@ $( function(){
 
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
 <script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
+<!-- Scripts are put in template because they are dependent on template vars -->
+
 <script type="text/javascript">
 	// 3DCart Code
 	if (typeof jQuery == 'undefined') {
@@ -729,53 +734,11 @@ $( function(){
 		 };
 	 }
 </script>
+
 <!--START: qaScript-->
-<script type="text/javascript">
-	function updateQAStats(id, vote, user){
-
-		var url = '';
-		var params = '';
-
-		if (user == '') user = 0;
-		
-		params = 'id=' + id;
-		params += '&vote=' + vote;
-		params += '&userid=' + user;
-		
-		url = 'productqaVote_ajax.asp?' + params + '&no-cache='+Math.random();
-
-		//window.location = url;
-		
-		jQuery.ajax({
-			url: url,
-			dataType: 'html',
-			type: 'GET',
-			cache: false,
-			success: function (strResult) {
-				if (strResult == '') {
-					alert('[productqa_helpful-notupdated]');
-				}
-				else {
-					jQuery('#spn' + id).html(strResult);
-					alert('[productqa_update-helpful]');
-				}
-			
-			},
-			error: reportQAError
-		});
-		
-	}
-
-	function reportQAError(jqXHR, textStatus) {
-		if (jqXHR.status > 0)
-		{
-			alert(jqXHR.responseText);
-			alert("Error processing request " + jqXHR.status + " - " + jqXHR);
-			
-		}
-	}
-</script>
+<script type="text/javascript" src="updateQaStats.js"></script>
 <!--END: qaScript-->
+
 <script language="javascript">
 	//thumbnail script
 	var image1,image2,image3,image4,selectedimage;
@@ -815,7 +778,7 @@ $( function(){
 	imagecaption14="[imagecaption14]";
 	imagecaption15="[imagecaption15]";
 	selectedimage='[image1]'; //pre load image1
-	zoom_enable=[3dzoom_enabled]; //0 = zoomify | 1 = magiczoom
+	zoom_enable=["3dzoom_enabled"]; //0 = zoomify | 1 = magiczoom
 
 	function image_click(clicks)
 	{

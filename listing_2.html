@@ -1,4 +1,8 @@
+<!-- Template: listing_2.html -->
+<div class="template" style="display:none" data-template="listing_2"></div>
+
 <script type="text/javascript">
+// initialize product - google analytics
 var product = {};
 $( function(){
 	product = {
@@ -16,7 +20,6 @@ $( function(){
 	ga('ec:addProduct', product);
 	ga('ec:setAction', 'detail');
 	ga('send', 'pageview');
-
 });
 </script>
 
@@ -25,12 +28,9 @@ $( function(){
 <link rel="stylesheet" href="/assets/templates/standish/style/vex.css" />
 <link rel="stylesheet" href="/assets/templates/standish/style/vex-theme-flat-attack.css" />
 
-<!-- Template: listing_0.php -->
-<div class="template" style="display:none" data-template="listing_2"></div>
-
 <link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
 
-<div class="col-md-12" itemscope itemtype="http://schema.org/Product">
+<article class="col-md-12" itemscope itemtype="http://schema.org/Product">
 	<div class="col-md-12 search-container">
     <!--START: CATEGORY_FULLINE-->
       <!--IF: CATEGORY_FULLINE-->
@@ -72,7 +72,7 @@ $( function(){
 					<!-- <div name="imagecaptiont" id="imagecaptiont" class="item">[imagecaption1]</div> -->
 				<!--END: image1-->
 
-					<div class="clearboth"></div>
+					<div class="clearfix"></div>
 
 					<a data-caption="[imagecaption1]" href="[image1]" class="product-image" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" onclick="javascript:image_click(1);return false;"><img src="thumbnail.asp?file=[image1]&amp;maxx=75&amp;maxy=75" alt="" border="0" name="pimage1" /></a>
 
@@ -132,7 +132,7 @@ $( function(){
 					<a data-caption="[imagecaption15]" href="[image15]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image15]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"  onclick="javascript:image_click(15);return false;"><img border="0" src="thumbnail.asp?file=[image15]&amp;maxx=75&amp;maxy=75" alt="" name="pimage15" /></a>
 				<!--END: image15-->
 
-				<div class="clear"></div>
+				<div class="clearfix"></div>
 			</div>
 
 			<div class="sharebox">
@@ -158,7 +158,6 @@ $( function(){
 					[product_social-bookmarking]
 				<!--END: product_social-bookmarking-->
 			</div>
-
 			<!--START: reviews-->
 			<div class="reviews">
 				<h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">[reviews_header]</h4>
@@ -170,6 +169,8 @@ $( function(){
 					<meta itemprop="bestRating" content="5">
 				</div>
 				<!--END: totalrating-->
+
+
 
 				<!--START: create_review_link-->
 					<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
@@ -195,7 +196,6 @@ $( function(){
 				<!--END: user_reviews-->
 			</div>
 			<!--END: reviews-->
-
 			<!--START: create_first_review-->
 				<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
 				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
@@ -240,7 +240,7 @@ $( function(){
 				<!--END: accessories_items0-->
 
 				<!--START: accessories_items1-->
-					<div class="col-md-4 col-sm-6 listing omega">
+					<div class="grid_2 listing omega">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -276,7 +276,6 @@ $( function(){
 
 			</div><!-- related-accessories row clearfix hidden-sm hidden-xs -->
 		<!--END: accessories_0-->
-
 		</div>
 	<!-- End of the left side -->
 
@@ -291,53 +290,37 @@ $( function(){
 			<!--END: id-->
 			
 
-			<div class="pricebox">
-				<div class="cornersprite"></div>
-
-				<!--START: pricing-->
-					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
-					<!-- [product_Header-price] -->
-					<!--START: ITEMPRICE-->
-					<!--END: ITEMPRICE-->
-					<div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
-						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
-						</div>
-						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-							<span class="hidden" itemprop="price" content="[saleprice]"></span>
-						</div>
-					</div>
-					<div class="right-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
-						<!--START: price2-->
-							<p class="darkgray-text"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
-						<!--END: price2-->
-						<!-- [product_yourprice] -->
-						<!--START: ITEMPRICE-->
-							<p class="darkgray-text"><span class="label">Our Price:</span> <span class="nozero strike-perhaps">[price]</span></p>
-						<!--END: ITEMPRICE-->
-						<!-- [product_onsale] -->
-						<!--START: SALEPRICE-->
-							<p class="darkgray-text"><span class="label">Sale Price:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
-						<!--END: SALEPRICE-->
-						<!--START: SAVINGS-->
-							<!-- [product_savings] -->
-							<p class="coral-text italic bold"><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
-						<!--END: SAVINGS-->
-					</div>
-					<div class="clearboth"></div>
-					<!--START: product_availability-->
-						<!-- <strong>[product_Header-availability]</strong> -->
-						<!-- <div id="availability">[availability_itemprop]</div> -->
-						<!--span style="display: inline;" id="product_inventory">[stock]</span-->
-						<!--START: waitinglist-->
-							<!-- <input type="button" value="Put me on the Waiting List" class="btn" onclick="javascript:window.open('notify.asp?catalogid=[catalogid]','popup','height=350,width=540,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
-						<!--END: waitinglist-->
-					<!--END: product_availability-->
-					<!--START: freeshippingblock-->
-						<!-- [freeshipping] -->
-					<!--END: freeshippingblock-->
-				<!--END: pricing-->
-			</div>
+			<div class="pricebox quote-box">
+        <div class="cornersprite"></div>
+      
+        <!--START: pricing-->
+        <link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
+        <!-- [product_Header-price] -->
+        <!--START: ITEMPRICE-->
+        <!--END: ITEMPRICE-->
+        <div class="left-price col-md-12 pricebox-eqhgt pricebox-quote-box">
+          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        		<h3>Starting From:</h3>
+          <!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="Starting At: [price]">[price]</span><!--END: ITEMPRICE-->
+          </div>
+          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <span class="hidden" itemprop="price" content="[saleprice]"></span>
+          </div>
+        </div>
+        <div class="clearboth"></div>
+        <!--START: product_availability-->
+          <!-- <strong>[product_Header-availability]</strong> -->
+          <!-- <div id="availability">[availability_itemprop]</div> -->
+          <!--span style="display: inline;" id="product_inventory">[stock]</span-->
+          <!--START: waitinglist-->
+            <!-- <input type="button" value="Put me on the Waiting List" class="btn" onclick="javascript:window.open('notify.asp?catalogid=[catalogid]','popup','height=350,width=540,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
+          <!--END: waitinglist-->
+        <!--END: product_availability-->
+        <!--START: freeshippingblock-->
+          <!-- [freeshipping] -->
+        <!--END: freeshippingblock-->
+        <!--END: pricing-->
+      </div>
 
 			<div class="product-options">
 			
@@ -439,8 +422,8 @@ $( function(){
 					<div class="fancy-select form-group pull-right col-md-6">
 						<select name="recurring_frequency" class="txtBoxStyle" id="recurring_frequency">
 							<option value="">[recurringorders_select-frequency]</option>
-							[recurring_frequency]
-						</select>
+              [recurring_frequency]
+            </select>
 						<i class="fa fa-caret-down fa-sm"></i>
 					</div>
 					<p style="display: none">[recurringorders_addcart-bottom-message]</p>
@@ -462,8 +445,8 @@ $( function(){
 								<!--END: quantity_items-->
 							<!--END: quantity-->
 								<div class="option-row">
-              		<div class="col-md-4 col-sm-6 col-xs-6">
-                  	<label for="quantity">[product_quantity]: </label>
+									<div class="col-md-4 col-sm-6 col-xs-6">
+                  <label for="quantity">[product_quantity]: </label>
                     <!-- <input id="quantity" type="text" placeholder="1" value="1"> -->
                     <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
                   </div>
@@ -499,13 +482,16 @@ $( function(){
 							<!--END: addWishlist-->
 						<!--END: addtocart-->
 						<div class="option-row last row clearfix">
-							<label>
+							<label class="col-md-6 col-sm-6">
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 3 Weeks!</span>
 							</label>
-							<button type="submit" class="medium add" onclick="check_and_add(document.add);"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-							<div class="clearfix"></div>
+              <div class="col-md-6 col-sm-6">
+								<button class="btn btn-lg col-sm-12 col-xs-12">Request a Quote</button>
+              </div>
 						</div>
 					</fieldset>
+         <div class="clearfix"></div>
+
 				</div>
 				<!-- </form> -->
 				<!-- Absolute link path here because the link is snorked up and used as the HubSpot form redirect -->
@@ -539,66 +525,35 @@ $( function(){
 
 			<div id="instafeed"></div>
 
-		<!--START: related_0-->
-			<div class="related-products">
-				<h4>Related Products</h4>
-				<!-- [product_Header-relateditems] -->
+			<!--START: related_0-->
+      <h4>[product_Header-relateditems] </h4>
 
-				<!--START: related_items0-->
-					<div class="col-md-4 col-sm-6 listing alpha">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-						<!--START: product_review-->
-							<!--START: product_review_average-->
-								<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-								<!-- [review_count] Review(s) -->
-							<!--END: product_review_average-->
-						<!--END: product_review-->
-						<!--START: ITEMPRICE-->
-							<!-- [product_yourprice] -->
-							<p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-						<!--END: ITEMPRICE-->
-						<!--START: SALEPRICE-->
-							<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" style="position: relative;top: 4px;" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-							
+			<div class="related-products row">
+
+      	<!--START: related_items0-->
+					<div class="col-md-4 col-sm-6 col-xs-6 listing alpha">
+          	<div class="listing-container">
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+              <!--START: product_review-->
+                <!--START: product_review_average-->
+                  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+                  <!-- [review_count] Review(s) -->
+                <!--END: product_review_average-->
+              <!--END: product_review-->
+              <!--START: ITEMPRICE-->
+                <!-- [product_yourprice] -->
+                <p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+              <!--END: ITEMPRICE-->
+              <!--START: SALEPRICE-->
+                <p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" style="position: relative;top: 4px;" /> <span class="nozero">[ITEMSALEPRICE]</span></p>							
 						<!--END: SALEPRICE-->
-						<!-- <button>Add to Cart</button> -->
-
-						<!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
-						<!-- <input type="hidden" name="qty-[counter]" value="1" /> -->
-
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
-					</div>
-				<!--END: related_items0-->
-
-			<!--START: related_items1-->
-				<a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=0&maxy=150" alt="[name]" border="0" /></a>
-				[name]
-				<!--START: ITEMPRICE--> 
-					[ITEMPRICE] 
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE--> 
-					[ITEMPRICE]
-					[ITEMSALEPRICE] 
-				<!--END: SALEPRICE-->
-				<input type="checkbox" name="item_id" value="[catalogid]" />
-				<input type="hidden" name="qty-[counter]" value="1" />
-			<!--END: related_items1--> 
-
-			<!--START: related_items2-->
-				<a href="product.asp?itemid=[catalogid]">[name]</a>
-				<!--START: ITEMPRICE--> 
-					[ITEMPRICE] 
-				<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE--> 
-					[ITEMPRICE]
-					[ITEMSALEPRICE] 
-				<!--END: SALEPRICE-->
-				<input type="hidden" name="item_id" value="[catalogid]" />
-				<input type="text" size="2" name="qty-[counter]" value="0" />
-			<!--END: related_items2-->
-
+            </div>
+            <input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
+          </div>
+          
+          <!--END: related_items0-->
 			</div>
 		<!--END: related_0-->
 
@@ -611,9 +566,8 @@ $( function(){
 		<!--START: NEXT_PROD-->
 			<a href="[nextprodlink]"><img src="thumbnail.asp?file=[nextprodthumb]&maxx=20&maxy=20" border="0" alt="" />Next</a>
 		<!--END: NEXT_PROD--> 
-
-		<!-- was: listing_blocks.html (unused stuff) -->
-
+    
+    <!-- was: listing_blocks.html (unused stuff) -->
 		<!--START: qa-->
 			<a name="qa"></a>
 			<div itemprop="qa" itemscope itemtype="http://schema.org/QA">
@@ -668,9 +622,7 @@ $( function(){
 		<!--END: CATEGORY_FOOTER-->
 
 	</form>
-</div>
-
-
+</article>
 <!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
 <!--START: extra_field_2-->
 <div class="hidden field2" data-field2="[extra_field_2]"></div>
@@ -693,6 +645,7 @@ $( function(){
 <!--END: extra_field_7-->
 <!--START: extra_field_8-->
 <div class="hidden field8" data-field8="[extra_field_8]"></div>
+
 <!--END: extra_field_8-->
 <!--START: extra_field_9-->
 <div class="hidden field9" data-field9="[extra_field_9]"></div>
@@ -703,11 +656,13 @@ $( function(){
 
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
 <script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
-<script type="text/javascript">
+<!-- Scripts are put in template because they are dependent on template vars -->
+<script>
 	// 3DCart Code
 	if (typeof jQuery == 'undefined') {
 		document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
 	}
+	
 	MagicZoomPlus.options = {
 		'opacity':'65',
 		'expand-effect':'elastic',
@@ -725,53 +680,11 @@ $( function(){
 		 };
 	 }
 </script>
+
 <!--START: qaScript-->
-<script type="text/javascript">
-	function updateQAStats(id, vote, user){
-
-		var url = '';
-		var params = '';
-
-		if (user == '') user = 0;
-		
-		params = 'id=' + id;
-		params += '&vote=' + vote;
-		params += '&userid=' + user;
-		
-		url = 'productqaVote_ajax.asp?' + params + '&no-cache='+Math.random();
-
-		//window.location = url;
-		
-		jQuery.ajax({
-			url: url,
-			dataType: 'html',
-			type: 'GET',
-			cache: false,
-			success: function (strResult) {
-				if (strResult == '') {
-					alert('[productqa_helpful-notupdated]');
-				}
-				else {
-					jQuery('#spn' + id).html(strResult);
-					alert('[productqa_update-helpful]');
-				}
-			
-			},
-			error: reportQAError
-		});
-		
-	}
-
-	function reportQAError(jqXHR, textStatus) {
-		if (jqXHR.status > 0)
-		{
-			alert(jqXHR.responseText);
-			alert("Error processing request " + jqXHR.status + " - " + jqXHR);
-			
-		}
-	}
-</script>
+<script type="text/javascript" src="updateQaStats.js"></script>
 <!--END: qaScript-->
+
 <script language="javascript">
 	//thumbnail script
 	var image1,image2,image3,image4,selectedimage;

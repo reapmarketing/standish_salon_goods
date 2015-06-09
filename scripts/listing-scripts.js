@@ -356,7 +356,7 @@
 	var video_data = {};
 	var video_markup_new = '';
 	if( video_embed_codes ) {
-		video_markup_new = '<div class=""><h4 id="video" style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">Product Video</h4>';
+		video_markup_new = '<div class="video-embed"><h4 id="video" style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">Product Video</h4>';
 		$.each( video_embed_codes, function( i, embed_code ) {
 			AJAX.push( getData( embed_code ) );
 		});
