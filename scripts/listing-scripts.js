@@ -27,6 +27,7 @@
 
 // jQuery
 (function($) {
+	
 	// ---- PRICEBOX FINANCING FEATURE ---- //
 	var interest_rate, term_years, price, yearly_interest, total_interest, payment;
 	interest_rate = 0.12;
@@ -178,6 +179,7 @@
 	// ---- FIELD 8: BADGES ---- //
 	var badges = $( '.field8' ).data( 'field8' );
 	var $badges = $( '.badges' );
+	console.log($badges);
 	var $badges_list = $( '.badges-list' );
 	var badgetext = {
 		'free-shipping': {

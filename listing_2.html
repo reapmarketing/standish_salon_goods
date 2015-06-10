@@ -1,6 +1,7 @@
 <!-- Template: listing_2.html -->
 <div class="template" style="display:none" data-template="listing_2"></div>
 
+<script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
 <script type="text/javascript">
 // initialize product - google analytics
 var product = {};
@@ -486,7 +487,7 @@ $( function(){
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 3 Weeks!</span>
 							</label>
               <div class="col-md-6 col-sm-6">
-								<button class="btn btn-lg col-sm-12 col-xs-12">Request a Quote</button>
+								<button class="request-quote btn btn-lg col-sm-12 col-xs-12">Request a Quote</button>
               </div>
 						</div>
 					</fieldset>
@@ -653,6 +654,21 @@ $( function(){
 <!--START: extra_field_10-->
 <div class="hidden field10" data-field10="[extra_field_10]"></div>
 <!--END: extra_field_10-->
+
+<!-- Hidden HS modal with request a quote form -->
+<div class="modal fade modal-request-quote">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+      Request a Quote
+      </div>
+  		<div class="modal-body">
+      	<div id="hs-quote"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
 <script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
