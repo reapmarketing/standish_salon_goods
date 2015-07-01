@@ -46,7 +46,9 @@
 			template_slug = $('.template').first().data('template');
 			switch ( template_slug ) {
 				// case for product pages
-				case ('listing_0' || 'listing_1' || 'listing_3'):
+				case 'listing_0':
+				case 'listing_1':
+				case 'listing_3':
 					var script = document.createElement('script');
 					script.id = 'listing';
 					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
