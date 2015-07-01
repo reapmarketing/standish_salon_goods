@@ -63,23 +63,24 @@
 
 	// ---- ADD PRICE SALE CORNERTAG ---- //
 	// SalePrice display and sale cornertag activation on Listing Page
-	if( $('#saleprice').text() === "0" ) {
-		$('#saleprice').parent().hide();
-	} else {
+	// SalePrice Checker
+	var price = $('#price').text().replace('$','').replace(',',''),
+	price = parseInt(price);
+	console.log(price);
+	var saleprice = $('#saleprice').text().replace('$','').replace(',','');
+	console.log(saleprice);
+	if (typeof saleprice != undefined && saleprice != 0) {
+		saleprice = parseInt(saleprice);
 		$('.pricebox').addClass('sale-cornertag');
 		$('.strike-perhaps').addClass('strike');
-	}
 
-	// SalePrice Checker
-	var price = $('#price').text().replace('$','').replace(',','');
-	var saleprice = $('#saleprice').text().replace('$','').replace(',','');
-	if( price != saleprice ) {
-		$('#saleprice').parent().hide();
-		$('.strike-perhaps').removeClass('strike');
-		$('.sale-cornertag .cornersprite').hide();
+		if( price != saleprice ) {
+			$('#price.price').text('$' + saleprice);
+		}
 	}
-	
-	
+	else {
+		$('#saleprice').parent().hide();
+	}
 
 	// ---- FIELD 2: BROCHURE LINK ---- //
 	var brochure = $( '.field2' ).data( 'field2' );
@@ -179,7 +180,6 @@
 	// ---- FIELD 8: BADGES ---- //
 	var badges = $( '.field8' ).data( 'field8' );
 	var $badges = $( '.badges' );
-	console.log($badges);
 	var $badges_list = $( '.badges-list' );
 	var badgetext = {
 		'free-shipping': {

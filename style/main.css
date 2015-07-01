@@ -1535,6 +1535,7 @@ fieldset {
   width: 77px;
   display: block;
   float: left;
+	white-space: normal;
 }
 fieldset {
   padding: 0;
@@ -2768,7 +2769,7 @@ body .update_cart_button {
 
 
 .hello-container {
-	background-color: rgb(33, 107, 181);
+	background-color: rgb(255, 183, 157);
 	z-index: 20;
 	box-shadow: 0 0 2px 0 white;
 	color: black;
@@ -2809,7 +2810,7 @@ body .update_cart_button {
 	margin: 0 4px;
 }
 .hello .bold {
-	color: rgb(235, 79, 60);
+	color: #696969;
 }
 .hello strong {
 	color: black;
