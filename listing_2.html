@@ -289,39 +289,56 @@ $( function(){
 				<!-- [product_id] -->
 				<p class="part-no">Part Number <span id="product_id">[id]</span></p>
 			<!--END: id-->
-			
-
-			<div class="pricebox quote-box">
-        <div class="cornersprite"></div>
       
-        <!--START: pricing-->
-        <link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
-        <!-- [product_Header-price] -->
-        <!--START: ITEMPRICE-->
-        <!--END: ITEMPRICE-->
-        <div class="left-price col-md-12 pricebox-eqhgt pricebox-quote-box">
-          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        		<h3>Starting From:</h3>
-          <!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="Starting At: [price]">[price]</span><!--END: ITEMPRICE-->
-          </div>
-          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            <span class="hidden" itemprop="price" content="[saleprice]"></span>
-          </div>
-        </div>
-        <div class="clearboth"></div>
-        <!--START: product_availability-->
-          <!-- <strong>[product_Header-availability]</strong> -->
-          <!-- <div id="availability">[availability_itemprop]</div> -->
-          <!--span style="display: inline;" id="product_inventory">[stock]</span-->
-          <!--START: waitinglist-->
-            <!-- <input type="button" value="Put me on the Waiting List" class="btn" onclick="javascript:window.open('notify.asp?catalogid=[catalogid]','popup','height=350,width=540,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
-          <!--END: waitinglist-->
-        <!--END: product_availability-->
-        <!--START: freeshippingblock-->
-          <!-- [freeshipping] -->
-        <!--END: freeshippingblock-->
-        <!--END: pricing-->
-      </div>
+      <div class="pricebox">
+				<div class="cornersprite"></div>
+
+				<!--START: pricing-->
+					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
+					<!-- [product_Header-price] -->
+					<!--START: ITEMPRICE-->
+					<!--END: ITEMPRICE-->
+					<div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
+						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
+						</div>
+						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+							<span class="hidden" itemprop="price" content="[saleprice]"></span>
+						</div>
+					</div>
+					<div class="right-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
+						<!--START: price2-->
+							<p class="darkgray-text">Purchased Separately</p>
+						<!--END: price2-->
+						<!-- [product_yourprice] -->
+						<!--START: ITEMPRICE-->
+							<p class="darkgray-text">Bulk Discount</p>
+						<!--END: ITEMPRICE-->
+						<!-- [product_onsale] -->
+						<!--START: SALEPRICE-->
+							<p class="darkgray-text">10% Package Discount</p>
+						<!--END: SALEPRICE-->
+						<!--START: SAVINGS-->
+							<!-- [product_savings] -->
+							<p class="coral-text italic bold"><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
+						<!--END: SAVINGS-->
+					</div>
+					<div class="clearboth"></div>
+					<!--START: product_availability-->
+						<!-- <strong>[product_Header-availability]</strong> -->
+						<!-- <div id="availability">[availability_itemprop]</div> -->
+						<!--span style="display: inline;" id="product_inventory">[stock]</span-->
+						<!--START: waitinglist-->
+							<!-- <input type="button" value="Put me on the Waiting List" class="btn" onclick="javascript:window.open('notify.asp?catalogid=[catalogid]','popup','height=350,width=540,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
+						<!--END: waitinglist-->
+					<!--END: product_availability-->
+					<!--START: freeshippingblock-->
+						<!-- [freeshipping] -->
+					<!--END: freeshippingblock-->
+				<!--END: pricing-->
+			</div>
+      
+      
 
 			<div class="product-options">
 			
@@ -484,7 +501,7 @@ $( function(){
 						<!--END: addtocart-->
 						<div class="option-row last row clearfix">
 							<label class="col-md-6 col-sm-6">
-								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 3 Weeks!</span>
+								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 10-14 Business Days!</span>
 							</label>
               <div class="col-md-6 col-sm-6">
 								<button class="request-quote btn btn-lg col-sm-12 col-xs-12">Request a Quote</button>
