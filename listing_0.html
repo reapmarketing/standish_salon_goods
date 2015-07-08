@@ -503,7 +503,7 @@ $( function(){
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 10-14 Business Days!</span>
 							</label>
               <div class="col-md-6 col-sm-6">
-								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add);"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add); this.onclick=null;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
               </div>
 						</div>
 					</fieldset>
@@ -830,13 +830,13 @@ $( function(){
 
 			if (optionfound==0)
 			{ 
-				changecontent("availability",product_availability);
+				changecontent("availability", product_availability);
 				return true;
 			}
 		
 			if (optionfound==1)
 			{
-				changecontent("availability",avail_instock);
+				changecontent("availability", avail_instock);
 				return true;
 			}
 		}
@@ -859,7 +859,7 @@ $( function(){
 	{
 		// This is a 3DCart Function
 		// Modifed to report Cart Addition to GA EECom Tracking
-		if (document.add.std_price==null)
+		if ( document.add.std_price == null )
 		{
 			GAEEC_addToCart(product)
 			document.add.submit();

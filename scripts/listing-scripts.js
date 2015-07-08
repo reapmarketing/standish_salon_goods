@@ -270,7 +270,7 @@
 		'made-usa': {
 			'title': 'Made in the USA',
 			'class': 'made-usa',
-			'tooltip': 'Made in USA - Instant Savings!'
+			'tooltip': 'Proudly Made in the USA!'
 		}
 	}
 
@@ -283,17 +283,6 @@
 				$badges_list.append( '<a href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" class="badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].tooltip + '"><i></i><div class="badge-text">' + badgetext[badgeslug].title + '</div></a>' );
 			}			
 		});
-		// -- MADE USA MODAL -- //
-		// Check for the Made In USA badge and show a modal
-		if ( badges.indexOf( 'made-usa' ) >= 0 ) {
-			$('article').after('<div class="modal-standish"></div>');
-			var htmlStuff = $('.modal-standish').load('assets/templates/standish-responsive/chunks_o_code/modal-usa.html', function(data) {
-					$('.badge-made-usa').on('click', function(e) {
-						e.preventDefault();
-						$('.modal').modal();
-					});
-			});
-		};
 
 	} else {
 		$badges.remove();

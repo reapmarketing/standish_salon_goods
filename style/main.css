@@ -855,7 +855,9 @@ a:active {
 [class^="badge-"] i,
 [class*="badge-"] i,
 [class^="badge-"] span,
-[class*="badge-"] span {
+[class*="badge-"] span,
+[class^="badge-"] em,
+[class*="badge-"] em {
   display: block;
   height: 60px;
   width: 60px;
@@ -864,6 +866,10 @@ a:active {
   -moz-background-size: 800%;
   background-size: 800%;
   float: left;
+}
+[class^="badge-"] em,
+[class*="badge-"] em {
+	  margin-right: 14px;
 }
 [class^="badge-"] span,
 [class*="badge-"] span {
@@ -886,24 +892,24 @@ a:active {
   margin-left: 15px;
 	padding-top: 10px;
 }
-.badge-made-usa i, .badge-made-usa span {
+.badge-made-usa i, .badge-made-usa span, .badge-made-usa em {
 	background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-.badge-free-shipping i, .badge-free-shipping span {
+.badge-free-shipping i, .badge-free-shipping span, .badge-free-shipping em {
   background-position: 0 0;
 }
-.badge-fire-retardant i, .badge-fire-retardant span {
+.badge-fire-retardant i, .badge-fire-retardant span, .badge-fire-retardant em {
   background-position: 0 -60px;
 }
-.badge-heavy-duty i, .badge-heavy-duty span {
+.badge-heavy-duty i, .badge-heavy-duty span, .badge-heavy-duty em {
   background-position: 0 -120px;
 }
-.badge-iron-life i, .badge-iron-life span {
+.badge-iron-life i, .badge-iron-life span, .badge-iron-life em {
   background-position: 0 -180px;
 }
-.badge-no-sales-tax i, .badge-no-sales-tax span {
+.badge-no-sales-tax i, .badge-no-sales-tax span, .badge-no-sales-tax em {
   background-position: -60px 0;
 }
 .badge-ten-thousand-rub i {
@@ -912,19 +918,19 @@ a:active {
 .badge-swap-base i {
   background-position: -60px -120px;
 }
-.badge-new-arrival i, .badge-new-arrival span {
+.badge-new-arrival i, .badge-new-arrival span, .badge-new-arrival em {
   background-position: -60px -180px;
 }
-.badge-service i, .badge-service span {
+.badge-service i, .badge-service span, .badge-service em {
   background-position: -120px 0;
 }
-.badge-warranty i, .badge-warranty span {
+.badge-warranty i, .badge-warranty span, .badge-warranty em {
   background-position: -120px -60px;
 }
-.badge-color i, .badge-color span {
+.badge-color i, .badge-color span, .badge-color em {
   background-position: -120px -120px;
 }
-.badge-returns i, .badge-returns span {
+.badge-returns i, .badge-returns span, .badge-returns em {
   background-position: -120px -180px;
 }
 .badge-hardwood i {
@@ -936,7 +942,7 @@ a:active {
 .badge-double-stitched i {
   background-position: -180px -120px;
 }
-.badge-inspected i, .badge-inspected span {
+.badge-inspected i, .badge-inspected span, .badge-inspected em {
   background-position: -180px -180px;
 }
 .badge-hidden-clover i {
