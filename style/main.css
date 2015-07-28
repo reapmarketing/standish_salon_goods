@@ -2531,11 +2531,12 @@ margin-right: 150px;
 
 /* Made in USA promotion */
 .cat span.made-usa {
-	left: -32px;
-	background: transparent none;
+	left: -61px;
+  color: white;
+	background: rgb(0, 15, 165);
 }
 .cat span.made-usa i {
-	color: rgb(5, 12, 84);
+	color: white;
 }
 #catframe a[href="american-made-salon-furniture"],
 #catframe a[href="american-made-salon-furniture"]:hover,
