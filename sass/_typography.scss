@@ -1,0 +1,165 @@
+
+p,
+ul,
+ol {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+	margin-bottom: 0;
+}
+ol li,
+ul li {
+  margin: 3px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+  font-weight: 700;
+  line-height: 1.25;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-size: 60%;
+  color: #6f6f6f;
+  line-height: 0;
+}
+
+h1 {
+  font-size: 2.750em;
+}
+
+h2 {
+  font-size: 2.000rem;
+}
+
+h3 {
+  font-size: 1.500rem;
+	font-weight: 700;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+p {
+	font-size: 1em;
+}
+
+@media only screen and (max-width: 61.9375em) {
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  h2 {
+    font-size: 2.3125rem;
+  }
+
+  h3 {
+    font-size: 1.6875rem;
+  }
+
+  h4 {
+    font-size: 1.4375rem;
+  }
+
+  h5 {
+    font-size: 1.4375rem;
+  }
+
+  h6 {
+    font-size: 1.4375rem;
+  }
+  p {
+		font-size: 1.125rem;
+  }
+	p.title {
+		font-size: 1.4375rem;
+	}
+	.hello p {
+		font-size: 1.25rem;
+	}
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+a.button,
+a:link.button,
+a:visited.button {
+  color: #FFF;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+a:hover.button,
+a:active.button {
+  text-decoration: underline;
+}
+
+
+a,
+a:link,
+a:visited {
+  color: #ff7f50;
+}
+a:hover {
+  color: #ff5a1d;
+}
+a:active {
+  color: #ffa483;
+}
+
+
+
+
+.strike {
+	text-decoration:line-through
+}
+.bold {
+  font-weight: 700;
+  color:#ff7f50;
+}
+.center {
+	text-align: center;
+}
+.italic {
+  font-style: italic;
+}
+.allcaps {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+strong {
+  color: #ff7f50;
+}
+.serif {
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+}
+.sans {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+}
+

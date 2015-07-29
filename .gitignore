@@ -81,6 +81,8 @@ sftp-config.json
 ######################
 _notes
 bower_components
-
+.sass-cache/
+node_modules/
+*.*.map
 
 

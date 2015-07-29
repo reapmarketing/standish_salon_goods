@@ -1,0 +1,57 @@
+
+/*Add 5-col class...*/
+@media (min-width: 992px) {
+	.col-md-2-2 {
+		width: 20%;
+		position: relative;
+		padding-left: 15px;
+		padding-right: 15px;
+		float: left;
+	}
+}
+
+
+/*Override bootstrap container class...*/
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+		padding: 0;
+  }
+}
+
+/* Override bootstrap container in large width so it doesn't look stretched out */
+@media (min-width: 1200px) {
+	.container {
+		width: 1000px;
+	}
+}
+@media (min-width: 1000px) {
+	header {
+		min-height: 150px;
+	}
+}
+
+/* Sidr Side mobile menu */
+.sidr-inner .sidr-class-hidden {
+	display: none;
+}
+
+.sidr ul li.sidr-class-subcategories a.sidr-class-menu-open {
+	color: #676767;
+}
+
+/* Table Based Page Styles */
+/*override mobile bootstrap table styles*/
+@media screen and (max-width: 767px) {
+	.table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th {
+  	white-space: normal;
+	}
+	.table-responsive {
+		border: 0 none;
+	}
+}
+@media screen and (max-width: 767px) {
+	.product-form .MagicZoomPlus, .MagicZoomPlus:hover {
+		cursor: pointer !important;
+	}
+}
