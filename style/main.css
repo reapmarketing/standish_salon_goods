@@ -1,7 +1,8 @@
+/* Pink */
 p,
 ul,
 ol {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
@@ -17,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+  font-family: "PT Serif", "Times New Roman", Times, serif;
   font-weight: 700;
   line-height: 1.25; }
 
@@ -88,7 +89,7 @@ p {
 a.button,
 a:link.button,
 a:visited.button {
-  color: #FFF;
+  color: white;
   text-decoration: none;
   padding: 5px 10px; }
 
@@ -122,6 +123,8 @@ a:active {
 
 .allcaps {
   text-transform: uppercase; }
+  .allcaps.featured > a {
+    color: #dfe133; }
 
 .lowercase {
   text-transform: lowercase; }
@@ -130,10 +133,10 @@ strong {
   color: #ff7f50; }
 
 .serif {
-  font-family: 'PT Serif', 'Times New Roman', Times, serif; }
+  font-family: "PT Serif", "Times New Roman", Times, serif; }
 
 .sans {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif; }
+  font-family: "PT Sans", Arial, Helvetica, sans-serif; }
 
 .white {
   background-color: #fff; }
@@ -369,7 +372,7 @@ body .update_cart_button {
   height: 50px;
   font-size: 1.125rem;
   line-height: 50px;
-  font-family: 'PT Sans Narrow';
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   text-decoration: none;
   text-align: center; }
 
@@ -378,7 +381,7 @@ body .update_cart_button {
 
 .account-button.login {
   background: #ff7f50;
-  color: #fff; }
+  color: white; }
 
 .account-button.affiliate {
   background: #c2d3bd;
@@ -539,9 +542,9 @@ input[type=submit],
   border-top: none;
   border-right: none;
   border-left: none;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   font-weight: 400;
-  color: #fff;
+  color: white;
   background-color: #ff7f50;
   border-bottom: 1px solid #a0522d; }
 
@@ -658,7 +661,7 @@ input.form-control {
 /* ~~~ Hubspot Stuff ~~~ */
 .hs-input {
   color: #a9a9a9;
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 2.25em; }
@@ -736,7 +739,7 @@ audio:not([controls]) {
   display: none; }
 
 body {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   /* font-family: sans-serif; */
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -745,7 +748,7 @@ body {
   /* 2 */ }
 
 html {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   /* font-family: sans-serif; */
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -957,14 +960,14 @@ legend {
 
 .create-account button {
   color: #fff;
-  font-family: 'PT Sans Narrow'; }
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
 .login {
   font-size: 14px; }
 
 .login form {
   margin: 40px 70px;
-  font-family: 'PT Sans Narrow';
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
   text-align: left; }
 
 .login form a {
@@ -1020,7 +1023,7 @@ legend {
   background: #EFEFEF;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.25;
@@ -1398,7 +1401,7 @@ button.cart i {
   line-height: 60px;
   height: 60px;
   position: relative;
-  font-family: 'PT Sans Narrow'; }
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
 .navigation ul.nav-menu > li {
   border-right: 1px solid #696969; }
@@ -1418,7 +1421,7 @@ button.cart i {
   text-decoration: none; }
 
 .navigation ul ul {
-  font-family: 'PT Sans';
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   /*   font-weight: 700; */
   background-color: #696969;
   display: none;
@@ -1455,7 +1458,7 @@ button.cart i {
   line-height: 16px;
   font-size: 14px;
   text-transform: uppercase;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
   color: #c2d3bd;
   padding: 4px 25px; }
@@ -1479,7 +1482,7 @@ ul.nav-menu li:hover > div ul {
 .navigation li li.allcaps > a:link,
 .navigation li li.allcaps > a:visited {
   font-weight: 700;
-  /* 	color: #ffa07a; */
+  /* 	color: $primary-color-btn-highlight; */
   color: #fff; }
 
 .navigation li li.allcaps > a:hover {
@@ -1787,7 +1790,7 @@ li.first.far a {
   margin: 6px 0; }
 
 .listing p.title {
-  font-family: "PT Sans Narrow";
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
   min-height: 34px; }
 
 .listing p.msrp {
@@ -1825,7 +1828,7 @@ li.first.far a {
 .pricebox .left-price {
   font-size: 42px;
   text-align: center;
-  font-family: "PT Sans Narrow";
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
   line-height: 110px;
   position: relative; }
 
@@ -1878,7 +1881,7 @@ fieldset {
   padding: 10px; }
 
 .product-form label {
-  font-family: "PT Sans Narrow"; }
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
 .product-form .fancy-select {
   margin-right: 0;
@@ -1899,7 +1902,7 @@ fieldset {
   height: 50px; }
 
 .product-form .questions {
-  font-family: "PT Sans Narrow";
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
   text-align: center;
   float: right;
   line-height: 27px; }
@@ -1935,7 +1938,7 @@ fieldset {
   text-align: right;
   margin-bottom: 10px;
   font-size: 14px;
-  font-family: "PT Sans Narrow"; }
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
 .brochure-download i {
   font-size: 18px;
@@ -1954,7 +1957,7 @@ fieldset {
 /*
 .related-products a,
 .related-accessories a {
-  font-family: "PT Sans Narrow";
+  font-family: $default-font-narrow;
   position: absolute;
   font-size: 14px;
   top: 2px;
@@ -1978,7 +1981,7 @@ fieldset {
   font-size: 14px;
   font-style: italic;
   color: #a9a9a9;
-  font-family: "PT Sans Narrow"; }
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
 .stars {
   position: relative;
@@ -2006,7 +2009,7 @@ fieldset {
   content: "\f005"; }
 
 .add-rating-link {
-  font-family: "PT Sans Narrow";
+  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
   font-size: 14px; }
 
 .add-rating-link i {
@@ -2123,7 +2126,7 @@ fieldset {
 /* End Made USA Promotion */
 /* -- Modal Stuff- July 2015 -- */
 h3.header-patriot {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: "PT Sans", Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: 2.5em;
   margin: 0;

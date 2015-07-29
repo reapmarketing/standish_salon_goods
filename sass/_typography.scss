@@ -2,7 +2,7 @@
 p,
 ul,
 ol {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: $default-font;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
@@ -20,7 +20,7 @@ h4,
 h5,
 h6
 {
-  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+  font-family: $default-font-serif;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -109,7 +109,7 @@ p {
 a.button,
 a:link.button,
 a:visited.button {
-  color: #FFF;
+  color: white;
   text-decoration: none;
   padding: 5px 10px;
 }
@@ -122,7 +122,7 @@ a:active.button {
 a,
 a:link,
 a:visited {
-  color: #ff7f50;
+  color: $primary-color;
 }
 a:hover {
   color: #ff5a1d;
@@ -139,7 +139,7 @@ a:active {
 }
 .bold {
   font-weight: 700;
-  color:#ff7f50;
+  color: $primary-color;
 }
 .center {
 	text-align: center;
@@ -149,17 +149,22 @@ a:active {
 }
 .allcaps {
   text-transform: uppercase;
+  &.featured {
+    & > a {
+      color: $highlight-color;
+    } 
+  }
 }
 .lowercase {
   text-transform: lowercase;
 }
 strong {
-  color: #ff7f50;
+  color: $primary-color;
 }
 .serif {
-  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+  font-family: $default-font-serif;
 }
 .sans {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: $default-font;
 }
 

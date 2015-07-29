@@ -5,13 +5,13 @@
   background-color: #f5f5f5;
 }
 .standishgreen {
-  background-color: #c2d3bd;
+  background-color: $secondary-color;
 }
 .gainsboro {
   background-color: #dcdcdc;
 }
 .sienna {
-  background-color: #a0522d;
+  background-color: $primary-darken;
 }
 .lightgray {
   background-color: #efefef;
@@ -20,19 +20,19 @@
   background-color: #a9a9a9;
 }
 .lightsalmon {
-  background-color: #ffa07a;
+  background-color: $primary-color-btn-highlight;
 }
 .dimgray {
-  background-color: #696969;
+  background-color: $primary-gray;
 }
 .coral {
-  background-color: #ff7f50;
+  background-color: $primary-color;
 }
 .standishgray {
-  background-color: #4d4d4d;
+  background-color: $neutral-dark;
 }
 .standishyellow {
-  background-color: #dfe133;
+  background-color: $highlight-color;
 }
 .beige {
   background-color: #f5f5dc;
@@ -44,13 +44,13 @@
   color: #f5f5f5;
 }
 .standishgreen-text {
-  color: #c2d3bd;
+  color: $secondary-color;
 }
 .gainsboro-text {
   color: #dcdcdc;
 }
 .sienna-text {
-  color: #a0522d;
+  color: $primary-darken;
 }
 .lightgray-text {
   color: #efefef;
@@ -59,19 +59,19 @@
   color: #a9a9a9;
 }
 .lightsalmon-text {
-  color: #ffa07a;
+  color: $primary-color-btn-highlight;
 }
 .dimgray-text {
-  color: #696969;
+  color: $primary-gray;
 }
 .coral-text {
   color: white;
 }
 .standishgray-text {
-  color: #4d4d4d;
+  color: $neutral-dark;
 }
 .standishyellow-text {
-  color: #dfe133;
+  color: $highlight-color;
 }
 .beige-text {
   color: #f5f5dc;
@@ -80,5 +80,5 @@
   color: #c5ac29;
 }
 .black-text {
-  color: #4d4d4d;
+  color: $neutral-dark;
 }

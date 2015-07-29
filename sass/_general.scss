@@ -28,7 +28,7 @@ audio:not([controls]) {
   display: none;
 }
 body {
-	font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+	font-family: $default-font;
   /* font-family: sans-serif; */
 /* 1 */
   -ms-text-size-adjust: 100%;
@@ -37,7 +37,7 @@ body {
 /* 2 */
 }
 html {
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: $default-font;
   /* font-family: sans-serif; */
 /* 1 */
   -ms-text-size-adjust: 100%;
@@ -49,7 +49,7 @@ body {
   margin: 0;
   padding-left: 0px;
   padding-right: 0px;
-  color: #696969;
+  color: $primary-gray;
 }
 html,
 body {
@@ -254,14 +254,14 @@ legend {
 }
 .create-account button {
   color: #fff;
-  font-family: 'PT Sans Narrow';
+  font-family: $default-font-narrow;
 }
 .login {
   font-size: 14px;
 }
 .login form {
   margin: 40px 70px;
-  font-family: 'PT Sans Narrow';
+  font-family: $default-font-narrow;
   text-align: left;
 }
 .login form a {
@@ -325,7 +325,7 @@ legend {
   background: #EFEFEF;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: $default-font;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.25;
@@ -339,7 +339,7 @@ legend {
 }
 .alternative input[type=submit],
 .alternative input[type=button] {
-  background-color: #ff7f50;
+  background-color: $primary-color;
 }
 .checkout-headers {
   font-size: 24px;
@@ -365,7 +365,7 @@ legend {
 }
 .left-bar a:hover {
   font-weight: bold;
-  color: #ff7f50;
+  color: $primary-color;
 }
 .sharebox {
   background: #dcdcdc;
@@ -431,7 +431,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 }
 .blog-nav a:hover {
   font-weight: bold;
-  color: #ff7f50;
+  color: $primary-color;
 }
 
 
@@ -448,10 +448,10 @@ body .vex.vex-theme-flat-attack .vex-content {
 .cycle-pager span { 
     font-family: arial; font-size: 50px; width: 16px; height: 16px; 
     display: inline-block; color: #fff; cursor: pointer;
-    text-shadow: 1px 1px 2px #696969;
+    text-shadow: 1px 1px 2px $primary-gray;
     padding: 0 2px 0 0;
 }
-.cycle-pager span.cycle-pager-active { color: #c2d3bd;}
+.cycle-pager span.cycle-pager-active { color: $secondary-color;}
 .cycle-pager > * { cursor: pointer;}
 
 .tools-menu .column ul {
@@ -472,7 +472,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 /* ~~~~ Category Side Menu Styles ~~~~*/
 
 #catframe a {
-  color: #696969;
+  color: $primary-gray;
   font-size: 14px;
 }
 #catframe ul {
@@ -514,11 +514,11 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 .navigation ul ul a span,
 .cat span {
-  background: #dfe133;
+  background: $highlight-color;
   padding: 2px 5px;
   border-radius: 2px;
   margin-left: 5px;
-  color: #696969;
+  color: $primary-gray;
 }
 .cat span {
   position: absolute;
@@ -532,7 +532,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 }
 
 .hello-container {
-  background-color: rgb(255, 183, 157);
+  background-color: $accent-color;
   z-index: 20;
   box-shadow: 0 0 2px 0 white;
   color: black;
@@ -566,14 +566,14 @@ body .vex.vex-theme-flat-attack .vex-content {
 .hello i {
   font-size: 22px;
   position: relative;
-  color: #c2d3bd; /* Standish Green */
+  color: $secondary-color; /* Standish Green */
   color: #bb8600; /*  Gold */
   color: #a30935;
   text-shadow: 1px 1px 0 white;
   margin: 0 4px;
 }
 .hello .bold {
-  color: #696969;
+  color: $primary-gray;
 }
 .hello strong {
   color: black;

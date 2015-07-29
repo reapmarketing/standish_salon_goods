@@ -80,11 +80,11 @@ input[type=submit],
   border-top: none;
   border-right: none;
   border-left: none;
-  font-family: 'PT Sans';
+  font-family: $default-font;
   font-weight: 400;
-  color: #fff;
-  background-color: #ff7f50;
-  border-bottom: 1px solid #a0522d;
+  color: white;
+  background-color: $primary-color;
+  border-bottom: 1px solid $primary-darken;
 }
 
 btn.focus, .btn:focus, .btn:hover, .hs-form .hs-button:focus, .hs-form .hs-button:hover {
@@ -97,7 +97,7 @@ input[type=submit]:hover,
 button:hover,
 .button:hover,
 .hs-form .hs-button:hover {
-  background-color: #ffa07a;
+  background-color: $primary-color-btn-highlight;
 }
 .button.medium,
 button.medium {
@@ -127,8 +127,8 @@ input[type=button].standishgreen,
 input[type=submit].standishgreen,
 .button.standishgreen,
 button.standishgreen {
-  background-color: #c2d3bd;
-  color: #696969;
+  background-color: $secondary-color;
+  color: $primary-gray;
   border-color: #8f998c;
 }
 .button.standishgray,
@@ -138,13 +138,13 @@ button.standishgray {
 }
 .button.gainsboro,
 button.gainsboro {
-  color: #696969;
+  color: $primary-gray;
   border-color: #a9a9a9;
 }
 .button.darkgray,
 button.darkgray {
   color: #fff;
-  border-color: #696969;
+  border-color: $primary-gray;
 }
 .button .add-on-left,
 button .add-on-left {
@@ -159,8 +159,8 @@ button .add-on-left i {
   font-size: 15px;
 }
 .button.standishgreen {
-  background-color: #c2d3bd;
-  color: #696969 !important;
+  background-color: $secondary-color;
+  color: $primary-gray !important;
 }
 .form-stacked input[type="text"],
 .form-stacked input[type="password"],
@@ -204,7 +204,7 @@ input.form-control {
 /* ~~~ Hubspot Stuff ~~~ */
 .hs-input {
   color: #a9a9a9;
-  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-family: $default-font;
   font-size: 14px;
   font-weight: 400;
   line-height: 2.25em;
@@ -232,7 +232,7 @@ textarea.hs-input {
   -khtml-border-radius: 5px;
   border-radius: 5px;
   padding: 15px 40px 40px 40px;
-  border-bottom: 1px solid #696969;
+  border-bottom: 1px solid $primary-gray;
 }
 
 .main_content .hbspt-form .hs-form-field, .main_content .hbspt-form .hs_submit {

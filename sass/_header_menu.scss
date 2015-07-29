@@ -87,7 +87,7 @@ button.cart i {
   border-radius: 0px 3px 3px 0;
 }
 .navigation {
-  background-color: #4d4d4d;
+  background-color: $neutral-dark;
   text-transform: capitalize;
 	border-radius: 0;
 }
@@ -103,7 +103,7 @@ button.cart i {
   line-height: 60px;
   height: 60px;
   position: relative;
-  font-family: 'PT Sans Narrow';
+  font-family: $default-font-narrow;
 }
 .navigation ul.nav-menu > li {
   border-right: 1px solid #696969;
@@ -123,7 +123,7 @@ button.cart i {
   text-decoration: none;
 }
 .navigation ul ul {
-  font-family: 'PT Sans';
+  font-family: $default-font;
 /*   font-weight: 700; */
   background-color: #696969;
   display: none;
@@ -153,23 +153,23 @@ button.cart i {
   letter-spacing: normal;
 }
 .navigation ul ul ul a:hover {
-  color: #c2d3bd;
+  color: $secondary-color;
 }
 .navigation ul ul a {
   min-width: 170px;
   line-height: 16px;
   font-size: 14px;
   text-transform: uppercase;
-  font-family: 'PT Sans';
+  font-family: $default-font;
   letter-spacing: 1px;
-  color: #c2d3bd;
+  color: $secondary-color;
   padding: 4px 25px;
 }
 .navigation li:hover > a {
-  color: #dfe133;
+  color: $highlight-color;
 }
 .navigation li li:hover > a {
-  color: #c2d3bd;
+  color: $secondary-color;
 }
 .navigation ul ul a:hover {
   color: #fff;
@@ -178,18 +178,20 @@ button.cart i {
 ul.nav-menu li:hover > div ul {
   display: block;
 }
-.navigation li li.allcaps a {
-	padding-top: 10px;
+.navigation li li.allcaps {
+	a {
+		padding-top: 10px;
+	}
 }
 .navigation li li.allcaps > a:link,
 .navigation li li.allcaps > a:visited {
 	font-weight: 700;
-/* 	color: #ffa07a; */
+/* 	color: $primary-color-btn-highlight; */
 	color: #fff;
 }
 
 .navigation li li.allcaps > a:hover {
-	color: #dfe133;
+	color: $highlight-color;
 }
 
 .navigation li.current_page_item > a,
