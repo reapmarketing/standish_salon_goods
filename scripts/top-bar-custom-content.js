@@ -92,19 +92,7 @@
 			});
 */
 			var JSON_LOADED = false;
-			$('.hello-container').delay(2000).animate({opacity: 1}, function() {
-  			// console.log( 'JSON', JSON_LOADED );
-				if( JSON_LOADED === false ) {
-					$('.hbar_content').html('<img src="/assets/templates/standish/images/truck.svg" alt="Free Shipping" class="hello-icon"><p style="margin-left: 60px;"><strong>Free Shipping</strong> when you spend $500! <a href="/standish-salon-equipment-sale">See how</a> you can get <strong>Instant Savings</strong>!<i class="icon icon-dollar"></i></p>');
-				}
-/*
-				if( !scrollfixdone ) {
-					$('body').css({'margin-top':'60px'});
-					// Test this bit, animate so nothing gets covered
-					// $("html, body").scrollTop( 0 );
-				}
-*/
-			});
+			$('.hello-container').delay(2000).animate({opacity: 1});
 			
 			var hbar_slug = 'default';
 			// This code will change the slug if it finds an override.
