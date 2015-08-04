@@ -7,6 +7,7 @@
     [META]
     <!-- Mobile viewport optimized: j.mp/bplateviewport -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
 
     <!-- CSS -->
 		<style>
@@ -260,7 +261,7 @@
                               </ul>
                           </div>
   
-                      </li>
+            </li>
                           
             <li class="allcaps tools-menu"><a href="#">Tools</a>
                           <div class="column col1">
@@ -393,58 +394,26 @@
         <!--START: LEFT BAR-->
         <div class="col-md-2 hidden-sm hidden-xs left-bar">
           <!--START: LEFT_BAR_BLOCKS-->
-            <!--START: FRAME_SEARCH-->
-            <!--
-            <div class="texturedBG">
-              <form method="get" name="searchForm" action="search.asp" style="margin: 0px; padding: 7px 8px;">
-                <input type="text" size="25" name="keyword" id="searchlight" class="search-text" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};"  onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" />
-                <input type="image" src="assets/templates/[template]/images/search_btn.png" name="search" value="GO" />
-              </form>
-            </div>
-            -->
-            <!--END: FRAME_SEARCH-->
       
             <div class="filters"></div>
-      
-            <!--START: FRAME_MANUFACTURER-->
-              <!--[frame_manufacturer]-->
-      <!-- 				<div class="allcaps serif black-text bold">Brand</div> -->
-      <!-- 				<ul> -->
-                <!--START: manufacturer_format-->
-      <!-- 						<li><a href="search_groups.asp?manf=[mfgid]" class="cat">[manufacturer]</a> -->
-                <!--END: manufacturer_format-->
-      <!-- 				</ul> -->
-            <!--END: FRAME_MANUFACTURER-->
       
             <!--START: FRAME_CATEGORY-->
               <div class="allcaps serif black-text bold">[frame_categories]</div>
               <div id="catframe">
-              <!--START: CATEGORIES-->
-                <ul>
-                <!--START: CATEGORY_FORMAT-->
-                  <li><a href="view_category.asp?cat=CATID" class="cat">CATEGORY</a></li>
-                <!--END: CATEGORY_FORMAT-->
-                
-                <!--START: SUB_CATEGORY_FORMAT-->
-                  <li class="indent"><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
-                <!--END: SUB_CATEGORY_FORMAT-->
-                </ul>
-              <!--END: CATEGORIES-->
+                <!--START: CATEGORIES-->
+                  <ul>
+                  <!--START: CATEGORY_FORMAT-->
+                    <li><a href="view_category.asp?cat=CATID" class="cat">CATEGORY</a></li>
+                  <!--END: CATEGORY_FORMAT-->
+                  
+                  <!--START: SUB_CATEGORY_FORMAT-->
+                    <li class="indent"><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
+                  <!--END: SUB_CATEGORY_FORMAT-->
+                  </ul>
+                <!--END: CATEGORIES-->
               </div>
             <!--END: FRAME_CATEGORY-->
-      
-            <!--START: FRAME_BYPRICE-->
-      <!-- 				<div class="allcaps serif black-text bold">[frame_byprice]</div> -->
-      <!-- 				<ul> -->
-                <!--START: byprice_format-->
-      <!-- 						<li><a href="search_groups.asp?keyword=[id]&byprice=[id]" class="cat">[title]</a> -->
-                <!--END: byprice_format-->
-      <!-- 				</ul> -->
-            <!--END: FRAME_BYPRICE-->
-      
-            <!--START: LEFT_BANNER-->
-      <!-- 				[LEFT_BANNER] -->
-            <!--END: LEFT_BANNER-->
+
           <!--END: LEFT_BAR_BLOCKS-->
         </div>
         <!--END: LEFT BAR-->
@@ -452,9 +421,6 @@
             <!-- Main Content -->
             MIDDLE
             <!-- End of Main Content -->
-
-            <!-- 	<h2>Sidebar Blocks</h2> -->
-            <!-- chunks_o_code/sidebar.html -->
 	</section>
 <!--START: username-->
 
