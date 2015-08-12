@@ -1,0 +1,335 @@
+
+//~~~~~~~~ HEADER AND MENU STYLES ~~~~~~~~//
+@media only screen and (max-width: 61.9375em) {
+	header {
+		min-height: 80px;
+		padding-top: 15px;
+	}
+	button.cart, button.large, .button.large {
+		font-size: 1rem;
+		height: 2.875em;
+  }
+	header button.cart.large {
+	}
+	header button.cart .cart-number {
+		margin-left: 0;
+	}
+	
+	.logo {
+   		top: 0;
+		left: -10px;
+	}
+
+	.searchlight-result-text {
+		font-size: 15px;
+	}
+	table.searchlight-results {
+		width: 90%;
+	
+	}
+	body section#prime-content {
+  		margin-top: 0;
+	}
+
+}
+
+@media only screen and (max-width : $medium) {
+  
+
+  header {
+    background-color: lighten($neutral-dark, 65%);
+  }
+  .container.search-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $neutral-dark;
+
+    .input-group {
+      .form-control:first-child {
+        border-radius: 3px;
+      }
+    }
+
+  }
+
+
+  // Mobile Menu Stuff!
+  .search {
+    .pull-right.input-group {
+      width: 100%;
+    }
+    input {
+      font-size: 14px;
+      color: #a9a9a9;
+      background-color: #efefef;
+      border: 1px solid #a9a9a9;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      margin: 0;
+      width: 100%;
+      min-height: 27px;
+    }
+  }
+  
+
+  #mobile-menu {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .logo {
+      margin: 0;
+      left: 0;
+    }
+
+    a.inline {
+      padding: 0 5px;
+    }
+    a.toggle-navigation {
+      color: $neutral-dark;
+    }
+
+
+  }
+
+}
+
+
+// mobile menu tablet icons
+@media only screen and (min-width:$xs + 1) and (max-width:$medium - 1) {
+	#mobile-menu {
+		i.fa {font-size: 3em;}
+	}
+}
+
+@media only screen and (max-width: 61.9375em) {
+	.toggle-navigation {
+		padding: 0;
+	}
+	.toggle-navigation a.btn {
+		color: #474747;
+	}
+	.toggle-navigation a.btn:hover,.toggle-navigation a.btn:focus, .toggle-navigation a.btn:active {
+		color: #333;
+	}
+}
+
+
+
+
+
+
+//~~~~~~~~ PRODUCT STYLES ~~~~~~~~//
+@media only screen and (max-width : $tablet) {
+
+
+	.mobile-header {
+		border-top: 1px solid lighten($neutral-dark, 45%);
+		border-bottom: 1px solid lighten($neutral-dark, 45%);
+		background-color: lighten($neutral-dark, 65%);
+		margin-top: 20px;
+
+		.product-pricing {
+			padding-top: 20px;
+			h2#priceMobile {
+				color: $primary-color;
+				font-family: $default-font-narrow;
+				margin: 0;
+				font-size: 269%;
+				display: inline-block;
+				position: relative;
+			}
+			#sale-tag {
+				display: inline-block;
+				position: relative;
+			}
+
+		}
+		.product-title {
+			#product_id {
+				color: lighten($neutral-dark, 25%);
+			}
+		}
+		
+
+	}
+
+	.product-options {
+		.product-form label {
+		  font-size: medium;
+		  padding-top: 1em;
+		  padding-left: 0;
+		  padding-right: 0;
+		}
+		.product-form .option-row {
+		  margin-bottom: 10px;
+		  padding: 10px 20px;
+		}
+
+		.product-form .option-row #quantity {
+		    height: 2.8rem;
+		    width: 3rem;
+		    font-size: 1.2rem;
+		}
+
+		.product-form .fancy-select {
+			&.form-group {
+				margin-bottom: 0;
+			}
+			margin-right: 0;
+			width: 100%;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			height: 3.2rem;
+		}
+		.product-form .fancy-select select {
+			font-size: 1.2rem;
+			width: 100%;
+			height: 100%;
+		}
+		.product-form .fancy-select i {
+		    font-size: x-large;
+		    background-color: #efefef;
+		    padding: 10px 12px;
+	    	height: 100%;
+		}
+	}
+
+	
+
+}
+
+//~~~~~~~~ CART STYLES ~~~~~~~~//
+@media only screen and (max-width : $tablet) {
+	.total {
+		padding: 20px 10px;
+
+		.button.large {
+			padding: 0 10px;
+		}
+
+	}
+
+}
+
+.fancy-select-lg {
+	@extend .fancy-select;
+	&.form-group {
+		margin-bottom: 0;
+	}
+	margin-right: 0;
+	width: 100%;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	height: 3.2rem;
+
+	select {
+		font-size: 1.2rem;
+		width: 100%;
+		height: 100%;
+	}
+
+	i {
+	    font-size: x-large;
+	    background-color: #efefef;
+	    padding: 10px 12px;
+    	height: 100%;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : $xs) {
+    .badges .badges-list .badge-product {
+		width: 100%;
+	}
+}
+
+
+
+//~~~~~~~~~~~~ Listing Styles from Product Page and Home and Category Pages ~~~~~~~~~~~~~~//
+@media only screen and (max-width : $tablet) {
+	.listing {
+		.listing-container {
+			.product_thumb {
+				border: 0 none;
+			}
+
+		}
+
+	}
+
+}
+
+
+
+/*Add 5-col class...*/
+@media (min-width: 992px) {
+	.col-md-2-2 {
+		width: 20%;
+		position: relative;
+		padding-left: 15px;
+		padding-right: 15px;
+		float: left;
+	}
+}
+
+
+
+
+
+/*Override bootstrap container class...*/
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+		padding: 0;
+  }
+}
+
+/* Override bootstrap container in large width so it doesn't look stretched out */
+@media (min-width: 1200px) {
+	.container {
+		width: 1000px;
+	}
+}
+
+
+.sidr-class-hidden-xs,
+.sidr-class-hidden-sm,
+.sidr-class-hidden-md,
+.sidr-class-hidden-lg {
+	display: none;
+}
+
+.sidr .sidr-inner ul li {
+	/* Sidr Side mobile menu */
+	.sidr-class-hidden-xs,
+	.sidr-class-hidden-sm,
+	.sidr-class-hidden-md,
+	.sidr-class-hidden-lg {
+		display: none;
+	}
+}
+
+
+.sidr-inner .sidr-class-hidden {
+	display: none;
+}
+
+.sidr ul li.sidr-class-subcategories a.sidr-class-menu-open {
+	color: #676767;
+}
+
+/* Table Based Page Styles */
+/*override mobile bootstrap table styles*/
+@media screen and (max-width: 767px) {
+	.table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th {
+  	white-space: normal;
+	}
+	.table-responsive {
+		border: 0 none;
+	}
+}
+@media screen and (max-width: 767px) {
+	.product-form .MagicZoomPlus, .MagicZoomPlus:hover {
+		cursor: pointer !important;
+	}
+}

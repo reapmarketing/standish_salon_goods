@@ -3,7 +3,7 @@
  */
 (function($, Edge, compId){
 //images folder
-var im='/assets/templates/standish/images/';
+var im='/assets/templates/standish-responsive/images/';
 
 var fonts = {};
 

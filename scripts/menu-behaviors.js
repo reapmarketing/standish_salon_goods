@@ -44,7 +44,7 @@
 	// todo: create menu walker!
 	// Convert json data into a menu
 	MobileMenu.getItems = function() {
-		return $.getJSON('https://json.stand.sh/standish/menu-custom.json', function(data) {
+		return $.getJSON('https://json.stand.sh/standish-responsive/menu-custom.json', function(data) {
 
 			var menuItems = [],
 					unList = [];

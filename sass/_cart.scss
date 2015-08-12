@@ -1,0 +1,124 @@
+/* ~~~Cart and Checkout~~~ */
+
+#cart-header {
+  padding-bottom: 10px;
+}
+
+.medium .add-on-left {
+  position: relative;
+  left: -7px;
+  padding: 11px 16px 8px 0;
+  margin-right: 16px;
+  i {
+    font-size: 21px;
+  }
+}
+.large .add-on-left {
+  position: relative;
+  left: -11px;
+  padding: 14px 24px 11px 0;
+  margin-right: 20px;
+  i {
+    font-size: 26px;
+  }
+}
+
+
+.coupon {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  margin-top: 30px;
+}
+.buttons-order {
+  padding: 10px 0;
+}
+.cart_items_header {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  margin: 15px 0;
+  padding: 15px 15px;
+  font-size: 14px;
+}
+.cart_items_header > div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.cart_item {
+  border-bottom: 1px solid #dcdcdc;
+  padding: 16px 0;
+  font-size: 14px;
+}
+.cart_item img {
+  margin-right: 16px;
+  float: left;
+}
+.total {
+  padding: 42px;
+}
+.cart_items .options-list {
+  margin-left: 71px;
+}
+
+
+body .update_cart_button:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  content: "\f01e";
+}
+body .update_cart_button {
+  background-color: #dcdcdc;
+  color: $primary-gray;
+  border-color: #a9a9a9;
+}
+
+
+
+/* Sidebar Styles */
+.checkout-headers .item {
+  position: relative;
+  left: 20px;
+  margin-left: -20px;
+  font-size: 18px;   
+}
+.checkout-headers .checkout-headers:first-child {
+  width: 240px;
+}
+
+
+/* ~~~CartSprite~~~ */
+.cartsprite div {
+  background-image: url("/assets/templates/{$template}/images/cart-sprite.png");
+}
+.cartsprite .cards {
+  background-position: 0px 0px;
+  width: 140px;
+  height: 20px;
+  float: left;
+  margin-top: 37px;
+}
+.cartsprite .norton {
+  background-position: 0px -21px;
+  height: 50px;
+  width: 90px;
+  float: right;
+  margin-top: 24px;
+}
+@media only screen and (max-width: 767px) {
+  .cartsprite .cards {
+    margin-top: -12px;
+  }
+  .cartsprite .norton {
+    margin-top: -40px;
+  }
+  
+}
+
+
+
+
+
+
+

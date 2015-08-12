@@ -44,10 +44,10 @@ if(document.addEventListener ){
     };
 
    aLoader = [
-    { load: "/assets/templates/standish/scripts/edge_includes/jquery-1.7.1.min.js"},
-    { load: "/assets/templates/standish/scripts/edge_includes/edge.2.0.1.min.js"},
-          { load: "/assets/templates/standish/scripts/TailoredStandishAnimation_edge.js"},
-          { load: "/assets/templates/standish/scripts/TailoredStandishAnimation_edgeActions.js"}];
+    { load: "/assets/templates/standish-responsive/scripts/edge_includes/jquery-1.7.1.min.js"},
+    { load: "/assets/templates/standish-responsive/scripts/edge_includes/edge.2.0.1.min.js"},
+          { load: "/assets/templates/standish-responsive/scripts/TailoredStandishAnimation_edge.js"},
+          { load: "/assets/templates/standish-responsive/scripts/TailoredStandishAnimation_edgeActions.js"}];
 
 if (AdobeEdge.bootstrapLoading) { signaledLoading = true; AdobeEdge.loadResources=doLoadResources; AdobeEdge.playWhenReady=playWhenReady; }
 

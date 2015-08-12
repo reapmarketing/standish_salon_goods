@@ -1,0 +1,78 @@
+
+/*==========  Mobile First Method BreakPoints  ==========*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : $iphone) {
+    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : $xs) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : $tablet) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : $medium) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $large) {
+
+}
+
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : $large) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : $medium) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : $tablet) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : $xs) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : $iphone) {
+    
+}
+
+/*=====================================================
+=            Bootstrap 2.3.2 Media Queries            =
+=====================================================*/
+@media only screen and (max-width : $large) {
+
+}
+
+@media only screen and (max-width : 979px) {
+
+}
+
+@media only screen and (max-width : $tablet - 1) {
+
+}
+
+@media only screen and (max-width : $xs) {
+
+}
+
+@media only screen and (max-width : $iphone) {
+
+}

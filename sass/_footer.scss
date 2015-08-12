@@ -1,0 +1,144 @@
+/* Stuff that goes in the footer */
+
+.newsletter-signup {
+  height: 350px;
+  background-color: $neutral-dark;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  margin-top: 70px;
+}
+.newsletter-signup h5 {
+  padding: 50px 0 0 0;
+  letter-spacing: 2px;
+}
+.newsletter-signup input {
+  display: block;
+  width: 320px;
+  height: 50px;
+  margin: 30px auto;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+}
+.newsletter-signup .hs-button {
+  width: 320px;
+  background-color: $secondary-color;
+}
+.social-icons a {
+  color: #a9a9a9;
+  font-size: 30px;
+  margin: 42px 1px;
+  text-decoration: none;
+}
+.social-icons a i {
+  margin: 2px;
+}
+.social-icons a:hover {
+  color: $secondary-color;
+}
+.footer-navigation {
+  height: 50px;
+}
+.account-button {
+  display: block;
+  float: left;
+  width: 33.33%;
+  height: 50px;
+	font-size: 1.125rem;
+  line-height: 50px;
+  font-family: $default-font;
+  text-decoration: none;
+  text-align: center;
+}
+.account-button:hover {
+  text-decoration: underline;
+}
+.account-button.login {
+  background: $primary-color;
+  color: white;
+}
+.account-button.affiliate {
+  background: $secondary-color;
+  color: $neutral-dark;
+}
+.account-button.contact {
+  background: #f5f5dc;
+  color: $neutral-dark;
+}
+footer .container-fluid, .footer-child {
+  background-color: $neutral-dark;
+}
+.footer-logo {
+  /*display: block;*/
+  /*float: left;*/
+  background-image: url("/assets/templates/standish-responsive/images/footer-sprite.png");
+  margin: 44px 16px 20px 16px;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.norton {
+  margin-top: 63px;
+  width: 107px;
+  height: 57px;
+  background: none;
+}
+.usa {
+  margin-top: 70px;
+  width: 125px;
+  height: 51px;
+  background-position: -120px 0;
+}
+.pba {
+  width: 60px;
+  height: 117px;
+  background-position: -254px 0;
+}
+.interesting {
+  width: 53px;
+  height: 92px;
+  background-position: -317px 0;
+}
+.bbb {
+  margin-top: 75px;
+  width: 108px;
+  height: 42px;
+  background-position: 0 -58px;
+  background: none;
+}
+.bofa {
+  margin-top: 70px;
+  width: 145px;
+  height: 50px;
+  background-position: -109px -50px;
+}
+.bravo {
+	margin-top: 49px;
+	width: 95px;
+	height: 85px;
+	background-position: -371px 0px;
+}
+.quest {
+	margin-top: 61px;
+	width: 130px;
+	height: 72px;
+	background-position: -469px 0px;
+}
+
+.footer-copy {
+  color: #dcdcdc;
+  text-align: center;
+}
+
+.footer {
+  min-height: 240px;
+  background-color: $primary-gray;
+  width: 100%;
+}
+.footer li,
+.footer ul {
+  margin: 0;
+}
+
