@@ -10,10 +10,13 @@ module.exports = function(grunt) {
         }
       }
     },
-		sass: {
+    sass: {
       dist: {
         files: {
           'style/main.css': 'sass/main.scss'
+        },
+        options: {
+          lineNumbers: true,
         }
       }
     },

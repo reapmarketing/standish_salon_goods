@@ -101,7 +101,7 @@
 				hbar_slug = $('.custom_bar').first().data('bar');
 			}
 			
-			var url = "//json.stand.sh/standish-responsive/data.json";
+			var url = "//json.stand.sh/standish/data.json";
 			
 			// Hellobar code for getting external data
 			$.getJSON( url, function( data ) {

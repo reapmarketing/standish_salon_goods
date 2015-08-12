@@ -41,101 +41,24 @@
 		});
 	}
 
-	// todo: create menu walker!
-	// Convert json data into a menu
-	MobileMenu.getItems = function() {
-		return $.getJSON('https://json.stand.sh/standish-responsive/menu-custom.json', function(data) {
-
-			var menuItems = [],
-					unList = [];
-			// Convert to array
-			menuItems = convertToArray(data);
-			// Sort the menu items according to order property
-			menuItems = sortItems(menuItems);
-
-			// Traverse through my object
-			for (var key in menuItems) {
-				if (menuItems[key].show_mobile === true) {
-					unList[key]	= '';
-					if (menuItems[key].subcategories !== undefined) {
-						unList[key]	+= '<li class="subcategories">';
-					}
-					else {
-						unList[key]	+= '<li>';
-					}
-					if ( menuItems[key].url !== undefined ) {
-						unList[key] += '<a class="menu-open" href="' + menuItems[key].url + '">';
-					}
-					else {
-						unList[key] += '<a class="menu-open" href="">';
-					}	
-					unList[key] += key + '</a>';
-					if (menuItems[key].subcategories !== undefined) {
-						var subcategories = menuItems[key].subcategories,
-								subcategories = convertToArray(subcategories),
-								subcategories = sortItems(subcategories);
-								// subcategories = sortItems(subcategories);
-						
-						unList[key]	+= '<ul class="mobile-menu hidden menu" style="display:none;">';
-						
-						for (var k in subcategories) {
-							unList[key]	+= '<li>';
-							if ( subcategories[k].url !== undefined ) {
-								unList[key] += '<a href="' + subcategories[k].url + '">';
-							}
-							else {
-								unList[key] += '<a href="">';
-							}	
-							unList[key]	+= k;
-							unList[key]	+= '</a>';
-							unList[key]	+= '</li>';
-						}
-						unList[key]	+= '</ul>';
-						unList[key]	+= '</li>';
-					}
-					else {
-						unList[key]	+= '</li>'
-					}
-				}
-			}
-			unList = convertToArray(unList);
-			$('#mobile-menu').append('<ul />');
-			for (var i in unList) {
-				$('#mobile-menu > ul').append(unList[i]);
-			}
-		});
-	}
-	
-	MobileMenu.closeMenu = function() {
-		
-		
-	}
 
 	MobileMenu.init = function() {	
-		var el = this;		
-		return el.getItems().done(function(context) {
-			$('.toggle-navigation').sidr({
-				name: 'mobile-open',
-				source: '#mobile-menu',
-				onOpen: function() {
+		var el = this;
+
+		$('.toggle-navigation').sidr({
+			name: 'mobile-open',
+			side: 'right',
+			source: '.main-navigation',
+			onOpen: function() {
+				$('.sidr-inner > ul > li.sidr-class-subcategories').each(function() {
 					var el = this;
-					$('body').on('click', "#mobile-open", function(event) {
-						this.stopPropagation();
-					}).on('click', this, function() {
-						$.sidr('close', 'mobile-open');
+					$(el).on('click', '.sidr-class-menu-open', function(e) {
+						e.preventDefault();
+						$(this).siblings('.sidr-class-mobile-menu').toggle();
+						$(el).siblings().children('.sidr-class-mobile-menu').hide();
 					});
-				}
-			});
-			$('.sidr-inner > ul > li.sidr-class-subcategories').each(function() {
-				var el = this;
-				$(el).on('click', '.sidr-class-menu-open', function(e) {
-					e.preventDefault();
-					$(this).siblings('.sidr-class-mobile-menu').toggle();
-					$(el).siblings().children('.sidr-class-mobile-menu').hide();
 				});
-			});
-			
-			
+			}
 		});
 	}
 

@@ -5,6 +5,7 @@
 	$.Standish = (function() {});
 	window.Standish = window.Standish || {};
 
+
 	Standish.EqualHeights = function() {
 		function resizeColumns(groups) {
 			$.each(groups, function(index, value) {
@@ -21,9 +22,18 @@
 			'.listing .listing-container',
 			'.column .eqhgt',
 			'.column .eqhgt-g1',
-			'.pricebox-eqhgt'
+			'.pricebox-eqhgt',
+			'.footer-logo-sm'
 		];
 		resizeColumns(groups);
+	}
+
+	Standish.CloseHello = function(helloparent) {
+		$(helloparent).find('.close').on('click', function() {
+			$(helloparent).fadeOut(300, function() { $(this).remove(); });
+
+		});
+
 	}
 	
 	Standish.SearchForm = function() {
@@ -51,13 +61,13 @@
 				case 'listing_3':
 					var script = document.createElement('script');
 					script.id = 'listing';
-					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
+					script.src = '/assets/templates/salon-responsive/scripts/listing-scripts.js';
 					document.head.appendChild(script);
 				return;
 				case ( 'listing_2' ):
 					var script = document.createElement('script');
 					script.id = 'listing';
-					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
+					script.src = '/assets/templates/salon-responsive/scripts/listing-scripts.js';
 					document.head.appendChild(script);
 					// Insert hbspt script
 					var scriptb = document.createElement('script');
@@ -106,12 +116,44 @@
 		
 	}
 
+	$(function() {
+		// Wait till dom is ready to use slick
+		Standish.ActivateSliderNotFancy = function(htmlelement) {
+			if ( typeof $.fn.slick == "function" ) {
+				$(htmlelement).slick({
+					vertical: true,
+					arrows: false,
+					slidesToShow: 1,
+					autoplay: true
+				});
+			}
+		}
+		Standish.ActivateSliderFancy = function(element) {
+			if ( typeof $.fn.slick == "function" ) {
+				$(element).slick({
+
+				});
+			}
+
+		}
+	
+	});
+
 	// Events
 	$(function() {
+		// 1. Activate Equal Heights
 		Standish.EqualHeights();
+		// 2. Activate custom Template switching
 		Standish.TemplateSwitcher();
+		// 3. Make search input large for mobile devices
 		Standish.SearchForm();
+		// 4. Empty cart message unless at a different page
 		Standish.EmptyCart();
+		// 5. Close the Hello Bar		
+		Standish.CloseHello('.hello-container');
+		// 6. Activate the slider for features at top
+		Standish.ActivateSliderNotFancy('#slickShow');
+
 	});
 	// Add callback to window resize event
 	$(window).on('resize', function() {
@@ -119,4 +161,4 @@
 		Standish.SearchForm();
 	});
 	
-})(jQuery);
+})(jQuery)

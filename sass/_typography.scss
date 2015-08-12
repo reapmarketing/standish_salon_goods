@@ -6,7 +6,7 @@ ol {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 ol li,
 ul li {
@@ -40,7 +40,7 @@ h2 {
 
 h3 {
   font-size: 1.500rem;
-	font-weight: 700;
+  font-weight: 700;
 }
 
 h4 {
@@ -59,7 +59,11 @@ h6 {
   text-transform: uppercase;
 }
 p {
-	font-size: 1em;
+  font-size: 1em;
+}
+
+.subheader {
+  font-size: 78%;
 }
 
 @media only screen and (max-width: 61.9375em) {
@@ -92,14 +96,15 @@ p {
     font-size: 1.4375rem;
   }
   p {
-		font-size: 1.125rem;
+    font-size: 1.125rem;
   }
-	p.title {
-		font-size: 1.4375rem;
-	}
-	.hello p {
-		font-size: 1.25rem;
-	}
+  p.title {
+    font-size: 1.25rem;
+    font-weight: 100;
+  }
+  .hello p {
+    font-size: 1.25rem;
+  }
 }
 
 p {
@@ -111,11 +116,10 @@ a:link.button,
 a:visited.button {
   color: white;
   text-decoration: none;
-  padding: 5px 10px;
 }
 a:hover.button,
 a:active.button {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
@@ -125,24 +129,29 @@ a:visited {
   color: $primary-color;
 }
 a:hover {
-  color: #ff5a1d;
+  color: darken($primary-color, 10%);
 }
 a:active {
-  color: #ffa483;
+  color: darken($primary-color, 10%);
 }
 
 
+// Classes for extension
+.default {font-family: $default-font;}
 
+.narrow {font-family: $default-font-narrow;}
+
+.special {font-family: $special-font;}
 
 .strike {
-	text-decoration:line-through
+  text-decoration:line-through
 }
 .bold {
   font-weight: 700;
   color: $primary-color;
 }
 .center {
-	text-align: center;
+  text-align: center;
 }
 .italic {
   font-style: italic;
@@ -150,6 +159,7 @@ a:active {
 .allcaps {
   text-transform: uppercase;
   &.featured {
+    color: $highlight-color;
     & > a {
       color: $highlight-color;
     } 
@@ -167,4 +177,66 @@ strong {
 .sans {
   font-family: $default-font;
 }
+
+.return { color: $btn-color; }
+.usa-blue { color: $primary-color; }
+.money { color: $btn-highlight; }
+
+
+// HEADER level customizations to Font
+.navigation ul {
+  li {
+    @extend .narrow;
+  }
+  ul ul a {
+    @extend .default;
+  }
+}
+
+.search {
+  form, p, input, span, a, button {
+    @extend .special;
+  }
+
+}
+
+// Product level customizations to Font
+.listing p.title {
+  @extend .narrow;
+  min-height: 34px;
+}
+.pricebox .left-price {
+  @extend .narrow;
+}
+.product-form label {
+  @extend .narrow;
+}
+.product-form .questions {
+  @extend .narrow;
+}
+.brochure-download {
+  @extend .narrow;
+}
+.rating {
+  @extend .narrow;
+}
+.add-rating-link {
+  @extend .narrow;
+}
+
+
+// Form Font Stuff -- hubspot craziness
+
+button,
+.button,
+input[type=button],
+input[type=submit],
+.hs-form .hs-button {
+  @extend .default;
+}
+
+.hs-input {
+  @extend .default;
+}
+
 

@@ -4,16 +4,23 @@ $default-font-narrow: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 
 $default-font-serif: 'PT Serif', 'Times New Roman', Times, serif;
 
+$special-font: $default-font;
+
+
 /* Pink */
 $primary-color: #ff7f50;
 
 $primary-color-btn-highlight: #ffa07a;
+
+$btn-color: $primary-color;
 
 //*Color used for top-bar*// 
 $accent-color: rgb(255, 183, 157);
 
 // lime green
 $highlight-color: #dfe133;
+
+$btn-highlight: $primary-color-btn-highlight;
 
 // Standish Green
 $secondary-color: #c2d3bd;

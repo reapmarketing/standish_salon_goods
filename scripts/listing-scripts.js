@@ -324,67 +324,76 @@
 	// Reload the button, after change above
 	// twttr.widgets.load();
 
-	// Field 10 - Video
-	// console.log( $( '.field10' ).data( 'field10' ) );
-	// Example Embed Code: ce5yu2rats
-	
-	// console.log( $( '.field10' ).data( 'field10' ) );
-	var video_embed_codes = '';
-	if( embed_data = $( '.field10' ).data( 'field10' ) ) {
-		video_embed_codes = embed_data.split( '\n' );
-	}
+	// ----- Field 10 - Video ------- //
 
-	// Add This!
-	// autoPlay=true
+	var width = document.body.clientWidth; 
 
-	function getData(embed_code) {
-		var baseUrl = "https://fast.wistia.com/oembed/?url=";
-		var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
-		return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
-	}
+	// Limit this to width
+	if (width > 750) {
 
-	var AJAX = [];
-	var video_data = {};
-	var video_markup_new = '';
-	if( video_embed_codes ) {
-		video_markup_new = '<div class="video-embed"><h4 id="video" style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">Product Video</h4>';
-		$.each( video_embed_codes, function( i, embed_code ) {
-			AJAX.push( getData( embed_code ) );
-		});
-	}
 
-	$.when.apply($, AJAX).done(function(){
-		// This callback will be called with multiple arguments, one for each AJAX call
-		// Each argument is an array with the following structure: [data, statusText, jqXHR]
+		// console.log( $( '.field10' ).data( 'field10' ) );
+		// Example Embed Code: ce5yu2rats
 		
-		for(var i = 0; i < AJAX.length; i++){
-			if( arguments[i].length ) {
-				video_data[video_embed_codes[i]] = arguments[i][0];
-			} else {
-				video_data[video_embed_codes[i]] = arguments[0];
-			}
+		// console.log( $( '.field10' ).data( 'field10' ) );
+		var video_embed_codes = '';
+		if( embed_data = $( '.field10' ).data( 'field10' ) ) {
+			video_embed_codes = embed_data.split( '\n' );
 		}
-		
-		$.each( video_data, function( i, video ) {
-			video_markup_new += '<a href="#" class="video_popup" data-video="' + i + '" style="position: relative">';
-			video_markup_new += '<i class="icon-play-sign" style="font-size: 120px;position: absolute;text-decoration: none;top: -50px;left: 178px;"></i>';
-			video_markup_new += '<img src="' + video.thumbnail_url + '" class="" width="460" height="286" alt="" />';
-			video_markup_new += '</a><br /><br />';
-		});
-		
-		
 
-		$( '.sharebox' ).after( video_markup_new );
+		function getData(embed_code) {
+			var baseUrl = "https://fast.wistia.com/oembed/?url=";
+			var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
+			return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
+		}
 
-		$('.video_popup').on( 'click', function( e ) {
-			e.preventDefault();
-			vex.open({
-				content: video_data[$(this).data('video')].html,
-				contentCSS: { 'padding': '0', 'width': '960px' }
+
+		var AJAX = [];
+		var video_data = {};
+		var video_markup_new = '';
+		if( video_embed_codes ) {
+			video_markup_new = '<div class="video-embed"><h4 id="video" style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">Product Video</h4>';
+			$.each( video_embed_codes, function( i, embed_code ) {
+				AJAX.push( getData( embed_code ) );
 			});
+		}
+
+		$.when.apply($, AJAX).done(function(){
+			// This callback will be called with multiple arguments, one for each AJAX call
+			// Each argument is an array with the following structure: [data, statusText, jqXHR]
+			
+			for(var i = 0; i < AJAX.length; i++){
+				if( arguments[i].length ) {
+					video_data[video_embed_codes[i]] = arguments[i][0];
+				} else {
+					video_data[video_embed_codes[i]] = arguments[0];
+				}
+			}
+			
+			$.each( video_data, function( i, video ) {
+				video_markup_new += '<a href="#" class="video_popup" data-video="' + i + '" style="position: relative">';
+				video_markup_new += '<i class="icon-play-sign" style="font-size: 120px;position: absolute;text-decoration: none;top: -4rem;left: 1.25em;"></i>';
+				video_markup_new += '<img src="' + video.thumbnail_url + '" class="" width="460" height="286" alt="" />';
+				video_markup_new += '</a><br /><br />';
+			});
+			
+			
+
+			$( '.sharebox' ).after( video_markup_new );
+
+			$('.video_popup').on( 'click', function( e ) {
+				e.preventDefault();
+				vex.open({
+					content: video_data[$(this).data('video')].html,
+					contentCSS: { 'padding': '0', 'width': '960px' }
+				});
+			});
+		
 		});
+
+	}
+
 	
-	});
 
 	
 	
