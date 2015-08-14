@@ -1,5 +1,5 @@
-<!-- Template: listing_1.html -- promotional discount -->
-<div class="template" style="display:none" data-template="listing_1"></div>
+<!-- Template: listing_0.html -->
+<div class="template" style="display:none" data-template="listing_0"></div>
 
 <script type="text/javascript">
 // initialize product - google analytics
@@ -31,29 +31,19 @@ $( function(){
 <link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
 
 <article class="col-md-12" itemscope itemtype="http://schema.org/Product">
-	<div class="col-md-12 search-container">
+	<div class="col-md-12 breadcrumb-container">
     <!--START: CATEGORY_FULLINE-->
       <!--IF: CATEGORY_FULLINE-->
         <!-- display breadcrumbs in the main template if they exist -->
         
           <!--chunks_o_code/navigation.html-->
-        <div class="col-md-8 breadcrumb hidden-xs">
+        <div class="col-md-8 breadcrumb hidden-xs hidden-sm">
             [CATEGORY_FULLLINE]
         </div>
       <!--ENDIF: CATEGORY_FULLINE-->
     <!--END: CATEGORY_FULLINE-->
-  
-    <div class="col-md-4 pull-right search">
-      <form method="get" name="searchForm" action="search.asp">
-          <div class="input-group">
-            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
-            <span class="input-group-btn">
-                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
-              </span>
-          </div>
-      </form>
-    </div>
   </div>
+  <hr/>
 	<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
 		<input type="hidden" name="item_id" value="[catalogid]" />
 		<input type="hidden" name="itemid" value="[id]" ID="itemid" />
@@ -135,31 +125,23 @@ $( function(){
 				<div class="clearfix"></div>
 			</div>
 
-			<div class="sharebox">
+			<div class="sharebox hidden-sm hidden-xs">
 				<!--START: frame_likebutton-->
 					[frame_likebutton]
 				<!--END: frame_likebutton-->
 				<ul>
 					<li class="pinit"><a href="" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></li>
 					<li><a class="tweet_button" target="_blank" href="#tweet"></a></li>
-					<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-via="StandishStuff" data-related="StandishStuff" data-count="none">Tweet</a> -->
-<!--
-
-					<li class="like"><div class="fb-like" data-href="https://standishsalongoods.com" data-colorscheme="light" data-layout="button" data-action="like" data-show-faces="false" data-send="false"></div></li>
-
--->
 					<!--START: email_friend-->
 						<!-- <img src="assets/templates/common/images/productpage_emailfriend.png" alt="[product_emailtofriend]" border="0" /> -->
 						<li class="email"><i class="icon-envelope coral-text"></i> <a href="#" rel="nofollow" onclick="javascript:window.open('recommendafriend.asp?url=[friendurl]','popup','height=460,width=550,location=no,' + 'scrollbars=no,menubars=no,toolbars=no,resizable=yes');">[product_emailtofriend]</a></li>
 					<!--END: email_friend-->
 					<!-- <i class="icon-plus-sign"></i> -->
 				</ul>
-				<!--START: product_social-bookmarking-->
-					[product_social-bookmarking]
-				<!--END: product_social-bookmarking-->
+				
 			</div>
 			<!--START: reviews-->
-			<div class="reviews">
+			<div class="reviews hidden-xs hidden-sm">
 				<h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">[reviews_header]</h4>
 
 
@@ -196,21 +178,23 @@ $( function(){
 				<!--END: user_reviews-->
 			</div>
 			<!--END: reviews-->
-			<!--START: create_first_review-->
-				<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
-				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
-			<!--END: create_first_review-->
+			<div class="container hidden-xs hidden-sm">
+				<!--START: create_first_review-->
+					<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
+					<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
+				<!--END: create_first_review-->
 
-			<!--START: qaLinkFirst-->
-				<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_firstquestion]" border="0" />
-				<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_firstquestion]</a>
-			<!--END: qaLinkFirst-->
-	
-			<!--START: qaLinkNew-->
-				<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_newquestion]" border="0" />
-				<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_newquestion]</a>
-				<a href="#qa">(<i>[productqa_jump-to-qa]</i>)</a>
-			<!--END: qaLinkNew-->
+				<!--START: qaLinkFirst-->
+					<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_firstquestion]" border="0" />
+					<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_firstquestion]</a>
+				<!--END: qaLinkFirst-->
+		
+				<!--START: qaLinkNew-->
+					<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_newquestion]" border="0" />
+					<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_newquestion]</a>
+					<a href="#qa">(<i>[productqa_jump-to-qa]</i>)</a>
+				<!--END: qaLinkNew-->
+			</div>
 
 		<!--START: accessories_0-->
 			<div class="related-accessories row clearfix hidden-sm hidden-xs">
@@ -220,27 +204,27 @@ $( function(){
 				<!--START: accessories_items0-->
 					<div class="col-md-4 listing alpha">
 						<div class="listing-container">
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-              <!--START: ITEMPRICE-->
-                <!-- [product_yourprice] -->
-                <p class="price">[product_yourprice] [ITEMPRICE]</p>
-              <!--END: ITEMPRICE-->
-              <!--START: SALEPRICE-->
-                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                <!-- <span class="coral-text">[product_onsale]: </span> -->
-                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-              <!--END: SALEPRICE-->
-              <!-- <button>Add to Cart</button> -->
-              <!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
-              <input type="hidden" name="qty-[counter]" value="1" />
+			              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+			              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+			              <!--START: ITEMPRICE-->
+			                <!-- [product_yourprice] -->
+			                <p class="price">[product_yourprice] [ITEMPRICE]</p>
+			              <!--END: ITEMPRICE-->
+			              <!--START: SALEPRICE-->
+			                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+			                <!-- <span class="coral-text">[product_onsale]: </span> -->
+			                <p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
+			              <!--END: SALEPRICE-->
+			              <!-- <button>Add to Cart</button> -->
+			              <!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
+			              <input type="hidden" name="qty-[counter]" value="1" />
 						</div>
 						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
 				<!--END: accessories_items0-->
 
 				<!--START: accessories_items1-->
-					<div class="grid_2 listing omega">
+					<div class="col-md-4 listing omega">
 						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" alt="[name]" border="0" /></a>
 						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 						<!--START: ITEMPRICE-->
@@ -250,7 +234,7 @@ $( function(){
 						<!--START: SALEPRICE-->
 							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
 							<!-- <span class="coral-text">[product_onsale]: </span> -->
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+							<p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
 						<!--END: SALEPRICE-->
 						<!-- <button>Add to Cart</button> -->
 
@@ -280,27 +264,55 @@ $( function(){
 	<!-- End of the left side -->
 
 
-	<!-- The right side -->
-		<div class="col-md-6 col-sm-6 product_right">
 
-			<h1 itemprop="name" class="product-title">[name]</h1>
+	<!-- The right side -->
+		<div class="col-md-6 col-sm-6 row product_right">
+
+			<!-- Mobile Alteration Product Header --> 
+			<div class="mobile-header hidden-md hidden-lg row">
+				<div class="product-title col-sm-7 col-xs-7">
+					<h1 itemprop="name" class="mobile-title product-title">
+						[name]
+					</h1>
+					<p id="product_id">[id]</p>
+				</div>
+				<div class="product-pricing hidden-md hidden-lg col-sm-5 col-xs-5">
+
+					<!--START: SALEPRICE-->
+					<div id="sale-tag"><i class="fa fa-tag"></i> Sale!</div>
+					<!--END: SALEPRICE-->
+					<h2 id="priceMobile" class="nozero row" itemprop="price">
+					<!--START: ITEMPRICE-->
+						[price]
+					<!--END: ITEMPRICE-->
+					</h2>
+					<!--START: price2-->
+						<p class="darkgray-text row"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
+					<!--END: price2-->
+
+				</div>
+			</div>
+
+
+			<h1 itemprop="name" class="product-title hidden-sm hidden-xs">[name]</h1>
 			<!--START: id-->
 				<!-- [product_id] -->
-				<p class="part-no">Part Number <span id="product_id">[id]</span></p>
+			<p class="part-no hidden-sm hidden-xs">Part Number <span id="product_id">[id]</span></p>
 			<!--END: id-->
 			
 
-			<div class="pricebox">
+			<div class="pricebox hidden-sm hidden-xs">
 				<div class="cornersprite"></div>
 
 				<!--START: pricing-->
 					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
 					<!-- [product_Header-price] -->
-					<!--START: ITEMPRICE-->
-					<!--END: ITEMPRICE-->
+
 					<div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-						<!--START: ITEMPRICE--><span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span><!--END: ITEMPRICE-->
+							<!--START: ITEMPRICE-->
+				            <span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span>
+				            <!--END: ITEMPRICE-->
 						</div>
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 							<span class="hidden" itemprop="price" content="[saleprice]"></span>
@@ -316,7 +328,7 @@ $( function(){
 						<!--END: ITEMPRICE-->
 						<!-- [product_onsale] -->
 						<!--START: SALEPRICE-->
-							<p class="darkgray-text row"><span class="label">Promotional Discount:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
+							<p class="darkgray-text row"><span class="label">Sale Price:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
 						<!--END: SALEPRICE-->
 						<!--START: SAVINGS-->
 							<!-- [product_savings] -->
@@ -339,8 +351,7 @@ $( function(){
 			</div>
 
 			<div class="product-options">
-			
-			
+
 		<!--START: PRODUCT_OPTIONS_BLOCK-->
 			<!-- [product_optionheader] -->
 
@@ -378,7 +389,9 @@ $( function(){
 
 						<!--START: checkbox-format-->
 							<label for="warranty" class="checkbox">
-								<input type="checkbox" name="cb[oname]" value="[value]" onclick="nozeros();validateValues(document.add,1);" [selected] > [feature]: <span class="nozero">+ [oprice]</span>
+								<div class="checkbox">
+									<label><input type="checkbox" name="cb[oname]" value="[value]" onclick="nozeros();validateValues(document.add,1);" [selected] > [feature]: <span class="nozero">+ [oprice]</span></label>
+								</div>
 							</label>
 							<!-- <input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] />[feature] [oprice] -->
 						<!--END: checkbox-format-->
@@ -388,7 +401,7 @@ $( function(){
 						<!--END: radio-format-->
 
 						<!--START: dropdown-format-->
-							<div class="fancy-select form-group pull-right col-md-6">
+							<div class="fancy-select form-group col-md-6 col-sm-6">
 								<select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
 									<!--START: option-->
 									<option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
@@ -399,7 +412,7 @@ $( function(){
 						<!--END: dropdown-format-->
 
 						<!--START: dropdownimage-format-->
-							<div class="fancy-select form-group pull-right col-md-6">
+							<div class="fancy-select form-group col-md-6 col-sm-6">
 								<!-- note: image_click function changes image with option position -->
 								<!-- image_click($(this).find(':selected').index()+1); -->
 								<select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
@@ -418,34 +431,35 @@ $( function(){
 							<!-- [OPTIONLABEL] [OPTIONFIELD] -->
 						<!--END: opt-title-->
 						<!--START: opt-regular-->
-							<div class="option-row">
-								<label for="name">[OPTIONLABEL]: </label>
-								[OPTIONFIELD]
+							<div class="option-row row">
+								<label for="name" class="col-md-2 col-sm-6 col-xs-2">[OPTIONLABEL]: </label>
+								<div class="col-md-10 col-sm-6 col-xs-10">[OPTIONFIELD]</div>
 							</div>
 							<!--START: help--> 
 								<a href="#" onclick="popup('optionhelp.asp?optionid=[optid]',300,200)"><img src="assets/templates/common/images/help_icon.gif" border="0" alt="help" /></a> 
 							<!--END: help-->
 						<!--END: opt-regular--> 
-					<!--END: options-->
-				<!--END: divOptionsBlock--> 
+						<!--END: options-->
+					<!--END: divOptionsBlock--> 
+					</fieldset>
 				</div><!-- product-form -->
 
-			<!--END: PRODUCT_OPTIONS_BLOCK-->
+				<!--END: PRODUCT_OPTIONS_BLOCK-->
 
-			<!--START: RECURRINGORDER-->
-				<div class="option-row">
+				<!--START: RECURRINGORDER-->
+				<div class="option-row hidden-sm hidden-xs">
 					<label>[recurringorders_addcart-question]</label>
-					<div class="fancy-select form-group pull-right col-md-6">
+					<div class="fancy-select form-group col-md-6">
 						<select name="recurring_frequency" class="txtBoxStyle" id="recurring_frequency">
 							<option value="">[recurringorders_select-frequency]</option>
-              [recurring_frequency]
-            </select>
+			              	[recurring_frequency]
+			            </select>
 						<i class="fa fa-caret-down fa-sm"></i>
 					</div>
 					<p style="display: none">[recurringorders_addcart-bottom-message]</p>
 				</div><!-- .option-row -->
 				<div class="clearfix"></div>
-			<!--END: RECURRINGORDER-->
+				<!--END: RECURRINGORDER-->
 
 				<!-- <form class="product-form"> -->
 				<div class="product-form">
@@ -460,15 +474,15 @@ $( function(){
 									<!-- [PRICE] -->
 								<!--END: quantity_items-->
 							<!--END: quantity-->
-								<div class="option-row">
-									<div class="col-md-4 col-sm-6 col-xs-6">
-                  <label for="quantity">[product_quantity]: </label>
-                    <!-- <input id="quantity" type="text" placeholder="1" value="1"> -->
-                    <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
-                  </div>
-									
-									<div class="questions text-right col-md-8 col-sm-6 col-xs-6"><span>Questions?</span> Call <span class="bold">888.271.8434</span></div>
+								<div class="option-row row">
+									<label for="quantity" class="col-md-2 col-sm-6 col-xs-2">[product_quantity]: </label>
+									<div class="col-md-3 col-sm-6 col-xs-10">
+										<input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
+									</div>
+									<div class="questions text-right col-md-7 col-sm-12 col-xs-12"><span>Questions?</span> Call <span class="bold">888-885-8511</span></div>
 								</div>
+
+								
 								
 								
 							<!--END: qtybox-->
@@ -498,28 +512,26 @@ $( function(){
 							<!--END: addWishlist-->
 						<!--END: addtocart-->
 						<div class="option-row last row clearfix">
-							<label class="col-md-6 col-sm-6">
+							<label class="col-md-6 col-sm-6 hidden-sm hidden-xs">
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 10-14 Business Days!</span>
 							</label>
-              <div class="col-md-6 col-sm-6">
+              				<div class="col-md-6 col-sm-6 col-xs-10 pull-right">
 								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add); this.onclick=null;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-              </div>
+          					</div>
 						</div>
 					</fieldset>
-         <div class="clearfix"></div>
+         			<div class="clearfix"></div>
 
 				</div>
 				<!-- </form> -->
-				<!-- Absolute link path here because the link is snorked up and used as the HubSpot form redirect -->
-				<div class="brochure-download text-right hidden-sm hidden-xs"><a href="http://standishsalongoods.com/assets/images/brochure/standish-brochure.pdf"><small>Download Catalog</a>&nbsp;<i class="fa fa-cloud-download"></i></small></div>
 			</div>
 		
 			<div class="badges">
 				<h4>Benefits and Features for this product</h4>
-				<div class="badges-list"></div>
-				<div class="clear"></div>
+				<div class="badges-list col-md-12"></div>
+				<div class="clearfix"></div>
 			</div>
-		
+			<div class="clearfix"></div>
 			<div class="product-details">
 				<h4>Product Details</h4>
 				<ul class="details-list">
@@ -542,36 +554,36 @@ $( function(){
 			<div id="instafeed"></div>
 
 			<!--START: related_0-->
-      <h4>[product_Header-relateditems] </h4>
+	      	<h4>[product_Header-relateditems] </h4>
 
 			<div class="related-products row">
 
-      	<!--START: related_items0-->
-					<div class="col-md-4 col-sm-6 col-xs-6 listing alpha">
-          	<div class="listing-container">
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-              <!--START: product_review-->
-                <!--START: product_review_average-->
-                  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-                  <!-- [review_count] Review(s) -->
-                <!--END: product_review_average-->
-              <!--END: product_review-->
-              <!--START: ITEMPRICE-->
-                <!-- [product_yourprice] -->
-                <p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-              <!--END: ITEMPRICE-->
-              <!--START: SALEPRICE-->
-                <p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" style="position: relative;top: 4px;" /> <span class="nozero">[ITEMSALEPRICE]</span></p>							
-						<!--END: SALEPRICE-->
-            </div>
-            <input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
-          </div>
-          
-          <!--END: related_items0-->
+	      		<!--START: related_items0-->
+				<div class="col-md-4 col-sm-6 col-xs-6 listing alpha">
+					<div class="listing-container">
+						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=400&maxy=400" alt="[name]" border="0" /></a>
+						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+						<!--START: product_review-->
+						<!--START: product_review_average-->
+						  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+						  <!-- [review_count] Review(s) -->
+						<!--END: product_review_average-->
+						<!--END: product_review-->
+						<!--START: ITEMPRICE-->
+						<!-- [product_yourprice] -->
+						<p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+						<!--END: ITEMPRICE-->
+						<!--START: SALEPRICE-->
+						<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+						<p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span> <span class="nozero">[ITEMSALEPRICE]</span></p>							
+								<!--END: SALEPRICE-->
+					</div>
+	            	<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">
+	          	</div>
+	          
+	          	<!--END: related_items0-->
 			</div>
-		<!--END: related_0-->
+			<!--END: related_0-->
 
 		</div>
 		<!-- End of the Right Side -->
@@ -583,7 +595,6 @@ $( function(){
 			<a href="[nextprodlink]"><img src="thumbnail.asp?file=[nextprodthumb]&maxx=20&maxy=20" border="0" alt="" />Next</a>
 		<!--END: NEXT_PROD--> 
     
-    <!-- was: listing_blocks.html (unused stuff) -->
 		<!--START: qa-->
 			<a name="qa"></a>
 			<div itemprop="qa" itemscope itemtype="http://schema.org/QA">
@@ -673,33 +684,38 @@ $( function(){
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
 <script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
 <!-- Scripts are put in template because they are dependent on template vars -->
+
+<!--START: qaScript-->
+<script type="text/javascript" src="updateQaStats.js"></script>
+<!--END: qaScript-->
+
 <script>
 	// 3DCart Code
 	if (typeof jQuery == 'undefined') {
 		document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
 	}
 	
-	MagicZoomPlus.options = {
-		'opacity':'65',
-		'expand-effect':'elastic',
-		'background-opacity':'50',
-		'zoom-fade':'true',
-		'zoom-position':'right',
-		'fit-zoom-window':'false',
-		'hint':'false'
-	}
-	var width = document.body.clientWidth;
-	if (width < 750) {
+
+	var winWidth = window.innerWidth;
+	if (winWidth < 750) {
 		//mobile only
 		MagicZoomPlus.options = {
-			 'disable-zoom': true
-		 };
-	 }
+			'disable-zoom': true
+		};
+	}
+	else {
+		MagicZoomPlus.options = {
+			'opacity':'65',
+			'expand-effect':'elastic',
+			'background-opacity':'50',
+			'zoom-fade':'true',
+			'zoom-position':'right',
+			'fit-zoom-window':'false',
+			'hint':'false'
+		}
+	}
 </script>
 
-<!--START: qaScript-->
-<script type="text/javascript" src="updateQaStats.js"></script>
-<!--END: qaScript-->
 
 <script language="javascript">
 	//thumbnail script
@@ -829,13 +845,13 @@ $( function(){
 
 			if (optionfound==0)
 			{ 
-				changecontent("availability",product_availability);
+				changecontent("availability", product_availability);
 				return true;
 			}
 		
 			if (optionfound==1)
 			{
-				changecontent("availability",avail_instock);
+				changecontent("availability", avail_instock);
 				return true;
 			}
 		}
@@ -858,7 +874,7 @@ $( function(){
 	{
 		// This is a 3DCart Function
 		// Modifed to report Cart Addition to GA EECom Tracking
-		if (document.add.std_price==null)
+		if ( document.add.std_price == null )
 		{
 			GAEEC_addToCart(product)
 			document.add.submit();

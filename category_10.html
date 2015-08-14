@@ -1,87 +1,78 @@
-<!-- Template: category_10.html -->
-<div class="template" style="display:none" data-template="category_10"></div>
+<!-- Template: category_0.html -->
+<div class="template" style="display:none" data-template="category_0"></div>
 
 <script>
 jQuery( function($) {
-	jQuery('.productContainer').remove();
-	
-	// Adjust left side column height - right-side margin left is a better solution
-	// console.log( jQuery('.main_content').height() );
-	// jQuery('.left-bar').css( 'min-height', jQuery('.main_content').height() );
-	
-	// Pagination helper
-	$selected = jQuery('.selected');
-	if( $selected.text() === "1" ) {
-		$selected.addClass('first');
-	}
-	$pagination_links = jQuery('.pagination a');
-	if( $pagination_links.last().hasClass('active') ) {
-		$pagination_links.last().addClass('last');
-	}
-	
+  
+  // Adjust left side column height - right-side margin left is a better solution
+  // console.log( jQuery('.main_content').height() );
+  // jQuery('.left-bar').css( 'min-height', jQuery('.main_content').height() );
+  
+  // Pagination helper
+  $selected = jQuery('.selected');
+  if( $selected.text() === "1" ) {
+    $selected.addClass('first');
+  }
+  $pagination_links = jQuery('.pagination a');
+  if( $pagination_links.last().hasClass('active') ) {
+    $pagination_links.last().addClass('last');
+  }
 });
 </script>
 
 <div class="right-side col-md-10">
-	<div class="col-md-12 search-container">
+  <div class="col-md-12 breadcrumb-container hidden-xs hidden-sm">
     <!--START: CATEGORY_FULLINE-->
       <!--IF: CATEGORY_FULLINE-->
         <!-- display breadcrumbs in the main template if they exist -->
-        <div class="col-md-8 breadcrumb hidden-xs">
+        <div class="col-md-8 breadcrumb">
             [CATEGORY_FULLLINE]
         </div>
       <!--ENDIF: CATEGORY_FULLINE-->
     <!--END: CATEGORY_FULLINE-->
-    <div class="col-md-4 pull-right search">
-      <form method="get" name="searchForm" action="search.asp">
-          <div class="input-group">
-            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
-            <span class="input-group-btn">
-                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
-              </span>
-          </div>
-      </form>
-    </div>
   </div>
-	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
-  	<!--START: CATEGORY_HEADER-->
-			<div id="categoryHeader" class="data col-md-12">[CONTENT]</div>
-			<div class="hidden" data-catname="[categoryname]">[catid]</div>
-		<!--END: CATEGORY_HEADER--> 
-  	<!--START: FEATURE_MENU-->
-			<div class="titles">[category_Header-specials]</div>
-			<!--START: FEATURE_ITEMS-->
-				<!--START: FEATURE_ITEM_TEMPLATE_0-->
-					<!--START: product_review-->
-						<!--START: product_review_average-->
-							<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-							<!-- <div class="item">[review_count] Review(s)</div> -->
-						<!--END: product_review_average-->
-					<!--END: product_review-->
+
+  <hr class="hidden-xs hidden-sm" />
+  <form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
+    <!--END: BODY_HEADER-->
+    <!-- <h1 class="page_headers">[categoryname]</h1> -->
+    <!--START: CATEGORY_HEADER-->
+      <div id="categoryHeader" class="data row">[CONTENT]</div>
+      <div class="hidden" data-catname="[categoryname]">[catid]</div>
+    <!--END: CATEGORY_HEADER-->
+
+    <!--START: FEATURE_MENU-->
+      <div class="titles">[category_Header-specials]</div>
+      <!--START: FEATURE_ITEMS-->
+        <!--START: FEATURE_ITEM_TEMPLATE_0-->
+          <!--START: product_review-->
+            <!--START: product_review_average-->
+              <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+              <!-- <div class="item">[review_count] Review(s)</div> -->
+            <!--END: product_review_average-->
+          <!--END: product_review-->
           <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-          	<div class="listing-container">
-          
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+            <div class="listing-container">
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=400&maxy=400" alt="[name]" border="0" /></a>
               <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
               <!--START: ITEMPRICE-->
-                <!-- [product_yourprice] -->
-                <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+              <!-- [product_yourprice] -->
+              <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
               <!--END: ITEMPRICE-->
               <!--START: SALEPRICE-->
-                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                <!-- <span class="coral-text">[product_onsale]: </span> -->
-                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+              <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+              <!-- <span class="coral-text">[product_onsale]: </span> -->
+              <p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
               <!--END: SALEPRICE-->
-              <!-- <button>Add to Cart</button> -->
             </div>
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
-					</div>
+            <!-- <button>Add to Cart</button> -->
+            <input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
+          </div>
         <!--END: FEATURE_ITEM_TEMPLATE_0-->
-			<!--END: FEATURE_ITEMS-->
-     <!--END: FEATURE_MENU-->
-
-
-    <!--START: catFilterMainBlock--> 
+      <!--END: FEATURE_ITEMS-->
+    <!--END: FEATURE_MENU-->
+  
+      <!--START: catFilterMainBlock--> 
       <!-- filter block starts here-->
     
       <!--START: catFilter-->
@@ -95,130 +86,122 @@ jQuery( function($) {
           <span class="label label-danger"><a href="#" onclick="javascript:removeCatFilter();" style="color: white"><i class="fa fa-times-circle"></i> [category_Header-RemoveFilters]</a></span>
         <!--END: catFilterRemoveLink-->
       <!--END: catFilter-->
-
-    <div class="row">
-      <!--START: catFilter_Filter-->
-      <!-- the filter title can be outside: [catFilterName]--> 
-        <!-- Use this block if you want to show filters as a list--> 
-        <!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
-        <div class="form-group col-md-3 col-sm-12 col-xs-12 fancy-select pull-right">
-          <select class="form-control" name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
-            <option value="">Filter by [catFilterName]</option> 
-            <!--START: catFilter_Filter_Item--> 
-            <option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
-            <!--END: catFilter_Filter_Item--> 
-          </select>
-          <i class="fa fa-caret-down fa-sm"></i>
-        </div>
-        <!--------------------------------------------------------->
-      <!--END: catFilter_Filter-->
+    
+    
+      <div class="col-md-12">
+        <!--START: catFilter_Filter-->
+        <!-- the filter title can be outside: [catFilterName]--> 
+          <!-- Use this block if you want to show filters as a list--> 
+          
+          <!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
+    
+          <div class="form-group col-md-3 col-sm-4 col-xs-4 fancy-select pull-right">
+            <select class="form-control" name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
+              <option value="">Filter by [catFilterName]</option> 
+              <!--START: catFilter_Filter_Item--> 
+              <option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
+              <!--END: catFilter_Filter_Item--> 
+            </select>
+            <i class="fa fa-caret-down fa-sm"></i>
+          </div>
+        <!--END: catFilter_Filter-->
+      </div>
+    
+    
+    
       <input type="hidden" name="hdnCatFilter" id="hdnCatFilter" value="[catFilter]" />
-			
       <script type="text/javascript">
-				function setCatFilter(strFilter, objForm, removeSubsequent)
-				{
-					if (removeSubsequent)
-					{
-						//alert(strFilter);
-						objForm.hdnCatFilter.value = strFilter;
-					}
-					else
-					{
-						objForm.hdnCatFilter.value = objForm.hdnCatFilter.value + '@' + strFilter;
-					}
-					//alert(objForm.hdnCatFilter.value);
-					objForm.submit();
-				}
-				function removeCatFilter()
-				{
-					var objForm = document.frmsortby;
-					objForm.hdnCatFilter.value = "";
-					objForm.submit();
-				}
-			</script>
-			<!-- filter block ends here--> 
-		<!--END: catFilterMainBlock-->
-    </div>
-		<div class="row">
-    	<!--START: ITEMS-->
-			<!-- <div class="titles">&nbsp;[category_Header-products] (Total Items: [productnumber])</div> -->
-			<!--START: UNDOVIEWALL-->
-				<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
-			<!--END: UNDOVIEWALL-->
-      <!--START: CATEGORY_ITEMS-->
+        function setCatFilter(strFilter, objForm, removeSubsequent)
+        {
+          if (removeSubsequent)
+          {
+            //alert(strFilter);
+            objForm.hdnCatFilter.value = strFilter;
+          }
+          else
+          {
+            objForm.hdnCatFilter.value = objForm.hdnCatFilter.value + '@' + strFilter;
+          }
+          //alert(objForm.hdnCatFilter.value);
+          objForm.submit();
+        }
+        function removeCatFilter()
+        {
+          var objForm = document.frmsortby;
+          objForm.hdnCatFilter.value = "";
+          objForm.submit();
+        }
+      </script>
+      <!-- filter block ends here--> 
+    <!--END: catFilterMainBlock-->
+    </form>
+    <!--START: ITEMS-->
   
+      <!--START: CATEGORY_ITEMS-->
         <!--START: ITEM_TEMPLATE_0-->
-          <!--START: product_review-->
-            <!--START: product_review_average-->
-              <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-              <!-- <div class="item">[review_count] Review(s)</div> -->
-            <!--END: product_review_average-->
-          <!--END: product_review-->
           <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
             <div class="listing-container">
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
+              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=400&maxy=400" alt="[name]" border="0" style="max-height:190px; max-width:160px;"/></a>
               <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
               <!--START: ITEMPRICE-->
-                <!-- [product_yourprice] -->
-                <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+              <!-- [product_yourprice] -->
+              <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
               <!--END: ITEMPRICE-->
               <!--START: SALEPRICE-->
-                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                <p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-                <img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
+              <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+              <p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
               <!--END: SALEPRICE-->
               <!-- <button>Add to Cart</button> -->
               <!-- value="[category_buyitlink]" -->
             </div>
-            <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn" style="display:block; width: 100%;">
+            <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn hidden-sm hidden-xs" style="display:block; width: 100%;">
           </div>
         <!--END: ITEM_TEMPLATE_0--> 
       <!--END: CATEGORY_ITEMS-->
+
       <!--END: ITEMS-->
+  
+  <div class="clearfix"></div>
+  <!--START: PAGING-->
+  <div class="col-md-12">
+    <!-- [category_moreresults] -->
+    <div class="pagination">
+      <!--START: PREV-->
+        <a class="btn first" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">&laquo;</a>
+        <!-- [category_previouspage] -->
+      <!--END: PREV-->
+      <!--START: PAGES--> 
+        <!--START: FIRST_PAGE--> 
+          <a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a>
+        <!--END: FIRST_PAGE--> 
+        <!--START: PAGES_SELECTED--> 
+          <a class="btn active selected" href="#">PAGE</a>
+        <!--END: PAGES_SELECTED--> 
+        <!--START: PAGES_NOTSELECTED--> 
+          <a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+        <!--END: PAGES_NOTSELECTED--> 
+        <!--START: LAST_PAGE--> 
+          <a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+        <!--END: LAST_PAGE--> 
+      <!--END: PAGES--> 
+      <!--START: NEXT--> 
+        <a class="btn last" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">&raquo;</a>
+        <!-- [category_nextpage] -->
+        <div class="clearboth"></div>
+        <!-- <a href="view_category.asp?viewall=1&cat=[catid]">View All</a> -->
+      <!--END: NEXT-->
     </div>
-    
-  </form>
-    <!--START: PAGING-->
-    <div class="col-md-12">
-      <!-- [category_moreresults] -->
-      <div class="pagination">
-        <!--START: PREV-->
-          <a class="btn first" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">&laquo;</a>
-          <!-- [category_previouspage] -->
-        <!--END: PREV-->
-        <!--START: PAGES--> 
-          <!--START: FIRST_PAGE--> 
-            <a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a>
-          <!--END: FIRST_PAGE--> 
-          <!--START: PAGES_SELECTED--> 
-            <a class="btn active selected" href="#">PAGE</a>
-          <!--END: PAGES_SELECTED--> 
-          <!--START: PAGES_NOTSELECTED--> 
-            <a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
-          <!--END: PAGES_NOTSELECTED--> 
-          <!--START: LAST_PAGE--> 
-            <a class="btn" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
-          <!--END: LAST_PAGE--> 
-        <!--END: PAGES--> 
-        <!--START: NEXT--> 
-          <a class="btn last" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">&raquo;</a>
-          <!-- [category_nextpage] -->
-          <div class="clearboth"></div>
-          <!-- <a href="view_category.asp?viewall=1&cat=[catid]">View All</a> -->
-        <!--END: NEXT-->
-      </div>
-    </div>
-    <!--END: PAGING-->
-  
-    <!--START: UNDOVIEWALL-->
-      <!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
-    <!--END: UNDOVIEWALL-->
-  
-  <!--END: ITEMS-->
-  
-    <!--START: CATEGORY_FOOTER-->
-      <div class="col-md-12">[CONTENT]</div>
-    <!--END: CATEGORY_FOOTER-->
+  </div>
+  <!--END: PAGING-->
+
+  <!--START: UNDOVIEWALL-->
+    <!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
+  <!--END: UNDOVIEWALL-->
+
+
+
+  <!--START: CATEGORY_FOOTER-->
+    <div class="col-md-12">[CONTENT]</div>
+  <!--END: CATEGORY_FOOTER-->
 
 </div>
-

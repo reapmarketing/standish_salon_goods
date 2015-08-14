@@ -3,31 +3,70 @@
     
     <!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
     <script type="text/javascript">$('.left-bar').show();</script>
-<div class="col-md-10">
-			<!-- [category_Header-specials] -->
-    <div class="col-md-12 search-container">
-        <div class="col-md-4 pull-right search">
-            <form method="get" name="searchForm" action="search.asp">
-                <div class="input-group">
-                    <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
-                    <span class="input-group-btn">
-                        <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
-                    </span>
-                </div>
-            </form>
+    <div class="col-md-10">
+            <!-- [category_Header-specials] -->
+        <!--START: CATEGORY_HEADER-->
+        <div class="row">
+            [CONTENT]
         </div>
-    </div>
-    
-    <!--START: CATEGORY_HEADER-->
-    <div class="col-md-12">
-        [CONTENT]
-    </div>
-    <!--END: CATEGORY_HEADER-->
-    <div class="col-md-12">
-        <h3> Featured Products</h3>
+        <!--END: CATEGORY_HEADER-->
         
-        
-    
+        <div class="col-md-12 hidden-md hidden-lg filters">
+            <br/>
+            <div class="fancy-select-lg form-group col-md-12">
+                <select class="input-lg" onchange="location = this.options[this.selectedIndex].value;">
+                <option value="">Select Equipment Type</option>
+                <optgroup label="Chairs:">
+                    <option value="/adjust-a-sink">Main</option>
+                    <option value="/salon-styling-chairs">Styling Chairs</option>
+                    <option value="/all-purpose-salon-chairs">All-Purpose Chairs</option>
+                    <option value="/barber-chairs">Barber Chairs</option>
+                    <option value="/salon-shampoo-chairs">Shampoo Chairs</option>
+                    <option value="/salon-dryer-chair-units">Dryer Chairs</option>
+                    <option value="/salon-stools">Stools</option>
+                    <option value="/salon-reception-seating">Reception Chairs</option>
+                    <option value="/salon-pedicure-chairs">Pedicure Chairs</option>
+                    <option value="/salon-chair-covers">Chair Covers </option>
+                </optgroup>
+                <optgroup label="Color Bars:">
+                    <option value="/salon-color-bars">Main</option>
+                </optgroup>
+                <optgroup label="Stations:">
+                    <option value="/salon-styling-stations">Main</option>
+                    <option value="/single-salon-styling-stations">Single Stations</option>
+                    <option value="/back-to-back-salon-styling-stations">Back-to-Back Stations</option>
+                    <option value="/salon-tower-stations">Tower Stations</option>
+                    <option value="/salon-wet-stations">Wet Stations</option>
+                    <option value="/glass-stations-mirrors">Glass & Mirror Stations</option>
+                </optgroup>
+                <optgroup label="Manicure & Pedicure:">
+                    <option value="/manicure-pedicure-equipment">Main</option>
+                    <option value="/salon-manicure-tables">Manicure Tables</option>
+                    <option value="/salon-pedicure-chairs">Pedicure Chairs</option>
+                    <option value="/nail-technician-chairs">Nail Tech Chairs</option>
+                    <option value="/pedicure-carts-trolleys">Carts & Trolleys</option>
+                </optgroup>
+                <optgroup label="Shampoo:">
+                    <option value="/manicure-pedicure-equipment">Main</option>
+                    <option value="/salon-manicure-tables">Manicure Tables</option>
+                    <option value="/salon-pedicure-chairs">Pedicure Chairs</option>
+                    <option value="/nail-technician-chairs">Nail Tech Chairs</option>
+                    <option value="/pedicure-carts-trolleys">Carts & Trolleys</option>
+                </optgroup>
+                <optgroup label="Reception:">
+                    <option value="/salon-reception-area-equipment">Main</option>
+                    <option value="/salon-reception-desks">Desks</option>
+                    <option value="/salon-reception-seating">Chairs</option>
+                    <option value="/salon-retail-displays">Retail Displays</option>
+                </optgroup>
+                <optgroup label="Appliances:">
+                    <option value="/appliances">Main</option>
+                </optgroup>
+                </select>
+                <i class="fa fa-caret-down fa-sm"></i>
+            </div>
+        </div>
+
         <!--START: FEATURE_MENU-->
             <!--START: CATEGORY_ITEMS-->
                 <!--START: ITEM_TEMPLATE_0-->
@@ -39,35 +78,34 @@
                     <!--END: product_review-->
                     <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
                         <a href="product.asp?itemid=[catalogid]">
-                        <img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" /></a>
+                        <img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=400&maxy=400" alt="[name]" /></a>
                         <div class="listing-container">
-                        	<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+                            <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
                         <!--START: ITEMPRICE-->
                             <!-- [product_yourprice] -->
                             <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
                         <!--END: ITEMPRICE-->
                         <!--START: SALEPRICE-->
                             <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                            <!-- <span class="coral-text">[product_onsale]: </span> -->	
-                            <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+                            <!-- <span class="coral-text">[product_onsale]: </span> --> 
+                            <p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span><span class="nozero">[ITEMSALEPRICE]</span></p>
                         <!--END: SALEPRICE-->
                         <!-- <button>Add to Cart</button> -->
                         <!-- [category_buyitlink] -->
                         </div> 
-                         <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn">
+                         <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn hidden-sm hidden-xs">
                     </div>
                 <!--END: ITEM_TEMPLATE_0-->
             <!--END: CATEGORY_ITEMS-->
         <!--END: FEATURE_MENU-->
-        <div class="col-md-12">
-        	<!--START: CATEGORY_FOOTER-->
-            <!-- 		[CONTENT] -->
+        <div class="col-md-10">
+            <!--START: CATEGORY_FOOTER-->
+            <!--        [CONTENT] -->
             <!--END: CATEGORY_FOOTER-->
         </div>
-    </div>
 
 </div>
-	
+    
 
 
 <!-- END Template: home.html -->

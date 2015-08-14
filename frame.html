@@ -161,36 +161,36 @@
 						</div>
 				</div>
 				<div class="header center-block row">
-						<div class="container">
-								<div id="mobile-menu" class="hidden-md hidden-lg col-sm-12">
+						<div id="mobile-menu" class="hidden-md hidden-lg col-sm-12">
+							<div class="row">
+								<div class="site-branding col-sm-4 col-xs-6">
+									<a href="/">
+										<h2 class="logo">Standish Salon Furniture</h2></a></div>
 
-									<div class="row">
-										<div class="site-branding col-sm-9 col-xs-9">
-											<a href="/">
-												<h2 class="logo">Standish Salon Furniture</h2></a></div>
-
-										<div class="col-sm-8 col-xs-6">
-											<div class="pull-right">
-												<a class="inline" href="/view_cart.asp"><span>[ITEMSINCART]</span><i class="fa fa-shopping-cart fa-2x"></i></a>
-												<a class="inline" href="/myaccount.asp?secure"><i class="fa fa-user fa-2x"></i></a>
-												<a class="inline toggle-navigation"><i class="fa fa-bars fa-2x"></i></a>
-											</div>
-										</div>
-
+								<div class="col-sm-8 col-xs-6">
+									<div class="pull-right">
+										<a class="inline" href="/view_cart.asp"><span>[ITEMSINCART]</span><i class="fa fa-shopping-cart fa-2x"></i></a>
+										<a class="inline" href="/myaccount.asp?secure"><i class="fa fa-user fa-2x"></i></a>
+										<a class="inline toggle-navigation"><i class="fa fa-bars fa-2x"></i></a>
 									</div>
 								</div>
 
+							</div>
+						</div>
+						<div id="mobile-menu-json" class="hidden"></div>
 
-								<div class="col-md-5 hidden-sm hidden-xs">
+						<div class="container hidden-sm hidden-xs">
+
+								<div class="col-md-5">
 									<div class="site-branding col-md-12">
 										<a href="/">
 											<h2 class="logo"><img class="img-responsive" src="/assets/images/StandishPartnerLogo.png"></h2>
 										</a>
 									</div>
-									<div class="credentials hidden-sm hidden-xs"></div>
+									<div class="credentials"></div>
 								</div>
 
-								<div class="col-md-4 hidden-sm hidden-xs">
+								<div class="col-md-4">
 									<div id="slickShow">
 										<div class="slide-option">
 											<span class="slide-option-text allcaps serif pull-right small"><i class="usa-blue fa fa-flag fa-lg"></i>  USA-Made Items</span>
@@ -204,7 +204,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-3 button-container text-right padd-bottom-10 hidden-sm hidden-xs">
+								<div class="col-md-3 button-container text-right padd-bottom-10">
 										<div class="col-md-12 col-sm-12 col-xs-12">
 											<a href="/view_cart.asp"><button class="button cart large btn"><i class="fa fa-shopping-cart"></i><span class="hidden-xs hidden-s">Your Cart</span><span class="cart-number">[ITEMSINCART]</span></button></a>
 										</div>
@@ -282,22 +282,22 @@
 							</div>
 	
 							<div class="column col4">
-															<ul class="sub-menu eqhgt">
-																	<li class="allcaps"><a href="/salon-accessories">Accessories</a>
-																	<li><a href="/salon-retail-displays">Retail Displays</a></li>
-																	<li><a href="/salon-trays-trolleys">Trays & Trolleys</a></li>
-																	<li><a href="/salon-stools">Stools</a></li>
-																	<li><a href="/salon-floor-mats">Floor Mats</a></li>
-																	<li><a href="/salon-mirrors">Mirrors</a></li>
-																	<li><a href="/salon-chair-covers">Chair Covers</a></li>
-																	<li><a href="/replacement-parts">Replacement Parts</a></li>
-																	<li><a href="/salon-trolleys">Trolleys</a></li>
-																	<li class="allcaps"><a href="/salon-hair-dryers">DRYERS</a></li>
-																	<li><a href="/salon-dryer-chairs">Dryer Chairs</a></li>
-																	<li><a href="/salon-hair-dryers">Color Processors</a></li>
-																	<li class="allcaps"><a href="/break-room-appliances">BREAK ROOM</a></li>
-															</ul>
-													</div>
+								<ul class="sub-menu eqhgt">
+										<li class="allcaps"><a href="/salon-accessories">Accessories</a>
+										<li><a href="/salon-retail-displays">Retail Displays</a></li>
+										<li><a href="/salon-trays-trolleys">Trays & Trolleys</a></li>
+										<li><a href="/salon-stools">Stools</a></li>
+										<li><a href="/salon-floor-mats">Floor Mats</a></li>
+										<li><a href="/salon-mirrors">Mirrors</a></li>
+										<li><a href="/salon-chair-covers">Chair Covers</a></li>
+										<li><a href="/replacement-parts">Replacement Parts</a></li>
+										<li><a href="/salon-trolleys">Trolleys</a></li>
+										<li class="allcaps"><a href="/salon-hair-dryers">DRYERS</a></li>
+										<li><a href="/salon-dryer-chairs">Dryer Chairs</a></li>
+										<li><a href="/salon-hair-dryers">Color Processors</a></li>
+										<li class="allcaps"><a href="/break-room-appliances">BREAK ROOM</a></li>
+								</ul>
+							</div>
 	
 						</li>
 													
@@ -413,6 +413,19 @@
 					<!--container -->
 		</nav>
 		<!-- navbar -->
+
+		<div class="container search-container hidden-md hidden-lg">
+			<div class="col-md-4 col-sm-12 col-xs-12 pull-right search">
+				<form method="get" name="searchForm" action="search.asp">
+						<div class="input-group pull-right">
+							<input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+							<span class="input-group-btn">
+									<button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+								</span>
+						</div>
+				</form>
+			</div>
+		</div>
 
 	<!-- End of Header -->
 		<section class="container" id="prime-content">

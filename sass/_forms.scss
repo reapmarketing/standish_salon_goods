@@ -1,5 +1,6 @@
 fieldset {
   border: none;
+  width: 100%;
 }
 
 button,
@@ -35,6 +36,11 @@ html input[disabled] {
   cursor: default;
 }
 
+
+.input-group-btn>.btn {
+  padding: 6px 20px;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
@@ -68,23 +74,102 @@ input::-moz-focus-inner {
   background: transparent none;
 }
 
+
+.fancy-select i {
+  pointer-events: none;
+}
+
+.fancy-select img {
+  margin: 3px 0 0 235px;
+}
+.fancy-select select {
+  background: transparent;
+  color: $neutral-dark;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  height: 34px;
+  -webkit-appearance: none;
+  box-shadow: none;
+  position: absolute;
+  line-height: 28px;
+  padding: 0 10px;
+  -moz-appearance: window;
+  height: 100%;
+/*   padding: 6px 0 0 3px; */
+}
+.fancy-select {
+  margin-right: 10px;
+  padding: 0;
+  border: 1px solid #dcdcdc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 34px;
+  overflow: hidden;
+  background: #efefef;
+  display: inline-block;
+  position: relative;
+}
+.fancy-select i {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 18px;
+  border-left: 1px solid #dcdcdc;
+  padding: 6% 5%;
+  height: 100%;
+}
+
+
+
 button,
 .button,
 input[type=button],
 input[type=submit],
+button[type=submit],
 .hs-form .hs-button {
-  -webkit-appearance:none;
-  cursor: pointer;
-  -webkit-border-radius: 3px;
+  background: $btn-highlight;
+  background-image: -webkit-linear-gradient(top, $btn-highlight, $btn-color);
+  background-image: -moz-linear-gradient(top, $btn-highlight, $btn-color);
+  background-image: -ms-linear-gradient(top, $btn-highlight, $btn-color);
+  background-image: -o-linear-gradient(top, $btn-highlight, $btn-color);
+  background-image: linear-gradient(to bottom, $btn-highlight, $btn-color);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
   border-radius: 3px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  font-family: $default-font;
-  font-weight: 400;
+  text-shadow: 0px -1px 0px $btn-highlight;
   color: white;
-  background-color: $primary-color;
-  border-bottom: 1px solid $primary-darken;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.button.btn.btn-secondary,
+.btn.btn-secondary,
+.btn-secondary {
+  background: $secondary-btn-highlight;
+  background-image: -webkit-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
+  background-image: -moz-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
+  background-image: -ms-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
+  background-image: -o-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
+  background-image: linear-gradient(to bottom, $secondary-btn-highlight, $secondary-btn-color);
+  text-shadow: 0px -1px 0px $secondary-btn-highlight;
+}
+
+button[type=submit].btn-lg, .btn.btn-lg {
+  padding: 10px 16px;
+  font-size: 105%;
+}
+
+.btn-hello {
+  background-color: darken($accent-color, 10%);
+  border-bottom: 1px solid darken($accent-color, 30%);
+}
+.btn-hello:hover {
+  background-color: darken($accent-color, 5%);
+  border-bottom: 1px solid darken($accent-color, 20%);
 }
 
 btn.focus, .btn:focus, .btn:hover, .hs-form .hs-button:focus, .hs-form .hs-button:hover {
@@ -97,7 +182,24 @@ input[type=submit]:hover,
 button:hover,
 .button:hover,
 .hs-form .hs-button:hover {
-  background-color: $primary-color-btn-highlight;
+  background: $btn-color;
+  background-image: -webkit-linear-gradient(top, $btn-color, $btn-color);
+  background-image: -moz-linear-gradient(top, $btn-color, $btn-color);
+  background-image: -ms-linear-gradient(top, $btn-color, $btn-color);
+  background-image: -o-linear-gradient(top, $btn-color, $btn-color);
+  background-image: linear-gradient(to bottom, $btn-color, $btn-color);
+  text-decoration: none;
+}
+.button.btn.btn-secondary:hover,
+.btn.btn-secondary:hover,
+.btn-secondary:hover {
+  background: $secondary-btn-color;
+  background-image: -webkit-linear-gradient(top, $secondary-btn-color, $secondary-btn-color);
+  background-image: -moz-linear-gradient(top, $secondary-btn-color, $secondary-btn-color);
+  background-image: -ms-linear-gradient(top, $secondary-btn-color, $secondary-btn-color);
+  background-image: -o-linear-gradient(top, $secondary-btn-color, $secondary-btn-color);
+  background-image: linear-gradient(to bottom, $secondary-btn-color, $secondary-btn-color);
+  text-decoration: none;
 }
 .button.medium,
 button.medium {
@@ -122,20 +224,7 @@ button.large {
   border-bottom-right-radius: 3px;
   font-size: 15px;
 }
-.btn.standishgreen,
-input[type=button].standishgreen,
-input[type=submit].standishgreen,
-.button.standishgreen,
-button.standishgreen {
-  background-color: $secondary-color;
-  color: $primary-gray;
-  border-color: #8f998c;
-}
-.button.standishgray,
-button.standishgray {
-  border-color: #000;
-  background-color: #4D4D4D;
-}
+
 .button.gainsboro,
 button.gainsboro {
   color: $primary-gray;
@@ -158,10 +247,7 @@ button .add-on-left i {
   top: 2px;
   font-size: 15px;
 }
-.button.standishgreen {
-  background-color: $secondary-color;
-  color: $primary-gray !important;
-}
+
 .form-stacked input[type="text"],
 .form-stacked input[type="password"],
 .form-stacked input[type="email"],
@@ -204,7 +290,6 @@ input.form-control {
 /* ~~~ Hubspot Stuff ~~~ */
 .hs-input {
   color: #a9a9a9;
-  font-family: $default-font;
   font-size: 14px;
   font-weight: 400;
   line-height: 2.25em;
@@ -226,12 +311,13 @@ textarea.hs-input {
   line-height: 1.5em;
 }
 .main_content .hbspt-form {
-  background: #C2D3BD;
+  background: $hbspt-form-bkg;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
   padding: 15px 40px 40px 40px;
+  float: left;
   border-bottom: 1px solid $primary-gray;
 }
 
@@ -264,10 +350,3 @@ textarea.hs-input {
   padding: 5px;
   margin-bottom: 12px;
 }
-
-
-
-
-
-
-

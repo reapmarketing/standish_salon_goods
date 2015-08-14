@@ -3,7 +3,6 @@
 
 <script>
 jQuery( function($) {
-	jQuery('.productContainer').remove();
 	
 	// Adjust left side column height - right-side margin left is a better solution
 	// console.log( jQuery('.main_content').height() );
@@ -18,40 +17,27 @@ jQuery( function($) {
 	if( $pagination_links.last().hasClass('active') ) {
 		$pagination_links.last().addClass('last');
 	}
-	
 });
 </script>
 
 <div class="right-side col-md-10">
-
-  <div class="col-md-12 search-container">
+	<div class="col-md-12 breadcrumb-container hidden-xs hidden-sm">
     <!--START: CATEGORY_FULLINE-->
       <!--IF: CATEGORY_FULLINE-->
         <!-- display breadcrumbs in the main template if they exist -->
-        
-          <!--chunks_o_code/navigation.html-->
-        <div class="col-md-8 breadcrumb hidden-xs">
+        <div class="col-md-8 breadcrumb">
             [CATEGORY_FULLLINE]
         </div>
       <!--ENDIF: CATEGORY_FULLINE-->
     <!--END: CATEGORY_FULLINE-->
-  
-    <div class="col-md-4 pull-right search">
-      <form method="get" name="searchForm" action="search.asp">
-          <div class="input-group">
-            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
-            <span class="input-group-btn">
-                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
-              </span>
-          </div>
-      </form>
-    </div>
   </div>
+
+  <hr class="hidden-xs hidden-sm" />
 	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
 		<!--END: BODY_HEADER-->
 		<!-- <h1 class="page_headers">[categoryname]</h1> -->
 		<!--START: CATEGORY_HEADER-->
-			<div id="categoryHeader" class="data col-md-10">[CONTENT]</div>
+			<div id="categoryHeader" class="data row">[CONTENT]</div>
 			<div class="hidden" data-catname="[categoryname]">[catid]</div>
 		<!--END: CATEGORY_HEADER-->
 
@@ -66,19 +52,19 @@ jQuery( function($) {
 						<!--END: product_review_average-->
 					<!--END: product_review-->
 					<div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-          	<div class="listing-container">
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-              <!--START: ITEMPRICE-->
-                <!-- [product_yourprice] -->
-                <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-              <!--END: ITEMPRICE-->
-              <!--START: SALEPRICE-->
-                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                <!-- <span class="coral-text">[product_onsale]: </span> -->
-                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
-              <!--END: SALEPRICE-->
-            </div>
+						<div class="listing-container">
+							<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=400&maxy=400" alt="[name]" border="0" /></a>
+							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+							<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+							<!-- <span class="coral-text">[product_onsale]: </span> -->
+							<p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
+							<!--END: SALEPRICE-->
+						</div>
 						<!-- <button>Add to Cart</button> -->
 						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 					</div>
@@ -118,7 +104,6 @@ jQuery( function($) {
 						</select>
 						<i class="fa fa-caret-down fa-sm"></i>
 					</div>
-					<!--------------------------------------------------------->
 				<!--END: catFilter_Filter-->
 			</div>
 		
@@ -149,66 +134,34 @@ jQuery( function($) {
 			</script>
 			<!-- filter block ends here--> 
 		<!--END: catFilterMainBlock-->
-	
+		</form>
 		<!--START: ITEMS-->
-			<!-- <div class="titles">&nbsp;[category_Header-products] (Total Items: [productnumber])</div> -->
-	
-	
-	
-	
-	<!-- We're using the other filters above instead -->
-	
-	<!-- 		<div class="col-md-10"> -->
-				<!--START: sortbylist-->
-	<!--
-				<div class="fancy-select wide">
-					<select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle" style="float:right">
-						[sortbylist]
-					</select>
-					<i class="fa fa-caret-down fa-sm"></i>
-				</div>
-	-->
-				<!--END: sortbylist-->
-	<!-- 		</div> -->
-	
-	
-	
-	
-			<!--START: UNDOVIEWALL-->
-				<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
-			<!--END: UNDOVIEWALL-->
 	
 			<!--START: CATEGORY_ITEMS-->
-	
 				<!--START: ITEM_TEMPLATE_0-->
-					<!--START: product_review-->
-						<!--START: product_review_average-->
-							<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-							<!-- <div class="item">[review_count] Review(s)</div> -->
-						<!--END: product_review_average-->
-					<!--END: product_review-->
 					<div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-          	<div class="listing-container">
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-              <!--START: ITEMPRICE-->
-                <!-- [product_yourprice] -->
-                <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-              <!--END: ITEMPRICE-->
-              <!--START: SALEPRICE-->
-                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                <p class="price bold allcaps nozero"><span class="coral-text">[product_onsale]: </span> [ITEMSALEPRICE]</p>
-                <img src="assets/templates/common/images/on_sale.png" alt="On Sale" border="0" />
-              <!--END: SALEPRICE-->
-              <!-- <button>Add to Cart</button> -->
-              <!-- value="[category_buyitlink]" -->
-            </div>
-						<input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn" style="display:block; width: 100%;">
+						<div class="listing-container">
+							<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=400&maxy=400" alt="[name]" border="0" style="max-height:190px; max-width:160px;"/></a>
+							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+							<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+							<p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span> <span class="nozero">[ITEMSALEPRICE]</span></p>
+							<!--END: SALEPRICE-->
+							<!-- <button>Add to Cart</button> -->
+							<!-- value="[category_buyitlink]" -->
+						</div>
+						<input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn hidden-sm hidden-xs" style="display:block; width: 100%;">
 					</div>
 				<!--END: ITEM_TEMPLATE_0--> 
 			<!--END: CATEGORY_ITEMS-->
-	</form>
 
+			<!--END: ITEMS-->
+	
+	<div class="clearfix"></div>
 	<!--START: PAGING-->
 	<div class="col-md-12">
 		<!-- [category_moreresults] -->
@@ -245,7 +198,7 @@ jQuery( function($) {
 		<!-- <a href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> -->
 	<!--END: UNDOVIEWALL-->
 
-<!--END: ITEMS-->
+
 
 	<!--START: CATEGORY_FOOTER-->
 		<div class="col-md-12">[CONTENT]</div>

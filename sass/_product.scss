@@ -15,7 +15,7 @@
   display: block;
   height: 60px;
   width: 60px;
-  background: url("/assets/templates/{$template}/images/badges-sprite.png");
+  background: url("/assets/templates/standish-responsive/images/badges-sprite.png");
   -webkit-background-size: 800%;
   -moz-background-size: 800%;
   background-size: 800%;
@@ -47,7 +47,7 @@
   padding-top: 10px;
 }
 .badge-made-usa i, .badge-made-usa span, .badge-made-usa em {
-  background: url("/assets/templates/{$template}/images/made-usa-badge.png");
+  background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -151,50 +151,6 @@
     background-position: -240px -242px;
 }
 
-.fancy-select i {
-  pointer-events: none;
-}
-
-.fancy-select img {
-  margin: 3px 0 0 235px;
-}
-.fancy-select select {
-  background: transparent;
-  color: $neutral-dark;
-  padding: 5px 10px;
-  font-size: 16px;
-  border: none;
-  width: 100%;
-  height: 34px;
-  -webkit-appearance: none;
-  box-shadow: none;
-  position: absolute;
-  line-height: 28px;
-  padding: 0 10px;
-  -moz-appearance: window;
-/*   padding: 6px 0 0 3px; */
-}
-.fancy-select {
-  margin-right: 10px;
-  padding: 0;
-  border: 1px solid #dcdcdc;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  height: 34px;
-  overflow: hidden;
-  background: #efefef;
-  display: inline-block;
-  position: relative;
-}
-.fancy-select i {
-  z-index: 1;
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 18px;
-  border-left: 1px solid #dcdcdc;
-  padding: 9px 12px;
-}
 
 
 .listing-container {
@@ -203,7 +159,7 @@
 .listing {
   margin-top: 20px;
   margin-bottom: 20px;
-  min-height: 335px;
+  min-height: 250px;
 }
 .listing .product_thumb {
   border: 1px solid #dcdcdc;
@@ -218,10 +174,6 @@
 }
 .listing p.price {
   margin: 6px 0;
-}
-.listing p.title {
-  font-family: $default-font-narrow;
-  min-height: 34px;
 }
 .listing p.msrp {
   color: #a9a9a9;
@@ -258,7 +210,6 @@
 .pricebox .left-price {
   font-size: 42px;
   text-align: center;
-  font-family: $default-font-narrow;
   line-height: 110px;
   position: relative;
 }
@@ -311,29 +262,26 @@ fieldset {
   padding: 10px;
 }
 
-.product-form label {
-  font-family: $default-font-narrow;
-}
+
 .product-form .fancy-select {
   margin-right: 0;
-  width: 293px;
+  width: 100%;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   height: 28px;
 }
 .product-form .fancy-select select {
-  width: 293px;
+  width: 100%;
   height: auto;
 }
 .product-form .fancy-select i {
   padding: 4px 12px;
 }
 .product-form .add {
-  width: 295px;
+  width: 100%;
   height: 50px;
 }
 .product-form .questions {
-  font-family: $default-font-narrow;
   text-align: center;
   float: right;
   line-height: 27px;
@@ -370,7 +318,6 @@ fieldset {
   text-align: right;
   margin-bottom: 10px;
   font-size: 14px;
-  font-family: $default-font-narrow;
 }
 .brochure-download i {
   font-size: 18px;
@@ -386,16 +333,6 @@ fieldset {
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 10px;
 }
-/*
-.related-products a,
-.related-accessories a {
-  font-family: $default-font-narrow;
-  position: absolute;
-  font-size: 14px;
-  top: 2px;
-  right: 0;
-}
-*/
 
 .review {
   border-bottom: 1px solid #dcdcdc;
@@ -414,7 +351,6 @@ fieldset {
   font-size: 14px;
   font-style: italic;
   color: #a9a9a9;
-  font-family: $default-font-narrow;
 }
 .stars {
   position: relative;
@@ -442,7 +378,6 @@ fieldset {
   content: "\f005";
 }
 .add-rating-link {
-  font-family: $default-font-narrow;
   font-size: 14px;
 }
 .add-rating-link i {
@@ -489,10 +424,12 @@ fieldset {
 }
 .cornersprite {
   display: none;
-  background-image: url("/assets/templates/{$template}/images/corner-tag-sprite.png");
+  background-repeat: no-repeat;
+  background-image: url("/assets/templates/standish-responsive/images/CornerTag.svg");
+  background-size: 208px;
   width: 75px;
   height: 75px;
-  background-position: -76px 0;
+  background-position: -115px -23px;
   position: absolute;
   top: -5px;
   left: -5px;
@@ -501,7 +438,7 @@ fieldset {
   background-position: 0 0;
 }
 .tweet_button {
-  background: url("/assets/templates/{$template}/images/tweet-sprite.png");
+  background: url("/assets/templates/standish-responsive/images/tweet-sprite.png");
   width: 56px;
   height: 21px;
   display: inline-block;

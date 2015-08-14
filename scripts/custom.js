@@ -7,26 +7,52 @@
 
 
 	Standish.EqualHeights = function() {
-		function resizeColumns(groups) {
-			$.each(groups, function(index, value) {
-				$(value).matchHeight({
-					byRow: true,
-					property: 'height',
-					target: null,
-					remove: false
+		if ($(window).width() >= 768) {
+			function resizeColumns(groups) {
+				$.each(groups, function(index, value) {
+					$(value).matchHeight({
+						byRow: true,
+						property: 'height',
+						target: null,
+						remove: false
+					});
 				});
-			});
+			}
+			var groups = [
+				'.listing',
+				'.listing .listing-container',
+				'.column .eqhgt',
+				'.column .eqhgt-g1',
+				'.pricebox-eqhgt',
+				'.footer-logo-sm'
+			];
+			resizeColumns(groups);
 		}
-		var groups = [
-			'.listing',
-			'.listing .listing-container',
-			'.column .eqhgt',
-			'.column .eqhgt-g1',
-			'.pricebox-eqhgt',
-			'.footer-logo-sm'
-		];
-		resizeColumns(groups);
 	}
+
+	Standish.EqualHeightsMobile = function() {
+		if ($(window).width() <= 768) {
+			function resizeColumns(groups) {
+				$.each(groups, function(index, value) {
+					$(value).matchHeight({
+						byRow: true,
+						property: 'height',
+						target: null,
+						remove: false
+					});
+				});
+			}
+			var groups = [
+				'.listing .listing-container',
+				'.column .eqhgt',
+				'.column .eqhgt-g1',
+				'.pricebox-eqhgt',
+				'.footer-logo-sm'
+			];
+			resizeColumns(groups);
+		}
+	}
+
 
 	Standish.CloseHello = function(helloparent) {
 		$(helloparent).find('.close').on('click', function() {
@@ -61,13 +87,13 @@
 				case 'listing_3':
 					var script = document.createElement('script');
 					script.id = 'listing';
-					script.src = '/assets/templates/salon-responsive/scripts/listing-scripts.js';
+					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
 					document.head.appendChild(script);
 				return;
 				case ( 'listing_2' ):
 					var script = document.createElement('script');
 					script.id = 'listing';
-					script.src = '/assets/templates/salon-responsive/scripts/listing-scripts.js';
+					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
 					document.head.appendChild(script);
 					// Insert hbspt script
 					var scriptb = document.createElement('script');
@@ -143,6 +169,7 @@
 	$(function() {
 		// 1. Activate Equal Heights
 		Standish.EqualHeights();
+		Standish.EqualHeightsMobile();
 		// 2. Activate custom Template switching
 		Standish.TemplateSwitcher();
 		// 3. Make search input large for mobile devices
@@ -158,6 +185,7 @@
 	// Add callback to window resize event
 	$(window).on('resize', function() {
 		Standish.EqualHeights();
+		Standish.EqualHeightsMobile();
 		Standish.SearchForm();
 	});
 	

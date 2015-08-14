@@ -55,9 +55,7 @@
 .total {
   padding: 42px;
 }
-.cart_items .options-list {
-  margin-left: 71px;
-}
+
 
 
 body .update_cart_button:before {
@@ -89,31 +87,15 @@ body .update_cart_button {
 
 
 /* ~~~CartSprite~~~ */
-.cartsprite div {
-  background-image: url("/assets/templates/{$template}/images/cart-sprite.png");
-}
-.cartsprite .cards {
-  background-position: 0px 0px;
-  width: 140px;
-  height: 20px;
-  float: left;
-  margin-top: 37px;
-}
-.cartsprite .norton {
-  background-position: 0px -21px;
-  height: 50px;
-  width: 90px;
-  float: right;
-  margin-top: 24px;
-}
-@media only screen and (max-width: 767px) {
-  .cartsprite .cards {
-    margin-top: -12px;
-  }
-  .cartsprite .norton {
-    margin-top: -40px;
-  }
-  
+
+.cartsprite {
+  div {
+    &:first-child { 
+      .ppal {
+        margin-top: 31px;
+      }
+    }
+  }  
 }
 
 
