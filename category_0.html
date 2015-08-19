@@ -88,21 +88,22 @@ jQuery( function($) {
 			<!--END: catFilter-->
 		
 		
-			<div class="col-md-12">
+			<div class="col-md-12 row">
 				<!--START: catFilter_Filter-->
 				<!-- the filter title can be outside: [catFilterName]--> 
 					<!-- Use this block if you want to show filters as a list--> 
 					
 					<!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
-		
-          <div class="form-group col-md-3 col-sm-4 col-xs-4 fancy-select pull-right">
-						<select class="form-control" name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
-							<option value="">Filter by [catFilterName]</option> 
-							<!--START: catFilter_Filter_Item--> 
-							<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
-							<!--END: catFilter_Filter_Item--> 
-						</select>
-						<i class="fa fa-caret-down fa-sm"></i>
+					<div class="col-md-3 col-sm-4 pull-right">
+	          			<div class="form-group fancy-select col-md-12">
+							<select class="form-control" name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
+								<option value="">Filter by [catFilterName]</option> 
+								<!--START: catFilter_Filter_Item--> 
+								<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
+								<!--END: catFilter_Filter_Item--> 
+							</select>
+							<i class="fa fa-caret-down fa-sm"></i>
+						</div>
 					</div>
 				<!--END: catFilter_Filter-->
 			</div>

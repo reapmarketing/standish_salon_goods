@@ -121,7 +121,9 @@
 	}
 	
 	Standish.EmptyCart = function() {
-		$('button.cart').on('click', function(event) {
+
+		$("a[href='/view_cart.asp']").on('click', function(event) {
+			console.log('hit');
 			if ( $(this).children('.cart-number').html() === "0" ) {
 				event.preventDefault();
 				var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">\

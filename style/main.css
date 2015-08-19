@@ -690,12 +690,12 @@ input::-moz-focus-inner {
 
 /* line 102, ../sass/_forms.scss */
 .fancy-select, .fancy-select-lg {
-  margin-right: 10px;
-  padding: 0;
+  padding: 0 10px;
   border: 1px solid #dcdcdc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   height: 34px;
+  width: 100%;
   overflow: hidden;
   background: #efefef;
   display: inline-block;
@@ -709,10 +709,10 @@ input::-moz-focus-inner {
   top: 0;
   font-size: 18px;
   border-left: 1px solid #dcdcdc;
-  padding: 6% 5%;
+  padding: 2% 3%;
   height: 100%; }
 
-/* line 127, ../sass/_forms.scss */
+/* line 125, ../sass/_forms.scss */
 button,
 .button,
 input[type=button],
@@ -734,7 +734,7 @@ button[type=submit],
   padding: 10px 20px 10px 20px;
   text-decoration: none; }
 
-/* line 149, ../sass/_forms.scss */
+/* line 147, ../sass/_forms.scss */
 .button.btn.btn-secondary,
 .btn.btn-secondary,
 .btn-secondary {
@@ -746,27 +746,27 @@ button[type=submit],
   background-image: linear-gradient(to bottom, #b6b6b6, #838383);
   text-shadow: 0px -1px 0px #b6b6b6; }
 
-/* line 161, ../sass/_forms.scss */
+/* line 159, ../sass/_forms.scss */
 button[type=submit].btn-lg, .btn.btn-lg {
   padding: 10px 16px;
   font-size: 105%; }
 
-/* line 166, ../sass/_forms.scss */
+/* line 164, ../sass/_forms.scss */
 .btn-hello {
   background-color: #ff926a;
   border-bottom: 1px solid #ff4704; }
 
-/* line 170, ../sass/_forms.scss */
+/* line 168, ../sass/_forms.scss */
 .btn-hello:hover {
   background-color: #ffa484;
   border-bottom: 1px solid #ff6c37; }
 
-/* line 175, ../sass/_forms.scss */
+/* line 173, ../sass/_forms.scss */
 btn.focus, .btn:focus, .btn:hover, .hs-form .hs-button:focus, .hs-form .hs-button:hover {
   color: white;
   font-weight: bold; }
 
-/* line 180, ../sass/_forms.scss */
+/* line 178, ../sass/_forms.scss */
 input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
@@ -780,7 +780,7 @@ button:hover,
   background-image: linear-gradient(to bottom, #ff7f50, #ff7f50);
   text-decoration: none; }
 
-/* line 193, ../sass/_forms.scss */
+/* line 191, ../sass/_forms.scss */
 .button.btn.btn-secondary:hover,
 .btn.btn-secondary:hover,
 .btn-secondary:hover {
@@ -792,61 +792,61 @@ button:hover,
   background-image: linear-gradient(to bottom, #838383, #838383);
   text-decoration: none; }
 
-/* line 204, ../sass/_forms.scss */
+/* line 202, ../sass/_forms.scss */
 .button.medium,
 button.medium {
   font-size: 16px;
   padding: 0 24px;
   height: 40px; }
 
-/* line 210, ../sass/_forms.scss */
+/* line 208, ../sass/_forms.scss */
 .button.large,
 button.large {
   font-size: 18px;
   height: 50px; }
 
-/* line 215, ../sass/_forms.scss */
+/* line 213, ../sass/_forms.scss */
 .total .button.large {
   padding: 0 35px; }
 
 /* Button bootstrap overrides */
-/* line 219, ../sass/_forms.scss */
+/* line 217, ../sass/_forms.scss */
 .btn-group-lg > .btn, .btn-lg {
   border-radius: 3px; }
 
-/* line 222, ../sass/_forms.scss */
+/* line 220, ../sass/_forms.scss */
 .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child > .btn-group:not(:first-child) > .btn, .input-group-btn:first-child > .btn:not(:first-child), .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group > .btn, .input-group-btn:last-child > .dropdown-toggle {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   font-size: 15px; }
 
-/* line 228, ../sass/_forms.scss */
+/* line 226, ../sass/_forms.scss */
 .button.gainsboro,
 button.gainsboro {
   color: #696969;
   border-color: #a9a9a9; }
 
-/* line 233, ../sass/_forms.scss */
+/* line 231, ../sass/_forms.scss */
 .button.darkgray,
 button.darkgray {
   color: #fff;
   border-color: #696969; }
 
-/* line 238, ../sass/_forms.scss */
+/* line 236, ../sass/_forms.scss */
 .button .add-on-left,
 button .add-on-left {
   padding: 5px 11px 5px 0;
   margin-right: 10px;
   border-right: 1px solid #fff; }
 
-/* line 244, ../sass/_forms.scss */
+/* line 242, ../sass/_forms.scss */
 .button .add-on-left i,
 button .add-on-left i {
   position: relative;
   top: 2px;
   font-size: 15px; }
 
-/* line 251, ../sass/_forms.scss */
+/* line 249, ../sass/_forms.scss */
 .form-stacked input[type="text"],
 .form-stacked input[type="password"],
 .form-stacked input[type="email"],
@@ -866,7 +866,7 @@ button .add-on-left i {
 .form-stacked textarea {
   display: block; }
 
-/* line 270, ../sass/_forms.scss */
+/* line 268, ../sass/_forms.scss */
 input {
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -875,7 +875,7 @@ input {
   min-height: 20px;
   padding: 0 10px; }
 
-/* line 278, ../sass/_forms.scss */
+/* line 276, ../sass/_forms.scss */
 input.form-control {
   background: #efefef; }
 
@@ -886,22 +886,22 @@ input.form-control {
 }
 */
 /* ~~~ Hubspot Stuff ~~~ */
-/* line 291, ../sass/_forms.scss */
+/* line 289, ../sass/_forms.scss */
 .hs-input {
   color: #a9a9a9;
   font-size: 14px;
   font-weight: 400;
   line-height: 2.25em; }
 
-/* line 298, ../sass/_forms.scss */
+/* line 296, ../sass/_forms.scss */
 .hbspt-form li {
   list-style: none; }
 
-/* line 301, ../sass/_forms.scss */
+/* line 299, ../sass/_forms.scss */
 .hbspt-form li input {
   margin-right: 10px; }
 
-/* line 304, ../sass/_forms.scss */
+/* line 302, ../sass/_forms.scss */
 textarea.hs-input {
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -911,7 +911,7 @@ textarea.hs-input {
   padding: 0 10px;
   line-height: 1.5em; }
 
-/* line 313, ../sass/_forms.scss */
+/* line 311, ../sass/_forms.scss */
 .main_content .hbspt-form {
   background: #C2D3BD;
   -moz-border-radius: 5px;
@@ -922,26 +922,26 @@ textarea.hs-input {
   float: left;
   border-bottom: 1px solid #696969; }
 
-/* line 324, ../sass/_forms.scss */
+/* line 322, ../sass/_forms.scss */
 .main_content .hbspt-form .hs-form-field, .main_content .hbspt-form .hs_submit {
   width: 100%;
   margin: 0 auto 30px auto;
   float: none; }
 
-/* line 330, ../sass/_forms.scss */
+/* line 328, ../sass/_forms.scss */
 .hs-form-field {
   margin-bottom: 30px; }
 
-/* line 338, ../sass/_forms.scss */
+/* line 336, ../sass/_forms.scss */
 .hbspt-form .hs-form.stacked .actions {
   margin: 0;
   padding: 0; }
 
-/* line 343, ../sass/_forms.scss */
+/* line 341, ../sass/_forms.scss */
 .hbspt-form .multi-container {
   padding-left: 22px; }
 
-/* line 347, ../sass/_forms.scss */
+/* line 345, ../sass/_forms.scss */
 .product-form input[type=file] {
   float: right;
   width: 283px;
@@ -1566,13 +1566,20 @@ body .vex.vex-theme-flat-attack .vex-content {
   background: url("/assets/templates/standish-responsive/images/standish-logo.png");
   background-repeat: no-repeat;
   width: 277px;
-  height: 34px;
+  height: 50px;
   text-indent: -9999em;
   position: relative;
   top: -12px;
   left: -25px; }
 
-/* line 26, ../sass/_header_menu.scss */
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  /* line 29, ../sass/_header_menu.scss */
+  .logo {
+    background: url("/assets/templates/standish-responsive/images/Standish-Logo-Mobile.png");
+    background-repeat: no-repeat;
+    background-size: 142px; } }
+/* line 36, ../sass/_header_menu.scss */
 .credentials {
   background: url(/assets/templates/standish-responsive/images/credentials.png);
   width: 100%;
@@ -1583,43 +1590,43 @@ body .vex.vex-theme-flat-attack .vex-content {
   left: -34px;
   top: 44px; }
 
-/* line 37, ../sass/_header_menu.scss */
+/* line 47, ../sass/_header_menu.scss */
 .logo-footer {
   text-indent: -9999em;
   float: none;
   display: inline-block; }
 
-/* line 42, ../sass/_header_menu.scss */
+/* line 52, ../sass/_header_menu.scss */
 header button.cart {
   margin-right: 0;
   padding-right: 0; }
 
-/* line 46, ../sass/_header_menu.scss */
+/* line 56, ../sass/_header_menu.scss */
 button.cart i {
   font-size: 1.250rem;
   padding-right: 12px; }
 
-/* line 50, ../sass/_header_menu.scss */
+/* line 60, ../sass/_header_menu.scss */
 .cart-number {
   margin-left: 18px;
   background-color: #ffa07a;
   padding: 13px 18px;
   border-radius: 0px 3px 3px 0; }
 
-/* line 56, ../sass/_header_menu.scss */
+/* line 66, ../sass/_header_menu.scss */
 .navigation {
   background-color: #4d4d4d;
   text-transform: capitalize;
   border-radius: 0; }
 
-/* line 61, ../sass/_header_menu.scss */
+/* line 71, ../sass/_header_menu.scss */
 .navigation ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
   border-left: 1px solid #696969; }
 
-/* line 67, ../sass/_header_menu.scss */
+/* line 77, ../sass/_header_menu.scss */
 .navigation li {
   display: inline-block;
   margin: 0;
@@ -1627,15 +1634,15 @@ button.cart i {
   height: 60px;
   position: relative; }
 
-/* line 74, ../sass/_header_menu.scss */
+/* line 84, ../sass/_header_menu.scss */
 .navigation ul.nav-menu > li {
   border-right: 1px solid #696969; }
 
-/* line 77, ../sass/_header_menu.scss */
+/* line 87, ../sass/_header_menu.scss */
 .navigation ul.nav-menu > li > a {
   padding: 0 12px; }
 
-/* line 80, ../sass/_header_menu.scss */
+/* line 90, ../sass/_header_menu.scss */
 .navigation a {
   font-size: .8em;
   color: #fff;
@@ -1647,7 +1654,7 @@ button.cart i {
   /* padding: 0 14px; */
   text-decoration: none; }
 
-/* line 91, ../sass/_header_menu.scss */
+/* line 101, ../sass/_header_menu.scss */
 .navigation ul ul {
   /*   font-weight: 700; */
   background-color: #696969;
@@ -1660,31 +1667,31 @@ button.cart i {
   z-index: 19;
   width: 250px; }
 
-/* line 103, ../sass/_header_menu.scss */
+/* line 113, ../sass/_header_menu.scss */
 .navigation li li {
   display: block;
   height: auto;
   margin: 0;
   line-height: 20px; }
 
-/* line 109, ../sass/_header_menu.scss */
+/* line 119, ../sass/_header_menu.scss */
 .navigation ul ul ul {
   left: 100%;
   top: -20px;
   background: #5e5e5e;
   font-weight: normal; }
 
-/* line 115, ../sass/_header_menu.scss */
+/* line 125, ../sass/_header_menu.scss */
 .navigation ul ul ul a {
   color: #fff;
   text-transform: capitalize;
   letter-spacing: normal; }
 
-/* line 120, ../sass/_header_menu.scss */
+/* line 130, ../sass/_header_menu.scss */
 .navigation ul ul ul a:hover {
   color: #c2d3bd; }
 
-/* line 123, ../sass/_header_menu.scss */
+/* line 133, ../sass/_header_menu.scss */
 .navigation ul ul a {
   min-width: 170px;
   line-height: 16px;
@@ -1694,92 +1701,92 @@ button.cart i {
   color: #c2d3bd;
   padding: 4px 25px; }
 
-/* line 132, ../sass/_header_menu.scss */
+/* line 142, ../sass/_header_menu.scss */
 .navigation li:hover > a {
   color: #dfe133; }
 
-/* line 135, ../sass/_header_menu.scss */
+/* line 145, ../sass/_header_menu.scss */
 .navigation li li:hover > a {
   color: #c2d3bd; }
 
-/* line 138, ../sass/_header_menu.scss */
+/* line 148, ../sass/_header_menu.scss */
 .navigation ul ul a:hover {
   color: #fff; }
 
-/* line 141, ../sass/_header_menu.scss */
+/* line 151, ../sass/_header_menu.scss */
 .navigation ul li:hover > ul,
 ul.nav-menu li:hover > div ul {
   display: block; }
 
-/* line 146, ../sass/_header_menu.scss */
+/* line 156, ../sass/_header_menu.scss */
 .navigation li li.allcaps a {
   padding-top: 10px; }
 
-/* line 150, ../sass/_header_menu.scss */
+/* line 160, ../sass/_header_menu.scss */
 .navigation li li.allcaps > a:link,
 .navigation li li.allcaps > a:visited {
   font-weight: 700;
   /*  color: $primary-color-btn-highlight; */
   color: #fff; }
 
-/* line 157, ../sass/_header_menu.scss */
+/* line 167, ../sass/_header_menu.scss */
 .navigation li li.allcaps > a:hover {
   color: #dfe133; }
 
-/* line 161, ../sass/_header_menu.scss */
+/* line 171, ../sass/_header_menu.scss */
 .navigation li.current_page_item > a,
 .navigation li.current-menu-item > a {
   color: #5ff23d; }
 
-/* line 165, ../sass/_header_menu.scss */
+/* line 175, ../sass/_header_menu.scss */
 .navigation li.far {
   border: 0 none !important; }
 
-/* line 169, ../sass/_header_menu.scss */
+/* line 179, ../sass/_header_menu.scss */
 .col2 {
   position: absolute;
   left: 222px;
   top: 0; }
 
-/* line 174, ../sass/_header_menu.scss */
+/* line 184, ../sass/_header_menu.scss */
 .col3 {
   position: absolute;
   left: 444px;
   top: 0; }
 
-/* line 179, ../sass/_header_menu.scss */
+/* line 189, ../sass/_header_menu.scss */
 .col4 {
   position: absolute;
   left: 666px;
   top: 0; }
 
-/* line 185, ../sass/_header_menu.scss */
+/* line 195, ../sass/_header_menu.scss */
 li.far a:hover {
   color: #fff; }
 
-/* line 188, ../sass/_header_menu.scss */
+/* line 198, ../sass/_header_menu.scss */
 li.far a {
   color: #a9a9a9;
   padding: 0 0px 0 14px !important; }
 
-/* line 192, ../sass/_header_menu.scss */
+/* line 202, ../sass/_header_menu.scss */
 li.first.far a {
   padding: 0 0px 0 14px; }
 
-/* line 196, ../sass/_header_menu.scss */
+/* line 206, ../sass/_header_menu.scss */
 .search .input-group-btn > .btn {
   position: absolute; }
-/* line 199, ../sass/_header_menu.scss */
+/* line 209, ../sass/_header_menu.scss */
 .search button, .search .button {
   background: transparent none;
   z-index: 2;
   top: 0;
   height: 100%;
   border: 0 none; }
-  /* line 207, ../sass/_header_menu.scss */
+  /* line 217, ../sass/_header_menu.scss */
   .search button:hover, .search button:focus, .search .button:hover, .search .button:focus {
     border: 0 none; }
-/* line 211, ../sass/_header_menu.scss */
+/* line 221, ../sass/_header_menu.scss */
 .search input {
   font-size: 14px;
   color: #a9a9a9;
@@ -1792,14 +1799,14 @@ li.first.far a {
   min-height: 27px; }
 
 @media only screen and (min-width: 993px) {
-  /* line 227, ../sass/_header_menu.scss */
+  /* line 237, ../sass/_header_menu.scss */
   .container.search-container {
     margin-bottom: 10px; } }
 @media only screen and (max-width: 992px) {
-  /* line 233, ../sass/_header_menu.scss */
+  /* line 243, ../sass/_header_menu.scss */
   .right-side.padd-top {
     padding-top: 0; } }
-/* line 239, ../sass/_header_menu.scss */
+/* line 249, ../sass/_header_menu.scss */
 .search-button {
   font-size: 16px;
   -webkit-border-radius: 0 3px 3px 0;
@@ -1809,16 +1816,16 @@ li.first.far a {
   margin: 0;
   padding: 2px 12px; }
 
-/* line 249, ../sass/_header_menu.scss */
+/* line 259, ../sass/_header_menu.scss */
 .input-group.form-group-lg .search-button {
   padding: 10px 25px;
   font-size: 17px; }
 
-/* line 253, ../sass/_header_menu.scss */
+/* line 263, ../sass/_header_menu.scss */
 .panel {
   padding: 10px; }
 
-/* line 258, ../sass/_header_menu.scss */
+/* line 268, ../sass/_header_menu.scss */
 .navigation ul ul a span,
 .cat span {
   background: #dfe133;
@@ -1827,27 +1834,27 @@ li.first.far a {
   margin-left: 5px;
   color: #696969; }
 
-/* line 266, ../sass/_header_menu.scss */
+/* line 276, ../sass/_header_menu.scss */
 .cat span {
   position: absolute;
   left: -62px;
   top: 2px; }
 
-/* line 271, ../sass/_header_menu.scss */
+/* line 281, ../sass/_header_menu.scss */
 .navigation ul ul a span {
   position: absolute;
   padding: 2px 2px 0px 2px;
   top: 2px; }
 
-/* line 277, ../sass/_header_menu.scss */
+/* line 287, ../sass/_header_menu.scss */
 .hello-container {
   padding-top: 10px; }
-  /* line 279, ../sass/_header_menu.scss */
+  /* line 289, ../sass/_header_menu.scss */
   .hello-container a, .hello-container p, .hello-container div {
     color: #838383;
     font-weight: 100; }
 
-/* line 286, ../sass/_header_menu.scss */
+/* line 296, ../sass/_header_menu.scss */
 .hello-container {
   background-color: #ffb79d;
   z-index: 20;
@@ -1856,22 +1863,22 @@ li.first.far a {
   height: 60px;
   right: 0px; }
 
-/* line 294, ../sass/_header_menu.scss */
+/* line 304, ../sass/_header_menu.scss */
 .hello.container, .hbar_content {
   height: 100%;
   vertical-align: middle;
   position: relative; }
-  /* line 298, ../sass/_header_menu.scss */
+  /* line 308, ../sass/_header_menu.scss */
   .hello.container p, .hbar_content p {
     display: inline; }
 
-/* line 305, ../sass/_header_menu.scss */
+/* line 315, ../sass/_header_menu.scss */
 .hello-tag {
   position: absolute;
   top: 19px;
   left: 0; }
 
-/* line 310, ../sass/_header_menu.scss */
+/* line 320, ../sass/_header_menu.scss */
 .hello-icon {
   display: inline-block;
   top: 0;
@@ -1879,7 +1886,7 @@ li.first.far a {
   left: -24px;
   position: relative; }
 
-/* line 317, ../sass/_header_menu.scss */
+/* line 327, ../sass/_header_menu.scss */
 .hello-tab {
   background: #f5f5dc;
   width: 25px;
@@ -1891,21 +1898,21 @@ li.first.far a {
   right: 100px;
   z-index: 1; }
 
-/* line 328, ../sass/_header_menu.scss */
+/* line 338, ../sass/_header_menu.scss */
 .hello-tab i {
   font-size: 20px;
   position: relative;
   top: 5px;
   left: 7px; }
 
-/* line 337, ../sass/_header_menu.scss */
+/* line 347, ../sass/_header_menu.scss */
 #slickShow {
   margin-top: 2.3rem; }
-  /* line 339, ../sass/_header_menu.scss */
+  /* line 349, ../sass/_header_menu.scss */
   #slickShow .slide-option-text {
     font-size: .9rem;
     color: #9c9c9c; }
-  /* line 343, ../sass/_header_menu.scss */
+  /* line 353, ../sass/_header_menu.scss */
   #slickShow .fa-lg {
     font-size: 1.5em;
     padding-right: 0.2em; }

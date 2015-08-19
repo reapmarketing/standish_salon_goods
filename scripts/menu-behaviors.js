@@ -58,7 +58,6 @@
 				if (menuItems[key].show_mobile === true) {
 					unList[key]	= '';
 					if (menuItems[key].subcategories !== undefined) {
-						console.log(menuItems[key].subcategories)
 						unList[key]	+= '<li class="subcategories">';
 					}
 					else {

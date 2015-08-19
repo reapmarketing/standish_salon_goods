@@ -100,12 +100,12 @@ input::-moz-focus-inner {
 /*   padding: 6px 0 0 3px; */
 }
 .fancy-select {
-  margin-right: 10px;
-  padding: 0;
+  padding: 0 10px;
   border: 1px solid #dcdcdc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   height: 34px;
+  width: 100%;
   overflow: hidden;
   background: #efefef;
   display: inline-block;
@@ -118,11 +118,9 @@ input::-moz-focus-inner {
   top: 0;
   font-size: 18px;
   border-left: 1px solid #dcdcdc;
-  padding: 6% 5%;
+  padding: 2% 3%;
   height: 100%;
 }
-
-
 
 button,
 .button,

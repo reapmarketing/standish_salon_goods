@@ -84,320 +84,320 @@ jQuery(function(){
     -->
     </div>
   	
-    <div class="col-md-7 col-sm-6">    	    
-      <form action="recalculate.asp" method="post" name="recal" id="recal">
-      <!-- The Left Side -->
-      <div>
-        <div class="cart_items row">
-          <div class="cart_items_header row">
-            <div class='col-md-7 col-sm-7 col-xs-7'><span class="pull-right">Description</div>
-            <div class='col-md-2 col-sm-2 col-xs-2'>Qty.</div>
-            <div class='col-md-3 col-sm-3 col-xs-3'>Price</div>
-          </div>
-          <!--START: SHOPPING_CART_ITEM-->
-      
-          <div class="cart_item row">
-            <div class='col-md-7 col-sm-7 col-xs-7'>
-              <!--START: itemthumbnail-->
-                <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=160&maxy=160" border="0" height="160" width="160"></a>
-              <!--END: itemthumbnail-->
-              <div class="bold serif coral-text" style="margin-bottom:8px;"><a href="product.asp?itemid=[ITEM_CATALOGID]" class="item-name">[ITEM_NAME]</a></div>
-              <!--START: itemoptions-->
-                <!-- <a href='#' onClick="toggle('opt[ITEM_ID]')">View/Hide options</a> -->
-                <!-- <div id=opt[ITEM_ID] name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div> -->
-              <!--END: itemoptions-->
-        
-              <!--START: itemoptions-->
-                <!-- <a href='#' onClick="toggle('opt[ITEM_ID]')">View/Hide options</a> -->
-                <div class="options-list">[OPTIONS]</div>
-              <!--END: itemoptions-->
-        
-              <!--START: recurring_frequency-->
-                <!-- This item will Autoship every <b>[recurring_frequency]</b> -->
-              <!--END: recurring_frequency-->
-      <!--
-              Example options markup, generated with jQuery hacks.
-              <div class="options-list"><span class="bold">Base:</span> Square</div>
-      -->
-            </div><!-- .cart_col1 -->
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <input type="text" name="qtyitemnum" value="[ITEM_QUANTITY]" size="3" maxlength="5" class="txtBoxStyle form-control">
-              <input type="hidden" name="coliditemnum" value="[ITEM_ID]" size="3" maxlength="5" id="Hidden3">
-              <i class="icon-reload"></i>
-            </div>
-            <div class="col-md-3 col-sm-3 col-xs-3">
-              <!-- <div class="price">[ITEM_PRICE]</div> --><!--  Price before qty -->
-              <div class="price nozero">[ITEM_SUBTOTAL]</div>
-              <a href="#" onClick="document.recal.qtyitemnum.value=0;document.recal.submit();">Remove</a>
-            </div>
-          </div>
-          <!--END: SHOPPING_CART_ITEM-->
-      
-      
-        </div><!-- .cart-items -->
-        <div class="buttons-order row">
-          	<a class="button standishgray btn" style="color:white;" href="[continue_url]"><span class="add-on-left"><i class="fa fa-arrow-left"></i></span>Continue Shopping</a>
-          	<a class="button standishgreen btn" href ="/myaccount.asp?action=save_cart"><span class="add-on-left"><i class="fa fa-floppy-o"></i></span>Save for Later</a>
-          	<input type="submit" name="Add" value="[shoppingcart_updatecart]" class="update_cart_button btn" id="Submit2">
-          <!-- 	<input type="submit" class="gainsboro btn" value="Update Cart" /> -->
-        <!-- 	<button type="submit" class="gainsboro" style="margin-left: 80px;" onclick="document.recalculate.submit();"><span class="add-on-left"><i class="icon-repeat"></i></span>Update Cart</button> -->
-        </div>
-        <br />
-        <br />
-      
-      </div>
-      <!-- End of the left side -->
-      </form>
-    </div>
-      
+    <div class="row">
 
-    
-    <!-- The right side -->
-    <div class="col-md-5 col-sm-6">
-      <div class="total lightgray" style="border-radius: 3px;">
-    <!-- 		<p>Subtotal<span>[CARTSUBTOTAL]</span></p> -->
-    
-        <!--START: BUYSAFE_CONTROL-->
-          <!--START: BUYSAFE_LEARNMORE-->
-            <a href="[buysafe_cartdetailsurl]" target="_buySAFE">[buysafe_cartdetailsdisplaytext]</a> 
-          <!--END: BUYSAFE_LEARNMORE-->
-          [buysafe_bondingsignal]
-          <!--START: BUYSAFE_BONDCOST-->
-            [buysafe_bondcostdisplaytext]
-          <!--END: BUYSAFE_BONDCOST-->
-        <!--END: BUYSAFE_CONTROL-->
-    
-      <!--START: PROMOTIONS-->
-        <div class="promotions">
-          <span style="font-size: 13px;">* Promotions Applied In Addition to Sale Prices:</span><br />
-          <!--START: DISPLAY_PROMOS-->
-            <!-- <form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply> -->
-            <form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
-              <input type="hidden" name="coupon" value="[id]" id="Hidden4">
-              <p>
-								<span class="bold">[promotion_name]</span><br />-[promotion_description]<br /> Valid: [promotion_start] - [promotion_end]
-              </p>
-              <!--START: REMOVE_PROMO-->
-              <input type="submit" value="Remove" class="btn" style="height:auto;background:none;border:0;color:#ff7f50;padding:0;margin:0;display:inline;text-decoration:underline;min-height:0;" id="Submit3" name="Submit3">
-              <!--END: REMOVE_PROMO-->
-            </form>
-            <br />
-          <!--END: DISPLAY_PROMOS-->
+      <div class="col-md-7 col-sm-6">    	    
+        <form action="recalculate.asp" method="post" name="recal" id="recal">
+        <!-- The Left Side -->
+        <div>
+          <div class="cart_items row">
+            <div class="cart_items_header row">
+              <div class='col-md-7 col-sm-7 col-xs-7'><span class="pull-right">Description</div>
+              <div class='col-md-2 col-sm-2 col-xs-2'>Qty.</div>
+              <div class='col-md-3 col-sm-3 col-xs-3'>Price</div>
+            </div>
+            <!--START: SHOPPING_CART_ITEM-->
+        
+            <div class="cart_item row">
+              <div class='col-md-7 col-sm-7 col-xs-7'>
+                <!--START: itemthumbnail-->
+                  <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=160&maxy=160" border="0" height="160" width="160"></a>
+                <!--END: itemthumbnail-->
+                <div class="bold serif coral-text" style="margin-bottom:8px;"><a href="product.asp?itemid=[ITEM_CATALOGID]" class="item-name">[ITEM_NAME]</a></div>
+                <!--START: itemoptions-->
+                  <!-- <a href='#' onClick="toggle('opt[ITEM_ID]')">View/Hide options</a> -->
+                  <!-- <div id=opt[ITEM_ID] name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div> -->
+                <!--END: itemoptions-->
+          
+                <!--START: itemoptions-->
+                  <!-- <a href='#' onClick="toggle('opt[ITEM_ID]')">View/Hide options</a> -->
+                  <div class="options-list">[OPTIONS]</div>
+                <!--END: itemoptions-->
+          
+                <!--START: recurring_frequency-->
+                  <!-- This item will Autoship every <b>[recurring_frequency]</b> -->
+                <!--END: recurring_frequency-->
+        <!--
+                Example options markup, generated with jQuery hacks.
+                <div class="options-list"><span class="bold">Base:</span> Square</div>
+        -->
+              </div><!-- .cart_col1 -->
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <input type="text" name="qtyitemnum" value="[ITEM_QUANTITY]" size="3" maxlength="5" class="txtBoxStyle form-control">
+                <input type="hidden" name="coliditemnum" value="[ITEM_ID]" size="3" maxlength="5" id="Hidden3">
+                <i class="icon-reload"></i>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <!-- <div class="price">[ITEM_PRICE]</div> --><!--  Price before qty -->
+                <div class="price nozero">[ITEM_SUBTOTAL]</div>
+                <a href="#" onClick="document.recal.qtyitemnum.value=0;document.recal.submit();">Remove</a>
+              </div>
+            </div>
+            <!--END: SHOPPING_CART_ITEM-->
+        
+        
+          </div><!-- .cart-items -->
+          <div class="buttons-order row">
+            	<a class="button standishgray btn" style="color:white;" href="[continue_url]"><span class="add-on-left"><i class="fa fa-arrow-left"></i></span>Continue Shopping</a>
+            	<a class="button standishgreen btn" href ="/myaccount.asp?action=save_cart"><span class="add-on-left"><i class="fa fa-floppy-o"></i></span>Save for Later</a>
+            	<input type="submit" name="Add" value="[shoppingcart_updatecart]" class="update_cart_button btn" id="Submit2">
+            <!-- 	<input type="submit" class="gainsboro btn" value="Update Cart" /> -->
+          <!-- 	<button type="submit" class="gainsboro" style="margin-left: 80px;" onclick="document.recalculate.submit();"><span class="add-on-left"><i class="icon-repeat"></i></span>Update Cart</button> -->
+          </div>
+          <br />
+          <br />
+        
+        </div>
+        <!-- End of the left side -->
+        </form>
+      </div>
+        
+
+      
+      <!-- The right side -->
+      <div class="col-md-5 col-sm-6">
+        <div class="total lightgray" style="border-radius: 3px;">
+      
+          <!--START: BUYSAFE_CONTROL-->
+            <!--START: BUYSAFE_LEARNMORE-->
+              <a href="[buysafe_cartdetailsurl]" target="_buySAFE">[buysafe_cartdetailsdisplaytext]</a> 
+            <!--END: BUYSAFE_LEARNMORE-->
+            [buysafe_bondingsignal]
+            <!--START: BUYSAFE_BONDCOST-->
+              [buysafe_bondcostdisplaytext]
+            <!--END: BUYSAFE_BONDCOST-->
+          <!--END: BUYSAFE_CONTROL-->
+      
+        <!--START: PROMOTIONS-->
+          <div class="promotions">
+            <span style="font-size: 13px;">* Promotions Applied In Addition to Sale Prices:</span><br />
+            <!--START: DISPLAY_PROMOS-->
+              <!-- <form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply> -->
+              <form method="post" action="recalculate.asp?apply_coupon=2" name=couponapply>
+                <input type="hidden" name="coupon" value="[id]" id="Hidden4">
+                <p>
+  								<span class="bold">[promotion_name]</span><br />-[promotion_description]<br /> Valid: [promotion_start] - [promotion_end]
+                </p>
+                <!--START: REMOVE_PROMO-->
+                <input type="submit" value="Remove" class="btn" style="height:auto;background:none;border:0;color:#ff7f50;padding:0;margin:0;display:inline;text-decoration:underline;min-height:0;" id="Submit3" name="Submit3">
+                <!--END: REMOVE_PROMO-->
+              </form>
+              <br />
+            <!--END: DISPLAY_PROMOS-->
+            <hr />
+          </div>
+          <br />
+      
+        <!--END: PROMOTIONS-->
+      
+        <form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
+      
+          <!-- [shoppingcart_total] -->
+          <div class="subtotal white" style="padding: 10px 0; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
+            <p class="subtotes" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;">
+            	<strong class="col-md-8 col-sm-8 col-xs-8">Subtotal</strong> <span class="bold nozero">&nbsp;[CARTSUBTOTAL]</span>
+            </p>
+            <!--START: DISCOUNTS-->
+            <p class="discount" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;">
+            	<!-- [checkout1_discounts] -->
+              <strong class="col-md-8 col-sm-8 col-xs-8">Additional Discounts</strong><span class="bold nozero">-[DISCOUNTS]</span></p>
+              <!--END: DISCOUNTS-->
+            <p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;">
+            	<strong class="col-md-8 col-sm-8 col-xs-8">Total</strong> <span class="bold nozero">&nbsp;[CARTTOTAL]</span></p>
+          </div>
+          <br />
           <hr />
-        </div>
-        <br />
-    
-      <!--END: PROMOTIONS-->
-    
-    <form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
-    
-        <!-- [shoppingcart_total] -->
-        <div class="subtotal white" style="padding: 10px 0; border-radius: 5px; box-shadow: inset 0 1px 4px #CCC;">
-          <p class="subtotes" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;">
-          	<strong class="col-md-8 col-sm-8 col-xs-8">Subtotal</strong> <span class="bold nozero">&nbsp;[CARTSUBTOTAL]</span>
-          </p>
-          <!--START: DISCOUNTS-->
-          <p class="discount" style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;">
-          	<!-- [checkout1_discounts] -->
-            <strong class="col-md-8 col-sm-8 col-xs-8">Additional Discounts</strong><span class="bold nozero">-[DISCOUNTS]</span></p>
-            <!--END: DISCOUNTS-->
-          <p style="text-align: left; font-family:'PT Sans Narrow'; font-size: 19px;">
-          	<strong class="col-md-8 col-sm-8 col-xs-8">Total</strong> <span class="bold nozero">&nbsp;[CARTTOTAL]</span></p>
-        </div>
-        <br />
-        <hr />
-    
-        <!--START: ShipQuoteInternational-->
-          <strong>[viewcart_shipping-header]</strong>
-          <script type="text/javascript" src="state_countryjs.asp"></script>
+      
+          <!--START: ShipQuoteInternational-->
+            <strong>[viewcart_shipping-header]</strong>
+            <script type="text/javascript" src="state_countryjs.asp"></script>
+            <script>
+              function get_Element(i)
+              {
+                return document.getElementById(i) || document.getElementsByName(i).item(0);
+              }								
+              function getInternationalQuote()
+              {
+                var strAction = "shipquote.asp?shipping_country=" + get_Element("shipping_country").value;
+                strAction = strAction + "&shipping_state=" + get_Element("shipping_state").value;
+                document.shipquote.action = strAction;
+                
+                document.shipquote.shipping_zip.value = document.recalculate.shipping_zip.value
+                document.shipquote.submit();
+              }
+            </script>
+            <select name="shipping_country" onChange="this.form.shipping_zip.value='';populateState('shipping_state','shipping_country');" class="txtBoxStyle" id="shipping_country"></select>
+            <span><select id="shipping_state" onChange="this.form.shipping_zip.value='';" name="shipping_state" class="txtBoxStyle"></select></span>
+            <div class="input-group">
+              <input type="text" name="shipping_zip" size="14" value="[shipping_zip]" class="txtBoxStyle form-control" id="shipping_zip">
+              <input type="button" value="Go!" class="btn standishgreen" onClick="getInternationalQuote();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4" ID="Button1">
+            </div>
+            [viewcart_shipping-message]
+      
+          <!--START: viewcart_ship-->
+          [shipping_city] [shipping_state] [shipping_zip]
+              <select class="txtBoxStyle" ID="Select1" NAME="Select1">
+                <!--START: Shippers-->
+                <option><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</option>
+                <!--END: Shippers-->
+              </select>
+              <input type="button" class="btn standishgreen" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button2" name="Button5">
+          <!--END: viewcart_ship-->
+          
+          
+          <!--END: ShipQuoteInternational-->
+      
+          <!--START: savecart--><input type="button" value="[viewcart_save-cart]" onclick="document.location.href='myaccount.asp?action=save_cart';" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button3" name="Button6"><!--END: savecart-->
+      
+      
+          <!--START: INTERNATIONAL_CHECKOUT-->
+          - Outside the U.S. - 
+          <a href="internationalcheckout.asp"><img src="assets/templates/common/images/international_checkout.gif" border="0" />
+          <!--END: INTERNATIONAL_CHECKOUT-->
+          <!--START: BONGO_INTERNATIONAL-->
+          - Outside the U.S. - 
+          <a href="bongointernational.asp"><img style="cursor:pointer;" src="https://bongous.com/partner/images/Bongo_Checkout_Button.png" border="0"/>
+          <!--END: BONGO_INTERNATIONAL-->
+          <!--START: GOOGLECHECKOUT-->
+          - Or use -
+          <a href="google_checkout.asp"><img name="Google Checkout" alt="Google Checkout" src="https://checkout.google.com/buttons/checkout.gif?merchant_id=[gc_merchantid]&w=180&h=46&style=trans&variant=text&loc=en_US" height="46" width="180" border="0"></a>
+          <!--END: GOOGLECHECKOUT-->
+      
+          <!--START: vMeByVisa-->
+          [vMeByVisaButton]
           <script>
-            function get_Element(i)
-            {
-              return document.getElementById(i) || document.getElementsByName(i).item(0);
-            }								
-            function getInternationalQuote()
-            {
-              var strAction = "shipquote.asp?shipping_country=" + get_Element("shipping_country").value;
-              strAction = strAction + "&shipping_state=" + get_Element("shipping_state").value;
-              document.shipquote.action = strAction;
-              
-              document.shipquote.shipping_zip.value = document.recalculate.shipping_zip.value
-              document.shipquote.submit();
+            if (typeof jQuery == 'undefined')
+              document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
+      
+            function myCallbackFunctionForVmeEvents(VmeEventType, eventData) {
+              if (VmeEventType == "purchase.success") {
+                var url = "vmebyvisa.asp?r=purchase.success&s=viewcart&no-cache=" + Math.random();
+                var params = "mt=" + eventData.merchTrans;
+                params = params + "&ci=" + eventData.callId;
+                params = params + "&tp=" + eventData.type;
+                params = params + "&st=" + eventData.state;
+                params = params + "&sg=" + eventData.signature;
+                params = params + "&pi=" + eventData.productId;
+                if (eventData.subTotal) {
+                  params = params + "&sta=" + eventData.subTotal.amount;
+                  params = params + "&stc=" + eventData.subTotal.currency;
+                }
+                if (eventData.total) {
+                  params = params + "&tta=" + eventData.total.amount;
+                  params = params + "&ttc=" + eventData.total.currency;
+                }
+      
+                jQuery.ajax({
+                  url: url,
+                  dataType: 'html',
+                  type: 'POST',
+                  data: params,
+                  cache: false,
+                  success: function (strResult) {
+                    var arrResult = strResult.split("|");
+                    if (arrResult.length < 2) {
+                      alert("Error processing v.me request. Please, try again.");
+                      //alert(strResult);
+                    }
+                    else {
+                      document.location.href = arrResult[1];
+                    }
+                  },
+                  error: reportError
+                });
+              }
+            }
+      
+            function reportError(jqXHR, textStatus) {
+              if (jqXHR.status > 0) {
+                alert("Error processing v.me request. Please, try again.");
+                alert(jqXHR.responseText);
+              }
             }
           </script>
-          <select name="shipping_country" onChange="this.form.shipping_zip.value='';populateState('shipping_state','shipping_country');" class="txtBoxStyle" id="shipping_country"></select>
-          <span><select id="shipping_state" onChange="this.form.shipping_zip.value='';" name="shipping_state" class="txtBoxStyle"></select></span>
-          <div class="input-group">
-            <input type="text" name="shipping_zip" size="14" value="[shipping_zip]" class="txtBoxStyle form-control" id="shipping_zip">
-            <input type="button" value="Go!" class="btn standishgreen" onClick="getInternationalQuote();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" name="Button4" ID="Button1">
+        <!--END: vMeByVisa-->
+        
+        <!--START: checkoutByAmazon-->
+          [amazon_cba_form]
+        <!--END: checkoutByAmazon-->
+        
+        <!--START: shopatron-->
+          <input type="button" value="Checkout with Shopatron" name="B1" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" onClick="window.location='shopatron.asp'"/>
+        <!--END: shopatron-->
+      
+          <br />
+      
+          <!-- [viewcart_checkout-button] -->
+          <!-- onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" -->
+          <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg" id="Button7" name="Button7">
+      
+          <!--START: paypalexpress-->
+          <div style='text-align: center'>
+            <h4>-- or --</h4>
+            <p style="font-size: 14px;">Pay without sharing your financial information.</p>
+            <a href="paypal_express.asp?ch=1"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" ></a>
           </div>
-          [viewcart_shipping-message]
-    
-        <!--START: viewcart_ship-->
-        [shipping_city] [shipping_state] [shipping_zip]
-            <select class="txtBoxStyle" ID="Select1" NAME="Select1">
-              <!--START: Shippers-->
-              <option><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</option>
-              <!--END: Shippers-->
-            </select>
-            <input type="button" class="btn standishgreen" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button2" name="Button5">
-        <!--END: viewcart_ship-->
-        
-        
-        <!--END: ShipQuoteInternational-->
-    
-        <!--START: savecart--><input type="button" value="[viewcart_save-cart]" onclick="document.location.href='myaccount.asp?action=save_cart';" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button3" name="Button6"><!--END: savecart-->
-    
-    
-        <!--START: INTERNATIONAL_CHECKOUT-->
-        - Outside the U.S. - 
-        <a href="internationalcheckout.asp"><img src="assets/templates/common/images/international_checkout.gif" border="0" />
-        <!--END: INTERNATIONAL_CHECKOUT-->
-        <!--START: BONGO_INTERNATIONAL-->
-        - Outside the U.S. - 
-        <a href="bongointernational.asp"><img style="cursor:pointer;" src="https://bongous.com/partner/images/Bongo_Checkout_Button.png" border="0"/>
-        <!--END: BONGO_INTERNATIONAL-->
-        <!--START: GOOGLECHECKOUT-->
-        - Or use -
-        <a href="google_checkout.asp"><img name="Google Checkout" alt="Google Checkout" src="https://checkout.google.com/buttons/checkout.gif?merchant_id=[gc_merchantid]&w=180&h=46&style=trans&variant=text&loc=en_US" height="46" width="180" border="0"></a>
-        <!--END: GOOGLECHECKOUT-->
-    
-        <!--START: vMeByVisa-->
-        [vMeByVisaButton]
-        <script>
-          if (typeof jQuery == 'undefined')
-            document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
-    
-          function myCallbackFunctionForVmeEvents(VmeEventType, eventData) {
-            if (VmeEventType == "purchase.success") {
-              var url = "vmebyvisa.asp?r=purchase.success&s=viewcart&no-cache=" + Math.random();
-              var params = "mt=" + eventData.merchTrans;
-              params = params + "&ci=" + eventData.callId;
-              params = params + "&tp=" + eventData.type;
-              params = params + "&st=" + eventData.state;
-              params = params + "&sg=" + eventData.signature;
-              params = params + "&pi=" + eventData.productId;
-              if (eventData.subTotal) {
-                params = params + "&sta=" + eventData.subTotal.amount;
-                params = params + "&stc=" + eventData.subTotal.currency;
-              }
-              if (eventData.total) {
-                params = params + "&tta=" + eventData.total.amount;
-                params = params + "&ttc=" + eventData.total.currency;
-              }
-    
-              jQuery.ajax({
-                url: url,
-                dataType: 'html',
-                type: 'POST',
-                data: params,
-                cache: false,
-                success: function (strResult) {
-                  var arrResult = strResult.split("|");
-                  if (arrResult.length < 2) {
-                    alert("Error processing v.me request. Please, try again.");
-                    //alert(strResult);
-                  }
-                  else {
-                    document.location.href = arrResult[1];
-                  }
-                },
-                error: reportError
-              });
-            }
-          }
-    
-          function reportError(jqXHR, textStatus) {
-            if (jqXHR.status > 0) {
-              alert("Error processing v.me request. Please, try again.");
-              alert(jqXHR.responseText);
-            }
-          }
-        </script>
-      <!--END: vMeByVisa-->
+          <!--END: paypalexpress-->
       
-      <!--START: checkoutByAmazon-->
-        [amazon_cba_form]
-      <!--END: checkoutByAmazon-->
+          <!-- <button class="coral large" onclick="window.location='checkout.asp?step=1'"></button> -->
       
-      <!--START: shopatron-->
-        <input type="button" value="Checkout with Shopatron" name="B1" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" onClick="window.location='shopatron.asp'"/>
-      <!--END: shopatron-->
-    
-        <br />
-    
-        <!-- [viewcart_checkout-button] -->
-        <!-- onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" -->
-        <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg" id="Button7" name="Button7">
-    
-        <!--START: paypalexpress-->
-        <div style='text-align: center'>
-          <h4>-- or --</h4>
-          <p style="font-size: 14px;">Pay without sharing your financial information.</p>
-          <a href="paypal_express.asp?ch=1"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0" ></a>
+          <br />
+          <hr />
+      
+          <!--START: ShipQuote-->
+          <div style="text-align: center;">
+            <p class="bold" style="text-align: center; font-size: 18px; margin-bottom: 5px; margin-top: 28px;">[viewcart_shipping-header]</p>
+            <div class="input-group">
+              <input type="text" name="shipping_zip" size="10" value="[shipping_zip]" class="form-control txtBoxStyle white" id="Text3" placeholder="Zip Code">
+        			<span class="input-group-btn">
+              	<input type="button" value="Go!" class="button btn standishgreen" onClick="document.shipquote.shipping_zip.value=document.recalculate.shipping_zip.value;document.shipquote.submit();" name="Button4">
+              </span>
+            </div>
+              
+              <br />
+            <span class="zip_helper_text">[viewcart_shipping-message]</span>
+      
+            <!--START: viewcart_ship-->
+              <p>[shipping_city] [shipping_state] [shipping_zip]</p>
+              <ol style="text-align: left; padding-left: 15px;">
+                <!--START: Shippers-->
+                <li><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</li>
+                <!--END: Shippers-->
+              </ol>
+      
+              <!-- <input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button5" name="Button5"> -->
+            <!--END: viewcart_ship-->
+          </div>
+          <!--END: ShipQuote-->
+        </form>
+      
         </div>
-        <!--END: paypalexpress-->
+        
+      </div>
+      <!-- End of the Right Side -->
+    </div>
     
-        <!-- <button class="coral large" onclick="window.location='checkout.asp?step=1'"></button> -->
-    
-        <br />
-        <hr />
-    
-        <!--START: ShipQuote-->
-        <div style="text-align: center;">
-          <p class="bold" style="text-align: center; font-size: 18px; margin-bottom: 5px; margin-top: 28px;">[viewcart_shipping-header]</p>
-          <div class="input-group">
-            <input type="text" name="shipping_zip" size="10" value="[shipping_zip]" class="form-control txtBoxStyle white" id="Text3" placeholder="Zip Code">
-      			<span class="input-group-btn">
-            	<input type="button" value="Go!" class="button btn standishgreen" onClick="document.shipquote.shipping_zip.value=document.recalculate.shipping_zip.value;document.shipquote.submit();" name="Button4">
+    <div class="col-md-12 coupon">
+      <!-- Coupon Codes -->
+      <form action="recalculate.asp" method="post">
+        
+          <br />
+          <!--START: apply_coupon-->
+          <p>
+          <strong class="dimgray-text">[viewcart_coupon-header]</strong>
+          </p>
+          <div class="input-group col-md-4 col-sm-4 pull-left">
+            <input type="text" name="coupon_code" class="form-control txtBoxStyle">
+            <span class="input-group-btn">
+              <input type="submit" class="button btn" value="Go!" id="Submit1" name="Submit1" />
             </span>
           </div>
-            
-            <br />
-          <span class="zip_helper_text">[viewcart_shipping-message]</span>
-    
-          <!--START: viewcart_ship-->
-            <p>[shipping_city] [shipping_state] [shipping_zip]</p>
-            <ol style="text-align: left; padding-left: 15px;">
-              <!--START: Shippers-->
-              <li><b>[OPTION-SHIPPER]</b> <i>[OPTION-DESCRIPTION]</i> [OPTION-PRICE]</li>
-              <!--END: Shippers-->
-            </ol>
-    
-            <!-- <input type="button" class="btn" value="Clear" onClick="document.shipquote.action='shipquote.asp?action=clean';document.shipquote.submit();" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Button5" name="Button5"> -->
-          <!--END: viewcart_ship-->
-        </div>
-        <!--END: ShipQuote-->
-    </form>
-    
-      </div>
-      
-    </div>
-    <!-- End of the Right Side -->
-    
-    
-    
-    <div class="col-md-12 coupon clearfix">
-    <!-- Coupon Codes -->
-    <form action="recalculate.asp" method="post">
-      
-        <br />
-        <!--START: apply_coupon-->
-        <p>
-        <strong class="dimgray-text">[viewcart_coupon-header]</strong>
-        </p>
-        <div class="input-group col-md-4 pull-left">
-          <input type="text" name="coupon_code" class="form-control txtBoxStyle">
-          <span class="input-group-btn">
-            <input type="submit" class="standishgreen form-control" value="Go!" id="Submit1" name="Submit1" />
-          </span>
-        </div>
-        [viewcart_coupon-message]
-        <!--END: apply_coupon-->
-        <br />
-        <br />
-      
-    </form>
+          [viewcart_coupon-message]
+          <!--END: apply_coupon-->
+          <br />
+          <br />
+        
+      </form>
     </div>
     <!-- End of Coupon Codes -->
     
