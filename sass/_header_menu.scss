@@ -285,7 +285,7 @@ li.first.far a {
 }
 
 .hello-container {
-  padding-top: 10px;
+  padding-top: 18px;
   a, p, div {
     @extend .special;
     color: lighten($primary-gray, 10%);

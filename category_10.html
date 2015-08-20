@@ -1,5 +1,5 @@
 <!-- Template: category_0.html -->
-<div class="template" style="display:none" data-template="category_10"></div>
+<div class="template" style="display:none" data-template="category_0"></div>
 
 <script>
 jQuery( function($) {
@@ -21,15 +21,26 @@ jQuery( function($) {
 </script>
 
 <div class="right-side col-md-10">
-  <div class="col-md-12 breadcrumb-container hidden-xs hidden-sm">
-    <!--START: CATEGORY_FULLINE-->
-      <!--IF: CATEGORY_FULLINE-->
-        <!-- display breadcrumbs in the main template if they exist -->
-        <div class="col-md-8 breadcrumb">
+    <div class="col-md-12 search-container hidden-sm hidden-xs">
+      <!--START: CATEGORY_FULLINE-->
+        <!--IF: CATEGORY_FULLINE-->
+          <!-- display breadcrumbs in the main template if they exist -->
+          <div class="col-md-8 breadcrumb">
             [CATEGORY_FULLLINE]
         </div>
-      <!--ENDIF: CATEGORY_FULLINE-->
-    <!--END: CATEGORY_FULLINE-->
+        <!--ENDIF: CATEGORY_FULLINE-->
+      <!--END: CATEGORY_FULLINE-->
+
+      <div class="col-md-4 pull-right search">
+        <form method="get" name="searchForm" action="search.asp" _lpchecked="1">
+            <div class="input-group">
+              <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+              <span class="input-group-btn">
+                  <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+      </div>
   </div>
 
   <hr class="hidden-xs hidden-sm" />
@@ -94,9 +105,8 @@ jQuery( function($) {
           <!-- Use this block if you want to show filters as a list--> 
           
           <!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
-    
-          <div class="col-md-3 col-sm-4 col-xs-4 pull-right">
-            <div class="form-group fancy-select">
+          <div class="col-md-3 col-sm-4 pull-right-md">
+                  <div class="form-group fancy-select col-md-12">
               <select class="form-control" name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
                 <option value="">Filter by [catFilterName]</option> 
                 <!--START: catFilter_Filter_Item--> 

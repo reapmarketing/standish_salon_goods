@@ -1,15 +1,15 @@
-<!---------------------- BEGINNING OF CHECKOUT STEP 4 ------>
+<!-- BEGINNING OF CHECKOUT STEP 4 -->
 <!-- Template: checkout-step4.html -->
 <div class="template" style="display:none" data-template="checkout-step4"></div>
-  <div>
+  <div class="col-md-10">
     <!--START: 3stepsCheckout-->
-			<!-- [checkout1_step] [checkout2_step] [checkout3_step] <span class="steps_on">[checkout4_step]</span> -->
+      <!-- [checkout1_step] [checkout2_step] [checkout3_step] <span class="steps_on">[checkout4_step]</span> -->
     <!--END: 3stepsCheckout-->
 
       <!--START: CATEGORY_HEADER-->
         
         <div class="col-md-12" width="98%">
-					[CONTENT]
+          [CONTENT]
         </div>
         
         <!--END: CATEGORY_HEADER-->
@@ -23,10 +23,10 @@
               <!--END: ordercompleted-->
 
           <div class="panel-default panel col-md-12 center-block text-center"><h3>Order [invoice-prefix][invoice-number]</h3></div>
-          <!------ START: Confirmation ---------------------------------->
+          <!-- START: Confirmation -->
           <div class="col-md-3 col-sm-4">
-          	<!--start customer info block-->
-          	<!--START: invoicelogo-->
+            <!--start customer info block-->
+            <!--START: invoicelogo-->
            <img src="../[invoicelogo]" /><!--END: invoicelogo-->
            
            <p>
@@ -220,7 +220,7 @@
             <!--END: GIFTCERTS-->
             </p>
           
-          <!------ END: Confirmation ------------------------------------>
+          <!-- END: Confirmation -->
           </div>
        
         <!--START: CATEGORY_FOOTER-->
@@ -230,16 +230,16 @@
             [CONTENT]
           
         </div>
-	
-		<!--END: CATEGORY_FOOTER-->
+  
+    <!--END: CATEGORY_FOOTER-->
     
 
 <script type="text/javascript" src="//track.datafeedexperts.com/sales/312"></script>
 <script type="text/javascript">
-		dfe.conversion("[total_noformat]","[invoice-prefix][invoice-number]"); //should be filled by the total sales amount and the order id ([orderid])
+    dfe.conversion("[total_noformat]","[invoice-prefix][invoice-number]"); //should be filled by the total sales amount and the order id ([orderid])
 </script>
 
-<!---------------------- END OF CHECKOUT STEP 4 ------>
+<!--END OF CHECKOUT STEP 4 -->
 
 <!--  Enversa Conversion Tracking Pixel -->
 <script type="text/javascript">

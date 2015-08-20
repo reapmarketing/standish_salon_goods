@@ -1,8 +1,8 @@
 {
   "Current Deals": {
-		"order": 0,
-		"show_mobile": true,
-		"show_children_mobile": false,
+    "order": 0,
+    "show_mobile": true,
+    "show_children_mobile": false,
     "subcategories": {
       "Promotions and Discounts": {
         "url": "standish-salon-equipment-sale"
@@ -13,7 +13,7 @@
       "We Pay Your Tax": {
         "url": "we-pay-your-tax"
       },
-      "FREE Layout & SpacePlanning": {
+      "FREE Layout & Space Planning": {
         "url": "free-salon-space-planning"
       },
       "FREE Salon Equipment Checklist": {
@@ -31,11 +31,13 @@
     }
   },
   "Shop Equipment": {
-		"order": 1,
-		"show_mobile":true,
-		"show_children_mobile": true,
+    "order": 1,
+    "show_mobile":true,
+    "show_children_mobile": true,
     "subcategories": {
-      "Packages": {},
+      "Packages": {
+        "url": "salon-furniture-packages"
+      },
       "Chairs": {
         "url": "hair-salon-chairs",
         "subcategories": {
@@ -193,9 +195,9 @@
     }
   },
   "Shop Tools and Accessories": {
-		"order": 2,
-		"show_mobile": true,
-		"show_children_mobile":true,
+    "order": 2,
+    "show_mobile": true,
+    "show_children_mobile":true,
     "subcategories": {
       "Hair Tools": {
         "url": "hair-salon-supplies-online",
@@ -285,9 +287,9 @@
     }
   },
   "Brands": {
-		"order": 3,
-		"show_mobile": true,
-		"show_children_mobile": false,
+    "order": 3,
+    "show_mobile": true,
+    "show_children_mobile": false,
     "subcategories": {
       "Standish": {
         "url": "standish"
@@ -358,21 +360,21 @@
     }
   },
   "Financing": {
-		"order": 4,
-		"show_mobile": true,
+    "order": 4,
+    "show_mobile": true,
     "single": true,
     "url": "salon-equipment-financing"
   },
   "Showroom": {
-		"order": 5,
-		"show_mobile": true,
+    "order": 5,
+    "show_mobile": true,
     "single": true,
     "url": "dallas-salon-furniture-showroom"
   },
   "About": {
-		"order": 6,
-		"show_mobile": true,
-		"show_children_mobile": true,
+    "order": 6,
+    "show_mobile": true,
+    "show_children_mobile": true,
     "subcategories": {
       "Meet the Team": {
         "url": "meet-the-team"
@@ -395,9 +397,9 @@
     }
   },
   "Why Buy Standish?": {
-		"order": 7,
-		"show_mobile": false,
-		"show_children_mobile": false,
+    "order": 7,
+    "show_mobile": false,
+    "show_children_mobile": false,
     "subcategories": {
       "Why Buy Standish?": {
         "url": "why-standish"
@@ -426,27 +428,27 @@
     }
   },
   "Contact": {
-		"order": 8,
-		"show_mobile": true,
+    "order": 8,
+    "show_mobile": true,
     "single": true,
     "url": "contact-us"
   },
   "FAQ": {
-		"order": 9,
-		"show_mobile": true,
+    "order": 9,
+    "show_mobile": true,
     "single": true,
     "url": "frequently-asked-questions"
   },
   "Blog": {
-		"order": 10,
-		"show_mobile": true,
+    "order": 10,
+    "show_mobile": true,
     "class": "min small",
     "single": true,
     "url": "blog.asp"
   },
   "Catalog": {
-		"order": 11,
-		"show_mobile": true,
+    "order": 11,
+    "show_mobile": true,
     "class": "min small",
     "single": true,
     "url": "catalog"

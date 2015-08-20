@@ -29,18 +29,23 @@
 		<!--END: header-->
 	<!--END: MANUFACTURER_HEADER-->
 	<hr />
-	<div class="col-md-8 col-sm-6">
-		[category_Header-products] (Total Items: [productnumber])
-	</div>
-	<div class="form-group col-md-3 col-sm-4 col-xs-12 fancy-select">
-		<form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
-		  <!--START: sortbylist-->
-		    <select name="sortby" onchange="frmsortby.submit();">
-		    [sortbylist]
-		    </select>
-		    <i class="fa fa-caret-down fa-sm"></i>
-		  <!--END: sortbylist-->
-		</form>
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			[category_Header-products] (Total Items: [productnumber])
+		</div>
+		<div class="col-md-3 col-sm-4 col-xs-12 sorting-container">
+
+			<form action="search_groups.asp?keyword=[keyword]&manf=[manf]&byprice=[byprice]" method="post" name="frmsortby">
+				<div class="fancy-select form-group">
+				  <!--START: sortbylist-->
+				    <select name="sortby" onchange="frmsortby.submit();">
+				    [sortbylist]
+				    </select>
+				    <i class="fa fa-caret-down fa-sm"></i>
+				  <!--END: sortbylist-->
+		  		</div>
+			</form>
+		</div>
 	</div>
   	<div class="clearfix"></div>
 	<div class="row clearfix">

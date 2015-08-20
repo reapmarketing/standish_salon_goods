@@ -31,19 +31,28 @@ $( function(){
 <link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
 
 <article class="col-md-12" itemscope itemtype="http://schema.org/Product">
-	<div class="col-md-12 breadcrumb-container">
-    <!--START: CATEGORY_FULLINE-->
-      <!--IF: CATEGORY_FULLINE-->
-        <!-- display breadcrumbs in the main template if they exist -->
-        
-          <!--chunks_o_code/navigation.html-->
-        <div class="col-md-8 breadcrumb hidden-xs hidden-sm">
-            [CATEGORY_FULLLINE]
+    <div class="col-md-12 search-container hidden-sm hidden-xs">
+        <!--START: CATEGORY_FULLINE-->
+          <!--IF: CATEGORY_FULLINE-->
+            <!-- display breadcrumbs in the main template if they exist -->
+            <div class="col-md-8 breadcrumb hidden-xs">
+                <a id="catCrumbHomeLink" href="/">Home</a>&nbsp;&gt;&nbsp;<a href="/salon-styling-stations">Styling Stations</a>
+            </div>
+          <!--ENDIF: CATEGORY_FULLINE-->
+        <!--END: CATEGORY_FULLINE-->
+
+        <div class="col-md-4 pull-right search">
+          <form method="get" name="searchForm" action="search.asp" _lpchecked="1">
+              <div class="input-group">
+                <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+                <span class="input-group-btn">
+                    <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
+                  </span>
+              </div>
+          </form>
         </div>
-      <!--ENDIF: CATEGORY_FULLINE-->
-    <!--END: CATEGORY_FULLINE-->
-  </div>
-  <hr/>
+    </div>
+  	<hr/>
 	<form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
 		<input type="hidden" name="item_id" value="[catalogid]" />
 		<input type="hidden" name="itemid" value="[id]" ID="itemid" />
@@ -479,7 +488,7 @@ $( function(){
 									<div class="col-md-3 col-sm-6 col-xs-10">
 										<input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
 									</div>
-									<div class="questions text-right col-md-7 col-sm-12 col-xs-12"><span>Questions?</span> Call <span class="bold">888-885-8511</span></div>
+									<div class="questions padd-top text-right col-md-7 col-sm-12 hidden-xs"><span>Questions?</span> Call <span class="bold">888-885-8511</span></div>
 								</div>
 
 								
@@ -515,10 +524,11 @@ $( function(){
 							<label class="col-md-6 col-sm-6 hidden-sm hidden-xs">
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 10-14 Business Days!</span>
 							</label>
-              				<div class="col-md-6 col-sm-6 col-xs-10 pull-right">
+              				<div class="col-md-6 col-sm-6 col-xs-12 pull-right">
 								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add); this.onclick=null;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
           					</div>
 						</div>
+						<div class="col-md-12 text-center option-row"><span>Questions?</span> Call <span class="bold">888-885-8511</span></div>
 					</fieldset>
          			<div class="clearfix"></div>
 

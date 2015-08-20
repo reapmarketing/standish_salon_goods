@@ -66,9 +66,8 @@
 	// SalePrice Checker
 	var price = $('#price').text().replace('$','').replace(',',''),
 	price = parseInt(price);
-	console.log(price);
 	var saleprice = $('#saleprice').text().replace('$','').replace(',','');
-	console.log(saleprice);
+
 	if (typeof saleprice != undefined && saleprice != 0) {
 		saleprice = parseInt(saleprice);
 		$('.pricebox').addClass('sale-cornertag');

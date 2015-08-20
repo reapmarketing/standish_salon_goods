@@ -74,7 +74,6 @@ input::-moz-focus-inner {
   background: transparent none;
 }
 
-
 .fancy-select i {
   pointer-events: none;
 }
@@ -82,7 +81,7 @@ input::-moz-focus-inner {
 .fancy-select img {
   margin: 3px 0 0 235px;
 }
-.fancy-select select {
+.fancy-select select, .fancy-select-lg select {
   background: transparent;
   color: $neutral-dark;
   padding: 5px 10px;
@@ -116,11 +115,43 @@ input::-moz-focus-inner {
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 18px;
+  font-size: 13px;
   border-left: 1px solid #dcdcdc;
-  padding: 2% 3%;
+  padding: 6% 3%;
   height: 100%;
 }
+
+.fancy-select-lg {
+  &.form-group {
+    margin-bottom: 0;
+  }
+  margin-right: 0;
+  width: 100%;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 3.2rem;
+
+  select {
+    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  i {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    border-left: 1px solid #dcdcdc;
+    padding: 6% 3%;
+    height: 100%;
+  }
+
+}
+
+
+
 
 button,
 .button,
@@ -173,6 +204,9 @@ button[type=submit].btn-lg, .btn.btn-lg {
 btn.focus, .btn:focus, .btn:hover, .hs-form .hs-button:focus, .hs-form .hs-button:hover {
   color: white;
   font-weight: bold;
+}
+.button.cart.btn:hover {
+  font-weight: normal;
 }
 
 input[type=button]:hover,

@@ -5,6 +5,15 @@
 
 <style>
 #simplemodal-overlay {background-color:#000;}
+/*~~hack~~*/
+  .overlay {
+    background-color: #FFF;
+    filter: alpha(opacity=80);
+      left: 0;
+      opacity: 0.8;
+      top: 100;
+      z-index: 1;
+  }
 </style>
 
 <script type="text/javascript">
@@ -740,3 +749,5 @@ function confirmationValidation()
         return obj;
     }
 </script> 
+
+

@@ -1,11 +1,11 @@
 <script type="text/javascript" src="state_countryjs.asp"></script>
 <style type="text/css">
 .overlay {
-	background-color: #FFF;
-	filter: alpha(opacity=80);
-		left: 0;
+	background-color: rgba(255,255,255, 0.4);;
+		left: 26px;
 	opacity: 0.8;
-		top: 0;
+		top: 121px;
+		z-index: 1;
 }
 #overlay {
 	background-image: url(assets/templates/common/images/transparent.png);
@@ -34,11 +34,12 @@
 	<form action="checkout_one.asp" method="post" name="billing" id="billing">
 
 
-		<div class="col-md-12">
+		<div class="container">
 
 			<input type="hidden" name="tknio" value="[tknio]">
 
-			<div class="col-md-12">
+			<div class="clearfix"></div>
+			<div class="container">
 				<!-- Items and amounts -->
 				<div id="billing_div" class="col-md-12">
 						<div class="cart_items_header row">
@@ -77,7 +78,8 @@
 			</div>
 
 
-			<div class="col-md-12">
+			<div class="clearfix"></div>
+			<div class="container">
 				<!-- Billing -->
 				<div class="col-md-6 col-sm-6 leftCol">
 
@@ -215,8 +217,10 @@
 							<div class="row">
 								<div class="form-group col-md-12 col-sm-12 col-xs-12">
 										<div class="checkbox-format">
+											<label for="maillist">
 												<input type="checkbox" value="1" name="maillist" [maillist] tabindex="13" />
-												<label for="maillist">[checkout1_joinmailinglist]</label>
+												[checkout1_joinmailinglist]
+											</label>
 										</div>
 								</div>
 							</div>
@@ -347,7 +351,8 @@
 			</div>
 
 			<!-- Account Login -->
-			<div class="col-md-12">
+			<div class="clearfix"></div>
+			<div class="container">
 				<div class="col-md-6 col-sm-6 leftCol">
 					<div class="row">
 						<!--START: account_login1-->
@@ -355,7 +360,7 @@
 							<h3>Login To Your Account <hr/></h3>
 							<div class="loginmessage2">[checkout1_loginmessage2]</div>
 							<div class="login1-button">
-								<button type="button" onclick="document.location='checkout.asp?step=log-in';" class="btn"><i class="icon-login"></i> [checkout1_login]</button>
+								<button type="button" onclick="document.location='checkout.asp?step=log-in';" class="btn button"><i class="icon-login"></i> [checkout1_login]</button>
 							</div>
 							<!--START: fbconnect-->
 							<div class="fbconnect">
@@ -369,7 +374,7 @@
 				</div>
 				<div class="col-md-6 col-sm-6 rightCol">
 					<!--START: account_login2-->
-					<div class="create_newaccount row">
+					<div class="create_newaccount">
 						<div class="header">
 							<h3>[checkout1_Header-createnewaccount] <hr/></h3>
 						</div>
@@ -412,7 +417,7 @@
 			
 
 			<div class="clearfix"></div>
-			<div class="col-md-12">
+			<div>
 				<!-- Checkout Shipping Method-->
 				<div class="col-md-6">
 					<h3 class="section-header double-line"><span>[checkout3_Header-shippingmethodinfo]</span><hr/></h3>
@@ -482,8 +487,9 @@
 							</div>
 						<!--END: echoFreightOptions-->
 						<div id="shipping_div" class="padd-block">
-							<div id="shipResult">
+							<div id="shipResult" class="padd-block">
 								<p>[checkout3_shippinginstructions]</p>
+								<a href="/about-shipping">Learn more about shipping</a>
 							</div>
 							<a class="button btn pull-right" href="javascript:check_address('refresh');">[checkout3_refreshRates]</a>
 							<div class="clearfix"></div>
@@ -506,12 +512,14 @@
 								<div class="list-group-item col-md-12">
 									<div class="total_items pull-left">[itemCount] Item(s)</div>
 									<div class="total_subtotal pull-right">[SUBTOTAL]</div>
+									<div class="clearfix"></div>
 								</div>
 								<!--START: DISCOUNTS-->
 									<div class="list-group-item col-md-12">
 										<div class="total_discount-detail pull-left">[shoppingcart_discount]: <a href="javascript:showDiscountDetails();">(details)</a></div>
 
 										<div class="total_subtotal pull-right">[DISCOUNT]</div>
+										<div class="clearfix"></div>
 									</div>
 									<!--START: PROMOTIONS-->
 									<div  id="divDiscountDetails" name="divDiscountDetails" style="display:none;" class="list-group-item col-md-12">
@@ -524,6 +532,7 @@
 												<!--END: REMOVE_PROMO-->
 											</div>
 										<!--END: DISPLAY_PROMOS-->
+										<div class="clearfix"></div>
 									</div>
 									<!--END: PROMOTIONS--> 
 								<!--END: DISCOUNTS-->
@@ -531,27 +540,32 @@
 								<div class="list-group-item col-md-12">
 									<div class="total_buysafe-logo"><img src="assets/templates/common/images/buysafe.gif" alt="" /></div>
 									<div class="total_buysafe">[buysafe_totalbondcost]</div>
+									<div class="clearfix"></div>
 								</div>
 								<!--END: BUYSAFE-->
 								<!--START: HANDLING-->
 								<div class="list-group-item col-md-12">
 									<div class="total_handling-item pull-left">[handling_itemname]</div>
 									<div class="total_handling-price pull-right">[handling_price]</div>
+									<div class="clearfix"></div>
 								</div>
 								<!--END: HANDLING-->
 								<div class="list-group-item col-md-12">
 									<div class="total_cart-shipping pull-left">[shoppingcart_shipping]</div>
 									<div class="total_shipping pull-right">[SHIPPING]</div>
+									<div class="clearfix"></div>
 								</div>
 
 								<div class="list-group-item col-md-12">
 									<div class="total_cart-taxes pull-left">[shoppingcart_taxes]</div>
 									<div class="total_taxes pull-right">[TAX]</div>
+									<div class="clearfix"></div>
 								</div>
 
 								<div class="list-group-item col-md-12">
 									<div class="total_cart-total pull-left">[shoppingcart_total]</div>
 									<div class="total_total pull-right">[TOTAL]</div>
+									<div class="clearfix"></div>
 								</div>
 								<!--START: GIFTCERTS-->
 								<div class="list-group-item col-md-12">
@@ -575,6 +589,7 @@
 									  </div>
 									  <!--END: GIFTCERTS_DETAILS_ITEMS--> 
 									</div>
+									<div class="clearfix"></div>
 								</div>
 								<!--END: GIFTCERTS-->
 								<div class="list-group-item col-md-12">
@@ -583,6 +598,7 @@
 										<div class="total_balance price pull-right"><strong>[BALANCE]</strong></div>
 										<div class="clearfix"></div>
 									</div>
+									<div class="clearfix"></div>
 								</div>
 							</div>
 
@@ -593,7 +609,7 @@
 							  <div class="coupon-field input-group col-md-7">
 							    <input id="coupon" onchange="clearfixContent(this);" maxlength="30" size="15" value="" name="coupon_code" class="txtBoxStyle form-control" />
 						    	<span class="input-group-btn">
-							    	<input type="button" onclick="applyCoupon(this.form.coupon_code.value);" value="Go!" class="btn" />
+							    	<input type="button" onclick="applyCoupon(this.form.coupon_code.value);" value="Go!" class="btn button" />
 							    </span>
 							  </div>
 							  <div class="clearfix"></div>
@@ -610,10 +626,12 @@
 			</div>
 
 			<!-- Payment Options -->
-			<div class="col-md-12" id="divPayment">
+			<div class="clearfix"></div>
+			<div id="divPayment">
 				<!--START: PAYMENT_BLOCK-->
-				<h3 class="section-header double-line"><span>[checkout3_methodofpaymentselect]</span><hr/></h3>
+				
 				<div id="divPaymentMethods" class="panel panel-checkout col-md-12">
+					<h3 class="section-header double-line"><span>[checkout3_methodofpaymentselect]</span><hr/></h3>
 
 					<!--START: NO_PAYMENT_BLOCK-->
 					<div class="no-payment-method">There's no payment options available to your address. Please check the entered address and try again.</div>
@@ -756,7 +774,7 @@
 							</div>
 							<div class="ppe-logo col-md-11 col-sm-11 col-xs-10">
 								<a href="javascript:document.getElementById('online-[id]-ppe').click();">
-									<h4>[payment_description]</h4>
+									<h6>[payment_description]</h6>
 									<img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" />
 								</a>
 							</div>
@@ -1091,18 +1109,18 @@
 								<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
 							</div>
 							<div class="col-md-11 col-sm-11 col-xs-10">
-								<h4>[payment_description]</h4>
+								<h6>[payment_description]</h6>
 							</div>
 						</label>
 						<div id="divPaymentOption[id]" name="divPaymentOption" class="col-md-offset-1">
 							<hr />
 							<div class="desc-message">[payment_description_message]</div>
 							<div class="ccgField form-group">
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<label for="creditcardnumber">[CustomerInfo_creditcardnumber]</label>
 									<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
 								</div>
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" />
 								</div>
 								<div class="clearfix"></div>
@@ -1129,18 +1147,18 @@
 							</div>
 							<!--END: ccStartDate-->
 							<div class="ccgField form-group">
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<label for="creditexpiration">
 										[CustomerInfo_creditexpiration]
 									</label>
 									<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
 								</div>
-								<div class="col-md-2 col-sm-2 col-xs-3">
+								<div class="col-md-2 col-sm-2 col-xs-6">
 									<select name="ff[id]_ocardexpiresmonth" class="txtBoxStyle form-control">
 										[monthlist]
 									</select>
 								</div>
-								<div class="col-md-2 col-sm-2 col-xs-3">
+								<div class="col-md-2 col-sm-2 col-xs-6">
 									<select name="ff[id]_ocardexpiresyear" class="txtBoxStyle form-control">
 										[yearlist]
 									</select>
@@ -1148,11 +1166,11 @@
 								<div class="clearfix"></div>
 							</div>
 							<div class="ccgField form-group">
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<label for="cardtype">[CustomerInfo_cardtype]</label>
 									<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
 								</div>
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<select name="ff[id]_ocardtype" class="txtBoxStyle form-control">
 										[cctype]
 									</select>
@@ -1161,10 +1179,10 @@
 							</div>
 							<!--START: ccIssueNumber-->
 							<div class="ccgField form-group">
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<label for="creditissuenumber">[CustomerInfo_creditissuenumber]</label>
 								</div>
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<input type="text" name="ff[id]_ocardissue" maxlength="10" size="3" class="txtBoxStyle form-control" />
 								</div>
 								(Maestro and Solo only) <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
@@ -1172,17 +1190,18 @@
 							</div>
 							<!--END: ccIssueNumber-->
 							<div class="ccgField form-group">
-								<div class="col-md-4 col-sm-4 col-xs-6">
+								<div class="col-md-4 col-sm-4 col-xs-12">
 									<label for="cvv2">CVV2</label>
 									<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
 								</div>
-								<div class="col-md-2 col-sm-2 col-xs-6">
+								<div class="col-md-2 col-sm-2 col-xs-12">
 									<input type="text" name="ff[id]_ocardcvv2" size="3" class="txtBoxStyle form-control" />
 									<!--START: cvvrequired--><input type="hidden" name="hdnCvvRequired" id="hdnCvvRequired" value="1" />
 									<!--END: cvvrequired--> 
-								</div>
-								<a href="#" onclick="javascript:window.open('assets/templates/common/images/cvv2.gif','new','menubars=no, resizable=no, statusbar=no, titlebar=no, width=300, height=500');" class="cvv2-help">What's this?</a>
+									<a href="#" onclick="javascript:window.open('assets/templates/common/images/cvv2.gif','new','menubars=no, resizable=no, statusbar=no, titlebar=no, width=300, height=500');" class="cvv2-help">What's this?</a>
 								<div class="clearfix"></div>
+								</div>
+								
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -1264,45 +1283,45 @@
 
 					<!--START: CHECKGATEWAY-->
 					<div class="chkGateway col-md-12">
-					<h4>
-					<label for="online-[id]">
-					<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
-					[payment_description]
-					</label>
-					</h4>
-					<div class="clearfix"></div>
-					<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-					<div class="desc-message">[payment_description_message]</div>
-					<div class="chkField">
-					<label for="ff[id]_ochecktype">[CustomerInfo_check-type]</label>
-					<select name="ff[id]_ochecktype" class="txtBoxStyle form-control">
-					[checktypelist]
-					</select>
-					<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-					<div class="clearfix"></div>
-					</div>
-					<div class="chkField">
-					<label for="ff[id]_ocheckaccttype">[CustomerInfo_check-acct-type]</label>
-					<select name="ff[id]_ocheckaccttype" class="txtBoxStyle form-control">
-					[checkaccttypelist]
-					</select>
-					<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-					<div class="clearfix"></div>
-					</div>
-					<div class="chkField">
-					<label for="ff[id]_ocheckrouting">[CustomerInfo_check-routing]</label>
-					<input type="text" name="ff[id]_ocheckrouting" maxlength="9" size="10" class="txtBoxStyle form-control" />
-					<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-					<div class="clearfix"></div>
-					</div>
-					<div class="chkField">
-					<label for="ff[id]_ocheckaccount">[CustomerInfo_check-acct]</label>
-					<input type="text" name="ff[id]_ocheckaccount" maxlength="30" size="10" class="txtBoxStyle form-control" />
-					<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-					<div class="clearfix"></div>
-					</div>
-					</div>
-					<div class="clearfix"></div>
+						<h4>
+						<label for="online-[id]">
+						<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+						[payment_description]
+						</label>
+						</h4>
+						<div class="clearfix"></div>
+						<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+						<div class="desc-message">[payment_description_message]</div>
+						<div class="chkField">
+						<label for="ff[id]_ochecktype">[CustomerInfo_check-type]</label>
+						<select name="ff[id]_ochecktype" class="txtBoxStyle form-control">
+						[checktypelist]
+						</select>
+						<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+						<div class="clearfix"></div>
+						</div>
+						<div class="chkField">
+						<label for="ff[id]_ocheckaccttype">[CustomerInfo_check-acct-type]</label>
+						<select name="ff[id]_ocheckaccttype" class="txtBoxStyle form-control">
+						[checkaccttypelist]
+						</select>
+						<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+						<div class="clearfix"></div>
+						</div>
+						<div class="chkField">
+						<label for="ff[id]_ocheckrouting">[CustomerInfo_check-routing]</label>
+						<input type="text" name="ff[id]_ocheckrouting" maxlength="9" size="10" class="txtBoxStyle form-control" />
+						<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+						<div class="clearfix"></div>
+						</div>
+						<div class="chkField">
+						<label for="ff[id]_ocheckaccount">[CustomerInfo_check-acct]</label>
+						<input type="text" name="ff[id]_ocheckaccount" maxlength="30" size="10" class="txtBoxStyle form-control" />
+						<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+						<div class="clearfix"></div>
+						</div>
+						</div>
+						<div class="clearfix"></div>
 					</div>
 					<!--END: CHECKGATEWAY--> 
 				
@@ -1358,15 +1377,14 @@
 								<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="offline-[id]" name="payment" type="radio" value="offline-[id]" [FIRSTOPTIONCHECKED] />
 							</div>
 							<div class="col-md-11 col-sm-11 col-xs-10">
-								<h4>[payment_type]</h4>
+								<h6>[payment_type]</h6>
 							</div>
 						</label>
 						<div class="clearfix"></div>
 						<div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-							<div class="payment-desc">[payment_description]</div>
-							<div class="payment-type">[payment_type]</div>
+							<div class="payment-desc col-md-offset-1">[payment_description]</div>
 							<!--START: CUSTOM_FIELD-->
-							<div class="custField">
+							<div class="custField col-md-offset-1">
 								<div class="cust-input">[InputName]</div>
 								<div class="cust-field">[field]</div>
 								<div class="clearfix"></div>
@@ -1446,19 +1464,19 @@
 				<!--END: VME_NOTSELECTED--> 
 			</div>
 
-			<div id="divCheckoutQuestions panel panel-checkout col-md-12"> 
+			<div id="divCheckoutQuestions" class="panel panel-checkout col-md-12"> 
 				<!--START: checkout_questions-->
 				<div class="header">
 					<h3 class="checkout-headers">[checkout1_checkoutquestions]</h3>
 					<div class="clearfix"></div>
 				</div>
-				<div class="chkQuestions pad10 boxShadow"> 
+				<div class="chkQuestions"> 
 					<!--START: questions-->[questions]<!--END: questions-->
 					<div class="clearfix"></div>
 				</div>
 				<!--END: checkout_questions--> 
 			</div>
-			<div id="divCheckoutComments panel panel-checkout col-md-12">
+			<div id="divCheckoutComments" class="panel panel-checkout col-md-12">
 				<div class="header">
 					<h3 class="checkout-headers">[checkout3_Header-comment]</h3>
 					<div class="clearfix"></div>
@@ -1470,12 +1488,12 @@
 				</div>
 			</div>
 			<div class="clearfix"></div>
-			<div id="spanCheckout" class="panel row padd-top">
+			<div id="spanCheckout" class="panel padd-top col-md-12">
 				<div id="divCheckout" name="divCheckout" style="width:80%;display:none;background:#ffffff;border:0px solid black;text-align:center;padding:10px;"> <br />
 					Processing... </div>
 					<a name="checkoutButton"></a>
 				<div class="col-md-4 center-block">
-					<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-block btn-lg"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
+					<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-block btn-lg button"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
 				</div>
 			</div>
 			<div class="clearfix"></div>

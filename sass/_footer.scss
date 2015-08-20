@@ -1,7 +1,6 @@
 /* Stuff that goes in the footer */
 
 .newsletter-signup {
-  height: 350px;
   background-color: $neutral-dark;
   width: 100%;
   color: #fff;
@@ -26,22 +25,27 @@
   width: 320px;
   background-color: $secondary-color;
 }
-.social-icons a {
-  color: #a9a9a9;
-  font-size: 30px;
-  margin: 42px 1px;
-  text-decoration: none;
+.social-icons {
+    margin-bottom: 25px;
+    a {
+      color: #a9a9a9;
+      font-size: 30px;
+      margin: 42px 1px;
+      text-decoration: none;
+
+      i {
+        margin: 2px;
+      }
+      a:hover {
+        color: $secondary-color;
+      }
+    }
 }
-.social-icons a i {
-  margin: 2px;
-}
-.social-icons a:hover {
-  color: $secondary-color;
-}
+
 .footer-navigation {
   height: 50px;
 }
-.account-button {
+.footer-navigation .account-button {
   display: block;
   float: left;
   width: 33.33%;

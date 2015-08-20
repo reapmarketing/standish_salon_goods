@@ -144,6 +144,13 @@ legend {
   padding: 0;
 /* 2 */
 }
+/* Medium Devices, Desktops */
+@media only screen and (min-width : $medium) {
+  .pull-right-md {
+    float: right!important;
+  }
+}
+
 .indent {
   padding-left: 10px;
 }
@@ -267,7 +274,7 @@ legend {
   color: #fff;
   @extend .narrow;
 }
-.login {
+.login,  {
   font-size: 14px;
 }
 .login form {
@@ -321,7 +328,9 @@ legend {
     }
   }
 }
-
+.search-container {
+  padding-bottom: 10px;
+}
 
 .page_headers,
 .checkout-headers {
