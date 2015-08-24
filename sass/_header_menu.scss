@@ -5,7 +5,7 @@
     min-height: 97px;
     & > div {
       &.button-container {
-        margin-top: 20px;
+        margin-top: 2em;
       }
     }
   }
@@ -17,11 +17,10 @@
   background: url("/assets/templates/standish-responsive/images/standish-logo.png");
   background-repeat: no-repeat;
   width: 277px;
-  height: 50px;
   text-indent: -9999em;
   position: relative;
-  top: -12px;
-  left: -25px;
+  margin-bottom: 0;
+  left: -10px;
 }
 
 /* Small Devices, Tablets */
@@ -36,12 +35,10 @@
 .credentials {
   background: url(/assets/templates/standish-responsive/images/credentials.png);
   width: 100%;
-  position: absolute;
   background-size: contain;
-  height: 40px;
+  height: 50px;
   background-repeat: no-repeat;
   left: -34px;
-  top: 44px;
 }
 
 .logo-footer {  
@@ -345,7 +342,7 @@ li.first.far a {
 // Rotator STYLES
 
 #slickShow {
-  margin-top: 2.3rem;
+  margin-top: 2.6rem;
   .slide-option-text {
     font-size: .9rem;
     color: lighten($primary-gray, 20%)

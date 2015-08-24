@@ -92,22 +92,23 @@ jQuery( function($) {
         <!--END: product_review_average-->
       <!--END: product_review-->
       <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-        <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=138&maxy=178" alt="[name]" border="0" /></a>
-        <div class="listing-container">
-          <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+          <a href="product.asp?itemid=[catalogid]">
+          <img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" /></a>
+          <div class="listing-container">
+              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
           <!--START: ITEMPRICE-->
-            <!-- [product_yourprice] -->
-            <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+              <!-- [product_yourprice] -->
+              <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
           <!--END: ITEMPRICE-->
           <!--START: SALEPRICE-->
-            <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-            <!-- <span class="coral-text">[product_onsale]: </span> -->
-            <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;top: 4px;" border="0" /> <span class="nozero">[ITEMSALEPRICE]</span></p>
+              <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+              <!-- <span class="coral-text">[product_onsale]: </span> --> 
+              <p class="price bold allcaps"><span><i class="fa fa-tag featured"></i> On Sale </span><span class="nozero">[ITEMSALEPRICE]</span></p>
           <!--END: SALEPRICE-->
           <!-- <button>Add to Cart</button> -->
-        </div>
-        <!-- [category_buyitlink] -->
-        <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn">
+          <!-- [category_buyitlink] -->
+          </div> 
+           <input type="button" value="See Details" onclick="window.location='product.asp?itemid=[catalogid]'" class="button btn hidden-sm hidden-xs">
       </div>
     <!--END: ITEM_TEMPLATE-->
   </div>

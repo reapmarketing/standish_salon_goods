@@ -50,6 +50,7 @@ body {
   padding-left: 0px;
   padding-right: 0px;
   color: $primary-gray;
+  font-family: $default-font;
 }
 html,
 body {
@@ -494,6 +495,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 #catframe a {
   color: $primary-gray;
   font-size: 14px;
+  font-family: $default-font-narrow;
 }
 #catframe ul {
   padding: 0;

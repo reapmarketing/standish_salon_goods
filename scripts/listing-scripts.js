@@ -371,7 +371,7 @@
 			
 			$.each( video_data, function( i, video ) {
 				video_markup_new += '<a href="#" class="video_popup" data-video="' + i + '" style="position: relative">';
-				video_markup_new += '<i class="icon-play-sign" style="font-size: 120px;position: absolute;text-decoration: none;top: -4rem;left: 1.25em;"></i>';
+				video_markup_new += '<i class="icon-play-sign" style="font-size: 120px;position: absolute;text-decoration: none;top: -4rem;left: 34%;"></i>';
 				video_markup_new += '<img src="' + video.thumbnail_url + '" class="" width="460" height="286" alt="" />';
 				video_markup_new += '</a><br /><br />';
 			});

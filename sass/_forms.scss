@@ -36,6 +36,11 @@ html input[disabled] {
   cursor: default;
 }
 
+// IE hack
+select::-ms-expand {
+  display: none;
+}
+
 
 .input-group-btn>.btn {
   padding: 6px 20px;
@@ -49,6 +54,8 @@ input[type="radio"] {
 /* 1 */
   padding: 0;
 /* 2 */
+  background-color: transparent;
+  border: 0 none;
 }
 input[type="search"] {
   -webkit-appearance: textfield;
@@ -151,7 +158,10 @@ input::-moz-focus-inner {
 }
 
 
-
+@mixin ie-filters($color1, $color2) {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1}', endColorstr='#{$color2}'); /* for IE */
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1}', endColorstr='#{$color2}'); /* for IE */
+}
 
 button,
 .button,
@@ -165,6 +175,7 @@ button[type=submit],
   background-image: -ms-linear-gradient(top, $btn-highlight, $btn-color);
   background-image: -o-linear-gradient(top, $btn-highlight, $btn-color);
   background-image: linear-gradient(to bottom, $btn-highlight, $btn-color);
+  @include ie-filters($btn-highlight, $btn-color);
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
   border-radius: 3px;
@@ -184,6 +195,7 @@ button[type=submit],
   background-image: -ms-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
   background-image: -o-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
   background-image: linear-gradient(to bottom, $secondary-btn-highlight, $secondary-btn-color);
+  @include ie-filters($secondary-btn-highlight, $secondary-btn-color);
   text-shadow: 0px -1px 0px $secondary-btn-highlight;
 }
 
@@ -220,6 +232,7 @@ button:hover,
   background-image: -ms-linear-gradient(top, $btn-color, $btn-color);
   background-image: -o-linear-gradient(top, $btn-color, $btn-color);
   background-image: linear-gradient(to bottom, $btn-color, $btn-color);
+  @include ie-filters($btn-color, $btn-color);
   text-decoration: none;
 }
 .button.btn.btn-secondary:hover,
@@ -231,6 +244,7 @@ button:hover,
   background-image: -ms-linear-gradient(top, $secondary-btn-color, $secondary-btn-color);
   background-image: -o-linear-gradient(top, $secondary-btn-color, $secondary-btn-color);
   background-image: linear-gradient(to bottom, $secondary-btn-color, $secondary-btn-color);
+  @include ie-filters($secondary-btn-color, $secondary-btn-color);
   text-decoration: none;
 }
 .button.medium,
