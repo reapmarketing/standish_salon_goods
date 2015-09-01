@@ -148,7 +148,7 @@ input[type=submit],
   font-family: "PT Sans", Arial, Helvetica, sans-serif; }
 
 /* line 142, ../sass/_typography.scss */
-.narrow, .navigation ul li, .listing p.title, .pricebox .left-price, .product-form label, .product-form .questions, .brochure-download, .rating, .add-rating-link, .create-account button, .login form {
+.narrow, .navigation ul li, .listing p.title, .pricebox .left-price, .product-form label, .product-form .questions, .brochure-download, .rating, .add-rating-link, .create-account button, .create-account .login form {
   font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
 /* line 144, ../sass/_typography.scss */
@@ -419,18 +419,19 @@ body .update_cart_button {
 /* Stuff that goes in the footer */
 /* line 3, ../sass/_footer.scss */
 .newsletter-signup {
+  height: 350px;
   background-color: #4d4d4d;
   width: 100%;
   color: #fff;
   text-align: center;
   margin-top: 70px; }
 
-/* line 10, ../sass/_footer.scss */
+/* line 11, ../sass/_footer.scss */
 .newsletter-signup h5 {
   padding: 50px 0 0 0;
   letter-spacing: 2px; }
 
-/* line 14, ../sass/_footer.scss */
+/* line 15, ../sass/_footer.scss */
 .newsletter-signup input {
   display: block;
   width: 320px;
@@ -441,33 +442,34 @@ body .update_cart_button {
   border: none;
   text-align: center; }
 
-/* line 24, ../sass/_footer.scss */
+/* line 25, ../sass/_footer.scss */
 .newsletter-signup .hs-button {
   width: 320px;
   background-color: #c2d3bd; }
 
-/* line 28, ../sass/_footer.scss */
-.social-icons {
-  margin-bottom: 25px; }
-  /* line 30, ../sass/_footer.scss */
-  .social-icons a {
-    color: #a9a9a9;
-    font-size: 30px;
-    margin: 42px 1px;
-    text-decoration: none; }
-    /* line 36, ../sass/_footer.scss */
-    .social-icons a i {
-      margin: 2px; }
-    /* line 39, ../sass/_footer.scss */
-    .social-icons a a:hover {
-      color: #c2d3bd; }
+/* line 29, ../sass/_footer.scss */
+#account-navigation {
+  margin-bottom: 20px; }
 
-/* line 45, ../sass/_footer.scss */
+/* line 33, ../sass/_footer.scss */
+.social-icons > div {
+  float: none; }
+/* line 36, ../sass/_footer.scss */
+.social-icons a {
+  font-size: 30px;
+  margin: 42px 1px;
+  text-decoration: none; }
+
+/* line 42, ../sass/_footer.scss */
+.social-icons a i {
+  margin: 2px; }
+
+/* line 47, ../sass/_footer.scss */
 .footer-navigation {
   height: 50px; }
 
-/* line 48, ../sass/_footer.scss */
-.footer-navigation .account-button {
+/* line 50, ../sass/_footer.scss */
+.account-button {
   display: block;
   float: left;
   width: 33.33%;
@@ -478,109 +480,137 @@ body .update_cart_button {
   text-decoration: none;
   text-align: center; }
 
-/* line 59, ../sass/_footer.scss */
+/* line 61, ../sass/_footer.scss */
 .account-button:hover {
   text-decoration: underline; }
 
-/* line 62, ../sass/_footer.scss */
+/* line 64, ../sass/_footer.scss */
 .account-button.login {
   background: #ff7f50;
   color: white; }
 
-/* line 66, ../sass/_footer.scss */
+/* line 68, ../sass/_footer.scss */
 .account-button.affiliate {
   background: #c2d3bd;
   color: #4d4d4d; }
 
-/* line 70, ../sass/_footer.scss */
+/* line 72, ../sass/_footer.scss */
 .account-button.contact {
   background: #f5f5dc;
   color: #4d4d4d; }
 
-/* line 74, ../sass/_footer.scss */
+/* line 76, ../sass/_footer.scss */
+footer {
+  margin-top: 35px; }
+  /* line 80, ../sass/_footer.scss */
+  footer .partners img {
+    margin: 10px; }
+  /* line 85, ../sass/_footer.scss */
+  footer h6 {
+    min-height: 35px; }
+  /* line 88, ../sass/_footer.scss */
+  footer img {
+    max-width: 100%;
+    max-height: 85px; }
+  /* line 92, ../sass/_footer.scss */
+  footer p, footer span, footer ul, footer li {
+    color: #9c9c9c; }
+  /* line 95, ../sass/_footer.scss */
+  footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: #ff7f50; }
+
+/* line 99, ../sass/_footer.scss */
 footer .container-fluid, .footer-child {
   background-color: #4d4d4d; }
 
-/* line 77, ../sass/_footer.scss */
+/* line 102, ../sass/_footer.scss */
+footer .container-fluid.footer-content {
+  background-color: #4d4d4d; }
+
+/* line 105, ../sass/_footer.scss */
 .footer-logo {
   /*display: block;*/
   /*float: left;*/
-  background-image: url("/assets/templates/standish-responsive/images/footer-sprite.png");
+  background-image: url("/assets/templates/salon-responsive/images/footer-sprite.png");
   margin: 44px 16px 20px 16px;
   display: inline-block;
   float: none;
   vertical-align: top; }
 
-/* line 86, ../sass/_footer.scss */
-.norton {
+/* line 114, ../sass/_footer.scss */
+footer .norton {
   margin-top: 63px;
   width: 107px;
   height: 57px;
   background: none; }
 
-/* line 92, ../sass/_footer.scss */
-.usa {
+/* line 120, ../sass/_footer.scss */
+footer .usa {
   margin-top: 70px;
   width: 125px;
   height: 51px;
   background-position: -120px 0; }
 
-/* line 98, ../sass/_footer.scss */
-.pba {
+/* line 126, ../sass/_footer.scss */
+footer .pba {
   width: 60px;
   height: 117px;
   background-position: -254px 0; }
 
-/* line 103, ../sass/_footer.scss */
-.interesting {
+/* line 131, ../sass/_footer.scss */
+footer .interesting {
   width: 53px;
   height: 92px;
   background-position: -317px 0; }
 
-/* line 108, ../sass/_footer.scss */
-.bbb {
+/* line 136, ../sass/_footer.scss */
+footer .bbb {
   margin-top: 75px;
   width: 108px;
   height: 42px;
   background-position: 0 -58px;
   background: none; }
 
-/* line 115, ../sass/_footer.scss */
-.bofa {
+/* line 143, ../sass/_footer.scss */
+footer .bofa {
   margin-top: 70px;
   width: 145px;
   height: 50px;
   background-position: -109px -50px; }
 
-/* line 121, ../sass/_footer.scss */
-.bravo {
+/* line 149, ../sass/_footer.scss */
+footer .bravo {
   margin-top: 49px;
   width: 95px;
   height: 85px;
   background-position: -371px 0px; }
 
-/* line 127, ../sass/_footer.scss */
-.quest {
+/* line 155, ../sass/_footer.scss */
+footer .quest {
   margin-top: 61px;
   width: 130px;
   height: 72px;
   background-position: -469px 0px; }
 
-/* line 134, ../sass/_footer.scss */
+/* line 162, ../sass/_footer.scss */
 .footer-copy {
   color: #dcdcdc;
   text-align: center; }
 
-/* line 139, ../sass/_footer.scss */
+/* line 167, ../sass/_footer.scss */
 .footer {
   min-height: 240px;
   background-color: #696969;
   width: 100%; }
 
-/* line 144, ../sass/_footer.scss */
+/* line 172, ../sass/_footer.scss */
 .footer li,
 .footer ul {
   margin: 0; }
+
+/* line 177, ../sass/_footer.scss */
+.footer-logo-sm {
+  padding: 1em; }
 
 /* line 1, ../sass/_forms.scss */
 fieldset {
@@ -1239,18 +1269,22 @@ legend {
   margin-right: 0; }
 
 /* line 203, ../sass/_general.scss */
+.transparent {
+  background: transparent none; }
+
+/* line 207, ../sass/_general.scss */
 .breadcrumb {
   background: transparent none;
   /*   margin-bottom: 40px; */ }
-  /* line 206, ../sass/_general.scss */
+  /* line 210, ../sass/_general.scss */
   .breadcrumb a {
     text-decoration: underline; }
 
-/* line 211, ../sass/_general.scss */
+/* line 215, ../sass/_general.scss */
 .cycle-slideshow .cycle-slide {
   width: 100%; }
 
-/* line 214, ../sass/_general.scss */
+/* line 218, ../sass/_general.scss */
 .corner-tag {
   width: 75px;
   height: 75px;
@@ -1260,27 +1294,27 @@ legend {
   left: 4px;
   z-index: 100; }
 
-/* line 223, ../sass/_general.scss */
+/* line 227, ../sass/_general.scss */
 .promo {
   margin-bottom: 40px; }
 
-/* line 226, ../sass/_general.scss */
+/* line 230, ../sass/_general.scss */
 .promo .background {
   height: 350px;
   width: 380px;
   float: left;
   position: relative; }
 
-/* line 232, ../sass/_general.scss */
+/* line 236, ../sass/_general.scss */
 .promo .background.gainsboro {
   width: 560px; }
 
-/* line 235, ../sass/_general.scss */
+/* line 239, ../sass/_general.scss */
 .promo button {
   margin: 10px auto;
   display: block; }
 
-/* line 239, ../sass/_general.scss */
+/* line 243, ../sass/_general.scss */
 .promo a {
   font-size: 12px;
   color: #a9a9a9;
@@ -1290,12 +1324,12 @@ legend {
   right: 12px;
   bottom: 10px; }
 
-/* line 248, ../sass/_general.scss */
+/* line 252, ../sass/_general.scss */
 .login-title {
   text-align: center;
   margin: 25px 0 50px 0; }
 
-/* line 252, ../sass/_general.scss */
+/* line 256, ../sass/_general.scss */
 .login-box {
   margin: 20px 0;
   background: #efefef;
@@ -1305,60 +1339,56 @@ legend {
   text-align: center;
   min-height: 410px; }
 
-/* line 261, ../sass/_general.scss */
+/* line 265, ../sass/_general.scss */
 .login-box h5 {
   padding: 0 10px 25px 10px;
   border-bottom: 1px solid #dcdcdc; }
 
-/* line 265, ../sass/_general.scss */
+/* line 269, ../sass/_general.scss */
 .login-box p.signup-text {
   padding-left: 105px;
   padding-right: 105px;
   font-size: 17px;
   line-height: 1.5; }
 
-/* line 271, ../sass/_general.scss */
+/* line 275, ../sass/_general.scss */
 .login-box p {
   padding: 30px; }
 
-/* line 274, ../sass/_general.scss */
+/* line 278, ../sass/_general.scss */
 .create-account button {
   color: #fff; }
 
-/* line 278, ../sass/_general.scss */
-.login {
-  font-size: 14px; }
-
-/* line 281, ../sass/_general.scss */
-.login form {
+/* line 282, ../sass/_general.scss */
+.create-account .login form {
   margin: 40px 70px;
   text-align: left; }
 
-/* line 286, ../sass/_general.scss */
-.login form a {
+/* line 287, ../sass/_general.scss */
+.create-account .login form a {
   float: right;
   margin: 10px 0 15px 0; }
 
-/* line 290, ../sass/_general.scss */
-.login form label {
+/* line 291, ../sass/_general.scss */
+.create-account .login form label {
   margin: 10px 0 5px 0; }
 
-/* line 293, ../sass/_general.scss */
-.login button {
+/* line 294, ../sass/_general.scss */
+.create-account .login button {
   width: 100%; }
 
-/* line 296, ../sass/_general.scss */
-.login input {
+/* line 297, ../sass/_general.scss */
+.create-account .login input {
   width: 294px;
   padding: 10px 5px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #dcdcdc; }
 
-/* line 305, ../sass/_general.scss */
+/* line 306, ../sass/_general.scss */
 .pagination {
   margin: 0 auto 0 auto; }
-  /* line 307, ../sass/_general.scss */
+  /* line 308, ../sass/_general.scss */
   .pagination .btn {
     display: block;
     float: left;
@@ -1370,24 +1400,24 @@ legend {
     border-right: 1px solid #dcdcdc;
     border-bottom: 1px solid #dcdcdc;
     text-align: center; }
-    /* line 318, ../sass/_general.scss */
+    /* line 319, ../sass/_general.scss */
     .pagination .btn.first {
       -webkit-border-radius: 5px 0 0 5px;
       border-radius: 5px 0 0 5px;
       border-left: 1px solid #dcdcdc; }
-    /* line 323, ../sass/_general.scss */
+    /* line 324, ../sass/_general.scss */
     .pagination .btn.last {
       -webkit-border-radius: 0 5px 5px 0;
       border-radius: 0 5px 5px 0; }
-    /* line 327, ../sass/_general.scss */
+    /* line 328, ../sass/_general.scss */
     .pagination .btn.active {
       background: #dcdcdc; }
 
-/* line 332, ../sass/_general.scss */
+/* line 333, ../sass/_general.scss */
 .search-container {
   padding-bottom: 10px; }
 
-/* line 336, ../sass/_general.scss */
+/* line 337, ../sass/_general.scss */
 .page_headers,
 .checkout-headers {
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
@@ -1395,7 +1425,7 @@ legend {
   line-height: 1.25;
   font-size: 32px; }
 
-/* line 343, ../sass/_general.scss */
+/* line 344, ../sass/_general.scss */
 .alternative {
   border-collapse: separate !important;
   border: 1px solid #DCDCDC;
@@ -1407,125 +1437,125 @@ legend {
   line-height: 1.25;
   margin-bottom: 15px; }
 
-/* line 355, ../sass/_general.scss */
+/* line 356, ../sass/_general.scss */
 .alternative td {
   padding: 6px; }
 
-/* line 358, ../sass/_general.scss */
+/* line 359, ../sass/_general.scss */
 .alternative input {
   background: #fff; }
 
-/* line 361, ../sass/_general.scss */
+/* line 362, ../sass/_general.scss */
 .alternative input[type=submit],
 .alternative input[type=button] {
   background-color: #ff7f50; }
 
-/* line 365, ../sass/_general.scss */
+/* line 366, ../sass/_general.scss */
 .checkout-headers {
   font-size: 24px;
   padding-bottom: 10px; }
 
-/* line 370, ../sass/_general.scss */
+/* line 371, ../sass/_general.scss */
 .left-bar {
   min-height: 800px; }
 
-/* line 374, ../sass/_general.scss */
+/* line 375, ../sass/_general.scss */
 .left-bar ul {
   margin: 0;
   padding: 0 0 0 5px;
   list-style: none;
   position: relative; }
 
-/* line 380, ../sass/_general.scss */
+/* line 381, ../sass/_general.scss */
 .left-bar .allcaps {
   margin: 10px 0 0 0; }
 
-/* line 383, ../sass/_general.scss */
+/* line 384, ../sass/_general.scss */
 .left-bar a {
   text-decoration: none;
   color: #a9a9a9; }
 
-/* line 387, ../sass/_general.scss */
+/* line 388, ../sass/_general.scss */
 .left-bar a:hover {
   font-weight: bold;
   color: #ff7f50; }
 
-/* line 391, ../sass/_general.scss */
+/* line 392, ../sass/_general.scss */
 .sharebox {
   background: #dcdcdc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 5px 5px 29px; }
 
-/* line 397, ../sass/_general.scss */
+/* line 398, ../sass/_general.scss */
 .sharebox * {
   display: inline; }
 
-/* line 402, ../sass/_general.scss */
+/* line 403, ../sass/_general.scss */
 .sharebox ul {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-/* line 407, ../sass/_general.scss */
+/* line 408, ../sass/_general.scss */
 .fb_iframe_widget {
   top: -5px; }
 
-/* line 410, ../sass/_general.scss */
+/* line 411, ../sass/_general.scss */
 .fb-like span {
   width: 50px !important;
   overflow: hidden; }
 
-/* line 414, ../sass/_general.scss */
+/* line 415, ../sass/_general.scss */
 li.email {
   position: relative;
   top: -6px; }
 
-/* line 419, ../sass/_general.scss */
+/* line 420, ../sass/_general.scss */
 .fancy-select.wide {
   float: right;
   margin-right: 0;
   width: 180px; }
 
-/* line 424, ../sass/_general.scss */
+/* line 425, ../sass/_general.scss */
 .fancy-select.wide select {
   width: 210px; }
 
-/* line 428, ../sass/_general.scss */
+/* line 429, ../sass/_general.scss */
 body .vex.vex-theme-flat-attack .vex-content {
   padding-bottom: 1em; }
 
 /* Blog stuff */
-/* line 434, ../sass/_general.scss */
+/* line 435, ../sass/_general.scss */
 .blog-item.panel .panel-body {
   padding: 15px 0; }
 
-/* line 438, ../sass/_general.scss */
+/* line 439, ../sass/_general.scss */
 .blog-nav li {
   padding-top: 3px; }
 
-/* line 441, ../sass/_general.scss */
+/* line 442, ../sass/_general.scss */
 .blog-nav ul {
   margin: 0;
   padding: 0 0 0 5px;
   list-style: none; }
 
-/* line 446, ../sass/_general.scss */
+/* line 447, ../sass/_general.scss */
 .blog-nav .allcaps {
   margin: 10px 0 0 0; }
 
-/* line 449, ../sass/_general.scss */
+/* line 450, ../sass/_general.scss */
 .blog-nav a {
   text-decoration: none;
   color: #a9a9a9; }
 
-/* line 453, ../sass/_general.scss */
+/* line 454, ../sass/_general.scss */
 .blog-nav a:hover {
   font-weight: bold;
   color: #ff7f50; }
 
 /* cycle pager */
-/* line 460, ../sass/_general.scss */
+/* line 461, ../sass/_general.scss */
 .cycle-pager {
   text-align: right;
   width: 100%;
@@ -1535,7 +1565,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   right: 20px;
   top: 0; }
 
-/* line 469, ../sass/_general.scss */
+/* line 470, ../sass/_general.scss */
 .cycle-pager span {
   font-family: arial;
   font-size: 50px;
@@ -1547,43 +1577,43 @@ body .vex.vex-theme-flat-attack .vex-content {
   text-shadow: 1px 1px 2px #696969;
   padding: 0 2px 0 0; }
 
-/* line 475, ../sass/_general.scss */
+/* line 476, ../sass/_general.scss */
 .cycle-pager span.cycle-pager-active {
   color: #c2d3bd; }
 
-/* line 476, ../sass/_general.scss */
+/* line 477, ../sass/_general.scss */
 .cycle-pager > * {
   cursor: pointer; }
 
-/* line 478, ../sass/_general.scss */
+/* line 479, ../sass/_general.scss */
 .tools-menu .column ul {
   /*height: 230px;*/ }
 
-/* line 481, ../sass/_general.scss */
+/* line 482, ../sass/_general.scss */
 .shop-menu .column ul {
   height: 354px; }
 
-/* line 484, ../sass/_general.scss */
+/* line 485, ../sass/_general.scss */
 .equipment-menu .column ul {
   /*height: 322px;*/ }
 
-/* line 488, ../sass/_general.scss */
+/* line 489, ../sass/_general.scss */
 .newsletter-signup .hs-form fieldset {
   margin: 0 auto; }
 
 /* ~~~~ Category Side Menu Styles ~~~~*/
-/* line 495, ../sass/_general.scss */
+/* line 496, ../sass/_general.scss */
 #catframe a {
   color: #696969;
-  font-size: 14px;
+  font-size: 1em;
   font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
-/* line 500, ../sass/_general.scss */
+/* line 501, ../sass/_general.scss */
 #catframe ul {
   padding: 0;
   list-style-type: none; }
 
-/* line 504, ../sass/_general.scss */
+/* line 505, ../sass/_general.scss */
 #catframe ul li {
   /*  border-bottom: 1px solid #dcdcdc; */
   margin: 0;
@@ -1592,31 +1622,31 @@ body .vex.vex-theme-flat-attack .vex-content {
   padding-bottom: 4px;
   line-height: 14px; }
 
-/* line 512, ../sass/_general.scss */
+/* line 513, ../sass/_general.scss */
 #catframe .indent {
   list-style-type: circle;
   list-style-position: inside; }
 
-/* line 517, ../sass/_general.scss */
+/* line 518, ../sass/_general.scss */
 .blog img {
   max-width: 700px;
   padding-bottom: 20px; }
 
-/* line 522, ../sass/_general.scss */
+/* line 523, ../sass/_general.scss */
 .blog .item {
   font-style: italic;
   padding-bottom: 10px;
   margin-top: -20px; }
 
-/* line 528, ../sass/_general.scss */
+/* line 529, ../sass/_general.scss */
 .blog h3 {
   margin-top: 40px; }
 
-/* line 532, ../sass/_general.scss */
+/* line 533, ../sass/_general.scss */
 .blog h3:first-child {
   margin-top: 0px; }
 
-/* line 537, ../sass/_general.scss */
+/* line 538, ../sass/_general.scss */
 #category-sidebar .img-banner {
   padding: 10px 0; }
 

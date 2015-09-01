@@ -79,9 +79,9 @@
 
 
 			<div class="clearfix"></div>
-			<div class="container">
+			<div class="container" style="border-bottom: 1px solid gainsboro;">
 				<!-- Billing -->
-				<div class="col-md-6 col-sm-6 leftCol">
+				<div class="col-md-6 col-sm-6 leftCol" style="border-right: 1px solid gainsboro;">
 
 					<h3 class="section-header double-line"><span>[account_billing-info]</span><hr/></h3>
 					<div class="clearfix"></div>
@@ -348,72 +348,11 @@
 				        </div>
 			        </div>
 				</div>
+				<hr>
 			</div>
 
-			<!-- Account Login -->
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="col-md-6 col-sm-6 leftCol">
-					<div class="row">
-						<!--START: account_login1-->
-						<div class="account_login1 col-md-12 col-sm-12 col-xs-12">
-							<h3>Login To Your Account <hr/></h3>
-							<div class="loginmessage2 padd-bottom">[checkout1_loginmessage2]</div>
-							<div class="login1-button">
-								<button type="button" onclick="document.location='checkout.asp?step=log-in';" class="btn button"><i class="icon-login"></i> [checkout1_login]</button>
-							</div>
-							<!--START: fbconnect-->
-							<div class="fbconnect">
-								<a onclick="popup('social_login.asp?p=fl&return=checkout',1000,550)" href="#" title="Sign in with Facebook"><img src="assets/templates/common/images/facebook_signin.png" alt="Sign in with Facebook" width="150" height="22" /></a>
-							</div>
-							<!--END: fbconnect-->
-							<div class="clearfix"></div>
-						</div>
-						<!--END: account_login1-->
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6 rightCol">
-					<!--START: account_login2-->
-					<div class="create_newaccount">
-						<div class="header">
-							<h3>[checkout1_Header-createnewaccount] <hr/></h3>
-						</div>
-						<div class="form-group">
-							<label for="createnewaccount_email">[CustomerInfo_email]</label>
-							<div id="divEmail">[email]</div>
-						</div>
-						<div class="form-group">
-							<label for="pass">[CustomerInfo_password]
-								<!--START: passwordrequired--> 
-								<!--START: req_pass--> 
-								<img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" /> 
-								<!--END: req_pass--> 
-								<!--END: passwordrequired-->
-							</label>
-							<input type="password" size="12" name="pass" id="pass" autocomplete="off" tabindex="14" class="txtBoxStyle form-control" [CallFunctionVerifyStrongPass] />
-						</div>
-						<!--START: StrongPasswordBar-->
-						<div class="form-group">
-							<div class="strong-pass-bar" style="background-image: linear-gradient(to left, #86e01e 0%, #f63a0f 100%);">
-									<div id="divStrong"></div>
-							</div>
-						</div>
-						<!--END: StrongPasswordBar-->
-						<!--START: PasswordMSG-->
-						<div class="PasswordMSG">
-							<p>[CustomerInfo_password_policy]</p>
-						</div>
-						<!--END: PasswordMSG-->
-						<!--START: recurmessage-->
-						<div class="form-group">
-							<em class="error">[recurringorders_login-required]</em>
-						</div>
-						<!--END: recurmessage-->
-					</div>
-					<!--END: account_login2-->
-				</div>
+			<!-- Account Login Taken out for now but it used to be here -->
 
-			</div>
 			
 
 			<div class="clearfix"></div>
@@ -773,8 +712,8 @@
 								<input name="payment" id="online-[id]-ppe" onclick="javascript:checkoutSwitch(true);window.location.href='paypal_express.asp?ch=0';" type="radio" value="online-[id]" />
 							</div>
 							<div class="ppe-logo col-md-11 col-sm-11 col-xs-10">
+								<h6>[payment_description]</h6>
 								<a href="javascript:document.getElementById('online-[id]-ppe').click();">
-									<h6>[payment_description]</h6>
 									<img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" />
 								</a>
 							</div>

@@ -200,6 +200,10 @@ legend {
   margin-right: 0;
 }
 
+.transparent {
+  background: transparent none;
+}
+
 .breadcrumb {
   background: transparent none;
 /*   margin-bottom: 40px; */
@@ -275,25 +279,22 @@ legend {
   color: #fff;
   @extend .narrow;
 }
-.login,  {
-  font-size: 14px;
-}
-.login form {
+.create-account .login form {
   margin: 40px 70px;
   @extend .narrow;
   text-align: left;
 }
-.login form a {
+.create-account .login form a {
   float: right;
   margin: 10px 0 15px 0;
 }
-.login form label {
+.create-account .login form label {
   margin: 10px 0 5px 0;
 }
-.login button {
+.create-account .login button {
   width: 100%;
 }
-.login input {
+.create-account .login input {
   width: 294px;
   padding: 10px 5px;
   -webkit-border-radius: 3px;
@@ -494,7 +495,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 #catframe a {
   color: $primary-gray;
-  font-size: 14px;
+  font-size: 1em;
   font-family: $default-font-narrow;
 }
 #catframe ul {
