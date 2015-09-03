@@ -199,6 +199,9 @@ legend {
 .omega {
   margin-right: 0;
 }
+.margin-none {
+  margin: 0;
+}
 
 .transparent {
   background: transparent none;
@@ -495,8 +498,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 #catframe a {
   color: $primary-gray;
-  font-size: 1em;
-  font-family: $default-font-narrow;
+  font-size: .9em;
 }
 #catframe ul {
   padding: 0;

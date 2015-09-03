@@ -134,12 +134,17 @@ jQuery(function(){
       
         </div><!-- .cart-items -->
         <div class="buttons-order row">
-            <a class="button btn-secondary btn" style="color:white;" href="[continue_url]"><span class="add-on-left"><i class="fa fa-arrow-left"></i></span>Continue Shopping</a>
+            <a class="button standishgray btn" style="color:white;" href="[continue_url]"><span class="add-on-left"><i class="fa fa-arrow-left"></i></span>Continue Shopping</a>
             <a class="button standishgreen btn" href ="/myaccount.asp?action=save_cart"><span class="add-on-left"><i class="fa fa-floppy-o"></i></span>Save for Later</a>
-            <input type="submit" name="Add" value="[shoppingcart_updatecart]" class="update_cart_button btn btn-secondary" id="Submit2">
+            <input type="submit" name="Add" value="[shoppingcart_updatecart]" class="update_cart_button btn btn-light" id="Submit2">
         </div>
         <br />
         <br />
+        <div class="col-md-12">
+          <!--START: CATEGORY_FOOTER-->
+            [CONTENT]
+          <!--END: CATEGORY_FOOTER-->
+        </div>
       
       </div>
       <!-- End of the left side -->
@@ -405,8 +410,8 @@ jQuery(function(){
       </form>
       <!-- End of Coupon Codes -->
     </div>
-
-    <p style="text-align: center;">[viewcart_total-note]</p>
+    <div class="clearfix"></div>
+    <p class="text-center padd-top">[viewcart_total-note]</p>
     
     
     <script language="javascript" type="text/javascript">

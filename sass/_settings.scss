@@ -28,11 +28,12 @@ $secondary-btn-highlight: lighten(#696969, 30%);
 $light-gray: lighten(#696969, 10%);
 // Standish Green
 $secondary-color: #c2d3bd;
+$standishgreen: $secondary-color;
 
 $hbspt-form-bkg: #C2D3BD;
 // Footer Color
 $neutral-dark: #4d4d4d;
-
+$standishgray: $neutral-dark;
 // Primary Dark Gray
 $primary-gray: #696969;
 
@@ -42,6 +43,8 @@ $primary-darken: #a0522d;
 $light-cream: #f5f5dc;
 
 $template: 'standish-responsive';
+
+$lightGrey: #dcdcdc;
 
 
 // Rotator Colors Ideas

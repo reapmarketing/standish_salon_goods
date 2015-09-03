@@ -57,7 +57,7 @@ button.cart i {
 .cart-number {
   margin-left: 18px;
   background-color: $btn-highlight;
-  padding: 13px 18px;
+  padding: 14px 18px;
   border-radius: 0px 3px 3px 0;
 }
 .navigation {
@@ -283,10 +283,10 @@ li.first.far a {
 
 .hello-container {
   padding-top: 18px;
-  a, p, div {
+  a, p, div, strong, .bold {
     @extend .special;
-    color: lighten($primary-gray, 10%);
-    font-weight: 100;
+    color: $primary-gray;
+    font-weight: 700;
   }
 }
 
@@ -347,8 +347,8 @@ li.first.far a {
     font-size: .9rem;
     color: lighten($primary-gray, 20%)
   }
-  .fa-lg {
-    font-size: 1.5em;
+  .fa {
+    font-size: 18px;
     padding-right: 0.2em;
   }
 }

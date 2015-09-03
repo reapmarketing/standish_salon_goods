@@ -106,7 +106,7 @@ input::-moz-focus-inner {
 /*   padding: 6px 0 0 3px; */
 }
 .fancy-select {
-  padding: 0 10px;
+  padding: 0;
   border: 1px solid #dcdcdc;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -169,13 +169,11 @@ input[type=button],
 input[type=submit],
 button[type=submit],
 .hs-form .hs-button {
-  background: $btn-highlight;
-  background-image: -webkit-linear-gradient(top, $btn-highlight, $btn-color);
-  background-image: -moz-linear-gradient(top, $btn-highlight, $btn-color);
-  background-image: -ms-linear-gradient(top, $btn-highlight, $btn-color);
-  background-image: -o-linear-gradient(top, $btn-highlight, $btn-color);
-  background-image: linear-gradient(to bottom, $btn-highlight, $btn-color);
-  @include ie-filters($btn-highlight, $btn-color);
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  @include button-styles($btn-highlight, $btn-color);
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
   border-radius: 3px;
@@ -184,18 +182,43 @@ button[type=submit],
   font-size: 14px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  &.standishgreen {
+    @include button-styles($standishgreen, darken($standishgreen, 10%));
+    text-shadow: 0px -1px 0px darken($standishgreen, 5%);
+    color: $primary-gray !important;
+    .add-on-left {
+      border-right: 1px solid $primary-gray;
+    }
+    &:hover {
+      @include button-styles($standishgreen, $standishgreen);
+    }
+  }
+  &.btn-light { // $lightGrey
+    @include button-styles($lightGrey, darken($lightGrey, 10%));
+    text-shadow: 0px -1px 0px darken($lightGrey, 5%);
+    color: $primary-gray !important;
+    .add-on-left {
+      border-right: 1px solid $primary-gray;
+    }
+    &:hover {
+      @include button-styles($lightGrey, $lightGrey);
+    }
+  }
+  &.standishgray {
+    @include button-styles($standishgray, darken($standishgray, 10%));
+    text-shadow: 0px -1px 0px darken($standishgray, 5%);
+    &:hover {
+      @include button-styles($standishgray, $standishgray);
+    }
+  }
 }
+
+
 
 .button.btn.btn-secondary,
 .btn.btn-secondary,
 .btn-secondary {
-  background: $secondary-btn-highlight;
-  background-image: -webkit-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
-  background-image: -moz-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
-  background-image: -ms-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
-  background-image: -o-linear-gradient(top, $secondary-btn-highlight, $secondary-btn-color);
-  background-image: linear-gradient(to bottom, $secondary-btn-highlight, $secondary-btn-color);
-  @include ie-filters($secondary-btn-highlight, $secondary-btn-color);
+  @include button-styles($secondary-btn-highlight, $secondary-btn-color);
   text-shadow: 0px -1px 0px $secondary-btn-highlight;
 }
 

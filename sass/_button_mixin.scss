@@ -1,0 +1,20 @@
+@mixin button-styles($color, $dosColor) {
+	background: $color;
+	background-image: -webkit-linear-gradient(top, $color, $dosColor);
+	background-image: -moz-linear-gradient(top, $color, $dosColor);
+	background-image: -ms-linear-gradient(top, $color, $dosColor);
+	background-image: -o-linear-gradient(top, $color, $dosColor);
+	background-image: linear-gradient(to bottom, $color, $dosColor);
+	@include ie-filters($color, $dosColor);
+}
+
+@mixin no-button($txt-color) {
+	background: transparent none;
+	background-image: transparent none;
+	background-image: transparent none;
+	background-image: transparent none;
+	background-image: transparent none;
+	background-image: transparent none;
+	color: $txt-color;
+	border: 0 none;
+}
