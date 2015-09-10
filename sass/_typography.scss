@@ -125,10 +125,13 @@ a:active.button {
 
 a,
 a:link,
-a:visited {
+a:visited
+{
   color: $primary-color;
+  text-decoration: none;
 }
-a:hover {
+a:hover, a:focus {
+  text-decoration: none !important;
   color: darken($primary-color, 10%);
 }
 a:active {

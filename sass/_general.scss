@@ -214,6 +214,22 @@ legend {
     text-decoration: underline;
   }
 }
+.popover.dark {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  &.right {
+    &>.arrow {
+      top: 50%;
+      left: -11px;
+      margin-top: -11px;
+      border-right-color: rgba(0, 0, 0, 0.5);
+      &:after {border-right-color: rgba(0, 0, 0, .05);}
+    }
+
+  }
+  
+}
 
 .cycle-slideshow .cycle-slide {
   width: 100%;
@@ -304,7 +320,6 @@ legend {
   border-radius: 3px;
   border: 1px solid #dcdcdc;
 }
-
 
 .pagination {
   margin: 0 auto 0 auto;
@@ -498,7 +513,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 #catframe a {
   color: $primary-gray;
-  font-size: .9em;
+  font-size: .8em;
 }
 #catframe ul {
   padding: 0;

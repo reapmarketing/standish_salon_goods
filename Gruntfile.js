@@ -31,20 +31,16 @@ module.exports = function(grunt) {
         }]
       }
     },
-    'string-replace': {
+    replace: {
       version: {
-        files: {
-          'frame.html': 'frame.source.html' // Version out certain files
-        },
-        options: {
-          replacements: [{
-            pattern: /{{ VERSION }}/g,
-            replacement: '<%= pkg.version %>'
-          }]
-        }
+        src: ['frame.source.html'],             // source files array (supports minimatch) 
+        dest: 'frame.html',             // destination directory or file 
+        replacements: [{
+          from: /{{ VERSION }}/g,                   // string replacement 
+          to: '<%= pkg.version %>'
+        }]
       }
     },
-    // pkg: grunt.file.readJSON('package.json'),
     watch: {
       sass: {
         files: ['sass/*.scss'],
@@ -53,26 +49,17 @@ module.exports = function(grunt) {
           livereload: true,
         },
       },
-      cssmin: {
-        files: ['<%= cssmin.target.files %>'],
-        tasks: ['cssmin']
-      },
       js: {
         files: ['<%= jshint.files %>'],
         tasks: ['jshint']
-      },
-      strrplc: {
-        files: ['<%= [string-replace].version.files %>'],
-        tasks: ['string-replace']
       },
       options: {
         dateFormat: function(time) {
           grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
           grunt.log.writeln('Waiting for more changes...');
         },
-      }
+      },
     }
-
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -80,7 +67,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-notify');
-  grunt.loadNpmTasks('grunt-string-replace');
+  grunt.loadNpmTasks('grunt-text-replace');
 
-  grunt.registerTask('default', ['jshint', 'sass', 'cssmin', 'string-replace']);
+  grunt.registerTask('default', ['jshint', 'sass', 'cssmin', 'replace']);
 };

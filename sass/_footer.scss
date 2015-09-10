@@ -26,9 +26,6 @@
   width: 320px;
   background-color: $secondary-color;
 }
-#account-navigation {
-  margin-bottom: 20px;
-}
 .social-icons {
   & > div {
     float: none;
@@ -101,6 +98,7 @@ footer {
 }
 footer .container-fluid, .footer-child {
   background-color: $neutral-dark;
+  border-top: 1px solid $neutral-dark;
 }
 footer .container-fluid.footer-content {
   background-color: $neutral-dark;

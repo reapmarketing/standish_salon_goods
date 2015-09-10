@@ -149,19 +149,19 @@ $( function(){
 				</ul>
 				
 			</div>
+			<!--START: totalrating-->
+				<div class="totalrating padd-block col-md-12" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+
+					<!--START: create_first_review-->
+					<p class="pull-right"><i class="fa fa-star-o"></i>
+					<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
+					<!--END: create_first_review-->
+				</div>
+			<!--END: totalrating-->
+
 			<!--START: reviews-->
 			<div class="reviews hidden-xs hidden-sm">
 				<h4 style="border-bottom: 1px solid #dcdcdc;padding-bottom: 10px;">[reviews_header]</h4>
-
-
-				<!--START: totalrating-->
-				<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-					<p>Average Rating: <span itemprop="ratingValue">[review_average]</span> (<span itemprop="reviewCount">[review_count]</span> Reviews)</p>
-					<meta itemprop="bestRating" content="5">
-				</div>
-				<!--END: totalrating-->
-
-
 
 				<!--START: create_review_link-->
 					<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
@@ -188,14 +188,11 @@ $( function(){
 			</div>
 			<!--END: reviews-->
 			<div class="container hidden-xs hidden-sm">
-				<!--START: create_first_review-->
-					<p><img src="assets/templates/common/images/productpage_check.png" alt="[reviews_new]" border="0" />
-					<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
-				<!--END: create_first_review-->
+
 
 				<!--START: qaLinkFirst-->
-					<img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_firstquestion]" border="0" />
-					<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_firstquestion]</a>
+					<!-- <img src="assets/templates/common/images/productpage_qa.png" alt="[productqa_firstquestion]" border="0" />
+					<a href='#' rel="nofollow" onclick="javascript:popup('productqa.asp?action=newQA&catalogid=[catalogid]',650,550,false);">[productqa_firstquestion]</a> -->
 				<!--END: qaLinkFirst-->
 		
 				<!--START: qaLinkNew-->
@@ -207,51 +204,55 @@ $( function(){
 
 		<!--START: accessories_0-->
 			<div class="related-accessories row clearfix hidden-sm hidden-xs">
-				<h4>Related Accessories</h4><!-- [product_Header-accessories] -->
+				<h4>[product_Header-accessories]</h4><!-- [product_Header-accessories] -->
 				<!-- <a href="#viewMore">View More</a> -->
 
 				<!--START: accessories_items0-->
-					<div class="col-md-4 listing alpha">
+					<div class="col-md-4 col-sm-6 col-xs-6 listing alpha">
 						<div class="listing-container">
-			              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" /></a>
-			              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-			              <!--START: ITEMPRICE-->
-			                <!-- [product_yourprice] -->
-			                <p class="price">[product_yourprice] [ITEMPRICE]</p>
-			              <!--END: ITEMPRICE-->
-			              <!--START: SALEPRICE-->
-			                <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-			                <!-- <span class="coral-text">[product_onsale]: </span> -->
-			                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>
-			              <!--END: SALEPRICE-->
-			              <!-- <button>Add to Cart</button> -->
-			              <!-- <input type="checkbox" name="item_id" value="[catalogid]" /> -->
-			              <input type="hidden" name="qty-[counter]" value="1" />
+							<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" /></a>
+							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+							<!--START: product_review-->
+							<!--START: product_review_average-->
+							  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+							  <!-- [review_count] Review(s) -->
+							<!--END: product_review_average-->
+							<!--END: product_review-->
+							<!--START: ITEMPRICE-->
+							<!-- [product_yourprice] -->
+							<p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>							
+									<!--END: SALEPRICE-->
 						</div>
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
-					</div>
+		            	<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">
+		          	</div>
 				<!--END: accessories_items0-->
 
 				<!--START: accessories_items1-->
-					<div class="col-md-4 listing omega">
-						<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" /></a>
-						<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-						<!--START: ITEMPRICE-->
+					<div class="col-md-4 col-sm-6 col-xs-6 listing alpha">
+						<div class="listing-container">
+							<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" /></a>
+							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+							<!--START: product_review-->
+							<!--START: product_review_average-->
+							  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+							  <!-- [review_count] Review(s) -->
+							<!--END: product_review_average-->
+							<!--END: product_review-->
+							<!--START: ITEMPRICE-->
 							<!-- [product_yourprice] -->
-							<p class="price">[product_yourprice] [ITEMPRICE]</p>
-						<!--END: ITEMPRICE-->
-						<!--START: SALEPRICE-->
-							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<!-- <span class="coral-text">[product_onsale]: </span> -->
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>
-						<!--END: SALEPRICE-->
-						<!-- <button>Add to Cart</button> -->
-
-						<input type="checkbox" name="item_id" value="[catalogid]" />
-						<input type="hidden" name="qty-[counter]" value="1" />
-	
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
-					</div>
+							<p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>							
+									<!--END: SALEPRICE-->
+						</div>
+		            	<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">
+		          	</div>
 				<!--END: accessories_items1-->
 
 				<!--START: accessories_items2-->
