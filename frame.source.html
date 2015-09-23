@@ -100,6 +100,8 @@
 		<script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
 		<script type="text/javascript" src="assets/templates/[template]/scripts/custom.js"></script>
 		<script type="text/javascript" src="assets/templates/[template]/scripts/menu-behaviors.js"></script>
+		<!-- <script type="text/javascript" src="assets/templates/[template]/scripts/test-script-listing-product.js"></script> -->
+
 		<!-- Set up customer account variables -->
 		<script type="text/javascript">
 			var account_greeting = '[account_greeting]';
@@ -365,7 +367,8 @@
 								<li><a href="/kaemark-salon-furnishings">Kaemark</a></li>
 								<li><a href="/william-marvy">William Marvy</a></li>
 								<li><a href="/kayline-beauty-supply">Kayline</a></li>
-								<li><a href="/belava">Belava</a> <span class="menu-feature standishgreen"><i class="icon icon-star"></i> New</span><li>
+								<li><a href="/belava">Belava <span class="menu-feature standishgreen"><i class="icon icon-star"></i> New</span></a>
+								</li>
 								<li><a href="/adjust-a-sink">Adjust-a-Sink</a></li>
 								<li><a href="/andrea-lashes">Andrea</a></li>
 								<li><a href="/betty-dain">Betty Dain</a></li>
@@ -421,7 +424,7 @@
 			<div class="col-md-4 col-sm-12 col-xs-12 pull-right search">
 				<form method="get" name="searchForm" action="search.asp">
 						<div class="input-group pull-right">
-							<input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+							<input type="text" size="25" name="keyword" class="search-text form-control" onfocus="javascript:if (this.value=='search by keyword') {this.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
 							<span class="input-group-btn">
 									<button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
 								</span>

@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-
+  // Configure grunt
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
@@ -41,6 +41,13 @@ module.exports = function(grunt) {
         }]
       }
     },
+    sprite:{
+      all: {
+        src: 'images/badges-sprites/*.png',
+        dest: 'images/badges-sprites.png',
+        destCss: 'sass/_badges-sprites.scss'
+      }
+    },
     watch: {
       sass: {
         files: ['sass/*.scss'],
@@ -62,6 +69,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch'); 
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -69,5 +77,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-text-replace');
 
-  grunt.registerTask('default', ['jshint', 'sass', 'cssmin', 'replace']);
+  grunt.registerTask('default', ['sprite', 'jshint', 'sass', 'cssmin', 'replace']);
 };

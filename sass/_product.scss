@@ -4,7 +4,83 @@
 .ge-free-shipping span, .badge-free-shipping em {
   background-position: 0 0;
 }
-.badge-fire-retardant i, .badge-fire-
+
+.popover {
+  z-index: 2;
+}
+
+.tooltip-badges [class^="badge-"] i,
+.tooltip-badges [class*="badge-"] i,
+.tooltip-badges [class^="badge-"] span,
+.tooltip-badges [class*="badge-"] span,
+.tooltip-badges [class^="badge-"] em,
+.tooltip-badges [class*="badge-"] em {
+  -webkit-background-size: 240px;
+  -moz-background-size: 240px;
+  background-size: 240px;
+}
+
+.tooltip-badges .badge-product {
+  width: 100%;
+}
+.tooltip-badges .badge-text{
+  color: white;
+}
+
+.tooltip-badges .badge-made-usa i, .tooltip-badges .badge-made-usa:hover i {
+  background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+} 
+
+.tooltip-badges .badge-warranty i, .tooltip-badges .badge-warranty:hover i {
+  @include sprite($warranty);
+}
+.tooltip-badges .badge-service i, .tooltip-badges .badge-service:hover i {
+  @include sprite($service);
+}
+.tooltip-badges .badge-heavy-duty i, .tooltip-badges .badge-heavy-duty:hover i {
+  @include sprite($heavy-duty);
+}
+.tooltip-badges .badge-no-sales-tax i, .tooltip-badges .badge-no-sales-tax:hover i {
+  @include sprite($no-sales-tax);
+}
+.tooltip-badges .badge-returns i, .tooltip-badges .badge-returns:hover i {
+  @include sprite($returns);
+}
+.tooltip-badges .badge-inspected i, .tooltip-badges .badge-inspected:hover i {
+  @include sprite($inspected);
+}
+.tooltip-badges .badge-iron-life i, .tooltip-badges .badge-iron-life:hover i {
+  @include sprite($inspected);
+}
+.tooltip-badges .badge-iron-life i, .tooltip-badges .badge-iron-life:hover i {
+  @include sprite($inspected);
+}
+.tooltip-badges .badge-color i, .tooltip-badges .badge-color:hover i {
+  @include sprite($color);
+}
+.tooltip-badges .badge-hardwood i, .tooltip-badges .badge-hardwood:hover i {
+  @include sprite($hardwood);
+}
+.tooltip-badges .badge-extra-wide i, .tooltip-badges .badge-extra-wide:hover i {
+  @include sprite($extra-wide);
+}
+.tooltip-badges .badge-double-stitched i, .tooltip-badges .badge-double-stitched:hover i {
+  @include sprite($double-stitched);
+}
+.tooltip-badges .badge-free-shipping i, .tooltip-badges .badge-free-shipping:hover i {
+  @include sprite($free-shipping);
+}
+.tooltip-badges .badge-fire-retardant i, .tooltip-badges .badge-fire-retardant:hover i {
+  @include sprite($fire-retardant);
+}
+.tooltip-badges .badge-ten-thousand-rub i, .tooltip-badges .badge-ten-thousand-rub:hover i {
+  @include sprite($ten-thousand-rub);
+}
+.tooltip-badges .badge-swap-base i, .tooltip-badges .badge-swap-base:hover i {
+  @include sprite($swap-base);
+}
 
 [class^="badge-"] i,
 [class*="badge-"] i,
@@ -51,8 +127,12 @@
   background-repeat: no-repeat;
   background-size: 100%;
 }
-.badge-free-shipping i, .badretardant span, .badge-fire-retardant em {
-  background-position: 0 -60px;
+
+.badge-fire-retardant i, .badge-fire-retardant span, .badge-fire-retardant em {
+  background-position: 0 -59px;
+}
+.badge-free-shipping i, .badge-free-shipping span, .badge-free-shipping em {
+  background-position: 0 0;
 }
 .badge-heavy-duty i, .badge-heavy-duty span, .badge-heavy-duty em {
   background-position: 0 -120px;

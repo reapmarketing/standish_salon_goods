@@ -1,0 +1,107 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-Iron-Life {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -488px 0px;
+  width: 488px;
+  height: 486px;
+}
+.icon-color {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -976px -972px;
+  width: 488px;
+  height: 486px;
+}
+.icon-double-stitched {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px -486px;
+  width: 488px;
+  height: 486px;
+}
+.icon-extra-wide {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -488px -486px;
+  width: 488px;
+  height: 486px;
+}
+.icon-fire-retardant {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -976px 0px;
+  width: 488px;
+  height: 486px;
+}
+.icon-free-shipping {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -976px -486px;
+  width: 488px;
+  height: 486px;
+}
+.icon-hardwood {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px -972px;
+  width: 488px;
+  height: 486px;
+}
+.icon-heavy-duty {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -488px -972px;
+  width: 488px;
+  height: 486px;
+}
+.icon-inspected {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px 0px;
+  width: 488px;
+  height: 486px;
+}
+.icon-new-arrival {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -1464px 0px;
+  width: 488px;
+  height: 486px;
+}
+.icon-no-sales-tax {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -1464px -486px;
+  width: 488px;
+  height: 486px;
+}
+.icon-returns {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -1464px -972px;
+  width: 488px;
+  height: 486px;
+}
+.icon-service {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px -1458px;
+  width: 488px;
+  height: 486px;
+}
+.icon-swap-base {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -488px -1458px;
+  width: 488px;
+  height: 486px;
+}
+.icon-ten-thousand-rub {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -976px -1458px;
+  width: 488px;
+  height: 486px;
+}
+.icon-warranty {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -1464px -1458px;
+  width: 488px;
+  height: 486px;
+}

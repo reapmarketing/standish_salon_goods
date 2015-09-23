@@ -1,4 +1,34 @@
 /* Pink */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
 /* line 2, ../sass/_typography.scss */
 p,
 ul,
@@ -1131,6 +1161,8 @@ textarea.hs-input {
 /* line 382, ../sass/_forms.scss */
 .main_content .hbspt-form {
   background: #C2D3BD;
+  width: 100%;
+  margin-bottom: 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -khtml-border-radius: 5px;
@@ -1139,26 +1171,26 @@ textarea.hs-input {
   float: left;
   border-bottom: 1px solid #696969; }
 
-/* line 393, ../sass/_forms.scss */
+/* line 395, ../sass/_forms.scss */
 .main_content .hbspt-form .hs-form-field, .main_content .hbspt-form .hs_submit {
   width: 100%;
   margin: 0 auto 30px auto;
   float: none; }
 
-/* line 399, ../sass/_forms.scss */
+/* line 401, ../sass/_forms.scss */
 .hs-form-field {
   margin-bottom: 30px; }
 
-/* line 407, ../sass/_forms.scss */
+/* line 409, ../sass/_forms.scss */
 .hbspt-form .hs-form.stacked .actions {
   margin: 0;
   padding: 0; }
 
-/* line 412, ../sass/_forms.scss */
+/* line 414, ../sass/_forms.scss */
 .hbspt-form .multi-container {
   padding-left: 22px; }
 
-/* line 416, ../sass/_forms.scss */
+/* line 418, ../sass/_forms.scss */
 .product-form input[type=file] {
   float: right;
   width: 283px;
@@ -1419,7 +1451,7 @@ legend {
 /* line 217, ../sass/_general.scss */
 .popover.dark {
   color: white;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   width: 300px; }
   /* line 222, ../sass/_general.scss */
   .popover.dark.right > .arrow {
@@ -2440,8 +2472,148 @@ li.first.far a {
 .ge-free-shipping span, .badge-free-shipping em {
   background-position: 0 0; }
 
-/* line 7, ../sass/_product.scss */
-.badge-fire-retardant i, .badge-fire-
+/* line 8, ../sass/_product.scss */
+.popover {
+  z-index: 2; }
+
+/* line 12, ../sass/_product.scss */
+.tooltip-badges [class^="badge-"] i,
+.tooltip-badges [class*="badge-"] i,
+.tooltip-badges [class^="badge-"] span,
+.tooltip-badges [class*="badge-"] span,
+.tooltip-badges [class^="badge-"] em,
+.tooltip-badges [class*="badge-"] em {
+  -webkit-background-size: 240px;
+  -moz-background-size: 240px;
+  background-size: 240px; }
+
+/* line 23, ../sass/_product.scss */
+.tooltip-badges .badge-product {
+  width: 100%; }
+
+/* line 26, ../sass/_product.scss */
+.tooltip-badges .badge-text {
+  color: white; }
+
+/* line 30, ../sass/_product.scss */
+.tooltip-badges .badge-made-usa i, .tooltip-badges .badge-made-usa:hover i {
+  background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+/* line 36, ../sass/_product.scss */
+.tooltip-badges .badge-warranty i, .tooltip-badges .badge-warranty:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -180px -180px;
+  width: 60px;
+  height: 60px; }
+
+/* line 39, ../sass/_product.scss */
+.tooltip-badges .badge-service i, .tooltip-badges .badge-service:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px -180px;
+  width: 60px;
+  height: 60px; }
+
+/* line 42, ../sass/_product.scss */
+.tooltip-badges .badge-heavy-duty i, .tooltip-badges .badge-heavy-duty:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -60px -120px;
+  width: 60px;
+  height: 60px; }
+
+/* line 45, ../sass/_product.scss */
+.tooltip-badges .badge-no-sales-tax i, .tooltip-badges .badge-no-sales-tax:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -180px -60px;
+  width: 60px;
+  height: 60px; }
+
+/* line 48, ../sass/_product.scss */
+.tooltip-badges .badge-returns i, .tooltip-badges .badge-returns:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -180px -120px;
+  width: 60px;
+  height: 60px; }
+
+/* line 51, ../sass/_product.scss */
+.tooltip-badges .badge-inspected i, .tooltip-badges .badge-inspected:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px 0px;
+  width: 60px;
+  height: 60px; }
+
+/* line 54, ../sass/_product.scss */
+.tooltip-badges .badge-iron-life i, .tooltip-badges .badge-iron-life:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px 0px;
+  width: 60px;
+  height: 60px; }
+
+/* line 57, ../sass/_product.scss */
+.tooltip-badges .badge-iron-life i, .tooltip-badges .badge-iron-life:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px 0px;
+  width: 60px;
+  height: 60px; }
+
+/* line 60, ../sass/_product.scss */
+.tooltip-badges .badge-color i, .tooltip-badges .badge-color:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -120px -120px;
+  width: 60px;
+  height: 60px; }
+
+/* line 63, ../sass/_product.scss */
+.tooltip-badges .badge-hardwood i, .tooltip-badges .badge-hardwood:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px -120px;
+  width: 60px;
+  height: 60px; }
+
+/* line 66, ../sass/_product.scss */
+.tooltip-badges .badge-extra-wide i, .tooltip-badges .badge-extra-wide:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -60px -60px;
+  width: 60px;
+  height: 60px; }
+
+/* line 69, ../sass/_product.scss */
+.tooltip-badges .badge-double-stitched i, .tooltip-badges .badge-double-stitched:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: 0px -60px;
+  width: 60px;
+  height: 60px; }
+
+/* line 72, ../sass/_product.scss */
+.tooltip-badges .badge-free-shipping i, .tooltip-badges .badge-free-shipping:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -120px -60px;
+  width: 60px;
+  height: 60px; }
+
+/* line 75, ../sass/_product.scss */
+.tooltip-badges .badge-fire-retardant i, .tooltip-badges .badge-fire-retardant:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -120px 0px;
+  width: 60px;
+  height: 60px; }
+
+/* line 78, ../sass/_product.scss */
+.tooltip-badges .badge-ten-thousand-rub i, .tooltip-badges .badge-ten-thousand-rub:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -120px -180px;
+  width: 60px;
+  height: 60px; }
+
+/* line 81, ../sass/_product.scss */
+.tooltip-badges .badge-swap-base i, .tooltip-badges .badge-swap-base:hover i {
+  background-image: url(../images/badges-sprites.png);
+  background-position: -60px -180px;
+  width: 60px;
+  height: 60px; }
+
+/* line 85, ../sass/_product.scss */
 [class^="badge-"] i,
 [class*="badge-"] i,
 [class^="badge-"] span,
@@ -2457,24 +2629,24 @@ li.first.far a {
   background-size: 800%;
   float: left; }
 
-/* line 24, ../sass/_product.scss */
+/* line 100, ../sass/_product.scss */
 [class^="badge-"] em,
 [class*="badge-"] em {
   margin-right: 14px; }
 
-/* line 28, ../sass/_product.scss */
+/* line 104, ../sass/_product.scss */
 [class^="badge-"] span,
 [class*="badge-"] span {
   margin: 20px; }
 
-/* line 32, ../sass/_product.scss */
+/* line 108, ../sass/_product.scss */
 .badge-product {
   height: 60px;
   width: 50%;
   float: left;
   margin: 10px 0; }
 
-/* line 38, ../sass/_product.scss */
+/* line 114, ../sass/_product.scss */
 .badge-product div {
   display: block;
   float: left;
@@ -2486,220 +2658,224 @@ li.first.far a {
   margin-left: 15px;
   padding-top: 10px; }
 
-/* line 49, ../sass/_product.scss */
+/* line 125, ../sass/_product.scss */
 .badge-made-usa i, .badge-made-usa span, .badge-made-usa em {
   background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
   background-repeat: no-repeat;
   background-size: 100%; }
 
-/* line 54, ../sass/_product.scss */
-.badge-free-shipping i, .badretardant span, .badge-fire-retardant em {
-  background-position: 0 -60px; }
+/* line 131, ../sass/_product.scss */
+.badge-fire-retardant i, .badge-fire-retardant span, .badge-fire-retardant em {
+  background-position: 0 -59px; }
 
-/* line 57, ../sass/_product.scss */
+/* line 134, ../sass/_product.scss */
+.badge-free-shipping i, .badge-free-shipping span, .badge-free-shipping em {
+  background-position: 0 0; }
+
+/* line 137, ../sass/_product.scss */
 .badge-heavy-duty i, .badge-heavy-duty span, .badge-heavy-duty em {
   background-position: 0 -120px; }
 
-/* line 60, ../sass/_product.scss */
+/* line 140, ../sass/_product.scss */
 .badge-iron-life i, .badge-iron-life span, .badge-iron-life em {
   background-position: 0 -180px; }
 
-/* line 63, ../sass/_product.scss */
+/* line 143, ../sass/_product.scss */
 .badge-no-sales-tax i, .badge-no-sales-tax span, .badge-no-sales-tax em {
   background-position: -60px 0; }
 
-/* line 66, ../sass/_product.scss */
+/* line 146, ../sass/_product.scss */
 .badge-ten-thousand-rub i {
   background-position: -60px -60px; }
 
-/* line 69, ../sass/_product.scss */
+/* line 149, ../sass/_product.scss */
 .badge-swap-base i {
   background-position: -60px -120px; }
 
-/* line 72, ../sass/_product.scss */
+/* line 152, ../sass/_product.scss */
 .badge-new-arrival i, .badge-new-arrival span, .badge-new-arrival em {
   background-position: -60px -180px; }
 
-/* line 75, ../sass/_product.scss */
+/* line 155, ../sass/_product.scss */
 .badge-service i, .badge-service span, .badge-service em {
   background-position: -120px 0; }
 
-/* line 78, ../sass/_product.scss */
+/* line 158, ../sass/_product.scss */
 .badge-warranty i, .badge-warranty span, .badge-warranty em {
   background-position: -120px -60px; }
 
-/* line 81, ../sass/_product.scss */
+/* line 161, ../sass/_product.scss */
 .badge-color i, .badge-color span, .badge-color em {
   background-position: -120px -120px; }
 
-/* line 84, ../sass/_product.scss */
+/* line 164, ../sass/_product.scss */
 .badge-returns i, .badge-returns span, .badge-returns em {
   background-position: -120px -180px; }
 
-/* line 87, ../sass/_product.scss */
+/* line 167, ../sass/_product.scss */
 .badge-hardwood i {
   background-position: -180px 0; }
 
-/* line 90, ../sass/_product.scss */
+/* line 170, ../sass/_product.scss */
 .badge-extra-wide i {
   background-position: -180px -60px; }
 
-/* line 93, ../sass/_product.scss */
+/* line 173, ../sass/_product.scss */
 .badge-double-stitched i {
   background-position: -180px -120px; }
 
-/* line 96, ../sass/_product.scss */
+/* line 176, ../sass/_product.scss */
 .badge-inspected i, .badge-inspected span, .badge-inspected em {
   background-position: -180px -180px; }
 
-/* line 99, ../sass/_product.scss */
+/* line 179, ../sass/_product.scss */
 .badge-hidden-clover i {
   background-position: -180px -242px; }
 
-/* line 102, ../sass/_product.scss */
+/* line 182, ../sass/_product.scss */
 .badge-free-shipping:hover i {
   background-position: -240px 0; }
 
-/* line 105, ../sass/_product.scss */
+/* line 185, ../sass/_product.scss */
 .badge-fire-retardant:hover i {
   background-position: -240px -60px; }
 
-/* line 108, ../sass/_product.scss */
+/* line 188, ../sass/_product.scss */
 .badge-heavy-duty:hover i {
   background-position: -240px -120px; }
 
-/* line 111, ../sass/_product.scss */
+/* line 191, ../sass/_product.scss */
 .badge-iron-life:hover i {
   background-position: -240px -180px; }
 
-/* line 114, ../sass/_product.scss */
+/* line 194, ../sass/_product.scss */
 .badge-no-sales-tax:hover i {
   background-position: -300px 0; }
 
-/* line 117, ../sass/_product.scss */
+/* line 197, ../sass/_product.scss */
 .badge-ten-thousand-rub:hover i {
   background-position: -300px -60px; }
 
-/* line 120, ../sass/_product.scss */
+/* line 200, ../sass/_product.scss */
 .badge-swap-base:hover i {
   background-position: -300px -120px; }
 
-/* line 123, ../sass/_product.scss */
+/* line 203, ../sass/_product.scss */
 .badge-new-arrival:hover i {
   background-position: -300px -180px; }
 
-/* line 126, ../sass/_product.scss */
+/* line 206, ../sass/_product.scss */
 .badge-service:hover i {
   background-position: -360px 0; }
 
-/* line 129, ../sass/_product.scss */
+/* line 209, ../sass/_product.scss */
 .badge-warranty:hover i {
   background-position: -360px -60px; }
 
-/* line 132, ../sass/_product.scss */
+/* line 212, ../sass/_product.scss */
 .badge-color:hover i {
   background-position: -360px -120px; }
 
-/* line 135, ../sass/_product.scss */
+/* line 215, ../sass/_product.scss */
 .badge-returns:hover i {
   background-position: -360px -180px; }
 
-/* line 138, ../sass/_product.scss */
+/* line 218, ../sass/_product.scss */
 .badge-hardwood:hover i {
   background-position: -420px 0; }
 
-/* line 141, ../sass/_product.scss */
+/* line 221, ../sass/_product.scss */
 .badge-extra-wide:hover i {
   background-position: -420px -60px; }
 
-/* line 144, ../sass/_product.scss */
+/* line 224, ../sass/_product.scss */
 .badge-double-stitched:hover i {
   background-position: -420px -120px; }
 
-/* line 147, ../sass/_product.scss */
+/* line 227, ../sass/_product.scss */
 .badge-inspected:hover i {
   background-position: -420px -180px; }
 
-/* line 150, ../sass/_product.scss */
+/* line 230, ../sass/_product.scss */
 .badge-hidden-clover:hover i {
   background-position: -240px -242px; }
 
-/* line 156, ../sass/_product.scss */
+/* line 236, ../sass/_product.scss */
 .listing-container {
   margin-bottom: 10px; }
 
-/* line 159, ../sass/_product.scss */
+/* line 239, ../sass/_product.scss */
 .listing {
   margin-top: 20px;
   margin-bottom: 20px;
   min-height: 250px; }
 
-/* line 164, ../sass/_product.scss */
+/* line 244, ../sass/_product.scss */
 .listing .product_thumb {
   border: 1px solid #dcdcdc;
   width: 100%;
   max-height: 510px; }
 
-/* line 169, ../sass/_product.scss */
+/* line 249, ../sass/_product.scss */
 .listing button {
   width: 100%; }
 
-/* line 172, ../sass/_product.scss */
+/* line 252, ../sass/_product.scss */
 .listing p {
   margin: 5px 0; }
 
-/* line 175, ../sass/_product.scss */
+/* line 255, ../sass/_product.scss */
 .listing p.price {
   margin: 6px 0; }
 
-/* line 178, ../sass/_product.scss */
+/* line 258, ../sass/_product.scss */
 .listing p.msrp {
   color: #a9a9a9;
   text-decoration: line-through; }
 
-/* line 182, ../sass/_product.scss */
+/* line 262, ../sass/_product.scss */
 .listing .button {
   width: 100%;
   position: relative;
   bottom: 0; }
 
-/* line 187, ../sass/_product.scss */
+/* line 267, ../sass/_product.scss */
 .product-title {
   font-size: 24px;
   margin-bottom: 3px; }
 
-/* line 191, ../sass/_product.scss */
+/* line 271, ../sass/_product.scss */
 .part-no {
   margin-top: 3px;
   color: #a9a9a9; }
 
-/* line 195, ../sass/_product.scss */
+/* line 275, ../sass/_product.scss */
 .pricebox {
   background: #f5f5f5;
   -webkit-border-radius: 3px;
   border-radius: 3px; }
 
-/* line 200, ../sass/_product.scss */
+/* line 280, ../sass/_product.scss */
 .pricebox.quote-box {
   background: transparent none;
   text-align: left; }
 
-/* line 204, ../sass/_product.scss */
+/* line 284, ../sass/_product.scss */
 .pricebox.quote-box h3 {
   display: inline-block; }
 
-/* line 207, ../sass/_product.scss */
+/* line 287, ../sass/_product.scss */
 .pricebox-quote-box {
   text-align: left !important; }
 
-/* line 210, ../sass/_product.scss */
+/* line 290, ../sass/_product.scss */
 .pricebox .left-price {
   font-size: 42px;
   text-align: center;
   line-height: 110px;
   position: relative; }
 
-/* line 216, ../sass/_product.scss */
+/* line 296, ../sass/_product.scss */
 .pricebox .financing {
   font-size: 12px;
   display: block;
@@ -2708,29 +2884,29 @@ li.first.far a {
   line-height: 12px;
   width: 100%; }
 
-/* line 224, ../sass/_product.scss */
+/* line 304, ../sass/_product.scss */
 .pricebox .right-price {
   border-left: 1px solid #dcdcdc;
   padding: 10px; }
 
-/* line 228, ../sass/_product.scss */
+/* line 308, ../sass/_product.scss */
 .pricebox .right-price p {
   margin: 5px 10px;
   font-size: 14px; }
 
-/* line 232, ../sass/_product.scss */
+/* line 312, ../sass/_product.scss */
 .pricebox .right-price .label {
   width: 77px;
   display: block;
   float: left;
   white-space: normal; }
 
-/* line 238, ../sass/_product.scss */
+/* line 318, ../sass/_product.scss */
 fieldset {
   padding: 0;
   margin: 0; }
 
-/* line 242, ../sass/_product.scss */
+/* line 322, ../sass/_product.scss */
 #quantity {
   width: 40px;
   text-align: center;
@@ -2741,22 +2917,22 @@ fieldset {
   color: #4d4d4d;
   padding: 3px 0; }
 
-/* line 252, ../sass/_product.scss */
+/* line 332, ../sass/_product.scss */
 .product-options {
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #dcdcdc; }
 
-/* line 257, ../sass/_product.scss */
+/* line 337, ../sass/_product.scss */
 .product-form label {
   font-size: small; }
 
-/* line 260, ../sass/_product.scss */
+/* line 340, ../sass/_product.scss */
 .product-form .option-row {
   margin-bottom: 10px;
   padding: 10px; }
 
-/* line 266, ../sass/_product.scss */
+/* line 346, ../sass/_product.scss */
 .product-form .fancy-select {
   margin-right: 0;
   width: 100%;
@@ -2764,56 +2940,56 @@ fieldset {
   border-radius: 3px;
   height: 28px; }
 
-/* line 273, ../sass/_product.scss */
+/* line 353, ../sass/_product.scss */
 .product-form .fancy-select select {
   width: 100%;
   height: auto; }
 
-/* line 277, ../sass/_product.scss */
+/* line 357, ../sass/_product.scss */
 .product-form .fancy-select i {
   padding: 4px 12px; }
 
-/* line 280, ../sass/_product.scss */
+/* line 360, ../sass/_product.scss */
 .product-form .add {
   width: 100%;
   height: 50px; }
 
-/* line 284, ../sass/_product.scss */
+/* line 364, ../sass/_product.scss */
 .product-form .questions {
   text-align: center;
   float: right;
   line-height: 27px; }
 
-/* line 289, ../sass/_product.scss */
+/* line 369, ../sass/_product.scss */
 .option-row.last {
   padding: 40px 10px 10px; }
 
-/* line 292, ../sass/_product.scss */
+/* line 372, ../sass/_product.scss */
 .product_right h4 {
   clear: both;
   margin-top: 20px; }
 
-/* line 296, ../sass/_product.scss */
+/* line 376, ../sass/_product.scss */
 .product_right ul {
   padding: 0 20px; }
 
-/* line 299, ../sass/_product.scss */
+/* line 379, ../sass/_product.scss */
 .product_right li {
   color: #ff7f50; }
 
-/* line 302, ../sass/_product.scss */
+/* line 382, ../sass/_product.scss */
 .product_right li span {
   color: #696969; }
 
-/* line 305, ../sass/_product.scss */
+/* line 385, ../sass/_product.scss */
 .badges {
   padding: 0 0 20px 0; }
 
-/* line 309, ../sass/_product.scss */
+/* line 389, ../sass/_product.scss */
 .product-details {
   position: relative; }
 
-/* line 312, ../sass/_product.scss */
+/* line 392, ../sass/_product.scss */
 .brochure-download {
   /*
     position: absolute;
@@ -2824,46 +3000,46 @@ fieldset {
   margin-bottom: 10px;
   font-size: 14px; }
 
-/* line 322, ../sass/_product.scss */
+/* line 402, ../sass/_product.scss */
 .brochure-download i {
   font-size: 18px;
   color: #ff7f50; }
 
-/* line 326, ../sass/_product.scss */
+/* line 406, ../sass/_product.scss */
 .related-products,
 .related-accessories {
   margin-top: 50px;
   position: relative; }
 
-/* line 331, ../sass/_product.scss */
+/* line 411, ../sass/_product.scss */
 .related-products h4,
 .related-accessories h4 {
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 10px; }
 
-/* line 337, ../sass/_product.scss */
+/* line 417, ../sass/_product.scss */
 .review {
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 25px;
   margin-bottom: 15px; }
 
-/* line 342, ../sass/_product.scss */
+/* line 422, ../sass/_product.scss */
 .review span.bold {
   font-size: 14px;
   margin: 0; }
 
-/* line 346, ../sass/_product.scss */
+/* line 426, ../sass/_product.scss */
 .review p {
   margin: 0;
   line-height: 1.5; }
 
-/* line 350, ../sass/_product.scss */
+/* line 430, ../sass/_product.scss */
 .rating {
   font-size: 14px;
   font-style: italic;
   color: #a9a9a9; }
 
-/* line 355, ../sass/_product.scss */
+/* line 435, ../sass/_product.scss */
 .stars {
   position: relative;
   unicode-bidi: bidi-override;
@@ -2871,63 +3047,63 @@ fieldset {
   font-size: 20px;
   left: -4px; }
 
-/* line 362, ../sass/_product.scss */
+/* line 442, ../sass/_product.scss */
 .stars span.star {
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
   display: inline-block; }
 
-/* line 368, ../sass/_product.scss */
+/* line 448, ../sass/_product.scss */
 .stars span.star:hover {
   cursor: pointer; }
 
-/* line 371, ../sass/_product.scss */
+/* line 451, ../sass/_product.scss */
 .stars span.star:before {
   content: "\f006";
   padding-right: 2px;
   color: #ff7f50; }
 
-/* line 376, ../sass/_product.scss */
+/* line 456, ../sass/_product.scss */
 .stars span.star:hover:before,
 .stars span.star:hover ~ span.star:before {
   content: "\f005"; }
 
-/* line 380, ../sass/_product.scss */
+/* line 460, ../sass/_product.scss */
 .add-rating-link {
   font-size: 14px; }
 
-/* line 383, ../sass/_product.scss */
+/* line 463, ../sass/_product.scss */
 .add-rating-link i {
   color: #ff7f50;
   font-size: 16px; }
 
-/* line 388, ../sass/_product.scss */
+/* line 468, ../sass/_product.scss */
 #categoryHeader {
   margin-top: 0;
   margin-bottom: 20px; }
 
-/* line 393, ../sass/_product.scss */
+/* line 473, ../sass/_product.scss */
 #categoryHeader h1 {
   margin-top: 0; }
 
-/* line 397, ../sass/_product.scss */
+/* line 477, ../sass/_product.scss */
 .category-filters {
   border-bottom: 1px solid #dcdcdc; }
 
-/* line 400, ../sass/_product.scss */
+/* line 480, ../sass/_product.scss */
 .category-filters h5 {
   font-weight: 200; }
 
-/* line 403, ../sass/_product.scss */
+/* line 483, ../sass/_product.scss */
 .category-filters .fancy-select {
   margin-bottom: 20px; }
 
-/* line 406, ../sass/_product.scss */
+/* line 486, ../sass/_product.scss */
 .category-navigation ul {
   padding: 0; }
 
-/* line 409, ../sass/_product.scss */
+/* line 489, ../sass/_product.scss */
 .category-navigation ul > li {
   font-family: 'PT Serif';
   font-weight: 700;
@@ -2937,15 +3113,15 @@ fieldset {
   text-transform: uppercase;
   list-style: none; }
 
-/* line 419, ../sass/_product.scss */
+/* line 499, ../sass/_product.scss */
 .sale-cornertag {
   position: relative; }
 
-/* line 422, ../sass/_product.scss */
+/* line 502, ../sass/_product.scss */
 .sale-cornertag .cornersprite {
   display: block; }
 
-/* line 425, ../sass/_product.scss */
+/* line 505, ../sass/_product.scss */
 .cornersprite {
   display: none;
   background-repeat: no-repeat;
@@ -2957,52 +3133,52 @@ fieldset {
   top: -5px;
   left: -5px; }
 
-/* line 436, ../sass/_product.scss */
+/* line 516, ../sass/_product.scss */
 .cornersprite.new {
   background-position: 0 0; }
 
-/* line 439, ../sass/_product.scss */
+/* line 519, ../sass/_product.scss */
 .tweet_button {
   background: url("/assets/templates/standish-responsive/images/tweet-sprite.png");
   width: 56px;
   height: 21px;
   display: inline-block; }
 
-/* line 445, ../sass/_product.scss */
+/* line 525, ../sass/_product.scss */
 .tweet_button:hover {
   background-position: 0 -21px; }
 
-/* line 448, ../sass/_product.scss */
+/* line 528, ../sass/_product.scss */
 .promotions {
   font-size: 14px; }
 
 /* Instagram 3 picture limit */
-/* line 453, ../sass/_product.scss */
+/* line 533, ../sass/_product.scss */
 #instafeed a:nth-child(n+4) {
   display: none; }
 
-/* line 457, ../sass/_product.scss */
+/* line 537, ../sass/_product.scss */
 #instafeed {
   width: 470px; }
 
-/* line 461, ../sass/_product.scss */
+/* line 541, ../sass/_product.scss */
 #instafeed img {
   padding: 0px 2px 0px 2px; }
 
-/* line 465, ../sass/_product.scss */
+/* line 545, ../sass/_product.scss */
 .MagicZoomPlus img {
   max-height: 650px; }
 
-/* line 469, ../sass/_product.scss */
+/* line 549, ../sass/_product.scss */
 .MagicZoomPlus > img {
   width: auto !important; }
 
 /* Price Drop Feature Styles */
-/* line 475, ../sass/_product.scss */
+/* line 555, ../sass/_product.scss */
 .priceDropTitle {
   margin-bottom: 10px; }
 
-/* line 478, ../sass/_product.scss */
+/* line 558, ../sass/_product.scss */
 .priceDropButton {
   font-size: 16px;
   padding: 0 24px;
@@ -3013,11 +3189,11 @@ fieldset {
   margin-bottom: 10px;
   margin-top: 0px; }
 
-/* line 488, ../sass/_product.scss */
+/* line 568, ../sass/_product.scss */
 .vex-content .hs-form-field label {
   font-size: 18px; }
 
-/* line 491, ../sass/_product.scss */
+/* line 571, ../sass/_product.scss */
 .vex-content .hs-form-field {
   margin-bottom: 15px; }
 

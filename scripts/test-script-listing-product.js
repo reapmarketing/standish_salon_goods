@@ -8,18 +8,27 @@
 	    'style':'font-size: 20px; position: relative; top: -3em; float: right; curser: pointer;',
 	    'html':'<a class="tooltipplacehtml" data-content=""><i class="fa fa-money fa-sm"></i> <i class="fa fa-question fa-sm"></i> </a>',
 		}).appendTo('.left-price');
+	}
 
+
+
+	// @TODO MAKE SURE THIS LOADS AFTER BADGES
+
+	var badgesList = $('.badges-list .badge-text');
+	$(window).on('load', function() {
+		window.TestScriptListing.createPageElements();
 		var productTitle = $('h1.product-title.hidden-sm').text();
-		var badgesList = $('.badges-list');
+		
+		var badgesList = $('.badges-list').html();
 		console.log(badgesList);
-
-  	var tooltiphtml = '<h3> Why this price? </h3>';
-  	tooltiphtml += 'The ' + productTitle + ' is an American-made product, handcrafted by artisans here in the united states.'; 
-  	tooltiphtml += '<br/>';
-  	tooltiphtml += badgesList;
-  	tooltiphtml += 'To learn more about our American-made products, take a look at <a href="">this video</a>!'
-  	tooltiphtml += '</div>'
-  	$('.tooltipplacehtml').attr('data-content', tooltiphtml);
+	  	var tooltiphtml = '<h3> Why this price? </h3>';
+	  	tooltiphtml += 'The ' + productTitle + ' is an American-made product, handcrafted by artisans here in the united states.'; 
+	  	tooltiphtml += '<br/>';
+	  	tooltiphtml += '<div class="tooltip-badges">'
+	  	tooltiphtml += badgesList;
+	  	tooltiphtml += '</div>';
+	  	tooltiphtml += 'To learn more about our American-made products, take a look at <a href="">this video</a>!'
+	  	tooltiphtml += '</div>'
 
 
 		$('.tooltipplacehtml').popover({
@@ -37,16 +46,8 @@
 		  var ref = $(this);
 		  setTimeout(function(){
 		      ref.popover('hide');
-		  }, 784500);
+		  }, 3000);
 		});
-	}
-
-
-
-	// @TODO MAKE SURE THIS LOADS AFTER BADGES
-	$(window).ready(function() {
-		window.TestScriptListing.createPageElements();
-		
 	});
 
 })(window.TestScriptListing = window.TestScriptListing || {}, jQuery);

@@ -152,12 +152,14 @@ $( function(){
 			<!--START: totalrating-->
 				<div class="totalrating padd-block col-md-12" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
 
-					<!--START: create_first_review-->
-					<p class="pull-right"><i class="fa fa-star-o"></i>
-					<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a></p>
-					<!--END: create_first_review-->
+					
 				</div>
 			<!--END: totalrating-->
+			<!--START: create_first_review-->
+				<p class="pull-right"><i class="fa fa-star-o"></i>
+				<a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_first]</a></p>
+			<!--END: create_first_review-->
+
 
 			<!--START: reviews-->
 			<div class="reviews hidden-xs hidden-sm">
@@ -214,8 +216,8 @@ $( function(){
 							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 							<!--START: product_review-->
 							<!--START: product_review_average-->
-							  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-							  <!-- [review_count] Review(s) -->
+							  <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" />
+							  [review_count] Review(s)
 							<!--END: product_review_average-->
 							<!--END: product_review-->
 							<!--START: ITEMPRICE-->
@@ -238,8 +240,8 @@ $( function(){
 							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
 							<!--START: product_review-->
 							<!--START: product_review_average-->
-							  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-							  <!-- [review_count] Review(s) -->
+							  <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" />
+							  [review_count] Review(s)
 							<!--END: product_review_average-->
 							<!--END: product_review-->
 							<!--START: ITEMPRICE-->
@@ -553,7 +555,7 @@ $( function(){
 					<!--END: PRODUCT_FEATURES_BLOCK-->
 				</ul>
 			</div>
-		
+			<hr>
 			<div itemprop="description" class="product-description">
 				<!-- START: extended_description -->
 				<h4>Product Description</h4>
@@ -561,6 +563,30 @@ $( function(){
 				<div class="extended-description">[extended_description]</div>
 				<!-- END: extended_description -->
 			</div>
+			<!--START: extra_field_9-->
+			<div class="hidden field9" data-field9="[extra_field_9]"></div>
+			<!--END: extra_field_9-->
+			<!--START: extra_field_10-->
+			<div class="hidden field10" data-field10="[extra_field_10]"></div>
+			<!--END: extra_field_10-->
+			<!--START: extra_field_11-->
+			<hr>
+			<div itemprop="ingredients" class="product-description">
+				<div>
+					<h4>[product_extrafield11]</h4>
+					<p>[extra_field_11]</p>
+				</div>
+			</div>
+			<!--END: extra_field_11-->
+			<!--START: extra_field_12-->
+			<hr>
+			<div itemprop="suggested-use" class="product-description">
+				<div>
+					<h4>[product_extrafield12]</h4>
+					<p>[extra_field_12]</p>
+				</div>
+			</div>
+			<!--END: extra_field_12-->
 
 			<div id="instafeed"></div>
 
@@ -685,12 +711,7 @@ $( function(){
 <div class="hidden field8" data-field8="[extra_field_8]"></div>
 
 <!--END: extra_field_8-->
-<!--START: extra_field_9-->
-<div class="hidden field9" data-field9="[extra_field_9]"></div>
-<!--END: extra_field_9-->
-<!--START: extra_field_10-->
-<div class="hidden field10" data-field10="[extra_field_10]"></div>
-<!--END: extra_field_10-->
+
 
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
 <script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
