@@ -42,10 +42,15 @@ module.exports = function(grunt) {
       }
     },
     sprite:{
-      all: {
+      whiteSprites: {
         src: 'images/badges-sprites/*.png',
         dest: 'images/badges-sprites.png',
         destCss: 'sass/_badges-sprites.scss'
+      },
+      greenSprites: {
+        src: ['images/individual-badges-main/Green/*.png', 'images/individual-badges-main/Orange/*.png'],
+        dest: 'images/individual-badges-main.png',
+        destCss: 'sass/_badges-sprites-colors.scss'
       }
     },
     watch: {

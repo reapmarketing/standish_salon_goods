@@ -180,6 +180,7 @@
 	var badges = $( '.field8' ).data( 'field8' );
 	var $badges = $( '.badges' );
 	var $badges_list = $( '.badges-list' );
+
 	var badgetext = {
 		'free-shipping': {
 			'title': 'Free Shipping',
@@ -270,6 +271,41 @@
 			'title': 'Made in the USA',
 			'class': 'made-usa',
 			'tooltip': 'Proudly Made in the USA!'
+		},
+		'gluten-free': {
+			'title': 'Gluten Free',
+			'class': 'gluten-free',
+			'tooltip': "We want to respect your skin, and in doing so, we've taken into account gluten allergies and offer a product that is gluten-free."
+		},
+		'paraben-free': {
+			'title': 'Paraben Free',
+			'class': 'paraben-free',
+			'tooltip': "Our products are delivered to you fresh, so you don't have to worry about extra additives and preservatives like Parabens."
+		}, 
+		'vegan': {
+			'title': 'Vegan',
+			'class': 'vegan',
+			'tooltip': "We love your skin, we love the environment, and we love animals. With this gluten-free product, you have something to benefit all three."
+		},
+		'oil-free': {
+			'title': 'Oil Free',
+			'class': 'oil-free',
+			'tooltip': "Keep your pores clear and your skin looking great when you use this oil-free product"
+		},
+		'soap-free': {
+			'title': 'Soap Free',
+			'class': 'soap-free',
+			'tooltip': "We want to make sure you get the most out of this product, and by not using soap as ingredient, we do just that!"
+		},
+		'hypoallergenic': {
+			'title': 'Hypoallergenic',
+			'class': 'hypoallergenic',
+			'tooltip':  "Sensitive skin? Don't worry, we've got you covered. This product is hypoallergenic and thoughtful of all skin types."
+		},
+		'sulfate-free': {
+			'title': 'Sulfate Free',
+			'class': 'sulfate-free',
+			'tooltip': "You want the best for your skin and so do you. With Sulfate-Free products, we're able to do just that."
 		}
 	}
 

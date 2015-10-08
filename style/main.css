@@ -29,6 +29,36 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
 /* line 2, ../sass/_typography.scss */
 p,
 ul,
@@ -2621,32 +2651,26 @@ li.first.far a {
 [class^="badge-"] em,
 [class*="badge-"] em {
   display: block;
-  height: 60px;
-  width: 60px;
-  background: url("/assets/templates/standish-responsive/images/badges-sprite.png");
-  -webkit-background-size: 800%;
-  -moz-background-size: 800%;
-  background-size: 800%;
   float: left; }
 
-/* line 100, ../sass/_product.scss */
+/* line 94, ../sass/_product.scss */
 [class^="badge-"] em,
 [class*="badge-"] em {
   margin-right: 14px; }
 
-/* line 104, ../sass/_product.scss */
+/* line 98, ../sass/_product.scss */
 [class^="badge-"] span,
 [class*="badge-"] span {
   margin: 20px; }
 
-/* line 108, ../sass/_product.scss */
+/* line 102, ../sass/_product.scss */
 .badge-product {
   height: 60px;
   width: 50%;
   float: left;
   margin: 10px 0; }
 
-/* line 114, ../sass/_product.scss */
+/* line 108, ../sass/_product.scss */
 .badge-product div {
   display: block;
   float: left;
@@ -2658,224 +2682,413 @@ li.first.far a {
   margin-left: 15px;
   padding-top: 10px; }
 
-/* line 125, ../sass/_product.scss */
+/* line 119, ../sass/_product.scss */
 .badge-made-usa i, .badge-made-usa span, .badge-made-usa em {
   background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
   background-repeat: no-repeat;
   background-size: 100%; }
 
-/* line 131, ../sass/_product.scss */
+/* line 126, ../sass/_product.scss */
 .badge-fire-retardant i, .badge-fire-retardant span, .badge-fire-retardant em {
-  background-position: 0 -59px; }
-
-/* line 134, ../sass/_product.scss */
-.badge-free-shipping i, .badge-free-shipping span, .badge-free-shipping em {
-  background-position: 0 0; }
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px -361px;
+  width: 60px;
+  height: 59px; }
+/* line 131, ../sass/_product.scss */
+.badge-fire-retardant:hover i, .badge-fire-retardant:hover span, .badge-fire-retardant:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -180px -242px;
+  width: 60px;
+  height: 60px; }
 
 /* line 137, ../sass/_product.scss */
+.badge-free-shipping i, .badge-free-shipping span, .badge-free-shipping em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px 0px;
+  width: 60px;
+  height: 60px; }
+/* line 141, ../sass/_product.scss */
+.badge-free-shipping:hover i, .badge-free-shipping:hover span, .badge-free-shipping:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px -302px;
+  width: 60px;
+  height: 59px; }
+
+/* line 147, ../sass/_product.scss */
 .badge-heavy-duty i, .badge-heavy-duty span, .badge-heavy-duty em {
-  background-position: 0 -120px; }
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px -361px;
+  width: 60px;
+  height: 53px; }
+/* line 151, ../sass/_product.scss */
+.badge-heavy-duty:hover i, .badge-heavy-duty:hover span, .badge-heavy-duty:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -300px -361px;
+  width: 60px;
+  height: 52px; }
 
-/* line 140, ../sass/_product.scss */
+/* line 157, ../sass/_product.scss */
 .badge-iron-life i, .badge-iron-life span, .badge-iron-life em {
-  background-position: 0 -180px; }
-
-/* line 143, ../sass/_product.scss */
-.badge-no-sales-tax i, .badge-no-sales-tax span, .badge-no-sales-tax em {
-  background-position: -60px 0; }
-
-/* line 146, ../sass/_product.scss */
-.badge-ten-thousand-rub i {
-  background-position: -60px -60px; }
-
-/* line 149, ../sass/_product.scss */
-.badge-swap-base i {
-  background-position: -60px -120px; }
-
-/* line 152, ../sass/_product.scss */
-.badge-new-arrival i, .badge-new-arrival span, .badge-new-arrival em {
-  background-position: -60px -180px; }
-
-/* line 155, ../sass/_product.scss */
-.badge-service i, .badge-service span, .badge-service em {
-  background-position: -120px 0; }
-
-/* line 158, ../sass/_product.scss */
-.badge-warranty i, .badge-warranty span, .badge-warranty em {
-  background-position: -120px -60px; }
-
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -60px -361px;
+  width: 60px;
+  height: 59px; }
 /* line 161, ../sass/_product.scss */
-.badge-color i, .badge-color span, .badge-color em {
-  background-position: -120px -120px; }
-
-/* line 164, ../sass/_product.scss */
-.badge-returns i, .badge-returns span, .badge-returns em {
-  background-position: -120px -180px; }
+.badge-iron-life:hover i, .badge-iron-life:hover span, .badge-iron-life:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -360px -60px;
+  width: 60px;
+  height: 60px; }
 
 /* line 167, ../sass/_product.scss */
-.badge-hardwood i {
-  background-position: -180px 0; }
+.badge-no-sales-tax i, .badge-no-sales-tax span, .badge-no-sales-tax em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: 0px -61px;
+  width: 60px;
+  height: 61px; }
+/* line 171, ../sass/_product.scss */
+.badge-no-sales-tax:hover i, .badge-no-sales-tax:hover span, .badge-no-sales-tax:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -60px -302px;
+  width: 60px;
+  height: 59px; }
 
-/* line 170, ../sass/_product.scss */
-.badge-extra-wide i {
-  background-position: -180px -60px; }
+/* line 177, ../sass/_product.scss */
+.badge-ten-thousand-rub i, .badge-ten-thousand-rub span, .badge-ten-thousand-rub em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -180px -302px;
+  width: 60px;
+  height: 59px; }
+/* line 181, ../sass/_product.scss */
+.badge-ten-thousand-rub:hover i, .badge-ten-thousand-rub:hover span, .badge-ten-thousand-rub:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -180px -361px;
+  width: 60px;
+  height: 59px; }
 
-/* line 173, ../sass/_product.scss */
-.badge-double-stitched i {
-  background-position: -180px -120px; }
-
-/* line 176, ../sass/_product.scss */
-.badge-inspected i, .badge-inspected span, .badge-inspected em {
-  background-position: -180px -180px; }
-
-/* line 179, ../sass/_product.scss */
-.badge-hidden-clover i {
-  background-position: -180px -242px; }
-
-/* line 182, ../sass/_product.scss */
-.badge-free-shipping:hover i {
-  background-position: -240px 0; }
-
-/* line 185, ../sass/_product.scss */
-.badge-fire-retardant:hover i {
-  background-position: -240px -60px; }
-
-/* line 188, ../sass/_product.scss */
-.badge-heavy-duty:hover i {
-  background-position: -240px -120px; }
-
+/* line 187, ../sass/_product.scss */
+.badge-swap-base i, .badge-swap-base span, .badge-swap-base em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -300px 0px;
+  width: 60px;
+  height: 60px; }
 /* line 191, ../sass/_product.scss */
-.badge-iron-life:hover i {
-  background-position: -240px -180px; }
-
-/* line 194, ../sass/_product.scss */
-.badge-no-sales-tax:hover i {
-  background-position: -300px 0; }
+.badge-swap-base:hover i, .badge-swap-base:hover span, .badge-swap-base:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -60px 0px;
+  width: 60px;
+  height: 61px; }
 
 /* line 197, ../sass/_product.scss */
-.badge-ten-thousand-rub:hover i {
-  background-position: -300px -60px; }
+.badge-new-arrival i, .badge-new-arrival span, .badge-new-arrival em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px 0px;
+  width: 60px;
+  height: 61px; }
+/* line 201, ../sass/_product.scss */
+.badge-new-arrival:hover i, .badge-new-arrival:hover span, .badge-new-arrival:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -300px -302px;
+  width: 60px;
+  height: 59px; }
 
-/* line 200, ../sass/_product.scss */
-.badge-swap-base:hover i {
-  background-position: -300px -120px; }
+/* line 207, ../sass/_product.scss */
+.badge-service i, .badge-service span, .badge-service em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -360px -302px;
+  width: 60px;
+  height: 59px; }
+/* line 211, ../sass/_product.scss */
+.badge-service:hover i, .badge-service:hover span, .badge-service:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px -302px;
+  width: 60px;
+  height: 59px; }
 
-/* line 203, ../sass/_product.scss */
-.badge-new-arrival:hover i {
-  background-position: -300px -180px; }
-
-/* line 206, ../sass/_product.scss */
-.badge-service:hover i {
-  background-position: -360px 0; }
-
-/* line 209, ../sass/_product.scss */
-.badge-warranty:hover i {
-  background-position: -360px -60px; }
-
-/* line 212, ../sass/_product.scss */
-.badge-color:hover i {
-  background-position: -360px -120px; }
-
-/* line 215, ../sass/_product.scss */
-.badge-returns:hover i {
-  background-position: -360px -180px; }
-
-/* line 218, ../sass/_product.scss */
-.badge-hardwood:hover i {
-  background-position: -420px 0; }
-
+/* line 217, ../sass/_product.scss */
+.badge-warranty i, .badge-warranty span, .badge-warranty em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -300px -180px;
+  width: 60px;
+  height: 60px; }
 /* line 221, ../sass/_product.scss */
-.badge-extra-wide:hover i {
-  background-position: -420px -60px; }
-
-/* line 224, ../sass/_product.scss */
-.badge-double-stitched:hover i {
-  background-position: -420px -120px; }
+.badge-warranty:hover i, .badge-warranty:hover span, .badge-warranty:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px -182px;
+  width: 60px;
+  height: 60px; }
 
 /* line 227, ../sass/_product.scss */
-.badge-inspected:hover i {
-  background-position: -420px -180px; }
+.badge-color i, .badge-color span, .badge-color em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -360px -239px;
+  width: 60px;
+  height: 59px; }
+/* line 231, ../sass/_product.scss */
+.badge-color:hover i, .badge-color:hover span, .badge-color:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -180px -61px;
+  width: 60px;
+  height: 60px; }
 
-/* line 230, ../sass/_product.scss */
-.badge-hidden-clover:hover i {
-  background-position: -240px -242px; }
+/* line 237, ../sass/_product.scss */
+.badge-returns i, .badge-returns span, .badge-returns em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: 0px -361px;
+  width: 60px;
+  height: 59px; }
+/* line 241, ../sass/_product.scss */
+.badge-returns:hover i, .badge-returns:hover span, .badge-returns:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -360px 0px;
+  width: 60px;
+  height: 60px; }
 
-/* line 236, ../sass/_product.scss */
+/* line 247, ../sass/_product.scss */
+.badge-hardwood i, .badge-hardwood span, .badge-hardwood em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -360px -180px;
+  width: 60px;
+  height: 59px; }
+/* line 251, ../sass/_product.scss */
+.badge-hardwood:hover i, .badge-hardwood:hover span, .badge-hardwood:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px -61px;
+  width: 60px;
+  height: 61px; }
+
+/* line 257, ../sass/_product.scss */
+.badge-extra-wide i, .badge-extra-wide span, .badge-extra-wide em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: 0px 0px;
+  width: 60px;
+  height: 61px; }
+/* line 261, ../sass/_product.scss */
+.badge-extra-wide:hover i, .badge-extra-wide:hover span, .badge-extra-wide:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px -242px;
+  width: 60px;
+  height: 60px; }
+
+/* line 267, ../sass/_product.scss */
+.badge-double-stitched i, .badge-double-stitched span, .badge-double-stitched em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: 0px -242px;
+  width: 60px;
+  height: 60px; }
+/* line 271, ../sass/_product.scss */
+.badge-double-stitched:hover i, .badge-double-stitched:hover span, .badge-double-stitched:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -60px -242px;
+  width: 60px;
+  height: 60px; }
+
+/* line 277, ../sass/_product.scss */
+.badge-inspected i, .badge-inspected span, .badge-inspected em, .badge-inspected span i, .badge-inspected span span, .badge-inspected span em, .badge-inspected em i, .badge-inspected em span, .badge-inspected em em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -60px -182px;
+  width: 60px;
+  height: 60px; }
+/* line 281, ../sass/_product.scss */
+.badge-inspected:hover i, .badge-inspected:hover span, .badge-inspected:hover em, .badge-inspected span:hover i, .badge-inspected span:hover span, .badge-inspected span:hover em, .badge-inspected em:hover i, .badge-inspected em:hover span, .badge-inspected em:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: 0px -302px;
+  width: 60px;
+  height: 59px; }
+
+/* line 287, ../sass/_product.scss */
+.badge-hidden-clover i, .badge-hidden-clover span, .badge-hidden-clover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -180px -182px;
+  width: 60px;
+  height: 60px; }
+/* line 291, ../sass/_product.scss */
+.badge-hidden-clover:hover i, .badge-hidden-clover:hover span, .badge-hidden-clover:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -180px -122px;
+  width: 60px;
+  height: 60px; }
+
+/* line 297, ../sass/_product.scss */
+.badge-free-shipping i, .badge-free-shipping span, .badge-free-shipping em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px 0px;
+  width: 60px;
+  height: 60px; }
+/* line 301, ../sass/_product.scss */
+.badge-free-shipping:hover i, .badge-free-shipping:hover span, .badge-free-shipping:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px -302px;
+  width: 60px;
+  height: 59px; }
+
+/* line 309, ../sass/_product.scss */
+.badge-gluten-free i, .badge-gluten-free span, .badge-gluten-free em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px -120px;
+  width: 60px;
+  height: 60px; }
+/* line 313, ../sass/_product.scss */
+.badge-gluten-free:hover i, .badge-gluten-free:hover span, .badge-gluten-free:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -300px -242px;
+  width: 60px;
+  height: 60px; }
+
+/* line 319, ../sass/_product.scss */
+.badge-paraben-free i, .badge-paraben-free span, .badge-paraben-free em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -60px -61px;
+  width: 60px;
+  height: 61px; }
+/* line 323, ../sass/_product.scss */
+.badge-paraben-free:hover i, .badge-paraben-free:hover span, .badge-paraben-free:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -300px -60px;
+  width: 60px;
+  height: 60px; }
+
+/* line 329, ../sass/_product.scss */
+.badge-vegan i, .badge-vegan span, .badge-vegan em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -300px -120px;
+  width: 60px;
+  height: 60px; }
+/* line 333, ../sass/_product.scss */
+.badge-vegan:hover i, .badge-vegan:hover span, .badge-vegan:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -120px -122px;
+  width: 60px;
+  height: 60px; }
+
+/* line 339, ../sass/_product.scss */
+.badge-oil-free i, .badge-oil-free span, .badge-oil-free em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px -60px;
+  width: 60px;
+  height: 60px; }
+/* line 343, ../sass/_product.scss */
+.badge-oil-free:hover i, .badge-oil-free:hover span, .badge-oil-free:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px -242px;
+  width: 60px;
+  height: 60px; }
+
+/* line 349, ../sass/_product.scss */
+.badge-soap-free i, .badge-soap-free span, .badge-soap-free em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -180px 0px;
+  width: 60px;
+  height: 61px; }
+/* line 353, ../sass/_product.scss */
+.badge-soap-free:hover i, .badge-soap-free:hover span, .badge-soap-free:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: 0px -182px;
+  width: 60px;
+  height: 60px; }
+
+/* line 359, ../sass/_product.scss */
+.badge-hypoallergenic i, .badge-hypoallergenic span, .badge-hypoallergenic em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: 0px -122px;
+  width: 60px;
+  height: 60px; }
+/* line 363, ../sass/_product.scss */
+.badge-hypoallergenic:hover i, .badge-hypoallergenic:hover span, .badge-hypoallergenic:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -360px -120px;
+  width: 60px;
+  height: 60px; }
+
+/* line 369, ../sass/_product.scss */
+.badge-sulfate-free i, .badge-sulfate-free span, .badge-sulfate-free em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -240px -182px;
+  width: 60px;
+  height: 60px; }
+/* line 373, ../sass/_product.scss */
+.badge-sulfate-free:hover i, .badge-sulfate-free:hover span, .badge-sulfate-free:hover em {
+  background-image: url(../images/individual-badges-main.png);
+  background-position: -60px -122px;
+  width: 60px;
+  height: 60px; }
+
+/* line 380, ../sass/_product.scss */
 .listing-container {
   margin-bottom: 10px; }
 
-/* line 239, ../sass/_product.scss */
+/* line 383, ../sass/_product.scss */
 .listing {
   margin-top: 20px;
   margin-bottom: 20px;
   min-height: 250px; }
 
-/* line 244, ../sass/_product.scss */
+/* line 388, ../sass/_product.scss */
 .listing .product_thumb {
   border: 1px solid #dcdcdc;
   width: 100%;
   max-height: 510px; }
 
-/* line 249, ../sass/_product.scss */
+/* line 393, ../sass/_product.scss */
 .listing button {
   width: 100%; }
 
-/* line 252, ../sass/_product.scss */
+/* line 396, ../sass/_product.scss */
 .listing p {
   margin: 5px 0; }
 
-/* line 255, ../sass/_product.scss */
+/* line 399, ../sass/_product.scss */
 .listing p.price {
   margin: 6px 0; }
 
-/* line 258, ../sass/_product.scss */
+/* line 402, ../sass/_product.scss */
 .listing p.msrp {
   color: #a9a9a9;
   text-decoration: line-through; }
 
-/* line 262, ../sass/_product.scss */
+/* line 406, ../sass/_product.scss */
 .listing .button {
   width: 100%;
   position: relative;
   bottom: 0; }
 
-/* line 267, ../sass/_product.scss */
+/* line 411, ../sass/_product.scss */
 .product-title {
   font-size: 24px;
   margin-bottom: 3px; }
 
-/* line 271, ../sass/_product.scss */
+/* line 415, ../sass/_product.scss */
 .part-no {
   margin-top: 3px;
   color: #a9a9a9; }
 
-/* line 275, ../sass/_product.scss */
+/* line 419, ../sass/_product.scss */
 .pricebox {
   background: #f5f5f5;
   -webkit-border-radius: 3px;
   border-radius: 3px; }
 
-/* line 280, ../sass/_product.scss */
+/* line 424, ../sass/_product.scss */
 .pricebox.quote-box {
   background: transparent none;
   text-align: left; }
 
-/* line 284, ../sass/_product.scss */
+/* line 428, ../sass/_product.scss */
 .pricebox.quote-box h3 {
   display: inline-block; }
 
-/* line 287, ../sass/_product.scss */
+/* line 431, ../sass/_product.scss */
 .pricebox-quote-box {
   text-align: left !important; }
 
-/* line 290, ../sass/_product.scss */
+/* line 434, ../sass/_product.scss */
 .pricebox .left-price {
   font-size: 42px;
   text-align: center;
   line-height: 110px;
   position: relative; }
 
-/* line 296, ../sass/_product.scss */
+/* line 440, ../sass/_product.scss */
 .pricebox .financing {
   font-size: 12px;
   display: block;
@@ -2884,29 +3097,29 @@ li.first.far a {
   line-height: 12px;
   width: 100%; }
 
-/* line 304, ../sass/_product.scss */
+/* line 448, ../sass/_product.scss */
 .pricebox .right-price {
   border-left: 1px solid #dcdcdc;
   padding: 10px; }
 
-/* line 308, ../sass/_product.scss */
+/* line 452, ../sass/_product.scss */
 .pricebox .right-price p {
   margin: 5px 10px;
   font-size: 14px; }
 
-/* line 312, ../sass/_product.scss */
+/* line 456, ../sass/_product.scss */
 .pricebox .right-price .label {
   width: 77px;
   display: block;
   float: left;
   white-space: normal; }
 
-/* line 318, ../sass/_product.scss */
+/* line 462, ../sass/_product.scss */
 fieldset {
   padding: 0;
   margin: 0; }
 
-/* line 322, ../sass/_product.scss */
+/* line 466, ../sass/_product.scss */
 #quantity {
   width: 40px;
   text-align: center;
@@ -2917,22 +3130,22 @@ fieldset {
   color: #4d4d4d;
   padding: 3px 0; }
 
-/* line 332, ../sass/_product.scss */
+/* line 476, ../sass/_product.scss */
 .product-options {
   margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #dcdcdc; }
 
-/* line 337, ../sass/_product.scss */
+/* line 481, ../sass/_product.scss */
 .product-form label {
   font-size: small; }
 
-/* line 340, ../sass/_product.scss */
+/* line 484, ../sass/_product.scss */
 .product-form .option-row {
   margin-bottom: 10px;
   padding: 10px; }
 
-/* line 346, ../sass/_product.scss */
+/* line 490, ../sass/_product.scss */
 .product-form .fancy-select {
   margin-right: 0;
   width: 100%;
@@ -2940,56 +3153,56 @@ fieldset {
   border-radius: 3px;
   height: 28px; }
 
-/* line 353, ../sass/_product.scss */
+/* line 497, ../sass/_product.scss */
 .product-form .fancy-select select {
   width: 100%;
   height: auto; }
 
-/* line 357, ../sass/_product.scss */
+/* line 501, ../sass/_product.scss */
 .product-form .fancy-select i {
   padding: 4px 12px; }
 
-/* line 360, ../sass/_product.scss */
+/* line 504, ../sass/_product.scss */
 .product-form .add {
   width: 100%;
   height: 50px; }
 
-/* line 364, ../sass/_product.scss */
+/* line 508, ../sass/_product.scss */
 .product-form .questions {
   text-align: center;
   float: right;
   line-height: 27px; }
 
-/* line 369, ../sass/_product.scss */
+/* line 513, ../sass/_product.scss */
 .option-row.last {
   padding: 40px 10px 10px; }
 
-/* line 372, ../sass/_product.scss */
+/* line 516, ../sass/_product.scss */
 .product_right h4 {
   clear: both;
   margin-top: 20px; }
 
-/* line 376, ../sass/_product.scss */
+/* line 520, ../sass/_product.scss */
 .product_right ul {
   padding: 0 20px; }
 
-/* line 379, ../sass/_product.scss */
+/* line 523, ../sass/_product.scss */
 .product_right li {
   color: #ff7f50; }
 
-/* line 382, ../sass/_product.scss */
+/* line 526, ../sass/_product.scss */
 .product_right li span {
   color: #696969; }
 
-/* line 385, ../sass/_product.scss */
+/* line 529, ../sass/_product.scss */
 .badges {
   padding: 0 0 20px 0; }
 
-/* line 389, ../sass/_product.scss */
+/* line 533, ../sass/_product.scss */
 .product-details {
   position: relative; }
 
-/* line 392, ../sass/_product.scss */
+/* line 536, ../sass/_product.scss */
 .brochure-download {
   /*
     position: absolute;
@@ -3000,46 +3213,46 @@ fieldset {
   margin-bottom: 10px;
   font-size: 14px; }
 
-/* line 402, ../sass/_product.scss */
+/* line 546, ../sass/_product.scss */
 .brochure-download i {
   font-size: 18px;
   color: #ff7f50; }
 
-/* line 406, ../sass/_product.scss */
+/* line 550, ../sass/_product.scss */
 .related-products,
 .related-accessories {
   margin-top: 50px;
   position: relative; }
 
-/* line 411, ../sass/_product.scss */
+/* line 555, ../sass/_product.scss */
 .related-products h4,
 .related-accessories h4 {
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 10px; }
 
-/* line 417, ../sass/_product.scss */
+/* line 561, ../sass/_product.scss */
 .review {
   border-bottom: 1px solid #dcdcdc;
   padding-bottom: 25px;
   margin-bottom: 15px; }
 
-/* line 422, ../sass/_product.scss */
+/* line 566, ../sass/_product.scss */
 .review span.bold {
   font-size: 14px;
   margin: 0; }
 
-/* line 426, ../sass/_product.scss */
+/* line 570, ../sass/_product.scss */
 .review p {
   margin: 0;
   line-height: 1.5; }
 
-/* line 430, ../sass/_product.scss */
+/* line 574, ../sass/_product.scss */
 .rating {
   font-size: 14px;
   font-style: italic;
   color: #a9a9a9; }
 
-/* line 435, ../sass/_product.scss */
+/* line 579, ../sass/_product.scss */
 .stars {
   position: relative;
   unicode-bidi: bidi-override;
@@ -3047,63 +3260,63 @@ fieldset {
   font-size: 20px;
   left: -4px; }
 
-/* line 442, ../sass/_product.scss */
+/* line 586, ../sass/_product.scss */
 .stars span.star {
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
   display: inline-block; }
 
-/* line 448, ../sass/_product.scss */
+/* line 592, ../sass/_product.scss */
 .stars span.star:hover {
   cursor: pointer; }
 
-/* line 451, ../sass/_product.scss */
+/* line 595, ../sass/_product.scss */
 .stars span.star:before {
   content: "\f006";
   padding-right: 2px;
   color: #ff7f50; }
 
-/* line 456, ../sass/_product.scss */
+/* line 600, ../sass/_product.scss */
 .stars span.star:hover:before,
 .stars span.star:hover ~ span.star:before {
   content: "\f005"; }
 
-/* line 460, ../sass/_product.scss */
+/* line 604, ../sass/_product.scss */
 .add-rating-link {
   font-size: 14px; }
 
-/* line 463, ../sass/_product.scss */
+/* line 607, ../sass/_product.scss */
 .add-rating-link i {
   color: #ff7f50;
   font-size: 16px; }
 
-/* line 468, ../sass/_product.scss */
+/* line 612, ../sass/_product.scss */
 #categoryHeader {
   margin-top: 0;
   margin-bottom: 20px; }
 
-/* line 473, ../sass/_product.scss */
+/* line 617, ../sass/_product.scss */
 #categoryHeader h1 {
   margin-top: 0; }
 
-/* line 477, ../sass/_product.scss */
+/* line 621, ../sass/_product.scss */
 .category-filters {
   border-bottom: 1px solid #dcdcdc; }
 
-/* line 480, ../sass/_product.scss */
+/* line 624, ../sass/_product.scss */
 .category-filters h5 {
   font-weight: 200; }
 
-/* line 483, ../sass/_product.scss */
+/* line 627, ../sass/_product.scss */
 .category-filters .fancy-select {
   margin-bottom: 20px; }
 
-/* line 486, ../sass/_product.scss */
+/* line 630, ../sass/_product.scss */
 .category-navigation ul {
   padding: 0; }
 
-/* line 489, ../sass/_product.scss */
+/* line 633, ../sass/_product.scss */
 .category-navigation ul > li {
   font-family: 'PT Serif';
   font-weight: 700;
@@ -3113,15 +3326,15 @@ fieldset {
   text-transform: uppercase;
   list-style: none; }
 
-/* line 499, ../sass/_product.scss */
+/* line 643, ../sass/_product.scss */
 .sale-cornertag {
   position: relative; }
 
-/* line 502, ../sass/_product.scss */
+/* line 646, ../sass/_product.scss */
 .sale-cornertag .cornersprite {
   display: block; }
 
-/* line 505, ../sass/_product.scss */
+/* line 649, ../sass/_product.scss */
 .cornersprite {
   display: none;
   background-repeat: no-repeat;
@@ -3133,52 +3346,52 @@ fieldset {
   top: -5px;
   left: -5px; }
 
-/* line 516, ../sass/_product.scss */
+/* line 660, ../sass/_product.scss */
 .cornersprite.new {
   background-position: 0 0; }
 
-/* line 519, ../sass/_product.scss */
+/* line 663, ../sass/_product.scss */
 .tweet_button {
   background: url("/assets/templates/standish-responsive/images/tweet-sprite.png");
   width: 56px;
   height: 21px;
   display: inline-block; }
 
-/* line 525, ../sass/_product.scss */
+/* line 669, ../sass/_product.scss */
 .tweet_button:hover {
   background-position: 0 -21px; }
 
-/* line 528, ../sass/_product.scss */
+/* line 672, ../sass/_product.scss */
 .promotions {
   font-size: 14px; }
 
 /* Instagram 3 picture limit */
-/* line 533, ../sass/_product.scss */
+/* line 677, ../sass/_product.scss */
 #instafeed a:nth-child(n+4) {
   display: none; }
 
-/* line 537, ../sass/_product.scss */
+/* line 681, ../sass/_product.scss */
 #instafeed {
   width: 470px; }
 
-/* line 541, ../sass/_product.scss */
+/* line 685, ../sass/_product.scss */
 #instafeed img {
   padding: 0px 2px 0px 2px; }
 
-/* line 545, ../sass/_product.scss */
+/* line 689, ../sass/_product.scss */
 .MagicZoomPlus img {
   max-height: 650px; }
 
-/* line 549, ../sass/_product.scss */
+/* line 693, ../sass/_product.scss */
 .MagicZoomPlus > img {
   width: auto !important; }
 
 /* Price Drop Feature Styles */
-/* line 555, ../sass/_product.scss */
+/* line 699, ../sass/_product.scss */
 .priceDropTitle {
   margin-bottom: 10px; }
 
-/* line 558, ../sass/_product.scss */
+/* line 702, ../sass/_product.scss */
 .priceDropButton {
   font-size: 16px;
   padding: 0 24px;
@@ -3189,11 +3402,11 @@ fieldset {
   margin-bottom: 10px;
   margin-top: 0px; }
 
-/* line 568, ../sass/_product.scss */
+/* line 712, ../sass/_product.scss */
 .vex-content .hs-form-field label {
   font-size: 18px; }
 
-/* line 571, ../sass/_product.scss */
+/* line 715, ../sass/_product.scss */
 .vex-content .hs-form-field {
   margin-bottom: 15px; }
 

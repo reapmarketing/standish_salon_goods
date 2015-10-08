@@ -89,12 +89,6 @@
 [class^="badge-"] em,
 [class*="badge-"] em {
   display: block;
-  height: 60px;
-  width: 60px;
-  background: url("/assets/templates/standish-responsive/images/badges-sprite.png");
-  -webkit-background-size: 800%;
-  -moz-background-size: 800%;
-  background-size: 800%;
   float: left;
 }
 [class^="badge-"] em,
@@ -128,109 +122,259 @@
   background-size: 100%;
 }
 
-.badge-fire-retardant i, .badge-fire-retardant span, .badge-fire-retardant em {
-  background-position: 0 -59px;
+.badge-fire-retardant {
+  i, span, em {
+    @include sprite($green-fire-retardent);
+  }
+  
+  &:hover {
+    i, span, em {
+      @include sprite($-fire-retardent);
+    }
+  }
 }
-.badge-free-shipping i, .badge-free-shipping span, .badge-free-shipping em {
-  background-position: 0 0;
+.badge-free-shipping {
+  i, span, em {
+    @include sprite($green-free-shipping);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-free-shipping);
+    }
+  }
 }
-.badge-heavy-duty i, .badge-heavy-duty span, .badge-heavy-duty em {
-  background-position: 0 -120px;
+.badge-heavy-duty {
+  i, span, em {
+    @include sprite($green-heavy-duty-hardware);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-heavy-duty-hardware);
+    }
+  }
 }
-.badge-iron-life i, .badge-iron-life span, .badge-iron-life em {
-  background-position: 0 -180px;
+.badge-iron-life {
+  i, span, em {
+    @include sprite($green-longer-iron-life);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-longer-iron-life);
+    }
+  }
 }
-.badge-no-sales-tax i, .badge-no-sales-tax span, .badge-no-sales-tax em {
-  background-position: -60px 0;
+.badge-no-sales-tax {
+  i, span, em {
+    @include sprite($green-no-sales-tax);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-no-sales-tax);
+    }
+  }
 }
-.badge-ten-thousand-rub i {
-  background-position: -60px -60px;
+.badge-ten-thousand-rub {
+  i, span, em {
+    @include sprite($green-ten-k-rub-count);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-ten-k-rub-count);
+    }
+  }
 }
-.badge-swap-base i {
-  background-position: -60px -120px;
+.badge-swap-base {
+  i, span, em {
+    @include sprite($green-swappable-bases);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-swappable-bases);
+    }
+  }
 }
-.badge-new-arrival i, .badge-new-arrival span, .badge-new-arrival em {
-  background-position: -60px -180px;
+.badge-new-arrival {
+  i, span, em {
+    @include sprite($green-new-arrival);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-new-arrival);
+    }
+  }
 }
-.badge-service i, .badge-service span, .badge-service em {
-  background-position: -120px 0;
+.badge-service {
+  i, span, em {
+    @include sprite($green-personal-service);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-personal-service);
+    }
+  }
 }
-.badge-warranty i, .badge-warranty span, .badge-warranty em {
-  background-position: -120px -60px;
+.badge-warranty {
+  i, span, em {
+    @include sprite($green-warranty);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-warranty);
+    }
+  }
 }
-.badge-color i, .badge-color span, .badge-color em {
-  background-position: -120px -120px;
+.badge-color {
+  i, span, em {
+    @include sprite($green-color-variants);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-color-variants);
+    }
+  }
 }
-.badge-returns i, .badge-returns span, .badge-returns em {
-  background-position: -120px -180px;
+.badge-returns {
+  i, span, em {
+    @include sprite($green-no-hassel-return-policy);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-no-hassel-return-policy);
+    }
+  }
 }
-.badge-hardwood i {
-  background-position: -180px 0;
+.badge-hardwood {
+  i, span, em {
+    @include sprite($green-real-hardwood);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-real-hardwood);
+    }
+  }
 }
-.badge-extra-wide i {
-  background-position: -180px -60px;
+.badge-extra-wide {
+  i, span, em {
+    @include sprite($green-extra-wide);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-extra-wide);
+    }
+  }
 }
-.badge-double-stitched i {
-  background-position: -180px -120px;
+.badge-double-stitched {
+  i, span, em {
+    @include sprite($green-double-stitching);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-double-stitching);
+    }
+  }
 }
-.badge-inspected i, .badge-inspected span, .badge-inspected em {
-  background-position: -180px -180px;
+.badge-inspected, .badge-inspected span, .badge-inspected em {
+  i, span, em {
+    @include sprite($green-guarantee-pass-inspection);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-guarantee-pass-inspection);
+    }
+  }
 }
-.badge-hidden-clover i {
-    background-position: -180px -242px;
+.badge-hidden-clover {
+  i, span, em {
+    @include sprite($green-st-patricks-sale);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-st-patricks-sale);
+    }
+  }
 }
-.badge-free-shipping:hover i {
-  background-position: -240px 0;
-}
-.badge-fire-retardant:hover i {
-  background-position: -240px -60px;
-}
-.badge-heavy-duty:hover i {
-  background-position: -240px -120px;
-}
-.badge-iron-life:hover i {
-  background-position: -240px -180px;
-}
-.badge-no-sales-tax:hover i {
-  background-position: -300px 0;
-}
-.badge-ten-thousand-rub:hover i {
-  background-position: -300px -60px;
-}
-.badge-swap-base:hover i {
-  background-position: -300px -120px;
-}
-.badge-new-arrival:hover i {
-  background-position: -300px -180px;
-}
-.badge-service:hover i {
-  background-position: -360px 0;
-}
-.badge-warranty:hover i {
-  background-position: -360px -60px;
-}
-.badge-color:hover i {
-  background-position: -360px -120px;
-}
-.badge-returns:hover i {
-  background-position: -360px -180px;
-}
-.badge-hardwood:hover i {
-  background-position: -420px 0;
-}
-.badge-extra-wide:hover i {
-  background-position: -420px -60px;
-}
-.badge-double-stitched:hover i {
-  background-position: -420px -120px;
-}
-.badge-inspected:hover i {
-  background-position: -420px -180px;
-}
-.badge-hidden-clover:hover i {
-    background-position: -240px -242px;
+.badge-free-shipping {
+  i, span, em {
+    @include sprite($green-free-shipping);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-free-shipping);
+    }
+  }
 }
 
+
+.badge-gluten-free {
+  i, span, em {
+    @include sprite($green-gluten-free);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-gluten-free);
+    }
+  }
+}
+.badge-paraben-free {
+  i, span, em {
+    @include sprite($green-paraben-free);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-paraben-free);
+    }
+  }
+}
+.badge-vegan {
+  i, span, em {
+    @include sprite($green-vegan);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-vegan);
+    }
+  }
+}
+.badge-oil-free {
+  i, span, em {
+    @include sprite($green-oil-free);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-oil-free);
+    }
+  }
+}
+.badge-soap-free {
+  i, span, em {
+    @include sprite($green-soap-free);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-soap-free);
+    }
+  }
+}
+.badge-hypoallergenic {
+  i, span, em {
+    @include sprite($green-hypoallergenic);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-hypoallergenic);
+    }
+  }
+}
+.badge-sulfate-free {
+  i, span, em {
+    @include sprite($green-sulfate-free);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-sulfate-free);
+    }
+  }
+}
 
 
 .listing-container {

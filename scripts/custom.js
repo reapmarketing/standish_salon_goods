@@ -19,7 +19,7 @@
 				});
 			}
 			var groups = [
-				'.listing',
+				// '.listing',
 				'.listing .listing-container',
 				'.column .eqhgt',
 				'.column .eqhgt-g1',
