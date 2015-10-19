@@ -28,7 +28,10 @@
 		
 		<link rel="stylesheet" href="assets/templates/[template]/style/jquery.sidr.light.css">
 
-		<link rel="stylesheet" href="assets/templates/[template]/style/main.{{ VERSION }}.min.css?cachebuster=39827978" />
+		<!-- <link rel="stylesheet" href="assets/templateplates/[template]/style/main.{{ VERSION }}.min.css?cachebuster=38924935792" /> --> 
+
+		<link rel="stylesheet" href="assets/templates/[template]/style/main.css" />
+
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -147,6 +150,15 @@
 		</script>
 
 
+
+		<!-- Falling Leaves -->
+		<link rel="stylesheet" href="assets/templates/[template]/style/3d-falling-leaves.css">
+
+		<script type="text/javascript" src="assets/templates/[template]/scripts/3d-falling-leaves.min.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/rotate3Di.min.js"></script>
+
+		
+
 	</head>
 	<body>
 		<header>
@@ -215,6 +227,13 @@
 						</div>
 				</div>
 		</header>
+		<div id="leaves-fall" class="start-stop-leaves">
+
+			<p class="leaf-icon"><i class="fa fa-leaf fa-lg"></i> Fall is here! </p>
+			<p class="start-leaves" alt="Make it stop!"><a href="javascript:;" onclick="$(document).octoberLeaves('stop'); $('.start-leaves').hide(); $('.stop-leaves').show();"><i class="fa fa-stop"></i></a></p>
+			<p class="stop-leaves"><a href="javascript:;" onclick="$(document).octoberLeaves('start'); $('.stop-leaves').hide(); $('.start-leaves').show();"><i class="fa fa-play"></i></a></p>
+			<script> jQuery(document).octoberLeaves() </script>
+		</div>
 
 		<nav class="navigation navbar hidden-xs hidden-sm">
 			<div class="container">

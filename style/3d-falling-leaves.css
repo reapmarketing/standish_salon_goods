@@ -1,0 +1,31 @@
+/*!
+ * 3D Falling Leaves
+ */
+
+.october-leaf {
+    position: absolute;
+    background-color: transparent;
+    z-index: 20;
+    background-image: url('/assets/templates/standish-responsive/images/leaves.png');
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+
+#leaves-fall {
+	padding: 10px;
+    z-index: 19;
+	position: fixed;
+	top: 60px;
+	left: 0;
+	background-color: #4d4d4d;
+}
+#leaves-fall p {
+	display: inline;
+	margin-right: 5px;
+}
+
+#leaves-fall p {
+	color: #c2d3bd;
+}
