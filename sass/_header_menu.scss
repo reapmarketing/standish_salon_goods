@@ -12,6 +12,40 @@
 
 }
 
+.credentials-icons {
+  padding-left: 0;
+
+  .credentials-logo {
+    height: 42px;
+    display: inline-block;
+
+    &.header-norton {
+      width: 77px;
+      @include sprite($norton);
+    }
+    &.header-boa {
+      width: 46px;
+      @include sprite($boa);
+    }
+    &.header-ss {
+      width: 76px;
+      @include sprite($ss);
+    }
+    &.header-pba {
+      width: 37px;
+      @include sprite($pba);
+    }
+    &.header-bravo {
+      width: 42px;
+      @include sprite($bravo);
+    }
+    &.header-bbb {
+      width: 79px;
+      @include sprite($bbb);
+    }
+  }
+}
+
 .logo {
   display: block;
   background: url("/assets/templates/standish-responsive/images/standish-logo.png");
