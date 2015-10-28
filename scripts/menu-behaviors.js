@@ -40,18 +40,13 @@
 			return 0;	
 		});
 	}
-	var jsonUrl = window.location.origin+'/web/assets/templates/standish-responsive/scripts/menu-custom.json?vcart=6.7.4';
+	var jsonUrl = 'https://raw.githubusercontent.com/reapmarketing/standish_salon_goods/master/scripts/menu-custom.json';
 	console.log(jsonUrl);
 	// todo: create menu walker!
 	// Convert json data into a menu
 	MobileMenu.getItems = function() {
-		return $.ajax({
-			format: "jsonp",
-			method: 'GET',
-			url: jsonUrl,
-			crossDomain: false
-		}).done( function(data) {
-
+		return $.getJSON(jsonUrl, function(data) {
+			console.log(data);
 			var menuItems = [],
 					unList = [], linkurl;
 			// Convert to array

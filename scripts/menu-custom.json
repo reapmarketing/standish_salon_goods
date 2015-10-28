@@ -1,6 +1,12 @@
 {
-  "Current Deals": {
+   "<i class='fa fa-phone'></i> (888) 217-8434": {
     "order": 0,
+    "show_mobile": true,
+    "single": true,
+    "url": "tel:+8882178434"
+  },
+  "Current Deals": {
+    "order": 1,
     "show_mobile": true,
     "show_children_mobile": false,
     "subcategories": {
@@ -31,7 +37,7 @@
     }
   },
   "Shop Equipment": {
-		"order": 1,
+		"order": 2,
 		"show_mobile":true,
 		"show_children_mobile": true,
     "subcategories": {
@@ -195,7 +201,7 @@
     }
   },
   "Shop Tools and Accessories": {
-		"order": 2,
+		"order": 3,
 		"show_mobile": true,
 		"show_children_mobile":true,
     "subcategories": {
@@ -287,7 +293,7 @@
     }
   },
   "Brands": {
-		"order": 3,
+		"order": 4,
 		"show_mobile": true,
 		"show_children_mobile": false,
     "subcategories": {
@@ -360,19 +366,19 @@
     }
   },
   "Financing": {
-		"order": 4,
+		"order": 5,
 		"show_mobile": true,
     "single": true,
     "url": "salon-equipment-financing"
   },
   "Showroom": {
-		"order": 5,
+		"order": 6,
 		"show_mobile": true,
     "single": true,
     "url": "dallas-salon-furniture-showroom"
   },
   "About": {
-		"order": 6,
+		"order": 7,
 		"show_mobile": true,
 		"show_children_mobile": true,
     "subcategories": {
@@ -397,7 +403,7 @@
     }
   },
   "Why Buy Standish?": {
-		"order": 7,
+		"order": 8,
 		"show_mobile": false,
 		"show_children_mobile": false,
     "subcategories": {
@@ -428,26 +434,26 @@
     }
   },
   "Contact": {
-		"order": 8,
+		"order": 9,
 		"show_mobile": true,
     "single": true,
     "url": "contact-us"
   },
   "FAQ": {
-		"order": 9,
+		"order": 10,
 		"show_mobile": true,
     "single": true,
     "url": "frequently-asked-questions"
   },
   "Blog": {
-		"order": 10,
+		"order": 11,
 		"show_mobile": true,
     "class": "min small",
     "single": true,
     "url": "blog.asp"
   },
   "Catalog": {
-		"order": 11,
+		"order": 12,
 		"show_mobile": true,
     "class": "min small",
     "single": true,
