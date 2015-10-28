@@ -42,6 +42,12 @@ module.exports = function(grunt) {
       }
     },
     sprite:{
+      headerSprites: {
+        src: 'images/header-icons/*.png',
+        dest: 'images/header-icons.png',
+        destCss: 'sass/_header-sprites.scss',
+        algorithm: 'left-right'
+      },
       whiteSprites: {
         src: 'images/badges-sprites/*.png',
         dest: 'images/badges-sprites.png',
@@ -65,6 +71,10 @@ module.exports = function(grunt) {
         files: ['<%= jshint.files %>'],
         tasks: ['jshint']
       },
+      source: {
+        files: ['<%= replace.version.src %>'],
+        tasks: ['replace']
+      },
       options: {
         dateFormat: function(time) {
           grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
@@ -74,6 +84,7 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-ftp-deploy');
   grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch'); 
