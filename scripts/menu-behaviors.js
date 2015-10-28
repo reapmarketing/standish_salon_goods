@@ -40,14 +40,15 @@
 			return 0;	
 		});
 	}
-
+	var jsonUrl = window.location.origin+'/web/assets/templates/standish-responsive/scripts/menu-custom.json?vcart=6.7.4';
+	console.log(jsonUrl);
 	// todo: create menu walker!
 	// Convert json data into a menu
 	MobileMenu.getItems = function() {
 		return $.ajax({
 			format: "jsonp",
 			method: 'GET',
-			url: window.location.origin . '/assets/templates/standish-responsive/scripts/menu-custom.json',
+			url: jsonUrl,
 			crossDomain: false
 		}).done( function(data) {
 
