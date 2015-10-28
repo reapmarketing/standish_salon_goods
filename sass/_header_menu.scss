@@ -279,6 +279,15 @@ li.first.far a {
 
 }
 
+.sidr-class-fa.sidr-class-fa-phone {
+  &:before { 
+    content: "\f095";
+    display: inline-block;
+    font-size: 14px;
+    font: normal normal normal 14px/1 FontAwesome;
+  }
+}
+
 
 
 .search-button {
