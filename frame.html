@@ -157,7 +157,7 @@
 		<!-- Falling Leaves -->
 		<link rel="stylesheet" href="assets/templates/[template]/style/3d-falling-leaves.css">
 
-		<script type="text/javascript" src="assets/templates/[template]/scripts/3d-falling-leaves.min.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/3d-falling-leaves.js"></script>
 		<script type="text/javascript" src="assets/templates/[template]/scripts/rotate3Di.min.js"></script>
 
 		
@@ -237,12 +237,10 @@
 						</div>
 				</div>
 		</header>
-		<div id="leaves-fall" class="start-stop-leaves">
-
+		<div id="leaves-fall" class="start-stop-leaves hidden-sm hidden-xs" style="position:fixed;">
 			<p class="leaf-icon"><i class="fa fa-leaf fa-lg"></i> Fall is here! </p>
-			<p class="start-leaves" alt="Make it stop!"><a href="javascript:;" onclick="$(document).octoberLeaves('stop'); $('.start-leaves').hide(); $('.stop-leaves').show();"><i class="fa fa-stop"></i></a></p>
-			<p class="stop-leaves"><a href="javascript:;" onclick="$(document).octoberLeaves('start'); $('.stop-leaves').hide(); $('.start-leaves').show();"><i class="fa fa-play"></i></a></p>
-			<script> jQuery(document).octoberLeaves() </script>
+			<p class="stop-leaves" alt="Make it stop!"><a href=""><i class="fa fa-stop"></i></a></p>
+			<p class="start-leaves" style="display:none;"><a href=""><i class="fa fa-play"></i></a></p>
 		</div>
 
 		<nav class="navigation navbar hidden-xs hidden-sm">

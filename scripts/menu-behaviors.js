@@ -46,7 +46,6 @@
 	// Convert json data into a menu
 	MobileMenu.getItems = function() {
 		return $.getJSON(jsonUrl, function(data) {
-			console.log(data);
 			var menuItems = [],
 					unList = [], linkurl;
 			// Convert to array

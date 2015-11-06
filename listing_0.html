@@ -685,8 +685,23 @@ $( function(){
 			[CONTENT]
 		<!--END: CATEGORY_FOOTER-->
 
+<!--START: product_availability-->
+	<!-- <strong>[product_Header-availability]</strong> -->
+	<!-- <div id="availability">[availability_itemprop]</div> -->
+	STOCK: [stock]
+
+<!--END: product_availability-->
+
+<!--START: waitinglist-->
+	hello
+<!--END: waitinglist-->
+
+
 	</form>
 </article>
+
+
+
 <!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
 <!--START: extra_field_2-->
 <div class="hidden field2" data-field2="[extra_field_2]"></div>
@@ -721,6 +736,47 @@ $( function(){
 <script type="text/javascript" src="updateQaStats.js"></script>
 <!--END: qaScript-->
 
+<!--START: OOS SCRIPT -->
+<script>
+(function($) {
+	var stock = [stock];
+
+	console.log(stock);
+	$(function() {
+		if (Number(stock) === 0) {
+
+			var innerModalHtml = $('.related-products.row').clone(),
+					outerModalHtml = '<div class="modal fade"><div class="modal-dialog"><div class="modal-content">' +
+				'<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+				'<span aria-hidden="true">&times;</span></button><h4 class="modal-title">Sorry, looks like we\'re all sold out. Maybe give these a try?</h4></div>' +
+				'<div class="modal-body">'+
+	      '</div></div><!-- /.modal-content --></div><!-- /.modal-dialog --></div><!-- /.modal -->';
+
+      $(outerModalHtml).appendTo('body');
+      $(innerModalHtml).appendTo('.modal .modal-body');
+
+			var newButton = $('<button/>', {
+				'type': 'submit',
+				'class': 'btn btn-lg col-sm-12 col-xs-12',
+				'text':'This Item Out of Stock'
+			}).click(function(e) {
+				e.preventDefault();
+				console.log('hello');
+				$('.modal.fade').modal();
+				$('.modal .listing-container').css('min-height', '325px')
+
+			});
+
+
+			$('.option-row button[type=submit]').replaceWith(newButton)
+		}
+	});
+
+})(jQuery);
+
+</script>
+<!--END: OOS SCRIPT -->
+
 <script>
 	// 3DCart Code
 	if (typeof jQuery == 'undefined') {
@@ -747,7 +803,6 @@ $( function(){
 		}
 	}
 </script>
-
 
 <script language="javascript">
 	//thumbnail script
@@ -931,7 +986,6 @@ $( function(){
 		ga( 'ec:setAction', 'add' );
 		ga( 'send', 'event', 'UX', 'click', 'add to cart' );
 	}
-
 </script>
 
 

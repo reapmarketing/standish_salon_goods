@@ -3,7 +3,7 @@
  */
 
 .october-leaf {
-    position: absolute;
+    position: fixed;
     background-color: transparent;
     z-index: 20;
     background-image: url('/assets/templates/standish-responsive/images/leaves.png');
@@ -17,7 +17,7 @@
 	padding: 10px;
     z-index: 19;
 	position: fixed;
-	top: 60px;
+	bottom: 0;
 	left: 0;
 	background-color: #4d4d4d;
 }
