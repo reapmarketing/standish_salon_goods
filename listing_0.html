@@ -317,14 +317,14 @@ $( function(){
 				<div class="cornersprite"></div>
 
 				<!--START: pricing-->
-					<link itemprop="availability" href="http://schema.org/InStock" content="[availability_itemprop]" />
+					<link itemprop="availability" href="http://schema.org/[availability_itemprop]" content="[availability_itemprop]" />
 					<!-- [product_Header-price] -->
 
 					<div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 							<!--START: ITEMPRICE-->
-				            <span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span>
-				            <!--END: ITEMPRICE-->
+	            <span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span>
+	            <!--END: ITEMPRICE-->
 						</div>
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 							<span class="hidden" itemprop="price" content="[saleprice]"></span>
@@ -491,7 +491,7 @@ $( function(){
 									<div class="col-md-3 col-sm-6 col-xs-10">
 										<input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" />
 									</div>
-									<div class="questions padd-top text-right col-md-7 col-sm-12 hidden-xs"><span class="coral-text">Questions?</span> Call <span class="bold"><script type="text/JavaScript" src="https://secure.ifbyphone.com/js/keyword_replacement.js"></script></span></div>
+									<div class="questions padd-top text-right col-md-7 col-sm-12 hidden-xs"><span class="coral-text">Questions?</span> Call <span class="bold">(888) 271-8434</span></div>
 								</div>
 
 								
@@ -528,10 +528,10 @@ $( function(){
 								<span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 10-14 Business Days!</span>
 							</label>
               				<div class="col-md-6 col-sm-6 col-xs-12 pull-right">
-								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add); this.onclick=null;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+								<button type="submit" class="btn btn-lg col-sm-12 col-xs-12" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
           					</div>
 						</div>
-						<div class="col-md-12 text-center option-row hidden-md hidden-sm hidden-lg"><span class="coral-text">Need Help?</span> Call <span class="bold"><script type="text/JavaScript" src="https://secure.ifbyphone.com/js/keyword_replacement.js"></script></span></div>
+						<div class="col-md-12 text-center option-row hidden-md hidden-sm hidden-lg"><span class="coral-text">Need Help?</span> Call <span class="bold">(888) 271-8434></span></div>
 					</fieldset>
          			<div class="clearfix"></div>
 
@@ -556,11 +556,11 @@ $( function(){
 				</ul>
 			</div>
 			<hr>
-			<div itemprop="description" class="product-description">
+			<div class="product-description">
 				<!-- START: extended_description -->
 				<h4>Product Description</h4>
 				<!-- [product_Header-description] -->
-				<div class="extended-description">[extended_description]</div>
+				<div itemprop="description" class="extended-description">[extended_description]</div>
 				<!-- END: extended_description -->
 			</div>
 			<!--START: extra_field_9-->
@@ -688,13 +688,9 @@ $( function(){
 <!--START: product_availability-->
 	<!-- <strong>[product_Header-availability]</strong> -->
 	<!-- <div id="availability">[availability_itemprop]</div> -->
-	STOCK: [stock]
 
 <!--END: product_availability-->
 
-<!--START: waitinglist-->
-	hello
-<!--END: waitinglist-->
 
 
 	</form>

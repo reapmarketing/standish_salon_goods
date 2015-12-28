@@ -53,22 +53,6 @@
 		}
 	}
 
-	Standish.activateLeaves = function() {
-		if ($(window).width() > 768) {
-			$(document).octoberLeaves();
-			$('.stop-leaves a').on('click', function(e) {
-				e.preventDefault();
-				$(document).octoberLeaves('stop');
-				$('.stop-leaves').hide();
-				$('.start-leaves').show();
-			});
-			$('.start-leaves a').on('click', function(e) {
-				e.preventDefault();
-				$(document).octoberLeaves('start'); $('.start-leaves').hide(); $('.stop-leaves').show();
-			});
-		}
-	}
-
 
 	Standish.CloseHello = function(helloparent) {
 		$(helloparent).find('.close').on('click', function() {
@@ -198,8 +182,6 @@
 		Standish.CloseHello('.hello-container');
 		// 6. Activate the slider for features at top
 		Standish.ActivateSliderNotFancy('#slickShow');
-		// 7. TEMP Activate the Seasonal leaves
-		Standish.activateLeaves();
 
 	});
 	// Add callback to window resize event

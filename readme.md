@@ -10,7 +10,6 @@ use jquery.data('template') to get current template name for layout specific hac
 	
 JAVASCRIPT OPTIMIZATION AND TRACKING SCRIPTS
 
--ifbyphone
 -hubspot
 -optimizely
 -enversa tracking

@@ -90,10 +90,13 @@
 					}
 				}
 			});
-*/
-			var JSON_LOADED = false;
-			$('.hello-container').delay(2000).animate({opacity: 1});
+*/		
 			
+			$('.hello-container').delay(2000).animate({opacity: 1});
+			/* @todo fix this!
+
+						var JSON_LOADED = false;
+
 			var hbar_slug = 'default';
 			// This code will change the slug if it finds an override.
 			// <span class="custom_bar" data-bar="OverrideBarName"></span>
@@ -105,6 +108,7 @@
 			
 			// Hellobar code for getting external data
 			$.getJSON( url, function( data ) {
+				console.log(data);
 				JSON_LOADED = true;
 				// console.log( data.content );
 				// console.log( data );
@@ -116,4 +120,5 @@
 					$('.hbar_content').html( data['default'] );
 				}
 			});
+		*/
 		});

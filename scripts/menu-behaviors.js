@@ -41,7 +41,7 @@
 		});
 	}
 	var jsonUrl = 'https://raw.githubusercontent.com/reapmarketing/standish_salon_goods/master/scripts/menu-custom.json';
-	console.log(jsonUrl);
+
 	// todo: create menu walker!
 	// Convert json data into a menu
 	MobileMenu.getItems = function() {
