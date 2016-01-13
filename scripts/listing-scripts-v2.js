@@ -478,18 +478,18 @@
                 dataVideo = false;
               }
 
-              video_markup_main = '';
+              var video_markup_main = '';
               video_markup_main += '<a href="'+v.link+'" class="'+classname+'" data-video-insta="'+ dataVideo +'" id="listing_main_image_link">';
               if (v.type === "video") {
                 video_markup_main += '<i class="icon-play-sign" style="font-size: 120px;position: absolute;text-decoration: none;top: 3rem;left: 31%;"></i>';
               }
-              video_markup_main +=  '<img itemprop="image" src="'+ v.images.standard_resolution.url +'" align="middle" border="0" id="large" name="large" alt="'+  v.caption.text +'" width="380" data-href="'+ v.images.standard_resolution.url +'" />';
+              video_markup_main +=  '<img itemprop="image" src="thumbnail.asp?file='+ v.images.standard_resolution.url +'&maxx=440&maxy=0" align="middle" border="0" id="large" name="large" alt="'+  v.caption.text +'" width="380" data-href="'+ v.images.standard_resolution.url +'" />';
               video_markup_main += '</a>';
               $('.main-slider').slick('slickAdd', video_markup_main);
             });
 
             $(data.data).each(function(i, v) {
-              video_markup_sub = '';
+              var video_markup_sub = '';
               video_markup_sub += '<a data-caption="'+ v.caption.text +'" href="'+ v.images.thumbnail.url +'" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file='+ v.images.thumbnail.url +'&amp;maxx=400&amp;maxy=0">';
               video_markup_sub +=  '<img border="0" src="thumbnail.asp?file='+ v.images.thumbnail.url +'&amp;maxx=75&amp;maxy=75" alt="" name="" />';
               video_markup_sub += '</a>';
