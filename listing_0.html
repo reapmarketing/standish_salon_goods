@@ -317,7 +317,6 @@ $( function(){
         <div class="cornersprite"></div>
 
         <!--START: pricing-->
-          <link itemprop="availability" href="http://schema.org/[availability_itemprop]" content="[availability_itemprop]" />
           <!-- [product_Header-price] -->
 
           <div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
@@ -325,9 +324,8 @@ $( function(){
               <!--START: ITEMPRICE-->
               <span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span>
               <!--END: ITEMPRICE-->
-            </div>
-            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-              <span class="hidden" itemprop="price" content="[saleprice]"></span>
+              <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
+
             </div>
           </div>
           <div class="right-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
@@ -493,12 +491,9 @@ $( function(){
                   </div>
                   <div class="questions padd-top text-right col-md-7 col-sm-12 hidden-xs"><span class="coral-text">Questions?</span> Call <span class="bold">(888) 271-8434</span></div>
                 </div>
-
-                
-                
-                
+       
               <!--END: qtybox-->
-        
+
               <!--START: reminders_block-->
               <!-- [product_reminder] -->
               <!-- <select name="reminder" class="txtBoxStyle" id="reminder"> -->
@@ -507,13 +502,13 @@ $( function(){
                 <!--END: reminders_frequency_option-->
               <!-- </select> -->
               <!--END: reminders_block-->
-        
+
               <!-- <input type="button" onclick="check_and_add(document.add);" name="Add" value="[product_addtocart]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
-        
+
               <!--START: make_an_offer-->
                 <!-- <input type="button" onclick="javascript:popup('makeanoffer.asp?action=newOffer&catalogid=[catalogid]',640,410,false);" name="makeonoffer" value="[product_make-an-offer]" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" /> -->
               <!--END: make_an_offer-->
-        
+
               <!--START: addGiftRegistry-->
                 <!-- <img src="assets/templates/common/images/productpage_gift_registry.png" alt="" border="0" /> -->
                 <!-- <a href="javascript:add_giftregistry();">[product_addtogiftregistry]</a> -->
