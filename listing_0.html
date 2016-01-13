@@ -44,10 +44,10 @@ $( function(){
         <div class="col-md-4 pull-right search">
           <form method="get" name="searchForm" action="search.asp" _lpchecked="1">
               <div class="input-group">
-                <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (document.searchForm.keyword.value=='search by keyword') {document.searchForm.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+                <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (this.keyword.value=='search by keyword') {this.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
                 <span class="input-group-btn">
-                    <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
-                  </span>
+                  <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
+                </span>
               </div>
           </form>
         </div>
@@ -293,11 +293,7 @@ $( function(){
           <!--START: SALEPRICE-->
           <div id="sale-tag"><i class="fa fa-tag"></i> Sale!</div>
           <!--END: SALEPRICE-->
-          <h2 id="priceMobile" class="nozero row" itemprop="price">
-          <!--START: ITEMPRICE-->
-            [price]
-          <!--END: ITEMPRICE-->
-          </h2>
+          <h2 id="priceMobile" class="nozero row"><!--START: ITEMPRICE-->[price]<!--END: ITEMPRICE--></h2>
           <!--START: price2-->
             <p class="darkgray-text row"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
           <!--END: price2-->
