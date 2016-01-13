@@ -84,10 +84,15 @@
 				// case for product pages
 				case 'listing_0':
 				case 'listing_1':
-				case 'listing_3':
 					var script = document.createElement('script');
 					script.id = 'listing';
 					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
+					document.head.appendChild(script);
+				return;
+				case 'listing_3':
+					var script = document.createElement('script');
+					script.id = 'listing';
+					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts-v2.js';
 					document.head.appendChild(script);
 				return;
 				case ( 'listing_2' ):
