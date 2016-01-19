@@ -3466,7 +3466,7 @@ fieldset {
 
 /* line 685, ../sass/_product.scss */
 #instafeed {
-  width: 470px; }
+  width: 100%; }
 
 /* line 689, ../sass/_product.scss */
 #instafeed img {
