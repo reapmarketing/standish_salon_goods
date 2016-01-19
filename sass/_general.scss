@@ -207,6 +207,17 @@ legend {
   background: transparent none;
 }
 
+.slick-next {
+  &:before {
+    content: "\f054"!important;
+  }
+}
+.slick-prev {
+  &:before {
+    content: "\f053"!important;
+  }
+}
+
 .breadcrumb {
   background: transparent none;
 /*   margin-bottom: 40px; */

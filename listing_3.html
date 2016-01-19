@@ -44,7 +44,7 @@ $( function(){
     <div class="col-md-4 pull-right search">
       <form method="get" name="searchForm" action="search.asp" _lpchecked="1">
           <div class="input-group">
-            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (this.keyword.value=='search by keyword') {this.keyword.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+            <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (this.value=='search by keyword') {this.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
             <span class="input-group-btn">
                 <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
               </span>
@@ -66,73 +66,97 @@ $( function(){
       [CONTENT]
     <!--END: CATEGORY_HEADER-->
 
+    <div class="row">
+
+      <!-- Title! -->
+      <h1 itemprop="name" class="product-title hidden-sm hidden-xs">[name]</h1>
+
+      <!--START: id-->
+        <p class="part-no hidden-sm hidden-xs">Part Number <span id="product_id">[id]</span></p>
+      <!--END: id-->
+
+    </div>
+
+    <div class="row" id="product-whole-wrapper">
+
+      <!-- Slider! -->
+      <div class="col-md-9 col-sm-8 product_left" id="product-slider">
+          <div class="main-slider">
+            <!--START: image1--> 
+              <a href="[image1]" class="[3dzoom_class]" id="listing_main_image_link"><img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" align="middle" border="0" id="large" name="large" alt="[name]" width="380" data-href="[image1]" /></a>
+            <!--END: image1-->
+          </div>
+
+          <div class="sub-slider">
+            <a data-caption="[imagecaption1]" href="[image1]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0"> <img src="thumbnail.asp?file=[image1]&amp;maxx=75&amp;maxy=75" alt="" border="0" name="pimage1" /></a>
+
+            <!--START: image2-->
+              <a data-caption="[imagecaption2]" href="[image2]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image2]&maxx=[image_medium_w]&maxy=0"> <img src="thumbnail.asp?file=[image2]&amp;maxx=75&amp;maxy=75" alt="" border="0" name="pimage2" /></a>
+            <!--END: image2-->
+
+            <!--START: image3-->
+              <a data-caption="[imagecaption3]" href="[image3]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image3]&maxx=[image_medium_w]&maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image3]&amp;maxx=75&amp;maxy=75" alt="" name="pimage3" /></a>
+            <!--END: image3-->
+
+            <!--START: image4-->
+              <a data-caption="[imagecaption4]" href="[image4]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image4]&maxx=[image_medium_w]&maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image4]&amp;maxx=75&amp;maxy=75" alt="" name="pimage4" /></a>
+            <!--END: image4-->
+
+            <!--START: image5-->
+              <a data-caption="[imagecaption5]" href="[image5]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image5]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image5]&amp;maxx=75&amp;maxy=75" alt="" name="pimage5" /></a>
+            <!--END: image5-->
+
+            <!--START: image6-->
+              <a data-caption="[imagecaption6]" href="[image6]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image6]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image6]&amp;maxx=75&amp;maxy=75" alt="" name="pimage6" /></a>
+            <!--END: image6-->
+
+            <!--START: image7-->
+              <a data-caption="[imagecaption7]" href="[image7]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image7]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image7]&amp;maxx=75&amp;maxy=75" alt="" name="pimage7" /></a>
+            <!--END: image7-->
+
+            <!--START: image8-->
+              <a data-caption="[imagecaption8]" href="[image8]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image8]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image8]&amp;maxx=75&amp;maxy=75" alt="" name="pimage8" /></a>
+            <!--END: image8-->
+
+            <!--START: image9-->
+              <a data-caption="[imagecaption9]" href="[image9]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image9]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image9]&amp;maxx=75&amp;maxy=75" alt="" name="pimage9" /></a>
+            <!--END: image9-->
+
+            <!--START: image10-->
+              <a data-caption="[imagecaption10]" href="[image10]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image10]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image10]&amp;maxx=75&amp;maxy=75" alt="" name="pimage10" /></a>
+            <!--END: image10-->
+
+            <!--START: image11-->
+              <a data-caption="[imagecaption11]" href="[image11]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image11]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image11]&amp;maxx=75&amp;maxy=75" alt="" name="pimage11" /></a>
+            <!--END: image11-->
+
+            <!--START: image12-->
+              <a data-caption="[imagecaption12]" href="[image12]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image12]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image12]&amp;maxx=75&amp;maxy=75" alt="" name="pimage12" /></a>
+            <!--END: image12-->
+
+            <!--START: image13-->
+              <a data-caption="[imagecaption13]" href="[image13]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image13]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image13]&amp;maxx=75&amp;maxy=75" alt="" name="pimage13" /></a>
+            <!--END: image13-->
+
+            <!--START: image14-->
+              <a data-caption="[imagecaption14]" href="[image14]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image14]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image14]&amp;maxx=75&amp;maxy=75" alt="" name="pimage14" /></a>
+            <!--END: image14-->
+
+            <!--START: image15-->
+              <a data-caption="[imagecaption15]" href="[image15]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image15]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image15]&amp;maxx=75&amp;maxy=75" alt="" name="pimage15" /></a>
+            <!--END: image15-->
+          </div>
+
+      </div>
+
+      <div class="col-md-3 col-sm-4 product_right">
+        
+      </div>
+
+    </div>
+
     <!-- The Left Side -->
     <div class="col-md-6 col-sm-6 product_left">
-      <div class="main-slider">
-        <!--START: image1--> 
-          <a href="[image1]" class="[3dzoom_class]" id="listing_main_image_link"><img itemprop="image" src="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0" align="middle" border="0" id="large" name="large" alt="[name]" width="380" data-href="[image1]" /></a>
-        <!--END: image1-->
-      </div>
-
-      <div class="sub-slider">
-        <a data-caption="[imagecaption1]" href="[image1]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image1]&maxx=[image_medium_w]&maxy=0"> <img src="thumbnail.asp?file=[image1]&amp;maxx=75&amp;maxy=75" alt="" border="0" name="pimage1" /></a>
-
-        <!--START: image2-->
-          <a data-caption="[imagecaption2]" href="[image2]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image2]&maxx=[image_medium_w]&maxy=0"> <img src="thumbnail.asp?file=[image2]&amp;maxx=75&amp;maxy=75" alt="" border="0" name="pimage2" /></a>
-        <!--END: image2-->
-
-        <!--START: image3-->
-          <a data-caption="[imagecaption3]" href="[image3]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image3]&maxx=[image_medium_w]&maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image3]&amp;maxx=75&amp;maxy=75" alt="" name="pimage3" /></a>
-        <!--END: image3-->
-
-        <!--START: image4-->
-          <a data-caption="[imagecaption4]" href="[image4]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image4]&maxx=[image_medium_w]&maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image4]&amp;maxx=75&amp;maxy=75" alt="" name="pimage4" /></a>
-        <!--END: image4-->
-
-        <!--START: image5-->
-          <a data-caption="[imagecaption5]" href="[image5]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image5]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image5]&amp;maxx=75&amp;maxy=75" alt="" name="pimage5" /></a>
-        <!--END: image5-->
-
-        <!--START: image6-->
-          <a data-caption="[imagecaption6]" href="[image6]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image6]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image6]&amp;maxx=75&amp;maxy=75" alt="" name="pimage6" /></a>
-        <!--END: image6-->
-
-        <!--START: image7-->
-          <a data-caption="[imagecaption7]" href="[image7]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image7]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image7]&amp;maxx=75&amp;maxy=75" alt="" name="pimage7" /></a>
-        <!--END: image7-->
-
-        <!--START: image8-->
-          <a data-caption="[imagecaption8]" href="[image8]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image8]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image8]&amp;maxx=75&amp;maxy=75" alt="" name="pimage8" /></a>
-        <!--END: image8-->
-
-        <!--START: image9-->
-          <a data-caption="[imagecaption9]" href="[image9]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image9]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"> <img border="0" src="thumbnail.asp?file=[image9]&amp;maxx=75&amp;maxy=75" alt="" name="pimage9" /></a>
-        <!--END: image9-->
-
-        <!--START: image10-->
-          <a data-caption="[imagecaption10]" href="[image10]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image10]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image10]&amp;maxx=75&amp;maxy=75" alt="" name="pimage10" /></a>
-        <!--END: image10-->
-
-        <!--START: image11-->
-          <a data-caption="[imagecaption11]" href="[image11]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image11]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image11]&amp;maxx=75&amp;maxy=75" alt="" name="pimage11" /></a>
-        <!--END: image11-->
-
-        <!--START: image12-->
-          <a data-caption="[imagecaption12]" href="[image12]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image12]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image12]&amp;maxx=75&amp;maxy=75" alt="" name="pimage12" /></a>
-        <!--END: image12-->
-
-        <!--START: image13-->
-          <a data-caption="[imagecaption13]" href="[image13]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image13]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image13]&amp;maxx=75&amp;maxy=75" alt="" name="pimage13" /></a>
-        <!--END: image13-->
-
-        <!--START: image14-->
-          <a data-caption="[imagecaption14]" href="[image14]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image14]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image14]&amp;maxx=75&amp;maxy=75" alt="" name="pimage14" /></a>
-        <!--END: image14-->
-
-        <!--START: image15-->
-          <a data-caption="[imagecaption15]" href="[image15]" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file=[image15]&amp;maxx=[image_medium_w]&amp;maxy=[image_medium_h]"><img border="0" src="thumbnail.asp?file=[image15]&amp;maxx=75&amp;maxy=75" alt="" name="pimage15" /></a>
-        <!--END: image15-->
-      </div>
 
       <div class="sharebox hidden-sm hidden-xs">
         <!--START: frame_likebutton-->
@@ -298,12 +322,6 @@ $( function(){
         </div>
       </div>
 
-
-      <h1 itemprop="name" class="product-title hidden-sm hidden-xs">[name]</h1>
-      <!--START: id-->
-        <!-- [product_id] -->
-      <p class="part-no hidden-sm hidden-xs">Part Number <span id="product_id">[id]</span></p>
-      <!--END: id-->
       
 
       <div class="pricebox hidden-sm hidden-xs">

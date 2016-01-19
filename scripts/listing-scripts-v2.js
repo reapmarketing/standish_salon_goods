@@ -355,7 +355,7 @@
       $('.main-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         fade: true,
         asNavFor: '.sub-slider'
       });
@@ -363,9 +363,11 @@
         slidesToShow: 5,
         slidesToScroll: 1,
         dots: false,
-        arrows: false,
+        arrows: true,
         centerMode: false,
         asNavFor: '.main-slider',
+        prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev">Previous</button>',
+        nextArrow: '<button type="button" class="fa fa-chevron-right slick-next">Next</button>',
         focusOnSelect: true
       });
 
@@ -422,7 +424,7 @@
             video_markup_main = '';
             video_markup_main += '<a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
             video_markup_main += '<i class="icon-play-sign" style="font-size: 120px;position: absolute;text-decoration: none;top: 3rem;left: 31%;"></i>';
-            video_markup_main +=  '<img itemprop="image" src="thumbnail.asp?file='+ video.thumbnail_url +'&maxx=440&maxy=0" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="380" data-href="'+ video.thumbnail_url +'" />';
+            video_markup_main +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
             video_markup_main += '</a>';
 
             $('.main-slider').slick('slickAdd', video_markup_main);
@@ -430,7 +432,7 @@
 
           $.each( video_data, function( i, video ) {
             video_markup_sub = '';
-            video_markup_sub += '<a data-caption="'+ video.title +'" href="'+ video.thumbnail_url +'" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file='+ video.thumbnail_url +'&amp;maxx=400&amp;maxy=0">';
+            video_markup_sub += '<a data-caption="'+ video.title +'" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file='+ video.thumbnail_url +'&amp;maxx=400&amp;maxy=0">';
             video_markup_sub +=  '<img border="0" src="thumbnail.asp?file='+ video.thumbnail_url +'&amp;maxx=75&amp;maxy=75" alt="" name="" />';
             video_markup_sub += '</a>';
 
@@ -496,8 +498,6 @@
 
               $('.sub-slider').slick('slickAdd', video_markup_sub);
             });
-
-            
           }
         });
         feed.run();

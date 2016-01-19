@@ -677,19 +677,6 @@ fieldset {
   font-size: 14px;
 }
 
-/* Instagram 3 picture limit */
-#instafeed a:nth-child(n+4) {
-  display: none;
-}
-
-#instafeed{
-  width:470px;
-}
-
-#instafeed img{
-  padding:0px 2px 0px 2px;
-}
-
 .MagicZoomPlus img {
   max-height: 650px;
 }
@@ -721,3 +708,18 @@ fieldset {
 }
 
 /* End of Price Drop Feature Styles */
+
+/* NEW PRODUCT PAGE DESIGN */
+@media only screen and (min-width : $tablet) {
+
+  
+
+
+
+}
+
+
+
+
+
+
