@@ -64,11 +64,19 @@ h6 {
 p {
   font-size: 1em;
 }
-
+.regal {
+  text-transform: uppercase;
+  font-family: $default-font-serif !important;
+}
+.uppercase {
+  text-transform: uppercase;
+}
 .subheader {
   font-size: 78%;
 }
-
+a.underline, .underline {
+  text-decoration: underline !important;
+}
 @media only screen and (max-width: 61.9375em) {
 
   h1, h2, h3, h4, h5, h6 {

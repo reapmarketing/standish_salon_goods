@@ -501,9 +501,6 @@ li.email {
     color: white;
   }
 }
-.uppercase {
-  text-transform: uppercase;
-}
 
 
 body .vex.vex-theme-flat-attack .vex-content {
@@ -630,6 +627,24 @@ body .vex.vex-theme-flat-attack .vex-content {
   }
 }
 
+// Homepage
+// --------------------------------------------------
 
+#homepage-badges-list {
+  .badge-home {
+    height: initial;
+    margin: 10px auto;
+    text-align: center;
+    i {
+      display: inline-block;
+      float: none;
+    }
+    .badge-text {
+      max-width: inherit;
+      margin: 0;
+      padding: 10px 0 0;
+    }
+  }
+}
 
 

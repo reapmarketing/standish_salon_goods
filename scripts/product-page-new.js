@@ -161,7 +161,7 @@
             }
             // Set the height of the main slide instagram photo
             instaHeight = $('#product-actions-wrapper').height();
-            console.log(instaHeight);
+            // console.log(instaHeight);
             /* Add instagram to main slick slider */
             var instagram_markup_main = '';
             instagram_markup_main += '<a href="'+v.link+'" class="'+classname+'" data-video-insta="'+ dataVideo +'" id="listing_main_image_link">';
@@ -372,6 +372,30 @@
     });
   }
 
+  SiteListing.getBrand = function() {
+    var brand = $( '.field1' ).data( 'field1' );
+
+    console.log(brand);
+
+    var url = "https://spreadsheets.google.com/feeds/list/15lkOyeqw1lP0njGihJXj5AnrSYnB8DIQ06bHVnctwzs/od6/public/values?alt=json-in-script";
+    $.ajax({
+      url:url,
+      dataType:"jsonp",
+      success:function(data) {
+        console.log(data.feed.entry);
+
+        $(data.feed.entry).each(function(i,v) {
+          console.log(v);
+          if ( v['gsx$keyterm']['$t'] === brand ) {
+            $('#sub-resources-about-brand p').append(v['gsx$blurb']['$t']);
+          }
+
+        });
+
+      }
+    });
+
+  }
   
 
 
@@ -388,6 +412,8 @@
     SiteListing.salePrice();
     SiteListing.doBadges();
     SiteListing.commenceGrid();
+
+    SiteListing.getBrand();
 
   });
 

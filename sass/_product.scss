@@ -890,6 +890,13 @@ h4.info-header {
   }
 }
 
+.panel.panel-homepage-special {
+  padding: 0;
+  .panel-footer {
+    background-color: $primary-color;
+  }
+}
+
 
 
 
