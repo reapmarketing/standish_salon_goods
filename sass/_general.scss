@@ -177,11 +177,10 @@ legend {
   border-bottom: 1px solid #dcdcdc;
 }
 .padd-block {
-  padding: 10px;
+  padding: 10px !important;
 }
 .padd-top {
-  padding-top: 15px;
-
+  padding-top: 15px !important;
 }
 .padd-bottom-10 {
   padding-bottom: 10px;
@@ -207,16 +206,37 @@ legend {
   background: transparent none;
 }
 
-.slick-next {
-  &:before {
-    content: "\f054"!important;
-  }
+/* Arrow Box */
+.arrow_box {
+  position: relative;
+  background: $xlightGrey;
+  border: 1px solid darken($xlightGrey, 10%);
 }
-.slick-prev {
-  &:before {
-    content: "\f053"!important;
-  }
+.arrow_box:after, .arrow_box:before {
+  top: 100%;
+  left: 80%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
 }
+
+.arrow_box:after {
+  border-color: rgba(darken($xlightGrey, 10%), 0);
+  border-top-color: $xlightGrey;
+  border-width: 21px;
+  margin-left: -21px;
+}
+.arrow_box:before {
+  border-top-color: darken($xlightGrey, 10%);
+  border-width: 22px;
+  margin-left: -22px;
+}
+
+
+
 
 .breadcrumb {
   background: transparent none;
@@ -240,6 +260,9 @@ legend {
 
   }
   
+}
+.remove-perhaps {
+  display: none;
 }
 
 .cycle-slideshow .cycle-slide {
@@ -418,12 +441,20 @@ legend {
   font-weight: bold;
   color: $primary-color;
 }
+
+.tooltip-arrow,
+.standish-tooltip + .tooltip > .tooltip-inner {
+  background-color: $light-gray;
+}
+
 .sharebox {
   background: #dcdcdc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 5px 5px 29px;
 }
+
+
 .sharebox * {
   display: inline;
 }
@@ -454,6 +485,26 @@ li.email {
 .fancy-select.wide select {
   width: 210px;
 }
+
+.inline {
+  display: inline;
+}
+.play-button {
+  background: rgba($salmon-highlight, .7);
+  top: 36%;
+  left: 36%;
+  width: 25%;
+  padding: 2% 22%;
+  padding-left: 10%;
+
+  &:before {
+    color: white;
+  }
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
 
 body .vex.vex-theme-flat-attack .vex-content {
   padding-bottom: 1em;
@@ -567,4 +618,18 @@ body .vex.vex-theme-flat-attack .vex-content {
     padding: 10px 0;
   }
 }
+
+// Popover
+// --------------------------------------------------
+
+.popover-title {
+  text-transform: uppercase;
+  h3 {
+    color: $light-gray;
+    font-weight: normal;
+  }
+}
+
+
+
 

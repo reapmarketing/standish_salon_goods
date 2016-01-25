@@ -1,5 +1,16 @@
 
 @import "settings";
+
+@mixin icon($content) {
+  content: unquote("\"")+unquote(str-insert($content,"\\", 1))+unquote("\"") !important;
+}
+@mixin no-blur-box($color) {
+  -webkit-box-shadow: 0px 4px 0px 0px $color;
+  -moz-box-shadow: 0px 4px 0px 0px $color;
+  box-shadow: 0px 4px 0px 0px $color;
+} 
+
+
 @import "button_mixin";
 @import "badges-sprites-colors";
 @import "badges-sprites";

@@ -20,12 +20,23 @@ $accent-color: rgb(255, 183, 157);
 // lime green
 $highlight-color: #dfe133;
 
+// top bar ~ hello bar
+$hello-bar-bkg-color: #60437D;
+
+// new product page page
+$salmon-highlight: #ff7f50;
+$product-border: #E0E0E0;
+$product-inside: rgb(240, 240, 240);
+
+// end new product page page
 $btn-highlight: $primary-color-btn-highlight;
 
 $secondary-btn-color: lighten(#696969, 10%);
 $secondary-btn-highlight: lighten(#696969, 30%);
 
 $light-gray: lighten(#696969, 10%);
+
+$xlightGrey: rgb(249, 249, 249);;
 // Standish Green
 $secondary-color: #c2d3bd;
 $standishgreen: $secondary-color;

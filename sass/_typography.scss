@@ -23,6 +23,9 @@ h6
   font-family: $default-font-serif;
   font-weight: 700;
   line-height: 1.25;
+  &.sans {
+    font-family: $default-font !important;
+  }
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;

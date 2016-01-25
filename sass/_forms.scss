@@ -45,6 +45,10 @@ select::-ms-expand {
 .input-group-btn>.btn {
   padding: 6px 20px;
 }
+.checkbox, .radio {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -86,13 +90,15 @@ input::-moz-focus-inner {
 }
 
 .fancy-select img {
-  margin: 3px 0 0 235px;
+  position: absolute;
+  right: 19%;
+  top: 13%;
 }
 .fancy-select select, .fancy-select-lg select {
-  background: transparent;
-  color: $neutral-dark;
+  background: $xlightGrey;
+  color: $primary-color;
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: smaller;
   border: none;
   width: 100%;
   height: 34px;
@@ -116,6 +122,7 @@ input::-moz-focus-inner {
   background: #efefef;
   display: inline-block;
   position: relative;
+  margin-bottom: 0px;
 }
 .fancy-select i {
   z-index: 1;
@@ -123,8 +130,7 @@ input::-moz-focus-inner {
   right: 0;
   top: 0;
   font-size: 13px;
-  border-left: 1px solid #dcdcdc;
-  padding: 6% 3%;
+  padding: 3% 5%;
   height: 100%;
 }
 
@@ -182,6 +188,9 @@ button[type=submit],
   font-size: 14px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+}
+
+.btn, .button {
   &.standishgreen {
     @include button-styles($standishgreen, darken($standishgreen, 10%));
     text-shadow: 0px -1px 0px darken($standishgreen, 5%);
@@ -204,11 +213,59 @@ button[type=submit],
       @include button-styles($lightGrey, $lightGrey);
     }
   }
+  &.btn-x-light { // $lightGrey
+    @include button-styles($xlightGrey, darken($xlightGrey, 3%));
+    text-shadow: 0px -1px 0px darken($xlightGrey, 5%);
+    &.dark-text {
+      color: $primary-gray !important;
+    }
+    &.light-text {
+      color: darken($lightGrey, 15%) !important;
+    }
+    &.design-text {
+      color: darken($lightGrey, 30%) !important;
+      font-weight: 600;
+      font-size: 0.7em;
+      padding: 1% 2%;
+    }
+    border: 1px solid $lightGrey;
+    &:hover {
+      @include button-styles(darken($xlightGrey, 3%), darken($xlightGrey, 3%));
+    }
+  }
   &.standishgray {
     @include button-styles($standishgray, darken($standishgray, 10%));
     text-shadow: 0px -1px 0px darken($standishgray, 5%);
     &:hover {
       @include button-styles($standishgray, $standishgray);
+    }
+  }
+
+  &.btn-social {
+    background: white;
+    color: $standishgray;
+    border: 1px solid $standishgray;
+    font-weight: bold;
+    margin-top: -11px;
+    font-size: 10px;
+
+    &:hover, &:focus, &:active {
+      color: $standishgray;
+    }
+  }
+
+}
+.btn {
+  &.btn-pointy {
+    -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+  }
+  &.btn-flat {
+    background-color: white;
+    border: 1px solid $primary-color;
+    &:hover {
+      color: darken($primary-color, 20%);
     }
   }
 }

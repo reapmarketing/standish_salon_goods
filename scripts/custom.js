@@ -22,6 +22,7 @@
 				// '.listing',
 				'.listing .listing-container',
 				'.column .eqhgt',
+				'.eqhgt',
 				'.column .eqhgt-g1',
 				'.pricebox-eqhgt',
 				'.footer-logo-sm'
@@ -148,6 +149,14 @@
 		})	
 		
 	}
+	Standish.optInPopover = function() {
+		$(function () {
+		  $('[data-toggle="popover"]').popover({
+		  	trigger:'hover',
+		  	template: '<div class="popover" role="tooltip"><div class="arrow"></div><p class="popover-title"></p></div></div>'
+		  });
+		});
+	}
 
 	$(function() {
 		// Wait till dom is ready to use slick
@@ -187,6 +196,8 @@
 		Standish.CloseHello('.hello-container');
 		// 6. Activate the slider for features at top
 		Standish.ActivateSliderNotFancy('#slickShow');
+		// 7. Opt in to bootstrap tooltips
+		Standish.optInPopover();
 
 	});
 	// Add callback to window resize event
