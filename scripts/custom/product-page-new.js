@@ -52,7 +52,7 @@
       dots: false,
       arrows: true,
       variableWidth: true,
-      centerMode: true,
+      centerMode: false,
       asNavFor: '.main-slider',
       prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev">Previous</button>',
       nextArrow: '<button type="button" class="fa fa-chevron-right slick-next">Next</button>',
@@ -543,9 +543,9 @@
     SiteListing.productDetailsFormat();
     SiteListing.changeColors();
     SiteListing.changeColorsSlides();
-    SiteListing.financing();
 
     // Dont activate these for now
+    // SiteListing.financing();
     // SiteListing.priceDropForm();
     // SiteListing.brochureDownload();
 

@@ -709,109 +709,16 @@ $( function(){
 
       });
 
-
       $('.option-row button[type=submit]').replaceWith(newButton)
     }
   });
 
 })(jQuery);
 
-</script>
+</script> 
 <!--END: OOS SCRIPT -->
 
-<script>
-  // 3DCart Code
-  if (typeof jQuery == 'undefined') {
-    document.write("<script type=\"text/javascript\" src=\"assets/templates/common/js/jquery.min.js\"></" + "script>");
-  }
-  
-
-  var winWidth = window.innerWidth;
-  if (winWidth < 750) {
-    //mobile only
-    MagicZoomPlus.options = {
-      'disable-zoom': true
-    };
-  }
-  else {
-    MagicZoomPlus.options = {
-      'opacity':'65',
-      'expand-effect':'elastic',
-      'background-opacity':'50',
-      'zoom-fade':'true',
-      'zoom-position':'right',
-      'fit-zoom-window':'false',
-      'hint':'false'
-    }
-  }
-</script>
-
 <script language="javascript">
-  //thumbnail script
-  var image1,image2,image3,image4,selectedimage;
-  var imagemaxwidth, imagemaxheight
-
-  imagemaxwidth=[image_medium_w];
-  imagemaxheight=0;
-
-  image1="[image1]";
-  image2="[image2]";
-  image3="[image3]";
-  image4="[image4]";
-  image5="[image5]";
-  image6="[image6]";
-  image7="[image7]";
-  image8="[image8]";
-  image9="[image9]";
-  image10="[image10]";
-  image11="[image11]";
-  image12="[image12]";
-  image13="[image13]";
-  image14="[image14]";
-  image15="[image15]";
-  imagecaption1="[imagecaption1]";
-  imagecaption2="[imagecaption2]";
-  imagecaption3="[imagecaption3]";
-  imagecaption4="[imagecaption4]";
-  imagecaption5="[imagecaption5]";
-  imagecaption6="[imagecaption6]";
-  imagecaption7="[imagecaption7]";
-  imagecaption8="[imagecaption8]";
-  imagecaption9="[imagecaption9]";
-  imagecaption10="[imagecaption10]";
-  imagecaption11="[imagecaption11]";
-  imagecaption12="[imagecaption12]";
-  imagecaption13="[imagecaption13]";
-  imagecaption14="[imagecaption14]";
-  imagecaption15="[imagecaption15]";
-  selectedimage='[image1]'; //pre load image1
-  zoom_enable='[3dzoom_enabled]'; //0 = zoomify | 1 = magiczoom
-
-  function image_click(clicks)
-  {
-    if (document.getElementById('listing_main_image_link')!=undefined)
-    {
-      if (zoom_enable==1)
-      {
-        selectedimage=eval('image'+clicks);
-        MagicZoomPlus.update('listing_main_image_link', selectedimage, 'thumbnail.asp?file=' + selectedimage + '&maxx='+imagemaxwidth+'&maxy='+imagemaxheight, 'show-title: false');
-        changecontent("imagecaptiont",eval('imagecaption'+clicks));
-        document.getElementById('listing_main_image_link').href=this.name;
-      }else
-      {
-    
-        selectedimage=eval('image'+clicks);
-        document.getElementById('large').src='thumbnail.asp?file=' + selectedimage + '&maxx='+imagemaxwidth+'&maxy='+imagemaxheight;
-        document.getElementById('listing_main_image_link').href='#';
-        document.getElementById('listing_main_image_link').onclick=zoomify_popup;
-        changecontent("imagecaptiont",eval('imagecaption'+clicks));
-      }
-    }
-  }
-  function zoomify_popup()
-  {
-    popupsimple('zoomify.asp?catalogid=[catalogid]&img=' + selectedimage ,500,500);
-  }
 
   function check_stock(what,partnum)
   {
