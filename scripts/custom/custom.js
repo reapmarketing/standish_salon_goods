@@ -87,19 +87,19 @@
 				case 'listing_1':
 					var script = document.createElement('script');
 					script.id = 'listing';
-					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
+					script.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
 					document.head.appendChild(script);
 				return;
 				case 'listing_3':
 					var script = document.createElement('script');
 					script.id = 'listing';
-					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts-v2.js';
+					script.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts-v2.js';
 					document.head.appendChild(script);
 				return;
 				case ( 'listing_2' ):
 					var script = document.createElement('script');
 					script.id = 'listing';
-					script.src = '/assets/templates/standish-responsive/scripts/listing-scripts.js';
+					script.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
 					document.head.appendChild(script);
 					// Insert hbspt script
 					var scriptb = document.createElement('script');

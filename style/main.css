@@ -239,20 +239,21 @@ a:active.button {
 /* line 137, ../sass/_typography.scss */
 a,
 a:link,
-a:visited {
+a:visited,
+a:focus {
   color: #ff7f50;
   text-decoration: none; }
 
-/* line 144, ../sass/_typography.scss */
+/* line 145, ../sass/_typography.scss */
 a:hover, a:focus {
   text-decoration: none !important;
   color: #ff5a1d; }
 
-/* line 148, ../sass/_typography.scss */
+/* line 149, ../sass/_typography.scss */
 a:active {
   color: #ff5a1d; }
 
-/* line 154, ../sass/_typography.scss */
+/* line 155, ../sass/_typography.scss */
 .default, .navigation ul ul ul a, button,
 .button,
 input[type=button],
@@ -260,72 +261,76 @@ input[type=submit],
 .hs-form .hs-button, .hs-input, body, html, .alternative {
   font-family: "PT Sans", Arial, Helvetica, sans-serif; }
 
-/* line 156, ../sass/_typography.scss */
+/* line 157, ../sass/_typography.scss */
 .narrow, .navigation ul li, .listing p.title, .pricebox .left-price, .product-form label, .product-form .questions, .brochure-download, .rating, .add-rating-link, .create-account button, .create-account .login form {
   font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif; }
 
-/* line 158, ../sass/_typography.scss */
+/* line 159, ../sass/_typography.scss */
 .special, .search form, .search p, .search input, .search span, .search a, .search button {
   font-family: "PT Sans", Arial, Helvetica, sans-serif; }
 
-/* line 160, ../sass/_typography.scss */
+/* line 161, ../sass/_typography.scss */
 .strike {
   text-decoration: line-through; }
 
-/* line 163, ../sass/_typography.scss */
+/* line 164, ../sass/_typography.scss */
 .bold {
   font-weight: 700;
   color: #ff7f50; }
 
-/* line 167, ../sass/_typography.scss */
+/* line 168, ../sass/_typography.scss */
 .center {
   text-align: center; }
 
-/* line 170, ../sass/_typography.scss */
+/* line 171, ../sass/_typography.scss */
 .italic {
   font-style: italic; }
 
-/* line 173, ../sass/_typography.scss */
+/* line 174, ../sass/_typography.scss */
 .allcaps {
   text-transform: uppercase; }
-  /* line 175, ../sass/_typography.scss */
+  /* line 176, ../sass/_typography.scss */
   .allcaps.featured {
     color: #dfe133; }
-    /* line 177, ../sass/_typography.scss */
+    /* line 178, ../sass/_typography.scss */
     .allcaps.featured > a {
       color: #dfe133; }
 
-/* line 182, ../sass/_typography.scss */
+/* line 183, ../sass/_typography.scss */
 .lowercase {
   text-transform: lowercase; }
 
-/* line 185, ../sass/_typography.scss */
+/* line 186, ../sass/_typography.scss */
 strong {
   color: #ff7f50; }
 
-/* line 188, ../sass/_typography.scss */
+/* line 189, ../sass/_typography.scss */
 .serif {
   font-family: "PT Serif", "Times New Roman", Times, serif; }
 
-/* line 191, ../sass/_typography.scss */
+/* line 192, ../sass/_typography.scss */
 .sans {
   font-family: "PT Sans", Arial, Helvetica, sans-serif; }
 
-/* line 195, ../sass/_typography.scss */
+/* line 196, ../sass/_typography.scss */
 .return {
   color: #ff7f50; }
 
-/* line 196, ../sass/_typography.scss */
+/* line 197, ../sass/_typography.scss */
 .usa-blue {
   color: #ff7f50; }
 
-/* line 197, ../sass/_typography.scss */
+/* line 198, ../sass/_typography.scss */
 .money {
   color: #ffa07a; }
 
-/* line 218, ../sass/_typography.scss */
+/* line 219, ../sass/_typography.scss */
 .listing p.title {
   min-height: 34px; }
+  /* line 222, ../sass/_typography.scss */
+  .listing p.title a {
+    color: #678CCB;
+    text-decoration: underline; }
 
 /* line 1, ../sass/_branding.scss */
 .white {
@@ -3803,8 +3808,9 @@ h4.info-header {
 
 /* line 893, ../sass/_product.scss */
 .panel.panel-homepage-special {
-  padding: 0; }
-  /* line 895, ../sass/_product.scss */
+  padding: 0;
+  border: 1px solid #dcdcdc; }
+  /* line 896, ../sass/_product.scss */
   .panel.panel-homepage-special .panel-footer {
     background-color: #ff7f50; }
 

@@ -136,7 +136,8 @@ a:active.button {
 
 a,
 a:link,
-a:visited
+a:visited,
+a:focus
 {
   color: $primary-color;
   text-decoration: none;
@@ -218,6 +219,10 @@ strong {
 .listing p.title {
   @extend .narrow;
   min-height: 34px;
+  a {
+    color: $blue-link;
+    text-decoration: underline;
+  }
 }
 .pricebox .left-price {
   @extend .narrow;

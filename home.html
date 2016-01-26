@@ -88,24 +88,24 @@
                         <!--END: product_review_average-->
                     <!--END: product_review-->
                     <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-                        <a href="product.asp?itemid=[catalogid]">
-                            <img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" />
-                        </a>
-                        <div class="listing-container">
-                            <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-                        <!--START: ITEMPRICE-->
-                            <!-- [product_yourprice] -->
-                            <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-                        <!--END: ITEMPRICE-->
-                        <!--START: SALEPRICE-->
-                            <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                            <!-- <span class="coral-text">[product_onsale]: </span> --> 
-                            <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"><span class="nozero">[ITEMSALEPRICE]</span></p>
-                        <!--END: SALEPRICE-->
-                        <!-- <button>Add to Cart</button> -->
-                        <!-- [category_buyitlink] -->
-                        </div> 
-                        <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.location='product.asp?itemid=[catalogid]'"><i class="fa fa-eye"></i> See Details</button>
+                      <a href="product.asp?itemid=[catalogid]">
+                          <img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" />
+                      </a>
+                      <div class="listing-container">
+                          <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+                      <!--START: ITEMPRICE-->
+                          <!-- [product_yourprice] -->
+                          <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+                      <!--END: ITEMPRICE-->
+                      <!--START: SALEPRICE-->
+                          <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+                          <!-- <span class="coral-text">[product_onsale]: </span> --> 
+                          <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"><span class="nozero">[ITEMSALEPRICE]</span></p>
+                      <!--END: SALEPRICE-->
+                      <!-- <button>Add to Cart</button> -->
+                      <!-- [category_buyitlink] -->
+                      </div>
+                      <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.locastion='product.asp?itemid=[catalogid]'"><i class="fa fa-eye"></i> See Details</button>
                     </div>
                 <!--END: ITEM_TEMPLATE_0-->
             <!--END: CATEGORY_ITEMS-->
@@ -127,32 +127,32 @@
           <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#returns" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-returns" title="No Hassle Return Policy"><i></i><div class="badge-text"><small>No Hassle Return Policy</small></div></a>
         </div>
 
-        <div id="homepage-badges-list" class="col-md-12">
+        <div id="homepage-featured-panel-list" class="col-md-12">
           <h3 class="coral-text">From Here you Can...</h3>
 
           <div class="clearfix"></div>
           <div class="row">
             <div class="col-md-4">
               <div class="panel panel-homepage-special panel-bottom">
-                <img src=""/>
+                <a href="tel:+8882718434"><img src="/assets/templates/[template]/images/CallAnExpert.png"/></a>
                 <div class="panel-footer text-center">
-                  <a class="white-text underline uppercase" href="tel:+8882718434">(888) 271-8434</a>
+                  <a v class="white-text underline uppercase" href="tel:+8882718434">(888) 271-8434</a>
                 </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="panel panel-homepage-special panel-bottom">
-                <img src=""/>
+                <a href="https://standishstuff.wistia.com/medias/hnexjophts"><img src="/assets/templates/[template]/images/GetFinancing.png"/></a>
                 <div class="panel-footer text-center">
-                  <a class="white-text underline uppercase" href="">Watch The Video</a>
+                  <a href="https://standishstuff.wistia.com/medias/hnexjophts" class="white-text underline uppercase">Watch The Video</a>
                 </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="panel panel-homepage-special panel-bottom">
-                <img src=""/>
+                <a  href="/free-salon-space-planning"><img src="/assets/templates/[template]/images/SpacePlanning.png"/></a>
                 <div class="panel-footer text-center">
-                  <a class="white-text underline uppercase" href="">Learn More</a>
+                  <a class="white-text underline uppercase" href="/free-salon-space-planning">Learn More</a>
                 </div>
               </div>
             </div>
@@ -164,6 +164,21 @@
           [CONTENT]
         </div>
         <!--END: CATEGORY_FOOTER-->
+
+        <div id="homepage-poular-videos" class="col-md-12">
+          <h3 class="coral-text">Watch Our Most Popular Product Videos</h3>
+
+          <div class="clearfix"></div>
+          <div class="brand-videos"></div>
+
+        </div>
+
+        <div id="homepage-brands" class="col-md-12">
+
+          <div class="clearfix"></div>
+          <div class="homepage-brands"></div>
+
+        </div>
 
 
 </div>

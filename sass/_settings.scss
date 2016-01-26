@@ -1,3 +1,6 @@
+
+
+/// ----- Fonts -----///
 $default-font: 'PT Sans', Arial, Helvetica, sans-serif;
 
 $default-font-narrow: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -6,6 +9,9 @@ $default-font-serif: 'PT Serif', 'Times New Roman', Times, serif;
 
 $special-font: $default-font;
 
+
+
+/// ----- Colors -----///
 $beige: #FBFBEF;
 
 /* Pink */
@@ -18,13 +24,15 @@ $btn-color: $primary-color;
 //*Color used for top-bar*// 
 $accent-color: rgb(255, 183, 157);
 
-// lime green
+// lime green/mustard green color
 $highlight-color: #dfe133;
+
+$blue-link: #678CCB;
 
 // top bar ~ hello bar
 $hello-bar-bkg-color: #60437D;
 
-// new product page page
+// new product page design colors -- not consistent...
 $salmon-highlight: #ff7f50;
 $product-border: #E0E0E0;
 $product-inside: rgb(240, 240, 240);
