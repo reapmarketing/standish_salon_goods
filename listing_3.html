@@ -23,12 +23,6 @@ $( function(){
 });
 </script>
 
-<script src="/assets/templates/[template]/scripts/vex.combined.min.js"></script>
-<script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
-<link rel="stylesheet" href="/assets/templates/[template]/style/vex.css" />
-<link rel="stylesheet" href="/assets/templates/[template]/style/vex-theme-flat-attack.css" />
-<link href="assets/templates/common/3dzoom/magiczoomplus.css" rel="stylesheet" type="text/css" media="screen" />
-
 <section id="post-header-breadcrumb-search hidden-sm hidden-xs">
   <div class="col-md-12 search-container hidden-sm hidden-xs">
     <!--START: CATEGORY_FULLINE-->
@@ -570,35 +564,6 @@ $( function(){
       </div>
       <!--END: extra_field_12-->
 
-
-      <!-- MOBILE/TABLET/DESKTOP related accessories -->
-      <!--START: accessories_0-->
-      <div class="clearfix"></div>
-      <div class="related-accessories clearfix hidden-xs col-md-12">
-        <h4 class="info-header">[product_Header-accessories]<hr></h4><!-- [product_Header-accessories] -->
-        <!-- <a href="#viewMore">View More</a> -->
-        <div class="related-products row">
-        <!--START: accessories_items0-->
-          <div class="col-md-2 col-sm-3 col-xs-6 listing alpha">
-            <div class="listing-container">
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" /></a>
-              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-              <!--START: ITEMPRICE-->
-              <!-- [product_yourprice] -->
-              <p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-              <!--END: ITEMPRICE-->
-              <!--START: SALEPRICE-->
-              <p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-              <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>              
-                  <!--END: SALEPRICE-->
-            </div>
-            <input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">
-          </div>
-        <!--END: accessories_items0-->
-        </div>
-      </div><!-- related-accessories row clearfix hidden-sm hidden-xs -->
-      <!--END: accessories_0-->
-
       <!-- MOBILE/TABLET/DESKTOP resources -->
       <div class="clearfix"></div>
       <div id="resources" class="padd-top col-md-12">
@@ -842,7 +807,7 @@ $( function(){
   var currency_symbol='[currency]';
   var prod_decimal_places='[prod_decimal_places]';
   validateValues(document.add,1);
-  window.setTimeout("image_click(1)", 1000);
+  // window.setTimeout("image_click(1)", 1000);
 </script>
 <script type="text/javascript">
   function selectOption(objElement) {

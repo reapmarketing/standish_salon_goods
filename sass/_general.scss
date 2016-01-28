@@ -57,7 +57,7 @@ body {
   font-size: 100%;
 }
 .container-fluid, .no-padd {
-  padding: 0px;
+  padding: 0px !important;
 }
 
 a:focus {
@@ -200,6 +200,13 @@ legend {
 }
 .margin-none {
   margin: 0;
+}
+
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
 }
 
 .transparent {
@@ -630,7 +637,21 @@ body .vex.vex-theme-flat-attack .vex-content {
 // Homepage
 // --------------------------------------------------
 
+#hoz-slider-container {
+  z-index: 0;
+}
+
 #homepage-badges-list {
+  margin-right: 0;
+  width: 100%;
+  border: 0 none;
+  position: relative;
+  -webkit-border-radius: 3px;
+  background: transparent none;
+  height: 3.2rem;
+
+
+  
   .badge-home {
     height: initial;
     margin: 10px auto;
@@ -645,6 +666,42 @@ body .vex.vex-theme-flat-attack .vex-content {
       padding: 10px 0 0;
     }
   }
+}
+
+.homepage-brands, .slick-slider {
+  .slick-next, .slick-prev {
+    border-radius: 0;
+    height: 50px;
+    width: 50px;
+    top: 30px;
+    color: white;
+    background: $salmon-highlight !important;
+    border: 0 none;
+    margin-top: 0;
+  }
+
+  .slick-next {
+    right: 0;
+    z-index: 1;
+
+    &:before {
+      color: white;
+      // Example
+      @include icon("f054");
+      font-family: FontAwesome !important;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    z-index: 1;
+
+    &:before {
+      color: white;
+      font-family: FontAwesome !important;
+      @include icon("f053");
+    }
+  }
+
 }
 
 

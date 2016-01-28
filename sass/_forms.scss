@@ -162,6 +162,37 @@ input::-moz-focus-inner {
   }
 
 }
+.fancy-select-special {
+  position: relative;
+  height: 35px;
+
+  h4 {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    font-weight: 500;
+  }
+  select {
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    z-index: 1;
+  }
+  i {
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5% 5%;
+    max-width: 15%;
+    &:nth-of-type(1) {
+      left: 0;
+      top: 0;
+    }
+  }
+      
+}
 
 
 @mixin ie-filters($color1, $color2) {
@@ -469,14 +500,6 @@ textarea.hs-input {
   width: 100%;
   margin: 0 auto 30px auto;
   float: none;
-}
-
-.hs-form-field {
-  margin-bottom: 30px;
-}
-
-.hs-form.stacked label {
-  
 }
 
 .hbspt-form .hs-form.stacked .actions {

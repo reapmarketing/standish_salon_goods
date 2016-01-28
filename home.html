@@ -18,63 +18,91 @@
         </div>
             <!-- [category_Header-specials] -->
         <!--START: CATEGORY_HEADER-->
-        <div class="row">
-            [CONTENT]
+        <div class="row hidden-xs" id="hoz-slider-container">
+          <div class="hoz-slider-top col-md-10-2 no-padd hidden-xs">
+          </div>
+          <div class="hoz-slider-sub col-md-2-2 hidden-sm hidden-xs no-padd" style="padding-left: 2px!important;">
+          </div>
         </div>
+        <div class="visible-xs row" id="hoz-mobile-container">
+          <div>
+            <a href="http://www.standishsalongoods.com/standish-salon-equipment-sale">
+              <img class="img-responsive" src="https://www.standishsalongoods.com/assets/images/homePageSlider/Promo-Strip.jpg"/>
+            </a>
+          </div>
+          <div>
+            <a href="http://www.standishsalongoods.com/american-made-salon-furniture">
+              <img class="img-responsive" src="https://www.standishsalongoods.com/assets/images/homePageSlider/usitems-strip.jpg"/>
+            </a>
+          </div>
+          <div>
+            <a href="tel:+8882718434">
+              <img class="img-responsive" src="https://www.standishsalongoods.com/assets/images/homePageSlider/gethelp-strip.jpg"/>
+            </a>
+          </div>
+          <div>
+            <a href="http://www.standishsalongoods.com/new-salon-equipment-products">
+              <img class="img-responsive" src="https://www.standishsalongoods.com/assets/images/homePageSlider/seevideos-strip.jpg"/>
+            </a>
+          </div>
+        </div>
+        <div class="clearfix"></div>
         <!--END: CATEGORY_HEADER-->
-        <div class="col-md-12 hidden-md hidden-lg filters">
+        <div class="col-md-12 hidden-md hidden-sm hidden-lg filters">
             <br/>
-            <div class="fancy-select-lg fancy-select form-group col-md-12">
+            <div class="fancy-select-special form-group col-md-12">
+                <i class="fa fa-angle-down fa-lg fa-first"></i>
+                <h4 class="uppercase absolute">View Products</h4>
                 <select class="input-lg" onchange="location = this.options[this.selectedIndex].value;">
-                <option value="">Select Equipment Type</option>
-                <optgroup label="Furniture Packages:">
-                    <option value="/salon-furniture-packages">Salon Equipment Packages</option>
-                </optgroup>
-                <optgroup label="Chairs:">
-                    <option value="/salon-styling-chairs">Styling Chairs</option>
-                    <option value="/all-purpose-salon-chairs">All-Purpose Chairs</option>
-                    <option value="/barber-shop-chairs">Barber Chairs</option>
-                    <option value="/salon-dryer-chairs">Dryer Chairs</option>
-                    <option value="/salon-stools">Stools</option>
-                    <option value="/salon-chair-covers">Chair Covers</option>
-                </optgroup>
-                <optgroup label="Stations:">
-                    <option value="/single-salon-stations">Single Stations</option>
-                    <option value="/back-to-back-salon-stations">Back-to-Back Stations</option>
-                    <option value="/tower-salon-stations">Tower Stations</option>   
-                </optgroup>
-                <optgroup label="Color Bars:">
-                    <option value="/hair-salon-color-bars">Color Bar Units</option>
-                </optgroup>
-                <optgroup label="Trays & Trolleys:">
-                    <option value="/salon-trays-trolleys">Trays & Trolleys</option>
-                </optgroup>            
-                <optgroup label="Manicure & Pedicure:">
-                    <option value="/pedicure-manicure-equipment">Manicure and Pedicure Equipment</option>
-                </optgroup>
-                <optgroup label="Shampoo:">
-                    <option value="/salon-shampoo-chairs">Shampoo Chairs</option>
-                    <option value="/salon-wet-stations">Wet Stations</option>
-                    <option value="/shampoo-shuttles">Shuttles</option>
-                    <option value="/salon-shampoo-bowls">Shampoo Bowls</option>
-                    <option value="/salon-shampoo-cabinets">Cabinet Units</option>
-                </optgroup>
-                <optgroup label="Towels:">
-                    <option value="/hair-salon-towels">Towels</option>
-                </optgroup>
-                <optgroup label="Reception:">
-                    <option value="/salon-reception-furniture">Reception Furniture</option>
-                </optgroup>
-                <optgroup label="Break Room:">
-                    <option value="/break-room-appliances">Break Room Appliances</option>
-                </optgroup>
-                <optgroup label="Tools:">
-                    <option value="/hair-salon-supplies-online">Hair</option>
-                    <option value="/nail-salon-supplies-accessories">Nails</option>
-                    <option value="/makeup-supplies-accessories">Makeup</option>
-                </optgroup>
+                  <option value="">View Products</option>
+                  <optgroup label="Furniture Packages:">
+                      <option value="/salon-furnitures-packages">Salon Equipment Packages</option>
+                  </optgroup>
+                  <optgroup label="Chairs:">
+                      <option value="/salon-styling-chairs">Styling Chairs</option>
+                      <option value="/all-purpose-salon-chairs">All-Purpose Chairs</option>
+                      <option value="/barber-shop-chairs">Barber Chairs</option>
+                      <option value="/salon-dryer-chairs">Dryer Chairs</option>
+                      <option value="/salon-stools">Stools</option>
+                      <option value="/salon-chair-covers">Chair Covers</option>
+                  </optgroup>
+                  <optgroup label="Stations:">
+                      <option value="/single-salon-stations">Single Stations</option>
+                      <option value="/back-to-back-salon-stations">Back-to-Back Stations</option>
+                      <option value="/tower-salon-stations">Tower Stations</option>   
+                  </optgroup>
+                  <optgroup label="Color Bars:">
+                      <option value="/hair-salon-color-bars">Color Bar Units</option>
+                  </optgroup>
+                  <optgroup label="Trays & Trolleys:">
+                      <option value="/salon-trays-trolleys">Trays & Trolleys</option>
+                  </optgroup>            
+                  <optgroup label="Manicure & Pedicure:">
+                      <option value="/pedicure-manicure-equipment">Manicure and Pedicure Equipment</option>
+                  </optgroup>
+                  <optgroup label="Shampoo:">
+                      <option value="/salon-shampoo-chairs">Shampoo Chairs</option>
+                      <option value="/salon-wet-stations">Wet Stations</option>
+                      <option value="/shampoo-shuttles">Shuttles</option>
+                      <option value="/salon-shampoo-bowls">Shampoo Bowls</option>
+                      <option value="/salon-shampoo-cabinets">Cabinet Units</option>
+                  </optgroup>
+                  <optgroup label="Towels:">
+                      <option value="/hair-salon-towels">Towels</option>
+                  </optgroup>
+                  <optgroup label="Reception:">
+                      <option value="/salon-reception-furniture">Reception Furniture</option>
+                  </optgroup>
+                  <optgroup label="Break Room:">
+                      <option value="/break-room-appliances">Break Room Appliances</option>
+                  </optgroup>
+                  <optgroup label="Tools:">
+                      <option value="/hair-salon-supplies-online">Hair</option>
+                      <option value="/nail-salon-supplies-accessories">Nails</option>
+                      <option value="/makeup-supplies-accessories">Makeup</option>
+                  </optgroup>
                 </select>
-                <i class="fa fa-caret-down fa-sm"></i>
+                <i class="fa fa-angle-down fa-2x fa-first"></i>
             </div>
         </div>
 
@@ -111,9 +139,9 @@
             <!--END: CATEGORY_ITEMS-->
         <!--END: FEATURE_MENU-->
 
-
-        <div id="homepage-badges-list" class="col-md-12">
-          <h3 class="coral-text">Why Buy from Standish?</h3>
+        <div class="clearfix"></div>
+        <div id="homepage-badges-list" class="row hidden-xs">
+          <h3 class="coral-text col-md-12">Why Buy from Standish?</h3>
           <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.30.1453752468526&amp;__hsfp=3596893005#made-usa" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
 
           <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#free-shipping" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
@@ -127,12 +155,13 @@
           <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#returns" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-returns" title="No Hassle Return Policy"><i></i><div class="badge-text"><small>No Hassle Return Policy</small></div></a>
         </div>
 
-        <div id="homepage-featured-panel-list" class="col-md-12">
+        <div class="clearfix"></div>
+        <div id="homepage-featured-panel-list" class="col-md-12 hidden-xs">
           <h3 class="coral-text">From Here you Can...</h3>
 
           <div class="clearfix"></div>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
               <div class="panel panel-homepage-special panel-bottom">
                 <a href="tel:+8882718434"><img src="/assets/templates/[template]/images/CallAnExpert.png"/></a>
                 <div class="panel-footer text-center">
@@ -140,15 +169,15 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
               <div class="panel panel-homepage-special panel-bottom">
                 <a href="https://standishstuff.wistia.com/medias/hnexjophts"><img src="/assets/templates/[template]/images/GetFinancing.png"/></a>
                 <div class="panel-footer text-center">
-                  <a href="https://standishstuff.wistia.com/medias/hnexjophts" class="white-text underline uppercase">Watch The Video</a>
+                  <a data-video="hnexjophts" href="https://standishstuff.wistia.com/medias/hnexjophts" class="video_popup white-text underline uppercase">Watch The Video</a>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
               <div class="panel panel-homepage-special panel-bottom">
                 <a  href="/free-salon-space-planning"><img src="/assets/templates/[template]/images/SpacePlanning.png"/></a>
                 <div class="panel-footer text-center">
@@ -160,12 +189,12 @@
         </div>
 
         <!--START: CATEGORY_FOOTER-->
-        <div id="promotion" class="col-md-12">
+        <div id="promotion" class="col-md-12 hidden-xs">
           [CONTENT]
         </div>
         <!--END: CATEGORY_FOOTER-->
 
-        <div id="homepage-poular-videos" class="col-md-12">
+        <div id="homepage-poular-videos" class="col-md-12 hidden-xs">
           <h3 class="coral-text">Watch Our Most Popular Product Videos</h3>
 
           <div class="clearfix"></div>
@@ -173,7 +202,7 @@
 
         </div>
 
-        <div id="homepage-brands" class="col-md-12">
+        <div id="homepage-brands" class="col-md-12 hidden-xs">
 
           <div class="clearfix"></div>
           <div class="homepage-brands"></div>

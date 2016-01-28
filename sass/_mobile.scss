@@ -3,8 +3,10 @@
 @media only screen and (max-width: 61.9375em) {
 	header {
 		min-height: 80px;
-		padding-top: 15px;
+    padding-top: 0;
 	}
+  #mobile-menu {
+  }
 	button.cart, button.large, .button.large {
 		font-size: 1rem;
 		height: 2.875em;
@@ -43,6 +45,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: $neutral-dark;
+    -webkit-box-shadow: 0px 6px 5px -4px rgba(0,0,0,0.61);
+    -moz-box-shadow: 0px 6px 5px -4px rgba(0,0,0,0.61);
+    box-shadow: 0px 6px 5px -4px rgba(0,0,0,0.61);
 
     .input-group {
       .form-control:first-child {
@@ -73,8 +78,11 @@
   
 
   #mobile-menu {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    background-color: rgba(lighten($neutral-dark, 65%),0.73);
+    z-index: 5;
+    width: 100%;
 
     .logo {
       margin: 0;
@@ -293,6 +301,13 @@
 		padding-right: 15px;
 		float: left;
 	}
+  .col-md-10-2 {
+    width: 80%;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+  }
 }
 
 

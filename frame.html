@@ -113,16 +113,23 @@
 		<script charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
 		<!-- Masonry -->
 		<script type="text/javascript" src="assets/templates/[template]/scripts/masonry.pkgd.min.js"></script>
+		<!-- Add Vex -->
+		<script src="/assets/templates/[template]/scripts/vex.combined.min.js"></script>
+		<script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
+		<link rel="stylesheet" href="/assets/templates/[template]/style/vex.css" />
+		<link rel="stylesheet" href="/assets/templates/[template]/style/vex-theme-flat-attack.css" />
 
 		<!--~~~Custom Scripts~~~-->
-		<!-- PRODUCT PAGE script conditional -->
-		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/product-page-new.js"></script>
 		<!-- taylor stuff --> 
 		<script type="text/javascript" src="assets/templates/[template]/scripts/scrollDepth.js"></script>
 		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/hacks.js"></script>
 		<script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
-		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/custom.js"></script>
-		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/menu-behaviors.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/standish.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/standish.mobilemenu.js"></script>
+		<!-- PRODUCT PAGE script conditional -->
+		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/standish.sitelisting.js"></script>
+		<!-- HOME PAGE script conditional -->
+		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/standish.homepage.js"></script>
 		<!-- Set up customer account variable ~ needs to be inline in order to use 3dCart vars -->
 		<script type="text/javascript">
 			var account_greeting = '[account_greeting]';
@@ -174,7 +181,7 @@
 						</div>
 				</div>
 				<div class="header center-block row">
-						<div id="mobile-menu" class="hidden-md hidden-lg col-sm-12">
+						<div id="mobile-menu" class="hidden-md hidden-lg col-sm-12" data-spy="affix" data-offset-top="60" data-offset-bottom="200" style="">
 							<div class="row">
 								<div class="site-branding col-sm-4 col-xs-6">
 									<a href="/">
@@ -193,7 +200,7 @@
 						</div>
 						<div id="mobile-menu-json" class="hidden"></div>
 
-							<div class="container hidden-sm hidden-xs">
+						<div class="container hidden-sm hidden-xs">
 
 								<div class="col-md-4 no-padd">
 									<div class="site-branding col-md-12">
@@ -465,6 +472,10 @@
 						<!--END: FRAME_CATEGORY-->
 
 					<!--END: LEFT_BAR_BLOCKS-->
+					<div id="left-bar-testimonials" class="uppercase">
+						<h4>Testimonials</h4>
+					</div>
+
 				</div>
 				<!--END: LEFT BAR-->
 
@@ -481,91 +492,79 @@
 	
 
 	<footer>
-		<div class="container-fluid">
-			<div id="account-navigation" class="footer-navigation footer-child">
-				<a href="/myaccount.asp?secure" class="account-button login"><i class="fa fa-user"></i> Login <span class="hidden-xs">to your account</span></a>
-				<a href="/affiliate-marketing" class="account-button affiliate"><i class="fa fa-money"></i> <span class="hidden-xs">Become an</span> Affiliate</a>
-				<a href="/contact-us" class="account-button contact"><i class="fa fa-bullhorn"></i> Contact  <span class="hidden-xs">Us</span></a>
+		<div class="container-fluid bottom-container newsletter-signup">
+			<div class="col-xs-12">
+				<h3 class="col-md-6 col-sm-6">Get Deals Strait to Your Inbox!</h3>
+				<div class="col-md-6 col-sm-6" id="newsletter-target"></div>
 			</div>
 		</div>
+
+		
 		<!--START: FRAME_MAILLIST-->
 		<div class="container-fluid footer-content padd-top padd-bottom-10">
-			<div class="col-md-3 col-sm-4 info-block">
-				<div class="col-md-12">
-					<div><img src="assets/templates/[template]/images/standish_salon_goods.png" style="height: 44px;"/></div>
-					<div class="info-block">
-						<address>
-							<a href="https://www.google.com/maps/place/Standish+Salon+Furniture+Showroom/@32.7854244,-96.773118,17z/data=!3m1!4b1!4m2!3m1!1s0x864e98c052142245:0x7a2cd7d8d0feb952">
-							3720 Canton St #104 <br/>
-							Dallas, TX 75226
+
+			<div class="container">
+				<div class="col-md-3 col-sm-4 info-block branding">
+					<div class="col-md-12">
+						<div id="standish-logo"><img src="assets/templates/[template]/images/Standish-logo-footer-mobile-transp.png"/></div>
+						<div class="info-block">
+							<address>
+								<a href="https://www.google.com/maps/place/Standish+Salon+Furniture+Showroom/@32.7854244,-96.773118,17z/data=!3m1!4b1!4m2!3m1!1s0x864e98c052142245:0x7a2cd7d8d0feb952">
+								3720 Canton St #104 <br/>
+								Dallas, TX 75226
+								</a>
+							</address>
+							<span class="bold"><a href="tel:+8882718434">(888) 271-8434</a></span>
+						</div>
+					</div>
+					<div class="col-md-12 padd-top">
+						<div id="social-icons" class="social-icons">
+							<a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest"></i></a>
+							<a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter"></i></a>
+							<a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook"></i></a>
+							<a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div> 
+
+				<div class="col-md-6 col-sm-4 hidden-xs">
+					<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
+				</div>
+
+				<hr class="hidden-sm hidden-xs clearfix"/>
+
+				<div class="col-md-3 col-sm-4 footer-logos">
+					<div class="row">
+						<div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+							<a href="https://probeauty.org/">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBA.png">
 							</a>
-						</address>
-						<a href="/dallas-salon-furniture-showroom.html">Dallas Showroom</a> <br />
-						<a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a> <br />
-						<span class="bold">(888) 271-8434</span>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div id="social-icons" class="social-icons">
-						<a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest-square"></i></a>
-						<a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter-square"></i></a>
-						<a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook-square"></i></a>
-						<a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus-square"></i></a>
+						</div>
+						<div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+							<a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/New_Norton_Logo_White.png">
+							</a>
+						</div>
+						<div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+							<a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/IC.png">
+							</a>
+						</div>
+						<div class="padd-top col-md-12 clearfix"></div>
+						<div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6">
+							<a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
+							<img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+						</div>
+						<div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 center-block text-center">
+							<a href="">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/Bravo-tv-logo.png">
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="col-md-6 col-sm-5">
-				<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
 			
-				<div class="row">
-					<div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4">
-						<h6 class="subheader">Accredited: </h6>
-						<a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
-						<img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
-					</div>
-					<div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
-						<a href="https://probeauty.org/">
-							<h6 class="subheader">Industry Recognized: </h6>
-							<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBA.png">
-						</a>
-					</div>
-					<div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
-						<a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
-							<h6 class="subheader">Award Winning: </h6>
-							<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/IC.png">
-						</a>
-					</div>
-					<div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
-						<a href="">
-							<h6 class="subheader">As Seen On: </h6>
-							<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/Bravo-tv-logo.png">
-						</a>
-					</div>
-					<div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
-						<a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
-							<h6 class="subheader">Secure Browsing: </h6>
-							<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/New_Norton_Logo_White.png">
-						</a>
-					</div>
-					<div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
-						<a href="/american-made-salon-furniture">
-							<h6 class="subheader">U.S. Items: </h6>
-							<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/made-usa-badge-white.png">
-						</a>
-					</div>
-					<div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4">
-						<h6 class="subheader">Secure Checkout: </h6>
-						<img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit_SM_BNPOT_1x.png" alt="PayPal Credit" />
-					</div>
-					
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-3">
-				<h5>Get Awesome Offers & Product News Via Email!</h5>
-				<div id="newsletter-target"></div>
-			</div>
 			<div class="clearfix"></div> 
 		</div>
 		<!--END: FRAME_MAILLIST-->

@@ -1,10 +1,9 @@
-;(function($) {
-  $.SiteListing = (function() {});
-  window.SiteListing = window.SiteListing || {};
+(function( SiteListing, $, undefined ) {
+
 
   /** ~~Start Slider JS -- Add existing images to
   /* main slider then add wistia and instagram ~~ */
-  window.SiteListing.Slider = window.SiteListing.Slider || {};
+  SiteListing.Slider = SiteListing.Slider || {};
 
   SiteListing.Slider.init = function() {
     var dfd = $.Deferred();
@@ -525,24 +524,29 @@
     }
   }
 
-  // ---- INITIALIZE EVERYTHING ---- //
+  
+
+})(window.Standish.SiteListing = window.Standish.SiteListing || {}, jQuery);
+
+// ---- INITIALIZE EVERYTHING ---- //
+(function($) {
   $(function() {
     $('#loadingDiv').height($('.product_left').height());
 
-    var sitelisting = SiteListing.Slider.init().then(function() {
+    var sitelisting = Standish.SiteListing.Slider.init().then(function() {
       $('.main-slider').show();
       $('.sub-slider').show();
       $('#loadingDiv').hide();
     });
 
-    SiteListing.salePrice();
-    SiteListing.doBadges();
-    SiteListing.commenceGrid();
-    SiteListing.getBrand();
-    SiteListing.getAvailability();
-    SiteListing.productDetailsFormat();
-    SiteListing.changeColors();
-    SiteListing.changeColorsSlides();
+    Standish.SiteListing.salePrice();
+    Standish.SiteListing.doBadges();
+    Standish.SiteListing.commenceGrid();
+    Standish.SiteListing.getBrand();
+    Standish.SiteListing.getAvailability();
+    Standish.SiteListing.productDetailsFormat();
+    Standish.SiteListing.changeColors();
+    Standish.SiteListing.changeColorsSlides();
 
     // Dont activate these for now
     // SiteListing.financing();
@@ -551,5 +555,4 @@
 
 
   });
-
-})(jQuery)
+} (jQuery));
