@@ -395,9 +395,6 @@
   width: 100%;
   max-height: 510px;
 }
-.listing button {
-  width: 100%;
-}
 .listing p {
   margin: 5px 0;
 }
@@ -409,7 +406,6 @@
   text-decoration: line-through;
 }
 .listing .button {
-  width: 100%;
   position: relative;
   bottom: 0;
 }
@@ -886,7 +882,7 @@ h4.info-header {
   p {
     font-size: larger;
     text-align: center;
-    a {padding-left: 5px;}
+    a {padding: 11px;}
   }
 }
 

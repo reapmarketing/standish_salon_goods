@@ -23,7 +23,7 @@
 
     // IMPORTANT Slick 'initialized' needs to be binded before slick is called on the element
     $('.sub-slider').on('init', function(event, slick) {
-      var mainSlides = [];
+      var mainSlides = [], desHeight = $('#listing_main_image_link img').height();
 
       $(slick['$slides']).each(function(i,v) {
 
@@ -31,7 +31,7 @@
             origImgLoaded = $('.main-slider').find('img:first-of-type').attr('data-href');
 
         if (typeof imgHref !== 'undefined' && imgHref !== origImgLoaded) {
-          var slideElement = '<a href="'+imgHref+'" class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx=400&maxy=0" align="middle" border="0" id="large" name="large" alt="" /></a>';
+          var slideElement = '<a class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx=400&maxy=0" align="middle" border="0" id="large" name="large" alt="" style="max-height: 375px;"/></a>';
           $('.main-slider').slick('slickAdd', slideElement);
         }
       });
@@ -53,22 +53,22 @@
       variableWidth: true,
       centerMode: false,
       asNavFor: '.main-slider',
-      prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev">Previous</button>',
-      nextArrow: '<button type="button" class="fa fa-chevron-right slick-next">Next</button>',
+      prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev" style="background: white!important;">Previous</button>',
+      nextArrow: '<button type="button" class="fa fa-chevron-right slick-next" style="background: white!important;">Next</button>',
       focusOnSelect: true
     });
   }
   SiteListing.Slider.addVideoToSlider = function() {
     var video_embed_codes = '';
 
-    if( embed_data = $( '.field10' ).data( 'field10' ) ) {
-      video_embed_codes = embed_data.split( ' ' );
-    }
-
     function getData(embed_code) {
       var baseUrl = "https://fast.wistia.com/oembed/?url=";
       var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
       return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
+    }
+
+    if( embed_data = $( '.field10' ).data( 'field10' ) ) {
+      video_embed_codes = embed_data.split( ' ' );
     }
 
     /* ~~ Variable Declaration ~~ */
@@ -92,31 +92,32 @@
         }
         $.each( video_data, function( i, video ) {
           /* Add videos to sub slick slider */
-          video_markup_main = '';
-          video_markup_main += '<a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
-          video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
-          video_markup_main +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
-          video_markup_main += '</a>';
+          if (typeof video !== 'undefined') {
+            video_markup_main = '';
+            video_markup_main += '<a class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
+            video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
+            video_markup_main +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
+            video_markup_main += '</a>';
 
-          $('.main-slider').slick('slickAdd', video_markup_main).slick('setPosition');
+            $('.main-slider').slick('slickAdd', video_markup_main).slick('setPosition');
 
-          /* Add videos to sub slick slider */
-          video_markup_sub = '';
-          video_markup_sub += '<a data-caption="'+ video.title +'" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file='+ video.thumbnail_url +'&amp;maxx=400&amp;maxy=0">';
-          video_markup_sub +=  '<img border="0" src="'+ video.thumbnail_url + '&' + 'image_crop_resized=75x75" alt="" name="" />';
-          video_markup_sub += '</a>';
+            /* Add videos to sub slick slider */
+            video_markup_sub = '';
+            video_markup_sub += '<a data-caption="'+ video.title +'" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file='+ video.thumbnail_url +'&amp;maxx=400&amp;maxy=0">';
+            video_markup_sub +=  '<img border="0" src="'+ video.thumbnail_url + '&' + 'image_crop_resized=75x75" alt="" name="" />';
+            video_markup_sub += '</a>';
 
-          $('.sub-slider').slick('slickAdd', video_markup_sub).slick('setPosition');
+            $('.sub-slider').slick('slickAdd', video_markup_sub).slick('setPosition');
 
-          /* Add videos to page*/
-          video_markup_product_page = '';
-          video_markup_product_page += '<div class="padd-top col-md-4 col-sm-4"><a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
-          video_markup_product_page += '<i class="fa fa-sm fa-play play-button" style="font-size: 3em;position: absolute;text-decoration: none;"></i>';
-          video_markup_product_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
-          video_markup_product_page += '</a></div>';
+            /* Add videos to page*/
+            video_markup_product_page = '';
+            video_markup_product_page += '<div class="padd-top col-md-4 col-sm-4"><a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
+            video_markup_product_page += '<i class="fa fa-sm fa-play play-button" style="font-size: 3em;position: absolute;text-decoration: none;"></i>';
+            video_markup_product_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
+            video_markup_product_page += '</a></div>';
 
-          $('.product-videos').append(video_markup_product_page);
-
+            $('.product-videos').append(video_markup_product_page);
+          }
         });
 
         $('.video_popup').on( 'click', function( e ) {
@@ -163,10 +164,7 @@
             // console.log(instaHeight);
             /* Add instagram to main slick slider */
             var instagram_markup_main = '';
-            instagram_markup_main += '<a href="'+v.link+'" class="'+classname+'" data-video-insta="'+ dataVideo +'" id="listing_main_image_link">';
-            if (v.type === "video") {
-              instagram_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
-            }
+            instagram_markup_main += '<a class="'+classname+'" data-video-insta="'+ dataVideo +'" id="listing_main_image_link">';
             instagram_markup_main +=  '<img itemprop="image" src="'+ v.images.standard_resolution.url +'" align="middle" border="0" id="large" name="large" alt="'+  v.caption.text +'" style="max-height:'+instaHeight+'px;" data-href="'+ v.images.standard_resolution.url +'" />';
             instagram_markup_main += '</a>';
             $('.main-slider').slick('slickAdd', instagram_markup_main);
@@ -234,11 +232,6 @@
         'title': '50% Longer Iron Life',
         'class': 'iron-life',
         'tooltip': 'On many of our stations, the appliance holders are made of iron, and powder-coated steel. Even better, they\'re ventilated.'
-      },
-      'no-sales-tax': {
-        'title': 'No Sales Tax',
-        'class': 'no-sales-tax',
-        'tooltip': ''
       },
       'ten-thousand-rub': {
         'title': '10,000 Rub Count',
@@ -349,7 +342,7 @@
         if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
           //console.log( badgetext[badgeslug].title );
           //href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '"
-          $badges_list.append( '<a href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" data-toggle="popover" data-placement="right" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].title + '"><i></i><div class="hidden-sm hidden-md hidden-lg badge-text">' + badgetext[badgeslug].title + '</div></a>' );
+          $badges_list.append( '<a target="_blank" href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" data-toggle="popover" data-placement="right" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].title + '"><i></i><div class="hidden-sm hidden-md hidden-lg badge-text">' + badgetext[badgeslug].title + '</div></a>' );
         }     
       });
 
@@ -485,22 +478,26 @@
 
   // ---- IMAGE COLOR CHANGING FEATURE -- TITLE ---- //
   SiteListing.changeColors = function() {
-    color_list = [];
-    $('.showcase a').each( function( i, v ) {
-      if( $(v).data('caption') ) {
-        color_list.push( $(v).data('caption').trim().toLowerCase() );
-      }
-    });
+    
   }
 
   // ---- IMAGE COLOR CHANGING FEATURE -- SLIDESHOW ---- //
   SiteListing.changeColorsSlides = function() {
+    color_list = [];
+    $('.sub-slider a').each( function( i, v ) {
+      if( $(v).data('caption') ) {
+        color_list.push( $(v).data('caption').trim().toLowerCase() );
+      }
+    });
+
     $('.option-row').each( function( i, v ) {
-      if( $(v).find('label').text().toLowerCase().indexOf("color") ) {
+      var findColor = $(v).find('label').text().toLowerCase().indexOf("color");
+
+      if( findColor > 0 ) {
         $(v).on('change', function( e ) {
-          // image_click( $(v).find('select')[0].selectedIndex + 1 );  // Match Index
           current_color_text = $(v).find('select option:selected').text().trim().toLowerCase();
-          image_click( $.inArray( current_color_text, color_list ) + 1 );
+          // Change Slick Slide
+          $('.sub-slider').slick('slickGoTo', $.inArray( current_color_text, color_list ));
         });
       }
     });
@@ -531,22 +528,7 @@
 // ---- INITIALIZE EVERYTHING ---- //
 (function($) {
   $(function() {
-    $('#loadingDiv').height($('.product_left').height());
-
-    var sitelisting = Standish.SiteListing.Slider.init().then(function() {
-      $('.main-slider').show();
-      $('.sub-slider').show();
-      $('#loadingDiv').hide();
-    });
-
-    Standish.SiteListing.salePrice();
-    Standish.SiteListing.doBadges();
-    Standish.SiteListing.commenceGrid();
-    Standish.SiteListing.getBrand();
-    Standish.SiteListing.getAvailability();
-    Standish.SiteListing.productDetailsFormat();
-    Standish.SiteListing.changeColors();
-    Standish.SiteListing.changeColorsSlides();
+    
 
     // Dont activate these for now
     // SiteListing.financing();

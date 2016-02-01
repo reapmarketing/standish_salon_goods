@@ -13,11 +13,11 @@
 
 			// SearchLight - 3DCart Suggestive Search 
 			// Check for the element
+
 			if( jQuery('#searchlight').length ) {
 				// See if the function loaded properly
 				if( typeof jQuery('#searchlight').searchlight === 'function' ) {
 					jQuery('#searchlight').searchlight('/search_quick.asp');
-					$('.searchlight-balloon').css({'top': '80px' });
 				} else {
 					console.log( 'There was an issue loading the searchlight scripts' );
 				}

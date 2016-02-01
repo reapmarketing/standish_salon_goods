@@ -1,4 +1,4 @@
-/* Homepage custom class */
+/* Homepage custom class -- activated in standish.templateswitcher */
 (function( Homepage, $, undefined ) {
 
   // ---- ADD PRICE SALE CORNERTAG ---- //
@@ -83,7 +83,7 @@
             var video = $(this).data('video');
             // console.log(video_data[video]);
             vex.open({
-              content: video_data.html,
+              content: video_data[video].html,
               contentCSS: { 'padding': '0', 'width': '960px' }
             });
           });
@@ -165,7 +165,8 @@
 
           $.each( sliderStuff, function( i, video ) {
             if ( sliderStuff[i].image !== '') {
-              sliderHtml = '<a href class="img-container video_popup" style="width:'+desWidth+'px;" data-video="'+ i +'">';
+              
+              sliderHtml = '<a href class="img-container video_popup_hoz_slider" style="width:'+desWidth+'px;" data-video="'+ i +'">';
               sliderHtml += '<img class="img-responsive" style="width:'+desWidth+'px;" src="'+sliderStuff[i].image+'"/>';
               sliderHtml += '</a>';
               // sliderHtml = '<a href="#"><img src="'+image+'" class="img-responsive"/></a>';
@@ -179,10 +180,9 @@
             $('.hoz-slider-sub').slick('slickAdd', sliderNavHtml);
           });
 
-          $('.video_popup').on( 'click', function( e ) {
+          $('.video_popup_hoz_slider').on( 'click', function( e ) {
             e.preventDefault();
             var video = $(this).data('video');
-            // console.log(video_data[video]);
             vex.open({
               content: sliderStuff[video].video_data.html,
               contentCSS: { 'padding': '0', 'width': '960px' }
@@ -194,77 +194,62 @@
   }
 
   Homepage.addTestimonials = function() {
-    var url = "https://spreadsheets.google.com/feeds/list/1Sk_ITtWMcwRpjbw4stHpyRrQPZ9fdGMqk2hOCqWPa2Q/od6/public/values?alt=json-in-script",
-      video_embed_codes = [];
 
-    function getVideos(video_embed_codes, data) {
-      /* ~~ Variable Declaration ~~ */
-      var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml;
 
-      if( video_embed_codes ) {
-        $.each( video_embed_codes, function( i, embed_code ) {
-          if (embed_code !== "") {
-            AJAX.push( Homepage.getData( embed_code ) );
-          }
-        });
 
-        $.when.apply($, AJAX).done(function() {
-          for(var i = 0; i < AJAX.length; i++){
-            if( arguments[i].length ) {
-              video_data[video_embed_codes[i]] = arguments[i][0];
-            } else {
-              video_data[video_embed_codes[i]] = arguments[i][0];
-            }
-          }
-          console.log(data);
-          $.each( video_data, function( i, video ) {
-            video_markup_home_page = '';
-            video_markup_home_page += '<div class="padd-bottom"><a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
-            video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 2em;position: absolute;text-decoration: none;"></i>';
-            video_markup_home_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
-            video_markup_home_page += '</a><p></p></div>';
+    var url = "https://spreadsheets.google.com/feeds/list/1Sk_ITtWMcwRpjbw4stHpyRrQPZ9fdGMqk2hOCqWPa2Q/od6/public/values?alt=json-in-script";
 
-            $('#left-bar-testimonials').append(video_markup_home_page);
-          });
-
-          $('.video_popup').on( 'click', function( e ) {
-            e.preventDefault();
-            var video = $(this).data('video');
-            // console.log(video_data[video]);
-            vex.open({
-              content: video_data.html,
-              contentCSS: { 'padding': '0', 'width': '960px' }
-            });
-          });
-        });
-        
-      }
-    }
-    //** Run the ajax to get the ID's **//
+    //** Run the ajax to get the Brands's **//
     $.ajax({
       url:url,
       dataType:"jsonp",
       success:function(data) {
+        /* ~~ Variable Declaration ~~ */
+        var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml, sliderStuff = {}, sliderStuff = [];
 
         $(data.feed.entry).each(function(i,v) {
-          video_embed_codes.push(v['gsx$videoid']['$t']);
+          // console.log(v);
+          var vidid = v['gsx$videoid']['$t'],
+              vidname = v['gsx$name']['$t'];
+          sliderStuff.push({name:vidname, videoid: vidid});
         });
-        getVideos(video_embed_codes, data.feed.entry);
 
+        $.each( sliderStuff, function( i, slider ) {
+          if (slider.videoid !== "") {
+            AJAX.push( Homepage.getData( slider.videoid ) );
+          }
+        });
+        //* All the AJAX has loaded *//
+        $.when.apply($, AJAX).done(function() {
+          for(var i = 0; i < AJAX.length; i++){
+            if( arguments[i].length ) {
+              sliderStuff[i].video_data = arguments[i][0];
+            } else {
+              sliderStuff[i].video_data = arguments[i][0];
+            }
+          }
+          $.each( sliderStuff, function( i, video ) {
+            // console.log(video);
+            video_markup_home_page = '';
+            video_markup_home_page += '<div class="padd-bottom"><a href="#" class="col-md-12 no-padd video_popup_testimonial" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
+            video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 1.5em;position: absolute;text-decoration: none;"></i>';
+            video_markup_home_page +=  '<img itemprop="image" src="'+ video.video_data.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.name +'" width="100%" data-href="'+ video.video_data.thumbnail_url +'" />';
+            video_markup_home_page += '</a><p style="letter-spacing: -.05em;">'+ video.name +'  <i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i></p></div>';
+            $('#left-bar-testimonials').append(video_markup_home_page);
+          });
+          $('#left-bar-testimonials').append('<a target="_blank" href="http://www.standishsalongoods.com/new-salon-equipment-products?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453997524824.1454007716376.27&__hssc=125570901.12.1454007716376&__hsfp=155947995" class="btn-block btn btn-light">See More</a>');
+
+          $('.video_popup_testimonial').on( 'click', function( e ) {
+            e.preventDefault();
+            var video = $(this).data('video');
+            vex.open({
+              content: sliderStuff[video].video_data.html,
+              contentCSS: { 'padding': '0', 'width': '960px' }
+            });
+          });
+        });
       }
     });
   }
 
 })(window.Standish.Homepage = window.Standish.Homepage || {}, jQuery);
-
-// Activate My Class
-(function($) {
-  // Document Ready
-  $(function() {
-    Standish.Homepage.homepageHozSlider();
-    Standish.Homepage.videosFeed();
-    Standish.Homepage.videosFeedSlider();
-    Standish.Homepage.homepageBrands();
-    Standish.Homepage.addTestimonials();
-  });
-} (jQuery));

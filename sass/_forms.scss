@@ -461,6 +461,7 @@ input.form-control {
 */
 
 /* ~~~ Hubspot Stuff ~~~ */
+
 .hs-input {
   color: #a9a9a9;
   font-size: 14px;
@@ -483,17 +484,33 @@ textarea.hs-input {
   padding: 0 10px;
   line-height: 1.5em;
 }
+#hbspt-form-1454087640129 {
+  background: transparent none !important;
+  padding: 0 none !important;
+
+}
+
 .main_content .hbspt-form {
-  background: $hbspt-form-bkg;
+  form {
+    width: 65%;
+    padding: 15px 40px 40px 40px;
+    background: $hbspt-form-bkg;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    float: left;
+    border-bottom: 1px solid $primary-gray;
+
+    .hs-form-field {
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+  }
+
   width: 100%;
-  margin-bottom: 10px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  padding: 15px 40px 40px 40px;
-  float: left;
-  border-bottom: 1px solid $primary-gray;
+  margin-bottom: 10px;  
 }
 
 .main_content .hbspt-form .hs-form-field, .main_content .hbspt-form .hs_submit {

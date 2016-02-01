@@ -4,7 +4,7 @@
     <!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
     <script type="text/javascript">$('.left-bar').show();</script>
     <div class="col-md-10">
-        <div class="col-md-12 search-container hidden-sm hidden-xs">
+        <div class="col-md-12 search-container hidden-sm hidden-xs relative relative">
             <div class="col-md-4 pull-right search">
               <form method="get" name="searchForm" action="search.asp" _lpchecked="1">
                   <div class="input-group">
@@ -50,8 +50,8 @@
         <!--END: CATEGORY_HEADER-->
         <div class="col-md-12 hidden-md hidden-sm hidden-lg filters">
             <br/>
-            <div class="fancy-select-special form-group col-md-12">
-                <i class="fa fa-angle-down fa-lg fa-first"></i>
+            <div class="fancy-select-special form-group col-md-12" style="overflow: hidden;">
+                <i class="fa fa-angle-down fa-2x fa-first"></i>
                 <h4 class="uppercase absolute">View Products</h4>
                 <select class="input-lg" onchange="location = this.options[this.selectedIndex].value;">
                   <option value="">View Products</option>
@@ -133,31 +133,18 @@
                       <!-- <button>Add to Cart</button> -->
                       <!-- [category_buyitlink] -->
                       </div>
-                      <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.locastion='product.asp?itemid=[catalogid]'"><i class="fa fa-eye"></i> See Details</button>
+                      <div class="btn-group" role="group" aria-label="..." style="width:100%;">
+                        <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.location='product.asp?itemid=[catalogid]#product-videos-header'" style="width:50%;" alt="Product Videos"><i class="fa fa-play"></i></button>
+                        <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.location='product.asp?itemid=[catalogid]#product-videos-header'" alt="View Product" style="width:50%;border-left: 1px solid white;"><i class="fa fa-eye"></i></button>
+                      </div>
                     </div>
                 <!--END: ITEM_TEMPLATE_0-->
             <!--END: CATEGORY_ITEMS-->
         <!--END: FEATURE_MENU-->
 
         <div class="clearfix"></div>
-        <div id="homepage-badges-list" class="row hidden-xs">
-          <h3 class="coral-text col-md-12">Why Buy from Standish?</h3>
-          <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.30.1453752468526&amp;__hsfp=3596893005#made-usa" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
-
-          <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#free-shipping" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
-
-          <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#service" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
-
-          <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#inspected" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
-
-          <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#warranty" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
-
-          <a href="http://www.standishsalongoods.com/quality?__hstc=125570901.ae6c2d33cf5f4becfdf4a469820531a4.1452633066594.1453736494992.1453752468526.19&amp;__hssc=125570901.33.1453752468526&amp;__hsfp=3596893005#returns" style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-returns" title="No Hassle Return Policy"><i></i><div class="badge-text"><small>No Hassle Return Policy</small></div></a>
-        </div>
-
-        <div class="clearfix"></div>
         <div id="homepage-featured-panel-list" class="col-md-12 hidden-xs">
-          <h3 class="coral-text">From Here you Can...</h3>
+          <h3 class="coral-text">From Here You Can...</h3>
 
           <div class="clearfix"></div>
           <div class="row">
@@ -173,7 +160,7 @@
               <div class="panel panel-homepage-special panel-bottom">
                 <a href="https://standishstuff.wistia.com/medias/hnexjophts"><img src="/assets/templates/[template]/images/GetFinancing.png"/></a>
                 <div class="panel-footer text-center">
-                  <a data-video="hnexjophts" href="https://standishstuff.wistia.com/medias/hnexjophts" class="video_popup white-text underline uppercase">Watch The Video</a>
+                  <a data-video="hnexjophts" href="/salon-equipment-financing" class="video_popup white-text underline uppercase">Watch The Video</a>
                 </div>
               </div>
             </div>

@@ -13,7 +13,6 @@
 		<!-- jQuery -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/templates/[template]/scripts/jquery.migrate.js"></script>
-		<script type="text/javascript" src="assets/templates/[template]/scripts/jquery.cycle2.min.js"></script>
 
 		<!-- OPTIMIZELY note:needs to stay in header in order to work properly -->
 		<script src="//cdn.optimizely.com/js/2743921241.js"></script>
@@ -107,8 +106,8 @@
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 		<!-- Instafeed -->
 		<script type="text/javascript" src="assets/templates/[template]/scripts/instafeed.js"></script>
-		<!-- 3d quick search search the site -->
-		<script type="text/javascript" src="assets/templates/[template]/scripts/3dquicksearch.js"></script>
+		<!--  quick search search the site -->
+		<script type="text/javascript" src="assets/templates/common/quicksearch/jquery.quicksearch.js"></script>
 		<!-- Hubspot Form Script ~ necessary -->
 		<script charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
 		<!-- Masonry -->
@@ -130,6 +129,8 @@
 		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/standish.sitelisting.js"></script>
 		<!-- HOME PAGE script conditional -->
 		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/standish.homepage.js"></script>
+		<!-- Template Switcher -->
+		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/standish.templateswitcher.js"></script>
 		<!-- Set up customer account variable ~ needs to be inline in order to use 3dCart vars -->
 		<script type="text/javascript">
 			var account_greeting = '[account_greeting]';
@@ -489,18 +490,34 @@
 
 	<!-- Footer -->
 
-	
-
 	<footer>
+	  <div class="clearfix"></div>
+	  <div class="container">
+	  	<div class="col-md-12 center-block">
+			  <div id="homepage-badges-list" class="row hidden-xs">
+			    <h3 class="coral-text col-md-12">Why Buy from Standish?</h3>
+			    <a class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
+
+			    <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
+
+			    <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
+
+			    <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
+
+			    <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
+
+			    <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-returns" title="No Hassle Return Policy"><i></i><div class="badge-text"><small>No Hassle Return Policy</small></div></a>
+			  </div>
+		  </div>
+	  </div>
+	  <div class="clearfix"></div>
+
 		<div class="container-fluid bottom-container newsletter-signup">
 			<div class="col-xs-12">
-				<h3 class="col-md-6 col-sm-6">Get Deals Strait to Your Inbox!</h3>
+				<h3 class="col-md-6 col-sm-6">Get Deals Straight to Your Inbox!</h3>
 				<div class="col-md-6 col-sm-6" id="newsletter-target"></div>
 			</div>
 		</div>
-
-		
-		<!--START: FRAME_MAILLIST-->
 		<div class="container-fluid footer-content padd-top padd-bottom-10">
 
 			<div class="container">
@@ -526,13 +543,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="clearfix"></div> 
 
-				<div class="col-md-6 col-sm-4 hidden-xs">
+				<div class="col-md-6 hidden-sm hidden-xs">
 					<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
 				</div>
 
-				<hr class="hidden-sm hidden-xs clearfix"/>
+				<hr class="hidden-md hidden-lg clearfix"/>
 
 				<div class="col-md-3 col-sm-4 footer-logos">
 					<div class="row">
@@ -567,8 +583,10 @@
 			
 			<div class="clearfix"></div> 
 		</div>
-		<!--END: FRAME_MAILLIST-->
 	</footer>
+
+	<div class="container-fluid bottom-footer text-center standishgray padd-top"><p class="">&copy; 2015-2016 Standish Salon Goods. All rights reserved.</p></div>
+
 	<nav id="mobile-menu" style="display:none;">
 	</nav>
 	<!-- End of Footer Content -->
