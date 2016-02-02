@@ -174,13 +174,17 @@ $( function(){
                 </p>
               <!--END: ITEMPRICE-->
               <!-- [product_onsale] -->
+              <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
+
               <!--START: SALEPRICE-->
-                <p class="row price-wrapper"><span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
+                <p id="price" itemprop="price" content="[price]" class="row price-wrapper"><span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
               <!--END: SALEPRICE-->
               <!--START: SAVINGS-->
                 <!-- [product_savings] -->
-                <p id="savings" class="coral-text italic bold row small"><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
+                <p id="savings" class="coral-text italic bold row small "><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
               <!--END: SAVINGS-->
+              <p id="financing-add" class="dimgray-text row small hidden text-center"> <a href="/financing">Or as low as <span class="financing-price"></span>/month!</a></p>
+
               <div class="clearfix"></div>
               <!--END: pricing-->
             </div><!--#pricing-block-->

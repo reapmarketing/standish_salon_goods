@@ -84,12 +84,14 @@
       $.when.apply($, AJAX).done(function(){
 
         for(var i = 0; i < AJAX.length; i++){
+            
           if( arguments[i].length ) {
             video_data[video_embed_codes[i]] = arguments[i][0];
           } else {
-            video_data[video_embed_codes[i]] = arguments[i][0];
+            video_data[video_embed_codes[i]] = arguments[0];
           }
         }
+        console.log(video_data);
         $.each( video_data, function( i, video ) {
           /* Add videos to sub slick slider */
           if (typeof video !== 'undefined') {
@@ -516,8 +518,9 @@
 
     // console.log( "PRICE: ", price, yearly_interest, total_interest, payment );
     // Add Financing option link
-    if( price > 1000 ) {
-      $(".pricebox .left-price").append('<a href="/financing.html" class="financing">* or as low as $' + payment + '/month</a>');
+    if( Number(price) > 1000 ) {
+      $('#financing-add').removeClass('hidden');
+      $("#financing-add .financing-price").append('$' + payment);
     }
   }
 

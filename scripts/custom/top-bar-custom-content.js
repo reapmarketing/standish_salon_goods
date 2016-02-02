@@ -14,6 +14,7 @@
 			// SearchLight - 3DCart Suggestive Search 
 			// Check for the element
 
+			/*
 			if( jQuery('#searchlight').length ) {
 				// See if the function loaded properly
 				if( typeof jQuery('#searchlight').searchlight === 'function' ) {
@@ -21,7 +22,7 @@
 				} else {
 					console.log( 'There was an issue loading the searchlight scripts' );
 				}
-			}
+			}*/
 
 			// Sidebar Customizations
 			// console.log( $(this).find('li').length );
