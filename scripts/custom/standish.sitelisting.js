@@ -91,7 +91,7 @@
             video_data[video_embed_codes[i]] = arguments[0];
           }
         }
-        console.log(video_data);
+        // console.log(video_data);
         $.each( video_data, function( i, video ) {
           /* Add videos to sub slick slider */
           if (typeof video !== 'undefined') {

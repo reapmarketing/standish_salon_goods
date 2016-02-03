@@ -41,14 +41,14 @@
 		
 		<link rel="stylesheet" href="assets/templates/[template]/style/jquery.sidr.light.css">
 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 		<!-- <link rel="stylesheet" href="assets/templateplates/[template]/style/main.{{ VERSION }}.min.css?cachebuster=38924935792" /> --> 
 
 		<!--{{ VERSION }}.min -->
-		<!--<link rel="stylesheet" href="assets/templates/[template]/style/main.{{ VERSION }}.min.css?cachebuster=89327498273" />-->
-
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/templates/[template]/style/main.css" />
+		<link rel="stylesheet" href="assets/templates/[template]/style/main.{{ VERSION }}.min.css?cachebuster=89327498273" />
+		<!--DEV <link rel="stylesheet" href="assets/templates/[template]/style/main.css" /> --> 
 
 		<link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
 
@@ -149,7 +149,7 @@
 		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/hubspot-newsletter-sign-up-form.js"></script>
 		
 		<!-- Custom ajax script that takes in json from custom top bar content MOBILE -->
-		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/top-bar-custom-content.js"></script>
+		<script type="text/javascript" src="assets/templates/[template]/scripts/custom/template-slug.js"></script>
 		
 
 	</head>
@@ -239,7 +239,6 @@
 						<ul class="sub-menu">
 							<li><a title="Salon Equipment Sales and Promotions" href="/standish-salon-equipment-sale">Promotions and Discounts</a></li>
 							<li><a title="Salon Furniture Items on Sale" href="/salon-furniture-sale-and-deals">Items on Sale</a></li>
-							<li><a title="We Don't Charge Tax" href="/we-pay-your-tax">We Don't Charge Tax</a></li>
 							<li><a title="Salon space planning" href="/free-salon-space-planning">FREE Layout & Space Planning</a></li>
 							<li><a title="Salon Equipment Checklist" href="/free-salon-equipment-checklist">FREE Salon Equipment Checklist</a></li>
 							<li><a title="Guide to Starting a Salon" href="/guide-to-starting-a-salon">FREE Guide to Starting a Salon</a></li>
@@ -544,8 +543,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-6 hidden-sm hidden-xs">
-					<!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
+				<div id="global-footer" class="col-md-6 hidden-sm hidden-xs">
 				</div>
 
 				<hr class="hidden-md hidden-lg clearfix"/>
@@ -554,17 +552,17 @@
 					<div class="row">
 						<div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
 							<a href="https://probeauty.org/">
-								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBA.png">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBASymbol.png">
 							</a>
 						</div>
 						<div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
 							<a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
-								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/New_Norton_Logo_White.png">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/SecureBrowsingSymbol.png">
 							</a>
 						</div>
 						<div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
 							<a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
-								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/IC.png">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/AwardWinningSymbol.png">
 							</a>
 						</div>
 						<div class="padd-top col-md-12 clearfix"></div>
@@ -574,7 +572,7 @@
 						</div>
 						<div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 center-block text-center">
 							<a href="">
-								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/Bravo-tv-logo.png">
+								<img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/BravoSymbol.png">
 							</a>
 						</div>
 					</div>

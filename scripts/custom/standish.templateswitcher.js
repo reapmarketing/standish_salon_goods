@@ -77,8 +77,4 @@
   }
   
 
-  $(function() {
-    console.log(Standish);
-
-  });
 })(jQuery);

@@ -18,7 +18,7 @@
   },
   "name": "standish-responsive",
   "description": "Template Identification",
-  "version": "1.0.1",
+  "version": "2.0",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
