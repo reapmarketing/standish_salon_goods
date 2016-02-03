@@ -1,3 +1,6 @@
+
+
+/// ----- Fonts -----///
 $default-font: 'PT Sans', Arial, Helvetica, sans-serif;
 
 $default-font-narrow: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
@@ -6,6 +9,10 @@ $default-font-serif: 'PT Serif', 'Times New Roman', Times, serif;
 
 $special-font: $default-font;
 
+
+
+/// ----- Colors -----///
+$beige: #FBFBEF;
 
 /* Pink */
 $primary-color: #ff7f50;
@@ -17,20 +24,35 @@ $btn-color: $primary-color;
 //*Color used for top-bar*// 
 $accent-color: rgb(255, 183, 157);
 
-// lime green
+// lime green/mustard green color
 $highlight-color: #dfe133;
 
+$blue-link: #678CCB;
+
+// top bar ~ hello bar
+$hello-bar-bkg-color: #60437D;
+
+// new product page design colors -- not consistent...
+$salmon-highlight: #ff7f50;
+$product-border: #E0E0E0;
+$product-inside: rgb(240, 240, 240);
+
+// end new product page page
 $btn-highlight: $primary-color-btn-highlight;
 
 $secondary-btn-color: lighten(#696969, 10%);
 $secondary-btn-highlight: lighten(#696969, 30%);
 
 $light-gray: lighten(#696969, 10%);
+
+$xlightGrey: rgb(249, 249, 249);;
 // Standish Green
 $secondary-color: #c2d3bd;
 $standishgreen: $secondary-color;
 
 $hbspt-form-bkg: #C2D3BD;
+
+$dark-text: #4D4D4D;
 // Footer Color
 $neutral-dark: #4d4d4d;
 $standishgray: $neutral-dark;

@@ -1,17 +1,52 @@
 /* Stuff that goes in the footer */
 
-.newsletter-signup {
-  height: 350px;
-  background-color: $neutral-dark;
+.bottom-container {
+  background: #60437D url("../images/congruent-pentagon-pattern-long.jpg") repeat;
+}
+
+
+
+.container-fluid.newsletter-signup {
+  #newsletter-signup {
+    padding-top: 21px;
+  }
+  #newsletter-target {
+    padding-top: 1em;
+  }
+  .hs_email, .hs_submit {
+    width: 50%;
+    float: left;
+  }
+  .hs_email {
+    label {
+      display: none;
+    }
+    input {
+      width: 100%;
+    }
+  }
+  .hs_submit {
+    text-align: left;
+    padding-left: 15px;
+    input {
+      width: 30%;
+      padding: 7px 20px;
+    }
+  }
+  h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: right;
+    padding: 0 0 0 0;
+    letter-spacing: 2px;
+  }
+
+  padding: 20px!important;
   width: 100%;
-  color: #fff;
+  color: $primary-gray;
   text-align: center;
-  margin-top: 70px;
 }
-.newsletter-signup h5 {
-  padding: 50px 0 0 0;
-  letter-spacing: 2px;
-}
+.newsletter-signup 
 .newsletter-signup input {
   display: block;
   width: 320px;
@@ -41,35 +76,6 @@
 }
 .social-icons a:hover {
 }
-.footer-navigation {
-  height: 50px;
-}
-.account-button {
-  display: block;
-  float: left;
-  width: 33.33%;
-  height: 50px;
-  font-size: 1.125rem;
-  line-height: 50px;
-  font-family: $default-font;
-  text-decoration: none;
-  text-align: center;
-}
-.account-button:hover {
-  text-decoration: underline;
-}
-.account-button.login {
-  background: $primary-color;
-  color: white;
-}
-.account-button.affiliate {
-  background: $secondary-color;
-  color: $neutral-dark;
-}
-.account-button.contact {
-  background: #f5f5dc;
-  color: $neutral-dark;
-}
 
 /* Footer Main styles */
 footer {
@@ -81,7 +87,7 @@ footer {
     }
   }
   h1, h2, h3, h4, h5, a, a:link, a:visited, a:hover, a.active, .bold, .bold {
-    color: $secondary-color;
+    color: $neutral-dark;
   }
   h6 {
     min-height: 35px;
@@ -92,17 +98,61 @@ footer {
     max-height: 85px;
   }
   p, ul, li {
-    color: lighten($primary-gray, 20%)
+    color: $neutral-dark;
   }
-  
+  address {
+    font-style: italic;
+  }
+  .info-block.branding {
+    #standish-logo {
+      img {
+        height: 34px;
+      }
+    }
+  }
 }
 footer .container-fluid, .footer-child {
-  background-color: $neutral-dark;
-  border-top: 1px solid $neutral-dark;
+  border-top: 1px solid lighten($neutral-dark, 10%);
 }
 footer .container-fluid.footer-content {
-  background-color: $neutral-dark;
+  background-color: rgba(lighten($neutral-dark, 65%),0.73);
+  padding: 4.5em 0 !important;
 }
+
+@media only screen and (max-width : $xs) {
+  footer .container-fluid.footer-content {
+    padding: 1em 0 !important;
+  }
+  .container-fluid.newsletter-signup h3 {
+    text-align: center !important;
+  }
+  .container-fluid.newsletter-signup .hs_email {
+    width: 70% !important;
+  }
+  .container-fluid.newsletter-signup .hs_submit {
+    width: 30% !important;
+  }
+  .container-fluid.newsletter-signup .hs_submit input {
+    width: 100% !important;
+  }
+  .info-block.branding {
+    text-align: center;
+    #standish-logo {
+      img {
+        height: 60px !important;
+      }
+    }
+  }
+  #social-icons {
+    i {
+      font-size: 2em !important;
+    }
+  }
+  .footer-logos {
+    // padding: 2em 4em;
+  }
+}
+
 .footer-logo {
   /*display: block;*/
   /*float: left;*/
@@ -173,9 +223,5 @@ footer .quest {
 .footer li,
 .footer ul {
   margin: 0;
-}
-
-.footer-logo-sm {
-  padding: 1em;
 }
 

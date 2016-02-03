@@ -335,15 +335,10 @@ li.first.far a {
 
 .hello-container {
   padding-top: 18px;
-  a, p, div, strong, .bold {
-    @extend .special;
-    color: $primary-gray;
-    font-weight: 700;
-  }
 }
 
 .hello-container {
-  background-color: $accent-color;
+  background: $hello-bar-bkg-color url('../images/congruent-pentagon-pattern-long.jpg') repeat-x;
   z-index: 20;
   box-shadow: 0 0 2px 0 white;
   color: black;
@@ -359,7 +354,14 @@ li.first.far a {
     display: inline;
   }
 }
+.hbar_content { 
+  svg {
+    margin-bottom: -7px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
+}
 
 .hello-tag {
   position: absolute;

@@ -13,6 +13,7 @@
 		formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
 		css: '',
 		target: '#newsletter-target',
+		submitButtonClass: 'hubspot-footer-email-capture-submit'
 	}).done(function() {
 		$('.hs-form input[type=email]').each( function () {
 				if( $(this).val() == 'Enter Email' ) {

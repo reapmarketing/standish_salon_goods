@@ -23,6 +23,9 @@ h6
   font-family: $default-font-serif;
   font-weight: 700;
   line-height: 1.25;
+  &.sans {
+    font-family: $default-font !important;
+  }
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 60%;
@@ -61,11 +64,19 @@ h6 {
 p {
   font-size: 1em;
 }
-
+.regal {
+  text-transform: uppercase;
+  font-family: $default-font-serif !important;
+}
+.uppercase {
+  text-transform: uppercase;
+}
 .subheader {
   font-size: 78%;
 }
-
+a.underline, .underline {
+  text-decoration: underline !important;
+}
 @media only screen and (max-width: 61.9375em) {
 
   h1, h2, h3, h4, h5, h6 {
@@ -125,7 +136,8 @@ a:active.button {
 
 a,
 a:link,
-a:visited
+a:visited,
+a:focus
 {
   color: $primary-color;
   text-decoration: none;
@@ -204,9 +216,23 @@ strong {
 }
 
 // Product level customizations to Font
+@media only screen and (max-width : $xs) {
+  .listing p.title a {
+    color: $dark-text !important;
+    text-decoration: initial !important;
+    font-size: 1.2em !important;
+  }
+  .listing .product_thumb {
+    border: 0 none !important;
+  }
+}
 .listing p.title {
   @extend .narrow;
   min-height: 34px;
+  a {
+    color: $blue-link;
+    text-decoration: underline;
+  }
 }
 .pricebox .left-price {
   @extend .narrow;

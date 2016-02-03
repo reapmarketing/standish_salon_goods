@@ -57,7 +57,7 @@ body {
   font-size: 100%;
 }
 .container-fluid, .no-padd {
-  padding: 0px;
+  padding: 0px !important;
 }
 
 a:focus {
@@ -177,11 +177,10 @@ legend {
   border-bottom: 1px solid #dcdcdc;
 }
 .padd-block {
-  padding: 10px;
+  padding: 10px !important;
 }
 .padd-top {
-  padding-top: 15px;
-
+  padding-top: 15px !important;
 }
 .padd-bottom-10 {
   padding-bottom: 10px;
@@ -203,9 +202,50 @@ legend {
   margin: 0;
 }
 
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+
 .transparent {
   background: transparent none;
 }
+
+/* Arrow Box */
+.arrow_box {
+  position: relative;
+  background: $xlightGrey;
+  border: 1px solid darken($xlightGrey, 10%);
+}
+.arrow_box:after, .arrow_box:before {
+  top: 100%;
+  left: 80%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow_box:after {
+  border-color: rgba(darken($xlightGrey, 10%), 0);
+  border-top-color: $xlightGrey;
+  border-width: 21px;
+  margin-left: -21px;
+}
+.arrow_box:before {
+  border-top-color: darken($xlightGrey, 10%);
+  border-width: 22px;
+  margin-left: -22px;
+}
+
+div[classname="searchlight-balloon"] {
+
+}
+
 
 .breadcrumb {
   background: transparent none;
@@ -229,6 +269,9 @@ legend {
 
   }
   
+}
+.remove-perhaps {
+  display: none;
 }
 
 .cycle-slideshow .cycle-slide {
@@ -407,12 +450,20 @@ legend {
   font-weight: bold;
   color: $primary-color;
 }
+
+.tooltip-arrow,
+.standish-tooltip + .tooltip > .tooltip-inner {
+  background-color: $light-gray;
+}
+
 .sharebox {
   background: #dcdcdc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 5px 5px 29px;
 }
+
+
 .sharebox * {
   display: inline;
 }
@@ -443,6 +494,23 @@ li.email {
 .fancy-select.wide select {
   width: 210px;
 }
+
+.inline {
+  display: inline;
+}
+.play-button {
+  background: rgba($salmon-highlight, .7);
+  top: 36%;
+  left: 36%;
+  width: 25%;
+  padding: 2% 22%;
+  padding-left: 10%;
+
+  &:before {
+    color: white;
+  }
+}
+
 
 body .vex.vex-theme-flat-attack .vex-content {
   padding-bottom: 1em;
@@ -540,7 +608,6 @@ body .vex.vex-theme-flat-attack .vex-content {
 .blog .item {
   font-style: italic;
   padding-bottom: 10px;
-  margin-top: -20px;
 }
 
 .blog h3 {
@@ -556,4 +623,86 @@ body .vex.vex-theme-flat-attack .vex-content {
     padding: 10px 0;
   }
 }
+
+// Popover
+// --------------------------------------------------
+
+.popover-title {
+  text-transform: uppercase;
+  h3 {
+    color: $light-gray;
+    font-weight: normal;
+  }
+}
+
+// Homepage
+// --------------------------------------------------
+
+#hoz-slider-container {
+  z-index: 0;
+}
+
+#homepage-badges-list {
+  margin-right: 0;
+  width: 100%;
+  border: 0 none;
+  position: relative;
+  -webkit-border-radius: 3px;
+  background: transparent none;
+  height: 3.2rem;
+
+
+  
+  .badge-home {
+    height: initial;
+    margin: 10px auto;
+    text-align: center;
+    i {
+      display: inline-block;
+      float: none;
+    }
+    .badge-text {
+      max-width: inherit;
+      margin: 0;
+      padding: 10px 0 0;
+    }
+  }
+}
+
+.homepage-brands, .slick-slider {
+  .slick-next, .slick-prev {
+    border-radius: 0;
+    height: 50px;
+    width: 50px;
+    top: 30px;
+    color: white;
+    background: $salmon-highlight !important;
+    border: 0 none;
+    margin-top: 0;
+  }
+
+  .slick-next {
+    right: 0;
+    z-index: 1;
+
+    &:before {
+      color: white;
+      // Example
+      @include icon("f054");
+      font-family: FontAwesome !important;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    z-index: 1;
+
+    &:before {
+      color: white;
+      font-family: FontAwesome !important;
+      @include icon("f053");
+    }
+  }
+
+}
+
 
