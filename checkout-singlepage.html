@@ -430,7 +430,7 @@
 								<p>[checkout3_shippinginstructions]</p>
 								<a href="/about-shipping">Learn more about shipping</a>
 							</div>
-							<a class="button btn pull-right" href="javascript:check_address('refresh');">[checkout3_refreshRates]</a>
+							<a class="pull-right button standishgray btn" href="javascript:check_address('refresh');">[checkout3_refreshRates]</a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -546,9 +546,9 @@
 							<div id="divApplyCoupon" class="padd-top">
 							  <div class="coupon-header">[viewcart_coupon-header]</div>
 							  <div class="coupon-field input-group col-md-7">
-							    <input id="coupon" onchange="clearfixContent(this);" maxlength="30" size="15" value="" name="coupon_code" class="txtBoxStyle form-control" />
+							    <input id="coupon" onchange="clearfixContent(this);" maxlength="30" size="15" value="" name="coupon_code" class="txtBoxStyle form-control white" />
 						    	<span class="input-group-btn">
-							    	<input type="button" onclick="applyCoupon(this.form.coupon_code.value);" value="Go!" class="btn button" />
+							    	<input type="button" onclick="applyCoupon(this.form.coupon_code.value);" value="Go!" class="button standishgray btn button" />
 							    </span>
 							  </div>
 							  <div class="clearfix"></div>
@@ -569,7 +569,7 @@
 			<div id="divPayment">
 				<!--START: PAYMENT_BLOCK-->
 				
-				<div id="divPaymentMethods" class="panel panel-checkout col-md-12">
+				<div id="divPaymentMethods" class="panel panel-checkout col-md-12 lightgray top-margin">
 					<h3 class="section-header double-line"><span>[checkout3_methodofpaymentselect]</span><hr/></h3>
 
 					<!--START: NO_PAYMENT_BLOCK-->
@@ -1048,7 +1048,9 @@
 								<input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
 							</div>
 							<div class="col-md-11 col-sm-11 col-xs-10">
-								<h6>[payment_description]</h6>
+								<h6 class="row">
+									<span class="col-md-4">[payment_description] </span><img class="col-md-4" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png"> 
+								</h6>
 							</div>
 						</label>
 						<div id="divPaymentOption[id]" name="divPaymentOption" class="col-md-offset-1">
@@ -1334,6 +1336,18 @@
 						<div class="clearfix"></div>
 					</div>
 					<!--END: CUSTOM-->
+
+
+					<!-- Checkout DIV! -->
+					<div class="clearfix"></div>
+					<div id="spanCheckout" class="panel padd-top col-md-12 lightgray top-margin" style="-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);box-shadow: 0 0 0 rgba(0,0,0,0);">
+						<div id="divCheckout" name="divCheckout" style="width:80%;display:none;background:#ffffff;border:0px solid black;text-align:center;padding:10px;"> <br />
+							Processing... </div>
+							<a name="checkoutButton"></a>
+						<div class="col-md-4 center-block">
+							<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-block btn-lg button"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
+						</div>
+					</div>
 				</div>
 				<!--END: PAYMENT_BLOCK-->
 
@@ -1424,15 +1438,6 @@
 					<label for="ocomment">[checkout3_commentmessage]</label>
 					<textarea onchange="clearContent(this);" name="ocomment" class="txtBoxStyle form-control" cols="55" rows="3"></textarea>
 					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div id="spanCheckout" class="panel padd-top col-md-12">
-				<div id="divCheckout" name="divCheckout" style="width:80%;display:none;background:#ffffff;border:0px solid black;text-align:center;padding:10px;"> <br />
-					Processing... </div>
-					<a name="checkoutButton"></a>
-				<div class="col-md-4 center-block">
-					<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-block btn-lg button"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
 				</div>
 			</div>
 			<div class="clearfix"></div>

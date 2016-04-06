@@ -32,7 +32,7 @@
           Standish.SiteListing.getBrand();
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
-          Standish.SiteListing.changeColors();
+          Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
         }
       return;
@@ -68,7 +68,6 @@
           Standish.Homepage.videosFeed();
           Standish.Homepage.videosFeedSlider();
           Standish.Homepage.homepageBrands();
-          Standish.Homepage.addTestimonials();
         }
       return;
       default:

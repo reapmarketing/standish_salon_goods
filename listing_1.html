@@ -227,8 +227,8 @@ $( function(){
 							<!--END: ITEMPRICE-->
 							<!--START: SALEPRICE-->
 							<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>							
-									<!--END: SALEPRICE-->
+							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>
+							<!--END: SALEPRICE-->
 						</div>
 		            	<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">
 		          	</div>
@@ -294,7 +294,7 @@ $( function(){
 					<!--START: SALEPRICE-->
 					<div id="sale-tag"><i class="fa fa-tag"></i> Sale!</div>
 					<!--END: SALEPRICE-->
-					<h2 id="priceMobile" class="nozero row" itemprop="price">
+					<h2 id="priceMobile" class="nozero row itemprice" itemprop="price">
 					<!--START: ITEMPRICE-->
 						[price]
 					<!--END: ITEMPRICE-->
@@ -324,8 +324,8 @@ $( function(){
 					<div class="left-price col-md-6 col-sm-6 col-xs-6 pricebox-eqhgt">
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 							<!--START: ITEMPRICE-->
-				            <span id="price" class="price nozero" itemprop="price" content="[price]">[price]</span>
-				            <!--END: ITEMPRICE-->
+		            <span id="price" class="price nozero itemprice" itemprop="price" content="[price]">[price]</span>
+	            <!--END: ITEMPRICE-->
 						</div>
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 							<span class="hidden" itemprop="price" content="[saleprice]"></span>
@@ -337,11 +337,11 @@ $( function(){
 						<!--END: price2-->
 						<!-- [product_yourprice] -->
 						<!--START: ITEMPRICE-->
-							<p class="darkgray-text row"><span class="label">Our Price:</span> <span class="nozero strike-perhaps">[price]</span></p>
+							<p class="darkgray-text row"><span class="label">Our Price:</span> <span class="nozero itemprice strike-perhaps">[price]</span></p>
 						<!--END: ITEMPRICE-->
 						<!-- [product_onsale] -->
 						<!--START: SALEPRICE-->
-							<p class="darkgray-text row"><span class="label">Promotional Discount:</span> <span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
+							<p class="darkgray-text row"><span class="label">Promotional Discount:</span> <span class="nozero saleprice dimgray-text" id="saleprice">[saleprice]</span></p>
 						<!--END: SALEPRICE-->
 						<!--START: SAVINGS-->
 							<!-- [product_savings] -->
@@ -461,7 +461,7 @@ $( function(){
 
 				<!--START: RECURRINGORDER-->
 				<div class="option-row hidden-sm hidden-xs">
-					<label>[recurringorders_addcart-question]</label>
+					<label class="col-md-12">[recurringorders_addcart-question]</label>
 					<div class="fancy-select form-group col-md-6">
 						<select name="recurring_frequency" class="txtBoxStyle" id="recurring_frequency">
 							<option value="">[recurringorders_select-frequency]</option>
@@ -588,8 +588,8 @@ $( function(){
 						<p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
 						<!--END: ITEMPRICE-->
 						<!--START: SALEPRICE-->
-						<p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-						<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>							
+						<p class="msrp">[product_yourprice] <span class="nozero itemprice">[ITEMPRICE]</span></p>
+						<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero saleprice">[ITEMSALEPRICE]</span></p>							
 								<!--END: SALEPRICE-->
 					</div>
 	            	<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">

@@ -206,7 +206,7 @@
             
             
               <strong>[shoppingcart_total]:</strong><br />
-              [ototal]<br />
+              <span id="order-total-count">[ototal]</span><br />
             
             <!--START: GIFTCERTS-->
             
@@ -240,6 +240,15 @@
 </script>
 
 <!--END OF CHECKOUT STEP 4 -->
+<script type="text/javascript">
+  if ( window.location.pathname === "/checkout_thankyou.asp" ) {
+    var orderTotal = $('#order-total-count').text().replace(/\$/g, '').replace(/\,/g, ''),
+    orderTotalClean = parseFloat(orderTotal) * 100;
+
+    window.optimizely = window.optimizely || [];
+    window.optimizely.push(['trackEvent', 'Revenue', {'revenue': orderTotalClean}]);
+  }
+</script>
 
 <!--  Enversa Conversion Tracking Pixel -->
 <script type="text/javascript">

@@ -31,7 +31,7 @@
             origImgLoaded = $('.main-slider').find('img:first-of-type').attr('data-href');
 
         if (typeof imgHref !== 'undefined' && imgHref !== origImgLoaded) {
-          var slideElement = '<a class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx=400&maxy=0" align="middle" border="0" id="large" name="large" alt="" style="max-height: 375px;"/></a>';
+          var slideElement = '<a class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx='+$('.main-slider').width()+'&maxy=0" align="middle" border="0" id="large" name="large" alt="" style="max-height: 375px;"/></a>';
           $('.main-slider').slick('slickAdd', slideElement);
         }
       });
@@ -49,12 +49,12 @@
       slidesToShow: 5,
       slidesToScroll: 1,
       dots: false,
-      arrows: true,
+      arrows: false,
       variableWidth: true,
       centerMode: false,
       asNavFor: '.main-slider',
-      prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev" style="background: white!important;">Previous</button>',
-      nextArrow: '<button type="button" class="fa fa-chevron-right slick-next" style="background: white!important;">Next</button>',
+      // prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev" style="background: white!important;">Previous</button>',
+      //nextArrow: '<button type="button" class="fa fa-chevron-right slick-next" style="background: white!important;">Next</button>',
       focusOnSelect: true
     });
   }
@@ -75,6 +75,7 @@
     var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml;
 
     if( video_embed_codes ) {
+
       $.each( video_embed_codes, function( i, embed_code ) {
         if (embed_code !== "") {
           AJAX.push( getData( embed_code ) );
@@ -188,22 +189,24 @@
   SiteListing.salePrice = function() {
     // SalePrice display and sale cornertag activation on Listing Page
     // SalePrice Checker
-    var price = $('#price').text().replace('$','').replace(',',''),
-    price = parseInt(price);
-    var saleprice = $('#saleprice').text().replace('$','').replace(',','');
 
-    if (typeof saleprice != undefined && saleprice != 0) {
-      saleprice = parseInt(saleprice);
-      $('.pricebox').addClass('sale-cornertag');
-      $('.strike-perhaps').addClass('hidden');
 
+    var price = parseInt($('[data-prop="itemprice"]').text().replace('$','').replace(',','')),
+        saleprice = parseInt($('[data-prop="saleprice"]').text().replace('$','').replace(',',''));
+    console.log(price);
+    console.log(saleprice);
+
+    if (typeof saleprice != undefined && saleprice != 0 && !isNaN(saleprice)) {
 
       if( price != saleprice ) {
-        $('#price.price').text('$' + saleprice);
+        // $('.itemprice.price').text('$' + saleprice);
+        $('.pricebox').addClass('sale-cornertag');
+        $('#sale-tag').removeClass('hidden');
+        $('.item-regprice-mobile').remove();
       }
     }
     else {
-      $('#saleprice').parent().hide();
+      $('.saleprice').hide();
     }
   }
 
@@ -215,6 +218,11 @@
     var $badges_list = $( '.badges-list' );
 
     var badgetext = {
+      'affordable-imports': {
+        'title': 'Affordable Import',
+        'class': 'affordable-imports',
+        'tooltip': 'Affordable Import Product quality assured right here in the USA!'
+      },
       'free-shipping': {
         'title': 'Free Shipping',
         'class': 'free-shipping',
@@ -478,9 +486,13 @@
     });
   }
 
-  // ---- IMAGE COLOR CHANGING FEATURE -- TITLE ---- //
-  SiteListing.changeColors = function() {
-    
+  // ---- Update pricing everytime original pricing changes ---- //
+  SiteListing.updatePricing = function() {
+
+    $('#price').bind("DOMSubtreeModified",function(){
+      $('.price-wrapper').html($('#price').text());
+    });
+
   }
 
   // ---- IMAGE COLOR CHANGING FEATURE -- SLIDESHOW ---- //

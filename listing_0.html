@@ -150,26 +150,25 @@ $( function(){
 
       <!-- PRODUCT INFO AND ADD TO CART --> 
       <div id="product-info" class="eqhgt col-md-3 col-sm-4 product_right pricebox">
-        <div class="cornersprite hidden-xs hidden-sm"></div>
+        <div class="cornersprite hidden-xs"></div>
         <!-- Review Block! -->
         <div id="review-block" class="row text-center hidden-xs">
-          <!--START: totalrating-->
           <span id="review-average" class="hidden" value="[review_average]"></span>
           <p>[totalrating] <small><span id="review-count" value="[review_count]">[review_count]</span> Review(s)</small></p>
+          <!--START: totalrating-->
           <!--END: totalrating-->
         </div>
-
         
         <div id="cart-block">
           <div id="product-actions-wrapper" style="min-height: 375px;">
-            <!-- TABLET/DESKTOP Pricing Block! -->
+            <!-- PRICING - TABLET/DESKTOP Pricing Block! -->
             <div id="pricing-block" class="hidden-xs">
               <!--START: pricing-->
 
               <!-- [product_yourprice] -->
               <!--START: ITEMPRICE-->
-                <p class="price-wrapper darkgray-text row strike-perhaps" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                  <span itemprop="price" content="[price]" class="price nozero dimgray-text">[price]</span>
+                <p id="price" class="price-wrapper dimgray-text row strike-perhaps nozero" itemprop="offers" data-prop="itemprice" itemscope itemtype="http://schema.org/Offer">
+                  <span data-prop="itemprice" itemprop="price" content="[price]" class="price nozero dimgray-text">[price]</span>
                   <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
                 </p>
               <!--END: ITEMPRICE-->
@@ -177,7 +176,7 @@ $( function(){
               <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
 
               <!--START: SALEPRICE-->
-                <p id="price" itemprop="price" content="[price]" class="row price-wrapper"><span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
+                <p id="price" itemprop="price" data-prop="saleprice" content="[price]" class="row price-wrapper dimgray-text nozero"><span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
               <!--END: SALEPRICE-->
               <!--START: SAVINGS-->
                 <!-- [product_savings] -->
@@ -191,7 +190,7 @@ $( function(){
 
             <!-- TABLET/DESKTOP Add to Cart! -->
             <div id="customer-action-block" class="hidden-xs clearfix">
-              <button type="submit" class="btn btn-lg col-sm-12" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+              <button type="submit" class="btn btn-lg col-sm-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 
               <a id="cart-add" class="button light-text btn btn-lg col-xs-12 btn-x-light" href="/salon-equipment-financing" target="_blank"> Apply for Financing</a>
             </div><!--#customer-action-block-->
@@ -203,7 +202,7 @@ $( function(){
                   <!-- [product_optionheader] -->
               <div class="product-form">
 
-                <!-- MOBILE PRODUCT WRAPPER & TITLE -->
+                <!-- PRICING - MOBILE PRODUCT WRAPPER & TITLE -->
                 <!-- @todo combine mobile and desktop to one -->
                 <!-- !!!!!!important dont delete!!! Mobile Alteration Product Header --> 
                 <div class="mobile-header visible-xs row">
@@ -214,13 +213,20 @@ $( function(){
                     <p id="product_id">[id]</p>
                   </div>
                   <div class="product-pricing hidden-md hidden-lg col-sm-5 col-xs-5">
-
                     <!--START: SALEPRICE-->
-                    <div id="sale-tag"><i class="fa fa-tag"></i> Sale!</div>
+                      <div id="sale-tag" class="hidden"><i class="fa fa-tag"></i> Sale!</div>
                     <!--END: SALEPRICE-->
-                    <h2 id="priceMobile" class="nozero row"><!--START: ITEMPRICE-->[price]<!--END: ITEMPRICE--></h2>
+                    <h2 id="priceMobile" class="row">
+                      <!--START: ITEMPRICE-->
+                        <span id="price-mobile" itemprop="offers" itemscope content="[price]" class="item-regprice-mobile price-wrapper itemprice price nozero dimgray-text">[price]</span>
+                      <!--END: ITEMPRICE-->
+                      <!--START: SALEPRICE-->
+                        <span id="price-mobile-sale" itemprop="price" content="[saleprice]" class="price-wrapper saleprice nozero">[saleprice]</span>
+                      <!--END: SALEPRICE-->
+
+                    </h2>
                     <!--START: price2-->
-                      <p class="darkgray-text row"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
+                      <p class="dimgrey-text row"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
                     <!--END: price2-->
 
                   </div>
@@ -263,19 +269,19 @@ $( function(){
                   <!--START: checkbox-format-->
                   <label for="warranty" class="checkbox">
                     <div class="checkbox">
-                      <label><input type="checkbox" name="cb[oname]" value="[value]" onclick="nozeros();validateValues(document.add,1);" [selected] > [feature]: <span class="nozero">+ [oprice]</span></label>
+                      <label><input type="checkbox" name="cb[oname]" value="[value]" onclick="window.Standish.NoZeros();validateValues(document.add,1);" [selected] > [feature]: <span class="nozero">+ [oprice]</span></label>
                     </div>
                   </label>
                   <!-- <input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] />[feature] [oprice] -->
                   <!--END: checkbox-format-->
 
                   <!--START: radio-format-->
-                    <div><input type="radio" name="[oname]" value="[value]" onclick="nozeros();validateValues(document.add,1);selectOption(this);" [selected] />[feature] <span class="nozero">[oprice]</span></div>
+                    <div><input type="radio" name="[oname]" value="[value]" onclick="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);" [selected] />[feature] <span class="nozero">[oprice]</span></div>
                   <!--END: radio-format-->
 
                   <!--START: dropdown-format-->
                     <div class="fancy-select form-group col-md-6 col-sm-6">
-                      <select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
+                      <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
                         <!--START: option-->
                         <option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
                         <!--END: option-->
@@ -288,7 +294,7 @@ $( function(){
                     <div class="fancy-select form-group col-md-6 col-sm-6">
                       <!-- note: image_click function changes image with option position -->
                       <!-- image_click($(this).find(':selected').index()+1); -->
-                      <select name="[oname]" onchange="nozeros();validateValues(document.add,1);selectOption(this);">
+                      <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
                         <!--START: option-->
                         <option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
                         <!--END: option-->
@@ -306,7 +312,7 @@ $( function(){
                     <!--START: opt-regular-->
                       <div class="option-row row">
                         <div class="col-md-12">
-                          <label for="name">[OPTIONLABEL]: </label>
+                          <label class="col-md-12" for="name">[OPTIONLABEL]: </label>
                           [OPTIONFIELD]
                         </div>
                       </div>
@@ -326,14 +332,14 @@ $( function(){
                 <div class="option-row row">
                   <label for="quantity" class="col-md-12 col-sm-12 col-xs-12">[product_quantity]: </label>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="nozeros();validateValues(document.add,1);" class="form-control" />
+                    <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="window.Standish.NoZeros();validateValues(document.add,1);" class="form-control" />
                   </div>
                 </div>
                 <!--END: addtocart-->
 
                 <!-- ~~~~ MOBILE ~~~~ Add to Cart Button -->
                 <div id="customer-action-block-mobile" class="visible-xs clearfix">
-                  <button type="submit" class="btn btn-lg col-xs-12" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                  <button type="submit" class="btn btn-lg col-xs-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 
                   <a id="cart-add" class="button light-text btn btn-lg col-xs-12 btn-x-light" href="/salon-equipment-financing" target="_blank"> Apply for Financing</a>
                 </div><!--#customer-action-block-->
@@ -651,9 +657,10 @@ $( function(){
 (function($) {
   var stock = [stock];
 
-  console.log(stock);
   $(function() {
     if (Number(stock) <= 0) {
+
+      // console.log(Number(stock));
 
       var innerModalHtml = $('.related-products.row').clone(),
           outerModalHtml = '<div class="modal fade"><div class="modal-dialog"><div class="modal-content">' +
@@ -665,19 +672,20 @@ $( function(){
       $(outerModalHtml).appendTo('body');
       $(innerModalHtml).appendTo('.modal .modal-body');
 
+      $('.modal .modal-body .listing').removeClass('col-md-2 col-sm-3').addClass('col-md-4');    
+
       var newButton = $('<button/>', {
         'type': 'submit',
         'class': 'btn col-sm-12 col-xs-12 btn-oos',
         'text':"This Item's Out of Stock"
       }).click(function(e) {
         e.preventDefault();
-        console.log('hello');
         $('.modal.fade').modal();
         $('.modal .listing-container').css('min-height', '325px')
 
       });
 
-      $('.option-row button[type=submit]').replaceWith(newButton)
+      $('button.add-cart').replaceWith(newButton)
     }
   });
 

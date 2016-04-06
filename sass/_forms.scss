@@ -450,6 +450,10 @@ input {
 }
 input.form-control {
   background: #efefef;
+
+  &.white {
+    background: #fff !important;
+  }
 }
 
 

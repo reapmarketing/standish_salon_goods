@@ -8,7 +8,6 @@
 .popover {
   z-index: 2;
 }
-
 .tooltip-badges [class^="badge-"] i,
 .tooltip-badges [class*="badge-"] i,
 .tooltip-badges [class^="badge-"] span,
@@ -181,6 +180,16 @@
   &:hover {
     i, span, em {
       @include sprite($-ten-k-rub-count);
+    }
+  }
+}
+.badge-affordable-imports {
+  i, span, em {
+    @include sprite($green-affordable-imports);
+  }
+  &:hover {
+    i, span, em {
+      @include sprite($-affordable-imports-orange);
     }
   }
 }

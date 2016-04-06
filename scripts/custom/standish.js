@@ -72,10 +72,9 @@
 	Standish.EmptyCart = function() {
 
 		$("a[href='/view_cart.asp']").on('click', function(event) {
-			event.preventDefault();
-			console.log($(this).find('.cart-number').html());
 			if ( $(this).find('.cart-number').html() === "0" ) {
-				
+				event.preventDefault();
+
 				var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">\
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">\
 						<span aria-hidden="true">&times;</span>\
@@ -90,8 +89,7 @@
 				
 				var timedResponse = setTimeout( function () {$('#cart-error').alert('close');}, 1000 );
 			}
-		})	
-		
+		});
 	}
 	Standish.optInPopover = function() {
 		$(function () {
@@ -101,6 +99,71 @@
 		  });
 		});
 	}
+
+	Standish.getData = function(embed_code) {
+    var baseUrl = "https://fast.wistia.com/oembed/?url=";
+    var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
+    return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
+  }
+
+  Standish.addTestimonials = function() {
+
+    var url = "https://spreadsheets.google.com/feeds/list/1Sk_ITtWMcwRpjbw4stHpyRrQPZ9fdGMqk2hOCqWPa2Q/od6/public/values?alt=json-in-script";
+
+    if ($('#left-bar-testimonials').length > 0) {
+    	//** Run the ajax to get the Brands's **//
+			$.ajax({
+				url:url,
+				dataType:"jsonp",
+				success:function(data) {
+				  /* ~~ Variable Declaration ~~ */
+				  var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml, sliderStuff = {}, sliderStuff = [];
+
+				  $(data.feed.entry).each(function(i,v) {
+				    // console.log(v);
+				    var vidid = v['gsx$videoid']['$t'],
+				        vidname = v['gsx$name']['$t'];
+				    sliderStuff.push({name:vidname, videoid: vidid});
+				  });
+
+				  $.each( sliderStuff, function( i, slider ) {
+				    if (slider.videoid !== "") {
+				      AJAX.push( Standish.getData( slider.videoid ) );
+				    }
+				  });
+				  //* All the AJAX has loaded *//
+				  $.when.apply($, AJAX).done(function() {
+				    for(var i = 0; i < AJAX.length; i++){
+				      if( arguments[i].length ) {
+				        sliderStuff[i].video_data = arguments[i][0];
+				      } else {
+				        sliderStuff[i].video_data = arguments[i][0];
+				      }
+				    }
+				    $.each( sliderStuff, function( i, video ) {
+				      // console.log(video);
+				      video_markup_home_page = '';
+				      video_markup_home_page += '<div class="padd-bottom"><a href="#" class="col-md-12 no-padd video_popup_testimonial" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
+				      video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 1.5em;position: absolute;text-decoration: none;"></i>';
+				      video_markup_home_page +=  '<img itemprop="image" src="'+ video.video_data.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.name +'" width="100%" data-href="'+ video.video_data.thumbnail_url +'" />';
+				      video_markup_home_page += '</a><p style="letter-spacing: -.05em;">'+ video.name +'  <i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i></p></div>';
+				      $('#left-bar-testimonials').append(video_markup_home_page);
+				    });
+				    $('#left-bar-testimonials').append('<a target="_blank" href="/featured-salon" class="btn-block btn btn-light">See More</a>');
+
+				    $('.video_popup_testimonial').on( 'click', function( e ) {
+				      e.preventDefault();
+				      var video = $(this).data('video');
+				      vex.open({
+				        content: sliderStuff[video].video_data.html,
+				        contentCSS: { 'padding': '0', 'width': '960px' }
+				      });
+				    });
+				  });
+				}
+			});
+    }
+  }
 
 	Standish.AddBottomMenu = function() {
 		var url = "https://spreadsheets.google.com/feeds/list/1WXj97jT1kJQRmFQHmDMzPaPI8Xls94q0yRFTTOK9hGI/od6/public/values?alt=json-in-script";
@@ -178,6 +241,19 @@
 	
 	});
 
+	Standish.TrackRevenue = function() {
+
+
+	}
+
+	nozeros = function() {
+		window.setTimeout( function () { 
+			$('.nozero').each( function() {
+				$(this).text( $(this).text().replace(/\.00/g, '') );
+			});
+		}, 10 );
+	}
+
 	// Events
 	$(function() {
 
@@ -204,7 +280,13 @@
 		Standish.NoZeros();
 		// 11. Remove subtotals
 		Standish.Subtotes();
+		// 12. Add Testimonials
+		Standish.addTestimonials();
+		// 13. Adds revenue in optimizely
+		Standish.TrackRevenue();
 
+		// Run nozeros for templates that haven't been updated.
+		nozeros();
 
 	});
 	// Add callback to window resize event

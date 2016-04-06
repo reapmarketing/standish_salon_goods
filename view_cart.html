@@ -47,6 +47,9 @@ jQuery(function(){
 
 </script>
   <div class="col-md-12">
+    <div class="col-md-12 padd-top hidden-md hidden-lg hidden-xl">
+      <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg btn-block" id="Button7" name="Button7">
+    </div>
 
     
     <div class="col-md-7 col-sm-6">
@@ -80,7 +83,7 @@ jQuery(function(){
               [shoppingcart_price]
               [shoppingcart_total]
           -->
-    </div>
+      </div>
       <div class="clearfix"></div>
       <form action="recalculate.asp" method="post" name="recal" id="recal">
       <!-- The Left Side -->
@@ -339,7 +342,7 @@ jQuery(function(){
     
         <!-- [viewcart_checkout-button] -->
         <!-- onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" -->
-        <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg" id="Button7" name="Button7">
+        <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg btn-block" id="Button7" name="Button7">
     
         <!--START: paypalexpress-->
         <div style='text-align: center'>
