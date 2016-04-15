@@ -185,6 +185,25 @@
     }
   }
 
+  // -- ADD WISHLIST BUTTON FUNCTIONALITY -- //
+  SiteListing.addToWishlist = function() {
+    $('#add-wishlist').on('click', function(e) {
+      e.preventDefault();
+
+      if (typeof username != 'undefined' && username !== "Guest") {
+        document.add.action = "add_cart.asp?action=addWishList";
+        document.add.submit();
+      }
+      else {
+        bootbox.confirm("Please log in in order to add this item to your wishlist.", function(result) {
+          if (result == 1) {
+            window.location.href = "/myaccount.asp";
+          }
+        });
+      }
+    });
+  }
+
   // ---- ADD PRICE SALE CORNERTAG ---- //
   SiteListing.salePrice = function() {
     // SalePrice display and sale cornertag activation on Listing Page

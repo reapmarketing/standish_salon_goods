@@ -80,7 +80,7 @@
   #mobile-menu {
     padding-top: 25px;
     padding-bottom: 15px;
-    background-color: rgba(lighten($neutral-dark, 65%),0.73);
+    background-color: lighten($neutral-dark, 65%);
     z-index: 5;
     width: 100%;
 

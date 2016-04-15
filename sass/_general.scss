@@ -176,6 +176,9 @@ legend {
   margin: 10px 0;
   border-bottom: 1px solid #dcdcdc;
 }
+.padd-none {
+  padding: 0px !important;
+}
 .padd-block {
   padding: 10px !important;
 }
@@ -623,6 +626,29 @@ body .vex.vex-theme-flat-attack .vex-content {
     padding: 10px 0;
   }
 }
+
+// WISHLIST
+// --------------------------------------------------
+#action-section {
+  border-top: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+  padding: 10px;
+}
+
+.account-title-wishlist {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.wishlistView .titles2 {
+  padding: 15px;
+
+}
+
+.listing-wl {
+  padding: 3em 0;
+}
+
 
 // Popover
 // --------------------------------------------------

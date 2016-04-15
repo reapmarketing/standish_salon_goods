@@ -246,6 +246,13 @@
 
 	}
 
+	/*
+	Standish.ShareButtonWL = function() {
+		$('.action-section #share-action').on('click', function(console.log(e)) {
+
+		});
+	}*/
+
 	nozeros = function() {
 		window.setTimeout( function () { 
 			$('.nozero').each( function() {
@@ -284,6 +291,8 @@
 		Standish.addTestimonials();
 		// 13. Adds revenue in optimizely
 		Standish.TrackRevenue();
+		// 14. Share button wish list
+		/*Standish.ShareButtonWL();*/
 
 		// Run nozeros for templates that haven't been updated.
 		nozeros();

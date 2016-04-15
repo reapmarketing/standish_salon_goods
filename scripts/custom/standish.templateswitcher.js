@@ -25,6 +25,7 @@
             $('.sub-slider').show();
             $('#loadingDiv').hide();
           });
+          Standish.SiteListing.addToWishlist();
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
           Standish.SiteListing.doBadges();
