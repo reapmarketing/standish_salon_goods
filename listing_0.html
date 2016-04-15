@@ -191,8 +191,15 @@ $( function(){
             <!-- TABLET/DESKTOP Add to Cart! -->
             <div id="customer-action-block" class="hidden-xs clearfix">
               <button type="submit" class="btn btn-lg col-sm-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-
-              <a id="cart-add" class="button light-text btn btn-lg col-xs-12 btn-x-light" href="/salon-equipment-financing" target="_blank"> Apply for Financing</a>
+              <div class="clearfix"></div>
+              <div class="row">
+                <div class="col-sm-6 col-md-6" style="padding-right: 5px;">
+                  <a id="apply-financing" class="white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
+                </div>
+                <div class="col-sm-6 col-md-6" style="padding-left: 5px;">
+                  <a id="add-wishlist" class="standish-tooltip button btn-block btn btn-lg btn-purp" href="#">Love <i class="fa fa-heart" aria-hidden="true"></i></a>
+                </div>
+              </div>
             </div><!--#customer-action-block-->
 
             <!-- MOBILE/TABLET/DESKTOP PRODUCT ADD AND OPTIONS-->
@@ -379,7 +386,7 @@ $( function(){
                   data-action="like" 
                   data-show-faces="false">
                 </div>
-                <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="PomGilga">Tweet</a>
+                <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js' ;fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
                 <a data-pin-do="buttonBookmark" data-pin-color="white" href="https://www.pinterest.com/pin/create/button/"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" /></a>
