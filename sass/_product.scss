@@ -629,8 +629,13 @@ fieldset {
   margin-top: 0;
 }
 
-.category-filters {
-  border-bottom: 1px solid #dcdcdc;
+
+.left-bar ul.category-filters {
+      padding: 0 0 0 0;
+}
+ul.category-filters li a {
+  color: #696969;
+  font-size: .8em;
 }
 .category-filters h5 {
   font-weight: 200;

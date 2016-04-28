@@ -87,35 +87,38 @@ jQuery( function($) {
 			<!--START: catFilterMainBlock--> 
 			<!-- filter block starts here-->
 		
-			<!--START: catFilter-->
-				[category_Header-Filters]: 
-				<!--START: catFilterCrumb--> 
-					<!--START: catFilterCrumbItem-->
-						<a href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a>
-					<!--END: catFilterCrumbItem-->
-				<!--END: catFilterCrumb-->
-				<!--START: catFilterRemoveLink-->
-					<span class="label label-danger"><a href="#" onclick="javascript:removeCatFilter();" style="color: white"><i class="fa fa-times-circle"></i> [category_Header-RemoveFilters]</a></span>
-				<!--END: catFilterRemoveLink-->
-			<!--END: catFilter-->
 		
 		
-			<div class="col-md-12 row">
+		
+			<div id="category-selectors" class="row">
+				<h4 class="uppercase">Filter Search</h4>
+				<!--START: catFilter-->
+					<div class="filters-content">
+						[category_Header-Filters]:
+						<!--START: catFilterCrumb--> 
+							<!--START: catFilterCrumbItem-->
+								<span class="label label-default"><a style="color:white;" href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a></span>
+							<!--END: catFilterCrumbItem-->
+						<!--END: catFilterCrumb-->
+						<!--START: catFilterRemoveLink-->
+							<br />
+							<span class="label label-danger"><a href="#" onclick="javascript:removeCatFilter();" style="color: white"><i class="fa fa-times-circle"></i> [category_Header-RemoveFilters]</a></span>
+							<hr />
+						<!--END: catFilterRemoveLink-->
+					</div>
+				<!--END: catFilter-->
 				<!--START: catFilter_Filter-->
 				<!-- the filter title can be outside: [catFilterName]--> 
 					<!-- Use this block if you want to show filters as a list--> 
-					
-					<!-- <b>Filter by [catFilterName]</b> --><!-- The titles are in the selects... -->
-					<div class="col-md-3 col-sm-4 pull-right-md">
-	          			<div class="form-group fancy-select col-md-12">
-							<select class="form-control" name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);"> 
-								<option value="">Filter by [catFilterName]</option> 
-								<!--START: catFilter_Filter_Item--> 
-								<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option> 
-								<!--END: catFilter_Filter_Item--> 
-							</select>
-							<i class="fa fa-caret-down fa-sm"></i>
-						</div>
+					<div class="">
+						
+						<ul class="category-filters">
+							<li>[catFilterName]</li>
+							<!--START: catFilter_Filter_Item--> 
+								<li><a id="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-" value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-" onclick="setCatFilter(jQuery(this).attr('value'), document.frmsortby, false);">
+									<input type="checkbox" onchange="setCatFilter(jQuery(this).attr('value'), document.frmsortby, false);" value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">  [catFilterChildName] ([numItems])</a></li>
+							<!--END: catFilter_Filter_Item--> 
+						</ul>
 					</div>
 				<!--END: catFilter_Filter-->
 			</div>

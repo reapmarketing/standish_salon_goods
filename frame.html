@@ -46,9 +46,9 @@
 
 		<!-- <link rel="stylesheet" href="assets/templateplates/[template]/style/main.2.0.min.css?cachebuster=38924935792" /> --> 
 
-		<!--2.0.min <link rel="stylesheet" href="assets/templates/[template]/style/main.2.0.min.css?cachebuster=89327498273" />-->
+		<link rel="stylesheet" href="assets/templates/[template]/style/main.1.0.0.min.css?cachebuster=89327498273" />
 		
-		<link rel="stylesheet" href="assets/templates/[template]/style/main.css" />
+		<!-- <link rel="stylesheet" href="assets/templates/[template]/style/main.css" /> -->
 
 		<link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
 
@@ -471,19 +471,21 @@
 					<!--START: LEFT_BAR_BLOCKS-->
 
 						<!--START: FRAME_CATEGORY-->
-							<div class="allcaps serif black-text bold">[frame_categories]</div>
-							<div id="catframe">
-								<!--START: CATEGORIES-->
-									<ul>
-									<!--START: CATEGORY_FORMAT-->
-										<li><a href="view_category.asp?cat=CATID" class="cat">CATEGORY</a></li>
-									<!--END: CATEGORY_FORMAT-->
+							<div id="catframe-wrapper">
+								<div class="allcaps serif black-text bold">[frame_categories]</div>
+								<div id="catframe">
+									<!--START: CATEGORIES-->
+										<ul>
+										<!--START: CATEGORY_FORMAT-->
+											<li><a href="view_category.asp?cat=CATID" class="cat">CATEGORY</a></li>
+										<!--END: CATEGORY_FORMAT-->
 
-									<!--START: SUB_CATEGORY_FORMAT-->
-										<li class="indent"><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
-									<!--END: SUB_CATEGORY_FORMAT-->
-									</ul>
-								<!--END: CATEGORIES-->
+										<!--START: SUB_CATEGORY_FORMAT-->
+											<li class="indent"><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
+										<!--END: SUB_CATEGORY_FORMAT-->
+										</ul>
+									<!--END: CATEGORIES-->
+								</div>
 							</div>
 						<!--END: FRAME_CATEGORY-->
 

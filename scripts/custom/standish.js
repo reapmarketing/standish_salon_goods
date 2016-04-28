@@ -68,6 +68,18 @@
 		}
 		
 	}
+
+	Standish.applyFilters = function() {
+		console.log($('#category-selectors'));
+		if ($('#category-selectors').length > 0) {
+			var $sideBar = $('#category-selectors').detach();
+		
+			$('.left-bar #catframe-wrapper').replaceWith($sideBar);
+
+			$('.cat-filter-separator').remove();
+		}
+		
+	}
 	
 	Standish.EmptyCart = function() {
 
@@ -293,6 +305,9 @@
 		Standish.TrackRevenue();
 		// 14. Share button wish list
 		/*Standish.ShareButtonWL();*/
+
+
+		Standish.applyFilters();
 
 		// Run nozeros for templates that haven't been updated.
 		nozeros();
