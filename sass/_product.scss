@@ -629,14 +629,29 @@ fieldset {
   margin-top: 0;
 }
 
+#category-selectors h4 {
+  color: $hello-bar-bkg-color;
+}
+.left-bar .category-filters-wrapper {
+  padding: 5px 0;
 
-.left-bar ul.category-filters {
-      padding: 0 0 0 0;
+  ul.category-filters {
+    padding: 0 0 0 0;
+    li.cat-filter-title {
+      color: $hello-bar-bkg-color;
+      font-weight: 800;
+    }
+
+    li a {
+      color: #696969;
+      font-size: .8em;
+    }
+  }
+
 }
-ul.category-filters li a {
-  color: #696969;
-  font-size: .8em;
-}
+
+
+
 .category-filters h5 {
   font-weight: 200;
 }
