@@ -2,6 +2,7 @@
 //*******SCROLL TRACKING CODE*****
 jQuery(function($) {
     // Debug flag
+
     var debugMode = true;
 
     // Default time delay before checking location

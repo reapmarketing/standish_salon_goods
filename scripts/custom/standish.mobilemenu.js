@@ -26,7 +26,7 @@
 			array[key] = data[key];
 		}
 		return array;
-	}
+	};
 
 	// Sort the menu items according to object's order property
 	sortItems = function(menuItems) {
@@ -39,7 +39,7 @@
 			}
 			return 0;	
 		});
-	}
+	};
 	var jsonUrl = 'https://raw.githubusercontent.com/reapmarketing/standish_salon_goods/master/scripts/menu-custom.json';
 
 	// todo: create menu walker!
@@ -79,15 +79,14 @@
 					unList[key] += key + '</a>';
 					if (menuItems[key].subcategories !== undefined) {
 						var subcategories = menuItems[key].subcategories,
-								subcategories = convertToArray(subcategories),
-								subcategories = sortItems(subcategories);
-								// subcategories = sortItems(subcategories);
+								subcategoriesA = convertToArray(subcategories),
+								subcategoriesB = sortItems(subcategoriesA);
 						
 						unList[key]	+= '<ul class="mobile-menu hidden menu" style="display:none;">';
 						
-						for (var k in subcategories) {
+						for (var k in subcategoriesB) {
 							unList[key]	+= '<li>';
-							if ( subcategories[k].url !== undefined ) {
+							if ( subcategoriesB[k].url !== undefined ) {
 								unList[key] += '<a href="' + subcategories[k].url + '">';
 							}
 							else {
@@ -101,7 +100,7 @@
 						unList[key]	+= '</li>';
 					}
 					else {
-						unList[key]	+= '</li>'
+						unList[key]	+= '</li>';
 					}
 				}
 			}
@@ -111,12 +110,7 @@
 				$('#mobile-menu-json > ul').append(unList[i]);
 			}
 		});
-	}
-	
-	MobileMenu.closeMenu = function() {
-		
-		
-	}
+	};
 
 	MobileMenu.init = function() {	
 		var el = this;		
@@ -147,7 +141,7 @@
 			
 			
 		});
-	}
+	};
 
 })(window.Standish.MobileMenu = window.Standish.MobileMenu || {}, jQuery);
 

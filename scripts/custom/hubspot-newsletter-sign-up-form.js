@@ -5,7 +5,7 @@
 // options for the hubspot form
 
 
-;(function($) {
+(function($) {
 	
 	document.addEventListener('DOMContentLoaded', function() {
 	hbspt.forms.create({
@@ -27,4 +27,4 @@
 });
 
 	
-} (jQuery)) 
+}(jQuery));

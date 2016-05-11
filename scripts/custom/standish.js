@@ -4,20 +4,22 @@
 ;(function($) {
 	$.Standish = (function() {});
 	window.Standish = window.Standish || {};
+ 	Standish.SiteListing = Standish.SiteListing || {};
+
+ 	var resizeColumns = function(groups) {
+		$.each(groups, function(index, value) {
+			$(value).matchHeight({
+				byRow: true,
+				property: 'height',
+				target: null,
+				remove: false
+			});
+		});
+	};
 
 	// 1. Equal Heights
 	Standish.EqualHeights = function() {
 		if ($(window).width() >= 768) {
-			function resizeColumns(groups) {
-				$.each(groups, function(index, value) {
-					$(value).matchHeight({
-						byRow: true,
-						property: 'height',
-						target: null,
-						remove: false
-					});
-				});
-			}
 			var groups = [
 				// '.listing',
 				'.listing .listing-container',
@@ -29,20 +31,10 @@
 			];
 			resizeColumns(groups);
 		}
-	}
+	};
 
 	Standish.EqualHeightsMobile = function() {
 		if ($(window).width() <= 768) {
-			function resizeColumns(groups) {
-				$.each(groups, function(index, value) {
-					$(value).matchHeight({
-						byRow: true,
-						property: 'height',
-						target: null,
-						remove: false
-					});
-				});
-			}
 			var groups = [
 				'.listing .listing-container',
 				'.column .eqhgt',
@@ -52,7 +44,7 @@
 			];
 			resizeColumns(groups);
 		}
-	}
+	};
 
 	// 3. convert search input large for mobile devices
 	Standish.SearchForm = function() {
@@ -67,7 +59,7 @@
 			}
 		}
 		
-	}
+	};
 	
 	Standish.EmptyCart = function() {
 
@@ -75,14 +67,7 @@
 			if ( $(this).find('.cart-number').html() === "0" ) {
 				event.preventDefault();
 
-				var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">\
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">\
-						<span aria-hidden="true">&times;</span>\
-					</button>\
-					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>\
-					<span class="sr-only">Error:</span>\
-					Please choose one or more items to put in your cart.\
-				</div>';
+				var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">	<button type="button" class="close" data-dismiss="alert" aria-label="Close">		<span aria-hidden="true">&times;</span>	</button>	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>	<span class="sr-only">Error:</span>	Please choose one or more items to put in your cart.</div>';
 				$('section#prime-content').prepend(s);
 				
 				$('#cart-error').show();
@@ -90,7 +75,7 @@
 				var timedResponse = setTimeout( function () {$('#cart-error').alert('close');}, 1000 );
 			}
 		});
-	}
+	};
 	Standish.optInPopover = function() {
 		$(function () {
 		  $('[data-toggle="popover"]').popover({
@@ -98,13 +83,13 @@
 		  	template: '<div class="popover" role="tooltip"><div class="arrow"></div><p class="popover-title"></p></div></div>'
 		  });
 		});
-	}
+	};
 
 	Standish.getData = function(embed_code) {
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
-  }
+  };
 
   Standish.addTestimonials = function() {
 
@@ -117,12 +102,12 @@
 				dataType:"jsonp",
 				success:function(data) {
 				  /* ~~ Variable Declaration ~~ */
-				  var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml, sliderStuff = {}, sliderStuff = [];
+				  var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml, sliderStuff = [];
 
 				  $(data.feed.entry).each(function(i,v) {
 				    // console.log(v);
-				    var vidid = v['gsx$videoid']['$t'],
-				        vidname = v['gsx$name']['$t'];
+				    var vidid = v.gsx$videoid.$t,
+				        vidname = v.gsx$name.$t;
 				    sliderStuff.push({name:vidname, videoid: vidid});
 				  });
 
@@ -163,7 +148,7 @@
 				}
 			});
     }
-  }
+  };
 
 	Standish.AddBottomMenu = function() {
 		var url = "https://spreadsheets.google.com/feeds/list/1WXj97jT1kJQRmFQHmDMzPaPI8Xls94q0yRFTTOK9hGI/od6/public/values?alt=json-in-script";
@@ -175,8 +160,8 @@
 
         $(data.feed.entry).each(function(i,v) {
 					outputHtml += '<li class="col-md-6 col-sm-6">';
-					outputHtml += '<a href="'+v['gsx$url']['$t'] + '">'
-        	outputHtml += v['gsx$name']['$t'];
+					outputHtml += '<a href="'+v.gsx$url.$t + '">';
+        	outputHtml += v.gsx$name.$t;
         	outputHtml += '</a>';
         	outputHtml += '</li>';
         });
@@ -184,7 +169,7 @@
         $('#global-footer').append(outputHtml);
       }
     });
-	}
+	};
 
 	Standish.ActivatePredictiveSearch = function() {
 		if( $('#searchlight').length ) {
@@ -197,17 +182,17 @@
 		}
 		// NOTE: the Searchlight element has to be loaded for the results
 		// to display correctly using the elements offset.
-	}
+	};
 
 	Standish.AnimateHelloBar = function() {
 		$('.hello-container').delay(1500).animate({opacity: 1});
-	}
+	};
 
 	Standish.Subtotes = function(that) {
 		if( !$('.discount').length ) {
 				$('.subtotes').hide();
 		}
-	}
+	};
 
 
 	Standish.NoZeros = function() {
@@ -216,7 +201,7 @@
 				$(this).text( $(this).text().replace(/\.00/g, '') );
 			});
 		}, 10 );
-	}
+	};
 
 	$(function() {
 		// Wait till dom is ready to use slick
@@ -229,7 +214,7 @@
 					autoplay: true
 				});
 			}
-		}
+		};
 		Standish.ActivateSliderFancy = function(element) {
 			if ( typeof $.fn.slick == "function" ) {
 				$(element).slick({
@@ -237,14 +222,9 @@
 				});
 			}
 
-		}
+		};
 	
 	});
-
-	Standish.TrackRevenue = function() {
-
-
-	}
 
 	nozeros = function() {
 		window.setTimeout( function () { 
@@ -252,7 +232,7 @@
 				$(this).text( $(this).text().replace(/\.00/g, '') );
 			});
 		}, 10 );
-	}
+	};
 
 	// Events
 	$(function() {
@@ -283,7 +263,7 @@
 		// 12. Add Testimonials
 		Standish.addTestimonials();
 		// 13. Adds revenue in optimizely
-		Standish.TrackRevenue();
+		// Standish.TrackRevenue();
 
 		// Run nozeros for templates that haven't been updated.
 		nozeros();
@@ -296,4 +276,4 @@
 		Standish.SearchForm();
 	});
 	
-})(jQuery)
+})(jQuery);

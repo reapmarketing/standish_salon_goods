@@ -11,18 +11,18 @@
         window.optimizely.push(["activate", 4970230722]);
       }
     });
-  }
+  };
 
   OptTest.menuHover = function() {
     $('a[title="Tools"]').on('hover', function() {
       window.optimizely = window.optimizely || [];
       // window.optimizely.push(["activate", 4970230722]);
     });
-  }
+  };
 
   
 
 
 
 
-})(window.Standish.OptTest = window.Standish.OptTest || {}, jQuery)
+})(window.Standish.OptTest = window.Standish.OptTest || {}, jQuery);

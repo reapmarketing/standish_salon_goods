@@ -3,7 +3,7 @@
 
 <script type="text/javascript">
 // initialize product - google analytics
-var product = {};
+/*var product = {};
 $( function(){
   product = {
     'id': '[id]',
@@ -20,7 +20,7 @@ $( function(){
   ga('ec:addProduct', product);
   ga('ec:setAction', 'detail');
   ga('send', 'pageview');
-});
+});*/
 </script>
 
 <section id="post-header-breadcrumb-search hidden-sm hidden-xs">
@@ -39,8 +39,10 @@ $( function(){
           <div class="input-group">
             <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (this.value=='search by keyword') {this.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
             <span class="input-group-btn">
-                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
-              </span>
+                <button name="search" class="search-button gainsboro btn">
+                  <i class="fa fa-search"></i>
+                </button>
+            </span>
           </div>
       </form>
     </div>
@@ -283,7 +285,7 @@ $( function(){
                     <div class="fancy-select form-group col-md-6 col-sm-6">
                       <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
                         <!--START: option-->
-                        <option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
+                        <option value="[value]" [selected]>[feature]<span class="nozero">[oprice]</span></option>
                         <!--END: option-->
                       </select>
                       <i class="fa fa-caret-down fa-sm"></i>
@@ -296,7 +298,7 @@ $( function(){
                       <!-- image_click($(this).find(':selected').index()+1); -->
                       <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
                         <!--START: option-->
-                        <option value="[value]" [selected]>[feature] <span class="nozero">[oprice]</span></option>
+                        <option value="[value]" [selected]>[feature]<span class="nozero">[oprice]</span></option>
                         <!--END: option-->
                       </select>
                       <i class="fa fa-caret-down fa-sm"></i>
@@ -379,7 +381,7 @@ $( function(){
                   data-action="like" 
                   data-show-faces="false">
                 </div>
-                <a href="https://twitter.com/share" class="twitter-share-button"{count} data-via="PomGilga">Tweet</a>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="PomGilga">Tweet</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js' ;fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
                 <a data-pin-do="buttonBookmark" data-pin-color="white" href="https://www.pinterest.com/pin/create/button/"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" /></a>
@@ -645,9 +647,6 @@ $( function(){
 <!--END: extra_field_8-->
 
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
-<script type="text/javascript" src="/assets/templates/common/3dzoom/magiczoomplus.js"></script>
-<!-- Scripts are put in template because they are dependent on template vars -->
-
 <!--START: qaScript-->
 <script type="text/javascript" src="updateQaStats.js"></script>
 <!--END: qaScript-->

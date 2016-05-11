@@ -11,21 +11,21 @@
       if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
       
         SiteListing.Slider.activateSlideShow();
-        SiteListing.Slider.addVideoToSlider();
-        SiteListing.Slider.addInstagramToSlider();
+        // SiteListing.Slider.addVideoToSlider();
+        // SiteListing.Slider.addInstagramToSlider();
         dfd.resolve();
       }
 
     });
     return dfd.promise();
-  }
+  };
   SiteListing.Slider.activateSlideShow = function() {
 
     // IMPORTANT Slick 'initialized' needs to be binded before slick is called on the element
     $('.sub-slider').on('init', function(event, slick) {
       var mainSlides = [], desHeight = $('#listing_main_image_link img').height();
 
-      $(slick['$slides']).each(function(i,v) {
+      $(slick.$slides).each(function(i,v) {
 
         var imgHref = $(v).attr('data-href'),
             origImgLoaded = $('.main-slider').find('img:first-of-type').attr('data-href');
@@ -57,7 +57,7 @@
       //nextArrow: '<button type="button" class="fa fa-chevron-right slick-next" style="background: white!important;">Next</button>',
       focusOnSelect: true
     });
-  }
+  };
   SiteListing.Slider.addVideoToSlider = function() {
     var video_embed_codes = '';
 
@@ -66,8 +66,9 @@
       var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
       return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
     }
+    var embed_data = $( '.field10' ).data( 'field10' );
 
-    if( embed_data = $( '.field10' ).data( 'field10' ) ) {
+    if( embed_data !== "" && typeof embed_data !== undefined ) {
       video_embed_codes = embed_data.split( ' ' );
     }
 
@@ -134,12 +135,12 @@
         });
       });
     }
-  }
+  };
   SiteListing.Slider.addInstagramToSlider = function() {
 
     // ---- FIELD 4: Instagram Hashtag ---- //
     var instagramHashtag = $( '.field4' ).data( 'field4' );
-    if( instagramHashtag != null ) {
+    if( instagramHashtag !== null ) {
       // var instaText = "<h6 style='text-align:center; text-transform: uppercase;'>TAG PHOTOS OF YOUR SALON WITH #"+instagramHashtag+" AND MENTION @STANDISHSTUFF TO SEE YOUR PHOTOS BELOW!</h6>";
       // console.log( 'Instagram', instagramHashtag, instaText );
       // The limit parameter does not seem to work, this is an Instagram API issue. (not an issue with instafeed) I've implemented a bit of css to limit the display to 3 instead.
@@ -183,7 +184,7 @@
       });
       feed.run();
     }
-  }
+  };
 
   // ---- ADD PRICE SALE CORNERTAG ---- //
   SiteListing.salePrice = function() {
@@ -196,7 +197,7 @@
     console.log(price);
     console.log(saleprice);
 
-    if (typeof saleprice != undefined && saleprice != 0 && !isNaN(saleprice)) {
+    if (typeof saleprice !== undefined && saleprice !== 0 && !isNaN(saleprice)) {
 
       if( price != saleprice ) {
         // $('.itemprice.price').text('$' + saleprice);
@@ -208,7 +209,7 @@
     else {
       $('.saleprice').hide();
     }
-  }
+  };
 
   // ---- ADD PRODUCT BADGES ---- //
   SiteListing.doBadges = function() {
@@ -298,11 +299,6 @@
         'class': 'inspected',
         'tooltip': 'All of our products pass fire retardant codes and meet Universal Plumbing Code (UPC) specifications.'
       },
-      'inspected': {
-        'title': 'Guaranteed To Pass Inspection',
-        'class': 'inspected',
-        'tooltip': 'All of our products pass fire retardant codes and meet Universal Plumbing Code (UPC) specifications.'
-      },
       'made-usa': {
         'title': 'Made in the USA',
         'class': 'made-usa',
@@ -343,7 +339,7 @@
         'class': 'sulfate-free',
         'tooltip': "You want the best for your skin and so do you. With Sulfate-Free products, we're able to do just that."
       }
-    }
+    };
 
     if( badges ) {
       badges = badges.split(/(\s+)/);
@@ -359,7 +355,7 @@
     } else {
       $badges.remove();
     }
-  }
+  };
 
   // ---- ADD GRID EFFECT TO THE PRODUCT REVIEWS Using Isotope ---- //
   SiteListing.commenceGrid = function() {
@@ -372,7 +368,7 @@
             gutterWidth: 20
       });
     });
-  }
+  };
 
   // ---- FIELD 1: Get info about the brand! ---- //
   SiteListing.getBrand = function() {
@@ -385,8 +381,8 @@
       success:function(data) {
 
         $(data.feed.entry).each(function(i,v) {
-          if ( v['gsx$keyterm']['$t'] === brand ) {
-            $('#sub-resources-about-brand p').append(v['gsx$blurb']['$t']);
+          if ( v.gsx$keyterm.$t === brand ) {
+            $('#sub-resources-about-brand p').append(v.gsx$blurb.$t);
           }
 
         });
@@ -394,26 +390,26 @@
       }
     });
 
-  }
+  };
 
   // ---- FIELD 3: Swap out availability text if product ---- //
   // ---- is custom made and needs more time to ship ---- //
   SiteListing.getAvailability = function() {
     // ---- FIELD 3: Availability Text ---- //
     var availability = $( '.field3' ).data( 'field3' );
-    if( availability != null ) {
+    if( typeof availability !== undefined ) {
       var availabilityText = $( '.availability' );
-      if( availability != '' ){
-        availabilityText.text( availability.replace() );
+      if( availability !== '' ){
+        availabilityText.text( availability );
       }
     } 
-  }
+  };
   
   // ---- FIELD 5: Notify me when the price drops ---- //
   SiteListing.priceDropForm = function() {
     // ---- FIELD 5: Price Drop Notification Form ---- //
     var priceDropForm = $( '.field5' ).data( 'field5' );
-    if( priceDropForm != null ) { 
+    if( priceDropForm !== null ) { 
     var priceDropTitle = $('<h4 class="priceDropTitle">Notify Me When The Price Drops!</h4><div class="priceDropForm"></div>');
     var priceDropButton = $('<a class="button medium priceDropButton">I want to be the first to know &raquo;</a>');
     $('.product-options').append( priceDropTitle, priceDropButton );
@@ -437,7 +433,7 @@
         }
       });
     });
-  }
+  };
 
   // ---- FIELD 7: Product Details List ---- //
   // ---- @todo this doesn't have to be formatted in JS ---- //
@@ -454,7 +450,7 @@
     } else {
       $('.product-details').hide();
     }
-  }
+  };
 
   // ---- FIELD 2: BROCHURE LINK ---- //
   SiteListing.brochureDownload = function() {
@@ -476,7 +472,7 @@
             target: '.vex-content',
             redirectUrl: $( '.brochure-download a' ).attr('href'),
             onFormReady: function() {
-              if( !$( '.vex-content .hs_email' ).length > 0 ) {
+              if( $( '.vex-content .hs_email' ).length <= 0 ) {
                 $( '.vex-content .hs-button' ).click();
               }
             }
@@ -484,7 +480,7 @@
         }
       });
     });
-  }
+  };
 
   // ---- Update pricing everytime original pricing changes ---- //
   SiteListing.updatePricing = function() {
@@ -493,7 +489,7 @@
       $('.price-wrapper').html($('#price').text());
     });
 
-  }
+  };
 
   // ---- IMAGE COLOR CHANGING FEATURE -- SLIDESHOW ---- //
   SiteListing.changeColorsSlides = function() {
@@ -515,7 +511,7 @@
         });
       }
     });
-  }
+  };
 
   SiteListing.financing = function() {
     // ---- PRICEBOX FINANCING FEATURE ---- //
@@ -534,22 +530,6 @@
       $('#financing-add').removeClass('hidden');
       $("#financing-add .financing-price").append('$' + payment);
     }
-  }
-
-  
+  };
 
 })(window.Standish.SiteListing = window.Standish.SiteListing || {}, jQuery);
-
-// ---- INITIALIZE EVERYTHING ---- //
-(function($) {
-  $(function() {
-    
-
-    // Dont activate these for now
-    // SiteListing.financing();
-    // SiteListing.priceDropForm();
-    // SiteListing.brochureDownload();
-
-
-  });
-} (jQuery));

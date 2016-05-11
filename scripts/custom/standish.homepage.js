@@ -38,13 +38,13 @@
       swipeToSlide: true,
       asNavFor: '.hoz-slider-top'
     });
-  }
+  };
 
   Homepage.getData = function(embed_code) {
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
-  }
+  };
 
   Homepage.videosFeed = function() {
     var url = "https://spreadsheets.google.com/feeds/list/1iNOQQpNDSGdpWw4Y5t32z8teqm0pz2yRL7ymVS7PtVg/od6/public/values?alt=json-in-script",
@@ -98,13 +98,13 @@
       success:function(data) {
 
         $(data.feed.entry).each(function(i,v) {
-          video_embed_codes.push(v['gsx$id']['$t']);
+          video_embed_codes.push(v.gsx$id.$t);
         });
         getVideos(video_embed_codes);
 
       }
     });
-  }
+  };
 
   Homepage.homepageBrands = function() {
     var url = "https://spreadsheets.google.com/feeds/list/1BLiH1rzKlbyAoS98jCnEONjbAzE8SrUx7lxR055Fy98/od6/public/values?alt=json-in-script";
@@ -118,8 +118,8 @@
 
         $('.homepage-brands').append();
         $(data.feed.entry).each(function(i,v) {
-          var image = v['gsx$img-url']['$t'],
-              link = v['gsx$link']['$t'];
+          var image = v['gsx$img-url'].$t,
+              link = v.gsx$link.$t;
 
           logoHtml += '<a href="'+link+'"><img style="max-width: 82px;" src="'+image+'"></a>';
 
@@ -128,7 +128,7 @@
       }
     });
 
-  }
+  };
 
   Homepage.homepageHozSlider = function() {
 
@@ -142,9 +142,9 @@
         var backgroundimage, ctatext, headline, smallversioncta, smallversionheader, subheader, videolink, sliderHtml = '', imgnotext, sliderNavHtml = '', sliderStuff = [], AJAX = [], video_data = [], desWidth =  $('.hoz-slider-top').width();
 
         $(data.feed.entry).each(function(i,v) {
-          var image = v['gsx$backgroundimage']['$t'],
-              imgpreview = v['gsx$imgpreview']['$t'],
-              videoid = v['gsx$videoid']['$t'];
+          var image = v.gsx$backgroundimage.$t,
+              imgpreview = v.gsx$imgpreview.$t,
+              videoid = v.gsx$videoid.$t;
           sliderStuff.push({image:image, imgpreview:imgpreview, videoid:videoid});
         });
 
@@ -191,6 +191,6 @@
         });
       }
     });
-  }
+  };
 
 })(window.Standish.Homepage = window.Standish.Homepage || {}, jQuery);

@@ -9,13 +9,14 @@
     switch ( template_slug ) {
       // case for product pages
       case 'listing_3':
-      case 'listing_1':
-        var script = document.createElement('script');
-        script.id = 'listing';
-        script.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
+        var inlineScript = document.createElement('inlineScript');
+        inlineScript.id = 'listing';
+        inlineScript.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
         document.head.appendChild(script);
       return;
       case 'listing_0':
+      case 'listing_1':
+      case 'listing_2':
         // Activate Standish.SiteListing
         if (Standish.SiteListing) {
           $('#loadingDiv').height($('.product_left').height());
@@ -25,6 +26,7 @@
             $('.sub-slider').show();
             $('#loadingDiv').hide();
           });
+          /*
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
           Standish.SiteListing.doBadges();
@@ -33,11 +35,10 @@
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
           Standish.SiteListing.updatePricing();
-          Standish.SiteListing.changeColorsSlides();
+          Standish.SiteListing.changeColorsSlides();*/
         }
       return;
-      case 'listing_2':
-        var script = document.createElement('script');
+      /* var script = document.createElement('script');
         script.id = 'listing';
         script.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
         document.head.appendChild(script);
@@ -59,8 +60,7 @@
               $('.modal.modal-request-quote').modal();
             }); 
           }
-        });
-      return;
+        });*/
       case 'home':
         // Activate Standish.Homepage
         if (Standish.Homepage) {
@@ -73,7 +73,7 @@
       default:
       return;
     }
-  }
+  };
   
 
 })(jQuery);
