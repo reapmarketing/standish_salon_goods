@@ -9,7 +9,7 @@
   <div class="clearfix"></div>
   <div id="action-section" class="col-md-12">
     <div class="text-right">
-      <a id="print-action" class="btn btn-flat">Print</a>
+      <a id="print-action" class="btn btn-flat" onclick="window.print();">Print</a>
       <a id="share-action" class="btn btn-flat" style="margin-left:10px;" data-toggle="modal" data-target="#shareModal">Share</a>
     </div>
   </div>
@@ -40,7 +40,7 @@
       <div class="col-md-6 col-sm-6">
         <div class="row">
           <div class="img col-md-6 col-sm-6 col-xs-6">
-            <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]" height="105" width="105" /></a>
+            <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" height="105" width="105" /></a>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6">
             <p class="title">

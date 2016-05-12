@@ -15,19 +15,12 @@
   <div class="clearfix"></div>
   <div id="action-section" class="col-md-12">
     <div class="text-right">
-      <a id="print-action" class="btn btn-flat">Print</a>
+      <a id="print-action" class="btn btn-flat" onclick="window.print();">Print</a>
       <a id="share-action" class="btn btn-flat" style="margin-left:10px;" data-toggle="modal" data-target="#shareModal">Share</a>
     </div>
   </div>
 
   <!--END: myAccount-->
-  
-  <!--START: BLK_PUBLIC_WISHLIST_ADDRESS-->
-  <meta id="public-url" title="Pubic URL" url="[Public_Wishlist_URL]" />
-
-  <div class="clearfix"></div>
-  <div class="social-bookmarking">[product_social-bookmarking]</div>
-  <!--END: BLK_PUBLIC_WISHLIST_ADDRESS-->
   <div class="clearfix"></div>
   <!--START: CATEGORY_HEADER-->
 <div class="category-header" id="viewWishlistHeader">[CONTENT]</div>
@@ -46,7 +39,7 @@
       <div class="col-md-6 col-sm-6">
         <div class="row">
           <div class="img col-md-6 col-sm-6 col-xs-6">
-            <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]" height="105" width="105" /></a>
+            <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" height="105" width="105" /></a>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-6">
             <p class="title">
@@ -127,8 +120,10 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
+            <!--START: BLK_PUBLIC_WISHLIST_ADDRESS-->
             <label>Public URL</label>
             <input class="form-control" type="text" value="[Public_Wishlist_URL]"/>
+            <!--END: BLK_PUBLIC_WISHLIST_ADDRESS-->
           </div>
           <div class="clearfix"></div>
           <div class="form-group">

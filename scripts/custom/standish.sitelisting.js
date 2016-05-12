@@ -197,7 +197,8 @@
       else {
         bootbox.confirm("Please log in in order to add this item to your wishlist.", function(result) {
           if (result == 1) {
-            window.location.href = "/myaccount.asp";
+            window.open("/myaccount.asp",'_blank');
+            // window.location.href = "/myaccount.asp";
           }
         });
       }
