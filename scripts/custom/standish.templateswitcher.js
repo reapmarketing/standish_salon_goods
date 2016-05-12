@@ -30,6 +30,7 @@
           Standish.SiteListing.productDetailsFormat();
           Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
+          Standish.SiteListing.addToWishlist();
         }
       return;
       case 'listing_2':

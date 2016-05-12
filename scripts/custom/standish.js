@@ -62,7 +62,7 @@
 	};
 
 	Standish.applyFilters = function() {
-		console.log($('#category-selectors'));
+		// console.log($('#category-selectors'));
 		if ($('#category-selectors').length > 0) {
 			var $sideBar = $('#category-selectors').detach();
 		

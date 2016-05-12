@@ -213,8 +213,8 @@
 
     var price = parseInt($('[data-prop="itemprice"]').text().replace('$','').replace(',','')),
         saleprice = parseInt($('[data-prop="saleprice"]').text().replace('$','').replace(',',''));
-    console.log(price);
-    console.log(saleprice);
+    //console.log(price);
+    //console.log(saleprice);
 
     if (typeof saleprice !== undefined && saleprice !== 0 && !isNaN(saleprice)) {
 
