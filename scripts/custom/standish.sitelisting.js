@@ -6,18 +6,17 @@
   SiteListing.Slider = SiteListing.Slider || {};
 
   SiteListing.Slider.init = function() {
-    var dfd = $.Deferred();
     $('#prime-content').imagesLoaded( function() {
       if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
-      
         SiteListing.Slider.activateSlideShow();
-        // SiteListing.Slider.addVideoToSlider();
-        // SiteListing.Slider.addInstagramToSlider();
-        dfd.resolve();
-      }
+        SiteListing.Slider.addVideoToSlider();
+        SiteListing.Slider.addInstagramToSlider();
 
+        $('.main-slider').show();
+        $('.sub-slider').show();
+        $('#loadingDiv').hide();
+      }
     });
-    return dfd.promise();
   };
   SiteListing.Slider.activateSlideShow = function() {
 

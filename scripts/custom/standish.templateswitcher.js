@@ -16,17 +16,11 @@
       return;
       case 'listing_0':
       case 'listing_1':
-      case 'listing_2':
         // Activate Standish.SiteListing
         if (Standish.SiteListing) {
           $('#loadingDiv').height($('.product_left').height());
 
-          var sitelisting = Standish.SiteListing.Slider.init().then(function() {
-            $('.main-slider').show();
-            $('.sub-slider').show();
-            $('#loadingDiv').hide();
-          });
-          /*
+          var sitelisting = Standish.SiteListing.Slider.init();
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
           Standish.SiteListing.doBadges();
@@ -35,19 +29,29 @@
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
           Standish.SiteListing.updatePricing();
-          Standish.SiteListing.changeColorsSlides();*/
+          Standish.SiteListing.changeColorsSlides();
         }
       return;
-      /* var script = document.createElement('script');
-        script.id = 'listing';
-        script.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
-        document.head.appendChild(script);
-        // Insert hbspt script
-        var scriptb = document.createElement('script');
-        scriptb.charset = "utf-8";
-        scriptb.src = '//js.hsforms.net/forms/current.js';
-        document.head.appendChild(scriptb);
+      case 'listing_2':
+        // Activate Standish.SiteListing
+        if (Standish.SiteListing) {
+          $('#loadingDiv').height($('.product_left').height());
 
+          var sitelisting2 = Standish.SiteListing.Slider.init().then(function() {
+            $('.main-slider').show();
+            $('.sub-slider').show();
+            $('#loadingDiv').hide();
+          });
+          Standish.SiteListing.financing();
+          Standish.SiteListing.salePrice();
+          Standish.SiteListing.doBadges();
+          Standish.SiteListing.commenceGrid();
+          Standish.SiteListing.getBrand();
+          Standish.SiteListing.getAvailability();
+          Standish.SiteListing.productDetailsFormat();
+          Standish.SiteListing.updatePricing();
+          Standish.SiteListing.changeColorsSlides();
+        }
         hbspt.forms.create({ 
           portalId: '239485',
           formId: 'f1f6150e-c064-474e-889d-e5060e3e6ba7',
@@ -60,7 +64,8 @@
               $('.modal.modal-request-quote').modal();
             }); 
           }
-        });*/
+        });
+      break;
       case 'home':
         // Activate Standish.Homepage
         if (Standish.Homepage) {

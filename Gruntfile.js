@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['Gruntfile.js', 'scripts/custom/*', '!scripts/custom/_magic-zoom-options-ex.js', '!scripts/custom/listing-scripts.js', '!scripts/custom/listing-scripts.js', '!scripts/custom/urlParams.js', '!scripts/custom/test-script-listing-product.js'], // Add more to the list later on
+      files: ['Gruntfile.js', 'scripts/custom/*', '!scripts/custom/_magic-zoom-options-ex.js', '!scripts/custom/listing-scripts.js', '!scripts/custom/listing-scripts.js', '!scripts/custom/urlParams.js', '!scripts/custom/test-script-listing-product.js', '!scripts/custom/hacks.js'], // Add more to the list later on
       options: {
         globals: {
           jQuery: true
@@ -60,6 +60,10 @@ module.exports = function(grunt) {
       build: {
         src: 'dist/js/app.js',
         dest: 'dist/js/app.min.js'
+      },
+      jqueryMigrate: {
+        src: 'scripts/jquery.migrate.js',
+        dest: 'dist/js/jquery.migrate.min.js'
       }
     },
     sprite:{

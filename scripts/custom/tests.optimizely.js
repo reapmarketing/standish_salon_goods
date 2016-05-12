@@ -1,6 +1,5 @@
 ;(function() {
 
-
   // window.optimizely = window.optimizely || [];
   // window.optimizely.push(["activate", 4970230722]);
 
@@ -19,10 +18,5 @@
       // window.optimizely.push(["activate", 4970230722]);
     });
   };
-
-  
-
-
-
 
 })(window.Standish.OptTest = window.Standish.OptTest || {}, jQuery);

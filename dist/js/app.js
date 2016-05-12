@@ -1,4 +1,4 @@
-/*! standish-responsive - v2.0 - 2016-05-11 *//*!
+/*! standish-responsive - v2.0 - 2016-05-12 *//*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -457,18 +457,17 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
   SiteListing.Slider = SiteListing.Slider || {};
 
   SiteListing.Slider.init = function() {
-    var dfd = $.Deferred();
     $('#prime-content').imagesLoaded( function() {
       if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
-      
         SiteListing.Slider.activateSlideShow();
-        // SiteListing.Slider.addVideoToSlider();
-        // SiteListing.Slider.addInstagramToSlider();
-        dfd.resolve();
-      }
+        SiteListing.Slider.addVideoToSlider();
+        SiteListing.Slider.addInstagramToSlider();
 
+        $('.main-slider').show();
+        $('.sub-slider').show();
+        $('#loadingDiv').hide();
+      }
     });
-    return dfd.promise();
   };
   SiteListing.Slider.activateSlideShow = function() {
 
@@ -1196,17 +1195,11 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
       return;
       case 'listing_0':
       case 'listing_1':
-      case 'listing_2':
         // Activate Standish.SiteListing
         if (Standish.SiteListing) {
           $('#loadingDiv').height($('.product_left').height());
 
-          var sitelisting = Standish.SiteListing.Slider.init().then(function() {
-            $('.main-slider').show();
-            $('.sub-slider').show();
-            $('#loadingDiv').hide();
-          });
-          /*
+          var sitelisting = Standish.SiteListing.Slider.init();
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
           Standish.SiteListing.doBadges();
@@ -1215,19 +1208,29 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
           Standish.SiteListing.updatePricing();
-          Standish.SiteListing.changeColorsSlides();*/
+          Standish.SiteListing.changeColorsSlides();
         }
       return;
-      /* var script = document.createElement('script');
-        script.id = 'listing';
-        script.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
-        document.head.appendChild(script);
-        // Insert hbspt script
-        var scriptb = document.createElement('script');
-        scriptb.charset = "utf-8";
-        scriptb.src = '//js.hsforms.net/forms/current.js';
-        document.head.appendChild(scriptb);
+      case 'listing_2':
+        // Activate Standish.SiteListing
+        if (Standish.SiteListing) {
+          $('#loadingDiv').height($('.product_left').height());
 
+          var sitelisting2 = Standish.SiteListing.Slider.init().then(function() {
+            $('.main-slider').show();
+            $('.sub-slider').show();
+            $('#loadingDiv').hide();
+          });
+          Standish.SiteListing.financing();
+          Standish.SiteListing.salePrice();
+          Standish.SiteListing.doBadges();
+          Standish.SiteListing.commenceGrid();
+          Standish.SiteListing.getBrand();
+          Standish.SiteListing.getAvailability();
+          Standish.SiteListing.productDetailsFormat();
+          Standish.SiteListing.updatePricing();
+          Standish.SiteListing.changeColorsSlides();
+        }
         hbspt.forms.create({ 
           portalId: '239485',
           formId: 'f1f6150e-c064-474e-889d-e5060e3e6ba7',
@@ -1240,7 +1243,8 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
               $('.modal.modal-request-quote').modal();
             }); 
           }
-        });*/
+        });
+      break;
       case 'home':
         // Activate Standish.Homepage
         if (Standish.Homepage) {
@@ -1314,7 +1318,14 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
 	// Remove 3DCart clears (use the 'clearfix' class instead)
 	$('div[style*=both]').remove();
 });
-;jQuery( function($) {
+;
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+
+jQuery( function($) {
 
 	// unWrappers
 	$( '.productContainer' ).unwrap();
