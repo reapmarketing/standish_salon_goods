@@ -217,23 +217,28 @@ strong {
 
 // Product level customizations to Font
 @media only screen and (max-width : $xs) {
-  .listing p.title a {
-    color: $dark-text !important;
-    text-decoration: initial !important;
-    font-size: 1.2em !important;
+  .listing {
+    p.title a {
+      color: $dark-text !important;
+      text-decoration: initial !important;
+      font-size: 1.2em !important;
+    }
   }
   .listing .product_thumb {
     border: 0 none !important;
   }
 }
-.listing p.title {
-  @extend .narrow;
-  min-height: 34px;
-  a {
-    color: $blue-link;
-    text-decoration: underline;
+.listing, .listing-wl {
+  p.title {
+    @extend .narrow;
+    min-height: 34px;
+    a {
+      color: $blue-link;
+      text-decoration: underline;
+    }
   }
 }
+
 .pricebox .left-price {
   @extend .narrow;
 }

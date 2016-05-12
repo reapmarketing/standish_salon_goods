@@ -1,0 +1,239 @@
+<section id="viewWishlist" class="col-md-10">
+ 
+  <!--START: myAccount-->
+  <div class="col-md-12 padding-none">
+    <h1 class="pull-left page_headers"><!--START: SINGLE_WISHLIST_TITLE-->[wishlist_my-wishlist]<!--END: SINGLE_WISHLIST_TITLE--><!--START: MULTIPLE_WISHLIST_LIST_TITLE-->[wishlist-list-title]<!--END: MULTIPLE_WISHLIST_LIST_TITLE-->
+    </h1>
+    <!--START: MULTIPLE_WISHLIST_BACK_LISTS-->
+    <div class="pull-right account-title-wishlist"><a href="view_wishlist.asp" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i> [wishlist_multiple-back-to-lists]</a></div>
+    <!--END: MULTIPLE_WISHLIST_BACK_LISTS-->
+    <!--START: MULTIPLE_WISHLIST_BACK_ACCOUNT-->
+    <div class="pull-right account-title-wishlist"><a href="myaccount.asp" class=""><i class="fa fa-arrow-left" aria-hidden="true"></i> [wishlist_back-to-account]</a></div>
+    <!--END: MULTIPLE_WISHLIST_BACK_ACCOUNT-->
+  </div>
+
+  <div class="clearfix"></div>
+  <div id="action-section" class="col-md-12">
+    <div class="text-right">
+      <a id="print-action" class="btn btn-flat" onclick="window.print();">Print</a>
+      <a id="share-action" class="btn btn-flat" style="margin-left:10px;" data-toggle="modal" data-target="#shareModal">Share</a>
+    </div>
+  </div>
+
+  <!--END: myAccount-->
+  <div class="clearfix"></div>
+  <!--START: CATEGORY_HEADER-->
+<div class="category-header" id="viewWishlistHeader">[CONTENT]</div>
+  <!--END: CATEGORY_HEADER-->
+  <!--START: SINGLE_WISHLIST-->
+  <div class="wishlistView">
+    <div class="titles2 row hidden-xs cart_items_header">
+      <div class="col-md-6 col-sm-6 wl-items">[wishlist_viewwishlist-header-items]</div>
+      <div class="col-md-6 col-sm-6 wl-quantity">[wishlist_viewwishlist-header-quantity]</div>
+    </div>
+    <!--START: WSH_LIST_NO_ITEM-->
+    <div class="emptylist">[wishlist_viewwishlist-emptylist]</div>
+    <!--END: WSH_LIST_NO_ITEM--> 
+    <!--START: WSH_LIST_ITEM-->
+    <div class="row listing-wl">
+      <div class="col-md-6 col-sm-6">
+        <div class="row">
+          <div class="img col-md-6 col-sm-6 col-xs-6">
+            <a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" height="105" width="105" /></a>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <p class="title">
+              <a href="product.asp?itemid=[ITEM_CATALOGID]">[ITEM_NAME]</a>
+            </p>
+            <!--START: itemoptions-->
+            <p id="opt[ITEM_ID]" name="opt[ITEM_ID]" class="options">
+              [OPTIONS]
+            </p>
+            <!--END: itemoptions-->
+
+            <div class="wl-price nozero">[ITEM_PRICE]</div>
+            <div class="wl-total nozero"><label class="label label-sucess bold">Total: </label>[ITEM_SUBTOTAL]</div>
+          </div>
+        </div>
+      
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <div class="form-group">
+              <input type="text" name="txtQty[ITEM_ID]" id="txtQty[ITEM_ID]" size="2" maxlength="4" value="[ITEM_QUANTITY]" class="form-control txtBoxStyle" style="width: 50%;" />
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-8">
+
+            <!--START: WSH_LIST_ITEM_ADDCART-->
+            <div class="clearfix"></div>
+            <div class="add-item col-md-12">
+              <a href="http://devstandishsalongoods.3dcartstores.com//view_cart.asp"  onclick="javascript:addToCart([ITEM_ID], [LIST_ID]);" class="white-text"><button class="button cart large btn btn-block"><i class="fa fa-shopping-cart"></i> Add to Cart</button></a>
+            </div>
+            <!--END: WSH_LIST_ITEM_ADDCART-->
+            <div class="wl-update col-md-6 top-margin">
+              <a href="#" class="btn btn-x-light btn-block dark-text" onclick="javascript:saveItem([ITEM_ID],[LIST_ID]);">Update</a>
+            </div>
+            <div class="wl-remove-item col-md-6 top-margin">
+              <a href="#" class="btn btn-x-light btn-block dark-text" onclick="javascript:removeItem([ITEM_ID]);"><i class="fa fa-times" aria-hidden="true"></i> Remove</a>
+            </div>
+            <!--START: WSH_LIST_ITEM_NOT_AVLB-->
+            <div class="center"><p class="has-error">[wishlist_viewwishlist-prod-not-available]</p></div>
+            <!--END: WSH_LIST_ITEM_NOT_AVLB--> 
+
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <!--END: WSH_LIST_ITEM-->
+    <div class="clearfix"></div>
+  </div>
+  <!--END: SINGLE_WISHLIST-->
+  <br/>
+  <!--START: LIST_VISIBILITY_RADIO-->
+  <div class="list-visibility panel panel-default">
+    <h4>List Visibility:</h4>
+    <label class="opt-format col-md-2 col-sm-2 col-xs-6" for="optListVisibility">
+      <input type="radio" name="optListVisibility" class="" id="optListVisibilityPrivate" value= "0" [Selected-Visibility-Private] /> Private
+    </label>
+    <label class="opt-format col-md-2 col-sm-2 col-xs-6" for="optListVisibility">
+      <input type="radio" name="optListVisibility" id="optListVisibilityPublic" value= "1" [Selected-Visibility-Public] /> Public
+    </label>
+
+    <div class="col-md-6 col-xs-6 save-button"><input type="button" value="Save" height="5" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" onclick="javascript: savePublicOrPrivate([WSH_ID]);" /></div>
+    <div class="clearfix"></div>
+    
+    <div class="clearfix"></div>
+  </div>
+ 
+  <!--END: LIST_VISIBILITY_RADIO-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Share Wishlist</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <!--START: BLK_PUBLIC_WISHLIST_ADDRESS-->
+            <label>Public URL</label>
+            <input class="form-control" type="text" value="[Public_Wishlist_URL]"/>
+            <!--END: BLK_PUBLIC_WISHLIST_ADDRESS-->
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-group">
+            <label>Share on Social Media:</label>
+            <div class="social-media-block row">
+
+                <!-- Load Facebook SDK for JavaScript -->
+                <!-- Load Facebook SDK for JavaScript -->
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+
+                <!-- Your like button code -->
+                <div class="fb-like" 
+                  data-layout="standard" 
+                  data-action="like" 
+                  data-show-faces="true"
+                  data-share="true">
+                </div>
+
+                <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js' ;fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                <a data-pin-do="buttonBookmark" data-pin-color="white" href="https://www.pinterest.com/pin/create/button/"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" /></a>
+                <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+                <a class="btn btn-xs btn-social email" href="mailto:?subject=&body=:%20" title="Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL),'_self',false); return false;"><i class="fa fa-envelope fa-sm"></i> Send</a>
+              </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+  <!--START: CATEGORY_FOOTER-->
+<div class="category-footer" id="viewWishlistFooter">[CONTENT]</div>
+  <!--END: CATEGORY_FOOTER--> 
+</section>
+<form action="view_wishlist.asp" method="post" name="frmForm" id="frmForm">
+    <input type="hidden" name="action"	id="action"	value="" />
+    <input type="hidden" name="wsiId"	id="wsiId"	value="" />
+    <input type="hidden" name="k"	id="intListId"	value="" />
+    <input type="hidden" name="qty"	id="qty"	value="" />
+    <input type="hidden" name="multiple_wishlist_name"	id="multiple_wishlist_name"	value="" />
+    <input type="hidden" name="optListVisibility"	id="Hidden1"	value="" />
+</form>
+<script type="text/javascript">
+function submitForm(strAction) {
+	window.document.body.style.cursor = 'wait';
+	if (window.document.activeElement) { window.document.activeElement.style.cursor = 'wait'; }
+
+	document.frmForm.action.value = strAction;
+	document.frmForm.submit();
+}
+
+function removeItem(intWsiId, intListId) {
+	var rep;
+	rep = confirm("[wishlist_viewwishlist-message-removeitem]");
+	if (!rep)
+		return false;
+
+	document.frmForm.wsiId.value = intWsiId;
+	document.frmForm.k.value = intListId;
+	submitForm('removeItem');
+}
+
+function addToCart(intWsiId, intListId) {
+	var rep;
+	rep = confirm("[wishlist_viewwishlist-message-addtocart]");
+	if (!rep)
+		return false;
+
+	document.frmForm.wsiId.value = intWsiId;
+	document.frmForm.k.value = intListId;
+	submitForm('addToCart');
+}
+
+function saveItem(intWsiId, intListId) {
+
+	var qty = document.getElementById("txtQty" + intWsiId).value;
+
+
+	document.frmForm.wsiId.value = intWsiId;
+	document.frmForm.k.value = intListId;
+	document.frmForm.qty.value = qty;
+
+	submitForm('saveItem');
+}
+
+function savePublicOrPrivate(intListId) {
+	var optVisibility = '';
+
+	if (document.getElementById("optListVisibilityPublic").checked == true) {
+		optVisibility = '1'
+	}
+	else {
+		optVisibility = '0'
+
+	}
+	document.frmForm.optListVisibility.value = optVisibility;
+	document.frmForm.action.value = 'savePublicOrPrivate';
+	document.frmForm.k.value = intListId;
+	frmForm.submit();
+}
+</script>

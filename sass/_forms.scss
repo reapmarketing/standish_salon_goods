@@ -221,11 +221,11 @@ button[type=submit],
   text-decoration: none;
 }
 
-.btn, .button {
+a.btn, a.button, .btn, button {
   &.standishgreen {
     @include button-styles($standishgreen, darken($standishgreen, 10%));
     text-shadow: 0px -1px 0px darken($standishgreen, 5%);
-    color: $primary-gray !important;
+    color: $primary-gray;
     .add-on-left {
       border-right: 1px solid $primary-gray;
     }
@@ -273,6 +273,13 @@ button[type=submit],
     border: 1px solid $lightGrey;
     &:hover {
       @include button-styles(darken($xlightGrey, 3%), darken($xlightGrey, 3%));
+    }
+  }
+  &.btn-purp {
+    @include button-styles(lighten($hello-bar-bkg-color, 10%), $hello-bar-bkg-color);
+    text-shadow: 0px -1px 0px darken($hello-bar-bkg-color, 5%);
+    &:hover {
+      @include button-styles($hello-bar-bkg-color, $hello-bar-bkg-color);
     }
   }
   &.standishgray {
@@ -347,6 +354,14 @@ btn.focus, .btn:focus, .btn:hover, .hs-form .hs-button:focus, .hs-form .hs-butto
 .button.cart.btn:hover {
   font-weight: normal;
 }
+
+#apply-financing {
+  padding: 10px;
+}
+#apply-financing, #add-wishlist {
+  margin-top: 10px;
+}
+
 
 input[type=button]:hover,
 input[type=submit]:hover,

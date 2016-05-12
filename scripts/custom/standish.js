@@ -60,6 +60,17 @@
 		}
 		
 	};
+
+	Standish.applyFilters = function() {
+		console.log($('#category-selectors'));
+		if ($('#category-selectors').length > 0) {
+			var $sideBar = $('#category-selectors').detach();
+		
+			$('.left-bar #catframe-wrapper').replaceWith($sideBar);
+
+			$('.cat-filter-separator').remove();
+		}
+	};
 	
 	Standish.EmptyCart = function() {
 
@@ -262,8 +273,9 @@
 		Standish.Subtotes();
 		// 12. Add Testimonials
 		Standish.addTestimonials();
-		// 13. Adds revenue in optimizely
-		// Standish.TrackRevenue();
+
+		// 14. Apply weird cat filters
+		Standish.applyFilters();
 
 		// Run nozeros for templates that haven't been updated.
 		nozeros();

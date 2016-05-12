@@ -30,7 +30,7 @@
             origImgLoaded = $('.main-slider').find('img:first-of-type').attr('data-href');
 
         if (typeof imgHref !== 'undefined' && imgHref !== origImgLoaded) {
-          var slideElement = '<a class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx='+$('.main-slider').width()+'&maxy=0" align="middle" border="0" id="large" name="large" alt="" style="max-height: 375px;"/></a>';
+          var slideElement = '<a class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx='+$('.main-slider').width()+'&maxy=0" id="large" alt="" style="max-height: 375px; text-align: center;"/></a>';
           $('.main-slider').slick('slickAdd', slideElement);
         }
       });
@@ -99,15 +99,15 @@
             video_markup_main = '';
             video_markup_main += '<a class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
             video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
-            video_markup_main +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
+            video_markup_main +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" id="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
             video_markup_main += '</a>';
 
             $('.main-slider').slick('slickAdd', video_markup_main).slick('setPosition');
 
             /* Add videos to sub slick slider */
             video_markup_sub = '';
-            video_markup_sub += '<a data-caption="'+ video.title +'" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file='+ video.thumbnail_url +'&amp;maxx=400&amp;maxy=0">';
-            video_markup_sub +=  '<img border="0" src="'+ video.thumbnail_url + '&' + 'image_crop_resized=75x75" alt="" name="" />';
+            video_markup_sub += '<a data-caption="'+ video.title +'" rel="thumb-id:listing_main_image_link">';
+            video_markup_sub +=  '<img src="'+ video.thumbnail_url + '&' + 'image_crop_resized=75x75" alt="" />';
             video_markup_sub += '</a>';
 
             $('.sub-slider').slick('slickAdd', video_markup_sub).slick('setPosition');
@@ -116,7 +116,7 @@
             video_markup_product_page = '';
             video_markup_product_page += '<div class="padd-top col-md-4 col-sm-4"><a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
             video_markup_product_page += '<i class="fa fa-sm fa-play play-button" style="font-size: 3em;position: absolute;text-decoration: none;"></i>';
-            video_markup_product_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
+            video_markup_product_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" id="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
             video_markup_product_page += '</a></div>';
 
             $('.product-videos').append(video_markup_product_page);
@@ -168,13 +168,13 @@
             /* Add instagram to main slick slider */
             var instagram_markup_main = '';
             instagram_markup_main += '<a class="'+classname+'" data-video-insta="'+ dataVideo +'" id="listing_main_image_link">';
-            instagram_markup_main +=  '<img itemprop="image" src="'+ v.images.standard_resolution.url +'" align="middle" border="0" id="large" name="large" alt="'+  v.caption.text +'" style="max-height:'+instaHeight+'px;" data-href="'+ v.images.standard_resolution.url +'" />';
+            instagram_markup_main +=  '<img itemprop="image" src="'+ v.images.standard_resolution.url +'" align="middle" id="large" alt="'+  v.caption.text +'" style="max-height:'+instaHeight+'px;" data-href="'+ v.images.standard_resolution.url +'" />';
             instagram_markup_main += '</a>';
             $('.main-slider').slick('slickAdd', instagram_markup_main);
             /* Add instagram to sub slick slider */
             var instagram_markup_sub = '';
-            instagram_markup_sub += '<a data-caption="'+ v.caption.text +'" rel="thumb-id:listing_main_image_link" rev="thumbnail.asp?file='+ v.images.thumbnail.url +'&amp;maxx=400&amp;maxy=0">';
-            instagram_markup_sub +=  '<img border="0" src="'+ v.images.thumbnail.url +'" alt="" name="" width="75" height="75" />';
+            instagram_markup_sub += '<a data-caption="'+ v.caption.text +'" rel="thumb-id:listing_main_image_link">';
+            instagram_markup_sub +=  '<img src="'+ v.images.thumbnail.url +'" alt="" width="75" height="75" />';
             instagram_markup_sub += '</a>';
 
             $('.sub-slider').slick('slickAdd', instagram_markup_sub);
@@ -183,6 +183,26 @@
       });
       feed.run();
     }
+  };
+
+  // -- ADD WISHLIST BUTTON FUNCTIONALITY -- //
+  SiteListing.addToWishlist = function() {
+    $('#add-wishlist').on('click', function(e) {
+      e.preventDefault();
+
+      if (typeof username != 'undefined' && username !== "Guest") {
+        document.add.action = "add_cart.asp?action=addWishList";
+        document.add.submit();
+      }
+      else {
+        bootbox.confirm("Please log in in order to add this item to your wishlist.", function(result) {
+          if (result == 1) {
+            window.open("/myaccount.asp",'_blank');
+            // window.location.href = "/myaccount.asp";
+          }
+        });
+      }
+    });
   };
 
   // ---- ADD PRICE SALE CORNERTAG ---- //
