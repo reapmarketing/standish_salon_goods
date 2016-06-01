@@ -1,3 +1,11 @@
+`bower install` to install bower 3rd party dependencies (if needed)
+
+`npm install` to install grunt dependencies
+
+`grunt` to initially compile scripts, styles and sprites
+
+`grunt watch` while editing primary scripts and styles (view gruntfile for more info)
+
 Template Identification
 
 search '-template'
