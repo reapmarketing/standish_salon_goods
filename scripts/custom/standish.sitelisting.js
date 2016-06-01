@@ -67,7 +67,7 @@
     }
     var embed_data = $( '.field10' ).data( 'field10' );
 
-    if( embed_data !== "" && typeof embed_data !== undefined ) {
+    if( typeof embed_data !== 'undefined' ) {
       video_embed_codes = embed_data.split( ' ' );
     }
 
@@ -139,7 +139,8 @@
 
     // ---- FIELD 4: Instagram Hashtag ---- //
     var instagramHashtag = $( '.field4' ).data( 'field4' );
-    if( instagramHashtag !== null ) {
+
+    if( typeof instagramHashtag !== 'undefined' ) {
       // var instaText = "<h6 style='text-align:center; text-transform: uppercase;'>TAG PHOTOS OF YOUR SALON WITH #"+instagramHashtag+" AND MENTION @STANDISHSTUFF TO SEE YOUR PHOTOS BELOW!</h6>";
       // console.log( 'Instagram', instagramHashtag, instaText );
       // The limit parameter does not seem to work, this is an Instagram API issue. (not an issue with instafeed) I've implemented a bit of css to limit the display to 3 instead.

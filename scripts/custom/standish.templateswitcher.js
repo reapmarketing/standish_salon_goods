@@ -28,7 +28,7 @@
           Standish.SiteListing.getBrand();
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
-          Standish.SiteListing.updatePricing();
+          // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
           Standish.SiteListing.addToWishlist();
         }
@@ -51,7 +51,7 @@
           Standish.SiteListing.getBrand();
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
-          Standish.SiteListing.updatePricing();
+          // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
         }
         hbspt.forms.create({ 

@@ -80,6 +80,38 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+  .add-qty.input-group-btn {
+    float:left;
+  }
+  #input-button-qty.btn-group-horizontal {
+    margin: 0;
+  }
+  #input-button-qty.btn-group-horizontal div.add-qty, #input-button-qty.btn-group-horizontal div.remove-qty {
+    /*display: inline;*/
+  }
+  #input-button-qty.btn-group-horizontal div.add-qty .btn,
+  #input-button-qty.btn-group-horizontal div.remove-qty .btn {
+    border: 1px solid #adadad;
+    padding: .5em .5em !important;
+    font-size: .8rem !important;
+  }
+  #input-button-qty.btn-group-horizontal input[type="number"].form-control{
+    /*display: inline;*/
+  }
+  #input-button-qty input[type="number"].form-control{
+    width: 5rem;
+    height: 5rem !important;
+    font-size: 1.25em;
+  }
+  #input-button-qty div.add-qty .btn.btn-number, #input-button-qty div.remove-qty .btn.btn-number {
+    padding: .8rem 1.7rem;
+    font-size: 2.5rem;
+  }
+  #input-button-qty div.add-qty, #input-button-qty div.remove-qty {
+    /*display: block;
+    float: left;*/
+  }
+
 /* bootstrap override */
 .alert-danger {
   background: transparent none;
@@ -95,7 +127,7 @@ input::-moz-focus-inner {
   top: 13%;
 }
 .fancy-select select, .fancy-select-lg select {
-  background: $xlightGrey;
+  background: white;
   color: $primary-color;
   padding: 5px 10px;
   font-size: smaller;
@@ -459,12 +491,12 @@ input {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #dcdcdc;
-  background: #efefef;
+  background: #fff;
   min-height: 20px;
   padding: 0 10px;
 }
 input.form-control {
-  background: #efefef;
+  background: #fff;
 
   &.white {
     background: #fff !important;

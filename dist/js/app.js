@@ -1,4 +1,4 @@
-/*! standish-responsive - v1.0.0 - 2016-05-12 *//*!
+/*! standish-responsive - v1.0.0 - 2016-06-01 *//*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1003,101 +1003,102 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
  * Licensed under the MIT and GPL licenses.
  */
 !function(e,n,t){"use strict";var o,r,a,l={minHeight:0,elements:[],percentage:!0,userTiming:!0,pixelDepth:!0,nonInteraction:!0},i=e(n),c=[],u=0;e.scrollDepth=function(h){function p(e){a?a({event:"ScrollDistance",eventCategory:"Scroll Depth",eventAction:e,eventLabel:"Baseline",eventValue:1,eventNonInteraction:!0}):(o&&ga("send","event","Scroll Depth",e,"Baseline",1,{nonInteraction:!0}),r&&_gaq.push(["_trackEvent","Scroll Depth",e,"Baseline",1,!0]))}function g(e,n,t,l){a?(a({event:"ScrollDistance",eventCategory:"Scroll Depth",eventAction:e,eventLabel:n,eventValue:1,eventNonInteraction:h.nonInteraction}),h.pixelDepth&&arguments.length>2&&t>u&&(u=t,a({event:"ScrollDistance",eventCategory:"Scroll Depth",eventAction:"Pixel Depth",eventLabel:D(t),eventValue:1,eventNonInteraction:h.nonInteraction})),h.userTiming&&arguments.length>3&&a({event:"ScrollTiming",eventCategory:"Scroll Depth",eventAction:e,eventLabel:n,eventTiming:l})):(o&&(ga("send","event","Scroll Depth",e,n,1,{nonInteraction:h.nonInteraction}),h.pixelDepth&&arguments.length>2&&t>u&&(u=t,ga("send","event","Scroll Depth","Pixel Depth",D(t),1,{nonInteraction:h.nonInteraction})),h.userTiming&&arguments.length>3&&ga("send","timing","Scroll Depth",e,l,n)),r&&(_gaq.push(["_trackEvent","Scroll Depth",e,n,1,h.nonInteraction]),h.pixelDepth&&arguments.length>2&&t>u&&(u=t,_gaq.push(["_trackEvent","Scroll Depth","Pixel Depth",D(t),1,h.nonInteraction])),h.userTiming&&arguments.length>3&&_gaq.push(["_trackTiming","Scroll Depth",e,l,n,100])))}function s(e){return{"25%":parseInt(.25*e,10),"50%":parseInt(.5*e,10),"75%":parseInt(.75*e,10),"100%":e-5}}function v(n,t,o){e.each(n,function(n,r){-1===e.inArray(n,c)&&t>=r&&(g("Percentage",n,t,o),c.push(n))})}function f(n,t,o){e.each(n,function(n,r){-1===e.inArray(r,c)&&e(r).length&&t>=e(r).offset().top&&(g("Elements",r,t,o),c.push(r))})}function D(e){return(250*Math.floor(e/250)).toString()}function m(e,n){var t,o,r,a=null,l=0,i=function(){l=new Date,a=null,r=e.apply(t,o)};return function(){var c=new Date;l||(l=c);var u=n-(c-l);return t=this,o=arguments,0>=u?(clearTimeout(a),a=null,l=c,r=e.apply(t,o)):a||(a=setTimeout(i,u)),r}}var d=+new Date;h=e.extend({},l,h),e(t).height()<h.minHeight||("function"==typeof ga&&(o=!0),"undefined"!=typeof _gaq&&"function"==typeof _gaq.push&&(r=!0),"function"==typeof h.eventHandler?a=h.eventHandler:"undefined"!=typeof dataLayer&&"function"==typeof dataLayer.push&&(a=dataLayer.push),h.percentage?p("Percentage"):h.elements&&p("Elements"),i.on("scroll.scrollDepth",m(function(){var o=e(t).height(),r=n.innerHeight?n.innerHeight:i.height(),a=i.scrollTop()+r,l=s(o),u=+new Date-d;return c.length>=4+h.elements.length?void i.off("scroll.scrollDepth"):(h.elements&&f(h.elements,a,u),void(h.percentage&&v(l,a,u)))},500)))}}(jQuery,window,document);;;(function($) {
-	$.Standish = (function() {});
-	window.Standish = window.Standish || {};
- 	Standish.SiteListing = Standish.SiteListing || {};
+  $.Standish = (function() {});
+  window.Standish = window.Standish || {};
+  Standish.SiteListing = Standish.SiteListing || {};
 
- 	var resizeColumns = function(groups) {
-		$.each(groups, function(index, value) {
-			$(value).matchHeight({
-				byRow: true,
-				property: 'height',
-				target: null,
-				remove: false
-			});
-		});
-	};
+  var resizeColumns = function(groups) {
+    $.each(groups, function(index, value) {
+      $(value).matchHeight({
+        byRow: true,
+        property: 'height',
+        target: null,
+        remove: false
+      });
+    });
+  };
 
-	// 1. Equal Heights
-	Standish.EqualHeights = function() {
-		if ($(window).width() >= 768) {
-			var groups = [
-				// '.listing',
-				'.listing .listing-container',
-				'.column .eqhgt',
-				'.eqhgt',
-				'.column .eqhgt-g1',
-				'.pricebox-eqhgt',
-				'.footer-logo-sm'
-			];
-			resizeColumns(groups);
-		}
-	};
+  // 1. Equal Heights
+  Standish.EqualHeights = function() {
+    if ($(window).width() >= 768) {
+      var groups = [
+        // '.listing',
+        '.column .eqhgt',
+        '.eqhgt',
+        '.listing-container',
+        '.column .eqhgt-g1',
+        '.column .eqhgt-g2',
+        '.pricebox-eqhgt',
+        '.footer-logo-sm'
+      ];
+      resizeColumns(groups);
+    }
+  };
 
-	Standish.EqualHeightsMobile = function() {
-		if ($(window).width() <= 768) {
-			var groups = [
-				'.listing .listing-container',
-				'.column .eqhgt',
-				'.column .eqhgt-g1',
-				'.pricebox-eqhgt',
-				'.footer-logo-sm'
-			];
-			resizeColumns(groups);
-		}
-	};
+  Standish.EqualHeightsMobile = function() {
+    if ($(window).width() <= 768) {
+      var groups = [
+        '.listing .listing-container',
+        '.column .eqhgt',
+        '.column .eqhgt-g1',
+        '.pricebox-eqhgt',
+        '.footer-logo-sm'
+      ];
+      resizeColumns(groups);
+    }
+  };
 
-	// 3. convert search input large for mobile devices
-	Standish.SearchForm = function() {
-		var tabletBkPt = 991;
-		
-		if ( $(window).width() <= tabletBkPt) {
-			$("form[name=searchForm]").children('.input-group').addClass('form-group-lg');
-		}
-		if ( $(window).width() > tabletBkPt) {
-			if ( $("form[name=searchForm]").children('.input-group').hasClass('form-group-lg')) {
-				$("form[name=searchForm]").children('.input-group').removeClass('form-group-lg');
-			}
-		}
-		
-	};
+  // 3. convert search input large for mobile devices
+  Standish.SearchForm = function() {
+    var tabletBkPt = 991;
+    
+    if ( $(window).width() <= tabletBkPt) {
+      $("form[name=searchForm]").children('.input-group').addClass('form-group-lg');
+    }
+    if ( $(window).width() > tabletBkPt) {
+      if ( $("form[name=searchForm]").children('.input-group').hasClass('form-group-lg')) {
+        $("form[name=searchForm]").children('.input-group').removeClass('form-group-lg');
+      }
+    }
+    
+  };
 
-	Standish.applyFilters = function() {
-		// console.log($('#category-selectors'));
-		if ($('#category-selectors').length > 0) {
-			var $sideBar = $('#category-selectors').detach();
-		
-			$('.left-bar #catframe-wrapper').replaceWith($sideBar);
+  Standish.applyFilters = function() {
+    // console.log($('#category-selectors'));
+    if ($('#category-selectors').length > 0) {
+      var $sideBar = $('#category-selectors').detach();
+    
+      $('.left-bar #catframe-wrapper').replaceWith($sideBar);
 
-			$('.cat-filter-separator').remove();
-		}
-	};
-	
-	Standish.EmptyCart = function() {
+      $('.cat-filter-separator').remove();
+    }
+  };
+  
+  Standish.EmptyCart = function() {
 
-		$("a[href='/view_cart.asp']").on('click', function(event) {
-			if ( $(this).find('.cart-number').html() === "0" ) {
-				event.preventDefault();
+    $("a[href='/view_cart.asp']").on('click', function(event) {
+      if ( $(this).find('.cart-number').html() === "0" ) {
+        event.preventDefault();
 
-				var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">	<button type="button" class="close" data-dismiss="alert" aria-label="Close">		<span aria-hidden="true">&times;</span>	</button>	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>	<span class="sr-only">Error:</span>	Please choose one or more items to put in your cart.</div>';
-				$('section#prime-content').prepend(s);
-				
-				$('#cart-error').show();
-				
-				var timedResponse = setTimeout( function () {$('#cart-error').alert('close');}, 1000 );
-			}
-		});
-	};
-	Standish.optInPopover = function() {
-		$(function () {
-		  $('[data-toggle="popover"]').popover({
-		  	trigger:'hover',
-		  	template: '<div class="popover" role="tooltip"><div class="arrow"></div><p class="popover-title"></p></div></div>'
-		  });
-		});
-	};
+        var s = '<div id="cart-error" class="alert alert-danger fade in" style="display:none;" role="alert">  <button type="button" class="close" data-dismiss="alert" aria-label="Close">    <span aria-hidden="true">&times;</span> </button> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <span class="sr-only">Error:</span> Please choose one or more items to put in your cart.</div>';
+        $('section#prime-content').prepend(s);
+        
+        $('#cart-error').show();
+        
+        var timedResponse = setTimeout( function () {$('#cart-error').alert('close');}, 1000 );
+      }
+    });
+  };
+  Standish.optInPopover = function() {
+    $(function () {
+      $('[data-toggle="popover"]').popover({
+        trigger:'hover',
+        template: '<div class="popover" role="tooltip"><div class="arrow"></div><p class="popover-title"></p></div></div>'
+      });
+    });
+  };
 
-	Standish.getData = function(embed_code) {
+  Standish.getData = function(embed_code) {
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
@@ -1108,187 +1109,299 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
     var url = "https://spreadsheets.google.com/feeds/list/1Sk_ITtWMcwRpjbw4stHpyRrQPZ9fdGMqk2hOCqWPa2Q/od6/public/values?alt=json-in-script";
 
     if ($('#left-bar-testimonials').length > 0) {
-    	//** Run the ajax to get the Brands's **//
-			$.ajax({
-				url:url,
-				dataType:"jsonp",
-				success:function(data) {
-				  /* ~~ Variable Declaration ~~ */
-				  var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml, sliderStuff = [];
+      //** Run the ajax to get the Brands's **//
+      $.ajax({
+        url:url,
+        dataType:"jsonp",
+        success:function(data) {
+          /* ~~ Variable Declaration ~~ */
+          var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml, sliderStuff = [];
 
-				  $(data.feed.entry).each(function(i,v) {
-				    // console.log(v);
-				    var vidid = v.gsx$videoid.$t,
-				        vidname = v.gsx$name.$t;
-				    sliderStuff.push({name:vidname, videoid: vidid});
-				  });
+          $(data.feed.entry).each(function(i,v) {
+            // console.log(v);
+            var vidid = v.gsx$videoid.$t,
+                vidname = v.gsx$name.$t;
+            sliderStuff.push({name:vidname, videoid: vidid});
+          });
 
-				  $.each( sliderStuff, function( i, slider ) {
-				    if (slider.videoid !== "") {
-				      AJAX.push( Standish.getData( slider.videoid ) );
-				    }
-				  });
-				  //* All the AJAX has loaded *//
-				  $.when.apply($, AJAX).done(function() {
-				    for(var i = 0; i < AJAX.length; i++){
-				      if( arguments[i].length ) {
-				        sliderStuff[i].video_data = arguments[i][0];
-				      } else {
-				        sliderStuff[i].video_data = arguments[i][0];
-				      }
-				    }
-				    $.each( sliderStuff, function( i, video ) {
-				      // console.log(video);
-				      video_markup_home_page = '';
-				      video_markup_home_page += '<div class="padd-bottom"><a href="#" class="col-md-12 no-padd video_popup_testimonial" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
-				      video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 1.5em;position: absolute;text-decoration: none;"></i>';
-				      video_markup_home_page +=  '<img itemprop="image" src="'+ video.video_data.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.name +'" width="100%" data-href="'+ video.video_data.thumbnail_url +'" />';
-				      video_markup_home_page += '</a><p style="letter-spacing: -.05em;">'+ video.name +'  <i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i></p></div>';
-				      $('#left-bar-testimonials').append(video_markup_home_page);
-				    });
-				    $('#left-bar-testimonials').append('<a target="_blank" href="/featured-salon" class="btn-block btn btn-light">See More</a>');
+          $.each( sliderStuff, function( i, slider ) {
+            if (slider.videoid !== "") {
+              AJAX.push( Standish.getData( slider.videoid ) );
+            }
+          });
+          //* All the AJAX has loaded *//
+          $.when.apply($, AJAX).done(function() {
+            for(var i = 0; i < AJAX.length; i++){
+              if( arguments[i].length ) {
+                sliderStuff[i].video_data = arguments[i][0];
+              } else {
+                sliderStuff[i].video_data = arguments[i][0];
+              }
+            }
+            $.each( sliderStuff, function( i, video ) {
+              // console.log(video);
+              video_markup_home_page = '';
+              video_markup_home_page += '<div class="padd-bottom"><a href="#" class="col-md-12 no-padd video_popup_testimonial" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
+              video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 1.5em;position: absolute;text-decoration: none;"></i>';
+              video_markup_home_page +=  '<img itemprop="image" src="'+ video.video_data.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.name +'" width="100%" data-href="'+ video.video_data.thumbnail_url +'" />';
+              video_markup_home_page += '</a><p style="letter-spacing: -.05em;">'+ video.name +'  <i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i></p></div>';
+              $('#left-bar-testimonials').append(video_markup_home_page);
+            });
+            $('#left-bar-testimonials').append('<a target="_blank" href="/featured-salon" class="btn-block btn btn-light">See More</a>');
 
-				    $('.video_popup_testimonial').on( 'click', function( e ) {
-				      e.preventDefault();
-				      var video = $(this).data('video');
-				      vex.open({
-				        content: sliderStuff[video].video_data.html,
-				        contentCSS: { 'padding': '0', 'width': '960px' }
-				      });
-				    });
-				  });
-				}
-			});
+            $('.video_popup_testimonial').on( 'click', function( e ) {
+              e.preventDefault();
+              var video = $(this).data('video');
+              vex.open({
+                content: sliderStuff[video].video_data.html,
+                contentCSS: { 'padding': '0', 'width': '960px' }
+              });
+            });
+          });
+        }
+      });
     }
   };
 
-	Standish.AddBottomMenu = function() {
-		var url = "https://spreadsheets.google.com/feeds/list/1WXj97jT1kJQRmFQHmDMzPaPI8Xls94q0yRFTTOK9hGI/od6/public/values?alt=json-in-script";
+  Standish.AddBottomMenu = function() {
+    var url = "https://spreadsheets.google.com/feeds/list/1WXj97jT1kJQRmFQHmDMzPaPI8Xls94q0yRFTTOK9hGI/od6/public/values?alt=json-in-script";
     $.ajax({
       url: url,
       dataType:"jsonp",
       success:function(data) {
-				outputHtml = '<ul class="list-unstyled col-md-12">';
+        outputHtml = '<ul class="list-unstyled col-md-12">';
 
         $(data.feed.entry).each(function(i,v) {
-					outputHtml += '<li class="col-md-6 col-sm-6">';
-					outputHtml += '<a href="'+v.gsx$url.$t + '">';
-        	outputHtml += v.gsx$name.$t;
-        	outputHtml += '</a>';
-        	outputHtml += '</li>';
+          outputHtml += '<li class="col-md-6 col-sm-6">';
+          outputHtml += '<a href="'+v.gsx$url.$t + '">';
+          outputHtml += v.gsx$name.$t;
+          outputHtml += '</a>';
+          outputHtml += '</li>';
         });
         outputHtml += '</ul>';
         $('#global-footer').append(outputHtml);
       }
     });
-	};
+  };
 
-	Standish.ActivatePredictiveSearch = function() {
-		if( $('#searchlight').length ) {
-		// See if the function loaded properly
-			if( typeof $('#searchlight').searchlight === 'function' ) {
-				$('#searchlight').searchlight('/search_quick.asp');
-			} else {
-				console.log( 'There was an issue loading the searchlight scripts' );
-			}
-		}
-		// NOTE: the Searchlight element has to be loaded for the results
-		// to display correctly using the elements offset.
-	};
+  Standish.ActivatePredictiveSearch = function() {
+    if( $('#searchlight').length ) {
+    // See if the function loaded properly
+      if( typeof $('#searchlight').searchlight === 'function' ) {
+        $('#searchlight').searchlight('/search_quick.asp');
+      } else {
+        console.log( 'There was an issue loading the searchlight scripts' );
+      }
+    }
+    // NOTE: the Searchlight element has to be loaded for the results
+    // to display correctly using the elements offset.
+  };
 
-	Standish.AnimateHelloBar = function() {
-		$('.hello-container').delay(1500).animate({opacity: 1});
-	};
+  Standish.AnimateHelloBar = function() {
+    $('.hello-container').delay(1500).animate({opacity: 1});
+  };
 
-	Standish.Subtotes = function(that) {
-		if( !$('.discount').length ) {
-				$('.subtotes').hide();
-		}
-	};
+  Standish.Subtotes = function(that) {
+    if( !$('.discount').length ) {
+        $('.subtotes').hide();
+    }
+  };
 
 
-	Standish.NoZeros = function() {
-		window.setTimeout( function () { 
-			$('.nozero').each( function() {
-				$(this).text( $(this).text().replace(/\.00/g, '') );
-			});
-		}, 10 );
-	};
+  Standish.NoZeros = function() {
+    window.setTimeout( function () { 
+      $('.nozero').each( function() {
+        $(this).text( $(this).text().replace(/\.00/g, '') );
+      });
+    }, 10 );
+  };
 
-	$(function() {
-		// Wait till dom is ready to use slick
-		Standish.ActivateSliderNotFancy = function(htmlelement) {
-			if ( typeof $.fn.slick == "function" ) {
-				$(htmlelement).slick({
-					vertical: true,
-					arrows: false,
-					slidesToShow: 1,
-					autoplay: true
-				});
-			}
-		};
-		Standish.ActivateSliderFancy = function(element) {
-			if ( typeof $.fn.slick == "function" ) {
-				$(element).slick({
+  $(function() {
+    // Wait till dom is ready to use slick
+    Standish.ActivateSliderNotFancy = function(htmlelement) {
+      if ( typeof $.fn.slick == "function" ) {
+        $(htmlelement).slick({
+          vertical: true,
+          arrows: false,
+          slidesToShow: 1,
+          autoplay: true
+        });
+      }
+    };
+    Standish.ActivateSliderFancy = function(element) {
+      if ( typeof $.fn.slick == "function" ) {
+        $(element).slick({
 
-				});
-			}
+        });
+      }
 
-		};
-	
-	});
+    };
+  
+  });
+  // -- WISHLIST LINK FUNCTIONALITY -- //
+  Standish.WishlistBtn = function() {
+    $('.nav-menu .wishlist').on('click', function(e) {
+      e.preventDefault();
 
-	nozeros = function() {
-		window.setTimeout( function () { 
-			$('.nozero').each( function() {
-				$(this).text( $(this).text().replace(/\.00/g, '') );
-			});
-		}, 10 );
-	};
+      if (typeof username != 'undefined' && username !== "Guest") {
+        window.open("/view_wishlist.asp",'_blank');
+      }
+      else {
+        bootbox.confirm("Please log in in order to add this item to your wishlist.", function(result) {
+          if (result == 1) {
+            window.open("/myaccount.asp",'_blank');
+            // window.location.href = "/myaccount.asp";
+          }
+        });
+      }
+    });
+  };
 
-	// Events
-	$(function() {
+  // -- Buttons for number inputs -- //
+  Standish.NumberInputs = function() {
+    var input = $("input[name='qty-0']");
+    var currentVal = parseInt(input.val());
+    if (currentVal > 1) {
+      $('.btn-number').attr('disabled', false);
+    }
+    //plugin bootstrap minus and plus
+    //http://jsfiddle.net/laelitenetwork/puJ6G/
+    $('.btn-number').on('click', function(e){
+      e.preventDefault();
 
-		// 1. Activate Equal Heights
-		Standish.EqualHeights();
-		Standish.EqualHeightsMobile();
-		// 2. Activate custom Template switching -- standish.templateswitcher
-		Standish.TemplateSwitcher();
-		// 3. Make search input large for mobile devices
-		Standish.SearchForm();
-		// 4. Empty cart message unless at a different page
-		Standish.EmptyCart();
-		// 6. Opt in to bootstrap popover
-		Standish.optInPopover();
-		// 7. add bottom menu items from spreadsheet
-		Standish.AddBottomMenu();
-		$( window ).load(function() {
-			// 8. SearchLight - 3DCart Suggestive Search 
-			Standish.ActivatePredictiveSearch();
-		});
-		// 9. Animate Hello Bar
-		Standish.AnimateHelloBar();
-		// 10. Remove trailing decimal zeros
-		Standish.NoZeros();
-		// 11. Remove subtotals
-		Standish.Subtotes();
-		// 12. Add Testimonials
-		Standish.addTestimonials();
+      var $el = $(this);
+      var fieldName = $(this).attr('data-field');
+      var type      = $(this).attr('data-type');
+      
+      console.log(fieldName);
+      console.log(type);
+        
+      var input = $el.parent().siblings("input[name='"+fieldName+"']");
+      var currentVal = parseInt(input.val());
 
-		// 14. Apply weird cat filters
-		Standish.applyFilters();
+      if (!isNaN(currentVal)) {
+        if (currentVal > 0) {
+          $('.btn-number').attr('disabled', false);
+        }
+        // console.log(currentVal);
+        if(type === 'minus') {
 
-		// Run nozeros for templates that haven't been updated.
-		nozeros();
+          input.val(currentVal - 1);
+          if(parseInt(input.val()) == input.attr('min')) {
+            $(this).attr('disabled', true);
+          }
 
-	});
-	// Add callback to window resize event
-	$(window).on('resize', function() {
-		Standish.EqualHeights();
-		Standish.EqualHeightsMobile();
-		Standish.SearchForm();
-	});
-	
+        }
+        else if(type === 'plus') {
+          input.val(currentVal + 1);
+
+          if(parseInt(input.val()) == input.attr('max')) {
+            $(this).attr('disabled', true);
+          }
+        }
+      } else {
+          input.val(0);
+      }
+    });
+    $('.input-number').focusin(function(){
+      $(this).data('oldValue', $(this).val());
+    });
+    $('.input-number').change(function() {
+
+      minValue =  parseInt($(this).attr('min'));
+      maxValue =  parseInt($(this).attr('max'));
+      valueCurrent = parseInt($(this).val());
+
+      name = $(this).attr('name');
+      if(valueCurrent >= minValue) {
+          $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled');
+      } else {
+          alert('Sorry, the minimum value was reached');
+          $(this).val($(this).data('oldValue'));
+      }
+      if(valueCurrent <= maxValue) {
+          $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled');
+      } else {
+          alert('Sorry, the maximum value was reached');
+          $(this).val($(this).data('oldValue'));
+      }
+
+
+    });
+    $(".input-number").keydown(function (e) {
+    // Allow: backspace, delete, tab, escape, enter and .
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+        // Allow: Ctrl+A
+        (e.keyCode == 65 && e.ctrlKey === true) || 
+        // Allow: home, end, left, right
+        (e.keyCode >= 35 && e.keyCode <= 39)) {
+      // let it happen, don't do anything
+      return;
+    }
+    // Ensure that it is a number and stop the keypress
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+      }
+    });
+  };
+
+  nozeros = function() {
+    window.setTimeout( function () { 
+      $('.nozero').each( function() {
+        $(this).text( $(this).text().replace(/\.00/g, '') );
+      });
+    }, 10 );
+  };
+
+  // Events
+  $(function() {
+
+    // 1. Activate Equal Heights
+    Standish.EqualHeights();
+    Standish.EqualHeightsMobile();
+    // 2. Activate custom Template switching -- standish.templateswitcher
+    Standish.TemplateSwitcher();
+    // 3. Make search input large for mobile devices
+    Standish.SearchForm();
+    // 4. Empty cart message unless at a different page
+    Standish.EmptyCart();
+    // 6. Opt in to bootstrap popover
+    Standish.optInPopover();
+    // 7. add bottom menu items from spreadsheet
+    Standish.AddBottomMenu();
+    $( window ).load(function() {
+      // 8. SearchLight - 3DCart Suggestive Search 
+      Standish.ActivatePredictiveSearch();
+    });
+    // 9. Animate Hello Bar
+    Standish.AnimateHelloBar();
+    // 10. Remove trailing decimal zeros
+    Standish.NoZeros();
+    // 11. Remove subtotals
+    Standish.Subtotes();
+    // 12. Add Testimonials
+    Standish.addTestimonials();
+
+    // 14. Apply weird cat filters
+    Standish.applyFilters();
+
+    // 15. Wishlist
+    Standish.WishlistBtn();
+
+    // 16. Number + and - inputs
+    Standish.NumberInputs();
+
+    // Run nozeros for templates that haven't been updated.
+    nozeros();
+
+  });
+  // Add callback to window resize event
+  $(window).on('resize', function() {
+    Standish.EqualHeights();
+    Standish.EqualHeightsMobile();
+    Standish.SearchForm();
+  });
+  
 })(jQuery);
 ;(function($) {
 	
@@ -1509,7 +1622,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
     }
     var embed_data = $( '.field10' ).data( 'field10' );
 
-    if( embed_data !== "" && typeof embed_data !== undefined ) {
+    if( typeof embed_data !== 'undefined' ) {
       video_embed_codes = embed_data.split( ' ' );
     }
 
@@ -1581,7 +1694,8 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
 
     // ---- FIELD 4: Instagram Hashtag ---- //
     var instagramHashtag = $( '.field4' ).data( 'field4' );
-    if( instagramHashtag !== null ) {
+
+    if( typeof instagramHashtag !== 'undefined' ) {
       // var instaText = "<h6 style='text-align:center; text-transform: uppercase;'>TAG PHOTOS OF YOUR SALON WITH #"+instagramHashtag+" AND MENTION @STANDISHSTUFF TO SEE YOUR PHOTOS BELOW!</h6>";
       // console.log( 'Instagram', instagramHashtag, instaText );
       // The limit parameter does not seem to work, this is an Instagram API issue. (not an issue with instafeed) I've implemented a bit of css to limit the display to 3 instead.
@@ -2218,7 +2332,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
           Standish.SiteListing.getBrand();
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
-          Standish.SiteListing.updatePricing();
+          // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
           Standish.SiteListing.addToWishlist();
         }
@@ -2241,7 +2355,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
           Standish.SiteListing.getBrand();
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
-          Standish.SiteListing.updatePricing();
+          // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
         }
         hbspt.forms.create({ 

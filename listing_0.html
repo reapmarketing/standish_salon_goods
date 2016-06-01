@@ -1,4 +1,4 @@
-<!-- Template: listing_3.html -->
+<!-- Template: listing_0.html -->
 <div class="template" style="display:none" data-template="listing_0"></div>
 
 <script type="text/javascript">
@@ -341,7 +341,19 @@ $( function(){
                 <div class="option-row row">
                   <label for="quantity" class="col-md-12 col-sm-12 col-xs-12">[product_quantity]: </label>
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="window.Standish.NoZeros();validateValues(document.add,1);" class="form-control" />
+                    <div id="input-button-qty" class="input-group btn-group-horizontal">
+                      <div class="remove-qty input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="qty-0">
+                          <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                      </div>
+                      <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="window.Standish.NoZeros();validateValues(document.add,1);" class="form-control" max="1000" min="0" />
+                      <div class="add-qty input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="qty-0">
+                          <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <!--END: addtocart-->
@@ -684,7 +696,7 @@ $( function(){
       var newButton = $('<button/>', {
         'type': 'submit',
         'class': 'btn col-sm-12 col-xs-12 btn-oos',
-        'text':"This Item's Out of Stock"
+        'text':"Add to Cart"
       }).click(function(e) {
         e.preventDefault();
         $('.modal.fade').modal();

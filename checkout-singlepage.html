@@ -543,7 +543,7 @@
 
 							<div class="clearfix"></div>
 							<!--START: apply_coupon-->
-							<div id="divApplyCoupon" class="padd-top">
+							<div id="divApplyCoupon" class="padd-top hidden">
 							  <div class="coupon-header">[viewcart_coupon-header]</div>
 							  <div class="coupon-field input-group col-md-7">
 							    <input id="coupon" onchange="clearfixContent(this);" maxlength="30" size="15" value="" name="coupon_code" class="txtBoxStyle form-control white" />
@@ -570,7 +570,10 @@
 				<!--START: PAYMENT_BLOCK-->
 				
 				<div id="divPaymentMethods" class="panel panel-checkout col-md-12 lightgray top-margin">
-					<h3 class="section-header double-line"><span>[checkout3_methodofpaymentselect]</span><hr/></h3>
+					<h3 class="section-header col-md-8 double-line"><span>[checkout3_methodofpaymentselect]</span><hr/></h3>
+					<div class="col-md-4 center-block">
+						<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-block btn-lg button btn-checkout" style="background-position: 77px 15px !important;"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
+					</div>
 
 					<!--START: NO_PAYMENT_BLOCK-->
 					<div class="no-payment-method">There's no payment options available to your address. Please check the entered address and try again.</div>
@@ -1345,7 +1348,7 @@
 							Processing... </div>
 							<a name="checkoutButton"></a>
 						<div class="col-md-4 center-block">
-							<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-block btn-lg button"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
+							<button type="button" onclick="doCheckout(this.form,'checkoutButton');" class="btn btn-block btn-lg button btn-checkout" style="background-position: 77px 15px !important;"><i class="icon-basket"></i> [checkout3_submitbutton]</button>
 						</div>
 					</div>
 				</div>

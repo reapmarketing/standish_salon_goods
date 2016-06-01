@@ -122,18 +122,36 @@ button.cart i {
   border-right: 1px solid $primary-gray;
 }
 .navigation ul.nav-menu > li > a {
-  padding: 0 12px;
+  padding: 0 16px;
 }
 .navigation a {
-  font-size: .8em;
   color: #fff;
   display: inline-block;
+  font-size: .9em;
 /*   padding: 0 37px 0 34px; */
 /*   padding: 0 22px; */
   padding: 0 19px;
 /*  padding: 0 16px; */
   /* padding: 0 14px; */
   text-decoration: none;
+}
+.navigation ul li.brand-menu {
+  .column ul {width: 162px;}
+  .col2 {
+    left: 161px;
+  }
+  .col3 {
+    left: 321px;
+  }
+  .col4 {
+    left: 480px;
+    z-index: 20;
+  }
+  .col5 {
+    left: 642px;
+   ul {width: 180px;}
+  }
+
 }
 .navigation ul ul {
 /*   font-weight: 700; */
@@ -143,6 +161,7 @@ button.cart i {
   position: absolute;
   top: 60px;
   padding: 21px 0 20px 0;
+
   left: 0;
   z-index: 19;
   width: 250px;
@@ -230,6 +249,11 @@ ul.nav-menu li:hover > div ul {
 .col4 {
   position: absolute;
   left: 666px;
+  top: 0;
+}
+.col5 {
+  position: absolute;
+  left: 888px;
   top: 0;
 }
 

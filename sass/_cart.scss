@@ -100,8 +100,9 @@ body .update_cart_button {
 }
 
 
-
-
-
-
-
+.btn-checkout {
+  background-image: url('/assets/templates/standish-responsive/images/lock_white.svg') !important;
+  background-size: 26px 14px !important;
+  background-position: 12px 15px !important;
+  background-repeat: no-repeat !important;
+}
