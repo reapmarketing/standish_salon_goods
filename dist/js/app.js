@@ -1,4 +1,4 @@
-/*! standish-responsive - v1.0.0 - 2016-06-01 *//*!
+/*! standish-responsive - v2.0.1 - 2016-06-08 *//*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
