@@ -473,7 +473,7 @@ strong {
   margin-right: 20px; }
   /* line 21, ../sass/_cart.scss */
   .large .add-on-left i {
-    font-size: 26px; }
+    font-size: 28px; }
 
 /* line 27, ../sass/_cart.scss */
 .coupon {
@@ -2197,54 +2197,58 @@ body .vex.vex-theme-flat-attack .vex-content {
   padding-bottom: 20px; }
 
 /* line 617, ../sass/_general.scss */
+.blog .previewimage {
+  max-width: 100%; }
+
+/* line 621, ../sass/_general.scss */
 .blog .item {
   font-style: italic;
   padding-bottom: 10px; }
 
-/* line 622, ../sass/_general.scss */
+/* line 626, ../sass/_general.scss */
 .blog h3 {
   margin-top: 40px; }
 
-/* line 626, ../sass/_general.scss */
+/* line 630, ../sass/_general.scss */
 .blog h3:first-child {
   margin-top: 0px; }
 
-/* line 631, ../sass/_general.scss */
+/* line 635, ../sass/_general.scss */
 #category-sidebar .img-banner {
   padding: 10px 0; }
 
-/* line 638, ../sass/_general.scss */
+/* line 642, ../sass/_general.scss */
 #action-section {
   border-top: 1px solid #DEDEDE;
   border-bottom: 1px solid #DEDEDE;
   padding: 10px; }
 
-/* line 644, ../sass/_general.scss */
+/* line 648, ../sass/_general.scss */
 .account-title-wishlist {
   margin-top: 20px;
   margin-bottom: 20px; }
 
-/* line 649, ../sass/_general.scss */
+/* line 653, ../sass/_general.scss */
 .wishlistView .titles2 {
   padding: 15px; }
 
-/* line 654, ../sass/_general.scss */
+/* line 658, ../sass/_general.scss */
 .listing-wl {
   padding: 3em 0; }
 
-/* line 662, ../sass/_general.scss */
+/* line 666, ../sass/_general.scss */
 .popover-title {
   text-transform: uppercase; }
-  /* line 664, ../sass/_general.scss */
+  /* line 668, ../sass/_general.scss */
   .popover-title h3 {
     color: #838383;
     font-weight: normal; }
 
-/* line 673, ../sass/_general.scss */
+/* line 677, ../sass/_general.scss */
 #hoz-slider-container {
   z-index: 0; }
 
-/* line 677, ../sass/_general.scss */
+/* line 681, ../sass/_general.scss */
 #homepage-badges-list {
   margin-right: 0;
   width: 100%;
@@ -2253,22 +2257,22 @@ body .vex.vex-theme-flat-attack .vex-content {
   -webkit-border-radius: 3px;
   background: transparent none;
   height: 3.2rem; }
-  /* line 688, ../sass/_general.scss */
+  /* line 692, ../sass/_general.scss */
   #homepage-badges-list .badge-home {
     height: initial;
     margin: 10px auto;
     text-align: center; }
-    /* line 692, ../sass/_general.scss */
+    /* line 696, ../sass/_general.scss */
     #homepage-badges-list .badge-home i {
       display: inline-block;
       float: none; }
-    /* line 696, ../sass/_general.scss */
+    /* line 700, ../sass/_general.scss */
     #homepage-badges-list .badge-home .badge-text {
       max-width: inherit;
       margin: 0;
       padding: 10px 0 0; }
 
-/* line 705, ../sass/_general.scss */
+/* line 709, ../sass/_general.scss */
 .homepage-brands .slick-next, .homepage-brands .slick-prev, .slick-slider .slick-next, .slick-slider .slick-prev {
   border-radius: 0;
   height: 50px;
@@ -2278,20 +2282,20 @@ body .vex.vex-theme-flat-attack .vex-content {
   background: #ff7f50 !important;
   border: 0 none;
   margin-top: 0; }
-/* line 716, ../sass/_general.scss */
+/* line 720, ../sass/_general.scss */
 .homepage-brands .slick-next, .slick-slider .slick-next {
   right: 0;
   z-index: 1; }
-  /* line 720, ../sass/_general.scss */
+  /* line 724, ../sass/_general.scss */
   .homepage-brands .slick-next:before, .slick-slider .slick-next:before {
     color: white;
     content: "\f054" !important;
     font-family: FontAwesome !important; }
-/* line 727, ../sass/_general.scss */
+/* line 731, ../sass/_general.scss */
 .homepage-brands .slick-prev, .slick-slider .slick-prev {
   left: 0;
   z-index: 1; }
-  /* line 731, ../sass/_general.scss */
+  /* line 735, ../sass/_general.scss */
   .homepage-brands .slick-prev:before, .slick-slider .slick-prev:before {
     color: white;
     font-family: FontAwesome !important;
