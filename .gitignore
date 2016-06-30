@@ -84,5 +84,8 @@ bower_components
 .sass-cache/
 node_modules/
 *.*.map
-
-
+######################
+# Generated files #
+######################
+dist/app.js
+dist/app.min.js

@@ -1,5 +1,9 @@
 
 /* Product and Category Pages */
+body.vex-open {
+  overflow: initial!important;
+}
+
 
 .ge-free-shipping span, .badge-free-shipping em {
   background-position: 0 0;
@@ -121,6 +125,7 @@
   height: 65px;
   width: 65px;
 }
+
 
 .badge-fire-retardant {
   i, span, em {
@@ -749,8 +754,17 @@ a.slick-slide img {
   margin-right: 50px;
   margin-left: 50px;
 
-  a.slick-slide img {
-    margin: 5px 10px;
+  a.slick-slide {
+    // margin: 5px 10px;
+    margin: 5px;
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 0;
+      padding: 4px;
+      background: rgba(0, 0, 0, 0.18);
+    }
   }
 
   .slick-next, .slick-prev {
@@ -758,17 +772,28 @@ a.slick-slide img {
     height: 81px;
     width: 50px;
     top: 3px;
-    color: $salmon-highlight !important;
-    border: 1px solid $salmon-highlight !important;
+    background: white!important;
+    color: #676767 !important;
+    border: 1px solid #8c8c8c !important;
     margin-top: 0;
-    @include  no-blur-box($salmon-highlight);
+    @include  no-blur-box(#8c8c8c);
+
+    &:active, &:hover {
+      background: white!important;
+      color: $primary-color !important;
+      border: 1px solid $primary-color !important;
+      @include  no-blur-box($primary-color);
+      &:before {
+        color: $primary-color !important;
+      }
+    }
   }
 
   .slick-next {
     right: -50px;
 
     &:before {
-      color: $salmon-highlight !important;
+      color: #676767 !important;
       // Example
       @include icon("f054");
       font-family: FontAwesome !important;
@@ -778,7 +803,7 @@ a.slick-slide img {
     left: -50px;
 
     &:before {
-      color: $salmon-highlight !important;
+      color: #676767 !important;
       font-family: FontAwesome !important;
       @include icon("f053");
     }
