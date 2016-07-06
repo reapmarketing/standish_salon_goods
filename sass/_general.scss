@@ -276,10 +276,12 @@ div[classname="searchlight-balloon"] {
   }
   
 }
+.inputs-list {
+  list-style-type: none;
+}
 .remove-perhaps {
   display: none;
 }
-
 .cycle-slideshow .cycle-slide {
   width: 100%;
 }
