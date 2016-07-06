@@ -5,136 +5,248 @@
   /* main slider then add wistia and instagram ~~ */
   SiteListing.Slider = SiteListing.Slider || {};
 
-  SiteListing.Slider.init = function() {
-    $('#prime-content').imagesLoaded( function() {
-      if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
-        SiteListing.Slider.activateSlideShow();
-        SiteListing.Slider.addVideoToSlider();
-        SiteListing.Slider.addInstagramToSlider();
+  /* My new slider wooooo */
+  SiteListing.NewSlider = SiteListing.NewSlider || {};
 
-        $('.main-slider').show();
-        $('.sub-slider').show();
-        $('#loadingDiv').hide();
+  SiteListing.Slides = SiteListing.Slides || {};
+  SiteListing.Slides.content = SiteListing.Slides.content || [];
+
+
+  SiteListing.Slider.init = function() {
+    
+    // Promises for each function ensure that everything has loaded.
+    // Add videos then images 
+    Standish.SiteListing.NewSlider.addVideoImagesToSlideshow().done(function() {
+      // console.log(Standish.SiteListing.Slides.content);
+      Standish.SiteListing.NewSlider.addRegImagesToSlideshow();
+    }).done(function() {
+      // Do all the templating now that my object is ready
+      console.log(Standish.SiteListing.Slides.content);
+
+      SiteListing.Slider.activateSlickTemplating();
+      $('#loadingDiv').hide();
+      SiteListing.Slider.activateFilters();
+
+      $('.main-slider').show();
+      $('.sub-slider').show();
+      $('.nav-filters').show();
+
+      SiteListing.Slider.activateVideos();
+
+    });
+
+
+      
+  };
+
+  SiteListing.Slider.activateVideos = function() {
+    $('.video_popup').on( 'click', function( e ) {
+      // e.preventDefault();
+      var videoID = $(this).data('video');
+
+      /* Go through the global window object
+      and check to see if its there */ 
+      var videoObj = Standish.SiteListing.Slides.content.filter(function(value) {
+        if (value.videoID === videoID) {
+          return value;
+        }
+      });
+
+      if (videoObj.length > 0) {
+        vex.open({
+          content: videoObj[0].videoHTML,
+          contentCSS: { 'padding': '0', 'width': '960px' }
+        });
       }
     });
   };
-  SiteListing.Slider.activateSlideShow = function() {
 
-    // IMPORTANT Slick 'initialized' needs to be binded before slick is called on the element
-    $('.sub-slider').on('init', function(event, slick) {
-      var mainSlides = [], desHeight = $('#listing_main_image_link img').height();
+  SiteListing.Slider.activateFilters = function() {
+    if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
+      Standish.SiteListing.filtered = false;
+      Standish.SiteListing.currentFiltered = '';
 
-      $(slick.$slides).each(function(i,v) {
+      $('.show-all').on('click', function(e) {
+        e.preventDefault();
+        $('.filterProductImg').prop('checked', false);
+        $('.sub-slider').slick('slickUnfilter');
+      });
 
-        var imgHref = $(v).attr('data-href'),
-            origImgLoaded = $('.main-slider').find('img:first-of-type').attr('data-href');
+      $('.filterProductImg').on('change', function(){
+        console.log(this);
 
-        if (typeof imgHref !== 'undefined' && imgHref !== origImgLoaded) {
-          var slideElement = '<a class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx='+$('.main-slider').width()+'&maxy=0" id="large" alt="" style="max-height: 375px; text-align: center;"/></a>';
-          $('.main-slider').slick('slickAdd', slideElement);
+        $('.filterProductImg').not(this).prop('checked', false);
+
+        var filterName = $(this).data('filter-media');
+        if ( Standish.SiteListing.filtered === false || Standish.SiteListing.currentFiltered !== filterName ) {
+          $('.sub-slider').slick('slickUnfilter');
+          
+          console.log(filterName);
+          console.log(Standish.SiteListing.filtered);
+
+          $('.sub-slider').slick('slickFilter', '[data-media-source="'+filterName+'"]');
+
+          Standish.SiteListing.currentFiltered = filterName;
+          Standish.SiteListing.filtered = true;
+        } else {
+          $('.sub-slider').slick('slickUnfilter');
+          // $(this).text('Filter Slides');
+          Standish.SiteListing.filtered = false;
         }
       });
-    });
-
-    $('.main-slider').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: true,
-      centerMode: false,
-      arrows: false,
-      asNavFor: '.sub-slider'
-    });
-    $('.sub-slider').slick({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      dots: false,
-      arrows: false,
-      variableWidth: true,
-      centerMode: false,
-      asNavFor: '.main-slider',
-      // prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev" style="background: white!important;">Previous</button>',
-      //nextArrow: '<button type="button" class="fa fa-chevron-right slick-next" style="background: white!important;">Next</button>',
-      focusOnSelect: true
-    });
-  };
-  SiteListing.Slider.addVideoToSlider = function() {
-    var video_embed_codes = '';
-
-    function getData(embed_code) {
-      var baseUrl = "https://fast.wistia.com/oembed/?url=";
-      var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
-      return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
     }
-    var embed_data = $( '.field10' ).data( 'field10' );
+  };
 
+  SiteListing.Slider.activateSlickTemplating = function() {
+    if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
+      var mainVidTpl = function(slide) {
+        var video_markup_main = '<a class="video_popup" data-video="'+slide.videoID+'" data-type="'+slide.type+'" data-media-source="'+slide.source+'">';
+        video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
+        video_markup_main +=  '<img itemprop="image" src="'+ slide.image +'" align="middle" id="large" alt="'+ slide.title +'" width="100%" data-href="'+ slide.thumbnail +'" />';
+        video_markup_main += '</a>';
+        return video_markup_main;
+      }, navVidTpl = function(slide) {
+        /* Add videos to sub slick slider */
+        var video_markup_sub = '<a data-caption="'+ slide.title +'" data-video="'+slide.videoID+'" data-media-source="'+slide.source+'"><i class="fa fa-play" aria-hidden="true"></i>';
+        video_markup_sub +=  '<img src="'+ slide.thumbnail +'" alt="" />';
+        video_markup_sub += '</a>';
+        return video_markup_sub;
+      }, mainNatTpl = function(slide) {
+        var markup_main = '<a data-caption="'+ slide.title +'" data-media-source="'+slide.source+'"><img itemprop="image" src="'+ slide.image +'" id="large" alt="'+ slide.title +'" style="max-height: 375px; text-align: center;"/></a>';
+        return markup_main;
+      }, navNatTpl = function(slide) {
+        /* Add videos to sub slick slider */
+        var markup_sub = '<a data-caption="'+ slide.title +'" data-video="'+slide.videoID+'" data-media-source="'+slide.source+'"><i class="fa fa-camera" aria-hidden="true"></i>';
+        markup_sub +=  '<img src="'+ slide.thumbnail +'" alt="" />';
+        markup_sub += '</a>';
+        return markup_sub;
+      };
+      $(Standish.SiteListing.Slides.content).each(function(i,v) {
+        if ( v.source == "wistia" ) {
+          $('.main-slider').append(mainVidTpl(v));
+          $('.sub-slider').append(navVidTpl(v));
+        }
+        if ( v.source == "3DCart" ) {
+          $('.main-slider').append(mainNatTpl(v));
+          $('.sub-slider').append(navNatTpl(v));
+        }
+      });
+      $('.main-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        centerMode: false,
+        arrows: false,
+        asNavFor: '.sub-slider'
+      });
+      $('.sub-slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        variableWidth: true,
+        centerMode: false,
+        asNavFor: '.main-slider',
+        focusOnSelect: true
+      });
+    }
+  };
+
+
+
+  /* Video Utility Functions */
+  function getData(embed_code) {
+    var baseUrl = "https://fast.wistia.com/oembed/?url=";
+    var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
+    return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
+  }
+
+  function parseEmbedData() {
+    var embed_data = $( '.field10' ).data( 'field10' );
     if( typeof embed_data !== 'undefined' ) {
       video_embed_codes = embed_data.split( ' ' );
+      return video_embed_codes;
     }
+    return false;
+  }
+  /* End -- Video Utility Functions */
 
-    /* ~~ Variable Declaration ~~ */
-    var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml;
+  function pushHello(index, type, pushedObj, pushObj) {
+    var source = (type == "video") ? 'wistia' : 'instagram';
 
-    if( video_embed_codes ) {
+    pushedObj.push(
+      {
+        title: pushObj.title,
+        type: type,
+        videoID: video_embed_codes[index],
+        videoHTML: pushObj.html,
+        image: pushObj.thumbnail_url,
+        thumbnail: pushObj.thumbnail_url + '&image_crop_resized=75x75',
+        source: source
+      }
+    );
+  }
 
-      $.each( video_embed_codes, function( i, embed_code ) {
-        if (embed_code !== "") {
-          AJAX.push( getData( embed_code ) );
-        }
-      });
+  SiteListing.NewSlider.addRegImagesToSlideshow = function() {
+    if (Standish.SiteListing.loadedImages.length > 0) {
+      var dfd = $.Deferred();
 
-      $.when.apply($, AJAX).done(function(){
-
-        for(var i = 0; i < AJAX.length; i++){
-            
-          if( arguments[i].length ) {
-            video_data[video_embed_codes[i]] = arguments[i][0];
-          } else {
-            video_data[video_embed_codes[i]] = arguments[0];
-          }
-        }
-        // console.log(video_data);
-        $.each( video_data, function( i, video ) {
-          /* Add videos to sub slick slider */
-          if (typeof video !== 'undefined') {
-            video_markup_main = '';
-            video_markup_main += '<a class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
-            video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
-            video_markup_main +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" id="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
-            video_markup_main += '</a>';
-
-            $('.main-slider').slick('slickAdd', video_markup_main).slick('setPosition');
-
-            /* Add videos to sub slick slider */
-            video_markup_sub = '';
-            video_markup_sub += '<a data-caption="'+ video.title +'" rel="thumb-id:listing_main_image_link">';
-            video_markup_sub +=  '<img src="'+ video.thumbnail_url + '&' + 'image_crop_resized=75x75" alt="" />';
-            video_markup_sub += '</a>';
-
-            $('.sub-slider').slick('slickAdd', video_markup_sub).slick('setPosition');
-
-            /* Add videos to page*/
-            video_markup_product_page = '';
-            video_markup_product_page += '<div class="padd-top col-md-4 col-sm-4"><a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
-            video_markup_product_page += '<i class="fa fa-sm fa-play play-button" style="font-size: 3em;position: absolute;text-decoration: none;"></i>';
-            video_markup_product_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" id="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
-            video_markup_product_page += '</a></div>';
-
-            $('.product-videos').append(video_markup_product_page);
-          }
-        });
-
-        $('.video_popup').on( 'click', function( e ) {
-          e.preventDefault();
-          var video = $(this).data('video');
-          // console.log(video_data[video]);
-          vex.open({
-            content: video_data[video].html,
-            contentCSS: { 'padding': '0', 'width': '960px' }
-          });
-        });
-      });
+      console.log(Standish.SiteListing.Slides.content);
+      console.log(Standish.SiteListing.loadedImages);
+      
+      if ( Standish.SiteListing.Slides.content instanceof Array ) {
+        Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.concat(Standish.SiteListing.loadedImages);
+          dfd.resolve( "Native Content Returned" );
+      }
+      else {
+        Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.push(Standish.SiteListing.loadedImages);
+          dfd.resolve( "Native Content Returned" );
+      }
+      return dfd.promise();
     }
   };
+
+  SiteListing.NewSlider.addVideoImagesToSlideshow = function() {
+    /* ~~ Variable Declaration ~~ */
+    var dfd = $.Deferred();
+
+    var AJAX = [],
+        video_embed_codes = parseEmbedData(),
+        videoHello = [];
+
+    if (video_embed_codes) {
+      $.each( video_embed_codes, function( i, embed_code ) {
+        if (embed_code !== "") {
+          AJAX.push(getData( embed_code ));
+        }
+      });
+
+      $.when.apply($, AJAX).done(function() {
+        for ( var i = 0; i < AJAX.length; i++ ) {
+          if ( arguments[i].length ) {
+            // video_data[video_embed_codes[i]] = arguments[i][0];
+            pushHello(i, 'video', videoHello, arguments[i][0]);
+
+          } else {
+            // video_data[video_embed_codes[i]] = arguments[0];
+            pushHello(i, 'video', videoHello, arguments[0]);
+          }
+        }
+        SiteListing.Slides.content = videoHello;
+        dfd.resolve( "hurray" );
+      });
+    }
+    else {
+      dfd.resolve( "No Video Codes" );
+    }
+    return dfd.promise();
+  };
+
+  /*
+  The code below will change
+  instagram integration has
+  yet to be decided upon.
+  */
   SiteListing.Slider.addInstagramToSlider = function() {
 
     // ---- FIELD 4: Instagram Hashtag ---- //
@@ -145,13 +257,16 @@
       // console.log( 'Instagram', instagramHashtag, instaText );
       // The limit parameter does not seem to work, this is an Instagram API issue. (not an issue with instafeed) I've implemented a bit of css to limit the display to 3 instead.
       var feed = new Instafeed({
-        get: 'tagged',
-        tagName: instagramHashtag,
-        clientId: '87b875b4c64341998ef11099c0a71f76',
-        mock: true,
+        get: 'user',
+        clientId: '950c733b1e9e4ceb9501cd339ae2edae',
+        accessToken: '17236515.1677ed0.b21a263c14b04df69f2932b06ebf799f',
+        userId: 17236515,
         limit: 3,
+        filter: function(image) {
+          return image.tags.indexOf('standishcharlotte') > 0;
+        },
+        mock: true,
         success: function(data) {
-          // console.log(data);
           $(data.data).each(function(i, v) {
             var classname, dataVideo, instaHeight;
             /* Add conditions for instagram video! */

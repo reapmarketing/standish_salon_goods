@@ -18,9 +18,7 @@
       case 'listing_1':
         // Activate Standish.SiteListing
         if (Standish.SiteListing) {
-          $('#loadingDiv').height($('.product_left').height());
-
-          var sitelisting = Standish.SiteListing.Slider.init();
+          Standish.SiteListing.Slider.init();
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
           Standish.SiteListing.doBadges();
@@ -36,13 +34,6 @@
       case 'listing_2':
         // Activate Standish.SiteListing
         if (Standish.SiteListing) {
-          $('#loadingDiv').height($('.product_left').height());
-
-          var sitelisting2 = Standish.SiteListing.Slider.init().then(function() {
-            $('.main-slider').show();
-            $('.sub-slider').show();
-            $('#loadingDiv').hide();
-          });
           Standish.SiteListing.addToWishlist();
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
@@ -81,6 +72,5 @@
       return;
     }
   };
-  
 
 })(jQuery);
