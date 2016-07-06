@@ -37,6 +37,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="assets/templates/[template]/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+
     <!-- Optional theme -->
     <link rel="stylesheet" href="assets/templates/[template]/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     
@@ -45,9 +47,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="assets/templates/[template]/style/main.2.0.1.min.css?cachebuster=89327498273" />
+    <!-- <link rel="stylesheet" href="assets/templates/[template]/style/main.2.0.1.min.css?cachebuster=89327498273" /> -->
     
-    <!-- <link rel="stylesheet" href="assets/templates/[template]/style/main.css" /> -->
+    <link rel="stylesheet" href="assets/templates/[template]/style/main.css" />
 
     <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
 
@@ -97,8 +99,8 @@
 
     <!-- MINIFIED & UGLIFIED --> 
     <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
-    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js"></script>
-    <!--  <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script> -->
+    <!--   <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js"></script> -->
+    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script>
   </head>
   <body>
   <script type="text/javascript">
@@ -570,66 +572,47 @@
     dfe.click();
   </script>
 
-  <style type="text/css">
-    .tab-row {
-      text-align: center;list-style: none;margin: 0;padding: 0;line-height: 24px; position:relative;
-    }
-    .tab-row:after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      border-bottom: 1px solid #AAA;
-      z-index: 1;
-    }
-    .tab-row:before {
-      z-index: 1;
-    }
-    .tab-row-inner {
-      margin: 0 10px;
-      padding: 0 10px;
-      border: 1px solid #AAA;
-      background: #ECECEC;
-      display: inline-block;
-      position: relative;
-      z-index: 0;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-    }
-
-    .tab-row-inner:before,
-    .tab-row-inner:after {
-      position: absolute;
-      bottom: -1px;
-      width: 6px;
-      height: 6px;
-      content: " ";
-      border: 1px solid #AAA;
-    }
-    .tab-row-inner:before {
-      left: -6px;
-      border-bottom-right-radius: 6px;
-      border-width: 0 1px 1px 0;
-      box-shadow: 2px 2px 0 red;
-    }
-    .tab-row-inner:after {
-      right: -6px;
-      border-bottom-left-radius: 6px;
-      border-width: 0 0 1px 1px;
-      box-shadow: -2px 2px 0 red;
-    }
-
-
-  </style>
-
-  <div id="hannah-chat" class="hannah-chat">
+  <div id="hannah-chat" class="hannah-chat fadeIn animated" href="#contact-hannah">
     <div class="tab-row" style="">
       <div class="tab-row-inner" style="">
-        Talk to hannah
+        <div class="col-md-8 col-sm-8 col-xs-8 no-padding">
+          For fast answers, text <br> Hannah at 214-399-9198
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 no-padding">
+          <img src="http://www.standishsalongoods.com/assets/images/hannah-sm.jpg" style="width: 35px;">
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-2 no-padding">
+          <i class="fa fa-plus" aria-hidden="true" style="font-size: 26px;margin-top: 6px;"></i>
+        </div>
+      </div>
+      <div class="tab-row-inner-bottom hidden-xs">
+        <span style="visibility:hidden;">hidden</span>
       </div>
     </div>
   </div>
+
+  <div id="chat-modal-hannah" class="modal fade modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="modal-hannah-chat" class="modal-body">
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  <script>
+    hbspt.forms.create({ 
+      portalId: '239485',
+      target: '#modal-hannah-chat',
+      css: '',
+      formId: '6fdb06ec-7a4f-4b9b-9b13-738e5aff1344'
+    });
+  </script>
 
   <!-- MOUSEFLOW HEATMAPS -->
   <script asnyc type="text/javascript">
