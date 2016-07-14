@@ -53,6 +53,10 @@
       
       </div>
         <input type="submit" value="[login_button]" class="btn" id="Submit1" name="Submit1">
+        <!--START: fbconnect-->
+        <div class="fbconnect"><a onclick="popup('social_login.asp?p=fl&return=myaccount',1000,550)" href="#" title="Sign in with Facebook"><img src="assets/templates/common/images/facebook_signin.png" alt="Sign In with Facebook" width="150" height="22" /></a></div>
+        <!--END: fbconnect-->
+        <div class="clear"></div>
     </form>
   </div>
   
@@ -77,5 +81,14 @@
       <p> [registration_Header-createnewaccount]</p>
       <p>[registration_create-account]</p>
       <input type="button" value="[registration_button-createaccount]" class="btn" onclick="window.location='register.asp?cg=0';">
+<!--START: fbconnect-->
+        <div class="fbconnect"><a onclick="popup('social_login.asp?p=fl&return=myaccount',1000,550)" href="#" title="Sign in with Facebook"><img src="assets/templates/common/images/facebook_signin.png" alt="Sign In with Facebook" width="150" height="22" /></a></div>
+        <!--END: fbconnect-->
+        <div class="clear"></div>
 		</form>
    </div>
+<style>
+.fbconnect{
+margin-top:15px;
+}
+</style>
