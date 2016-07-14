@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'style/main.css': 'sass/main.scss'
+          'dist/css/main.css': 'sass/main.scss'
         },
         options: {
           lineNumbers: true,
@@ -24,9 +24,9 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: 'style',
+          cwd: 'dist/css/',
           src: ['main.css'],
-          dest: 'style',
+          dest: 'dist/css',
           ext: '.<%= pkg.version %>.min.css'
         }]
       }
@@ -69,18 +69,18 @@ module.exports = function(grunt) {
     sprite:{
       headerSprites: {
         src: 'images/header-icons/*.png',
-        dest: 'images/header-icons.png',
+        dest: 'dist/sprites/header-icons.png',
         destCss: 'sass/_header-sprites.scss',
         algorithm: 'left-right'
       },
       whiteSprites: {
         src: 'images/badges-sprites/*.png',
-        dest: 'images/badges-sprites.png',
+        dest: 'dist/sprites/badges-sprites.png',
         destCss: 'sass/_badges-sprites.scss'
       },
       greenSprites: {
         src: ['images/individual-badges-main/Green/*.png', 'images/individual-badges-main/Orange/*.png'],
-        dest: 'images/individual-badges-main.png',
+        dest: 'dist/sprites/individual-badges-main.png',
         destCss: 'sass/_badges-sprites-colors.scss'
       }
     },

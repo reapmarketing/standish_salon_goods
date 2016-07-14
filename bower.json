@@ -17,6 +17,8 @@
     "slick-carousel": "kenwheeler/slick#~1.5.9",
     "font-awesome": "~4.5.0",
     "masonry": "~4.0.0",
-    "bootbox.js": "bootbox#^4.4.0"
+    "bootbox.js": "bootbox#^4.4.0",
+    "animate.css": "daneden/animate.css#^3.5.2",
+    "animate-sass": "tgdev/animate-sass#^0.6.6"
   }
 }

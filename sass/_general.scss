@@ -276,10 +276,12 @@ div[classname="searchlight-balloon"] {
   }
   
 }
+.inputs-list {
+  list-style-type: none;
+}
 .remove-perhaps {
   display: none;
 }
-
 .cycle-slideshow .cycle-slide {
   width: 100%;
 }
@@ -741,4 +743,115 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 }
 
+/* Front Page */
+@media only screen and (max-width : $tablet) {
+  .hannah-chat {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width : 500px) {
+ 
+  .tab-row-inner:before {
+    display: none;
+  }
+  .tab-row-inner:after {
+    display: none;
+  }
+  .tab-row-inner {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+.hannah-chat {
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  width: 50%;
+}
+.tab-row {
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 50px;
+  position:relative;
+}
+.tab-row:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.tab-row:before {
+  z-index: 1;
+}
+.tab-row-inner {
+  color: white;
+  font-size: 15px;
+  font-family: "PT Serif","Times New Roman",Times,serif;
+  margin: 0 0 0 10px;
+  padding: 15px;
+  background: #60437D;
+  display: inline-block;
+  position: relative;
+  float: left;
+  line-height: 19px;
+  vertical-align: bottom;
+  height: 75px;
+  left: 0;
+  z-index: 0;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+  width: 44%;
+  box-sizing: border-box;
+}
+.tab-row-inner-bottom {
+  padding: 0 10px;
+  background: #60437D;
+  display: inline-block;
+  z-index: 0;
+  float: left;
+  margin-top: 61px;
+  width: 25%;
+  height: 14px;
+  vertical-align: bottom;
+  border-top-right-radius: 15px;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.tab-row-inner:before,
+.tab-row-inner:after {
+  position: absolute;
+  bottom: 1px;
+  width: 6px;
+  height: 6px;
+  content: " ";
+}
+.tab-row-inner:before {
+  left: -6px;
+  border-bottom-right-radius: 6px;
+  border-width: 0 1px 1px 0;
+  box-shadow: 2px 2px 0 #60437d;
+}
+
+.tab-row-inner:after {
+  right: -10px;
+  top: 57px;
+  border-bottom-left-radius: 17px;
+  border-width: 2px;
+  width: 11px;
+  border-color: #60437d;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+.no-padding { padding:0; }
+
+#chat-modal-hannah {
+  z-index: 9999;
+}
 

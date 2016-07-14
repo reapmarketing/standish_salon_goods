@@ -1577,6 +1577,18 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
     }
   };
 
+  Standish.HannahChat = function() {
+
+    $('[href="#contact-hannah"]').on('click', function() {
+      $('#chat-modal-hannah').modal({
+        keyboard: false
+      });
+      $(this).addClass('hidden');
+    });
+    $('#chat-modal-hannah').on('hidden.bs.modal', function (e) {
+      $('[href="#contact-hannah"]').removeClass('hidden');
+    });
+  };
 
   Standish.NoZeros = function() {
     window.setTimeout( function () { 
@@ -1760,6 +1772,9 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
 
     // 16. Number + and - inputs
     Standish.NumberInputs();
+
+    // Activate Hannah Chat
+    Standish.HannahChat();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();

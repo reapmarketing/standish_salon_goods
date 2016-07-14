@@ -73,7 +73,7 @@
 }
 
 .credentials {
-  background: url(/assets/templates/standish-responsive/images/credentials.png);
+  background: url('/assets/templates/standish-responsive/images/credentials.png');
   width: 100%;
   background-size: contain;
   height: 50px;
@@ -364,7 +364,7 @@ li.first.far a {
 }
 
 .hello-container {
-  background: $hello-bar-bkg-color url('../images/congruent-pentagon-pattern-long.jpg') repeat-x;
+  background: $hello-bar-bkg-color url('/assets/templates/standish-responsive/images/congruent-pentagon-pattern-long.jpg') repeat-x;
   z-index: 20;
   box-shadow: 0 0 2px 0 white;
   color: black;
