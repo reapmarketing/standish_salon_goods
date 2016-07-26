@@ -69,19 +69,22 @@ module.exports = function(grunt) {
     sprite:{
       headerSprites: {
         src: 'images/header-icons/*.png',
-        dest: 'dist/sprites/header-icons.png',
+        dest: './dist/sprites/header-icons.png',
         destCss: 'sass/_header-sprites.scss',
-        algorithm: 'left-right'
+        algorithm: 'left-right',
+        imgPath: '../sprites/header-icons.png'
       },
       whiteSprites: {
         src: 'images/badges-sprites/*.png',
-        dest: 'dist/sprites/badges-sprites.png',
-        destCss: 'sass/_badges-sprites.scss'
+        dest: './dist/sprites/badges-sprites.png',
+        destCss: 'sass/_badges-sprites.scss',
+        imgPath: '../sprites/badges-sprites.png'
       },
       greenSprites: {
         src: ['images/individual-badges-main/Green/*.png', 'images/individual-badges-main/Orange/*.png'],
-        dest: 'dist/sprites/individual-badges-main.png',
-        destCss: 'sass/_badges-sprites-colors.scss'
+        dest: './dist/sprites/individual-badges-main.png',
+        destCss: 'sass/_badges-sprites-colors.scss',
+        imgPath: '../sprites/individual-badges-main.png'
       }
     },
     watch: {
@@ -91,6 +94,10 @@ module.exports = function(grunt) {
         options: {
           livereload: true,
         },
+      },
+      cssmin: {
+        files: ['dist/css/main.css'],
+        tasks: ['cssmin']
       },
       js: {
         files: ['<%= jshint.files %>'],

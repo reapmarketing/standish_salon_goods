@@ -280,10 +280,10 @@ Standish.SiteListing.loadedImages = [
               <div class="clearfix"></div>
               <div class="row">
                 <div class="col-sm-6 col-md-6" style="padding-right: 5px;">
-                  <a id="apply-financing" class="white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
+                  <a id="apply-financing" class="apply-financing white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
                 </div>
                 <div class="col-sm-6 col-md-6" style="padding-left: 5px;">
-                  <a id="add-wishlist" class="standish-tooltip button btn-block btn btn-lg btn-purp" href="#">Love <i class="fa fa-heart" aria-hidden="true"></i></a>
+                  <a id="add-wishlist" class="add-wishlist standish-tooltip button btn-block btn btn-lg btn-purp" href="#">Love <i class="fa fa-heart" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div><!--#customer-action-block-->
@@ -446,7 +446,10 @@ Standish.SiteListing.loadedImages = [
                 <div id="customer-action-block-mobile" class="visible-xs clearfix">
                   <button type="submit" class="btn btn-lg col-xs-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 
-                  <a id="cart-add" class="button light-text btn btn-lg col-xs-12 btn-x-light" href="/salon-equipment-financing" target="_blank"> Apply for Financing</a>
+                  <div class="btn-group" role="group" aria-label="..." style="width:100%;">
+                    <a  href="/salon-equipment-financing" class="white-text button light-text btn btn-lg standishgreen" id="apply-financing" onclick="window.location='Charlotte_Contemporary_Red_Styling_Chair#product-videos-header'" style="width:50%;">Financing</a>
+                    <a id="add-wishlist" class="add-wishlist standish-tooltip button btn-block btn btn-lg btn-purp" href="#" style="width:50%;border-left: 1px solid white;">Love <i class="fa fa-heart" aria-hidden="true"></i></a>
+                  </div>
                 </div><!--#customer-action-block-->
                 <div class="col-md-12 text-center padd-top option-row hidden-md hidden-sm hidden-lg"><span class="coral-text">Need Help?</span> Call <span class="bold">(888) 271-8434</span></div>
 

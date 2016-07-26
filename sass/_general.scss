@@ -444,6 +444,24 @@ div[classname="searchlight-balloon"] {
   margin-left: -15px;
 }
 
+#chat-modal-hannah {
+  .modal-header {
+    border-bottom: 0 none;
+  }
+}
+
+.inputs-list.multi-container {
+  list-style: none;
+  padding:0!important;
+
+  label {
+    span {
+      padding-left: 10px;
+    }
+  }
+
+}
+
 .left-bar ul {
   margin: 0;
   padding: 0 0 0 5px;
@@ -768,7 +786,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   bottom: 0;
   right: 0;
   z-index: 9999;
-  width: 50%;
+  width: 30%;
 }
 .tab-row {
   text-align: center;
@@ -806,7 +824,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   z-index: 0;
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
-  width: 44%;
+  width: 72%;
   box-sizing: border-box;
 }
 .tab-row-inner-bottom {
@@ -816,7 +834,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   z-index: 0;
   float: left;
   margin-top: 61px;
-  width: 25%;
+  width: 22%;
   height: 14px;
   vertical-align: bottom;
   border-top-right-radius: 15px;
