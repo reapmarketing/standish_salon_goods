@@ -33,10 +33,7 @@
 
       SiteListing.Slider.activateVideos();
 
-    });
-
-
-      
+    });   
   };
 
   SiteListing.Slider.activateVideos = function() {
@@ -53,9 +50,10 @@
       });
 
       if (videoObj.length > 0) {
+        console.log(videoObj[0]);
         vex.open({
           content: videoObj[0].videoHTML,
-          contentCSS: { 'padding': '0', 'width': '960px' }
+          contentCSS: { 'padding': '0', 'width': $(window).width()  }
         });
       }
     });
@@ -100,6 +98,7 @@
   SiteListing.Slider.activateSlickTemplating = function() {
     if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
       var mainVidTpl = function(slide) {
+        console.log(slide);
         var video_markup_main = '<a class="video_popup" data-video="'+slide.videoID+'" data-type="'+slide.type+'" data-media-source="'+slide.source+'">';
         video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
         video_markup_main +=  '<img itemprop="image" src="'+ slide.image +'" align="middle" id="large" alt="'+ slide.title +'" width="100%" data-href="'+ slide.thumbnail +'" />';
@@ -152,12 +151,11 @@
     }
   };
 
-
-
   /* Video Utility Functions */
   function getData(embed_code) {
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
+    console.log(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
   }
 
@@ -343,6 +341,53 @@
     }
     else {
       $('.saleprice').hide();
+    }
+  };
+
+  // ---- ADD PRODUCT BADGES ---- //
+  SiteListing.doBadgesSplatter = function() {
+    // ---- FIELD 8: BADGES ---- //
+    var splatter = $( '.field2' ).data( 'field2' );
+    var $splatter = $( '.splatter' );
+
+    var sludgetext = {
+      'brand-new': {
+        'title': 'Brand New',
+        'class': 'brand-new'
+      },
+      'exclusive-item': {
+        'title': 'Exclusive Item',
+        'class': 'exclusive-item'
+      },
+      'extra-wide': {
+        'title': 'Extra Wide',
+        'class': 'extra-wide'
+      },
+      'limited-supply': {
+        'title': 'Limited Supply',
+        'class': 'limited-supply'
+      },
+      'top5-product': {
+        'title': 'Top 5 Product',
+        'class': 'top5-product'
+      },
+      'top-seller': {
+        'title': 'Top Seller',
+        'class': 'top-seller'
+      }
+    };
+    console.log(splatter);
+    if( splatter ) {
+      splatter = splatter.split(/(\s+)/);
+      $.each( splatter, function( i, v ) {
+        var splatterslug = v.trim();
+        if( typeof( sludgetext[splatterslug] ) != 'undefined' ) {
+          $splatter.append( '<div class="' + sludgetext[splatterslug].class + '"></div>');
+        }     
+      });
+
+    } else {
+      $splatter.remove();
     }
   };
 

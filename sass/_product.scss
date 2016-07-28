@@ -85,6 +85,29 @@ body.vex-open {
   @include sprite($swap-base);
 }
 
+.splatter {
+  .brand-new {
+   @include sprite($-brand-new);
+  }
+  .exclusive-item {
+    @include sprite($-exclusive-item);
+  }
+  .extra-wide {
+    @include sprite($-extra-wide);
+  }
+  .limited-supply {
+    @include sprite($-limited-supply);
+  }
+  .top5-product {
+    @include sprite($-top5-product);
+  }
+  .top-seller {
+   @include sprite($-top-seller);
+  }
+}
+
+
+
 [class^="badge-"] i,
 [class*="badge-"] i,
 [class^="badge-"] span,

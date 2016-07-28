@@ -31,16 +31,6 @@ module.exports = function(grunt) {
         }]
       }
     },
-    replace: {
-      version: {
-        src: ['frame.source.html'],             // source files array (supports minimatch) 
-        dest: 'frame.html',             // destination directory or file 
-        replacements: [{
-          from: /{{ VERSION }}/g,                   // string replacement 
-          to: '<%= pkg.version %>'
-        }]
-      }
-    },
     concat: {
       options: {
         stripBanners: true,
@@ -85,6 +75,12 @@ module.exports = function(grunt) {
         dest: './dist/sprites/individual-badges-main.png',
         destCss: 'sass/_badges-sprites-colors.scss',
         imgPath: '../sprites/individual-badges-main.png'
+      },
+      splatterBadges: {
+        src: ['images/splatter-badges/*.png'],
+        dest: './dist/sprites/splatter-badges.png',
+        destCss: 'sass/_splatter-badges.scss',
+        imgPath: '../sprites/splatter-badges.png'
       }
     },
     watch: {
@@ -102,10 +98,6 @@ module.exports = function(grunt) {
       js: {
         files: ['<%= jshint.files %>'],
         tasks: ['jshint']
-      },
-      source: {
-        files: ['<%= replace.version.src %>'],
-        tasks: ['replace']
       },
       concat: {
         files: ['<%= concat.dist.src %>'],
@@ -135,5 +127,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-text-replace');
 
-  grunt.registerTask('default', ['sprite', 'jshint', 'concat', 'uglify', 'sass', 'cssmin', 'replace']);
+  grunt.registerTask('default', ['sprite', 'jshint', 'concat', 'uglify', 'sass', 'cssmin']);
 };

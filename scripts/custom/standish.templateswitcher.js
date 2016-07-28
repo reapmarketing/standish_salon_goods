@@ -26,6 +26,7 @@
           Standish.SiteListing.getBrand();
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
+          Standish.SiteListing.doBadgesSplatter();
           // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
           Standish.SiteListing.addToWishlist();

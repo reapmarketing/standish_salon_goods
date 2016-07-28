@@ -12,14 +12,14 @@ $( function(){
     'list': 'PDP',
     'position': 1,
   };
+
   // GA Enhanced ECom Tracking
-  ga('require', 'ec');
-  // console.log( ga, $ );
+  _gaq.push('require', 'ec');
+  // console.log( _gaq.push, $ );
 
   // PDP Viewed
-  ga('ec:addProduct', product);
-  ga('ec:setAction', 'detail');
-  ga('send', 'pageview');
+  _gaq.push('ec:addProduct', product);
+  _gaq.push('ec:setAction', 'detail');
 });
 </script>
 <script type="text/javascript">
@@ -199,7 +199,7 @@ Standish.SiteListing.loadedImages = [
     <!--END: CATEGORY_HEADER-->
     <!-- DESKTOP/TABLET PRODUCT TITLE AND PART #-->
     <div id="product-head" class="row clearfix hidden-xs">
-      <div class="">
+      <div class="relative">
 
         <!-- Title! -->
         <h1 itemprop="name" class="product-title">[name]</h1>
@@ -207,6 +207,9 @@ Standish.SiteListing.loadedImages = [
         <!--START: id-->
           <p class="part-no hidden-xs">Part Number <span id="product_id">[id]</span></p>
         <!--END: id-->
+
+        <div class="splatter absolute" style="top: -45%;left: 40%;">
+        </div>
 
       </div>
     </div>

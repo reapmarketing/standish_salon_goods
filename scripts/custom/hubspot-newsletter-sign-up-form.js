@@ -14,15 +14,14 @@
 		css: '',
 		target: '#newsletter-target',
 		submitButtonClass: 'hubspot-footer-email-capture-submit'
-	}).done(function() {
-		$('.hs-form input[type=email]').each( function () {
-				if( $(this).val() == 'Enter Email' ) {
-					var element = $(this);
-					element.on( 'click', function() {
-						element.val('');
-					});
-				}
-			});
+	});
+	$('.hs-form input[type=email]').each( function () {
+			if( $(this).val() == 'Enter Email' ) {
+				var element = $(this);
+				element.on( 'click', function() {
+					element.val('');
+				});
+			}
 	});
 });
 
