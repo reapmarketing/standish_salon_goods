@@ -916,9 +916,9 @@ Standish.SiteListing.loadedImages = [
     purchasedProduct['price'] = '[price]';
     purchasedProduct['quantity'] = $('#quantity').val();
     console.log( purchasedProduct );
-    ga( 'ec:addProduct', purchasedProduct );
-    ga( 'ec:setAction', 'add' );
-    ga( 'send', 'event', 'UX', 'click', 'add to cart' );
+    _gaq.push( 'ec:addProduct', purchasedProduct );
+    _gaq.push( 'ec:setAction', 'add' );
+    _gaq.push( 'send', 'event', 'UX', 'click', 'add to cart' );
   }
 </script>
 

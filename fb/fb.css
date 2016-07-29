@@ -1,0 +1,123 @@
+/*Fusionbot Additions*/
+.match {
+font-family: 'Hind', sans-serif;
+color: red;
+font-size: 12px;
+font-weight: bold;
+font-style: normal;
+text-decoration: none;
+}
+.hideme { display:none; }
+.filter {
+font-family: 'Hind', sans-serif;
+color: #696969;
+font-size: 12px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+xmargin-left: 3px;
+line-height:1.8;
+}
+/*A.cat::Links:: Controls the way the Links look before a user clicks or mouse overs on them*/
+.filter a {
+font-family: "PT Sans",Arial,Helvetica,sans-serif;
+color: #696969;
+font-size: 12px;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+}
+
+/*A.cat:hover:: Controls the way the Links look when a user passes their mouse over a them*/
+.filter a:hover {
+font-family: "PT Sans",Arial,Helvetica,sans-serif;
+font-size: 12px;
+font-weight: 700;
+font-style: normal;
+color: #696969;
+text-decoration: none!important;
+}
+
+/*A.cat:visited:: Controls the way the Links look after a user has visited that section*/
+.filter a:visited {
+font-family: "PT Sans",Arial,Helvetica,sans-serif;
+font-size: 12px;
+color: #696969;
+}
+
+/*A.cat:visited:hover:: Controls the way the Links look when a user hovers over a section they have visited*/
+.filter a:visited:hover {
+font-family: "PT Sans",Arial,Helvetica,sans-serif;
+color: #696969;
+font-size: 12px;
+text-decoration: none;;
+font-weight:700;
+}
+
+.fb-category-header { margin: 0 0 15px 0; }
+.product-container { min-width:196px; }
+#fbnotify { margin-bottom:5px; }
+#fbfiltertag { margin-bottom:10px; }
+.paging { text-align:right; }
+.flt-item { text-transform: capitalize; display:block; }
+
+
+.cat a { display:inline; line-height:1.6em; margin:0; padding:0;}
+.item_paging { color: #000000; font-size: 14px; }
+.flt-more { margin-left:5px; }
+
+.catBlock { margin-bottom:10px; }
+.catHead { xbackground-color:#4D4D4D; background-color:#fff; xheight: 35px; font-size: 16px; cursor: pointer; xtext-transform: uppercase; xborder-bottom: 1px solid black; xcolor:#fff; color:#60437D;}
+.catHead b { position:relative; top:5px; left:10px; font-family: "PT Sans",Arial,Helvetica,sans-serif; font-size: 1rem;}
+.cbpm { float:right; margin-right:10px; margin-top:10px; }
+.fltBlock { padding:5px 5px 5px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; xborder: 1px solid #dedddd; background-color:#fff; }
+.fltBlock br { display:none; }
+
+.flt-item-sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display:block; }
+.flt-item-empty { display: block; }
+.pmBtn { float:left; margin-top:7px; padding-left:10px; font-size:20px; }
+.sbBtn { float:left; margin-top:3px; padding-left:10px; font-size:20px; }
+.ftBtn { float:left; margin-top:7px; padding-left:10px; font-size:20px; }
+
+                                                                                              
+#shopby { width:100%; xmin-width:199px; min-height:35px; text-align:center; xbackground-color:#4D4D4D; xcolor:white; color:#60437D; font-size:24px; margin-bottom:10px; xmargin-left:-10px; cursor:pointer; text-transform:uppercase; }
+#remallBlock { xdisplay: none; margin-left:5px; padding-bottom:10px; }
+#remallTxt { font-size:12px; text-decoration:none; }
+#sbBtnDefaultSection { cursor:pointer; }
+#ftBtnDefaultSection { cursor:pointer; }
+
+.orlogin span { border: 2px solid #D2D2D2; border-radius: 50%; display: block; height: 25px; line-height: 20px; margin: 0px 15px 0px 0px; text-align: center; width: 25px;}
+.container_search { width:98%; }
+.pagingfb { width: 100%!important; }
+
+#pGo:hover { background-color: #28A15B; }
+#pGo { background: none repeat scroll 0% 0% #EAECEE; }
+
+#fbdym, #fbspell { font-size: 16px; margin-bottom:5px; }
+#fbspell { margin-left:18px; }
+
+.product-container:nth-child(3n) {
+  border-right:none!important;
+}
+
+#modPrice { display:none; }
+
+@media only screen and (max-width: 992px) {
+
+  #leftBar { display: block!important; width:100%; max-width:100%!important; min-width:100%!important; margin-top:10px; padding-left:10px; padding-right:10px; float:none!important; }
+  #filterContent { display:none; }
+  #pmBtnDefault { display:none; }    
+  #pmBtnMobile { display:block !important; xmargin-top:10px; }
+  .right-side { width:100%!important; }
+  #left-bar-testimonials { display: none; }
+  #remallBlock { margin-left:17px; }
+  #shopby { border:1px solid #DEDEDE; }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+  .fbmobilesmallhide { display:none!important; }
+  #shopby { border:1px solid #DEDEDE; }
+
+}
