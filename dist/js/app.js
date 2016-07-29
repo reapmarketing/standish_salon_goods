@@ -1,4 +1,4 @@
-/*! standish-responsive - v2.0.1 - 2016-06-30 *//*!
+/*! standish-responsive - v2.0.1 - 2016-07-29 *//*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1565,7 +1565,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
       if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
         SiteListing.Slider.activateSlideShow();
         SiteListing.Slider.addVideoToSlider();
-        SiteListing.Slider.addInstagramToSlider();
+        // SiteListing.Slider.addInstagramToSlider();
 
         $('.main-slider').show();
         $('.sub-slider').show();

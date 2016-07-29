@@ -13,13 +13,12 @@ $( function(){
     'position': 1,
   };
   // GA Enhanced ECom Tracking
-  ga('require', 'ec');
-  // console.log( ga, $ );
+  _gaq.push('require', 'ec');
+  // console.log( _gaq.push, $ );
 
   // PDP Viewed
-  ga('ec:addProduct', product);
-  ga('ec:setAction', 'detail');
-  ga('send', 'pageview');
+  _gaq.push('ec:addProduct', product);
+  _gaq.push('ec:setAction', 'detail');
 });
 </script>
 
@@ -826,9 +825,9 @@ $( function(){
     purchasedProduct['price'] = '[price]';
     purchasedProduct['quantity'] = $('#quantity').val();
     console.log( purchasedProduct );
-    ga( 'ec:addProduct', purchasedProduct );
-    ga( 'ec:setAction', 'add' );
-    ga( 'send', 'event', 'UX', 'click', 'add to cart' );
+    _gaq.push( 'ec:addProduct', purchasedProduct );
+    _gaq.push( 'ec:setAction', 'add' );
+    _gaq.push( 'send', 'event', 'UX', 'click', 'add to cart' );
   }
 </script>
 

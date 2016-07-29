@@ -10,7 +10,7 @@
       if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
         SiteListing.Slider.activateSlideShow();
         SiteListing.Slider.addVideoToSlider();
-        SiteListing.Slider.addInstagramToSlider();
+        // SiteListing.Slider.addInstagramToSlider();
 
         $('.main-slider').show();
         $('.sub-slider').show();
