@@ -1,0 +1,83 @@
+div.searchlight-balloon {
+        opacity: 1.00;
+        z-index: 10000;
+}
+table.searchlight-results {
+        border-collapse: collapse;
+        font-family:  Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: normal;
+        width: 250px;
+}
+div.searchlight-results-wrapper {
+        color: #000;
+        border: 1px solid #aaa;
+        margin: 8px 0 0 0;
+        -webkit-border-bottom-left-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -webkit-box-shadow: 0;
+        -moz-box-shadow: 0;
+}
+table.searchlight-results td {
+        padding: 4px;
+        text-shadow: none;
+}
+table.searchlight-results .searchlight-header-text, table.searchlight-results .searchlight-result-text {
+}
+table.searchlight-results td {
+        background: #FFF;
+        width: 100%;
+}
+table.searchlight-results td .searchlight-result-item {
+        padding: 1px 0;
+}
+table.searchlight-results tr {
+        cursor: pointer;
+}
+table.searchlight-results tr.searchlight-selected th, table.searchlight-results tr.searchlight-selected td {
+        background: #f9f9f9;
+        color: #3B8ECB;
+        text-shadow: none;
+}
+table.searchlight-results .searchlight-result-icon {
+        margin-right: 4px;
+        vertical-align: text-top;
+        float: left;
+}
+table.searchlight-results tr.searchlight-spacer-row td {
+        height: 10px;
+}
+
+.searchlight-not-selected {
+        align:left;
+        text-align:left;
+}
+.searchlight-selected {
+        align:left;
+        text-align:left;
+}
+
+
+
+.search-price {
+        font-weight: bold;
+        color: #333;
+        float: left;
+}
+
+
+#searchlight-footer {
+
+  width:300px;
+  color:#000;
+  background:#F9F9F9;
+  height:30px;
+  margin-top:-10px;
+  padding-top:10px;
+  font-weight:bold;
+  
+
+}
+
+/* kludge to hide filters that need to be configured in FB account, so that query acts upon them, but not displayed via $lgk_filtertag */
+.fbFltYMM { display: none; }
