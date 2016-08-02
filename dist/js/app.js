@@ -1,4 +1,4 @@
-/*! standish-responsive - v2.0.1 - 2016-07-29 *//*!
+/*! standish-responsive - v2.0.1 - 2016-08-02 *//*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1434,8 +1434,9 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
   };
 
   Standish.applyFilters = function() {
+    var tabletBkPt = 991;
     // console.log($('#category-selectors'));
-    if ($('#category-selectors').length > 0) {
+    if ($('#category-selectors').length > 0 && $(window).width() >= tabletBkPt) {
       var $sideBar = $('#category-selectors').detach();
     
       $('.left-bar #catframe-wrapper').replaceWith($sideBar);
@@ -1620,6 +1621,13 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
     };
   
   });
+
+  // -- Toggle filters -- //
+  Standish.ToggleCatFilters = function() {
+    console.log('hello');
+    $('.category-content').toggleClass('hidden');
+  };
+
   // -- WISHLIST LINK FUNCTIONALITY -- //
   Standish.WishlistBtn = function() {
     $('.nav-menu .wishlist').on('click', function(e) {
@@ -1785,6 +1793,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
     Standish.EqualHeights();
     Standish.EqualHeightsMobile();
     Standish.SearchForm();
+    Standish.applyFilters();
   });
   
 })(jQuery);

@@ -80,38 +80,46 @@ jQuery( function($) {
 		
 		
 			<div id="category-selectors" class="row">
-					<h4 class="uppercase">Filter Search</h4>
+				<div id="shopby" class="hidden-md hidden-lg" onclick="window.Standish.ToggleCatFilters();">
+					<span id="pmBtnMobile">
+						<i id="pmBtnMobileSection" class="pmBtn fa fa-minus-circle" title="click to expand/contract"></i>
+						<span style="margin-left:-20px;display:inline-block;xpadding-top:7px;">
+							Filter Categories
+						</span>
+					</span>
+				</div>
+				<div class="category-content hidden">
+					<h4 class="uppercase hidden-sm hidden-xs">Filter Categories</h4>
 					<!--START: catFilter-->
-						<div class="filters-content">
-							[category_Header-Filters]:
-							<!--START: catFilterCrumb--> 
-								<!--START: catFilterCrumbItem-->
-									<span class="label label-default"><a style="color:white;" href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a></span>
-								<!--END: catFilterCrumbItem-->
-							<!--END: catFilterCrumb-->
-							<!--START: catFilterRemoveLink-->
-								<br />
-								<span class="label label-danger"><a href="#" onclick="javascript:removeCatFilter();" style="color: white"><i class="fa fa-times-circle"></i> [category_Header-RemoveFilters]</a></span>
-								<hr />
-							<!--END: catFilterRemoveLink-->
-						</div>
+					<div class="filters-content">
+						[category_Header-Filters]:
+						<!--START: catFilterCrumb-->
+							<!--START: catFilterCrumbItem-->
+								<span class="label label-default"><a style="color:white;" href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a></span>
+							<!--END: catFilterCrumbItem-->
+						<!--END: catFilterCrumb-->
+						<!--START: catFilterRemoveLink-->
+							<br />
+							<span class="label label-danger"><a href="#" onclick="javascript:removeCatFilter();" style="color: white"><i class="fa fa-times-circle"></i> [category_Header-RemoveFilters]</a></span>
+							<hr />
+						<!--END: catFilterRemoveLink-->
+					</div>
 					<!--END: catFilter-->
 					<!--START: catFilter_Filter-->
 					<!-- the filter title can be outside: [catFilterName]--> 
-						<!-- Use this block if you want to show filters as a list--> 
-						<div class="category-filters-wrapper">
-							
-							<ul class="category-filters">
-								<li class="cat-filter-title">[catFilterName]</li>
-								<!--START: catFilter_Filter_Item--> 
-									<li><a id="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-" value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-" onclick="setCatFilter(jQuery(this).attr('value'), document.frmsortby, false);">
-										<input type="checkbox" onchange="setCatFilter(jQuery(this).attr('value'), document.frmsortby, false);" value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">  [catFilterChildName] ([numItems])</a></li>
-								<!--END: catFilter_Filter_Item--> 
-							</ul>
-						</div>
+					<!-- Use this block if you want to show filters as a list-->
+					<div class="category-filters-wrapper">
+						
+						<ul class="category-filters">
+							<li class="cat-filter-title">[catFilterName]</li>
+							<!--START: catFilter_Filter_Item-->
+								<li><a id="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-" value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-" onclick="setCatFilter(jQuery(this).attr('value'), document.frmsortby, false);">
+									<input type="checkbox" onchange="setCatFilter(jQuery(this).attr('value'), document.frmsortby, false);" value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">  [catFilterChildName] ([numItems])</a></li>
+							<!--END: catFilter_Filter_Item-->
+						</ul>
+					</div>
 					<!--END: catFilter_Filter-->
-
-
+				</div>
 			</div>
 		
 		

@@ -154,6 +154,11 @@ legend {
     float: right!important;
   }
 }
+@media only screen and (max-width : $medium) {
+  .text-center-mobile {
+    text-align: center!important;
+  }
+}
 
 .indent {
   padding-left: 10px;
