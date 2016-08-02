@@ -50,7 +50,7 @@
       });
 
       if (videoObj.length > 0) {
-        console.log(videoObj[0]);
+        // console.log(videoObj[0]);
         vex.open({
           content: videoObj[0].videoHTML,
           contentCSS: { 'padding': '0', 'width': $(window).width()  }
@@ -71,7 +71,7 @@
       });
 
       $('.filterProductImg').on('change', function(){
-        console.log(this);
+        // console.log(this);
 
         $('.filterProductImg').not(this).prop('checked', false);
 
@@ -79,8 +79,8 @@
         if ( Standish.SiteListing.filtered === false || Standish.SiteListing.currentFiltered !== filterName ) {
           $('.sub-slider').slick('slickUnfilter');
           
-          console.log(filterName);
-          console.log(Standish.SiteListing.filtered);
+          // console.log(filterName);
+          // console.log(Standish.SiteListing.filtered);
 
           $('.sub-slider').slick('slickFilter', '[data-media-source="'+filterName+'"]');
 
@@ -98,7 +98,7 @@
   SiteListing.Slider.activateSlickTemplating = function() {
     if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
       var mainVidTpl = function(slide) {
-        console.log(slide);
+        // console.log(slide);
         var video_markup_main = '<a class="video_popup" data-video="'+slide.videoID+'" data-type="'+slide.type+'" data-media-source="'+slide.source+'">';
         video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
         video_markup_main +=  '<img itemprop="image" src="'+ slide.image +'" align="middle" id="large" alt="'+ slide.title +'" width="100%" data-href="'+ slide.thumbnail +'" />';
@@ -155,7 +155,7 @@
   function getData(embed_code) {
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
-    console.log(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
+    // console.log(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
   }
 
@@ -189,8 +189,8 @@
     if (Standish.SiteListing.loadedImages.length > 0) {
       var dfd = $.Deferred();
 
-      console.log(Standish.SiteListing.Slides.content);
-      console.log(Standish.SiteListing.loadedImages);
+      // console.log(Standish.SiteListing.Slides.content);
+      // console.log(Standish.SiteListing.loadedImages);
       
       if ( Standish.SiteListing.Slides.content instanceof Array ) {
         Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.concat(Standish.SiteListing.loadedImages);
@@ -376,7 +376,7 @@
         'class': 'top-seller'
       }
     };
-    console.log(splatter);
+    // console.log(splatter);
     if( splatter ) {
       splatter = splatter.split(/(\s+)/);
       $.each( splatter, function( i, v ) {
