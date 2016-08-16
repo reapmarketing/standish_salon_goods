@@ -1,4 +1,4 @@
-/*! standish-responsive - v2.0.1 - 2016-08-03 *//*!
+/*! standish-responsive - v2.0.1 - 2016-08-16 *//*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1434,8 +1434,9 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
   };
 
   Standish.applyFilters = function() {
+    var tabletBkPt = 991;
     // console.log($('#category-selectors'));
-    if ($('#category-selectors').length > 0) {
+    if ($('#category-selectors').length > 0 && $(window).width() >= tabletBkPt) {
       var $sideBar = $('#category-selectors').detach();
     
       $('.left-bar #catframe-wrapper').replaceWith($sideBar);
@@ -1620,6 +1621,13 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
     };
   
   });
+
+  // -- Toggle filters -- //
+  Standish.ToggleCatFilters = function() {
+    console.log('hello');
+    $('.category-content').toggleClass('hidden');
+  };
+
   // -- WISHLIST LINK FUNCTIONALITY -- //
   Standish.WishlistBtn = function() {
     $('.nav-menu .wishlist').on('click', function(e) {
@@ -1785,6 +1793,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
     Standish.EqualHeights();
     Standish.EqualHeightsMobile();
     Standish.SearchForm();
+    Standish.applyFilters();
   });
   
 })(jQuery);
@@ -1996,7 +2005,6 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
       });
 
       if (videoObj.length > 0) {
-        //console.log(videoObj[0]);
         vex.open({
           content: videoObj[0].videoHTML,
           contentCSS: { 'padding': '0', 'width': '960px' }
@@ -2032,16 +2040,12 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
       });
 
       $('.filterProductImg').on('change', function(){
-        //console.log(this);
 
         $('.filterProductImg').not(this).prop('checked', false);
 
         var filterName = $(this).data('filter-media');
         if ( Standish.SiteListing.filtered === false || Standish.SiteListing.currentFiltered !== filterName ) {
           $('.sub-slider').slick('slickUnfilter');
-          
-          //console.log(filterName);
-          //console.log(Standish.SiteListing.filtered);
 
           $('.sub-slider').slick('slickFilter', '[data-media-source="'+filterName+'"]');
 
@@ -2059,7 +2063,6 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
   SiteListing.Slider.activateSlickTemplating = function() {
     if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
       var mainVidTpl = function(slide) {
-        //console.log(slide);
         var video_markup_main = '<a class="video_popup" data-video="'+slide.videoID+'" data-type="'+slide.type+'" data-media-source="'+slide.source+'">';
         video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
         video_markup_main +=  '<img itemprop="image" src="'+ slide.image +'" align="middle" id="large" alt="'+ slide.title +'" width="100%" data-href="'+ slide.thumbnail +'" />';
@@ -2116,7 +2119,6 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
   function getData(embed_code) {
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
-    //console.log(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
   }
 
@@ -2149,9 +2151,6 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
   SiteListing.NewSlider.addRegImagesToSlideshow = function() {
     if (Standish.SiteListing.loadedImages.length > 0) {
       var dfd = $.Deferred();
-
-      //console.log(Standish.SiteListing.Slides.content);
-      //console.log(Standish.SiteListing.loadedImages);
       
       if ( Standish.SiteListing.Slides.content instanceof Array ) {
         Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.concat(Standish.SiteListing.loadedImages);
@@ -2337,7 +2336,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
         'class': 'top-seller'
       }
     };
-    //console.log(splatter);
+
     if( splatter ) {
       splatter = splatter.split(/(\s+)/);
       $.each( splatter, function( i, v ) {

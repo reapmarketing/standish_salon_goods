@@ -660,7 +660,7 @@ fieldset {
 #category-selectors h4 {
   color: $hello-bar-bkg-color;
 }
-.left-bar .category-filters-wrapper {
+.category-filters-wrapper {
   padding: 5px 0;
 
   ul.category-filters {
@@ -676,6 +676,42 @@ fieldset {
     }
   }
 
+}
+
+.category-filters-wrapper ul.category-filters {
+  list-style-type: none;
+  li input {
+    vertical-align: -6px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+
+  #category-selectors {
+    padding: 0 15px;
+    #shopby {
+      border: 1px solid #DEDEDE;
+      width: 100%;
+      xmin-width: 199px;
+      min-height: 35px;
+      text-align: center;
+      xbackground-color: #4D4D4D;
+      xcolor: white;
+      color: #60437D;
+      font-size: 24px;
+      margin-bottom: 10px;
+      xmargin-left: -10px;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      .pmBtn {
+        float: left;
+        margin-top: 7px;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 
