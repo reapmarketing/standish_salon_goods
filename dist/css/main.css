@@ -3631,10 +3631,10 @@ body.vex-open {
   height: 61px; }
 /* line 299, ../../sass/_product.scss */
 .badge-extra-wide:hover i, .badge-extra-wide:hover span, .badge-extra-wide:hover em {
-  background-image: url(../sprites/splatter-badges.png);
-  background-position: -122px -100px;
-  width: 122px;
-  height: 86px; }
+  background-image: url(../sprites/individual-badges-main.png);
+  background-position: -240px -242px;
+  width: 60px;
+  height: 60px; }
 
 /* line 305, ../../sass/_product.scss */
 .badge-double-stitched i, .badge-double-stitched span, .badge-double-stitched em {

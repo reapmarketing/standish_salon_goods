@@ -14,12 +14,12 @@ $( function(){
   };
 
   // GA Enhanced ECom Tracking
-  _gaq.push('require', 'ec');
-  // console.log( _gaq.push, $ );
+  // _gaq.push('require', 'ec');
+  // console.log( // _gaq.push, $ );
 
   // PDP Viewed
-  _gaq.push('ec:addProduct', product);
-  _gaq.push('ec:setAction', 'detail');
+  // _gaq.push('ec:addProduct', product);
+  // _gaq.push('ec:setAction', 'detail');
 });
 </script>
 <script type="text/javascript">
@@ -92,7 +92,7 @@ Standish.SiteListing.loadedImages = [
     title: '[imagecaption8]',
     type: 'image',
     source: '3DCart'
-  }
+  },
   // <!--END: image8-->
   // <!--START: image9-->
   {
@@ -110,7 +110,7 @@ Standish.SiteListing.loadedImages = [
     title: '[imagecaption10]',
     type: 'image',
     source: '3DCart'
-  }
+  },
   // <!--END: image10-->
   // <!--START: image11-->
   {
@@ -128,7 +128,7 @@ Standish.SiteListing.loadedImages = [
     title: '[imagecaption12]',
     type: 'image',
     source: '3DCart'
-  }
+  },
   // <!--END: image12-->
   // <!--START: image13-->
   {
@@ -146,7 +146,7 @@ Standish.SiteListing.loadedImages = [
     title: '[imagecaption14]',
     type: 'image',
     source: '3DCart'
-  }
+  },
   // <!--END: image14-->
   // <!--START: image15-->
   {
@@ -225,7 +225,7 @@ Standish.SiteListing.loadedImages = [
           <div class="main-slider" style="display:none;"></div>
           <div class="col-md-12 nav-filters" style="display:none;background-color:#7a559e;padding: 7px 10px 4px;">
             <strong style="color:white;">Filter Media: </strong>
-            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white;"><input type="checkbox" data-filter-media="3DCart" class="filterProductImg" value="1"> Product Images <i class="fa fa-camera" aria-hidden="true"></i></label>
+            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white; border-right:1px solid white;"><input type="checkbox" data-filter-media="3DCart" class="filterProductImg" value="1"> Product Images <i class="fa fa-camera" aria-hidden="true"></i></label>
             <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white;"><input type="checkbox" id="2" class="filterProductImg"  data-filter-media="wistia" value="1" > Product Videos <i class="fa fa-play" aria-hidden="true"></i></label>
             <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white; display:none;"><input type="checkbox" id="2" class="filterProductImg"  data-filter-media="instagram" value="1" > Happy Customers <i class="fa fa-smile-o" aria-hidden="true"></i></label>
             <div class="pull-right"><a href="" style="text-decoration:underline;color:white;" class="show-all">Show all</a></div>
@@ -772,7 +772,7 @@ Standish.SiteListing.loadedImages = [
       // console.log(Number(stock));
 
       var innerModalHtml = $('.related-products.row').clone(),
-          outerModalHtml = '<div class="modal fade"><div class="modal-dialog"><div class="modal-content">' +
+          outerModalHtml = '<div id="oos-modal" class="modal fade"><div class="modal-dialog"><div class="modal-content">' +
         '<div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
         '<span aria-hidden="true">&times;</span></button><h4 class="modal-title">Sorry, looks like we\'re all sold out. Maybe give these a try?</h4></div>' +
         '<div class="modal-body">'+
@@ -789,7 +789,7 @@ Standish.SiteListing.loadedImages = [
         'text':"Add to Cart"
       }).click(function(e) {
         e.preventDefault();
-        $('.modal.fade').modal();
+        $('#oos-modal').modal();
         $('.modal .listing-container').css('min-height', '325px')
 
       });
@@ -916,9 +916,9 @@ Standish.SiteListing.loadedImages = [
     purchasedProduct['price'] = '[price]';
     purchasedProduct['quantity'] = $('#quantity').val();
     console.log( purchasedProduct );
-    _gaq.push( 'ec:addProduct', purchasedProduct );
-    _gaq.push( 'ec:setAction', 'add' );
-    _gaq.push( 'send', 'event', 'UX', 'click', 'add to cart' );
+    // _gaq.push( 'ec:addProduct', purchasedProduct );
+    // _gaq.push( 'ec:setAction', 'add' );
+    // _gaq.push( 'send', 'event', 'UX', 'click', 'add to cart' );
   }
 </script>
 

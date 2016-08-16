@@ -87,22 +87,22 @@ body.vex-open {
 
 .splatter {
   .brand-new {
-   @include sprite($-brand-new);
+   @include sprite($-brand-new-spl);
   }
   .exclusive-item {
-    @include sprite($-exclusive-item);
+    @include sprite($-exclusive-item-spl);
   }
   .extra-wide {
-    @include sprite($-extra-wide);
+    @include sprite($-extra-wide-spl);
   }
   .limited-supply {
-    @include sprite($-limited-supply);
+    @include sprite($-limited-supply-spl);
   }
   .top5-product {
-    @include sprite($-top5-product);
+    @include sprite($-top5-product-spl);
   }
   .top-seller {
-   @include sprite($-top-seller);
+   @include sprite($-top-seller-spl);
   }
 }
 

@@ -13,27 +13,33 @@
 
 
   SiteListing.Slider.init = function() {
-    
+    var dfd = $.Deferred();
     // Promises for each function ensure that everything has loaded.
     // Add videos then images 
     Standish.SiteListing.NewSlider.addVideoImagesToSlideshow().done(function() {
-      // console.log(Standish.SiteListing.Slides.content);
+      // //console.log(Standish.SiteListing.Slides.content);
       Standish.SiteListing.NewSlider.addRegImagesToSlideshow();
     }).done(function() {
       // Do all the templating now that my object is ready
-      console.log(Standish.SiteListing.Slides.content);
+      //console.log(Standish.SiteListing.Slides.content);
 
       SiteListing.Slider.activateSlickTemplating();
-      $('#loadingDiv').hide();
       SiteListing.Slider.activateFilters();
 
       $('.main-slider').show();
+
+      $('#loadingDiv').hide();
+
       $('.sub-slider').show();
       $('.nav-filters').show();
 
+      addVideosToContentSection(Standish.SiteListing.Slides.content);
       SiteListing.Slider.activateVideos();
 
-    });   
+      dfd.resolve( "done" );
+      return dfd.promise();
+    });
+
   };
 
   SiteListing.Slider.activateVideos = function() {
@@ -50,14 +56,29 @@
       });
 
       if (videoObj.length > 0) {
-        console.log(videoObj[0]);
+        //console.log(videoObj[0]);
         vex.open({
           content: videoObj[0].videoHTML,
-          contentCSS: { 'padding': '0', 'width': $(window).width()  }
+          contentCSS: { 'padding': '0', 'width': '960px' }
         });
       }
     });
   };
+
+  function addVideosToContentSection(slides) {
+
+    slides.filter(function(value) {
+      if (value.type === "video") {
+        //console.log(slide);
+        var video_markup_main = '<div class="col-md-4 col-sm-6"><a class="video_popup" data-video="'+value.videoID+'" data-type="'+value.type+'" data-media-source="'+value.source+'">';
+        video_markup_main += '<i class="fa fa-play play-button" style="font-size: 4em;position: absolute;text-decoration: none;"></i>';
+        video_markup_main +=  '<img itemprop="image" src="'+ value.image +'" align="middle" id="large" alt="'+ value.title +'" width="100%" data-href="'+ value.thumbnail +'" />';
+        video_markup_main += '</a></div>';
+
+        $('#product-videos-header .details-video').append(video_markup_main);
+      }
+    });
+  }
 
   SiteListing.Slider.activateFilters = function() {
     if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
@@ -71,7 +92,7 @@
       });
 
       $('.filterProductImg').on('change', function(){
-        console.log(this);
+        //console.log(this);
 
         $('.filterProductImg').not(this).prop('checked', false);
 
@@ -79,8 +100,8 @@
         if ( Standish.SiteListing.filtered === false || Standish.SiteListing.currentFiltered !== filterName ) {
           $('.sub-slider').slick('slickUnfilter');
           
-          console.log(filterName);
-          console.log(Standish.SiteListing.filtered);
+          //console.log(filterName);
+          //console.log(Standish.SiteListing.filtered);
 
           $('.sub-slider').slick('slickFilter', '[data-media-source="'+filterName+'"]');
 
@@ -98,7 +119,7 @@
   SiteListing.Slider.activateSlickTemplating = function() {
     if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
       var mainVidTpl = function(slide) {
-        console.log(slide);
+        //console.log(slide);
         var video_markup_main = '<a class="video_popup" data-video="'+slide.videoID+'" data-type="'+slide.type+'" data-media-source="'+slide.source+'">';
         video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
         video_markup_main +=  '<img itemprop="image" src="'+ slide.image +'" align="middle" id="large" alt="'+ slide.title +'" width="100%" data-href="'+ slide.thumbnail +'" />';
@@ -155,7 +176,7 @@
   function getData(embed_code) {
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
-    console.log(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
+    //console.log(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
   }
 
@@ -189,8 +210,8 @@
     if (Standish.SiteListing.loadedImages.length > 0) {
       var dfd = $.Deferred();
 
-      console.log(Standish.SiteListing.Slides.content);
-      console.log(Standish.SiteListing.loadedImages);
+      //console.log(Standish.SiteListing.Slides.content);
+      //console.log(Standish.SiteListing.loadedImages);
       
       if ( Standish.SiteListing.Slides.content instanceof Array ) {
         Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.concat(Standish.SiteListing.loadedImages);
@@ -252,7 +273,7 @@
 
     if( typeof instagramHashtag !== 'undefined' ) {
       // var instaText = "<h6 style='text-align:center; text-transform: uppercase;'>TAG PHOTOS OF YOUR SALON WITH #"+instagramHashtag+" AND MENTION @STANDISHSTUFF TO SEE YOUR PHOTOS BELOW!</h6>";
-      // console.log( 'Instagram', instagramHashtag, instaText );
+      // //console.log( 'Instagram', instagramHashtag, instaText );
       // The limit parameter does not seem to work, this is an Instagram API issue. (not an issue with instafeed) I've implemented a bit of css to limit the display to 3 instead.
       var feed = new Instafeed({
         get: 'user',
@@ -278,7 +299,7 @@
             }
             // Set the height of the main slide instagram photo
             instaHeight = $('#product-actions-wrapper').height();
-            // console.log(instaHeight);
+            // //console.log(instaHeight);
             /* Add instagram to main slick slider */
             var instagram_markup_main = '';
             instagram_markup_main += '<a class="'+classname+'" data-video-insta="'+ dataVideo +'" id="listing_main_image_link">';
@@ -327,8 +348,8 @@
 
     var price = parseInt($('[data-prop="itemprice"]').text().replace('$','').replace(',','')),
         saleprice = parseInt($('[data-prop="saleprice"]').text().replace('$','').replace(',',''));
-    //console.log(price);
-    //console.log(saleprice);
+    ////console.log(price);
+    ////console.log(saleprice);
 
     if (typeof saleprice !== undefined && saleprice !== 0 && !isNaN(saleprice)) {
 
@@ -376,7 +397,7 @@
         'class': 'top-seller'
       }
     };
-    console.log(splatter);
+    //console.log(splatter);
     if( splatter ) {
       splatter = splatter.split(/(\s+)/);
       $.each( splatter, function( i, v ) {
@@ -526,7 +547,7 @@
       $.each( badges, function( i, v ) {
         var badgeslug = v.trim();
         if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
-          //console.log( badgetext[badgeslug].title );
+          ////console.log( badgetext[badgeslug].title );
           //href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '"
           $badges_list.append( '<a target="_blank" href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" data-toggle="popover" data-placement="right" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].title + '"><i></i><div class="hidden-sm hidden-md hidden-lg badge-text">' + badgetext[badgeslug].title + '</div></a>' );
         }     
@@ -704,7 +725,7 @@
     total_interest = Math.round( ( yearly_interest * term_years ) * 100 ) / 100;
     payment = ( Math.round( ( ( total_interest + price ) / ( term_years * 12 ) ) * 100 ) / 100 ).toFixed(2);
 
-    // console.log( "PRICE: ", price, yearly_interest, total_interest, payment );
+    // //console.log( "PRICE: ", price, yearly_interest, total_interest, payment );
     // Add Financing option link
     if( Number(price) > 1000 ) {
       $('#financing-add').removeClass('hidden');
