@@ -213,7 +213,8 @@ var searchlight;
           $(td).attr('align', 'center');
           $(td).attr('width', '100%');
           $(td).attr('colspan', '2');
-          $(td).html('<div id="searchlight-footer" onclick="document.getElementsByName(theForm)[0].submit();">More...</div>');
+          //$(td).html('<div id="searchlight-footer" onclick="document.getElementsByName(theForm)[0].submit();">More...</div>');
+          $(td).html('<div id="searchlight-footer" onclick="document.getElementsByName(theForm)[0].submit();">More...<div id="qsMoleculeDiv"><a onclick="event.stopPropagation();" href="https://www.fusionbot.com/default.asp?source=FB-162845571" target="_blank"><img id="qsMoleculeImg" title="Powered by FusionBot" src="/assets/templates/standish-responsive/fb/molecule.png" border=0></a></div></div>');
           $(tr).append(td);
           this._resultsContainer.children('table').append(tr);
 

@@ -15,9 +15,9 @@ jQuery( function(){
 <div class="right-side col-md-10 main_content">
     <div class="col-md-12 search-container hidden-sm hidden-xs">
       <div class="col-md-4 pull-right search">
-        <form method="get" name="searchForm" action="search.asp">
+        <form method="get" name="searchForm" action="/search.html">
             <div class="input-group">
-              <input type="text" size="25" name="keyword" id="searchlight" class="search-text form-control" onfocus="javascript:if (this.value=='search by keyword') {this.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+              <input type="text" size="25" name="k" id="searchlight" class="search-text form-control" onfocus="javascript:if (this.value=='search by keyword') {this.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="off">
               <span class="input-group-btn">
                   <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
                 </span>

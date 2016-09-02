@@ -81,3 +81,7 @@ table.searchlight-results tr.searchlight-spacer-row td {
 
 /* kludge to hide filters that need to be configured in FB account, so that query acts upon them, but not displayed via $lgk_filtertag */
 .fbFltYMM { display: none; }
+
+#qsMoleculeImg { width:15px;padding:0;margin:0 0 3px 0; }
+#qsMoleculeImg:hover { opacity: 0.6; }
+#qsMoleculeDiv { float:right; }
