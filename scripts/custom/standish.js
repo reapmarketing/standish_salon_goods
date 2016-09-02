@@ -68,7 +68,9 @@
     if ($('#category-selectors').length > 0 && $(window).width() >= tabletBkPt) {
       var $sideBar = $('#category-selectors').detach();
     
-      $('.left-bar #catframe-wrapper').replaceWith($sideBar);
+      $('.left-bar #cat-wrapper').html($sideBar);
+
+      $('#category-selectors .category-content').removeClass('hidden');
 
       $('.cat-filter-separator').remove();
     }

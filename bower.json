@@ -14,7 +14,7 @@
     "instafeed.js": "stevenschobert/instafeed.js#~1.4.1",
     "matchHeight": "liabru/jquery-match-height#~0.6.0",
     "Flowtype.js": "simplefocus/FlowType.JS#~1.1.0",
-    "slick-carousel": "kenwheeler/slick#~1.5.9",
+    "slick-carousel": "^1.6.0",
     "font-awesome": "~4.5.0",
     "masonry": "~4.0.0",
     "bootbox.js": "bootbox#^4.4.0",

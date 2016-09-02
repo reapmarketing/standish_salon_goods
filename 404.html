@@ -1,9 +1,8 @@
 <!doctype html>
 <html>
   <head>
-  <title>404 Page Not Found</title>
+  <title>404</title>
     <meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
-    <!--Insert Meta tags at top -->
     <!-- Mobile viewport optimized: j.mp/bplateviewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -11,14 +10,12 @@
     <!-- OPTIMIZELY and jQuery important -->
     <!-- jQuery -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/jquery.migrate.js"></script>
+    <script async type="text/javascript" src="assets/templates/standish-responsive/dist/js/jquery.migrate.min.js"></script>
+     <!-- utility scripts -->
+    <script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
 
     <!-- OPTIMIZELY note:needs to stay in header in order to work properly -->
     <script src="//cdn.optimizely.com/js/2743921241.js"></script>
-
-    <!-- Javascript Support -->
-    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
-    <script type='text/javascript' src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 
     <!-- CSS -->  
     <style>
@@ -32,22 +29,22 @@
 
 
     <link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="assets/templates/standish-responsive/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="assets/templates/standish-responsive/bower_components/animate.css/animate.min.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="assets/templates/standish-responsive/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     
     <link rel="stylesheet" href="assets/templates/standish-responsive/style/jquery.sidr.light.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    <!-- <link rel="stylesheet" href="assets/templateplates/standish-responsive/style/main.2.0.min.css?cachebuster=38924935792" /> --> 
-
-    <!--2.0.min -->
-    <link rel="stylesheet" href="assets/templates/standish-responsive/style/main.2.0.min.css?cachebuster=89327498273" />
-    <!--DEV <link rel="stylesheet" href="assets/templates/standish-responsive/style/main.css" /> --> 
+    <link rel="stylesheet" href="assets/templates/standish-responsive/dist/css/main.2.0.1.min.css?cachebuster=89327498273" /> 
+    
+    <!-- <link rel="stylesheet" href="assets/templates/standish-responsive/style/main.css" />-->
 
     <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
 
@@ -59,97 +56,51 @@
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css"/>
-
-    <style>
-      .edgeLoad-taglines { visibility:hidden; }
-    </style>
-    <style>
-      #spButton{
-        display:none;
-      }
-      .sharebox {
-        max-height: 25px;
-      }
-      .sharebox ul {
-        top: -20px;
-        left: 130px;
-      }
-    </style>
-      
-    <!-- JS -->
-    <!-- schema.org site search optimization options -->
-    <script type="application/ld+json">
-    {
-       "@context": "http://schema.org",
-       "@type": "WebSite",
-       "url": "http://www.standishsalongoods.com",
-       "potentialAction": {
-       "@type": "SearchAction",
-       "target": "http://www.standishsalongoods.com/search.asp?keyword={search_term_string}",
-       "query-input": "required name=search_term_string"
-       }
-    }
-    </script>
-
-    <!-- THIRD PARTY LIBRARIES AND CUSTOM SCRIPTS (jQuery and optimizely in header) -->
-    <!--~~~Third Party Libraries~~~-->
-    <!-- Bootstrap -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Sidr mobile menu pull out -->
-    <script type="text/javascript" language="javascript" src="assets/templates/standish-responsive/scripts/jquery.sidr.min.js"></script>
-    <!-- Equal Heights -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
-    <!-- Adds slick for product type -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/slick.min.js"></script>
-    <!-- Images loaded if needed -->
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <!-- Instafeed -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/instafeed.js"></script>
-    <!--  quick search search the site -->
-    <script type="text/javascript" src="assets/templates/common/quicksearch/jquery.quicksearch.js"></script>
-    <!-- Hubspot Form Script ~ necessary -->
-    <script charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
-    <!-- Masonry -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/masonry.pkgd.min.js"></script>
-    <!-- Add Vex -->
-    <script src="/assets/templates/standish-responsive/scripts/vex.combined.min.js"></script>
-    <script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
     <link rel="stylesheet" href="/assets/templates/standish-responsive/style/vex.css" />
     <link rel="stylesheet" href="/assets/templates/standish-responsive/style/vex-theme-flat-attack.css" />
+    <link rel="stylesheet" href="/assets/templates/standish-responsive/style/animate.min.css" />
 
-    <!--~~~Custom Scripts~~~-->
-    <!-- taylor stuff --> 
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/scrollDepth.js"></script>
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/hacks.js"></script>
-    <script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/standish.js"></script>
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/standish.mobilemenu.js"></script>
-    <!-- PRODUCT PAGE script conditional -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/standish.sitelisting.js"></script>
-    <!-- HOME PAGE script conditional -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/standish.homepage.js"></script>
-    <!-- Template Switcher -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/standish.templateswitcher.js"></script>
-    <!-- Set up customer account variable ~ needs to be inline in order to use 3dCart vars -->
-    <script type="text/javascript">
-      var account_greeting = '[account_greeting]';
-      var username = '[username]';
-      (function($) {
-        $(function() {
-          // Change Account link when user is logged in.
-          if ( username !== 'Guest' ) {
-            $('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');
-            $('.account-button.login').attr('href', '/logout.asp');
-          }
-        });
-      })(jQuery);
+    <!--START: site scripts -->
+    <!-- JS -->
+    <script asnyc type="text/javascript">   
+      var account_greeting = '[account_greeting]';    
+      var username = '[username]';    
+      (function($) {    
+        $(function() {    
+          // Change Account link when user is logged in.    
+          if ( username !== 'Guest' ) {   
+            $('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');   
+            $('.account-button.login').attr('href', '/logout.asp');   
+          }   
+        });   
+      })(jQuery);   
     </script>
-    <!-- Newsletter Signup Load after hubspot --> 
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/hubspot-newsletter-sign-up-form.js"></script>
-    
-    <!-- Custom ajax script that takes in json from custom top bar content MOBILE -->
-    <script type="text/javascript" src="assets/templates/standish-responsive/scripts/custom/template-slug.js"></script>
 
+    <!-- schema.org site search optimization options -->
+    <script type="application/ld+json">{"@context": "http://schema.org","@type": "WebSite","url": "http://www.standishsalongoods.com","potentialAction": {"@type": "SearchAction","target": "http://www.standishsalongoods.com/search.asp?keyword={search_term_string}","query-input": "required name=search_term_string"}}</script>
+
+    <!-- Javascript Support -->
+    <script asnyc type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+    <!-- <script asnyc type='text/javascript' src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> -->
+   
+    <!-- Equal Heights -->
+    <script asnyc type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
+    <!-- Images loaded if needed -->
+    <script asnyc src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <!--  quick search search the site -->
+    <script asnyc type="text/javascript" src="assets/templates/common/quicksearch/jquery.quicksearch.js"></script>
+    <!-- Hubspot Form Script ~ necessary -->
+    <script asnyc charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
+
+    <!-- MINIFIED & UGLIFIED --> 
+    <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
+    <script asnyc type="text/javascript" src="assets/templates/standish-responsive/dist/js/app.min.js"></script>
+    <!--<script asnyc type="text/javascript" src="assets/templates/standish-responsive/dist/js/app.js"></script>-->
+    <script type='text/javascript'>
+      if ( typeof $.fn.modal !== 'undefined' ) {
+        $.fn.bootstrapModal = $.fn.modal.noConflict();
+      }
+    </script>
   </head>
   <script type="text/javascript">
   // Optimizely Universal Analytics Integration Code
