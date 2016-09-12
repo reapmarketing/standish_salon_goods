@@ -5,8 +5,9 @@
     "single": true,
     "url": "tel:+8882718434"
   },
-  "Current Deals": {
+  "Deals": {
     "order": 1,
+    "url": "standish-salon-equipment-sale",
     "show_mobile": true,
     "show_children_mobile": false,
     "subcategories": {
@@ -15,314 +16,166 @@
       },
       "Items on Sale": {
         "url": "salon-furniture-sale-and-deals"
-      },
-      "FREE Layout & Space Planning": {
-        "url": "free-salon-space-planning"
-      },
-      "FREE Salon Equipment Checklist": {
-        "url": "free-salon-equipment-checklist"
-      },
-      "FREE Guide to Starting a Salon": {
-        "url": "guide-to-starting-a-salon"
-      },
-      "Fly & Buy Reimbursement": {
-        "url": "salon-showroom-flight-reimbursement"
-      },
-      "FREE Salon Promotion": {
-        "url": "free-salon-promotion"
       }
     }
   },
-  "Shop Equipment": {
-		"order": 2,
-		"show_mobile":true,
-		"show_children_mobile": true,
+  "Salon": {
+    "order": 2,
+    "show_mobile": true,
+    "show_children_mobile": false,
     "subcategories": {
       "Packages": {
-      	"url": "salon-furniture-packages"
+        "url": "salon-furniture-packages"
       },
       "Chairs": {
-        "url": "hair-salon-chairs",
-        "subcategories": {
-          "Styling Chairs": {
-            "url": "salon-styling-chairs"
-          },
-          "All Purpose Chairs": {
-            "url": "all-purpose-salon-chairs"
-          },
-          "Barber Chairs": {
-            "url": "barber-shop-chairs"
-          },
-          "Shampoo Chairs": {
-            "url": "salon-shampoo-chairs"
-          },
-          "Dryer Chairs": {
-            "url": "salon-dryer-chairs"
-          },
-          "Reception Chairs": {
-            "url": "salon-reception-chairs"
-          },
-          "Pedicure Chairs": {
-            "url": "pedicure-chairs"
-          },
-          "Stools": {
-            "url": "salon-stools"
-          },
-          "Chair Covers": {
-            "url": "salon-chair-covers"
-          }
-        }
+        "url": "hair-salon-chairs"
+      },
+      "Stations": {
+        "url": "free-salon-space-planning"
+      },
+      "Shampoo": {
+        "url": "salon-shampoo-area"
+      },
+      "Dryers": {
+        "url": "salon-hair-dryers"
+      },
+      "Reception": {
+        "url": "salon-reception-furniture"
       },
       "Color Bars": {
         "url": "hair-salon-color-bars"
       },
-      "Stations": {
-        "url": "salon-styling-stations",
-        "subcategories": {
-          "Single Stations": {
-            "url": "single-salon-stations"
-          },
-          "Back-to-back Stations": {
-            "url": "back-to-back-salon-stations"
-          },
-          "Tower Stations": {
-            "url": "tower-salon-stations"
-          },
-          "Wet Stations": {
-            "url": "salon-wet-stations"
-          },
-          "Glass Stations with Mirrors": {
-            "url": "glass-stations-mirrors"
-          }
-        }
+      "Break Room Essentials": {
+        "url": "Break-Room-Essentials_c_110616.html"
       },
-      "Manicure & Pedicure": {
-        "url": "manicure-pedicure-equipment",
-        "subcategories": {
-          "Manicure Tables": {
-            "url": "manicure-tables"
-          },
-          "Pedicure Chairs": {
-            "url": "pedicure-chairs"
-          },
-          "Nail Tech Chairs": {
-            "url": "nail-tech-chairs"
-          },
-          "Carts & Trolleys": {
-            "url": "pedicure-carts-trolleys"
-          },
-          "Supplies": {
-            "url": "manicure-pedicure-supplies"
-          }
-        }
+      "Sunless Tanning": {
+        "url": "sunless-tanning-equipment"
       },
-      "Shampoo": {
-        "url": "salon-shampoo-area",
-        "subcategories": {
-          "Shampoo Chairs": {
-            "url": "salon-shampoo-chairs"
-          },
-          "Wet Stations": {
-            "url": "salon-wet-stations"
-          },
-          "Shampoo Shuttles": {
-            "url": "shampoo-shuttles"
-          },
-          "Shampoo Bowls": {
-            "url": "salon-shampoo-bowls"
-          },
-          "Cabinet Units": {
-            "url": "salon-shampoo-cabinets"
-          },
-          "Parts & Accessories": {
-            "url": "salon-retail-displays"
-          }
-        }
+      "Replacement Parts": {
+        "url": "replacement-parts"
       },
-      "Reception": {
-        "url": "salon-reception-furniture",
-        "subcategories": {
-          "Desks": {
-            "url": "salon-reception-desks"
-          },
-          "Chairs": {
-            "url": "salon-reception-chairs"
-          },
-          "Retail Displays": {
-            "url": "salon-retail-displays"
-          }
-        }
+      "Floor Mats": {
+        "url": "salon-floor-mats"
       },
-      "Appliances": {
-        "url": "salon-appliances"
+      "Trays and Trolleys": {
+        "url": "salon-trays-trolleys"
       },
       "Accessories": {
-        "url": "salon-accessories",
-        "subcategories": {
-          "Retail Displays": {
-            "url": "salon-retail-displays"
-          },
-          "Trays & Trolleys": {
-            "url": "salon-trays-trolleys"
-          },
-          "Stools": {
-            "url": "salon-stools"
-          },
-          "Floor Mats": {
-            "url": "salon-floor-mats"
-          },
-          "Mirrors": {
-            "url": "salon-mirrors"
-          },
-          "Chair Covers": {
-            "url": "salon-chair-covers"
-          },
-          "Replacement Parts": {
-            "url": "replacement-parts"
-          },
-          "Trolleys": {
-            "url": "salon-trolleys"
-          }
-        }
+        "url": "salon-supplies-online"
       },
-      "Dryers": {
-        "url": "salon-hair-dryers",
-        "sub-categories": {
-          "Dryer Chairs": {},
-          "Color Processors": {}
-        }
+      "Artwork": {
+        "url": "salon-artwork"
       },
-      "Break": {
-        "url": "break-room-appliances"
+      "Barber Poles": {
+        "url": "barber-poles"
+      },
+      "Sale": {
+        "url": "salon-furniture-sale-and-deals"
       }
     }
   },
-  "Shop Tools and Accessories": {
-		"order": 3,
-		"show_mobile": true,
-		"show_children_mobile":true,
+  "Spa": {
+    "order": 3,
+    "show_mobile": true,
+    "show_children_mobile": false,
     "subcategories": {
-      "Hair Tools": {
-        "url": "hair-salon-supplies-online",
-        "subcategories": {
-          "Irons": {
-            "url": "hair-salon-irons"
-          },
-          "Hair Dryers": {
-            "url": "salon-handheld-hair-dryers"
-          },
-          "Brushes & Combs": {
-            "url": "salon-hair-brushes-combs"
-          },
-          "Spray Bottles": {
-            "url": "salon-spray-bottles"
-          },
-          "Color Bowls": {
-            "url": "salon-color-bowls"
-          },
-          "Color Brushes & Whisks": {
-            "url": "salon-color-brush-whisks"
-          },
-          "Foil": {
-            "url": "hair-salon-color-foil"
-          },
-          "Gloves": {
-            "url": "salon-color-gloves"
-          },
-          "Manikins": {},
-          "Rollers": {},
-          "Pins & Clips": {},
-          "Neck Dusters": {},
-          "Handheld Mirrors": {},
-          "Timers": {},
-          "Shears & Razors": {}
-        }
+      "Packages": {
+        "url": "spa-equipment-packages"
       },
-      "Towels": {
-        "url": "hair-salon-towels"
+      "Facial Beds": {
+        "url": "facial-beds"
       },
-      "Nail Tools": {
-        "url": "nail-salon-supplies-accessories",
-        "subcategories": {
-          "Clippers": {
-            "url": "professional-nail-clippers"
-          },
-          "Tweezers": {
-            "url": "professional-tweezers"
-          },
-          "Files": {
-            "url": "professional-nail-files"
-          },
-          "Disinfectant": {
-            "url": "salon-nail-disinfectant"
-          },
-          "Practice": {
-            "url": "nail-practice-hands-feet"
-          }
-        }
+      "Massage Beds": {
+        "url": "massage-chairs-beds"
       },
-      "Makeup": {
-        "url": "makeup-supplies-accessories"
+      "Mani & Pedi": {
+        "url": "manicure-pedicure-equipment"
       },
-      "Apparel": {
-        "url": "hair-salon-apparel",
-        "subcategories": {
-          "Capes": {
-            "url": "hair-salon-capes"
-          },
-          "Aprons": {
-            "url": "hair-salon-aprons"
-          },
-          "Jackets & Vests": {
-            "url": "salon-jackets-vests"
-          },
-          "Caps & Hats": {
-            "url": "hair-salon-caps-hats"
-          },
-          "Spa Wraps": {
-            "url": "spa-body-wrap-towels"
-          },
-          "Hands & Feet": {
-            "url": "spa-booties-mitts"
-          }
-        }
+      "Chairs": {
+        "url": "salon-spa-client-tech-chairs"
+      },
+      "Tanning": {
+        "url": "sunless-tanning-equipment"
+      },
+      "Reception": {
+        "url": "salon-reception-furniture"
+      },
+      "Retail Displays": {
+        "url": "salon-retail-displays"
+      },
+      "Break Room Essentials": {
+        "url": "Break-Room-Essentials_c_110616.html"
+      },
+      "Trolleys and Trays": {
+        "url": "salon-trays-trolleys"
+      },
+      "Tools and Equipment": {
+        "url": "nail-salon-supplies-accessories"
+      },
+      "Artwork": {
+        "url": "salon-artwork"
+      },
+      "Sale": {
+        "url": "salon-furniture-sale-and-deals"
+      }
+    }
+  },
+  "Tanning": {
+    "order": 4,
+    "show_mobile":true,
+    "show_children_mobile": true,
+    "subcategories": {
+      "Packages and Gift Sets": {
+        "url": "sunless-tanning-packages-gift-sets"
+      },
+      "Equipment": {
+        "url": "sunless-tanning-equipment"
+      },
+      "Sunless Solution": {
+        "url": "sunless-tanning-solution-products"
+      },
+      "Retail Products": {
+        "url": "tanning-retail-products"
+      },
+      "Maintenance and Parts": {
+        "url": "tanning-equipment-maintenance-and-parts"
+      },
+      "Reception": {
+        "url": "salon-reception-furniture"
+      },
+      "Retail Displays": {
+        "url": "salon-retail-displays"
+      },
+      "Break Room Essentials": {
+        "url": "Break-Room-Essentials_c_110616.html"
+      },
+      "Trolleys and Trays": {
+        "url": "/salon-trays-trolleys"
+      },
+      "Accessories": {
+        "url": "salon-supplies-online"
+      },
+      "Artwork": {
+        "url": "salon-artwork"
+      },
+      "Sale": {
+        "url": "salon-furniture-sale-and-deals"
       }
     }
   },
   "Brands": {
-		"order": 4,
-		"show_mobile": true,
-		"show_children_mobile": false,
+    "order": 5,
+    "show_mobile": true,
+    "show_children_mobile": false,
     "subcategories": {
-      "Standish": {
-        "url": "standish"
-      },
-      "Continuum": {
-        "url": "continuum-foot-spas"
-      },
-      "Savvy": {
-        "url": "savvy-salon-equipment"
-      },
-      "Oakworks": {
-        "url": "oakworks"
-      },
-      "One World Inspired": {
-        "url": "one-world-inspired-custom-salon-furniture"
-      },
-      "Kaemark": {
-        "url": "kaemark-salon-furnishings"
-      },
-      "William Marvy": {
-        "url": "william-marvy"
-      },
-      "Kayline": {
-        "url": "kayline-beauty-supply"
-      },
       "Adjust-a-Sink": {
         "url": "adjust-a-sink"
       },
       "Andrea": {
         "url": "andrea-lashes"
+      },
+      "Belava": {
+        "url": "belava"
       },
       "Betty Dain": {
         "url": "betty-dain"
@@ -333,6 +186,9 @@
       "Cardinal": {
         "url": "cardinal-salon-combs"
       },
+      "Continuum": {
+        "url": "continuum-foot-spas"
+      },
       "Diane": {
         "url": "diane-salon-supplies"
       },
@@ -341,6 +197,9 @@
       },
       "Graham": {
         "url": "graham-professional-beauty-products"
+      },
+      "Gulfstream": {
+        "url": "gulfstream-pedicure-salon-equipment"
       },
       "Helen of Troy": {
         "url": "helen-of-troy"
@@ -351,33 +210,51 @@
       "Isabel-Cristina": {
         "url": "isabel-cristina"
       },
+      "Kaemark": {
+        "url": "kaemark-salon-furnishings"
+      },
+      "Kayline": {
+        "url": "kayline-beauty-supply"
+      },
       "King": {
         "url": "king"
       },
       "Marianna": {
         "url": "marianna"
       },
+      "Norvell Tanning": {
+        "url": "norvell-sunless-tanning-equipment"
+      },
+      "Oakworks": {
+        "url": "oakworks"
+      },
+      "One World Inspired": {
+        "url": "one-world-inspired-custom-salon-furniture"
+      },
       "Partex": {
         "url": "partex-towels"
+      },
+      "Savvy": {
+        "url": "savvy-salon-equipment"
+      },
+      "Standish": {
+        "url": "savvy-salon-equipment"
+      },
+      "William Marvy": {
+        "url": "william-marvy"
       }
     }
   },
-  "Financing": {
-		"order": 5,
-		"show_mobile": true,
+  "Buy Now, Pay Later": {
+    "order": 6,
+    "show_mobile": true,
     "single": true,
     "url": "salon-equipment-financing"
   },
-  "Showroom": {
-		"order": 6,
-		"show_mobile": true,
-    "single": true,
-    "url": "dallas-salon-furniture-showroom"
-  },
   "About": {
-		"order": 7,
-		"show_mobile": true,
-		"show_children_mobile": true,
+    "order": 7,
+    "show_mobile": true,
+    "show_children_mobile": true,
     "subcategories": {
       "Meet the Team": {
         "url": "meet-the-team"
@@ -388,21 +265,24 @@
       "A Real eCommerce Store": {
         "url": "a-real-ecommerce-store"
       },
-      "Fly & Buy": {
+      "Fly and Buy Program": {
         "url": "salon-showroom-flight-reimbursement"
       },
-      "Freight": {
+      "Receiving Freight": {
         "url": "receiving-freight"
       },
-      "Shipping": {
-        "url": "about-shipping"
+      "Contact Us": {
+        "url": "contact-us"
+      },
+      "FAQs": {
+        "url": "frequently-asked-questions"
       }
     }
   },
   "Why Buy Standish?": {
-		"order": 8,
-		"show_mobile": false,
-		"show_children_mobile": false,
+    "order": 10,
+    "show_mobile": false,
+    "show_children_mobile": false,
     "subcategories": {
       "Why Buy Standish?": {
         "url": "why-standish"
@@ -430,30 +310,33 @@
       }
     }
   },
-  "Contact": {
-		"order": 9,
-		"show_mobile": true,
-    "single": true,
-    "url": "contact-us"
-  },
-  "FAQ": {
-		"order": 10,
-		"show_mobile": true,
-    "single": true,
-    "url": "frequently-asked-questions"
+  "Freebies": {
+    "order": 11,
+    "show_mobile": false,
+    "show_children_mobile": false,
+    "subcategories": {
+      "Free Salon Space Planning": {
+        "url": "free-salon-space-planning"
+      },
+      "Free Salon Equipment Checklist": {
+        "url": "free-salon-equipment-checklist"
+      },
+      "Free Guide to Starting a Salon": {
+        "url": "guide-to-starting-a-salon"
+      },
+      "Flight Reimbursement": {
+        "url": "salon-showroom-flight-reimbursement"
+      },
+      "Free Salon Promotion": {
+        "url": "free-salon-promotion"
+      }
+    }
   },
   "Blog": {
-		"order": 11,
-		"show_mobile": true,
+    "order": 12,
+    "show_mobile": true,
     "class": "min small",
     "single": true,
     "url": "blog.asp"
-  },
-  "Catalog": {
-		"order": 12,
-		"show_mobile": true,
-    "class": "min small",
-    "single": true,
-    "url": "catalog"
   }
 }
