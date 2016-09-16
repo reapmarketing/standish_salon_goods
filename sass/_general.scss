@@ -766,23 +766,125 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 }
 
+@mixin gradientGen($color1) {
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top,  lighten($color1, 10%) 0%,  lighten($color1, 5%) 12%, $color1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  lighten($color1, 10%) 0%, lighten($color1, 5%) 12%, $color1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  lighten($color1, 10%) 0%, lighten($color1, 5%) 12%, $color1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($color1, 5%)', endColorstr='$color1',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradientGenThreeStop($color1, $color2, $color3) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top,  $color1 0%, $color2 50%,  $color3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  $color1 0%,$color2 50%, $color3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  $color1 0%,$color2 50%, $color3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+/// ---- Mobile Menu Bottom ---- ///
+@media only screen and (max-width : $tablet) {
+  #mobile-menu-modal {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    z-index: 99999;
+
+    // call 97c3b6 to ced8ac to 98ba9a
+    // Email Us 843d6e to fbbc85 to 63477a
+    // Text c28170 to 87648b to f69672
+    // financing 827c81 to 9cb2b0 to 827c81
+
+    .close-icon {
+      position: absolute;
+      top: -1em;
+      right: 1em;
+      background: rgba(0, 0, 0, 0.45);
+      width: 2em;
+      height: 2em;
+      border-radius: 6em;
+      text-align: center;
+      padding: 6px;
+      color: white;
+      font-weight: bold;
+    }
+
+    #rainbow-hamburger {
+      background:white;
+      .hamburger-item {
+        //height: 3rem;
+        text-align: center;
+        color: #f5f8dd;
+        padding: .8em 0;
+        a {
+          color: #f5f8dd;
+        }
+        .hamburger-text {
+          font-size: 1.5em;
+        }
+      }
+
+      #call-us {
+        @include gradientGenThreeStop(#97c3b6, #ced8ac, #98ba9a);
+      }
+      #text-hannah {
+        @include gradientGenThreeStop(#db9c7a, #fbbc85, #f69372);
+      }
+      #email-us {
+        @include gradientGenThreeStop(#8b4476, #8b638a, #6b4e7d);
+      }
+      #get-financing {
+        @include gradientGenThreeStop(#878689, #9cb1b0, #828b8b);
+      }
+    }
+
+    ul.fixed-bottom-menu {
+      margin: 0;
+      padding: 0;
+
+      li {
+        @include gradientGen($hello-bar-bkg-color);
+        color: white;
+        display: block;
+        float: left;
+        width: 20%;
+        text-align: center;
+        padding: 5px 0;
+        margin: 0;
+        border-right: 1px solid $hello-bar-bkg-color;
+
+        a, a:hover {
+          color: white;
+        }
+
+        &:last-of-type {
+          border-right: 0 none;
+        }
+
+        .menu-bottom-small {
+          text-transform: uppercase;
+          font-size: 10px;
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
 /* Front Page */
 @media only screen and (max-width : $tablet) {
   .hannah-chat {
-    width: 100% !important;
+    display: none;
   }
 }
 @media only screen and (max-width : 500px) {
- 
-  .tab-row-inner:before {
+  .tab-row-inner:before, .tab-row-inner:after, .tab-row-inner {
     display: none;
-  }
-  .tab-row-inner:after {
-    display: none;
-  }
-  .tab-row-inner {
-    width: 100% !important;
-    margin: 0 !important;
   }
 }
 .hannah-chat {

@@ -115,6 +115,8 @@
 	MobileMenu.init = function() {	
 		var el = this;		
 		return el.getItems().done(function(context) {
+
+			console.log($('#mobile-menu-json').length);
 			$('.toggle-navigation').sidr({
 				name: 'mobile-open',
 				side: 'right',
@@ -123,7 +125,12 @@
 					var el = this;
 					$('body').on('click', "#mobile-open", function(event) {
 						this.stopPropagation();
-					}).on('click', this, function() {
+						this.preventDefault();
+					}).on('click', this, function(e) {
+						if ($('body').hasClass('sidr-open')) {
+							e.preventDefault();
+						}
+						console.log(e);
 						$.sidr('close', 'mobile-open');
 					});
 				}
@@ -137,6 +144,14 @@
 					$(this).siblings('.sidr-class-mobile-menu').toggle();
 					$(el).siblings().children('.sidr-class-mobile-menu').hide();
 				});
+			});
+
+			$('.standish-contact').on('click', function(e) {
+				e.preventDefault();
+				$('#rainbow-hamburger').slideToggle();
+			});
+			$('#rainbow-hamburger .close-icon').on('click', function(e) {
+				$('#rainbow-hamburger').slideToggle();
 			});
 			
 			

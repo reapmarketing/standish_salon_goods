@@ -42,11 +42,11 @@
     <link rel="stylesheet" href="assets/templates/[template]/style/jquery.sidr.light.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=89327498273" /> 
+    <script src="https://use.fontawesome.com/d266c066de.js"></script>
     
-    <!-- <link rel="stylesheet" href="assets/templates/[template]/style/main.css" />-->
+    <!--<link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=89327498273" /> -->
+    
+    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.css" />
 
     <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
 
@@ -96,7 +96,7 @@
 
     <!-- MINIFIED & UGLIFIED --> 
     <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
-    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js"></script>
+    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script>
     <!--<script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script>-->
     <script type='text/javascript'>
       if ( typeof $.fn.modal !== 'undefined' ) {
@@ -155,7 +155,7 @@
             </div>
         </div>
         <div class="header center-block row">
-            <div id="mobile-menu" class="hidden-md hidden-lg col-sm-12" data-spy="affix" data-offset-top="60" data-offset-bottom="200" style="">
+            <div id="mobile-menu" class="hidden-md hidden-lg col-sm-12" style="">
               <div class="row">
                 <div class="site-branding col-sm-4 col-xs-6">
                   <a href="/">
@@ -563,6 +563,97 @@
   <script asnyc type="text/javascript">
     dfe.click();
   </script>
+
+  <div id="mobile-menu-modal" class="hidden-lg hidden-md">
+    <div id="rainbow-hamburger" style="display:none;">
+      <a class="close-icon">X</a>
+      <div id="call-us" class="hamburger-item row">
+        <a href="tel:+8882718434"> 
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-phone" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text">Call us at <br> (888)271-8434</span>
+          </div>
+        </a>
+      </div>
+      <div id="text-hannah" class="hamburger-item row">
+        <a href="sms:+2143999198"> 
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-commenting" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text">Text Hannah <br> (214)399-9198</span>
+          </div>
+        </a>
+      </div>
+      <div id="email-us" class="hamburger-item row">
+        <a href="mailto:hello@stand.sh">
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text" style="vertical-align: -24px;">Email Us</span>
+          </div>
+        </a>
+      </div>
+      <div id="get-financing" class="hamburger-item row">
+        <a href="/salon-equipment-financing">
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-usd" aria-hidden="true"></i>
+          </div> 
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text" style="vertical-align: -24px;">Get Financing</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="fixed-bottom" class="fixed affix-bottom">
+      <ul class="fixed-bottom-menu">
+        <li>
+          <div class="wrapper-list-items">
+            <a class="standish-menu-open toggle-navigation" href="#">
+              <i class="fa fa-bars fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Menu</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a class="standish-contact" href="#">
+              <i class="fa fa-phone-square fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Contact</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/">
+              <i class="fa fa-home fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Home</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/dallas-salon-furniture-showroom">
+              <i class="fa fa-map-marker fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Location</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/view_cart.asp">
+              <i class="fa fa-shopping-cart fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Cart</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 
   <div id="hannah-chat" class="hannah-chat fadeIn animated" href="#contact-hannah">
     <div class="tab-row" style="">
