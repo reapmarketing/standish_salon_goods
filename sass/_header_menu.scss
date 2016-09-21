@@ -63,15 +63,6 @@
   left: -10px;
 }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width : $tablet) {
-  .logo {
-    background: url("/assets/templates/standish-responsive/images/Standish-Logo-Mobile.png");
-    background-repeat: no-repeat;
-    background-size: 142px;
-  }
-}
-
 .credentials {
   background: url('/assets/templates/standish-responsive/images/credentials.png');
   width: 100%;
