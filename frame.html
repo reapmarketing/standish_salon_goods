@@ -315,7 +315,6 @@
               </div>
               <div class="column col4">
                 <ul class="sub-menu eqhgt-g2">
-                  <li><a title="Kayline Beauty Supply" href="/kayline-beauty-supply">Kayline</a></li>
                   <li><a title="King Salon Supplies" href="/king">King</a></li>
                   <li><a title="Marianna Salon Supplies" href="/marianna">Marianna</a></li>
                   <li><a title="Norvell Sunless Tanning Equipment" href="/norvell-sunless-tanning-equipment">Norvell Tanning <span class="menu-feature standishgreen"><i class="icon icon-star"></i> New</span></a></li>
@@ -376,15 +375,14 @@
     </nav>
 
     <!-- navbar -->
-
     <div class="container search-container hidden-md hidden-lg">
       <div class="col-md-4 col-sm-12 col-xs-12 pull-right search">
-        <form method="get" name="searchForm" action="search.asp">
+        <form method="get" name="searchForm" action="/search.html">
             <div class="input-group pull-right">
-              <input type="text" size="25" name="keyword" class="search-text form-control" autocomplete="on">
+              <input size="25" placeholder="Search" name="k" value="" id="searchlight" class="search-text form-control fbinputkeys" autocomplete="off" type="text">
               <span class="input-group-btn">
-                  <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
-                </span>
+                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></button>
+              </span>
             </div>
         </form>
       </div>
@@ -397,12 +395,12 @@
           <!--START: LEFT_BAR_BLOCKS-->
           <div class="row search-container clearfix hidden-sm hidden-xs">
             <div class="search" style="padding-right: 10px;">
-              <form method="get" name="searchForm" action="search.html">
+              <form method="get" name="searchForm" action="/search.html">
                   <div class="input-group">
-                    <input type="text" size="25" placeholder="Search" name="keyword" id="searchlight" class="search-text form-control" autocomplete="on">
+                    <input size="25" placeholder="Search" name="k" value="" id="searchlight" class="search-text form-control fbinputkeys" autocomplete="off" type="text">
                     <span class="input-group-btn">
-                        <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
-                      </span>
+                      <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+                    </span>
                   </div>
               </form>
             </div>
