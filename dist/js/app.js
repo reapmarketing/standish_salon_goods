@@ -1,4 +1,4 @@
-/*! standish-responsive - v2.0.1 - 2016-09-02 *//*!
+/*! standish-responsive - v2.0.1 - 2016-09-30 *//*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -5138,7 +5138,7 @@ var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a
 
   // -- ADD WISHLIST BUTTON FUNCTIONALITY -- //
   SiteListing.addToWishlist = function() {
-    $('#add-wishlist').on('click', function(e) {
+    $('.add-wishlist').on('click', function(e) {
       e.preventDefault();
 
       if (typeof username != 'undefined' && username !== "Guest") {

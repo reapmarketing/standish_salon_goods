@@ -36,6 +36,25 @@ body.vex-open {
   background-size: 100%;
 } 
 
+@media only screen and (max-width : $tablet) {
+  .nav-filters {
+
+    display: block;
+    width: 100%;
+    strong {
+      display: block;
+      width: 100%;
+    }
+    label { 
+      width: 100%;
+      display:block;
+      border-right: 0 none!important;
+    }
+    .filterProductImg {
+      vertical-align: -4px;
+    }
+  }
+}
 .tooltip-badges .badge-warranty i, .tooltip-badges .badge-warranty:hover i {
   @include sprite($warranty);
 }

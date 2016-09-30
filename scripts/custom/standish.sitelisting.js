@@ -312,7 +312,7 @@
 
   // -- ADD WISHLIST BUTTON FUNCTIONALITY -- //
   SiteListing.addToWishlist = function() {
-    $('#add-wishlist').on('click', function(e) {
+    $('.add-wishlist').on('click', function(e) {
       e.preventDefault();
 
       if (typeof username != 'undefined' && username !== "Guest") {
