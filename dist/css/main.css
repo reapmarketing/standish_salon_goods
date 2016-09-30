@@ -2362,31 +2362,28 @@ body .vex.vex-theme-flat-attack .vex-content {
     /* line 802, ../../sass/_general.scss */
     #mobile-menu-modal .close-icon {
       position: absolute;
-      top: -1em;
+      top: -1.25em;
       right: 1em;
-      background: rgba(0, 0, 0, 0.45);
-      width: 2em;
-      height: 2em;
-      border-radius: 6em;
+      width: 3em;
+      height: 3em;
       text-align: center;
-      padding: 6px;
       color: white;
       font-weight: bold; }
-    /* line 816, ../../sass/_general.scss */
+    /* line 813, ../../sass/_general.scss */
     #mobile-menu-modal #rainbow-hamburger {
       background: white; }
-      /* line 818, ../../sass/_general.scss */
+      /* line 815, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger .hamburger-item {
         text-align: center;
         color: #f5f8dd;
         padding: .8em 0; }
-        /* line 823, ../../sass/_general.scss */
+        /* line 820, ../../sass/_general.scss */
         #mobile-menu-modal #rainbow-hamburger .hamburger-item a {
           color: #f5f8dd; }
-        /* line 826, ../../sass/_general.scss */
+        /* line 823, ../../sass/_general.scss */
         #mobile-menu-modal #rainbow-hamburger .hamburger-item .hamburger-text {
           font-size: 1.5em; }
-      /* line 831, ../../sass/_general.scss */
+      /* line 828, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #call-us {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #97c3b6;
@@ -2399,7 +2396,7 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-      /* line 834, ../../sass/_general.scss */
+      /* line 831, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #text-hannah {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #db9c7a;
@@ -2412,7 +2409,7 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-      /* line 837, ../../sass/_general.scss */
+      /* line 834, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #email-us {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #8b4476;
@@ -2425,7 +2422,7 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-      /* line 840, ../../sass/_general.scss */
+      /* line 837, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #get-financing {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #878689;
@@ -2438,11 +2435,11 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-    /* line 845, ../../sass/_general.scss */
+    /* line 842, ../../sass/_general.scss */
     #mobile-menu-modal ul.fixed-bottom-menu {
       margin: 0;
       padding: 0; }
-      /* line 849, ../../sass/_general.scss */
+      /* line 846, ../../sass/_general.scss */
       #mobile-menu-modal ul.fixed-bottom-menu li {
         background: #60437D;
         /* Old browsers */
@@ -2462,13 +2459,13 @@ body .vex.vex-theme-flat-attack .vex-content {
         padding: 5px 0;
         margin: 0;
         border-right: 1px solid #60437D; }
-        /* line 860, ../../sass/_general.scss */
+        /* line 857, ../../sass/_general.scss */
         #mobile-menu-modal ul.fixed-bottom-menu li a, #mobile-menu-modal ul.fixed-bottom-menu li a:hover {
           color: white; }
-        /* line 864, ../../sass/_general.scss */
+        /* line 861, ../../sass/_general.scss */
         #mobile-menu-modal ul.fixed-bottom-menu li:last-of-type {
           border-right: 0 none; }
-        /* line 868, ../../sass/_general.scss */
+        /* line 865, ../../sass/_general.scss */
         #mobile-menu-modal ul.fixed-bottom-menu li .menu-bottom-small {
           text-transform: uppercase;
           font-size: 10px;
@@ -2476,14 +2473,14 @@ body .vex.vex-theme-flat-attack .vex-content {
           width: 100%; } }
 /* Front Page */
 @media only screen and (max-width: 768px) {
-  /* line 881, ../../sass/_general.scss */
+  /* line 878, ../../sass/_general.scss */
   .hannah-chat {
     display: none; } }
 @media only screen and (max-width: 500px) {
-  /* line 886, ../../sass/_general.scss */
+  /* line 883, ../../sass/_general.scss */
   .tab-row-inner:before, .tab-row-inner:after, .tab-row-inner {
     display: none; } }
-/* line 890, ../../sass/_general.scss */
+/* line 887, ../../sass/_general.scss */
 .hannah-chat {
   cursor: pointer;
   position: fixed;
@@ -2492,7 +2489,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   z-index: 9999;
   width: 30%; }
 
-/* line 898, ../../sass/_general.scss */
+/* line 895, ../../sass/_general.scss */
 .tab-row {
   text-align: center;
   list-style: none;
@@ -2501,7 +2498,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   line-height: 50px;
   position: relative; }
 
-/* line 906, ../../sass/_general.scss */
+/* line 903, ../../sass/_general.scss */
 .tab-row:after {
   position: absolute;
   content: "";
@@ -2510,11 +2507,11 @@ body .vex.vex-theme-flat-attack .vex-content {
   left: 0;
   z-index: 1; }
 
-/* line 914, ../../sass/_general.scss */
+/* line 911, ../../sass/_general.scss */
 .tab-row:before {
   z-index: 1; }
 
-/* line 917, ../../sass/_general.scss */
+/* line 914, ../../sass/_general.scss */
 .tab-row-inner {
   color: white;
   font-size: 15px;
@@ -2535,7 +2532,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   width: 72%;
   box-sizing: border-box; }
 
-/* line 937, ../../sass/_general.scss */
+/* line 934, ../../sass/_general.scss */
 .tab-row-inner-bottom {
   padding: 0 10px;
   background: #60437D;
@@ -2550,7 +2547,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   right: 0;
   box-sizing: border-box; }
 
-/* line 952, ../../sass/_general.scss */
+/* line 949, ../../sass/_general.scss */
 .tab-row-inner:before,
 .tab-row-inner:after {
   position: absolute;
@@ -2559,14 +2556,14 @@ body .vex.vex-theme-flat-attack .vex-content {
   height: 6px;
   content: " "; }
 
-/* line 960, ../../sass/_general.scss */
+/* line 957, ../../sass/_general.scss */
 .tab-row-inner:before {
   left: -6px;
   border-bottom-right-radius: 6px;
   border-width: 0 1px 1px 0;
   box-shadow: 2px 2px 0 #60437d; }
 
-/* line 967, ../../sass/_general.scss */
+/* line 964, ../../sass/_general.scss */
 .tab-row-inner:after {
   right: -10px;
   top: 57px;
@@ -2577,11 +2574,11 @@ body .vex.vex-theme-flat-attack .vex-content {
   border-bottom-style: solid;
   border-left-style: solid; }
 
-/* line 977, ../../sass/_general.scss */
+/* line 974, ../../sass/_general.scss */
 .no-padding {
   padding: 0; }
 
-/* line 979, ../../sass/_general.scss */
+/* line 976, ../../sass/_general.scss */
 #chat-modal-hannah {
   z-index: 9999; }
 
