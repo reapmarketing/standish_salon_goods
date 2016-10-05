@@ -119,7 +119,7 @@
 			console.log($('#mobile-menu-json').length);
 			$('.toggle-navigation').sidr({
 				name: 'mobile-open',
-				side: 'right',
+				side: 'left',
 				source: '#mobile-menu-json',
 				onOpen: function() {
 					var el = this;
