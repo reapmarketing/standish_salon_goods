@@ -10,7 +10,7 @@
     "tests"
   ],
   "dependencies": {
-    "sidr": "~2.0.0",
+    "sidr": "~2.2.1",
     "instafeed.js": "stevenschobert/instafeed.js#~1.4.1",
     "matchHeight": "liabru/jquery-match-height#~0.6.0",
     "Flowtype.js": "simplefocus/FlowType.JS#~1.1.0",

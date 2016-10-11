@@ -786,6 +786,14 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 
 /// ---- Mobile Menu Bottom ---- ///
+body.sidr-open { 
+  position: fixed !important;
+}
+
+body:not(.sidr-open) div#mobile-menu-modal {
+  left: 0;
+}
+
 @media only screen and (max-width : $tablet) {
   #mobile-menu-modal {
     position: fixed;
@@ -837,6 +845,12 @@ body .vex.vex-theme-flat-attack .vex-content {
       #get-financing {
         @include gradientGenThreeStop(#878689, #9cb1b0, #828b8b);
       }
+    }
+
+    div#fixed-bottom {
+      float: left;
+      width: 100%;
+      background: #60437D;
     }
 
     ul.fixed-bottom-menu {

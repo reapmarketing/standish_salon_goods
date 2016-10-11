@@ -2351,15 +2351,23 @@ body .vex.vex-theme-flat-attack .vex-content {
     font-family: FontAwesome !important;
     content: "\f053" !important; }
 
+/* line 789, ../../sass/_general.scss */
+body.sidr-open {
+  position: fixed !important; }
+
+/* line 793, ../../sass/_general.scss */
+body:not(.sidr-open) div#mobile-menu-modal {
+  left: 0; }
+
 @media only screen and (max-width: 768px) {
-  /* line 790, ../../sass/_general.scss */
+  /* line 798, ../../sass/_general.scss */
   #mobile-menu-modal {
     position: fixed;
     bottom: 0;
     width: 100%;
     display: block;
     z-index: 99999; }
-    /* line 802, ../../sass/_general.scss */
+    /* line 810, ../../sass/_general.scss */
     #mobile-menu-modal .close-icon {
       position: absolute;
       top: -1.25em;
@@ -2369,21 +2377,21 @@ body .vex.vex-theme-flat-attack .vex-content {
       text-align: center;
       color: white;
       font-weight: bold; }
-    /* line 813, ../../sass/_general.scss */
+    /* line 821, ../../sass/_general.scss */
     #mobile-menu-modal #rainbow-hamburger {
       background: white; }
-      /* line 815, ../../sass/_general.scss */
+      /* line 823, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger .hamburger-item {
         text-align: center;
         color: #f5f8dd;
         padding: .8em 0; }
-        /* line 820, ../../sass/_general.scss */
+        /* line 828, ../../sass/_general.scss */
         #mobile-menu-modal #rainbow-hamburger .hamburger-item a {
           color: #f5f8dd; }
-        /* line 823, ../../sass/_general.scss */
+        /* line 831, ../../sass/_general.scss */
         #mobile-menu-modal #rainbow-hamburger .hamburger-item .hamburger-text {
           font-size: 1.5em; }
-      /* line 828, ../../sass/_general.scss */
+      /* line 836, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #call-us {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #97c3b6;
@@ -2396,7 +2404,7 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-      /* line 831, ../../sass/_general.scss */
+      /* line 839, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #text-hannah {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #db9c7a;
@@ -2409,7 +2417,7 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-      /* line 834, ../../sass/_general.scss */
+      /* line 842, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #email-us {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #8b4476;
@@ -2422,7 +2430,7 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-      /* line 837, ../../sass/_general.scss */
+      /* line 845, ../../sass/_general.scss */
       #mobile-menu-modal #rainbow-hamburger #get-financing {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
         background: #878689;
@@ -2435,11 +2443,16 @@ body .vex.vex-theme-flat-attack .vex-content {
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
         /* IE6-9 */ }
-    /* line 842, ../../sass/_general.scss */
+    /* line 850, ../../sass/_general.scss */
+    #mobile-menu-modal div#fixed-bottom {
+      float: left;
+      width: 100%;
+      background: #60437D; }
+    /* line 856, ../../sass/_general.scss */
     #mobile-menu-modal ul.fixed-bottom-menu {
       margin: 0;
       padding: 0; }
-      /* line 846, ../../sass/_general.scss */
+      /* line 860, ../../sass/_general.scss */
       #mobile-menu-modal ul.fixed-bottom-menu li {
         background: #60437D;
         /* Old browsers */
@@ -2459,13 +2472,13 @@ body .vex.vex-theme-flat-attack .vex-content {
         padding: 5px 0;
         margin: 0;
         border-right: 1px solid #60437D; }
-        /* line 857, ../../sass/_general.scss */
+        /* line 871, ../../sass/_general.scss */
         #mobile-menu-modal ul.fixed-bottom-menu li a, #mobile-menu-modal ul.fixed-bottom-menu li a:hover {
           color: white; }
-        /* line 861, ../../sass/_general.scss */
+        /* line 875, ../../sass/_general.scss */
         #mobile-menu-modal ul.fixed-bottom-menu li:last-of-type {
           border-right: 0 none; }
-        /* line 865, ../../sass/_general.scss */
+        /* line 879, ../../sass/_general.scss */
         #mobile-menu-modal ul.fixed-bottom-menu li .menu-bottom-small {
           text-transform: uppercase;
           font-size: 10px;
@@ -2473,14 +2486,14 @@ body .vex.vex-theme-flat-attack .vex-content {
           width: 100%; } }
 /* Front Page */
 @media only screen and (max-width: 768px) {
-  /* line 878, ../../sass/_general.scss */
+  /* line 892, ../../sass/_general.scss */
   .hannah-chat {
     display: none; } }
 @media only screen and (max-width: 500px) {
-  /* line 883, ../../sass/_general.scss */
+  /* line 897, ../../sass/_general.scss */
   .tab-row-inner:before, .tab-row-inner:after, .tab-row-inner {
     display: none; } }
-/* line 887, ../../sass/_general.scss */
+/* line 901, ../../sass/_general.scss */
 .hannah-chat {
   cursor: pointer;
   position: fixed;
@@ -2489,7 +2502,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   z-index: 9999;
   width: 30%; }
 
-/* line 895, ../../sass/_general.scss */
+/* line 909, ../../sass/_general.scss */
 .tab-row {
   text-align: center;
   list-style: none;
@@ -2498,7 +2511,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   line-height: 50px;
   position: relative; }
 
-/* line 903, ../../sass/_general.scss */
+/* line 917, ../../sass/_general.scss */
 .tab-row:after {
   position: absolute;
   content: "";
@@ -2507,11 +2520,11 @@ body .vex.vex-theme-flat-attack .vex-content {
   left: 0;
   z-index: 1; }
 
-/* line 911, ../../sass/_general.scss */
+/* line 925, ../../sass/_general.scss */
 .tab-row:before {
   z-index: 1; }
 
-/* line 914, ../../sass/_general.scss */
+/* line 928, ../../sass/_general.scss */
 .tab-row-inner {
   color: white;
   font-size: 15px;
@@ -2532,7 +2545,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   width: 72%;
   box-sizing: border-box; }
 
-/* line 934, ../../sass/_general.scss */
+/* line 948, ../../sass/_general.scss */
 .tab-row-inner-bottom {
   padding: 0 10px;
   background: #60437D;
@@ -2547,7 +2560,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   right: 0;
   box-sizing: border-box; }
 
-/* line 949, ../../sass/_general.scss */
+/* line 963, ../../sass/_general.scss */
 .tab-row-inner:before,
 .tab-row-inner:after {
   position: absolute;
@@ -2556,14 +2569,14 @@ body .vex.vex-theme-flat-attack .vex-content {
   height: 6px;
   content: " "; }
 
-/* line 957, ../../sass/_general.scss */
+/* line 971, ../../sass/_general.scss */
 .tab-row-inner:before {
   left: -6px;
   border-bottom-right-radius: 6px;
   border-width: 0 1px 1px 0;
   box-shadow: 2px 2px 0 #60437d; }
 
-/* line 964, ../../sass/_general.scss */
+/* line 978, ../../sass/_general.scss */
 .tab-row-inner:after {
   right: -10px;
   top: 57px;
@@ -2574,11 +2587,11 @@ body .vex.vex-theme-flat-attack .vex-content {
   border-bottom-style: solid;
   border-left-style: solid; }
 
-/* line 974, ../../sass/_general.scss */
+/* line 988, ../../sass/_general.scss */
 .no-padding {
   padding: 0; }
 
-/* line 976, ../../sass/_general.scss */
+/* line 990, ../../sass/_general.scss */
 #chat-modal-hannah {
   z-index: 9999; }
 
