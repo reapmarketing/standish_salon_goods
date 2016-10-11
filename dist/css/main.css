@@ -2351,25 +2351,149 @@ body .vex.vex-theme-flat-attack .vex-content {
     font-family: FontAwesome !important;
     content: "\f053" !important; }
 
+/* line 789, ../../sass/_general.scss */
+body.sidr-open {
+  position: fixed !important; }
+
+/* line 793, ../../sass/_general.scss */
+body:not(.sidr-open) div#mobile-menu-modal {
+  left: 0; }
+
+@media only screen and (max-width: 768px) {
+  /* line 798, ../../sass/_general.scss */
+  #mobile-menu-modal {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    z-index: 99999; }
+    /* line 810, ../../sass/_general.scss */
+    #mobile-menu-modal .close-icon {
+      position: absolute;
+      top: -1.25em;
+      right: 1em;
+      width: 3em;
+      height: 3em;
+      text-align: center;
+      color: white;
+      font-weight: bold; }
+    /* line 821, ../../sass/_general.scss */
+    #mobile-menu-modal #rainbow-hamburger {
+      background: white; }
+      /* line 823, ../../sass/_general.scss */
+      #mobile-menu-modal #rainbow-hamburger .hamburger-item {
+        text-align: center;
+        color: #f5f8dd;
+        padding: .8em 0; }
+        /* line 828, ../../sass/_general.scss */
+        #mobile-menu-modal #rainbow-hamburger .hamburger-item a {
+          color: #f5f8dd; }
+        /* line 831, ../../sass/_general.scss */
+        #mobile-menu-modal #rainbow-hamburger .hamburger-item .hamburger-text {
+          font-size: 1.5em; }
+      /* line 836, ../../sass/_general.scss */
+      #mobile-menu-modal #rainbow-hamburger #call-us {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
+        background: #97c3b6;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #97c3b6 0%, #ced8ac 50%, #98ba9a 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #97c3b6 0%, #ced8ac 50%, #98ba9a 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #97c3b6 0%, #ced8ac 50%, #98ba9a 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
+        /* IE6-9 */ }
+      /* line 839, ../../sass/_general.scss */
+      #mobile-menu-modal #rainbow-hamburger #text-hannah {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
+        background: #db9c7a;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #db9c7a 0%, #fbbc85 50%, #f69372 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #db9c7a 0%, #fbbc85 50%, #f69372 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #db9c7a 0%, #fbbc85 50%, #f69372 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
+        /* IE6-9 */ }
+      /* line 842, ../../sass/_general.scss */
+      #mobile-menu-modal #rainbow-hamburger #email-us {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
+        background: #8b4476;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #8b4476 0%, #8b638a 50%, #6b4e7d 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #8b4476 0%, #8b638a 50%, #6b4e7d 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #8b4476 0%, #8b638a 50%, #6b4e7d 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
+        /* IE6-9 */ }
+      /* line 845, ../../sass/_general.scss */
+      #mobile-menu-modal #rainbow-hamburger #get-financing {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
+        background: #878689;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #878689 0%, #9cb1b0 50%, #828b8b 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #878689 0%, #9cb1b0 50%, #828b8b 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #878689 0%, #9cb1b0 50%, #828b8b 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color3',GradientType=0 );
+        /* IE6-9 */ }
+    /* line 850, ../../sass/_general.scss */
+    #mobile-menu-modal div#fixed-bottom {
+      float: left;
+      width: 100%;
+      background: #60437D; }
+    /* line 856, ../../sass/_general.scss */
+    #mobile-menu-modal ul.fixed-bottom-menu {
+      margin: 0;
+      padding: 0; }
+      /* line 860, ../../sass/_general.scss */
+      #mobile-menu-modal ul.fixed-bottom-menu li {
+        background: #60437D;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #7a559e 0%, #6d4c8e 12%, #60437D 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #7a559e 0%, #6d4c8e 12%, #60437D 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #7a559e 0%, #6d4c8e 12%, #60437D 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($color1, 5%)', endColorstr='$color1',GradientType=0 );
+        /* IE6-9 */
+        color: white;
+        display: block;
+        float: left;
+        width: 20%;
+        text-align: center;
+        padding: 5px 0;
+        margin: 0;
+        border-right: 1px solid #60437D; }
+        /* line 871, ../../sass/_general.scss */
+        #mobile-menu-modal ul.fixed-bottom-menu li a, #mobile-menu-modal ul.fixed-bottom-menu li a:hover {
+          color: white; }
+        /* line 875, ../../sass/_general.scss */
+        #mobile-menu-modal ul.fixed-bottom-menu li:last-of-type {
+          border-right: 0 none; }
+        /* line 879, ../../sass/_general.scss */
+        #mobile-menu-modal ul.fixed-bottom-menu li .menu-bottom-small {
+          text-transform: uppercase;
+          font-size: 10px;
+          display: block;
+          width: 100%; } }
 /* Front Page */
 @media only screen and (max-width: 768px) {
-  /* line 771, ../../sass/_general.scss */
+  /* line 892, ../../sass/_general.scss */
   .hannah-chat {
-    width: 100% !important; } }
+    display: none; } }
 @media only screen and (max-width: 500px) {
-  /* line 777, ../../sass/_general.scss */
-  .tab-row-inner:before {
-    display: none; }
-
-  /* line 780, ../../sass/_general.scss */
-  .tab-row-inner:after {
-    display: none; }
-
-  /* line 783, ../../sass/_general.scss */
-  .tab-row-inner {
-    width: 100% !important;
-    margin: 0 !important; } }
-/* line 788, ../../sass/_general.scss */
+  /* line 897, ../../sass/_general.scss */
+  .tab-row-inner:before, .tab-row-inner:after, .tab-row-inner {
+    display: none; } }
+/* line 901, ../../sass/_general.scss */
 .hannah-chat {
   cursor: pointer;
   position: fixed;
@@ -2378,7 +2502,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   z-index: 9999;
   width: 30%; }
 
-/* line 796, ../../sass/_general.scss */
+/* line 909, ../../sass/_general.scss */
 .tab-row {
   text-align: center;
   list-style: none;
@@ -2387,7 +2511,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   line-height: 50px;
   position: relative; }
 
-/* line 804, ../../sass/_general.scss */
+/* line 917, ../../sass/_general.scss */
 .tab-row:after {
   position: absolute;
   content: "";
@@ -2396,11 +2520,11 @@ body .vex.vex-theme-flat-attack .vex-content {
   left: 0;
   z-index: 1; }
 
-/* line 812, ../../sass/_general.scss */
+/* line 925, ../../sass/_general.scss */
 .tab-row:before {
   z-index: 1; }
 
-/* line 815, ../../sass/_general.scss */
+/* line 928, ../../sass/_general.scss */
 .tab-row-inner {
   color: white;
   font-size: 15px;
@@ -2421,7 +2545,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   width: 72%;
   box-sizing: border-box; }
 
-/* line 835, ../../sass/_general.scss */
+/* line 948, ../../sass/_general.scss */
 .tab-row-inner-bottom {
   padding: 0 10px;
   background: #60437D;
@@ -2436,7 +2560,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   right: 0;
   box-sizing: border-box; }
 
-/* line 850, ../../sass/_general.scss */
+/* line 963, ../../sass/_general.scss */
 .tab-row-inner:before,
 .tab-row-inner:after {
   position: absolute;
@@ -2445,14 +2569,14 @@ body .vex.vex-theme-flat-attack .vex-content {
   height: 6px;
   content: " "; }
 
-/* line 858, ../../sass/_general.scss */
+/* line 971, ../../sass/_general.scss */
 .tab-row-inner:before {
   left: -6px;
   border-bottom-right-radius: 6px;
   border-width: 0 1px 1px 0;
   box-shadow: 2px 2px 0 #60437d; }
 
-/* line 865, ../../sass/_general.scss */
+/* line 978, ../../sass/_general.scss */
 .tab-row-inner:after {
   right: -10px;
   top: 57px;
@@ -2463,11 +2587,11 @@ body .vex.vex-theme-flat-attack .vex-content {
   border-bottom-style: solid;
   border-left-style: solid; }
 
-/* line 875, ../../sass/_general.scss */
+/* line 988, ../../sass/_general.scss */
 .no-padding {
   padding: 0; }
 
-/* line 877, ../../sass/_general.scss */
+/* line 990, ../../sass/_general.scss */
 #chat-modal-hannah {
   z-index: 9999; }
 
@@ -2546,14 +2670,7 @@ body .vex.vex-theme-flat-attack .vex-content {
   margin-bottom: 0;
   left: -10px; }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-  /* line 68, ../../sass/_header_menu.scss */
-  .logo {
-    background: url("/assets/templates/standish-responsive/images/Standish-Logo-Mobile.png");
-    background-repeat: no-repeat;
-    background-size: 142px; } }
-/* line 75, ../../sass/_header_menu.scss */
+/* line 66, ../../sass/_header_menu.scss */
 .credentials {
   background: url("/assets/templates/standish-responsive/images/credentials.png");
   width: 100%;
@@ -2562,43 +2679,43 @@ body .vex.vex-theme-flat-attack .vex-content {
   background-repeat: no-repeat;
   left: -34px; }
 
-/* line 84, ../../sass/_header_menu.scss */
+/* line 75, ../../sass/_header_menu.scss */
 .logo-footer {
   text-indent: -9999em;
   float: none;
   display: inline-block; }
 
-/* line 89, ../../sass/_header_menu.scss */
+/* line 80, ../../sass/_header_menu.scss */
 header button.cart {
   margin-right: 0;
   padding-right: 0; }
 
-/* line 93, ../../sass/_header_menu.scss */
+/* line 84, ../../sass/_header_menu.scss */
 button.cart i {
   font-size: 1.250rem;
   padding-right: 12px; }
 
-/* line 97, ../../sass/_header_menu.scss */
+/* line 88, ../../sass/_header_menu.scss */
 .cart-number {
   margin-left: 18px;
   background-color: #ffa07a;
   padding: 14px 18px;
   border-radius: 0px 3px 3px 0; }
 
-/* line 103, ../../sass/_header_menu.scss */
+/* line 94, ../../sass/_header_menu.scss */
 .navigation {
   background-color: #4d4d4d;
   text-transform: capitalize;
   border-radius: 0; }
 
-/* line 108, ../../sass/_header_menu.scss */
+/* line 99, ../../sass/_header_menu.scss */
 .navigation ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
   border-left: 1px solid #696969; }
 
-/* line 114, ../../sass/_header_menu.scss */
+/* line 105, ../../sass/_header_menu.scss */
 .navigation li {
   display: inline-block;
   margin: 0;
@@ -2606,15 +2723,15 @@ button.cart i {
   height: 60px;
   position: relative; }
 
-/* line 121, ../../sass/_header_menu.scss */
+/* line 112, ../../sass/_header_menu.scss */
 .navigation ul.nav-menu > li {
   border-right: 1px solid #696969; }
 
-/* line 124, ../../sass/_header_menu.scss */
+/* line 115, ../../sass/_header_menu.scss */
 .navigation ul.nav-menu > li > a {
   padding: 0 16px; }
 
-/* line 127, ../../sass/_header_menu.scss */
+/* line 118, ../../sass/_header_menu.scss */
 .navigation a {
   color: #fff;
   display: inline-block;
@@ -2626,27 +2743,27 @@ button.cart i {
   /* padding: 0 14px; */
   text-decoration: none; }
 
-/* line 139, ../../sass/_header_menu.scss */
+/* line 130, ../../sass/_header_menu.scss */
 .navigation ul li.brand-menu .column ul {
   width: 162px; }
-/* line 140, ../../sass/_header_menu.scss */
+/* line 131, ../../sass/_header_menu.scss */
 .navigation ul li.brand-menu .col2 {
   left: 161px; }
-/* line 143, ../../sass/_header_menu.scss */
+/* line 134, ../../sass/_header_menu.scss */
 .navigation ul li.brand-menu .col3 {
   left: 321px; }
-/* line 146, ../../sass/_header_menu.scss */
+/* line 137, ../../sass/_header_menu.scss */
 .navigation ul li.brand-menu .col4 {
   left: 480px;
   z-index: 20; }
-/* line 150, ../../sass/_header_menu.scss */
+/* line 141, ../../sass/_header_menu.scss */
 .navigation ul li.brand-menu .col5 {
   left: 642px; }
-  /* line 152, ../../sass/_header_menu.scss */
+  /* line 143, ../../sass/_header_menu.scss */
   .navigation ul li.brand-menu .col5 ul {
     width: 180px; }
 
-/* line 156, ../../sass/_header_menu.scss */
+/* line 147, ../../sass/_header_menu.scss */
 .navigation ul ul {
   /*   font-weight: 700; */
   background-color: #696969;
@@ -2659,31 +2776,31 @@ button.cart i {
   z-index: 19;
   width: 250px; }
 
-/* line 169, ../../sass/_header_menu.scss */
+/* line 160, ../../sass/_header_menu.scss */
 .navigation li li {
   display: block;
   height: auto;
   margin: 0;
   line-height: 20px; }
 
-/* line 175, ../../sass/_header_menu.scss */
+/* line 166, ../../sass/_header_menu.scss */
 .navigation ul ul ul {
   left: 100%;
   top: -20px;
   background: #5e5e5e;
   font-weight: normal; }
 
-/* line 181, ../../sass/_header_menu.scss */
+/* line 172, ../../sass/_header_menu.scss */
 .navigation ul ul ul a {
   color: #fff;
   text-transform: capitalize;
   letter-spacing: normal; }
 
-/* line 186, ../../sass/_header_menu.scss */
+/* line 177, ../../sass/_header_menu.scss */
 .navigation ul ul ul a:hover {
   color: #c2d3bd; }
 
-/* line 189, ../../sass/_header_menu.scss */
+/* line 180, ../../sass/_header_menu.scss */
 .navigation ul ul a {
   min-width: 170px;
   line-height: 16px;
@@ -2693,108 +2810,108 @@ button.cart i {
   color: #c2d3bd;
   padding: 4px 25px; }
 
-/* line 198, ../../sass/_header_menu.scss */
+/* line 189, ../../sass/_header_menu.scss */
 .navigation li:hover > a {
   color: #dfe133; }
 
-/* line 201, ../../sass/_header_menu.scss */
+/* line 192, ../../sass/_header_menu.scss */
 .navigation li li:hover > a {
   color: #c2d3bd; }
 
-/* line 204, ../../sass/_header_menu.scss */
+/* line 195, ../../sass/_header_menu.scss */
 .navigation ul ul a:hover {
   color: #fff; }
 
-/* line 207, ../../sass/_header_menu.scss */
+/* line 198, ../../sass/_header_menu.scss */
 .navigation ul li:hover > ul,
 ul.nav-menu li:hover > div ul {
   display: block; }
 
-/* line 212, ../../sass/_header_menu.scss */
+/* line 203, ../../sass/_header_menu.scss */
 .navigation li li.allcaps a {
   padding-top: 10px; }
 
-/* line 216, ../../sass/_header_menu.scss */
+/* line 207, ../../sass/_header_menu.scss */
 .navigation li li.allcaps > a:link,
 .navigation li li.allcaps > a:visited {
   font-weight: 700;
   /*  color: $primary-color-btn-highlight; */
   color: #fff; }
 
-/* line 223, ../../sass/_header_menu.scss */
+/* line 214, ../../sass/_header_menu.scss */
 .navigation li li.allcaps > a:hover {
   color: #dfe133; }
 
-/* line 227, ../../sass/_header_menu.scss */
+/* line 218, ../../sass/_header_menu.scss */
 .navigation li.current_page_item > a,
 .navigation li.current-menu-item > a {
   color: #5ff23d; }
 
-/* line 231, ../../sass/_header_menu.scss */
+/* line 222, ../../sass/_header_menu.scss */
 .navigation li.far {
   border: 0 none !important; }
 
-/* line 234, ../../sass/_header_menu.scss */
+/* line 225, ../../sass/_header_menu.scss */
 .menu-feature {
   padding: 3px;
   border-radius: 3px; }
 
-/* line 239, ../../sass/_header_menu.scss */
+/* line 230, ../../sass/_header_menu.scss */
 .col2 {
   position: absolute;
   left: 222px;
   top: 0; }
 
-/* line 244, ../../sass/_header_menu.scss */
+/* line 235, ../../sass/_header_menu.scss */
 .col3 {
   position: absolute;
   left: 444px;
   top: 0; }
 
-/* line 249, ../../sass/_header_menu.scss */
+/* line 240, ../../sass/_header_menu.scss */
 .col4 {
   position: absolute;
   left: 666px;
   top: 0; }
 
-/* line 254, ../../sass/_header_menu.scss */
+/* line 245, ../../sass/_header_menu.scss */
 .col5 {
   position: absolute;
   left: 888px;
   top: 0; }
 
-/* line 260, ../../sass/_header_menu.scss */
+/* line 251, ../../sass/_header_menu.scss */
 li.far a:hover {
   color: #fff; }
 
-/* line 263, ../../sass/_header_menu.scss */
+/* line 254, ../../sass/_header_menu.scss */
 li.far a {
   color: #a9a9a9;
   padding: 0 0px 0 14px !important; }
 
-/* line 267, ../../sass/_header_menu.scss */
+/* line 258, ../../sass/_header_menu.scss */
 li.first.far a {
   padding: 0 0px 0 14px; }
 
-/* line 271, ../../sass/_header_menu.scss */
+/* line 262, ../../sass/_header_menu.scss */
 .search .input-group-btn > .btn {
   position: absolute; }
-/* line 274, ../../sass/_header_menu.scss */
+/* line 265, ../../sass/_header_menu.scss */
 .search button, .search .button {
   background: transparent none;
   z-index: 2;
   top: 0;
   height: 100%;
   border: 0 none; }
-  /* line 280, ../../sass/_header_menu.scss */
+  /* line 271, ../../sass/_header_menu.scss */
   .search button:hover, .search button:focus, .search .button:hover, .search .button:focus {
     border: 0 none; }
-/* line 284, ../../sass/_header_menu.scss */
+/* line 275, ../../sass/_header_menu.scss */
 .search .input-group {
   border: 10px solid #DEDEDE;
   margin-left: -10px;
   margin-right: -10px; }
-/* line 289, ../../sass/_header_menu.scss */
+/* line 280, ../../sass/_header_menu.scss */
 .search input {
   font-size: 14px;
   color: #4D4D4D;
@@ -2806,20 +2923,20 @@ li.first.far a {
   min-height: 27px; }
 
 @media only screen and (min-width: 993px) {
-  /* line 304, ../../sass/_header_menu.scss */
+  /* line 295, ../../sass/_header_menu.scss */
   .container.search-container {
     margin-bottom: 10px; } }
 @media only screen and (max-width: 992px) {
-  /* line 310, ../../sass/_header_menu.scss */
+  /* line 301, ../../sass/_header_menu.scss */
   .right-side.padd-top {
     padding-top: 0; } }
-/* line 315, ../../sass/_header_menu.scss */
+/* line 306, ../../sass/_header_menu.scss */
 .sidr-class-fa.sidr-class-fa-phone:before {
   content: "\f095";
   display: inline-block;
   font: normal normal normal 16px/1 FontAwesome; }
 
-/* line 324, ../../sass/_header_menu.scss */
+/* line 315, ../../sass/_header_menu.scss */
 .search-button {
   font-size: 16px;
   -webkit-border-radius: 0 3px 3px 0;
@@ -2829,16 +2946,16 @@ li.first.far a {
   margin: 0;
   padding: 2px 12px; }
 
-/* line 334, ../../sass/_header_menu.scss */
+/* line 325, ../../sass/_header_menu.scss */
 .input-group.form-group-lg .search-button {
   padding: 10px 25px;
   font-size: 17px; }
 
-/* line 338, ../../sass/_header_menu.scss */
+/* line 329, ../../sass/_header_menu.scss */
 .panel {
   padding: 10px; }
 
-/* line 343, ../../sass/_header_menu.scss */
+/* line 334, ../../sass/_header_menu.scss */
 .navigation ul ul a span,
 .cat span {
   background: #dfe133;
@@ -2847,23 +2964,23 @@ li.first.far a {
   margin-left: 5px;
   color: #696969; }
 
-/* line 351, ../../sass/_header_menu.scss */
+/* line 342, ../../sass/_header_menu.scss */
 .cat span {
   position: absolute;
   left: -62px;
   top: 2px; }
 
-/* line 356, ../../sass/_header_menu.scss */
+/* line 347, ../../sass/_header_menu.scss */
 .navigation ul ul a span {
   position: absolute;
   padding: 2px 2px 0px 2px;
   top: 2px; }
 
-/* line 362, ../../sass/_header_menu.scss */
+/* line 353, ../../sass/_header_menu.scss */
 .hello-container {
   padding-top: 18px; }
 
-/* line 366, ../../sass/_header_menu.scss */
+/* line 357, ../../sass/_header_menu.scss */
 .hello-container {
   background: #60437D url("/assets/templates/standish-responsive/images/congruent-pentagon-pattern-long.jpg") repeat-x;
   z-index: 20;
@@ -2872,28 +2989,28 @@ li.first.far a {
   height: 60px;
   right: 0px; }
 
-/* line 374, ../../sass/_header_menu.scss */
+/* line 365, ../../sass/_header_menu.scss */
 .hello.container, .hbar_content {
   height: 100%;
   vertical-align: middle;
   position: relative; }
-  /* line 378, ../../sass/_header_menu.scss */
+  /* line 369, ../../sass/_header_menu.scss */
   .hello.container p, .hbar_content p {
     display: inline; }
 
-/* line 384, ../../sass/_header_menu.scss */
+/* line 375, ../../sass/_header_menu.scss */
 .hbar_content svg {
   margin-bottom: -7px;
   margin-left: 5px;
   margin-right: 5px; }
 
-/* line 392, ../../sass/_header_menu.scss */
+/* line 383, ../../sass/_header_menu.scss */
 .hello-tag {
   position: absolute;
   top: 19px;
   left: 0; }
 
-/* line 397, ../../sass/_header_menu.scss */
+/* line 388, ../../sass/_header_menu.scss */
 .hello-icon {
   display: inline-block;
   top: 0;
@@ -2901,7 +3018,7 @@ li.first.far a {
   left: -24px;
   position: relative; }
 
-/* line 404, ../../sass/_header_menu.scss */
+/* line 395, ../../sass/_header_menu.scss */
 .hello-tab {
   background: #f5f5dc;
   width: 25px;
@@ -2913,21 +3030,21 @@ li.first.far a {
   right: 100px;
   z-index: 1; }
 
-/* line 415, ../../sass/_header_menu.scss */
+/* line 406, ../../sass/_header_menu.scss */
 .hello-tab i {
   font-size: 20px;
   position: relative;
   top: 5px;
   left: 7px; }
 
-/* line 424, ../../sass/_header_menu.scss */
+/* line 415, ../../sass/_header_menu.scss */
 #slickShow {
   margin-top: 2.6rem; }
-  /* line 426, ../../sass/_header_menu.scss */
+  /* line 417, ../../sass/_header_menu.scss */
   #slickShow .slide-option-text {
     font-size: .9rem;
     color: #9c9c9c; }
-  /* line 430, ../../sass/_header_menu.scss */
+  /* line 421, ../../sass/_header_menu.scss */
   #slickShow .fa {
     font-size: 18px;
     padding-right: 0.2em; }

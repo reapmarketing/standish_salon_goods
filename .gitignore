@@ -87,5 +87,5 @@ node_modules/
 ######################
 # Generated files #
 ######################
-dist/app.js
-dist/app.min.js
+#this is generated and does not need to be tracked
+dist/*
