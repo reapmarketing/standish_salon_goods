@@ -15,29 +15,28 @@
   SiteListing.Slider.init = function() {
     var dfd = $.Deferred();
     // Promises for each function ensure that everything has loaded.
-    // Add videos then images 
-    Standish.SiteListing.NewSlider.addVideoImagesToSlideshow().done(function() {
-      // //console.log(Standish.SiteListing.Slides.content);
-      Standish.SiteListing.NewSlider.addRegImagesToSlideshow();
-    }).done(function() {
-      // Do all the templating now that my object is ready
-      //console.log(Standish.SiteListing.Slides.content);
+    // Add videos then images  
+    Standish.SiteListing.NewSlider.addRegImagesToSlideshow().done(function() {
+      Standish.SiteListing.NewSlider.addVideoImagesToSlideshow().done(function() {
+        // Do all the templating now that my object is ready
+        console.log(Standish.SiteListing.Slides.content);
 
-      SiteListing.Slider.activateSlickTemplating();
-      SiteListing.Slider.activateFilters();
+        SiteListing.Slider.activateSlickTemplating();
+        SiteListing.Slider.activateFilters();
 
-      $('.main-slider').show();
+        $('.main-slider').show();
 
-      $('#loadingDiv').hide();
+        $('#loadingDiv').hide();
 
-      $('.sub-slider').show();
-      $('.nav-filters').show();
+        $('.sub-slider').show();
+        $('.nav-filters').show();
 
-      addVideosToContentSection(Standish.SiteListing.Slides.content);
-      SiteListing.Slider.activateVideos();
+        addVideosToContentSection(Standish.SiteListing.Slides.content);
+        SiteListing.Slider.activateVideos();
 
-      dfd.resolve( "done" );
-      return dfd.promise();
+        dfd.resolve( "done" );
+        return dfd.promise();
+      });
     });
 
   };
@@ -173,8 +172,8 @@
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
   }
 
-  function parseEmbedData() {
-    var embed_data = $( '.field10' ).data( 'field10' );
+  function parseEmbedData(selector) {
+    var embed_data = $( '.field10' ).attr( 'data-field10' ).trim();
     if( typeof embed_data !== 'undefined' ) {
       video_embed_codes = embed_data.split( ' ' );
       return video_embed_codes;
@@ -220,8 +219,9 @@
     var dfd = $.Deferred();
 
     var AJAX = [],
-        video_embed_codes = parseEmbedData(),
+        video_embed_codes = parseEmbedData('.field10'),
         videoHello = [];
+    console.log(video_embed_codes);
 
     if (video_embed_codes) {
       $.each( video_embed_codes, function( i, embed_code ) {
@@ -229,7 +229,7 @@
           AJAX.push(getData( embed_code ));
         }
       });
-
+      console.log('ajax', AJAX);
       $.when.apply($, AJAX).done(function() {
         for ( var i = 0; i < AJAX.length; i++ ) {
           if ( arguments[i].length ) {
@@ -241,7 +241,7 @@
             pushHello(i, 'video', videoHello, arguments[0]);
           }
         }
-        SiteListing.Slides.content = videoHello;
+        Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.concat(videoHello);
         dfd.resolve( "hurray" );
       });
     }
@@ -539,7 +539,7 @@
         if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
           ////console.log( badgetext[badgeslug].title );
           //href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '"
-          $badges_list.append( '<a target="_blank" href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" data-toggle="popover" data-placement="right" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].title + '"><i></i><div class="hidden-sm hidden-md hidden-lg badge-text">' + badgetext[badgeslug].title + '</div></a>' );
+          $badges_list.append( '<a target="_blank" href="https://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" data-toggle="popover" data-placement="right" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].title + '"><i></i><div class="hidden-sm hidden-md hidden-lg badge-text">' + badgetext[badgeslug].title + '</div></a>' );
         }     
       });
 
