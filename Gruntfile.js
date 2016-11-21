@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['bower_components/bootstrap/dist/js/bootstrap.min.js', 'scripts/jquery.sidr.js', 'bower_components/bootbox.js/bootbox.js', 'bower_components/slick-carousel/slick/slick.js', 'scripts/instafeed.js', 'scripts/masonry.pkgd.min.js', 'scripts/scrollDepth.js', 'scripts/custom/standish.js', 'scripts/custom/standish.mobilemenu.js', 'scripts/custom/standish.sitelisting.js', 'scripts/custom/standish.homepage.js', 'scripts/custom/standish.templateswitcher.js', 'scripts/custom/hubspot-newsletter-sign-up-form.js', 'scripts/custom/template-slug.js', 'scripts/custom/hacks.js' ],
+        src: ['bower_components/bootstrap/dist/js/bootstrap.min.js', 'scripts/jquery.sidr.js', 'bower_components/bootbox.js/bootbox.js', 'bower_components/slick-carousel/slick/slick.js', 'scripts/instafeed.js', 'scripts/masonry.pkgd.min.js', 'scripts/scrollDepth.js', 'scripts/custom/standish.js', 'scripts/custom/standish.mobilemenu.js', 'scripts/custom/standish.sitelisting.js', 'scripts/custom/standish.homepage.js', 'scripts/custom/standish.sitelisting.js', 'scripts/custom/standish.promotions.js', 'scripts/custom/standish.templateswitcher.js', 'scripts/custom/hubspot-newsletter-sign-up-form.js', 'scripts/custom/template-slug.js', 'scripts/custom/hacks.js' ],
         dest: 'dist/js/app.js',
       },
     },

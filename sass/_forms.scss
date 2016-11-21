@@ -253,6 +253,13 @@ button[type=submit],
   text-decoration: none;
 }
 
+.btn-group-sm>.btn, .btn-sm {
+  padding: 5px 10px!important;
+  font-size: 12px!important;
+  line-height: 1.5!important;
+  border-radius: 3px!important;
+}
+
 a.btn, a.button, .btn, button {
   &.standishgreen {
     @include button-styles($standishgreen, darken($standishgreen, 10%));
@@ -368,6 +375,19 @@ a.btn, a.button, .btn, button {
 button[type=submit].btn-lg, .btn.btn-lg {
   padding: 10px 16px;
   font-size: 105%;
+}
+
+.close:focus,
+.close:hover {
+    background: transparent;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    background-image: none;
+    filter: none;
+    -ms-filter: none;
+    text-decoration: none;
 }
 
 .btn-hello {

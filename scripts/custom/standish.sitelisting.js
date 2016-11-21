@@ -19,7 +19,6 @@
     Standish.SiteListing.NewSlider.addRegImagesToSlideshow().done(function() {
       Standish.SiteListing.NewSlider.addVideoImagesToSlideshow().done(function() {
         // Do all the templating now that my object is ready
-        console.log(Standish.SiteListing.Slides.content);
 
         SiteListing.Slider.activateSlickTemplating();
         SiteListing.Slider.activateFilters();
@@ -173,12 +172,17 @@
   }
 
   function parseEmbedData(selector) {
-    var embed_data = $( '.field10' ).attr( 'data-field10' ).trim();
+    var embed_data = $( '.field10' ).attr( 'data-field10' );
+
     if( typeof embed_data !== 'undefined' ) {
+      embed_data = embed_data.trim();
       video_embed_codes = embed_data.split( ' ' );
       return video_embed_codes;
     }
-    return false;
+    else {
+      $('.nav-filters > label:nth-of-type(2)').css('display', 'none');
+      return false;
+    }
   }
   /* End -- Video Utility Functions */
 

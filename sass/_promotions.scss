@@ -1,4 +1,111 @@
 
+.black-friday {
+  background-color: black;
+  background-image: none;
+}
+
+.cyber-week-promo {
+  .modal-header {
+    border-bottom: 0 none;
+
+    .close {
+      color: #ffa07a;
+      opacity: 1;
+    }
+  }
+  .modal-content {
+    background-size: cover!important;;
+
+    @media only screen and (min-width : $medium) {
+      height: 520px;
+      width: 519px;
+      margin: 0 auto;
+    }
+    .copy-n-paste {
+      padding: 20px;
+      border: 3px dashed #fff;
+      width: 14em;
+      margin: 3em auto 0;
+      &>span {
+        cursor: pointer;
+        font-size: 1.8em;
+        color: $primary-color;
+        font-weight: 100;
+        letter-spacing: .2em;
+      }
+    }
+    #offer-code {
+      text-align: center;
+      padding: 3em 1em 3em !important;
+      @media only screen and (min-width : $medium) {
+        padding: 6em 5em 3em !important;
+      }
+
+    }
+    h2 {
+      margin-top:1em;
+      font-size: 1.5em;
+      @media only screen and (min-width : $medium) {
+        font-size: 1.78rem;
+      }
+    }
+
+    h1, h2, h3, p {
+      font-family: "PT Sans", Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: #ffa07a;
+    }
+    #promotion-form-wrapper {
+      display: inline-block;
+      width: 100% !important;
+      margin-top: 2em;
+      label:first-of-type {
+        display: none;
+      }
+      .hs_email {
+        @media only screen and (min-width : $medium) {
+          width: 69%;
+        }
+        width: 100%;
+
+        .input {
+          padding: 0 15px;
+
+          input.hs-input {
+            width: 100%;
+            line-height: 2.8em;
+            border-radius: 0;
+          }
+        }
+      }
+      .hs_submit {
+        @media only screen and (min-width : $medium) {
+          width: 30%;
+        }
+        width: 100%;
+        .actions {
+          padding: 0 15px;
+          @media only screen and (min-width : $medium) {
+            padding: 0;
+          }
+
+          input {
+            border-radius: 2px;
+            border: 1px solid #ffa07a;
+            width: 100%;
+          }
+        }
+      }
+      .hs_email, .hs_submit {
+        float: left;
+      }
+    }
+    
+
+  }
+}
+
+
 /* Made in USA promotion */
 .cat span.made-usa {
   left: -61px;
