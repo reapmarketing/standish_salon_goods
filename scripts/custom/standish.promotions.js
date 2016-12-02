@@ -93,7 +93,6 @@
       });
       
       var emailVal = validateEmail(formData.email);
-      console.log(emailVal);
       if (emailVal) {
         submitToHubSpot(formData);  
         $('#cyber-week-modal').modal('hide');
