@@ -53,7 +53,7 @@
 
   $(function() {
 
-    Promotions.CyberWeek.init();
+    // Promotions.CyberWeek.init();
 
     // Send form data to HubSpot from the client.
     function submitToHubSpot(data) {
