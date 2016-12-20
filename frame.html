@@ -434,7 +434,20 @@
     <div class="container-fluid bottom-container newsletter-signup">
       <div class="col-xs-12">
         <h3 class="col-md-6 col-sm-6">Get Deals Straight to Your Inbox!</h3>
-        <div class="col-md-6 col-sm-6" id="newsletter-target"></div>
+        <div class="col-md-6 col-sm-6" id="newsletter-target"> 
+          <!--[if lte IE 8]>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              css: '',
+              submitButtonClass: 'button',
+              portalId: '239485',
+              formId: '934570fd-43b6-4393-b73a-43cc4bcaea41'
+            });
+          </script>
+        </div>
       </div>
     </div>
     <div class="container-fluid footer-content padd-top padd-bottom-10">
@@ -721,23 +734,6 @@
       formId: '6fdb06ec-7a4f-4b9b-9b13-738e5aff1344'
     });
   </script>
-  <script>
-  /*
-    hbspt.forms.create({
-      portalId: '239485',
-      target: '#promotion-form-wrapper',
-      formId: 'd92007ab-e91e-4715-a249-a66f8eda8cb5',
-      css: '',
-      onFormSubmit: function(e) {
-        e.preventDefault();
-        $('#cyber-week-modal-thanks').modal({
-          keyboard: false
-        });
-        $('#cyber-week-modal').modal('hide')
-      }
-    });*/
-  </script>
-
 
 
 <!-- Actual form that gets submitted to HubSpot -->
