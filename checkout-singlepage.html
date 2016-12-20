@@ -710,24 +710,6 @@
 					</div>
 					<!--END: checkoutByAmazon--> 
 				
-					<!--START: PPEXPRESS-->
-					<div class="ppExpress col-md-12">
-						
-						<div class="ppe-radio form-group">
-							<div class="col-md-1 col-sm-1 col-xs-2 padd-top">
-								<input name="payment" id="online-[id]-ppe" onclick="javascript:checkoutSwitch(true);window.location.href='paypal_express.asp?ch=0';" type="radio" value="online-[id]" />
-							</div>
-							<div class="ppe-logo col-md-11 col-sm-11 col-xs-10">
-								<h6>[payment_description]</h6>
-								<a href="javascript:document.getElementById('online-[id]-ppe').click();">
-									<img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" />
-								</a>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<!--END: PPEXPRESS--> 
-				
 					<!--START: PPCREDIT-->
 					<div class="ppExpress col-md-12">
 						<h4>[payment_description]</h4>
@@ -1154,6 +1136,24 @@
 						</div>
 					</div>
 					<!--END: CCGATEWAY-->
+
+					<!--START: PPEXPRESS-->
+					<div class="ppExpress col-md-12">
+						
+						<div class="ppe-radio form-group">
+							<div class="col-md-1 col-sm-1 col-xs-2 padd-top">
+								<input name="payment" id="online-[id]-ppe" onclick="javascript:checkoutSwitch(true);window.location.href='paypal_express.asp?ch=0';" type="radio" value="online-[id]" />
+							</div>
+							<div class="ppe-logo col-md-11 col-sm-11 col-xs-10">
+								<h6>[payment_description]</h6>
+								<a href="javascript:document.getElementById('online-[id]-ppe').click();">
+									<img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" />
+								</a>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<!--END: PPEXPRESS--> 
 
 					<!--START: AUTHNETCIMBLOCK-->
 					<div class="authneticIMBlock col-md-12">
