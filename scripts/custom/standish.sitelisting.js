@@ -5,145 +5,261 @@
   /* main slider then add wistia and instagram ~~ */
   SiteListing.Slider = SiteListing.Slider || {};
 
-  SiteListing.SlideshowImages = SiteListing.SlideshowImages || {};
+  /* My new slider wooooo */
+  SiteListing.NewSlider = SiteListing.NewSlider || {};
+
+  SiteListing.Slides = SiteListing.Slides || {};
+  SiteListing.Slides.content = SiteListing.Slides.content || [];
+
 
   SiteListing.Slider.init = function() {
-    $('#prime-content').imagesLoaded( function() {
-      if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
-        SiteListing.Slider.activateSlideShow();
-        SiteListing.Slider.addVideoToSlider();
-        SiteListing.Slider.addInstagramToSlider();
+    var dfd = $.Deferred();
+    // Promises for each function ensure that everything has loaded.
+    // Add videos then images  
+    Standish.SiteListing.NewSlider.addRegImagesToSlideshow().done(function() {
+      Standish.SiteListing.NewSlider.addVideoImagesToSlideshow().done(function() {
+        // Do all the templating now that my object is ready
+
+        SiteListing.Slider.activateSlickTemplating();
+        SiteListing.Slider.activateFilters();
 
         $('.main-slider').show();
-        $('.sub-slider').show();
+
         $('#loadingDiv').hide();
+
+        $('.sub-slider').show();
+        $('.nav-filters').show();
+
+        addVideosToContentSection(Standish.SiteListing.Slides.content);
+        SiteListing.Slider.activateVideos();
+
+        dfd.resolve( "done" );
+        return dfd.promise();
+      });
+    });
+
+  };
+
+  SiteListing.Slider.activateVideos = function() {
+    $('.video_popup').on( 'click', function( e ) {
+      // e.preventDefault();
+      var videoID = $(this).data('video');
+
+      /* Go through the global window object
+      and check to see if its there */ 
+      var videoObj = Standish.SiteListing.Slides.content.filter(function(value) {
+        if (value.videoID === videoID) {
+          return value;
+        }
+      });
+
+      if (videoObj.length > 0) {
+        vex.open({
+          content: videoObj[0].videoHTML,
+          contentCSS: { 'padding': '0', 'width': '960px' }
+        });
       }
     });
   };
-  SiteListing.Slider.activateSlideShow = function() {
 
-    // IMPORTANT Slick 'initialized' needs to be binded before slick is called on the element
-    $('.sub-slider').on('init', function(event, slick) {
-      var mainSlides = [], desHeight = $('#listing_main_image_link img').height();
+  function addVideosToContentSection(slides) {
 
-      $(slick.$slides).each(function(i,v) {
+    slides.filter(function(value) {
+      if (value.type === "video") {
+        //console.log(slide);
+        var video_markup_main = '<div class="col-md-4 col-sm-6"><a class="video_popup" data-video="'+value.videoID+'" data-type="'+value.type+'" data-media-source="'+value.source+'">';
+        video_markup_main += '<i class="fa fa-play play-button" style="font-size: 4em;position: absolute;text-decoration: none;"></i>';
+        video_markup_main +=  '<img itemprop="image" src="'+ value.image +'" align="middle" id="large" alt="'+ value.title +'" width="100%" data-href="'+ value.thumbnail +'" />';
+        video_markup_main += '</a></div>';
 
-        var imgHref = $(v).attr('data-href'),
-            origImgLoaded = $('.main-slider').find('img:first-of-type').attr('data-href');
+        $('#product-videos-header .details-video').append(video_markup_main);
+      }
+    });
+  }
 
-        if (typeof imgHref !== 'undefined' && imgHref !== origImgLoaded) {
-          var slideElement = '<a class="" id=""><img itemprop="image" src="thumbnail.asp?file='+imgHref+'&maxx='+$('.main-slider').width()+'&maxy=0" id="large" alt="" style="max-height: 375px; text-align: center;"/></a>';
-          $('.main-slider').slick('slickAdd', slideElement);
+  SiteListing.Slider.activateFilters = function() {
+    if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
+      Standish.SiteListing.filtered = false;
+      Standish.SiteListing.currentFiltered = '';
+
+      $('.show-all').on('click', function(e) {
+        e.preventDefault();
+        $('.filterProductImg').prop('checked', false);
+        $('.sub-slider').slick('slickUnfilter');
+      });
+
+      $('.filterProductImg').on('change', function(){
+
+        $('.filterProductImg').not(this).prop('checked', false);
+
+        var filterName = $(this).data('filter-media');
+        if ( Standish.SiteListing.filtered === false || Standish.SiteListing.currentFiltered !== filterName ) {
+          $('.sub-slider').slick('slickUnfilter');
+
+          $('.sub-slider').slick('slickFilter', '[data-media-source="'+filterName+'"]');
+
+          Standish.SiteListing.currentFiltered = filterName;
+          Standish.SiteListing.filtered = true;
+        } else {
+          $('.sub-slider').slick('slickUnfilter');
+          // $(this).text('Filter Slides');
+          Standish.SiteListing.filtered = false;
         }
       });
-    });
-
-    $('.main-slider').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      fade: true,
-      centerMode: false,
-      arrows: false,
-      asNavFor: '.sub-slider'
-    });
-    $('.sub-slider').slick({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      dots: false,
-      arrows: false,
-      variableWidth: true,
-      centerMode: false,
-      asNavFor: '.main-slider',
-      // prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev" style="background: white!important;">Previous</button>',
-      //nextArrow: '<button type="button" class="fa fa-chevron-right slick-next" style="background: white!important;">Next</button>',
-      focusOnSelect: true
-    });
-  };
-
-
-  SiteListing.Slider.addRegImagesToSlideshow = function() {
-
-  };
-
-
-  SiteListing.Slider.addVideoToSlider = function() {
-    var video_embed_codes = '';
-
-    function getData(embed_code) {
-      var baseUrl = "https://fast.wistia.com/oembed/?url=";
-      var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
-      return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
     }
-    var embed_data = $( '.field10' ).data( 'field10' );
+  };
+
+  SiteListing.Slider.activateSlickTemplating = function() {
+    if (typeof $.fn.slick === "function" && $('.template').attr('data-template')) {
+      var mainVidTpl = function(slide) {
+        var video_markup_main = '<a class="video_popup" data-video="'+slide.videoID+'" data-type="'+slide.type+'" data-media-source="'+slide.source+'">';
+        video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
+        video_markup_main +=  '<img itemprop="image" src="'+ slide.image +'" align="middle" id="large" alt="'+ slide.title +'" width="100%" data-href="'+ slide.thumbnail +'" />';
+        video_markup_main += '</a>';
+        return video_markup_main;
+      }, navVidTpl = function(slide) {
+        /* Add videos to sub slick slider */
+        var video_markup_sub = '<a data-caption="'+ slide.title +'" data-video="'+slide.videoID+'" data-media-source="'+slide.source+'"><i class="fa fa-play" aria-hidden="true"></i>';
+        video_markup_sub +=  '<img src="'+ slide.thumbnail +'" alt="" />';
+        video_markup_sub += '</a>';
+        return video_markup_sub;
+      }, mainNatTpl = function(slide) {
+        var markup_main = '<a data-caption="'+ slide.title +'" data-media-source="'+slide.source+'"><img itemprop="image" src="'+ slide.image +'" id="large" alt="'+ slide.title +'" style="max-height: 375px; text-align: center;"/></a>';
+        return markup_main;
+      }, navNatTpl = function(slide) {
+        /* Add videos to sub slick slider */
+        var markup_sub = '<a data-caption="'+ slide.title +'" data-video="'+slide.videoID+'" data-media-source="'+slide.source+'"><i class="fa fa-camera" aria-hidden="true"></i>';
+        markup_sub +=  '<img src="'+ slide.thumbnail +'" alt="" />';
+        markup_sub += '</a>';
+        return markup_sub;
+      };
+      $(Standish.SiteListing.Slides.content).each(function(i,v) {
+        if ( v.source == "wistia" ) {
+          $('.main-slider').append(mainVidTpl(v));
+          $('.sub-slider').append(navVidTpl(v));
+        }
+        if ( v.source == "3DCart" ) {
+          $('.main-slider').append(mainNatTpl(v));
+          $('.sub-slider').append(navNatTpl(v));
+        }
+      });
+      $('.main-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        centerMode: false,
+        arrows: false,
+        asNavFor: '.sub-slider'
+      });
+      $('.sub-slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        variableWidth: true,
+        centerMode: false,
+        asNavFor: '.main-slider',
+        focusOnSelect: true
+      });
+    }
+  };
+
+  /* Video Utility Functions */
+  function getData(embed_code) {
+    var baseUrl = "https://fast.wistia.com/oembed/?url=";
+    var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
+    return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
+  }
+
+  function parseEmbedData(selector) {
+    var embed_data = $( '.field10' ).attr( 'data-field10' );
 
     if( typeof embed_data !== 'undefined' ) {
+      embed_data = embed_data.trim();
       video_embed_codes = embed_data.split( ' ' );
+      return video_embed_codes;
     }
+    else {
+      $('.nav-filters > label:nth-of-type(2)').css('display', 'none');
+      return false;
+    }
+  }
+  /* End -- Video Utility Functions */
 
-    /* ~~ Variable Declaration ~~ */
-    var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml;
+  function pushHello(index, type, pushedObj, pushObj) {
+    var source = (type == "video") ? 'wistia' : 'instagram';
 
-    if( video_embed_codes ) {
+    pushedObj.push(
+      {
+        title: pushObj.title,
+        type: type,
+        videoID: video_embed_codes[index],
+        videoHTML: pushObj.html,
+        image: pushObj.thumbnail_url,
+        thumbnail: pushObj.thumbnail_url + '&image_crop_resized=75x75',
+        source: source
+      }
+    );
+  }
 
-      $.each( video_embed_codes, function( i, embed_code ) {
-        if (embed_code !== "") {
-          AJAX.push( getData( embed_code ) );
-        }
-      });
-
-      $.when.apply($, AJAX).done(function(){
-
-        for(var i = 0; i < AJAX.length; i++){
-            
-          if( arguments[i].length ) {
-            video_data[video_embed_codes[i]] = arguments[i][0];
-          } else {
-            video_data[video_embed_codes[i]] = arguments[0];
-          }
-        }
-        // console.log(video_data);
-        $.each( video_data, function( i, video ) {
-          /* Add videos to sub slick slider */
-          if (typeof video !== 'undefined') {
-            video_markup_main = '';
-            video_markup_main += '<a class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
-            video_markup_main += '<i class="fa fa-play play-button" style="font-size: 7em;position: absolute;text-decoration: none;"></i>';
-            video_markup_main +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" id="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
-            video_markup_main += '</a>';
-
-            $('.main-slider').slick('slickAdd', video_markup_main).slick('setPosition');
-
-            /* Add videos to sub slick slider */
-            video_markup_sub = '';
-            video_markup_sub += '<a data-caption="'+ video.title +'" rel="thumb-id:listing_main_image_link">';
-            video_markup_sub +=  '<img src="'+ video.thumbnail_url + '&' + 'image_crop_resized=75x75" alt="" />';
-            video_markup_sub += '</a>';
-
-            $('.sub-slider').slick('slickAdd', video_markup_sub).slick('setPosition');
-
-            /* Add videos to page*/
-            video_markup_product_page = '';
-            video_markup_product_page += '<div class="padd-top col-md-4 col-sm-4"><a href="#" class="video_popup" data-video="'+ i +'" id="listing_main_image_link">';
-            video_markup_product_page += '<i class="fa fa-sm fa-play play-button" style="font-size: 3em;position: absolute;text-decoration: none;"></i>';
-            video_markup_product_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" id="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
-            video_markup_product_page += '</a></div>';
-
-            $('.product-videos').append(video_markup_product_page);
-          }
-        });
-
-        $('.video_popup').on( 'click', function( e ) {
-          e.preventDefault();
-          var video = $(this).data('video');
-          // console.log(video_data[video]);
-          vex.open({
-            content: video_data[video].html,
-            contentCSS: { 'padding': '0', 'width': '960px' }
-          });
-        });
-      });
+  SiteListing.NewSlider.addRegImagesToSlideshow = function() {
+    if (Standish.SiteListing.loadedImages.length > 0) {
+      var dfd = $.Deferred();
+      
+      if ( Standish.SiteListing.Slides.content instanceof Array ) {
+        Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.concat(Standish.SiteListing.loadedImages);
+          dfd.resolve( "Native Content Returned" );
+      }
+      else {
+        Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.push(Standish.SiteListing.loadedImages);
+          dfd.resolve( "Native Content Returned" );
+      }
+      return dfd.promise();
     }
   };
+
+  SiteListing.NewSlider.addVideoImagesToSlideshow = function() {
+    /* ~~ Variable Declaration ~~ */
+    var dfd = $.Deferred();
+
+    var AJAX = [],
+        video_embed_codes = parseEmbedData('.field10'),
+        videoHello = [];
+    // console.log(video_embed_codes);
+
+    if (video_embed_codes) {
+      $.each( video_embed_codes, function( i, embed_code ) {
+        if (embed_code !== "") {
+          AJAX.push(getData( embed_code ));
+        }
+      });
+      // console.log('ajax', AJAX);
+      $.when.apply($, AJAX).done(function() {
+        for ( var i = 0; i < AJAX.length; i++ ) {
+          if ( arguments[i].length ) {
+            // video_data[video_embed_codes[i]] = arguments[i][0];
+            pushHello(i, 'video', videoHello, arguments[i][0]);
+
+          } else {
+            // video_data[video_embed_codes[i]] = arguments[0];
+            pushHello(i, 'video', videoHello, arguments[0]);
+          }
+        }
+        Standish.SiteListing.Slides.content = Standish.SiteListing.Slides.content.concat(videoHello);
+        dfd.resolve( "hurray" );
+      });
+    }
+    else {
+      dfd.resolve( "No Video Codes" );
+    }
+    return dfd.promise();
+  };
+
+  /*
+  The code below will change
+  instagram integration has
+  yet to be decided upon.
+  */
   SiteListing.Slider.addInstagramToSlider = function() {
 
     // ---- FIELD 4: Instagram Hashtag ---- //
@@ -151,17 +267,19 @@
 
     if( typeof instagramHashtag !== 'undefined' ) {
       // var instaText = "<h6 style='text-align:center; text-transform: uppercase;'>TAG PHOTOS OF YOUR SALON WITH #"+instagramHashtag+" AND MENTION @STANDISHSTUFF TO SEE YOUR PHOTOS BELOW!</h6>";
-      // console.log( 'Instagram', instagramHashtag, instaText );
+      // //console.log( 'Instagram', instagramHashtag, instaText );
       // The limit parameter does not seem to work, this is an Instagram API issue. (not an issue with instafeed) I've implemented a bit of css to limit the display to 3 instead.
       var feed = new Instafeed({
         get: 'user',
         clientId: '950c733b1e9e4ceb9501cd339ae2edae',
         accessToken: '17236515.1677ed0.b21a263c14b04df69f2932b06ebf799f',
         userId: 17236515,
+        limit: 3,
+        filter: function(image) {
+          return image.tags.indexOf('standishcharlotte') > 0;
+        },
         mock: true,
-        limit: 50,
         success: function(data) {
-          // console.log(data);
           $(data.data).each(function(i, v) {
             var classname, dataVideo, instaHeight;
             /* Add conditions for instagram video! */
@@ -175,7 +293,7 @@
             }
             // Set the height of the main slide instagram photo
             instaHeight = $('#product-actions-wrapper').height();
-            // console.log(instaHeight);
+            // //console.log(instaHeight);
             /* Add instagram to main slick slider */
             var instagram_markup_main = '';
             instagram_markup_main += '<a class="'+classname+'" data-video-insta="'+ dataVideo +'" id="listing_main_image_link">';
@@ -198,7 +316,7 @@
 
   // -- ADD WISHLIST BUTTON FUNCTIONALITY -- //
   SiteListing.addToWishlist = function() {
-    $('#add-wishlist').on('click', function(e) {
+    $('.add-wishlist').on('click', function(e) {
       e.preventDefault();
 
       if (typeof username != 'undefined' && username !== "Guest") {
@@ -224,8 +342,8 @@
 
     var price = parseInt($('[data-prop="itemprice"]').text().replace('$','').replace(',','')),
         saleprice = parseInt($('[data-prop="saleprice"]').text().replace('$','').replace(',',''));
-    //console.log(price);
-    //console.log(saleprice);
+    ////console.log(price);
+    ////console.log(saleprice);
 
     if (typeof saleprice !== undefined && saleprice !== 0 && !isNaN(saleprice)) {
 
@@ -238,6 +356,55 @@
     }
     else {
       $('.saleprice').hide();
+    }
+  };
+
+  // ---- ADD PRODUCT BADGES ---- //
+  SiteListing.doBadgesSplatter = function() {
+    // ---- FIELD 8: BADGES ---- //
+    var splatter = $( '.field2' ).data( 'field2' );
+    var $splatter = $( '.splatter' );
+
+    console.log(splatter);
+
+    var sludgetext = {
+      'brand-new': {
+        'title': 'Brand New',
+        'class': 'brand-new'
+      },
+      'exclusive-item': {
+        'title': 'Exclusive Item',
+        'class': 'exclusive-item'
+      },
+      'extra-wide': {
+        'title': 'Extra Wide',
+        'class': 'extra-wide'
+      },
+      'limited-supply': {
+        'title': 'Limited Supply',
+        'class': 'limited-supply'
+      },
+      'top5-product': {
+        'title': 'Top 5 Product',
+        'class': 'top5-product'
+      },
+      'top-seller': {
+        'title': 'Top Seller',
+        'class': 'top-seller'
+      }
+    };
+
+    if( splatter ) {
+      splatter = splatter.split(/(\s+)/);
+      $.each( splatter, function( i, v ) {
+        var splatterslug = v.trim();
+        if( typeof( sludgetext[splatterslug] ) != 'undefined' ) {
+          $splatter.append( '<div class="' + sludgetext[splatterslug].class + '"></div>');
+        }     
+      });
+
+    } else {
+      $splatter.remove();
     }
   };
 
@@ -376,9 +543,9 @@
       $.each( badges, function( i, v ) {
         var badgeslug = v.trim();
         if( typeof( badgetext[badgeslug] ) != 'undefined' ) {
-          //console.log( badgetext[badgeslug].title );
+          ////console.log( badgetext[badgeslug].title );
           //href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '"
-          $badges_list.append( '<a target="_blank" href="http://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" data-toggle="popover" data-placement="right" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].title + '"><i></i><div class="hidden-sm hidden-md hidden-lg badge-text">' + badgetext[badgeslug].title + '</div></a>' );
+          $badges_list.append( '<a target="_blank" href="https://www.standishsalongoods.com/quality#' + badgetext[badgeslug].class + '" style="display:block;color:#696969;" data-toggle="popover" data-placement="right" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product badge-' + badgetext[badgeslug].class + '" title="' + badgetext[badgeslug].title + '"><i></i><div class="hidden-sm hidden-md hidden-lg badge-text">' + badgetext[badgeslug].title + '</div></a>' );
         }     
       });
 
@@ -554,7 +721,7 @@
     total_interest = Math.round( ( yearly_interest * term_years ) * 100 ) / 100;
     payment = ( Math.round( ( ( total_interest + price ) / ( term_years * 12 ) ) * 100 ) / 100 ).toFixed(2);
 
-    // console.log( "PRICE: ", price, yearly_interest, total_interest, payment );
+    // //console.log( "PRICE: ", price, yearly_interest, total_interest, payment );
     // Add Financing option link
     if( Number(price) > 1000 ) {
       $('#financing-add').removeClass('hidden');
@@ -563,3 +730,4 @@
   };
 
 })(window.Standish.SiteListing = window.Standish.SiteListing || {}, jQuery);
+

@@ -12,9 +12,9 @@
   };
 
   $(function() {
-    console.log('hello');
+    // console.log('hello');
 
-    Promotions.CyberWeek.init();
+    // Promotions.CyberWeek.init();
   });
 
 })(window.Standish.Promotions = window.Standish.Promotions || {}, jQuery);

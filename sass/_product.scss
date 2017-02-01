@@ -4,7 +4,9 @@ body.vex-open {
   overflow: initial!important;
 }
 
-
+.wistia_embed {
+  width: 100%;
+}
 .ge-free-shipping span, .badge-free-shipping em {
   background-position: 0 0;
 }
@@ -105,6 +107,9 @@ body.vex-open {
 }
 
 .splatter {
+  & > div {
+    display: inline-block;
+  }
   .brand-new {
    @include sprite($-brand-new-spl);
   }

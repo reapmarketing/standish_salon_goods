@@ -31,6 +31,7 @@
           // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
           Standish.SiteListing.addToWishlist();
+          Standish.SiteListing.doBadgesSplatter();
         }
       return;
       case 'listing_2':
@@ -53,6 +54,7 @@
           Standish.SiteListing.productDetailsFormat();
           // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
+          Standish.SiteListing.doBadgesSplatter();
         }
         hbspt.forms.create({ 
           portalId: '239485',
