@@ -930,23 +930,11 @@ body:not(.sidr-open) div#mobile-menu-modal {
   z-index: 1;
 }
 .tab-row-inner {
-  color: white;
-  font-size: 15px;
-  font-family: "PT Serif","Times New Roman",Times,serif;
-  margin: 0 0 0 10px;
-  padding: 15px;
-  background: #60437D;
-  display: inline-block;
-  position: relative;
-  float: left;
-  line-height: 19px;
-  vertical-align: bottom;
-  height: 75px;
   left: 0;
   z-index: 0;
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
-  width: 72%;
+  width: 92%;
   box-sizing: border-box;
 }
 .tab-row-inner-bottom {
@@ -961,7 +949,6 @@ body:not(.sidr-open) div#mobile-menu-modal {
   vertical-align: bottom;
   border-top-right-radius: 15px;
   right: 0;
-  box-sizing: border-box;
 }
 
 .tab-row-inner:before,
