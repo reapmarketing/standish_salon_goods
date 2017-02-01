@@ -40,7 +40,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="assets/templates/[template]/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 
-    <link rel="stylesheet" href="assets/templates/[template]/style/jquery.sidr.light.css">
+    <link rel="stylesheet" href="assets/templates/[template]/bower_components/sidr/dist/stylesheets/jquery.sidr.light.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -107,9 +107,13 @@ jQuery(function() {
 
     <!-- MINIFIED & UGLIFIED -->
     <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
-    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js"></script>
+    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js?cachebuster=7621873"></script>
     <!--  <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script> -->
-
+    <script type='text/javascript'>
+      if ( typeof $.fn.modal !== 'undefined' ) {
+        $.fn.bootstrapModal = $.fn.modal.noConflict();
+      }
+    </script>
 
   <link rel="stylesheet" href="/assets/templates/[template]/fb/fb.css" />
   <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/FusionbotAjax.js"></script>
@@ -153,7 +157,7 @@ jQuery(function() {
                        M25.9,26.3c-1.4,0-2.6-1.2-2.6-2.6c0-1.4,1.2-2.6,2.6-2.6c1.4,0,2.6,1.2,2.6,2.6C28.5,25.1,27.3,26.3,25.9,26.3z M31.1,13.2H24V7.9
                       h2.5c0.1,0,0.4,0.1,0.4,0.2l4,4c0.1,0.1,0.2,0.4,0.2,0.5V13.2z"/>
                   </svg> -->
-                   Up to $2500 off + 75% Off Shipping <i class="fa fa-usd fa-lg"></i><a style="margin-left:2.5rem;" href="http://standishsalongoods.com/standish-salon-equipment-sale?__hstc=125570901.9f34fd2d1106d038cd721ac0800bd14a.1446766758506.1448897028003.1448990054135.4&amp;__hssc=125570901.1.1448990054135&amp;__hsfp=2859420846" class="btn btn-default btn-x-light btn-sm uppercase design-text">See How</a></p>
+                   Up to $2500 off + Price Match <i class="fa fa-usd fa-lg"></i><a style="margin-left:2.5rem;" href="http://standishsalongoods.com/standish-salon-equipment-sale?__hstc=125570901.9f34fd2d1106d038cd721ac0800bd14a.1446766758506.1448897028003.1448990054135.4&amp;__hssc=125570901.1.1448990054135&amp;__hsfp=2859420846" class="btn btn-default btn-x-light btn-sm uppercase design-text">See How</a></p>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="col-md-12 col-sm-12 col-xs-12 text-right" style="margin-top:-14px;">
@@ -165,19 +169,11 @@ jQuery(function() {
         <div class="header center-block row">
             <div id="mobile-menu" class="hidden-md hidden-lg col-sm-12" data-spy="affix" data-offset-top="60" data-offset-bottom="200" style="">
               <div class="row">
-                <div class="site-branding col-sm-4 col-xs-6">
+                <div class="site-branding col-sm-12 col-xs-12">
                   <a href="/">
                     <h2 class="logo">Standish Salon Furniture</h2>
                   </a>
                 </div>
-
-                <div class="col-sm-8 col-xs-6">
-                  <div class="pull-right">
-                    <a class="inline" href="/view_cart.asp"><span class="hidden">[ITEMSINCART]</span><i class="fa fa-shopping-cart fa-2x"></i></a>
-                    <a class="inline toggle-navigation"><i class="fa fa-bars fa-2x"></i></a>
-                  </div>
-                </div>
-
               </div>
             </div>
             <div id="mobile-menu-json" class="hidden"></div>
@@ -566,10 +562,122 @@ jQuery(function() {
     dfe.click();
   </script>
 
-  <!-- begin olark code --><script data-cfasync="false" type="text/javascript">/*{literal}<![CDATA[*/
-  window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
-  /* custom configuration goes here (www.olark.com/documentation) */
-  olark.identify('6778-882-10-3773');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/6778-882-10-3773/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->
+  <div id="hannah-chat" class="hannah-chat fadeIn animated" href="#contact-hannah">
+    <div class="tab-row" style="">
+      <img src="">
+      <div class="tab-row-inner">
+        <img alt="Text team for answers" src="/assets/templates/[template]/images/ChatBox.png">
+      </div>
+    </div>
+  </div>
+
+  <div id="chat-modal-hannah" class="modal fade modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div id="modal-hannah-chat" class="modal-body">
+          <script src="//fast.wistia.com/embed/medias/kqigp4qizr.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_kqigp4qizr popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div>
+
+          <div id="modal-hannah-chat-inner">
+          </div>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+  <div id="mobile-menu-modal" class="hidden-lg hidden-md">
+    <div id="rainbow-hamburger" style="display:none;">
+      <a class="close-icon"><img src="/assets/templates/[template]/images/mobile-close.png"/></a>
+      <div id="call-us" class="hamburger-item row">
+        <a href="tel:+8882718434"> 
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-phone" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text">Call us at <br> (888)271-8434</span>
+          </div>
+        </a>
+      </div>
+      <div id="text-hannah" class="hamburger-item row">
+        <a href="sms:2143999198"> 
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-commenting" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text">Text Hannah <br> (214)399-9198</span>
+          </div>
+        </a>
+      </div>
+      <div id="email-us" class="hamburger-item row">
+        <a href="mailto:hello@stand.sh">
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text" style="vertical-align: -24px;">Email Us</span>
+          </div>
+        </a>
+      </div>
+      <div id="get-financing" class="hamburger-item row">
+        <a href="/salon-equipment-financing">
+          <div class="col-sm-4 col-xs-4">
+            <i class="fa fa-4x fa-usd" aria-hidden="true"></i>
+          </div> 
+          <div class="col-sm-8 col-xs-8">
+            <span class="hamburger-text" style="vertical-align: -24px;">Get Financing</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="fixed-bottom" class="fixed affix-bottom">
+      <ul class="fixed-bottom-menu">
+        <li>
+          <div class="wrapper-list-items">
+            <a class="standish-menu-open toggle-navigation" href="#">
+              <i class="fa fa-bars fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Menu</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a class="standish-contact" href="#">
+              <i class="fa fa-phone-square fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Contact</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/">
+              <i class="fa fa-home fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Home</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/dallas-salon-furniture-showroom">
+              <i class="fa fa-map-marker fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Location</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/view_cart.asp">
+              <i class="fa fa-shopping-cart fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Cart</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <!-- MOUSEFLOW HEATMAPS -->
   <script asnyc type="text/javascript">
