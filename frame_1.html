@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
   <head>
-  <title>[TITLE]</title>
+ <title>[TITLE]</title>
     <meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
     <!--Insert Meta tags at top -->
     [META]
     <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
 
     <!-- OPTIMIZELY and jQuery important -->
@@ -16,11 +16,10 @@
      <!-- utility scripts -->
     <script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
 
-
     <!-- OPTIMIZELY note:needs to stay in header in order to work properly -->
     <script src="//cdn.optimizely.com/js/2743921241.js"></script>
 
-    <!-- CSS -->
+    <!-- CSS -->  
     <style>
     /* Not sure what this is for... */
     html.wait{
@@ -33,23 +32,23 @@
 
     <link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
 
-
+    <link rel="stylesheet" href="assets/templates/[template]/bower_components/animate.css/animate.min.css">
+    
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="assets/templates/[template]/bower_components/bootstrap/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="assets/templates/[template]/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-
-    <link rel="stylesheet" href="assets/templates/[template]/style/jquery.sidr.light.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="assets/templates/[template]/bower_components/sidr/dist/stylesheets/jquery.sidr.light.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/d266c066de.js"></script>
     
-    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=89327498273" /> 
+    <!--<link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=89327498273" /> -->
+    
+    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.css?cachebuster=89327498273" />
 
-    <!-- <link rel="stylesheet" href="assets/templates/[template]/style/main.css" /> -->
-
-    <link rel="stylesheet" href="/assets/templates/[template]/fb/quicksearch.css" />
+    <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
 
     <!-- IE hacks -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -61,63 +60,62 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css"/>
     <link rel="stylesheet" href="/assets/templates/[template]/style/vex.css" />
     <link rel="stylesheet" href="/assets/templates/[template]/style/vex-theme-flat-attack.css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/style/animate.min.css" />
 
     <!--START: site scripts -->
     <!-- JS -->
-    <script asnyc type="text/javascript">
-      var account_greeting = '[account_greeting]';
-      var username = '[username]';
-      (function($) {
-        $(function() {
-          // Change Account link when user is logged in.
-          if ( username !== 'Guest' ) {
-            $('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');
-            $('.account-button.login').attr('href', '/logout.asp');
-          }
-        });
-      })(jQuery);
+    <script asnyc type="text/javascript">   
+      var account_greeting = '[account_greeting]';    
+      var username = '[username]';    
+      (function($) {    
+        $(function() {    
+          // Change Account link when user is logged in.    
+          if ( username !== 'Guest' ) {   
+            $('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');   
+            $('.account-button.login').attr('href', '/logout.asp');   
+          }   
+        });   
+      })(jQuery);   
     </script>
 
     <!-- schema.org site search optimization options -->
-    <script type="application/ld+json">{"@context": "http://schema.org","@type": "WebSite","url": "http://www.standishsalongoods.com","potentialAction": {"@type": "SearchAction","target": "http://www.standishsalongoods.com/search.asp?keyword={search_term_string}","query-input": "required name=search_term_string"}}</script>
+    <script type="application/ld+json">{"@context": "http://schema.org","@type": "WebSite","url": "https://www.standishsalongoods.com","potentialAction": {"@type": "SearchAction","target": "https://www.standishsalongoods.com/search.asp?keyword={search_term_string}","query-input": "required name=search_term_string"}}</script>
 
     <!-- Javascript Support -->
     <script asnyc type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
     <!-- <script asnyc type='text/javascript' src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> -->
-
+   
     <!-- Equal Heights -->
     <script asnyc type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
     <!-- Images loaded if needed -->
     <script asnyc src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <!--  fbquick search search the site -->
-<script>var myTop = 308;</script>
-    <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/sl.js"></script>
-<script type="text/javascript">
-jQuery(function() {
-  proto = ('https:' == document.location.protocol ? '1' : '0');
-  if(proto == "0")
-    jQuery('#fbsearchlight').searchlight('http://ss655.fusionbot.com/b/q?sn=162845571&e=jso&out=6&hl=1&ontd=2&ttlx=75');
-  else
-    jQuery('#fbsearchlight').searchlight('https://standishsalongoods.fusionbot.com/b/q?sn=162845571&e=jso&out=5&hl=1&ontd=2&ttlx=75');
-});
-</script>
+    <!--  quick search search the site -->
+    <script asnyc type="text/javascript" src="assets/templates/common/quicksearch/jquery.quicksearch.js"></script>
     <!-- Hubspot Form Script ~ necessary -->
     <script asnyc charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
 
+    <link rel="stylesheet" href="/assets/templates/[template]/fb/fb.css" />
 
-    <!-- MINIFIED & UGLIFIED -->
+    <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/FusionbotAjax.js"></script>
+    <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/fb.js"></script>
+
+    <!-- MINIFIED & UGLIFIED --> 
     <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
-    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js"></script>
-    <!--  <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script> -->
-
-
-  <link rel="stylesheet" href="/assets/templates/[template]/fb/fb.css" />
-  <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/FusionbotAjax.js"></script>
-  <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/fb.js"></script>
-
+    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js?cachebuster=8932456273"></script>
+    <!--<script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script>-->
+    <script type='text/javascript'>
+      if ( typeof $.fn.modal !== 'undefined' ) {
+        $.fn.bootstrapModal = $.fn.modal.noConflict();
+      }
+    </script>
 
   </head>
   <body>
+  <script type='text/javascript'>
+    if ( typeof $.fn.bootstrapModal !== "undefined" ) {
+      $.fn.modal = $.fn.bootstrapModal.noConflict();
+    }
+  </script>
   <script type="text/javascript">
   // Optimizely Universal Analytics Integration Code
   window.optimizely = window.optimizely || [];
@@ -566,10 +564,47 @@ jQuery(function() {
     dfe.click();
   </script>
 
-  <!-- begin olark code --><script data-cfasync="false" type="text/javascript">/*{literal}<![CDATA[*/
-  window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
-  /* custom configuration goes here (www.olark.com/documentation) */
-  olark.identify('6778-882-10-3773');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/6778-882-10-3773/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->
+    </div>
+
+
+  <div id="hannah-chat" class="hannah-chat fadeIn animated" href="#contact-hannah">
+    <div class="tab-row" style="">
+      <img src="">
+      <div class="tab-row-inner">
+        <img alt="Text team for answers" src="/assets/templates/[template]/images/ChatBox.png">
+      </div>
+    </div>
+  </div>
+
+  <div id="chat-modal-hannah" class="modal fade modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div id="modal-hannah-chat" class="modal-body">
+          <script src="//fast.wistia.com/embed/medias/kqigp4qizr.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_kqigp4qizr popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div>
+
+          <div id="modal-hannah-chat-inner">
+          </div>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  <script>
+    hbspt.forms.create({ 
+      portalId: '239485',
+      target: '#modal-hannah-chat-inner',
+      css: '',
+      formId: '6fdb06ec-7a4f-4b9b-9b13-738e5aff1344'
+    });
+  </script>
 
   <!-- MOUSEFLOW HEATMAPS -->
   <script asnyc type="text/javascript">
