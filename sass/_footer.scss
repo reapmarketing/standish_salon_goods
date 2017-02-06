@@ -18,8 +18,8 @@
     float: left;
   }
   .hs_email {
-    label {
-      display: none;
+    .hs-error-msgs li label {
+      color: red;
     }
     input {
       width: 100%;

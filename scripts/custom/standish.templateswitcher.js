@@ -18,7 +18,9 @@
       case 'listing_1':
         // Activate Standish.SiteListing
         if (Standish.SiteListing) {
-          Standish.SiteListing.Slider.init();
+          $('#loadingDiv').height($('.product_left').height());
+
+          var sitelisting = Standish.SiteListing.Slider.init();
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
           Standish.SiteListing.doBadges();
@@ -26,15 +28,22 @@
           Standish.SiteListing.getBrand();
           Standish.SiteListing.getAvailability();
           Standish.SiteListing.productDetailsFormat();
-          Standish.SiteListing.doBadgesSplatter();
           // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
           Standish.SiteListing.addToWishlist();
+          Standish.SiteListing.doBadgesSplatter();
         }
       return;
       case 'listing_2':
         // Activate Standish.SiteListing
         if (Standish.SiteListing) {
+          $('#loadingDiv').height($('.product_left').height());
+
+          var sitelisting2 = Standish.SiteListing.Slider.init().then(function() {
+            $('.main-slider').show();
+            $('.sub-slider').show();
+            $('#loadingDiv').hide();
+          });
           Standish.SiteListing.addToWishlist();
           Standish.SiteListing.financing();
           Standish.SiteListing.salePrice();
@@ -45,6 +54,7 @@
           Standish.SiteListing.productDetailsFormat();
           // Standish.SiteListing.updatePricing();
           Standish.SiteListing.changeColorsSlides();
+          Standish.SiteListing.doBadgesSplatter();
         }
         hbspt.forms.create({ 
           portalId: '239485',
@@ -73,5 +83,6 @@
       return;
     }
   };
+  
 
 })(jQuery);

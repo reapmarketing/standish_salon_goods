@@ -225,7 +225,7 @@
     var AJAX = [],
         video_embed_codes = parseEmbedData('.field10'),
         videoHello = [];
-    console.log(video_embed_codes);
+    // console.log(video_embed_codes);
 
     if (video_embed_codes) {
       $.each( video_embed_codes, function( i, embed_code ) {
@@ -233,7 +233,7 @@
           AJAX.push(getData( embed_code ));
         }
       });
-      console.log('ajax', AJAX);
+      // console.log('ajax', AJAX);
       $.when.apply($, AJAX).done(function() {
         for ( var i = 0; i < AJAX.length; i++ ) {
           if ( arguments[i].length ) {
@@ -364,6 +364,8 @@
     // ---- FIELD 8: BADGES ---- //
     var splatter = $( '.field2' ).data( 'field2' );
     var $splatter = $( '.splatter' );
+
+    console.log(splatter);
 
     var sludgetext = {
       'brand-new': {
@@ -728,3 +730,4 @@
   };
 
 })(window.Standish.SiteListing = window.Standish.SiteListing || {}, jQuery);
+
