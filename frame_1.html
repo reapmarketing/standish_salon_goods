@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
   <head>
-  <title>[TITLE]</title>
+ <title>[TITLE]</title>
     <meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
     <!--Insert Meta tags at top -->
     [META]
     <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
 
     <!-- OPTIMIZELY and jQuery important -->
@@ -16,11 +16,10 @@
      <!-- utility scripts -->
     <script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
 
-
     <!-- OPTIMIZELY note:needs to stay in header in order to work properly -->
     <script src="//cdn.optimizely.com/js/2743921241.js"></script>
 
-    <!-- CSS -->
+    <!-- CSS -->  
     <style>
     /* Not sure what this is for... */
     html.wait{
@@ -33,23 +32,23 @@
 
     <link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
 
-
+    <link rel="stylesheet" href="assets/templates/[template]/bower_components/animate.css/animate.min.css">
+    
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="assets/templates/[template]/bower_components/bootstrap/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="assets/templates/[template]/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/templates/[template]/bower_components/sidr/dist/stylesheets/jquery.sidr.light.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/d266c066de.js"></script>
     
-    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=8932asd7498273" /> 
+    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=8932asd74953ad8273" /> 
 
     <!-- <link rel="stylesheet" href="assets/templates/[template]/style/main.css" /> -->
 
-    <link rel="stylesheet" href="/assets/templates/[template]/fb/quicksearch.css" />
+    <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
 
     <!-- IE hacks -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -61,67 +60,62 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css"/>
     <link rel="stylesheet" href="/assets/templates/[template]/style/vex.css" />
     <link rel="stylesheet" href="/assets/templates/[template]/style/vex-theme-flat-attack.css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/style/animate.min.css" />
 
     <!--START: site scripts -->
     <!-- JS -->
-    <script asnyc type="text/javascript">
-      var account_greeting = '[account_greeting]';
-      var username = '[username]';
-      (function($) {
-        $(function() {
-          // Change Account link when user is logged in.
-          if ( username !== 'Guest' ) {
-            $('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');
-            $('.account-button.login').attr('href', '/logout.asp');
-          }
-        });
-      })(jQuery);
+    <script asnyc type="text/javascript">   
+      var account_greeting = '[account_greeting]';    
+      var username = '[username]';    
+      (function($) {    
+        $(function() {    
+          // Change Account link when user is logged in.    
+          if ( username !== 'Guest' ) {   
+            $('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');   
+            $('.account-button.login').attr('href', '/logout.asp');   
+          }   
+        });   
+      })(jQuery);   
     </script>
 
     <!-- schema.org site search optimization options -->
-    <script type="application/ld+json">{"@context": "http://schema.org","@type": "WebSite","url": "http://www.standishsalongoods.com","potentialAction": {"@type": "SearchAction","target": "http://www.standishsalongoods.com/search.asp?keyword={search_term_string}","query-input": "required name=search_term_string"}}</script>
+    <script type="application/ld+json">{"@context": "http://schema.org","@type": "WebSite","url": "https://www.standishsalongoods.com","potentialAction": {"@type": "SearchAction","target": "https://www.standishsalongoods.com/search.asp?keyword={search_term_string}","query-input": "required name=search_term_string"}}</script>
 
     <!-- Javascript Support -->
     <script asnyc type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
     <!-- <script asnyc type='text/javascript' src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> -->
-
+   
     <!-- Equal Heights -->
     <script asnyc type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
     <!-- Images loaded if needed -->
     <script asnyc src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <!--  fbquick search search the site -->
-<script>var myTop = 308;</script>
-    <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/sl.js"></script>
-<script type="text/javascript">
-jQuery(function() {
-  proto = ('https:' == document.location.protocol ? '1' : '0');
-  if(proto == "0")
-    jQuery('#fbsearchlight').searchlight('http://ss655.fusionbot.com/b/q?sn=162845571&e=jso&out=6&hl=1&ontd=2&ttlx=75');
-  else
-    jQuery('#fbsearchlight').searchlight('https://standishsalongoods.fusionbot.com/b/q?sn=162845571&e=jso&out=5&hl=1&ontd=2&ttlx=75');
-});
-</script>
+    <!--  quick search search the site -->
+    <script asnyc type="text/javascript" src="assets/templates/common/quicksearch/jquery.quicksearch.js"></script>
     <!-- Hubspot Form Script ~ necessary -->
     <script asnyc charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
 
+    <link rel="stylesheet" href="/assets/templates/[template]/fb/fb.css" />
 
-    <!-- MINIFIED & UGLIFIED -->
+    <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/FusionbotAjax.js"></script>
+    <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/fb.js"></script>
+
+    <!-- MINIFIED & UGLIFIED --> 
     <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
-    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js?cachebuster=76asds21873"></script>
-    <!--  <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script> -->
+    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js?cachebuster=8932sad45633ead273"></script>
+    <!--<script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script>-->
     <script type='text/javascript'>
       if ( typeof $.fn.modal !== 'undefined' ) {
         $.fn.bootstrapModal = $.fn.modal.noConflict();
       }
     </script>
 
-  <link rel="stylesheet" href="/assets/templates/[template]/fb/fb.css" />
-  <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/FusionbotAjax.js"></script>
-  <script asnyc type="text/javascript" src="/assets/templates/[template]/fb/fb.js"></script>
-
-
   </head>
   <body>
+  <script type='text/javascript'>
+    if ( typeof $.fn.bootstrapModal !== "undefined" ) {
+      $.fn.modal = $.fn.bootstrapModal.noConflict();
+    }
+  </script>
   <script type="text/javascript">
   // Optimizely Universal Analytics Integration Code
   window.optimizely = window.optimizely || [];
@@ -431,20 +425,19 @@ jQuery(function() {
   <footer>
     <div class="clearfix"></div>
     <div class="container">
-      <div class="col-md-12 center-block">
+      <div class="col-md-10 col-md-offset-1">
         <div id="homepage-badges-list" class="row hidden-xs">
           <h3 class="coral-text col-md-12">Why Buy Salon and Spa Equipment from Standish?</h3>
-          <a class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
+          <a class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-returns" title="No Hassle Return Policy"><i></i><div class="badge-text"><small>No Hassle Return Policy</small></div></a>
         </div>
       </div>
     </div>
@@ -588,6 +581,18 @@ jQuery(function() {
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
+  <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  <script>
+    hbspt.forms.create({ 
+      portalId: '239485',
+      target: '#modal-hannah-chat-inner',
+      css: '',
+      formId: '6fdb06ec-7a4f-4b9b-9b13-738e5aff1344'
+    });
+  </script>
 
   <div id="mobile-menu-modal" class="hidden-lg hidden-md">
     <div id="rainbow-hamburger" style="display:none;">
@@ -678,6 +683,22 @@ jQuery(function() {
       </ul>
     </div>
   </div>
+
+  <div id="text-deals" class="modal fade modal text-deals" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background:url('/assets/templates/[template]/images/savingsPromo.jpg') no-repeat;background-size: contain;">
+        <div id="offer-code">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <img src="/assets/templates/[template]/images/savingsPromo.jpg">
+          <div class="savings-promo-text-overlay">
+            <h1 class="hidden">Want To Save Over $500</h1>
+            <p> Text <strong>"DEALS"</strong> to <strong>214.643.8488</strong> <br>for our current sales and monthly promotional offers. </p>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 
   <!-- MOUSEFLOW HEATMAPS -->
   <script asnyc type="text/javascript">
