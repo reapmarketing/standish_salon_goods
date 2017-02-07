@@ -250,6 +250,11 @@
       }
 
     };
+
+        // Quick Dom Update
+    if ( $('#slickShow').length ) {
+      Standish.ActivateSliderNotFancy('#slickShow');
+    }
   
   });
 

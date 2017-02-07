@@ -33,7 +33,7 @@ body.vex-open {
 }
 
 .tooltip-badges .badge-made-usa i, .tooltip-badges .badge-made-usa:hover i {
-  background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
+  background: url("/assets/templates/#{$template}/images/made-usa-badge.png");
   background-repeat: no-repeat;
   background-size: 100%;
 } 
@@ -166,7 +166,7 @@ body.vex-open {
   padding-top: 10px;
 }
 .badge-made-usa i, .badge-made-usa span, .badge-made-usa em {
-  background: url("/assets/templates/standish-responsive/images/made-usa-badge.png");
+  background: url("/assets/templates/#{$template}/images/made-usa-badge.png");
   background-repeat: no-repeat;
   background-size: 100%;
   height: 65px;
@@ -767,7 +767,7 @@ fieldset {
 .cornersprite {
   display: none;
   background-repeat: no-repeat;
-  background-image: url("/assets/templates/standish-responsive/images/CornerTag.svg");
+  background-image: url("/assets/templates/#{$template}/images/CornerTag.svg");
   width: 75px;
   height: 75px;
   background-position: -125px -23px;
@@ -779,7 +779,7 @@ fieldset {
   background-position: 0 0;
 }
 .tweet_button {
-  background: url("/assets/templates/standish-responsive/images/tweet-sprite.png");
+  background: url("/assets/templates/#{$template}/images/tweet-sprite.png");
   width: 56px;
   height: 21px;
   display: inline-block;
