@@ -7,7 +7,7 @@ $default-font-narrow: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
 
 $default-font-serif: 'PT Serif', 'Times New Roman', Times, serif;
 
-$special-font: $default-font;
+$special-font: 'PT Sans Caption', Arial, Helvetica, sans-serif;
 
 
 
@@ -15,22 +15,28 @@ $special-font: $default-font;
 $beige: #FBFBEF;
 
 /* Pink */
-$primary-color: #ff7f50;
+$primary-color: #6FBBEE;
 
-$primary-color-btn-highlight: #ffa07a;
 
-$btn-color: $primary-color;
+$btn-color: #e82a79;
+$btn-highlight: #e687ba;
+$primary-color-btn-highlight: #e687ba;
+
+
+$secondary-btn-color: lighten(#696969, 10%);
+$secondary-btn-highlight: lighten(#696969, 30%);
+
 
 //*Color used for top-bar*// 
-$accent-color: rgb(255, 183, 157);
+$accent-color: #7ECDF4;
 
 // lime green/mustard green color
-$highlight-color: #dfe133;
+$highlight-color: #6FBBEE;
 
 $blue-link: #678CCB;
 
 // top bar ~ hello bar
-$hello-bar-bkg-color: #60437D;
+$hello-bar-bkg-color: lighten(#6FBBEE, 10%);
 
 // new product page design colors -- not consistent...
 $salmon-highlight: #ff7f50;
@@ -47,7 +53,7 @@ $light-gray: lighten(#696969, 10%);
 
 $xlightGrey: rgb(249, 249, 249);;
 // Standish Green
-$secondary-color: #c2d3bd;
+$secondary-color: #B4D6F1;
 $standishgreen: $secondary-color;
 
 $hbspt-form-bkg: #C2D3BD;
@@ -64,10 +70,11 @@ $primary-darken: #a0522d;
 
 $light-cream: #f5f5dc;
 
-$template: 'standish-responsive';
+$template: 'salon-responsive';
 
-$lightGrey: #dcdcdc;
+$lightGrey: #B8B8B8;
 
+$hbspt-form-bkg: rgba(111, 187, 238, 0.52);
 
 // Rotator Colors Ideas
 $red: #FF7F4D;

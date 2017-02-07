@@ -423,6 +423,9 @@
     // Run nozeros for templates that haven't been updated.
     nozeros();
 
+
+
+
   });
   // Add callback to window resize event
   $(window).on('resize', function() {

@@ -1,21 +1,23 @@
 
 .header {
   width: 100%;
-  .container {
-    min-height: 97px;
-    & > div {
-      &.button-container {
-        margin-top: 2em;
-      }
-    }
-  }
-
 }
+
 
 .sidr-inner {
   li:first-of-type {
     font-weight: bold;
   }
+}
+
+.credentials {
+  background: url('/assets/templates/#{$template}/images/credentials.png');
+  width: 100%;
+  background-size: contain;
+  height: 50px;
+  background-repeat: no-repeat;
+  left: -34px;
+  margin-top: 5px;
 }
 
 .credentials-icons {
@@ -52,26 +54,11 @@
   }
 }
 
+
 .logo {
   display: block;
-  background: url("/assets/templates/standish-responsive/images/standish-logo.png");
-  background-repeat: no-repeat;
-  width: 310px;
-  text-indent: -9999em;
-  position: relative;
-  margin-bottom: 0;
-  left: -10px;
+  margin-top: 25px;
 }
-
-.credentials {
-  background: url('/assets/templates/standish-responsive/images/credentials.png');
-  width: 100%;
-  background-size: contain;
-  height: 50px;
-  background-repeat: no-repeat;
-  left: -34px;
-}
-
 .logo-footer {  
   text-indent: -9999em;
   float: none;
@@ -80,6 +67,10 @@
 header button.cart {
   margin-right: 0;
   padding-right: 0;
+  &:hover {
+    text-decoration: none;
+    font-weight: normal;
+  }
 }
 button.cart i {
   font-size: 1.250rem;
@@ -100,7 +91,6 @@ button.cart i {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  border-left: 1px solid $primary-gray;
 }
 .navigation li {
   display: inline-block;
@@ -113,12 +103,12 @@ button.cart i {
   border-right: 1px solid $primary-gray;
 }
 .navigation ul.nav-menu > li > a {
-  padding: 0 16px;
+  padding: 0 29px;
 }
 .navigation a {
+  font-size: .8em;
   color: #fff;
   display: inline-block;
-  font-size: .9em;
 /*   padding: 0 37px 0 34px; */
 /*   padding: 0 22px; */
   padding: 0 19px;
@@ -126,34 +116,38 @@ button.cart i {
   /* padding: 0 14px; */
   text-decoration: none;
 }
-.navigation ul li.brand-menu {
-  .column ul {width: 162px;}
-  .col2 {
-    left: 161px;
-  }
-  .col3 {
-    left: 321px;
-  }
-  .col4 {
-    left: 480px;
-    z-index: 20;
-  }
-  .col5 {
-    left: 642px;
-   ul {width: 180px;}
-  }
 
+.navigation {
+  min-height: 61px;
 }
-.navigation ul ul {
-/*   font-weight: 700; */
-  background-color: $primary-gray;
-  display: none;
-  float: left;
+ul.column.submenu.hidden.menu.mobile-menu {
+  left: -5px;
+}
+ul.column .column.col-md-3.col1:first-of-type {
+    padding-left: 0;
+}
+.navigation ul.nav-menu ul.column.submenu.equipment {
+  width: 600px;
+}
+.navigation ul.nav-menu ul.column.submenu {
+  padding: 10px 0;
+  top: 100%;
+}
+.navigation ul.nav-menu, .navigation ul.nav-menu ul.column.submenu {
+  position: absolute;
+  background-color: #4d4d4d;
+  z-index: 10;
+}
+.navigation > ul {
   position: absolute;
   top: 60px;
   padding: 21px 0 20px 0;
-
-  left: 0;
+}
+.navigation > ul > ul {
+/*   font-weight: 700; */
+  background-color: $primary-gray;
+  float: left;
+  position: absolute;
   z-index: 19;
   width: 250px;
 }
@@ -163,9 +157,8 @@ button.cart i {
   margin: 0;
   line-height: 20px;
 }
-.navigation ul ul ul {
-  left: 100%;
-  top: -20px;
+.navigation ul > ul > ul {
+
   background: #5e5e5e;
   font-weight: normal;
 }
@@ -181,7 +174,6 @@ button.cart i {
   min-width: 170px;
   line-height: 16px;
   font-size: 14px;
-  text-transform: uppercase;
   letter-spacing: 1px;
   color: $secondary-color;
   padding: 4px 25px;
@@ -197,7 +189,7 @@ button.cart i {
 }
 .navigation ul li:hover > ul,
 ul.nav-menu li:hover > div ul {
-  display: block;
+  display: block !important;
 }
 .navigation li li.allcaps {
   a {
@@ -222,32 +214,6 @@ ul.nav-menu li:hover > div ul {
 .navigation li.far {
   border: 0 none !important;
 }
-.menu-feature {
-  padding: 3px;
-  border-radius: 3px;
-}
-
-.col2 {
-  position: absolute;
-  left: 222px;
-  top: 0;
-}
-.col3 {
-  position: absolute;
-  left: 444px;
-  top: 0;
-}
-.col4 {
-  position: absolute;
-  left: 666px;
-  top: 0;
-}
-.col5 {
-  position: absolute;
-  left: 888px;
-  top: 0;
-}
-
 li.far a:hover {
   color: #fff;
 }
@@ -264,23 +230,21 @@ li.first.far a {
   }
   button, .button {
     background: transparent none;
+    
     z-index: 2;
     top: 0;
     height: 100%;
     border: 0 none;
+
     &:hover, &:focus {
       border: 0 none;
     }
   }
-  .input-group {
-    border: 10px solid #DEDEDE;
-    margin-left: -10px;
-    margin-right: -10px;
-  }
   input {
     font-size: 14px;
-    color: $dark-text;
-    border: 1px solid $dark-text;
+    color: #a9a9a9;
+    background-color: #efefef;
+    border: 1px solid #a9a9a9;
     -webkit-border-radius: 0;
     border-radius: 0;
     margin: 0;
@@ -300,14 +264,6 @@ li.first.far a {
 
   .right-side.padd-top {padding-top: 0;}
 
-}
-
-.sidr-class-fa.sidr-class-fa-phone {
-  &:before { 
-    content: "\f095";
-    display: inline-block;
-    font: normal normal normal 16px/1 FontAwesome;
-  }
 }
 
 
@@ -351,11 +307,16 @@ li.first.far a {
 }
 
 .hello-container {
-  padding-top: 18px;
+  a, p, div {
+    @extend .special;
+    color: lighten($primary-gray, 10%);
+    font-weight: 100;
+  }
 }
 
 .hello-container {
-  background: $hello-bar-bkg-color url('/assets/templates/standish-responsive/images/congruent-pentagon-pattern-long.jpg') repeat-x;
+  background-color: $accent-color;
+  border-bottom: 2px solid $btn-color;
   z-index: 20;
   box-shadow: 0 0 2px 0 white;
   color: black;
@@ -369,16 +330,10 @@ li.first.far a {
   p {
 
     display: inline;
+    font-size: 0.8em;
   }
 }
-.hbar_content { 
-  svg {
-    margin-bottom: -7px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
 
-}
 
 .hello-tag {
   position: absolute;
@@ -413,13 +368,13 @@ li.first.far a {
 // Rotator STYLES
 
 #slickShow {
-  margin-top: 2.6rem;
+  margin-top: 2.3rem;
   .slide-option-text {
     font-size: .9rem;
     color: lighten($primary-gray, 20%)
   }
-  .fa {
-    font-size: 18px;
+  .fa-lg {
+    font-size: 1.5em;
     padding-right: 0.2em;
   }
 }

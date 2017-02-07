@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
     <script src="https://use.fontawesome.com/d266c066de.js"></script>
     
-    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=8932732423498273" /> 
+    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.css?cachebuster=8932732423498273" /> 
     
     <!-- <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.css?cachebuster=89327498324273" /> -->
 
@@ -134,55 +134,63 @@
         <div id="fb-root"></div>
         <!-- Header -->
         <div class="hello-container center-block col-md-12 hidden-sm hidden-xs" data-spy="affix" data-offset-top="60" data-offset-bottom="200" style="opacity: .04;">
-            <div class="hello container">
-                <div class="col-md-8 hbar_content hidden-xs" style="margin-top:-3px;">
-                  <p style="margin-left: 0px;color:white;" class="padd-top">
-                    Up to $2500 off + Price Match <i class="fa fa-usd fa-lg"></i><a style="margin-left:2.5rem;" href="https://standishsalongoods.com/standish-salon-equipment-sale?__hstc=125570901.9f34fd2d1106d038cd721ac0800bd14a.1446766758506.1448897028003.1448990054135.4&amp;__hssc=125570901.1.1448990054135&amp;__hsfp=2859420846" class="btn btn-default btn-x-light btn-sm uppercase design-text">See How</a></p>
-                </div>
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-right" style="margin-top:-14px;">
-                      <a href="/view_cart.asp"><button class="button cart large btn"><i class="fa fa-shopping-cart"></i><span class="hidden-xs hidden-sm">Your Cart</span><span class="cart-number">[ITEMSINCART]</span></button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header center-block row">
-            <div id="mobile-menu" class="hidden-md hidden-lg col-sm-12" style="">
+          <div class="hello container hello-alert">
+            <div class="col-md-12">
               <div class="row">
-                <div class="site-branding col-sm-12 col-xs-12">
-                  <a href="/">
-                    <h2 class="logo">Standish Salon Furniture</h2>
-                  </a>
-                </div>
+                <!--START: RIGHT_BANNER-->
+                  [RIGHT_BANNER]
+                <!--END: RIGHT_BANNER-->
               </div>
             </div>
-            <div id="mobile-menu-json" class="hidden"></div>
+          </div>
+        </div>
+        <div class="header center-block row">
+            <div class="container">
+                <div id="mobile-menu" class="hidden-md hidden-lg col-sm-12">
 
-            <div class="container hidden-sm hidden-xs">
+                  <div class="row">
+                    <div class="site-branding col-sm-4 col-xs-5">
+                      <a href="/"><h2 class="logo" title="Kaemark"><img class="img-responsive" src="/assets/images/StandishPartnerLogo.png"></h2></a>
+                    </div>
 
-                <div class="col-md-4 no-padd">
-                  <div class="site-branding col-md-12">
-                    <a href="/">
-                      <h2 class="logo">Standish Salon Furniture</h2>
-                    </a>
-                  </div>
-                  <div class="credentials-icons col-md-12 no-padd">
-                    <div class="credentials-logo header-norton"></div>
-                    <!-- <div class="credentials-logo header-boa"></div> -->
-                    <a href="http://saloncentric.standishsalongoods.com/"><div class="credentials-logo header-ss"></div></a>
-                    <div class="credentials-logo header-pba"></div>
-                    <div class="credentials-logo header-bravo"></div>
-                    <div class="credentials-logo header-bbb"></div>
+                    <div class="col-sm-8 col-xs-7">
+                      <div class="pull-right">
+                        <a class="inline" href="/view_cart.asp"><i class="fa fa-shopping-cart fa-2x"></i><span class="h4 padd-left">[ITEMSINCART]</span></a>
+                        <a class="inline" href="/myaccount.asp?secure"><i class="fa fa-user fa-2x"></i></a>
+                        <a class="inline toggle-navigation"><i class="fa fa-bars fa-2x"></i></a>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
 
-                <div class="col-md-8 text-right padd-top no-padd">
-                  <div id="made-usa-block" class="inline no-padd">
-                    <img src="assets/templates/[template]/images/made-usa-custom-available.png"/>
+
+                <div class="col-md-3 hidden-sm hidden-xs">
+                  <div class="site-branding col-md-12"><a href="/"><h2 class="logo"><img class="img-responsive" src="/assets/images/StandishPartnerLogo.png"></h2></a></div>
+                  <div class="credentials hidden-sm hidden-xs"></div>
+                </div>
+
+                <div class="col-md-4 hidden-sm hidden-xs">
+                  <div id="slickShow">
+                    <div class="slide-option">
+                      <span class="slide-option-text allcaps serif pull-right"><i class="usa-blue fa fa-flag fa-lg"></i>  USA-Made Items</span>
+                    </div>
+                    <div class="slide-option">
+                      <span class="slide-option-text allcaps serif pull-right"><i class="return fa fa-reply fa-lg"></i>  Generous Return Policy</span>
+                    </div>
+                    <div class="slide-option">
+                      <span class="slide-option-text allcaps serif pull-right"><i class="money fa fa-usd fa-lg"></i>  Lots of Deals!</span>
+                    </div>
                   </div>
-                  <div id="call-sales-team" class="inline no-padd">
-                    <img src="assets/templates/[template]/images/call-sales-team.png"/>
-                  </div>
+                </div>
+
+                <div class="col-md-5 text-right padd-bottom-10 hidden-sm hidden-xs">
+                    <div class="col-md-12 hidden-sm hidden-xs">
+                      <p class="padd-top">Need Help? Give us a Call. <span class="bold">888-885-8511</span></a></p>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <a href="/view_cart.asp"><button class="button cart large btn"><i class="fa fa-shopping-cart"></i><span class="hidden-xs hidden-s">Your Cart</span><span class="cart-number">[ITEMSINCART]</span></button></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -192,166 +200,93 @@
       <div class="container">
         <div class="main-navigation">
           <ul class="nav-menu">
-            <li class=""><a href="/standish-salon-equipment-sale">Deals</a>
-            <ul class="sub-menu">
-              <li><a title="Salon Equipment Sales and Promotions" href="/standish-salon-equipment-sale">Promotions and Discounts</a></li>
-              <li><a title="Salon Furniture Items on Sale" href="/salon-furniture-sale-and-deals">Items on Sale</a></li>
-            </ul>
-            </li><li class="equipment-menu"><a title="Shop Salon Equipment" href="#">Salon</a>
-              <div class="column col1">
-                <ul class="sub-menu eqhgt">
-                  <li><a title="Salon Furniture Packages" href="/salon-furniture-packages">Packages</a></li>
-                  <li><a title="Hair Salon Chairs" href="/hair-salon-chairs">Chairs</a></li>
-                  <li><a title="Salon Styling Stations" href="/salon-styling-stations">Stations</a></li>
-                  <li><a title="Salon Styling Stations" href="/salon-shampoo-area">Shampoo</a></li>
-                  <li><a title="Salon Dryer Chairs" href="/salon-hair-dryers">Dryers</a></li>
-                  <li><a title="Salon Reception Furniture" href="/salon-reception-furniture">Reception</a></li>
-                  <li><a title="Hair Salon Color Bars" href="/hair-salon-color-bars">Color Bars</a></li>
-                  <li><a title="Salon Break Room Equipment" href="/Break-Room-Essentials_c_110616.html">Break Room Essentials</a></li>
-                  <li><a title="Sunless Tanning Equipment" href="/sunless-tanning-equipment">Sunless Tanning</a></li>
-                </ul>
-              </div>
-  
-              <div class="column col2">
-                <ul class="sub-menu eqhgt">
-                  <li><a title="Replacement Parts" href="/replacement-parts">Replacement Parts</a></li>
-                  <li><a title="Salon Floor Mats" href="/salon-floor-mats">Floor Mats</a></li>
-                  <li><a title="Salon Trolleys" href="/salon-trolleys">Trays & Trolleys</a></li>
-                  <li><a title="Accessories" href="/salon-supplies-online">Accessories</a></li>
-                  <li><a title="Artwork" href="/salon-artwork">Artwork</a></li>
-                  <li><a title="Barber Poles" href="/barber-poles">Barber Poles</a></li>
-                  <li class=""><a title="SALE" href="/salon-furniture-sale-and-deals" style="color: #fff; font-weight: bold;">SALE</a></li>
-                </ul>
-              </div>
-            </li>         
-            <li class="spa-menu"><a title="Spa Equipment" href="#">Spa</a>
-              <div class="column col1">
-                <ul class="sub-menu eqhgt-g1">
-                  <li><a title="Spa Equipment Packages" href="/spa-equipment-packages">Packages</a></li>
-                  <li><a title="Facial Beds" href="/facial-beds">Facial Beds</a></li>
-                  <li><a title="Massage Beds" href="/massage-chairs-beds">Massage Beds</a></li>
-                  <li><a title="Manicure and Pedicure Equipment" href="/manicure-pedicure-equipment">Mani & Pedi</a></li>
-                  <li><a title="Client and Tech Chairs" href="salon-spa-client-tech-chairs">Chairs</a></li>
-                  <li><a title="Tanning" href="/sunless-tanning-equipment">Tanning</a></li>
-                  <li><a title="Spa Reception Furniture" href="/salon-reception-furniture">Reception</a></li>
-                  <li><a title="Spa Retail Displays" href="/salon-retail-displays">Retail Displays</a></li>
-                </ul>
-              </div>
-              <div class="column col2">
-                <ul class="sub-menu eqhgt-g1">
-                  <li><a title="Spa Break Room Equipment" href="/Break-Room-Essentials_c_110616.html">Break Room Essentials</a></li>
-                  <li><a title="Pedicure Carts and Trolleys" href="/salon-trays-trolleys">Trolleys & Trays</a></li>
-                  <li><a title="Spa Tools and Equipment" href="/nail-salon-supplies-accessories">Tools & Equipment</a></li>
-                  <li><a title="Spa Artwork" href="/salon-artwork">Artwork</a></li>
-                  <li class=""><a title="SALE" style="color: #fff; font-weight: bold;" href="/salon-furniture-sale-and-deals">SALE</a></li>
-                </ul>
-              </div>          
-            <li class="tanning-menu"><a title="Tanning" href="#">Tanning</a>
-              <div class="column col1">
-                <ul class="sub-menu eqhgt-g1">
-                  <li><a title="Tanning Packages" href="/sunless-tanning-packages-gift-sets" class="cat">Packages & Gift Sets</a></li>
-                  <li><a title="Tanning Equipment" href="/sunless-tanning-equipment">Equipment</a></li>
-                  <li><a title="Sunless Solution" href="/sunless-tanning-solution-products">Sunless Solution</a></li>
-                  <li><a title="Tanning Retail Products" href="/tanning-retail-products">Retail Products</a></li>
-                  <li><a title="Maintenance & Parts" href="/tanning-equipment-maintenance-and-parts">Maintenance & Parts</a></li>
-                  <li><a title="Tanning Salon Reception Furniture" href="/salon-reception-furniture">Reception</a></li>
-                  <li><a title="Tanning Salon Retail Displays" href="/salon-retail-displays">Retail Displays</a></li>
-                  <li><a title="Tanning Salon Break Room Equipment" href="/break-room-appliances">Break Room Essentials</a></li>
-                  <li><a title="Tanning Carts and Trolleys" href="/salon-trolleys">Trolleys & Trays</a></li>
-                </ul>
-              </div>
-              <div class="column col2">
-                <ul class="sub-menu eqhgt eqhgt-g1">
-                  <li><a title="Tanning Accessories" href="/salon-supplies-online">Accessories</a></li>
-                  <li><a title="Tanning Artwork" href="/salon-artwork">Artwork</a></li>
-                  <li class=""><a title="SALE" style="color: #fff; font-weight: bold;" href="/salon-furniture-sale-and-deals">SALE</a></li>
-                </ul>
-              </div>
+            <li class="has-submenu subcategories"><a class="menu-open" href="#">Brands</a>
+              <ul class="column submenu hidden menu mobile-menu">
+                <li><a href="/adjust-a-sink">Adjust-a-Sink <span class="hidden-sm hidden-xs"> <i class="icon icon-star"></i> New</span> </a></li>
+                <li><a href="/belava-pedicure-equipment">Belava</a></li>
+                <li><a href="/continuum-pedicure-spas">Continuum</a></li>
+                <li><a href="/kaemark-salon-furnishings">Kaemark</a></li>
+                <li><a href="/oakworks-massage-equipment">Oakworks</a></li>
+                <li><a href="/one-world-inspired-custom-furniture">One World Inspired</a></li>
+                <li><a href="/savvy-salon-equipment">Savvy</a></li>
+                <li><a href="/standish-salon-goods">Standish</a></li>
+                <li><a href="/william-marvy-barber-poles">William Marvy</a></li>
+              </ul>
             </li>
-            <li class="brand-menu"><a title="Trusted Salon Brands We Carry" href="#">Brands</a>
-              <div class="column col1">
-                <ul class="sub-menu eqhgt-g2">
-                  <li><a title="Adjust-a-Sink Automatic Sinks" href="/adjust-a-sink">Adjust-a-Sink</a></li>
-                  <li><a title="Andrea Lashes" href="/andrea-lashes">Andrea</a></li>
-                  <li><a title="Belava Pedicure Spas and Equipment" href="/belava">Belava <span class="menu-feature standishgreen"><i class="icon icon-star"></i> New</span></a>
+            <li class="has-submenu subcategories equipment"><a class="menu-open" href="#">Equipment</a>
+              <ul class="column submenu hidden equipment menu mobile-menu">
+                <div class="column col-md-3 col1">
+                  <li class=""> <a class="category-header" href="/hair-salon-chairs">Chairs</a>
+                    <ul class="hidden-sm hidden-xs">
+                      <li><a href="/salon-styling-chairs">Styling Chairs</a></li>
+                      <li><a href="/all-purpose-salon-chairs">All-Purpose Chairs</a></li>
+                      <li><a href="/barber-chairs">Barber Chairs</a></li>
+                      <li><a href="/salon-shampoo-chairs">Shampoo Chairs</a></li>
+                      <li><a href="/salon-dryer-chair-units">Dryer Chairs</a></li>
+                      <li><a href="/salon-stools">Stools</a></li>
+                      <li><a href="/salon-reception-seating">Reception Chairs</a></li>
+                      <li><a href="/salon-pedicure-chairs">Pedicure Chairs</a></li>
+                      <li><a href="/salon-chair-covers">Chair Covers </a></li>
+                    </ul>
                   </li>
-                  <li><a title="Betty Dain Hair Supplies" href="/betty-dain">Betty Dain</a></li>
-                  <li><a title="Burmax Salon Equipment" href="/burmax">Burmax</a></li>
-                </ul>
-              </div>
-              <div class="column col2">
-                <ul class="sub-menu eqhgt-g2">
-                  <li><a title="Cardinal Salon Combs" href="/cardinal-salon-combs">Cardinal</a></li>
-                  <li><a title="Continuum Pedicure Spas" href="/continuum-foot-spas">Continuum</a></li>
-                  <li><a title="Diane Salon Supplies" href="/diane-salon-supplies">Diane</a></li>
-                  <li><a title="Fromm Salon Supplies" href="/fromm-salon-supplies">Fromm</a></li>
-                  <li><a title="Graham Professional Beauty Products" href="/graham-professional-beauty-products">Graham</a></li>
-                </ul>
-              </div>
-              <div class="column col3">
-                <ul class="sub-menu eqhgt-g2">
-                  <li><a title="Gulfstream Pedicure and Salon Equipment" href="/gulfstream-pedicure-salon-equipment">Gulfstream</a></li>
-                  <li><a title="Helen of Troy Salon Supplies" href="/helen-of-troy">Helen of Troy</a></li>
-                  <li><a title="Inspire Salon Inspiration Books and Tools" href="/inspire">Inspire</a></li>
-                  <li><a title="Isabel-Cristina Salon Supplies" href="/isabel-cristina">Isabel-Cristina</a></li>
-                  <li><a title="Kaemark American-Made Salon Furnishings" href="/kaemark-salon-furnishings">Kaemark</a></li>
-                </ul>
-              </div>
-              <div class="column col4">
-                <ul class="sub-menu eqhgt-g2">
-                  <li><a title="King Salon Supplies" href="/king">King</a></li>
-                  <li><a title="Marianna Salon Supplies" href="/marianna">Marianna</a></li>
-                  <li><a title="Norvell Sunless Tanning Equipment" href="/norvell-sunless-tanning-equipment">Norvell Tanning <span class="menu-feature standishgreen"><i class="icon icon-star"></i> New</span></a></li>
-                  <li><a title="Oakworks American Made Massage Tables" href="/oakworks">Oakworks</a></li>
-                </ul>
-              </div>
-              <div class="column col5">
-                <ul class="sub-menu eqhgt-g2">
-                  <li><a title="One World Inspired Custom Salon Furniture" href="/one-world-inspired-custom-salon-furniture">One World Inspired</a></li>
-                  <li><a title="Partex Towels" href="/partex-towels">Partex</a></li>
-                  <li><a title="Savvy Salon Equipment" href="/savvy-salon-equipment">Savvy</a></li>
-                  <li><a title="Standish Salon Goods" href="/standish">Standish</a></li>
-                  <li><a title="William Marvy American Made Barber Poles" href="/william-marvy">William Marvy</a></li>
-                </ul>
-              </div>
-            <li><a title="Salon Equipment Financing" href="/salon-equipment-financing">Buy Now, Pay Later</a></li>
-            <li class="about-menu"><a title="About Standish Salon Goods" href="#">About</a>
-              <ul class="sub-menu">
-                <li><a title="Meet the Standish Team" href="/meet-the-team">Meet the Team</a></li>
-                <li><a title="What's a Standish" href="/whats-a-standish">What's a Standish</a></li>
-                <li><a title="A Real eCommerce Store" href="/a-real-ecommerce-store">A Real eCommerce Store</a></li>
-                <li><a title="Salon Showroom Flight Reimbursement" href="/salon-showroom-flight-reimbursement">Fly & Buy</a></li>
-                <li><a title="Receiving Your Salon Furniture Shipment" href="/receiving-freight">Receiving Shipping</a></li>
-                <li><a title="About Salon Furniture Shipping" href="/about-shipping">About Shipping</a></li>
-                <li><a title="Contact Us" href="/contact-us">Contact</a></li>
-                <li><a title="FAQ" href="/frequently-asked-questions">FAQ</a></li>
-              </ul>
+                </div>
+                <div class="column col-md-3 col1">
+                  <li class="has-submenu"> <a class="category-header" href="/salon-styling-stations">Stations</a>
+                    <ul class="submenu hidden-sm hidden-xs">
+                      <li> <a href="/single-salon-styling-stations">Single Stations</a></li>
+                      <li> <a href="/back-to-back-salon-styling-stations">Back-to-Back Stations</a></li>
+                      <li> <a href="/salon-tower-stations">Tower Stations</a></li>
+                      <li> <a href="/salon-wet-stations">Wet Stations</a></li>
+                      <li> <a href="/glass-stations-mirrors">Glass & Mirror Stations</a></li>
+                    </ul>
+                  </li>
+                  <li> <a class="category-header" href="/salon-color-bars">Color Bars</a></li>
+                </div>
+                <div class="column col-md-3 col1">
+                  <li class="has-submenu"> <a class="category-header" href="/manicure-pedicure-equipment">Manicure & Pedicure</a>
+                    <ul class="submenu hidden-sm hidden-xs">
+                      <li> <a href="/salon-manicure-tables">Manicure Tables</a></li>
+                      <li> <a href="/salon-pedicure-chairs">Pedicure Chairs</a></li>
+                      <li> <a href="/nail-technician-chairs">Nail Tech Chairs</a></li>
+                      <li> <a href="/pedicure-carts-trolleys">Carts & Trolleys</a></li>
+                    </ul>
+                  </li>
+                  <li class="has-submenu"> <a class="category-header" href="/salon-shampoo-area">Shampoo</a>
+                    <ul class="submenu hidden-sm hidden-xs">
+                      <li> <a href="/salon-shampoo-bowls">Shampoo Bowls</a></li>
+                      <li> <a href="/salon-shampoo-chairs">Shampoo Chairs</a></li>
+                      <li> <a href="/salon-shampoo-shuttles">Shampoo Shuttles</a></li>
+                      <li> <a href="/salon-wet-stations">Wet Stations</a></li>
+                      <li> <a href="/shampoo-parts-accessories">Parts & Accessories</a></li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="column col-md-3 col1">
+                  <li class="has-submenu"><a class="category-header" href="/salon-reception-area-equipment">Reception</a>
+                    <ul class="submenu hidden-sm hidden-xs">
+                      <li> <a href="/salon-reception-desks">Desks</a></li>
+                      <li> <a href="/salon-reception-seating">Chairs</a></li>
+                      <li> <a href="/salon-retail-displays">Retail Displays</a></li>
+                    </ul>
+                  </li>
+                  <li> <a class="category-header" href="/appliances">Appliances</a></li>
+                </div>
+              </ul>            
             </li>
-            <li class="why-menu"><a title="Why Buy Standish?" href="#">Why Buy Standish?</a>
-              <ul class="sub-menu">
-                <li class=""><a title="Why Buy Standish?" href="/why-standish">Why Buy Standish?</a></li>
-                <li><a title="Standish Service" href="/service">Service</a></li>
-                <li><a title="Quality Salon Furniture Products" href="/quality">Quality</a></li>
-                <li><a title="Quality Salon Furniture Craftmanship" href="/craftmanship">Craftmanship</a></li>
-                <li><a title="Salon Equipment Warranty" href="/warranty">Warranty</a></li>
-                <li><a title="Salon Furniture Return Policy" href="/return-policy">Return Policy</a></li>
-                <li><a title="Secure Salon Furniture Purchase" href="/safe-secure">Safe & Secure</a></li>
-                <li><a title="Standish Salon Equipment Testimonials" href="/client-testimonials">Testimonials</a></li>
-              </ul>
+            <li><a href="/quality">Quality</a></li>
+            <li class="has-submenu subcategories"><a class="menu-open" href="#">About</a>
+              <ul class="column submenu hidden menu mobile-menu">
+                <li class="submenu"> <a class="category-header" href="/why-standish">Why Standish?</a></li>
+                <li class="submenu"> <a class="category-header" href="/warranty">Warranty</a></li>
+                <li class="submenu"> <a class="category-header" href="/returns">Return Policy</a></li>
+              </ul>            
             </li>
-            <li class="freebies-menu"><a title="Freebies" href="#">Freebies</a>
-                <ul class="sub-menu">
-                  <li><a title="Salon space planning" href="/free-salon-space-planning">FREE Layout & Space Planning</a></li>
-                  <li><a title="Salon Equipment Checklist" href="/free-salon-equipment-checklist">FREE Salon Equipment Checklist</a></li>
-                  <li><a title="Guide to Starting a Salon" href="/guide-to-starting-a-salon">FREE Guide to Starting a Salon</a></li>
-                  <li><a title="Salon Showroom Flight Reimbursement" href="/salon-showroom-flight-reimbursement">Fly & Buy Reimbursement</a></li>
-                  <li><a title="Marketing Promotions for Salons" href="/free-salon-promotion">FREE Salon Promotion</a></li>
-                  <li><a title="Salon Industry Blog" href="/blog.asp">Blog</a></li>
-                </ul>
-            </li>
-            <li><a title="Blog" href="/blog.asp">Blog</a></li>
-            <li class="my-account"><a class="" title="Sign into your account to view your orders and add items to your wishlist." href="/myaccount.asp">My Account</a></li>
-            <li class="wishlist"><a alt="Wishlist" title="Wishlist" href="/view_wishlist.asp"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            <li><a href="/about-shipping">Shipping</a></li>
+            <li><a href="/financing">Buy Now, Pay Later</a></li>
+            <li><a href="/dallas-salon-furniture-showroom">Showroom</a></li>
+            <li><a href="/contact-us">Contact</a></li>
+            <li><a href="/frequently-asked-questions">FAQ</a></li>
+          </ul>
         </div>
               <!--main navigation -->
       </div>
@@ -412,113 +347,124 @@
 
   <!-- Footer -->
 
-  <footer>
-    <div class="clearfix"></div>
-    <div class="container">
-      <div class="col-md-12 center-block">
-        <div id="homepage-badges-list" class="row hidden-xs">
-          <h3 class="coral-text col-md-12">Why Buy Salon and Spa Equipment from Standish?</h3>
-          <a class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
+  <div class="container">
+    <div class="col-md-10 col-md-offset-2">
+      <div id="homepage-badges-list" class="row hidden-xs">
+        <h3 class="coral-text col-md-12">Why Buy Salon and Spa Equipment from Standish?</h3>
+        <a class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
+        <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
+        <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
+        <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
+        <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
 
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2 col-sm-2 standish-tooltip badge-product badge-home badge-returns" title="No Hassle Return Policy"><i></i><div class="badge-text"><small>No Hassle Return Policy</small></div></a>
-        </div>
       </div>
     </div>
-    <div class="clearfix"></div>
+  </div>
 
-    <div class="container-fluid bottom-container newsletter-signup">
-      <div class="col-xs-12">
-        <h3 class="col-md-6 col-sm-6">Get Deals Straight to Your Inbox!</h3>
-        <div class="col-md-6 col-sm-6" id="newsletter-target"> 
+  <footer>
+    <div class="container-fluid footer-content padd-top padd-bottom-10">
+      <div class="col-md-3 col-sm-4 partners">
+        <h5>Trusted Partners</h5>
+        <div class="col-md-12">
+          <div><img src="assets/templates/[template]/images/standish_salon_goods.png" style="height: 44px;"/></div>
+        </div>
+        <div class="col-md-12">
+          <div><img src="assets/templates/[template]/images/Keamark.png" height="56" /></div>
+        </div>
+        <div class="col-md-12">
+          <div><img src="assets/templates/[template]/images/salon_centric_footer.png" height="56" /></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-5">
+        <h5>About Us</h5>
+        <p>Standish is a proud partner of SalonCentric. We are a Texas-based company passionate about bringing you the perfect balance between affordability and quality. With a wide variety of products to outfit your salon, including many items made here in the USA, we are your one-stop shop for all things salon equipment.</p>
+      
+        <div class="row">
+          <div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4">
+            <h6 class="subheader">Accredited: </h6>
+            <a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
+            <img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+          </div>
+          <div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
+            <a href="https://probeauty.org/">
+              <h6 class="subheader">Industry Recognized: </h6>
+              <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBA.png">
+            </a>
+          </div>
+          <div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
+            <a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
+              <h6 class="subheader">Award Winning: </h6>
+              <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/IC.png">
+            </a>
+          </div>
+          <div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
+            <a href="">
+              <h6 class="subheader">As Seen On: </h6>
+              <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/Bravo-tv-logo.png">
+            </a>
+          </div>
+          <div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
+            <a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
+              <h6 class="subheader">Secure Browsing: </h6>
+              <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/New_Norton_Logo_White.png">
+            </a>
+          </div>
+          <div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4 center-block text-center">
+            <a href="/american-made-salon-furniture">
+              <h6 class="subheader">U.S. Items: </h6>
+              <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/made-usa-badge-white.png">
+            </a>
+          </div>
+          <div class="footer-logo-sm col-md-2-2 col-sm-4 col-xs-4">
+            <h6 class="subheader">Secure Checkout: </h6>
+            <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit_SM_BNPOT_1x.png" alt="PayPal Credit" />
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-3">
+        <h5>Get Awesome Offers & Product News Via Email!</h5>
+        <div id="newsletter-target" class="newsletter-signup">
           <!--[if lte IE 8]>
           <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
           <![endif]-->
           <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
           <script>
-            hbspt.forms.create({
-              css: '',
-              submitButtonClass: 'button',
+            hbspt.forms.create({ 
               portalId: '239485',
-              formId: '934570fd-43b6-4393-b73a-43cc4bcaea41'
+              target: '#newsletter-target',
+              css: '',
+              formId: 'd863658c-58f3-48a5-9701-dd75806746b3'
             });
           </script>
         </div>
       </div>
+      <div class="clearfix"></div>
+      <div class="social-icons col-md-12">
+        <div class="center-block col-md-2">
+          <a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest-square"></i></a>
+          <a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter-square"></i></a>
+          <a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook-square"></i></a>
+          <a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus-square"></i></a>
+        </div>
+      </div>  
     </div>
-    <div class="container-fluid footer-content padd-top padd-bottom-10">
-      <div class="container">
-        <div class="col-md-3 col-sm-4 info-block branding">
-          <div class="col-md-12">
-            <div id="standish-logo"><img src="assets/templates/[template]/images/Standish-logo-footer-mobile-transp.png"/></div>
-            <div class="info-block">
-              <address>
-                <a href="https://www.google.com/maps/place/Standish+Salon+Furniture+Showroom/@32.7854244,-96.773118,17z/data=!3m1!4b1!4m2!3m1!1s0x864e98c052142245:0x7a2cd7d8d0feb952">
-                3720 Canton St #104 <br/>
-                Dallas, TX 75226
-                </a>
-              </address>
-              <span class="bold"><a href="tel:1(888)271-8434">(888) 271-8434</a></span>
-            </div>
-          </div>
-          <div class="col-md-12 padd-top">
-            <div id="social-icons" class="social-icons">
-              <a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest"></i></a>
-              <a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter"></i></a>
-              <a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook"></i></a>
-              <a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div id="global-footer" class="col-md-6 hidden-sm hidden-xs">
-        </div>
-
-        <hr class="hidden-md hidden-lg clearfix"/>
-
-        <div class="col-md-3 col-sm-4 footer-logos">
-          <div class="row">
-            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
-              <a href="https://probeauty.org/">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBASymbol.png">
-              </a>
-            </div>
-            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
-              <a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/SecureBrowsingSymbol.png">
-              </a>
-            </div>
-            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
-              <a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/AwardWinningSymbol.png">
-              </a>
-            </div>
-            <div class="padd-top col-md-12 clearfix"></div>
-            <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top">
-              <a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
-              <img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
-            </div>
-            <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top center-block text-center">
-              <a href="">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/BravoSymbol.png">
-              </a>
-            </div>
-          </div>
-        </div>
+    <!--END: FRAME_MAILLIST-->
+    <div class="container-fluid">
+      <div class="col-md-12 text-center footer-child">
+        <!--START: global_footer-->[GLOBAL_FOOTER]<!--END: global_footer-->
       </div>
-      
-      <div class="clearfix"></div> 
+      <div class="col-md-12 footer-child">
+        <p class="footer-copy">&copy; Standish LLC. All Rights Reserved | <a href="/dallas-salon-furniture-showroom">Dallas Showroom</a> | <a href="/Privacy-Policy_ep_60-1.html">Privacy Policy</a> | <span class="bold">888-885-8511</span></p>
+      </div>
     </div>
   </footer>
-
-  <div class="container-fluid bottom-footer text-center standishgray padd-top"><p class="">&copy; 2015-2016 Standish Salon Goods. All rights reserved.</p></div>
 
   <!-- <nav id="mobile-menu" style="display:none;">
   </nav> -->

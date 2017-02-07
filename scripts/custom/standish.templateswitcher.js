@@ -2,6 +2,8 @@
   $.Standish = (function() {});
   window.Standish = window.Standish || {};
 
+  Standish.TemplateFolder = "salon-responsive";
+
   // Do different things based on the template slug
   // @todo Activate class functions based on template slug here
   Standish.TemplateSwitcher = function() {
@@ -11,7 +13,7 @@
       case 'listing_3':
         var inlineScript = document.createElement('inlineScript');
         inlineScript.id = 'listing';
-        inlineScript.src = '/assets/templates/standish-responsive/scripts/custom/listing-scripts.js';
+        inlineScript.src = '/assets/templates/'+Standish.TemplateFolder+'/scripts/custom/listing-scripts.js';
         document.head.appendChild(script);
       return;
       case 'listing_0':

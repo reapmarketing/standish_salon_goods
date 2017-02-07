@@ -112,6 +112,7 @@ input::-moz-focus-inner {
     float: left;*/
   }
 
+
 /* bootstrap override */
 .alert-danger {
   background: transparent none;
@@ -378,6 +379,17 @@ button[type=submit].btn-lg, .btn.btn-lg {
   font-size: 105%;
 }
 
+a.btn-hello {
+  color: white;
+  background-color: darken($accent-color, 10%);
+  border-bottom: 1px solid darken($accent-color, 30%);
+}
+a.btn-hello:hover {
+  color: white;
+  background-color: darken($accent-color, 5%);
+  border-bottom: 1px solid darken($accent-color, 20%);
+}
+
 .close:focus,
 .close:hover {
     background: transparent;
@@ -391,14 +403,7 @@ button[type=submit].btn-lg, .btn.btn-lg {
     text-decoration: none;
 }
 
-.btn-hello {
-  background-color: darken($accent-color, 10%);
-  border-bottom: 1px solid darken($accent-color, 30%);
-}
-.btn-hello:hover {
-  background-color: darken($accent-color, 5%);
-  border-bottom: 1px solid darken($accent-color, 20%);
-}
+
 
 btn.focus, .btn:focus, .btn:hover, .hs-form .hs-button:focus, .hs-form .hs-button:hover {
   color: white;
