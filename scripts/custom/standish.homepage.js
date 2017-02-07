@@ -120,8 +120,9 @@
         $(data.feed.entry).each(function(i,v) {
           var image = v['gsx$img-url'].$t,
               link = v.gsx$link.$t;
-
-          logoHtml += '<a href="'+link+'"><img style="max-width: 82px;" src="'+image+'"></a>';
+          if ( link !== "http://www.standishsalongoods.com/norvell-sunless-tanning-equipment" ) {
+            logoHtml += '<a href="'+link+'"><img style="max-width: 82px;" src="'+image+'"></a>';
+          }
 
         });
         $('.homepage-brands').append(logoHtml);

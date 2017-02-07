@@ -48,6 +48,7 @@
 		return $.getJSON(jsonUrl, function(data) {
 			var menuItems = [],
 					unList = [], linkurl;
+
 			// Convert to array
 			menuItems = convertToArray(data);
 			// Sort the menu items according to order property
@@ -117,8 +118,8 @@
 		return el.getItems().done(function(context) {
 			$('.toggle-navigation').sidr({
 				name: 'mobile-open',
-				side: 'right',
-				source: '#mobile-menu-json',
+				side: 'left',
+				source: '#grabMobile',
 				onOpen: function() {
 					var el = this;
 					$('body').on('click', "#mobile-open", function(event) {
