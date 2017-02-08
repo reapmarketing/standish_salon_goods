@@ -293,7 +293,7 @@ div[classname="searchlight-balloon"] {
 .corner-tag {
   width: 75px;
   height: 75px;
-  background: url("/assets/templates/standish-responsive/images/CornerTag.svg");
+  background: url("/assets/templates/#{$template}/images/CornerTag.svg");
   position: relative;
   top: 74px;
   left: 4px;
