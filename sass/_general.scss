@@ -705,6 +705,21 @@ body .vex.vex-theme-flat-attack .vex-content {
 
 #hoz-slider-container {
   z-index: 0;
+  min-height: 313px;
+  .hoz-slider-loader {
+    position: relative;
+    #loadingDiv {
+      padding-top: 14%;
+      background: #e8e8e8;
+      min-height: 313px;
+      z-index: 10;
+      margin-top: unset;
+    }
+  }
+
+  .hoz-slider-sub {
+    min-height: 313px;
+  }
 }
 
 #homepage-badges-list {

@@ -145,8 +145,10 @@
         $(data.feed.entry).each(function(i,v) {
           var image = v.gsx$backgroundimage.$t,
               imgpreview = v.gsx$imgpreview.$t,
-              videoid = v.gsx$videoid.$t;
-          sliderStuff.push({image:image, imgpreview:imgpreview, videoid:videoid});
+              videoid = v.gsx$videoid.$t,
+              mobileurl = v.gsx$mobileurl.$t,
+              mobileimage = v.gsx$mobileimage.$t;
+          sliderStuff.push({image:image, imgpreview:imgpreview, videoid:videoid, mobileurl:mobileurl, mobileimage:mobileimage});
         });
 
         $.each( sliderStuff, function( i, slider ) {
@@ -166,19 +168,21 @@
 
           $.each( sliderStuff, function( i, video ) {
             if ( sliderStuff[i].image !== '') {
-              
               sliderHtml = '<a href class="img-container video_popup_hoz_slider" style="width:'+desWidth+'px;" data-video="'+ i +'">';
               sliderHtml += '<img class="img-responsive" style="width:'+desWidth+'px;" src="'+sliderStuff[i].image+'"/>';
               sliderHtml += '</a>';
-              // sliderHtml = '<a href="#"><img src="'+image+'" class="img-responsive"/></a>';
             }
             if ( sliderStuff[i].imgpreview !== '') {
-              sliderNavHtml = '<img src="'+sliderStuff[i].imgpreview+'" class="img-responsive" />';
+              sliderNavHtml = '<img src="'+sliderStuff[i].imgpreview+'" class="img-responsive" />';   
             }
-
-            // logoHtml += '<a href="'+link+'"><img style="max-width: 82px;" src="'+image+'"></a>';
             $('.hoz-slider-top').slick('slickAdd', sliderHtml);
             $('.hoz-slider-sub').slick('slickAdd', sliderNavHtml);
+          });
+          $('#loadingDiv').fadeOut(1000);
+          // Applies Bindings to mobile slots
+          $('[data-bind=mobile-promos]').find('[data-bind=mobile-slot]').each(function(i,v) {
+            $(this).find('a').attr('href', sliderStuff[i].mobileurl);
+            $(this).find('a > img').attr('src', sliderStuff[i].mobileimage);
           });
 
           $('.video_popup_hoz_slider').on( 'click', function( e ) {

@@ -6,8 +6,6 @@
     init: function() {
       this.paintItBlack();
 
-      console.log(Promotions.checkCookie('cyberWkX23DF'));
-
       if (!Promotions.checkCookie('cyberWkX23DF')) {
         this.modalize();
         Promotions.setCookie('cyberWkX23DF', 1, 1);
