@@ -177,7 +177,7 @@
             $('.hoz-slider-top').slick('slickAdd', sliderHtml);
             $('.hoz-slider-sub').slick('slickAdd', sliderNavHtml);
           });
-
+          $('#loadingDiv').fadeOut(1000);
           // Applies Bindings to mobile slots
           $('[data-bind=mobile-promos]').find('[data-bind=mobile-slot]').each(function(i,v) {
             $(this).find('a').attr('href', sliderStuff[i].mobileurl);
