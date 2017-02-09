@@ -167,14 +167,13 @@
 
           $.each( sliderStuff, function( i, video ) {
             if ( sliderStuff[i].image !== '') {
-              
               sliderHtml = '<a href class="img-container video_popup_hoz_slider" style="width:'+desWidth+'px;" data-video="'+ i +'">';
               sliderHtml += '<img class="img-responsive" style="width:'+desWidth+'px;" src="'+sliderStuff[i].image+'"/>';
               sliderHtml += '</a>';
-              // sliderHtml = '<a href="#"><img src="'+image+'" class="img-responsive"/></a>';
             }
-
-            // logoHtml += '<a href="'+link+'"><img style="max-width: 82px;" src="'+image+'"></a>';
+            if ( sliderStuff[i].imgpreview !== '') {
+              sliderNavHtml = '<img src="'+sliderStuff[i].imgpreview+'" class="img-responsive" />';   
+            }
             $('.hoz-slider-top').slick('slickAdd', sliderHtml);
             $('.hoz-slider-sub').slick('slickAdd', sliderNavHtml);
           });
