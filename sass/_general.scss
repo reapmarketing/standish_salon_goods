@@ -906,7 +906,6 @@ body:not(.sidr-open) div#mobile-menu-modal {
     }
   }
 }
-
 /* Front Page */
 @media only screen and (max-width : $tablet) {
   .hannah-chat {
@@ -927,12 +926,20 @@ body:not(.sidr-open) div#mobile-menu-modal {
   width: 30%;
 }
 .tab-row {
+  position:relative;
   text-align: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  line-height: 50px;
-  position:relative;
+  p {
+    line-height: 50px;
+    margin: 0;
+    i {
+      font-size: 26px;
+      margin-left: 3px;
+      vertical-align: middle;
+    }
+  }
 }
 .tab-row:after {
   position: absolute;
@@ -946,25 +953,26 @@ body:not(.sidr-open) div#mobile-menu-modal {
   z-index: 1;
 }
 .tab-row-inner {
-  left: 0;
+  display: inline-block;
+  position: absolute;
   z-index: 0;
+  bottom: 0;
+  left: 0;
+  background: #60437d;
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
-  width: 92%;
+  width: 76%;
   box-sizing: border-box;
 }
 .tab-row-inner-bottom {
   padding: 0 10px;
   background: #60437D;
-  display: inline-block;
-  z-index: 0;
-  float: left;
-  margin-top: 61px;
-  width: 22%;
+  width: 72%;
   height: 14px;
   vertical-align: bottom;
   border-top-right-radius: 15px;
   right: 0;
+  bottom: 0;
 }
 
 .tab-row-inner:before,
