@@ -356,10 +356,20 @@ a.btn, a.button, .btn, button {
           border-radius: 0 !important;
   }
   &.btn-flat {
-    background-color: white;
-    border: 1px solid $primary-color;
+    background-color: #fff!important;
+    border: 1px solid $primary-color!important;
+    background-image: none;
+    color: $primary-color!important;
+    text-shadow: none;
+    font-size: 1em;
+
     &:hover {
-      color: darken($primary-color, 20%);
+      background-color: #fff!important;
+      border: 1px solid $primary-color!important;
+      background-image: none;
+      color: $primary-color!important;
+      text-shadow: none;
+      font-size: 1em;
     }
   }
 }
