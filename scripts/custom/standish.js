@@ -34,6 +34,21 @@
     }
   };
 
+  Standish.ActivateVideo = function() {
+
+    var dataVid = Standish.Homepage.getData('w3rlbrw4r8');
+
+    $('.video_popup_single').on( 'click', function( e ) {
+      e.preventDefault();
+      var video = $(this).data('video');
+      // console.log(video_data[video]);
+      vex.open({
+        content: dataVid.responseJSON.html,
+        contentCSS: { 'padding': '0' }
+      });
+    });
+  };
+
   Standish.EqualHeightsMobile = function() {
     if ($(window).width() <= 768) {
       var groups = [
@@ -156,7 +171,7 @@
               var video = $(this).data('video');
               vex.open({
                 content: sliderStuff[video].video_data.html,
-                contentCSS: { 'padding': '0', 'width': '960px' }
+                contentCSS: { 'padding': '0' }
               });
             });
           });

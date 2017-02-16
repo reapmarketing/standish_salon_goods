@@ -84,7 +84,7 @@
             // console.log(video_data[video]);
             vex.open({
               content: video_data[video].html,
-              contentCSS: { 'padding': '0', 'width': '960px' }
+              contentCSS: { 'padding': '0' }
             });
           });
         });
@@ -189,7 +189,7 @@
             var video = $(this).data('video');
             vex.open({
               content: sliderStuff[video].video_data.html,
-              contentCSS: { 'padding': '0', 'width': '960px' }
+              contentCSS: { 'padding': '0' }
             });
           });
         });
