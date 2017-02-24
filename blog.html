@@ -13,7 +13,7 @@
       <article class="blog-item panel grid-item col-md-6">
         <h3 class="panel-header"><a href="[pagename]">[subject]</a></h3>
         <!--START: post_image-->
-          <a href="[pagename]" title="[subject]" class="col-md-12 no-padd video_popup_testimonial" data-video="0" id="listing_main_image_link" style="position:relative;"><i class="fa fa-play play-button fa-3x" style="position: absolute;text-decoration: none;" aria-hidden="true"></i><img class="previewimage" itemprop="image" src="[post_image]" align="middle" border="0" id="large" name="large" alt="Ronald McDonald House" width="100%" data-href="[post_image]"></a>
+          <a href="[pagename]" title="[subject]" class="col-md-12 no-padd video_popup_testimonial hidden-single" data-video="0" id="listing_main_image_link" style="position:relative;"><i class="fa fa-play play-button fa-3x" style="position: absolute;text-decoration: none;" aria-hidden="true"></i><img class="previewimage" itemprop="image" src="[post_image]" align="middle" border="0" id="large" name="large" alt="Ronald McDonald House" width="100%" data-href="[post_image]"></a>
         <!--END: post_image-->
         <div class="panel-body">
           <div class="item hidden-multi">Posted by [post_author] on [post_date]
@@ -150,6 +150,7 @@
       $('.hidden-multi').hide();
     }
     else {
+      $('.hidden-single').hide();
 
     }
 

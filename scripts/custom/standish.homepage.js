@@ -41,7 +41,7 @@
   };
 
   Homepage.getData = function(embed_code) {
-    var baseUrl = "https://fast.wistia.com/oembed/?url=";
+    var baseUrl = "https://fast.wistia.com/oembed.json?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
   };
@@ -73,7 +73,7 @@
             video_markup_home_page = '';
             video_markup_home_page += '<a href="#" class="padd-block video_popup" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
             video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 2em;position: absolute;text-decoration: none;"></i>';
-            video_markup_home_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
+            video_markup_home_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'&image_crop_resized=240x135" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
             video_markup_home_page += '</a>';
             $('.brand-videos').slick('slickAdd', video_markup_home_page);
           });
@@ -121,7 +121,7 @@
           var image = v['gsx$img-url'].$t,
               link = v.gsx$link.$t;
 
-          logoHtml += '<a href="'+link+'"><img style="max-width: 82px;" src="'+image+'"></a>';
+          logoHtml += '<a href="'+link+'"><img width="82" src="'+image+'"></a>';
 
         });
         $('.homepage-brands').append(logoHtml);
