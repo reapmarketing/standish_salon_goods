@@ -43,7 +43,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
     
-    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=89327brow58493ser89798273" /> 
+    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=89327brow58sad493ser89798273" /> 
 
     <!-- <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.css?cachebuster=89327498324273" /> -->
 
@@ -100,7 +100,7 @@
     <!-- MINIFIED & UGLIFIED --> 
     <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
 
-    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js?cachebuster=89327browse34r89798273"></script>
+    <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js?cachebuster=89327browse34342273"></script>
 
     <!--<script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script>-->
     <script type='text/javascript'>
@@ -437,7 +437,11 @@
               css: '',
               submitButtonClass: 'button',
               portalId: '239485',
-              formId: '934570fd-43b6-4393-b73a-43cc4bcaea41'
+              target: '#newsletter-target',
+              formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
+              onFormReady: function() {
+                $('#newsletter-target label').hide();
+              }
             });
           </script>
         </div>
@@ -493,7 +497,7 @@
             <div class="padd-top col-md-12 clearfix"></div>
             <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top">
               <a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
-              <img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+              <img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript async src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
             </div>
             <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top center-block text-center">
               <a href="">
@@ -663,6 +667,7 @@
     <script>
       hbspt.forms.create({
         portalId: '239485',
+        css: '',
         formId: 'd92007ab-e91e-4715-a249-a66f8eda8cb5',
         onFormReady: function($form) {
           $form.attr('target', 'hubspot-iframe');
