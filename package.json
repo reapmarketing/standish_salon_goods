@@ -18,7 +18,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-ftp-deploy": "^0.1.10",
     "grunt-notify": "^0.4.1",
-    "grunt-spritesmith": "^5.1.0",
+    "grunt-spritesmith": "github:ensighten/grunt-spritesmith",
     "grunt-string-replace": "^1.2.0",
     "grunt-text-replace": "^0.4.0",
     "grunt-version": "^1.0.0"

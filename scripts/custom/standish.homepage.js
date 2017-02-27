@@ -7,8 +7,8 @@
       infinite: true,
       slidesToShow: 4,
       slidesToScroll: 3,
-      prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev">Previous</button>',
-      nextArrow: '<button type="button" class="fa fa-chevron-right slick-next">Next</button>'
+      prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev"></button>',
+      nextArrow: '<button type="button" class="fa fa-chevron-right slick-next"></button>'
     });
 
     var desWidth =  $('.hoz-slider-top').width();
@@ -181,7 +181,7 @@
           // Applies Bindings to mobile slots
           $('[data-bind=mobile-promos]').find('[data-bind=mobile-slot]').each(function(i,v) {
             $(this).find('a').attr('href', sliderStuff[i].mobileurl);
-            $(this).find('a > img').attr('src', sliderStuff[i].mobileimage);
+            $(this).find('a > img').attr('src', sliderStuff[i].mobileimage).removeClass('hidden');
           });
 
           $('.video_popup_hoz_slider').on( 'click', function( e ) {
