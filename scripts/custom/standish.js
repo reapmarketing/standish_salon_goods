@@ -230,7 +230,13 @@
       $('#chat-modal-hannah').modal({
         keyboard: false
       });
-      $(this).addClass('hidden');
+      if (!$(this).hasClass('hamburger')) {
+        $(this).addClass('hidden');
+      }
+      if ($('#rainbow-hamburger').is(':visible')) {
+        $('#rainbow-hamburger').slideToggle();
+      }
+
     });
     $('#chat-modal-hannah').on('hidden.bs.modal', function (e) {
       $('[href="#contact-hannah"]').removeClass('hidden');

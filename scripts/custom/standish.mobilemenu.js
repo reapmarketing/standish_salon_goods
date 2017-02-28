@@ -117,7 +117,7 @@
 		return el.getItems().done(function(context) {
 			$('.toggle-navigation').sidr({
 				name: 'mobile-open',
-				side: 'right',
+				side: 'left',
 				source: '#mobile-menu-json',
 				onOpen: function() {
 					var el = this;
@@ -137,6 +137,16 @@
 					$(this).siblings('.sidr-class-mobile-menu').toggle();
 					$(el).siblings().children('.sidr-class-mobile-menu').hide();
 				});
+			});
+
+			$('.standish-contact').on('click', function(e) {
+				e.preventDefault();
+				console.log(e);
+				$('#rainbow-hamburger').slideToggle();
+			});
+			$('#rainbow-hamburger .close-icon').on('click', function(e) {
+				console.log(e);
+				$('#rainbow-hamburger').slideToggle();
 			});
 			
 			
