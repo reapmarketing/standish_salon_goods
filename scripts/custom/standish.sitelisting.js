@@ -56,7 +56,7 @@
       if (videoObj.length > 0) {
         vex.open({
           content: videoObj[0].videoHTML,
-          contentCSS: { 'padding': '0', 'width': '960px' }
+          contentCSS: { 'padding': '0' }
         });
       }
     });

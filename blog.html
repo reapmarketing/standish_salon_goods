@@ -1,120 +1,157 @@
-	<div class="template" style="display:none" data-template="blog"></div>
+  <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+
+  <div class="template" style="display:none" data-template="blog"></div>
   
   <!--START: CATEGORY_HEADER-->
-		[CONTENT]
-	<!--END: CATEGORY_HEADER-->
+    [CONTENT]
+  <!--END: CATEGORY_HEADER-->
 
-	<div class="col-md-9 blog">
-  	<div class="col-md-12 search-container hidden-sm hidden-xs">
-      <div class="col-md-4 pull-right search">
+  <div class="col-md-9 blog">
+    <div class="grid">
+      <!--START: blog_post-->
+      <article class="blog-item panel grid-item col-md-6">
+        <h3 class="panel-header"><a href="[pagename]">[subject]</a></h3>
+        <!--START: post_image-->
+          <a href="[pagename]" title="[subject]" class="col-md-12 no-padd video_popup_testimonial hidden-single" data-video="0" id="listing_main_image_link" style="position:relative;"><i class="fa fa-play play-button fa-3x" style="position: absolute;text-decoration: none;" aria-hidden="true"></i><img class="previewimage" itemprop="image" src="[post_image]" align="middle" border="0" id="large" name="large" alt="Ronald McDonald House" width="100%" data-href="[post_image]"></a>
+        <!--END: post_image-->
+        <div class="panel-body">
+          <div class="item hidden-multi">Posted by [post_author] on [post_date]
+            <!--START: POST_CATEGORY-->
+              to <a href="[post_category_link]">[post_category_name]</a>
+            <!--END: POST_CATEGORY-->
+          </div>
+          [product_social-bookmarking] 
+          <p>[post]</p>
+          
+          <!--START: read-more-->
+            <a href="[pagename]" title="[subject]" class="btn button btn-flat">[blog_read-more]</a>
+          <!--END: read-more-->
+
+          <!--START: blog_comments-->
+          <div class="hidden-multi"><a href="[pagename]#comments">([numcomments]) [blog_total-comments]</a></div>
+          <!--END: blog_comments-->
+      
+          <!--START: blog_comments_list-->
+            <h3>[blog_comments-header]<a name="comments" id="comments"></a></h3>
+
+            <!--START: comments-->
+            <div class="panel panel-default">
+              <div class="item"><span class="blog-hilite">[name]</span> <em>[blog_comments-date]</em> [datentime]</div>
+              <div class="panel-body">
+                <div class="item">[comment]</div>
+              </div>
+            </div>
+            <!--END: comments-->
+          <!--END: blog_comments_list-->
+      
+          <!--START: blog_add_comments-->
+            <form action="blog.asp?action=comment&articleid=[id]" method="post">
+              <input type=text name="info" value="[idenc]" style="display:none;">
+              <input type=text name="email" value="" style="display:none;">
+              <p>[blog_comments-addcomment]</p>
+              <p>[blog_comments-name]</p>
+              <input name="blog_comment_name" type="text" class="txtBoxStyle" value="[name]" size="50">
+              <p>[blog_comments-email]</p>
+              <input name="blog_comment_email" type="text" class="txtBoxStyle" value="[email]" size="50">
+              <p>[blog_comments-body]</p>
+              <textarea cols=60 rows=8 name="blog_comment_comment" class="txtareaStyle"></textarea>
+              <br />
+              <input type="submit"  value="[blog_comments-submit]" class="btn standishgreen">
+            </form>
+          <!--END: blog_add_comments-->
+        </div>
+      </article>
+      <!--END: blog_post-->
+    </div>
+  </div>
+
+
+  <div class="col-md-3 blog-nav">
+    <div class="row search-container clearfix hidden-sm hidden-xs">
+      <div class="search">
         <form method="get" name="searchForm" action="/search.html">
-            <div class="input-group">
-              <input type="text" size="25" name="k" id="searchlight" class="search-text form-control" onfocus="javascript:if (this.value=='search by keyword') {this.value='';};" onblur="if(this.value.length == 0) this.value = 'search by keyword'" onblur="if(this.value.length == 0) this.value = 'search by keyword'" value="search by keyword" autocomplete="on">
+            <div class="input-group" style="margin-left: 0; margin-right: 0;width: 100%;">
+              <input size="25" placeholder="Search" name="k" value="" id="searchlight" class="search-text form-control fbinputkeys" autocomplete="off" type="text">
               <span class="input-group-btn">
-                  <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
-                </span>
+                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
             </div>
         </form>
       </div>
     </div>
-  
-	<!--START: blog_post-->
-    <article class="blog-item panel">
-      <h3 class="panel-header"><a href="[pagename]">[subject]</a></h3>
-      <!--START: post_image-->
-        <a href="[pagename]" title="[subject]"><img class="previewimage" src="[post_image]"></a>
-      <!--END: post_image-->
-      <div class="panel-body">
-      	<div class="item">Posted by [post_author] on [post_date]
-          <!--START: POST_CATEGORY-->
-            to <a href="[post_category_link]">[post_category_name]</a>
-          <!--END: POST_CATEGORY-->
-        </div>
-    
-        <p>[post]</p>
-    
-        [product_social-bookmarking]
-    
-        <!--START: read-more-->
-          <a href="[pagename]" title="[subject]">[blog_read-more]</a>
-        <!--END: read-more-->
-        <!--START: blog_comments-->
-        <div><a href="[pagename]#comments">([numcomments]) [blog_total-comments]</a></div>
-        <!--END: blog_comments-->
-    
-        <!--START: blog_comments_list-->
-        
-          <h3>[blog_comments-header]<a name="comments" id="comments"></a></h3>
-
-          <!--START: comments-->
-          <div class="panel panel-default">
-            <div class="item"><span class="blog-hilite">[name]</span> <em>[blog_comments-date]</em> [datentime]</div>
-            <div class="panel-body">
-              <div class="item">[comment]</div>
-            </div>
-          </div>
-          <!--END: comments-->
-        <!--END: blog_comments_list-->
-    
-        <!--START: blog_add_comments-->
-          <form action="blog.asp?action=comment&articleid=[id]" method="post">
-            <input type=text name="info" value="[idenc]" style="display:none;">
-            <input type=text name="email" value="" style="display:none;">
-            <p>[blog_comments-addcomment]</p>
-            <p>[blog_comments-name]</p>
-            <input name="blog_comment_name" type="text" class="txtBoxStyle" value="[name]" size="50">
-            <p>[blog_comments-email]</p>
-            <input name="blog_comment_email" type="text" class="txtBoxStyle" value="[email]" size="50">
-            <p>[blog_comments-body]</p>
-            <textarea cols=60 rows=8 name="blog_comment_comment" class="txtareaStyle"></textarea>
-            <br />
-            <input type="submit"  value="[blog_comments-submit]" class="btn standishgreen">
-          </form>
-        <!--END: blog_add_comments-->
+    <div class="row">
+      <!--START: blog_topnav-->
+        <div class="hidden-multi">[blog_topnav]</div>
+      <!--END: blog_topnav-->
+      <a href="blog.asp" class="cat hidden-multi"><strong>&laquo; [blog_home]</strong></a>
+      
+      <!--START: categories_block-->
+      <div class="well blog-content-holder">
+        <h4 class="menu-headers serif black-text bold">[blog_categories]</h4>
+        <ul>
+        <!--START: categories-->
+          <li><a href='[categorylink]' class="cat">[categorylabel]</a></li>
+        <!--END: categories-->
+        </ul>
       </div>
-    </article>
-	<!--END: blog_post-->
-	</div>
+      <!--END: categories_block-->
 
-	<div class="col-md-3 blog-nav">
-	<!--START: blog_topnav-->
-		[blog_topnav]
-	<!--END: blog_topnav-->
-	
-	<a href="blog.asp" class="cat"><strong>&laquo; [blog_home]</strong></a>
-	
-	<!--START: categories_block-->
-		<div class="menu-headers serif black-text bold">[blog_categories]</div>
-		<ul>
-		<!--START: categories-->
-			<li><a href='[categorylink]' class="cat">[categorylabel]</a></li>
-		<!--END: categories-->
-		</ul>
-	<!--END: categories_block-->
+      <!--START: posts_block-->
+      <div class="well blog-content-holder">
+        <h4 class="menu-headers serif black-text bold">[blog_recentposts]</h4>
+        <ul>
+        <!--START: posts-->
+          <li><a href='[postlink]' class="cat">[postlabel]</a></li>
+        <!--END: posts-->
+        </ul>
+      </div>
+      <!--END: posts_block-->
+      <!--START: archives_block-->
+      <div class="well blog-content-holder">
+        <h4 class="menu-headers allcaps serif black-text bold">[blog_archives]</h4>
+        <ul>
+        <!--START: archives-->
+          <li><a href='[archivelink]' class="cat">[archivelabel]</a></li>
+        <!--END: archives-->
+        </ul>
+      </div>
+      <!--END: archives_block-->
+    </div>
+  </div>
 
-	<!--START: posts_block-->
-		<div class="menu-headers serif black-text bold">[blog_recentposts]</div>
-		<ul>
-		<!--START: posts-->
-			<li><a href='[postlink]' class="cat">[postlabel]</a></li>
-		<!--END: posts-->
-		</ul>
-	<!--END: posts_block-->
-	<!--START: archives_block-->
-		<div class="menu-headers allcaps serif black-text bold">[blog_archives]</div>
-		<ul>
-		<!--START: archives-->
-			<li><a href='[archivelink]' class="cat">[archivelabel]</a></li>
-		<!--END: archives-->
-		</ul>
-	<!--END: archives_block-->
-	</div>
+  <!--START: blog_bottomnav-->
+    [blog_bottomnav]
+  <!--END: blog_bottomnav-->
 
-	<!--START: blog_bottomnav-->
-		[blog_bottomnav]
-	<!--END: blog_bottomnav-->
+  <!--START: CATEGORY_FOOTER-->
+    <!--[CONTENT] -->
+  <!--END: CATEGORY_FOOTER-->
 
-	<!--START: CATEGORY_FOOTER-->
-		<!--[CONTENT] -->
-	<!--END: CATEGORY_FOOTER-->
 
+  <script type="text/javascript">
+    $('article').each(function(i, v) {
+      if ( i === 0 ) {
+        $(this).removeClass('col-md-6').addClass('col-md-12');
+      }
+    });
+
+    if ( window.location.pathname === "/blog.asp" || window.location.pathname === "/client-testimonials" ) {
+      $(function() {
+        $('.grid').masonry({
+          // set itemSelector so .grid-sizer is not used in layout
+          itemSelector: '.grid-item',
+          // use element for option
+          columnWidth: '.col-md-6',
+          percentPosition: true
+        });
+      });
+
+      $('.hidden-multi').hide();
+    }
+    else {
+      $('.hidden-single').hide();
+
+    }
+
+  </script>

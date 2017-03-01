@@ -1,4 +1,7 @@
+<div class="template" style="display:none" data-template="checkout"></div>
+
 <script type="text/javascript" src="state_countryjs.asp"></script>
+
 <style type="text/css">
 .overlay {
 	background-color: rgba(255,255,255, 0.4);;
@@ -432,7 +435,29 @@
 								<p>[checkout3_shippinginstructions]</p>
 								<a href="/about-shipping">Learn more about shipping</a>
 							</div>
-							<a class="pull-right button standishgray btn" href="javascript:check_address('refresh');">[checkout3_refreshRates]</a>
+							<div class="row">
+								<div class="col-md-10">
+									<div class="row">
+										<div class="col-sm-6">
+											<a href="#" class="video_popup_single" id="listing_main_image_link" style="position: relative;"><i class="fa fa-play play-button play-button-sm" style="font-size: 2em;position: absolute;text-decoration: none;" aria-hidden="true"></i><img src="assets/templates/[template]/images/loadingAndShipping.png" align="middle" border="0" id="large" name="large" alt="Danbury - Edit 1" width="100%" data-href="" data-video="w3rlbrw4r8"></a>
+										</div>
+
+										<div class="col-sm-6">
+											<div class="row">
+												<p><strong class="standishgray-text">Shipping Rates Explained</strong></p>
+												<ul style="padding-left:15px;">
+													<li>Tier 3 - standard no assistance delivery</li>
+													<li>Tier 2 - assisted curbside delivery</li>
+													<li>Tier 1 - full unloading and inside delivery</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<a class="pull-right button standishgray btn" href="javascript:check_address('refresh');"><i class="fa fa-lg fa-refresh" aria-hidden="true"></i><span class="hidden">[checkout3_refreshRates]</span></a>
+								</div>
+							</div>
 							<div class="clearfix"></div>
 						</div>
 					</div>

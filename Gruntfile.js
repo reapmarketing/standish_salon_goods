@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['scripts/jquery.sidr.js', 'bower_components/bootbox.js/bootbox.js', 'bower_components/slick-carousel/slick/slick.js', 'scripts/instafeed.js', 'scripts/masonry.pkgd.min.js', 'scripts/scrollDepth.js', 'scripts/custom/standish.js', 'scripts/custom/standish.mobilemenu.js', 'scripts/custom/standish.sitelisting.js', 'scripts/custom/standish.homepage.js', 'scripts/custom/standish.sitelisting.js', 'scripts/custom/standish.promotions.js', 'scripts/custom/standish.templateswitcher.js', 'scripts/custom/template-slug.js', 'scripts/custom/hacks.js' ],
+        src: ['scripts/jquery.sidr.js', 'bower_components/bootbox.js/bootbox.js', 'bower_components/slick-carousel/slick/slick.js', 'scripts/instafeed.js', 'scripts/masonry.pkgd.min.js', 'scripts/scrollDepth.js', 'scripts/custom/standish.js', 'scripts/custom/standish.mobilemenu.js', 'scripts/custom/standish.sitelisting.js', 'scripts/custom/standish.homepage.js', 'scripts/custom/standish.sitelisting.js', 'scripts/custom/standish.templateswitcher.js', 'scripts/custom/template-slug.js', 'scripts/custom/hacks.js' ],
         dest: 'dist/js/app.js',
       },
     },
@@ -71,10 +71,11 @@ module.exports = function(grunt) {
         imgPath: '../sprites/badges-sprites.png'
       },
       greenSprites: {
-        src: ['images/individual-badges-main/Green/*.png', 'images/individual-badges-main/Orange/*.png'],
-        dest: './dist/sprites/individual-badges-main.png',
+        src: ['images/individual-badges-main/Green/*.jpg', 'images/individual-badges-main/Orange/*.jpg'],
+        dest: './dist/sprites/individual-badges-main.jpg',
+        imgOpts: {quality: 80},
         destCss: 'sass/_badges-sprites-colors.scss',
-        imgPath: '../sprites/individual-badges-main.png'
+        imgPath: '../sprites/individual-badges-main.jpg'
       },
       splatterBadges: {
         src: ['images/splatter-badges/*.png'],

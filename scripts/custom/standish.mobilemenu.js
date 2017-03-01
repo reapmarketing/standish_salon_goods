@@ -139,6 +139,16 @@
 					$(el).siblings().children('.sidr-class-mobile-menu').hide();
 				});
 			});
+
+			$('.standish-contact').on('click', function(e) {
+				e.preventDefault();
+				console.log(e);
+				$('#rainbow-hamburger').slideToggle();
+			});
+			$('#rainbow-hamburger .close-icon').on('click', function(e) {
+				console.log(e);
+				$('#rainbow-hamburger').slideToggle();
+			});
 			
 			
 		});

@@ -81,6 +81,9 @@
           Standish.Homepage.homepageBrands();
         }
       return;
+      case 'checkout':
+        Standish.ActivateVideo();
+      return;
       default:
       return;
     }

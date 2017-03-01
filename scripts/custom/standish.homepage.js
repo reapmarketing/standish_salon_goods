@@ -7,8 +7,8 @@
       infinite: true,
       slidesToShow: 4,
       slidesToScroll: 3,
-      prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev">Previous</button>',
-      nextArrow: '<button type="button" class="fa fa-chevron-right slick-next">Next</button>'
+      prevArrow: '<button type="button" class="fa fa-chevron-left slick-prev"></button>',
+      nextArrow: '<button type="button" class="fa fa-chevron-right slick-next"></button>'
     });
 
     var desWidth =  $('.hoz-slider-top').width();
@@ -41,7 +41,7 @@
   };
 
   Homepage.getData = function(embed_code) {
-    var baseUrl = "https://fast.wistia.com/oembed/?url=";
+    var baseUrl = "https://fast.wistia.com/oembed.json?url=";
     var accountUrl = encodeURIComponent("https://home.wistia.com/medias/");
     return $.getJSON(baseUrl + accountUrl + embed_code + "&format=json&callback=?");
   };
@@ -73,7 +73,7 @@
             video_markup_home_page = '';
             video_markup_home_page += '<a href="#" class="padd-block video_popup" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
             video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 2em;position: absolute;text-decoration: none;"></i>';
-            video_markup_home_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
+            video_markup_home_page +=  '<img itemprop="image" src="'+ video.thumbnail_url +'&image_crop_resized=240x135" align="middle" border="0" id="large" name="large" alt="'+ video.title +'" width="100%" data-href="'+ video.thumbnail_url +'" />';
             video_markup_home_page += '</a>';
             $('.brand-videos').slick('slickAdd', video_markup_home_page);
           });
@@ -84,7 +84,7 @@
             // console.log(video_data[video]);
             vex.open({
               content: video_data[video].html,
-              contentCSS: { 'padding': '0', 'width': '960px' }
+              contentCSS: { 'padding': '0' }
             });
           });
         });
@@ -120,8 +120,12 @@
         $(data.feed.entry).each(function(i,v) {
           var image = v['gsx$img-url'].$t,
               link = v.gsx$link.$t;
+
           if ( link !== "http://www.standishsalongoods.com/norvell-sunless-tanning-equipment" ) {
             logoHtml += '<a href="'+link+'"><img style="max-width: 82px;" src="'+image+'"></a>';
+          }
+          else {
+            logoHtml += '<a href="'+link+'"><img width="82" src="'+image+'"></a>';
           }
 
         });
@@ -182,7 +186,7 @@
           // Applies Bindings to mobile slots
           $('[data-bind=mobile-promos]').find('[data-bind=mobile-slot]').each(function(i,v) {
             $(this).find('a').attr('href', sliderStuff[i].mobileurl);
-            $(this).find('a > img').attr('src', sliderStuff[i].mobileimage);
+            $(this).find('a > img').attr('src', sliderStuff[i].mobileimage).removeClass('hidden');
           });
 
           $('.video_popup_hoz_slider').on( 'click', function( e ) {
@@ -190,7 +194,7 @@
             var video = $(this).data('video');
             vex.open({
               content: sliderStuff[video].video_data.html,
-              contentCSS: { 'padding': '0', 'width': '960px' }
+              contentCSS: { 'padding': '0' }
             });
           });
         });

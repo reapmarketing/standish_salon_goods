@@ -34,6 +34,21 @@
     }
   };
 
+  Standish.ActivateVideo = function() {
+
+    var dataVid = Standish.Homepage.getData('w3rlbrw4r8');
+
+    $('.video_popup_single').on( 'click', function( e ) {
+      e.preventDefault();
+      var video = $(this).data('video');
+      // console.log(video_data[video]);
+      vex.open({
+        content: dataVid.responseJSON.html,
+        contentCSS: { 'padding': '0' }
+      });
+    });
+  };
+
   Standish.EqualHeightsMobile = function() {
     if ($(window).width() <= 768) {
       var groups = [
@@ -145,7 +160,7 @@
               video_markup_home_page = '';
               video_markup_home_page += '<div class="padd-bottom"><a href="#" class="col-md-12 no-padd video_popup_testimonial" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
               video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 1.5em;position: absolute;text-decoration: none;"></i>';
-              video_markup_home_page +=  '<img itemprop="image" src="'+ video.video_data.thumbnail_url +'" align="middle" border="0" id="large" name="large" alt="'+ video.name +'" width="100%" data-href="'+ video.video_data.thumbnail_url +'" />';
+              video_markup_home_page +=  '<img itemprop="image" src="'+ video.video_data.thumbnail_url +'&image_crop_resized=147x83" align="middle" border="0" id="large" name="large" alt="'+ video.name +'" width="100%" data-href="'+ video.video_data.thumbnail_url +'" />';
               video_markup_home_page += '</a><p style="letter-spacing: -.05em;">'+ video.name +'  <i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i><i class="fa fa-star fa-xs standishyellow-text"></i></p></div>';
               $('#left-bar-testimonials').append(video_markup_home_page);
             });
@@ -156,7 +171,7 @@
               var video = $(this).data('video');
               vex.open({
                 content: sliderStuff[video].video_data.html,
-                contentCSS: { 'padding': '0', 'width': '960px' }
+                contentCSS: { 'padding': '0' }
               });
             });
           });
@@ -215,7 +230,13 @@
       $('#chat-modal-hannah').modal({
         keyboard: false
       });
-      $(this).addClass('hidden');
+      if (!$(this).hasClass('hamburger')) {
+        $(this).addClass('hidden');
+      }
+      if ($('#rainbow-hamburger').is(':visible')) {
+        $('#rainbow-hamburger').slideToggle();
+      }
+
     });
     $('#chat-modal-hannah').on('hidden.bs.modal', function (e) {
       $('[href="#contact-hannah"]').removeClass('hidden');
