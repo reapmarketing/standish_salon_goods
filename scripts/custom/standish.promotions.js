@@ -84,7 +84,7 @@
 
     // Promotions.CyberWeek.init();
 
-    Promotions.TextDeals.init();
+    // Promotions.TextDeals.init();
 
     // Send form data to HubSpot from the client.
     function submitToHubSpot(data) {
