@@ -41,7 +41,10 @@ select::-ms-expand {
   display: none;
 }
 
-
+.input-lg {
+  height: 56px!important;
+  line-height: 56px!important;
+}
 .input-group-btn>.btn {
   padding: 6px 20px;
 }
@@ -79,6 +82,14 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+.salon-equipment-checklist {
+  .hs_email, .hs_submit {
+    width: 50%;
+    display: inline-block;
+  }
+
 }
   .add-qty.input-group-btn {
     float:left;
@@ -196,10 +207,10 @@ input::-moz-focus-inner {
 }
 .fancy-select-special {
   position: relative;
-  height: 35px;
+  height: 45px;
 
   h4 {
-    width: 100%;
+    width: 100%;xn
     text-align: center;
     left: 0;
     font-weight: 500;
@@ -616,3 +627,42 @@ textarea.hs-input {
   padding: 5px;
   margin-bottom: 12px;
 }
+
+#hsForm_73ed32d7-2547-4f32-aca4-091db59fad83 {
+  input[type="radio"] {
+    opacity:0.011;
+    z-index:100;
+  }
+
+  .inputs-list {
+    .hs-form-radio label.hs-form-radio-display {
+      color: transparent;
+      width: 385px;
+      height: 146px;
+
+      &:hover {
+        -webkit-box-shadow: 3px -1px 11px 0px rgba(50, 50, 50, 0.55);
+        -moz-box-shadow:    3px -1px 11px 0px rgba(50, 50, 50, 0.55);
+        box-shadow:         3px -1px 11px 0px rgba(50, 50, 50, 0.55);
+      }
+      &.active {
+        -webkit-box-shadow: 3px -1px 11px 0px rgba(27, 72, 222, 0.55);
+        -moz-box-shadow:    3px -1px 11px 0px rgba(27, 72, 222, 0.55);
+        box-shadow:         3px -1px 11px 0px rgba(27, 72, 222, 0.55);
+      }
+    }
+
+    .hs-form-radio:nth-of-type(1) label.hs-form-radio-display {
+      background: url('/assets/images/financing1.jpg');
+      
+    }
+    .hs-form-radio:nth-of-type(2) label.hs-form-radio-display {
+      background: url('/assets/images/financing2.png');
+    }
+    .hs-form-radio:nth-of-type(3) label.hs-form-radio-display {
+      background: url('/assets/images/financing3.png');
+    }
+  }
+
+}
+

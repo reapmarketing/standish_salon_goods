@@ -272,12 +272,24 @@
 
     };
 
-        // Quick Dom Update
+    // Quick Dom Update
     if ( $('#slickShow').length ) {
       Standish.ActivateSliderNotFancy('#slickShow');
     }
   
   });
+
+  Standish.DataOpen = function() {
+    $('[data-open]').on('click', function() {
+      var thisID = $(this).attr('data-open');
+      $('.sectionHidden').addClass('hidden');
+      $('#'+thisID).toggleClass('hidden');
+
+      $('html, body').animate({
+        scrollTop: $( "#" + thisID ).offset().top - $(this).height()
+      }, 2000);
+    });
+  };
 
   // -- Toggle filters -- //
   Standish.ToggleCatFilters = function() {
@@ -302,6 +314,26 @@
         });
       }
     });
+  };
+
+  Standish.ActivateSpecialButtons = function() {
+
+    hbspt.forms.create(
+      { portalId: '239485',
+        submitButtonClass: 'button btn',
+        css: '',
+        target: '#thank-you-financing-placement',
+        formId: '73ed32d7-2547-4f32-aca4-091db59fad83',
+        onFormReady: function() {
+          $('#hsForm_73ed32d7-2547-4f32-aca4-091db59fad83 input[type=radio]').on('click', function() {
+            var $parentHere = $(this).parents('.hs-form-radio-display'),
+                $deselectElements = $('.hs-form-radio-display').not($parentHere);
+
+            $parentHere.addClass('active');
+            $deselectElements.removeClass('active');
+          });
+        }
+      });
   };
 
   // -- Buttons for number inputs -- //
@@ -440,6 +472,10 @@
 
     // Activate Hannah Chat
     Standish.HannahChat();
+
+    Standish.DataOpen();
+
+    Standish.ActivateSpecialButtons();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();

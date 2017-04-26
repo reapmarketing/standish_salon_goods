@@ -140,7 +140,7 @@ button.cart i {
   }
   .col5 {
     left: 642px;
-   ul {width: 180px;}
+   ul {width: 210px;}
   }
 
 }
@@ -310,8 +310,6 @@ li.first.far a {
   }
 }
 
-
-
 .search-button {
   font-size: 16px;
   -webkit-border-radius: 0 3px 3px 0;
@@ -333,12 +331,15 @@ li.first.far a {
 
 .navigation ul ul a span,
 .cat span {
-  background: $highlight-color;
   padding: 2px 5px;
   border-radius: 2px;
-  margin-left: 5px;
-  color: $primary-gray;
+  margin-left: 10px;
 }
+.cat span {
+  color: $primary-gray;
+  background: $highlight-color;
+}
+
 .cat span {
   position: absolute;
   left: -62px;
