@@ -7,13 +7,71 @@
     [CONTENT]
   <!--END: CATEGORY_HEADER-->
 
+  <div class="container-fluid blog-top">
+    <div class="container">
+      <div class="col-md-2 col-sm-3 graphic-card hidden-xs">
+        <img src="/assets/templates/[template]/images/mountainGraphic.png">
+      </div>
+      <div class="col-md-10 col-sm-9">
+        <div class="headline-text">
+          <h3 class="headline-header standishpurple-text">Looking to Start Your Salon or Spa?</h3>
+          <p class="headline-subtext">Download our Equipment Checklist Today!</p>
+        </div>
+        <div id="cta-form" class="cta-placement"></div>
+        <!--[if lte IE 8]>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+        <![endif]-->
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+        <script>
+          hbspt.forms.create({ 
+            portalId: '239485',
+            formId: '62a2c6db-9026-4718-bd75-dbd11a9b1386',
+            target: '#cta-form',
+            formInstanceId: 2,
+            css: ''
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden-multi col-md-3 blog-nav">
+    <div class="row search-container clearfix hidden-sm hidden-xs">
+      <div class="search">
+        <form method="get" name="searchForm" action="/search.html">
+            <div class="input-group" style="margin-left: 0; margin-right: 0;width: 100%;">
+              <input size="25" placeholder="Search" name="k" value="" id="searchlight" class="search-text form-control fbinputkeys" autocomplete="off" type="text">
+              <span class="input-group-btn">
+                <button name="search" class="search-button gainsboro btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="sub-menu1">
+      <h4 class="menu-headers serif black-text bold">Categories</h4><hr>
+      <ul>
+        <li><a href='tel:+8882718434' class="cat">Call an Expert</a></li>
+        <li><a href='/salon-equipment-financing' class="cat">Get Financing</a></li>
+        <li><a href='/guide-to-starting-a-salon' class="cat">Space Planning</a></li>
+      </ul>
+    </div>
+
+    <div class="sub-menu2">
+      <h4 class="menu-headers serif black-text bold">Related Videos</h4><hr>
+      <div class="related-videos-block"></div>
+    </div>
+
+  </div>
+
   <div class="col-md-9 blog">
     <div class="grid">
       <!--START: blog_post-->
       <article class="blog-item panel grid-item col-md-6">
         <h3 class="panel-header"><a href="[pagename]">[subject]</a></h3>
         <!--START: post_image-->
-          <a href="[pagename]" title="[subject]" class="col-md-12 no-padd video_popup_testimonial hidden-single" data-video="0" id="listing_main_image_link" style="position:relative;"><i class="fa fa-play play-button fa-3x" style="position: absolute;text-decoration: none;" aria-hidden="true"></i><img class="previewimage" itemprop="image" src="[post_image]" align="middle" border="0" id="large" name="large" alt="Ronald McDonald House" width="100%" data-href="[post_image]"></a>
+        <a href="[pagename]" title="[subject]" class="col-md-12 no-padd video_popup_testimonial hidden-single" data-video="0" id="listing_main_image_link" style="position:relative;"><i class="fa fa-play play-button fa-3x" style="position: absolute;text-decoration: none;" aria-hidden="true"></i><img class="previewimage" itemprop="image" src="[post_image]" align="middle" border="0" id="large" name="large" alt="Ronald McDonald House" width="100%" data-href="[post_image]"></a>
         <!--END: post_image-->
         <div class="panel-body">
           <div class="item hidden-multi">Posted by [post_author] on [post_date]
@@ -46,28 +104,47 @@
           <!--END: blog_comments_list-->
       
           <!--START: blog_add_comments-->
-            <form action="blog.asp?action=comment&articleid=[id]" method="post">
-              <input type=text name="info" value="[idenc]" style="display:none;">
-              <input type=text name="email" value="" style="display:none;">
-              <p>[blog_comments-addcomment]</p>
-              <p>[blog_comments-name]</p>
-              <input name="blog_comment_name" type="text" class="txtBoxStyle" value="[name]" size="50">
-              <p>[blog_comments-email]</p>
-              <input name="blog_comment_email" type="text" class="txtBoxStyle" value="[email]" size="50">
-              <p>[blog_comments-body]</p>
-              <textarea cols=60 rows=8 name="blog_comment_comment" class="txtareaStyle"></textarea>
-              <br />
-              <input type="submit"  value="[blog_comments-submit]" class="btn standishgreen">
-            </form>
+          <form action="blog.asp?action=comment&articleid=[id]" method="post">
+            <input type=text name="info" value="[idenc]" style="display:none;">
+            <input type=text name="email" value="" style="display:none;">
+            <p>[blog_comments-addcomment]</p>
+            <p>[blog_comments-name]</p>
+            <input name="blog_comment_name" type="text" class="txtBoxStyle" value="[name]" size="50">
+            <p>[blog_comments-email]</p>
+            <input name="blog_comment_email" type="text" class="txtBoxStyle" value="[email]" size="50">
+            <p>[blog_comments-body]</p>
+            <textarea cols=60 rows=8 name="blog_comment_comment" class="txtareaStyle"></textarea>
+            <br />
+            <input type="submit"  value="[blog_comments-submit]" class="btn standishgreen">
+          </form>
           <!--END: blog_add_comments-->
         </div>
       </article>
       <!--END: blog_post-->
     </div>
-  </div>
+
+    <div class="clearfix"></div>
+    <div class="secondary-cta-form container-fluid blog-bottom">
+      <div class="col-md-2 col-sm-3 graphic-card hidden-xs">
+        <img src="/assets/templates/[template]/images/mountainGraphic.png">
+      </div>
+      <div class="col-md-10 col-sm-9">
+        <div class="headline-text">
+          <h3 class="headline-header standishpurple-text">Buy Now, Pay Later</h3>
+          <p class="headline-subtext">Keep money in your pocket and let our 3rd party lenders cover the cost of your furnishings while you gain more business!</p>
+        </div>
+        <div id="cta-form2" class="cta-placement">
+          <a class="btn button btn-default" href="/salon-equipment-financing">
+            Get Financing
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div><!--col-md-9-->
 
 
-  <div class="col-md-3 blog-nav">
+  <div class="col-md-3 blog-nav hidden-single">
     <div class="row search-container clearfix hidden-sm hidden-xs">
       <div class="search">
         <form method="get" name="searchForm" action="/search.html">
@@ -120,6 +197,7 @@
     </div>
   </div>
 
+
   <!--START: blog_bottomnav-->
     [blog_bottomnav]
   <!--END: blog_bottomnav-->
@@ -153,5 +231,7 @@
       $('.hidden-single').hide();
 
     }
+
+    $('.blog-top').detach().insertBefore('#prime-content');
 
   </script>

@@ -7,6 +7,9 @@
 .standishgreen {
   background-color: $secondary-color;
 }
+.standishpurple {
+  background-color: $standishpurple;
+}
 .gainsboro {
   background-color: #dcdcdc;
 }
@@ -76,6 +79,9 @@
 }
 .standishyellow-text {
   color: $highlight-color !important;
+}
+.standishpurple-text {
+  color: $standishpurple;
 }
 .beige-text {
   color: #f5f5dc;
