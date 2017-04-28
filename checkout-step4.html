@@ -39,7 +39,7 @@
                  [city], [state] [zip]<br />
               </address>
               <strong>[invoice_dateordered]</strong> [odate]<br />
-              <strong>[invoice_ordernum]</strong>: [invoice-prefix][invoice-number]<br />
+              <strong>[invoice_ordernum]</strong>: [invoice-prefix]<span class="data-invoice">[invoice-number]</span><br />
               <!--START: salesperson-->
               <strong>Sales Person</strong>: [salesperson]<br />
             </p>
@@ -254,6 +254,10 @@
 
 <script>
 
+
+
+  var invoiceNum = document.getElementsByClassName("data-invoice")[0].innerText;
+
   Date.prototype.addDays = function(days) {
     var dat = new Date(this.valueOf());
     dat.setDate(dat.getDate() + days);
@@ -262,23 +266,26 @@
 
   var dat = new Date();
   var shippingDate = dat.addDays(16);
+  console.log(shippingDate);
   var dd = shippingDate.getDate()
-     ,mm = shippingDate.getMonth()
-     ,yy = shippingDate.getFullYear();
+     , mm = shippingDate.getMonth()
+     , yy = shippingDate.getFullYear();
 
   if(mm <= 9)
-    mm = '0'+mm;
+    mm = '0' + mm;
   if(dd <= 9)
-    dd = '0'+dd;
+    dd = '0' + dd;
+
+
 
   window.renderOptIn = function() {
     window.gapi.load('surveyoptin', function() {
       window.gapi.surveyoptin.render(
         {
           "merchant_id": 100652317,
-          "order_id": "[invoice-number]",
+          "order_id": invoiceNum,
           "email": "[oemail]",
-          "delivery_country": "USA",
+          "delivery_country": "US",
           "estimated_delivery_date": yy + '-' + mm + '-' + dd
         });
     });
