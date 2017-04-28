@@ -180,6 +180,64 @@
     }
   };
 
+
+  Standish.blogVideos = function() {
+
+    if ($('.related-videos-block').length > 0) {
+
+      var vidIds = [
+        {"vidid": "91kikptagk", "name": "Made in the USA"},
+        {"vidid": "niwyr1w4mf", "name": "Spa on the Square"},
+        {"vidid": "7jgzrmu6bm", "name": "Our Chairs"},
+        {"vidid": "37inkz4qkr", "name": "About Us"}
+      ];
+
+      var AJAX = [], video_data = {}, video_markup_main, video_markup_sub = '', video_markup_product_page = '', imgUrl, videoData, slideHtml, sliderStuff = [];
+
+      $(vidIds).each(function(i,v) {
+        var vidid = this.vidid,
+            vidname = this.name;
+        sliderStuff.push({videoid: vidid, name: vidname });
+      });
+
+      $.each( sliderStuff, function( i, slider ) {
+        if (slider.videoid !== "") {
+          AJAX.push( Standish.getData( slider.videoid ) );
+        }
+      });
+
+      $.when.apply($, AJAX).done(function() {
+        for(var i = 0; i < AJAX.length; i++){
+
+          console.log(arguments[i]);
+          if( arguments[i].length ) {
+            sliderStuff[i].video_data = arguments[i][0];
+          } else {
+            sliderStuff[i].video_data = arguments[i][0];
+          }
+        }
+        $.each( sliderStuff, function( i, video ) {
+          // console.log(video);
+          video_markup_home_page = '';
+          video_markup_home_page += '<div class="padd-bottom col-md-12" style="padding-top: 10px;padding-bottom: 10px;"><div class="row"><a href="#" class="col-md-6 no-padd video_popup_testimonial" data-video="'+ i +'" id="listing_main_image_link" style="position:relative;">';
+          video_markup_home_page += '<i class="fa fa-play play-button play-button-sm" style="font-size: 1.5em;position: absolute;text-decoration: none;"></i>';
+          video_markup_home_page +=  '<img itemprop="image" src="'+ video.video_data.thumbnail_url +'&image_crop_resized=147x83" align="middle" border="0" id="large" name="large" alt="'+ video.name +'" width="100%" data-href="'+ video.video_data.thumbnail_url +'" />';
+          video_markup_home_page += '</a><p class="col-md-6" style="letter-spacing: -.05em; font-weight: bold;">'+ video.name +'  </p></div></div>';
+          $('.related-videos-block').append(video_markup_home_page);
+        });
+
+        $('.video_popup_testimonial').on( 'click', function( e ) {
+          e.preventDefault();
+          var video = $(this).data('video');
+          vex.open({
+            content: sliderStuff[video].video_data.html,
+            contentCSS: { 'padding': '0' }
+          });
+        });
+      });
+    }
+  };
+
   Standish.AddBottomMenu = function() {
     var url = "https://spreadsheets.google.com/feeds/list/1WXj97jT1kJQRmFQHmDMzPaPI8Xls94q0yRFTTOK9hGI/od6/public/values?alt=json-in-script";
     $.ajax({
@@ -476,6 +534,8 @@
     Standish.DataOpen();
 
     Standish.ActivateSpecialButtons();
+
+    Standish.blogVideos();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();

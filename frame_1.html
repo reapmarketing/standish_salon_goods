@@ -581,46 +581,38 @@
     });
   </script>
 
-  <div id="mobile-menu-modal" class="hidden-lg hidden-md">
+    <div id="mobile-menu-modal" class="hidden-lg hidden-md">
     <div id="rainbow-hamburger" style="display:none;">
-      <a class="close-icon"><img src="/assets/templates/[template]/images/mobile-close.png"/></a>
+      <a class="close-icon"><i class="fa fa-2x fa-close" aria-hidden="true"></i></a>
       <div id="call-us" class="hamburger-item row">
-        <a href="tel:+8882718434"> 
-          <div class="col-sm-4 col-xs-4">
-            <i class="fa fa-4x fa-phone" aria-hidden="true"></i>
-          </div>
-          <div class="col-sm-8 col-xs-8">
-            <span class="hamburger-text">Call us at <br> (888)271-8434</span>
+        <a href="tel:[store_phone]">
+          <div class="col-sm-12 col-xs-12">
+            <i class="fa fa-3x fa-phone" aria-hidden="true"></i><br>
+            <span class="hamburger-text">Call us - [store_phone]</span>
           </div>
         </a>
       </div>
       <div id="text-hannah" class="hamburger-item row">
-        <a href="sms:2143999198"> 
-          <div class="col-sm-4 col-xs-4">
-            <i class="fa fa-4x fa-commenting" aria-hidden="true"></i>
-          </div>
-          <div class="col-sm-8 col-xs-8">
-            <span class="hamburger-text">Text Hannah <br> (214)399-9198</span>
+        <a href="sms://+[store_phone2]" class="hamburger">
+          <div class="col-sm-12 col-xs-12">
+            <i class="fa fa-3x fa-commenting" aria-hidden="true"></i><br>
+            <span class="hamburger-text">Text Our Team - [store_phone2] </span>
           </div>
         </a>
       </div>
       <div id="email-us" class="hamburger-item row">
         <a href="mailto:hello@stand.sh">
-          <div class="col-sm-4 col-xs-4">
-            <i class="fa fa-4x fa-envelope" aria-hidden="true"></i>
-          </div>
-          <div class="col-sm-8 col-xs-8">
-            <span class="hamburger-text" style="vertical-align: -24px;">Email Us</span>
+          <div class="col-sm-12 col-xs-12">
+            <i class="fa fa-3x fa-envelope" aria-hidden="true"></i><br>
+            <span class="hamburger-text">Email Us</span>
           </div>
         </a>
       </div>
       <div id="get-financing" class="hamburger-item row">
         <a href="/salon-equipment-financing">
-          <div class="col-sm-4 col-xs-4">
-            <i class="fa fa-4x fa-usd" aria-hidden="true"></i>
-          </div> 
-          <div class="col-sm-8 col-xs-8">
-            <span class="hamburger-text" style="vertical-align: -24px;">Get Financing</span>
+          <div class="col-sm-12 col-xs-12">
+            <i class="fa fa-3x fa-usd" aria-hidden="true"></i><br>
+            <span class="hamburger-text">Get Financing</span>
           </div>
         </a>
       </div>
@@ -637,7 +629,7 @@
         </li>
         <li>
           <div class="wrapper-list-items">
-            <a class="standish-contact" href="#">
+            <a class="standish-contact" href="#rainbow-hamburger">
               <i class="fa fa-phone-square fa-2x clearfix" aria-hidden="true"></i>
               <span class="menu-bottom-small">Contact</span>
             </a>
@@ -670,6 +662,7 @@
       </ul>
     </div>
   </div>
+
 
   <div id="text-deals" class="modal fade modal text-deals" tabindex="-1" role="dialog">
     <div class="modal-dialog">

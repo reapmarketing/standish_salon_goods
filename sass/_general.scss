@@ -551,7 +551,7 @@ body .vex.vex-theme-flat-attack .vex-content {
 }
 
 
-/* Blog stuff */
+/*------ Blog stuff ------*/
 .blog-item.panel .panel-body {
   padding: 15px 0;
 }
@@ -613,6 +613,104 @@ article.blog-item {
     }
   }
 }
+
+.blog-top, .blog-bottom {
+  padding: 1em 0 1.5em!important;
+  margin-bottom: 2em;
+  background-color: whitesmoke;
+  margin-top: -1em;
+
+  .graphic-card {
+    padding: 1.5em 1.5em 0 1.5em;
+  }
+
+  .headline-text {
+    h3.headline-header {
+      font-family: $default-font;
+    }
+    p.headline-subtext {
+      font-size: 1.15em;
+      color: lighten($primary-gray, 5%);
+    }
+  }
+  .hs-input {
+    width: 100%;
+  }
+
+}
+
+.blog-bottom {
+  padding: 2.5em!important;
+
+  border-radius: 3px;
+  .graphic-card {
+    padding: 1.5em 0!important;
+  }
+}
+
+.sub-menu2 {
+  margin-top: 1em;
+}
+
+.cta-placement {
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : $tablet) {
+    form {
+      .hs_submit {
+        width: 100%;
+      }
+      .hs-form-field {
+        padding: 15px 0;
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  @media only screen and (min-width : $tablet + 1) {
+    form {
+      .hs_submit {
+        width: 20%;
+        padding: 0 15px 0 0;
+      }
+      .hs-form-field {
+        width: 26.666666667%;
+
+        &:not(:first-of-type) {
+          padding: 0 15px;
+        }
+
+        &:first-of-type {
+          padding: 0 15px 0 0;
+        }
+      }
+    }
+  }
+
+
+  label {
+    span {
+      font-weight: 900;
+      color: $standishpurple;
+    }
+  }
+
+  .hs_submit, .hs-form-field {
+    display: inline-block;
+  }
+
+  .hs_submit {
+    input {
+      width: 100%;
+    }
+  }
+
+
+}
+
 
 /* cycle pager */
 .cycle-pager { 
@@ -826,6 +924,14 @@ article.blog-item {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($color1, 5%)', endColorstr='$color1',GradientType=0 ); /* IE6-9 */
 }
 
+@mixin gradientGenDark($color1) {
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top,  darken($color1, 20%) 0%,  darken($color1, 5%) 12%, $color1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  darken($color1, 20%) 0%, darken($color1, 5%) 12%, $color1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  darken($color1, 20%) 0%, darken($color1, 5%) 12%, $color1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='darken($color1, 5%)', endColorstr='$color1',GradientType=0 ); /* IE6-9 */
+}
+
 @mixin gradientGenThreeStop($color1, $color2, $color3) {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#97c3b6+0,ced8ac+50,98ba9a+100 */
   background: $color1; /* Old browsers */
@@ -861,13 +967,14 @@ body:not(.sidr-open) div#mobile-menu-modal {
 
     .close-icon {
       position: absolute;
-      top: -1.25em;
-      right: 1em;
+      top: 0;
+      right: -.5em;
       width: 3em;
       height: 3em;
       text-align: center;
       color: white;
       font-weight: bold;
+      z-index: 99999;
     }
 
     #rainbow-hamburger {
@@ -881,21 +988,25 @@ body:not(.sidr-open) div#mobile-menu-modal {
           color: #f5f8dd;
         }
         .hamburger-text {
-          font-size: 1.5em;
+          font-size: 1em;
+          text-transform: uppercase;
+          letter-spacing: .05em;
+          margin-top: .15em;
+          display: block;
         }
       }
 
       #call-us {
-        @include gradientGenThreeStop(#97c3b6, #ced8ac, #98ba9a);
+        background: #8ac926;
       }
       #text-hannah {
-        @include gradientGenThreeStop(#db9c7a, #fbbc85, #f69372);
+        @include gradientGenDark(#fe5f55);
       }
       #email-us {
-        @include gradientGenThreeStop(#8b4476, #8b638a, #6b4e7d);
+        @include gradientGenDark(#2274a5);
       }
       #get-financing {
-        @include gradientGenThreeStop(#878689, #9cb1b0, #828b8b);
+        @include gradientGenDark(#ff7f50);
       }
     }
 
