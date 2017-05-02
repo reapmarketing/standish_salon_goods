@@ -132,6 +132,25 @@
   })(window,document,'script','dataLayer','GTM-PPSN');</script>
   <!-- End Google Tag Manager -->
 
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1474161279271975',
+        xfbml      : true,
+        version    : 'v2.9'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
     <header>
         <div id="fb-root"></div>
         <!-- Header -->
@@ -367,6 +386,10 @@
 
     <!-- End of Header -->
     <section class="container" id="prime-content">
+
+        <div class="col-md-12 share-area">
+          <a href="share" data-share="discount" data-href="https://www.standishsalongoods.com/" data-title="Test" data-desc="This is a test." data-image="https://www.standishsalongoods.com/assets/templates/standish-responsive/images/standish-logo.png"><i class="fa fa-facebook-official" aria-hidden="true"></i> Share on Facebook for A discount Code! </a>
+        </div>
         <!--START: LEFT BAR-->
         <div class="col-md-2 hidden-sm hidden-xs left-bar">
           <!--START: LEFT_BAR_BLOCKS-->
@@ -681,10 +704,6 @@
   <!--START: SITE SCRIPTS -->
 
   <script src="https://use.fontawesome.com/d266c066de.js"></script>
-
-  <!-- <nav id="mobile-menu" style="display:none;">
-  </nav> -->
-
 
   <!-- Add Vex -->
   <script asnyc src="/assets/templates/[template]/scripts/vex.combined.min.js"></script>
