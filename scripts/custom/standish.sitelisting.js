@@ -391,6 +391,10 @@
       'top-seller': {
         'title': 'Top Seller',
         'class': 'top-seller'
+      },
+      'extended-warranty': {
+        'title': 'Extended Warranty',
+        'class': 'extended-warranty'
       }
     };
 

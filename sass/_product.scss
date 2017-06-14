@@ -128,6 +128,9 @@ body.vex-open {
   .top-seller {
    @include sprite($-top-seller-spl);
   }
+  .extended-warranty {
+    @include sprite($-extended-warranty);
+  }
 }
 
 
@@ -987,7 +990,7 @@ h4.info-header {
     height: 46px;
     font-size: 18px;
     line-height: 1.3333333;
-    border-radius: 6px;
+    border-radius: 0;
   }
 
   #customer-action-block-mobile {
