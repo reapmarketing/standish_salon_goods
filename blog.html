@@ -1,5 +1,5 @@
   <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
   <div class="template" style="display:none" data-template="blog"></div>
   
@@ -10,7 +10,7 @@
   <div class="container-fluid blog-top">
     <div class="container">
       <div class="col-md-2 col-sm-3 graphic-card hidden-xs">
-        <img src="/assets/templates/[template]/images/mountainGraphic.png">
+        <img src="/assets/templates/[template]/images/FreeChecklist.png">
       </div>
       <div class="col-md-10 col-sm-9">
         <div class="headline-text">
@@ -112,9 +112,9 @@
     </div>
 
     <div class="clearfix"></div>
-    <div class="secondary-cta-form container-fluid blog-bottom">
+    <div class="secondary-cta-form container-fluid blog-bottom col-md-12">
       <div class="col-md-2 col-sm-3 graphic-card hidden-xs">
-        <img src="/assets/templates/[template]/images/mountainGraphic.png">
+        <img src="/assets/templates/[template]/images/snap_button.png">
       </div>
       <div class="col-md-10 col-sm-9">
         <div class="headline-text">
@@ -128,6 +128,7 @@
         </div>
       </div>
     </div>
+
 
   </div><!--col-md-9-->
 
@@ -202,15 +203,19 @@
       }
     });
 
+
+   
+
+
     if ( window.location.pathname === "/blog.asp" || window.location.pathname === "/client-testimonials" ) {
-      $(function() {
+      $('.grid').imagesLoaded( function() {
         $('.grid').masonry({
           // set itemSelector so .grid-sizer is not used in layout
           itemSelector: '.grid-item',
           // use element for option
           columnWidth: '.col-md-6',
           percentPosition: true
-        });
+        }).masonry('reload');
       });
 
       $('.hidden-multi').hide();

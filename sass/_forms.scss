@@ -665,4 +665,14 @@ textarea.hs-input {
   }
 
 }
+/* Checkout Form */
+#divCheckoutQuestions {
+  padding-left: 2.15em;
+  padding-top: 2em;
+
+  div.required {
+    display: none;
+  }
+}
+
 
