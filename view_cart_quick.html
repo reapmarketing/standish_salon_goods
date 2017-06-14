@@ -1,65 +1,179 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
+
 <head>
-<title>[TITLE]</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-[META]
-<script type="text/javascript" src="/assets/templates/common/js/utilities.js"></script>
-<link rel="StyleSheet" href="/assets/templates/[template]/css/[stylesheet]" type="text/css" media="screen">
-<link rel="StyleSheet" href="/assets/templates/common/js/tabs.css" type="text/css" media="screen">
-<script type="text/javascript" src="assets/templates/common/js/jquery.min.js"></script>
+   <title>Quick Cart</title>
+   
+    <!-- OPTIMIZELY and jQuery important -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script async type="text/javascript" src="assets/templates/[template]/dist/js/jquery.migrate.min.js"></script>
+     <!-- utility scripts -->
+    <script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
 
-<script type="text/javascript">
-function close_modal() {
-	parent.jQuery.modal.close();
-}
-</script>
-</head><body>
-<div class="col-md-12">
-	VIEW CART QUICK
-	[viewcart_quick-header]
-	<a href="#" onClick="close_modal();"><img src="assets/templates/common/images/close.png" border="0"></a>
-	[shoppingcart_items]
-	[shoppingcart_quantity]
-	[shoppingcart_price]
-	[shoppingcart_total]
-	<div style="max-height: 133px;overflow:auto;">
-	<!--START: SHOPPING_CART_ITEM-->
-		<a href="product.asp?itemid=[ITEM_CATALOGID]"><img src="thumbnail.asp?file=[THUMBNAIL]&amp;maxx=55&amp;maxy=55" style="border: 1px solid #e7e7e7;" border="0"></a>
-		<div style="width: 220px;white-space:nowrap;overflow:auto;"><a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent">[ITEM_NAME]</a></div>
-		<!--START: itemoptions-->
-		<a href='#' onClick="toggle('opt[ITEM_ID]')">View/Hide options</a>
-			<div id=opt[ITEM_ID] name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div>
-	</div>
-	<!--END: itemoptions-->
-		[ITEM_QUANTITY]
-		[ITEM_PRICE]
-		[ITEM_SUBTOTAL]
-	<!--END: SHOPPING_CART_ITEM-->
-</div>
-	<input type="button" value="[shoppingcart_updatecart]" onclick="parent.location.href='view_cart.asp';" height="5" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'">
-	[viewcart_quick-title]
-	[viewcart_quick-itemsincart]
-	Subtotal: <span class="price">[CARTSUBTOTAL]</span>
-	<input type="button" style="width:175px;" value="[viewcart_continue-shopping]"onclick="parent.location.href='[continue_url]';" height="5" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'">
-	<input type="button" style="width:175px;" onClick="parent.location.href='view_cart.asp';" value="[viewcart_checkout-button]" height="5" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'">
+    <!-- OPTIMIZELY note:needs to stay in header in order to work properly -->
+    <script src="//cdn.optimizely.com/js/2743921241.js"></script>
 
-	<!--START: FEATURE_MENU-->
-		[viewcart_feature-header]
-		<!--START: CATEGORY_ITEMS--> 
-		<!--START: ITEM_TEMPLATE_0-->
-		<a href="product.asp?itemid=[catalogid]" target="_parent"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=80&maxy=80" alt="[name]" border="0"></a>
-		<a href="product.asp?itemid=[catalogid]" target="_parent">[name]</a>
-		<!--START: ITEMPRICE--> 
-		<strong>[product_yourprice] </strong><span class="price">[ITEMPRICE]</span> 
-		<!--END: ITEMPRICE--> 
-				<!--START: SALEPRICE-->
-					<strong>[product_yourprice] </strong><s>[ITEMPRICE]</s>
-					<strong>[product_onsale]: </strong><span class="price">[ITEMSALEPRICE]</span>
-				<!--END: SALEPRICE-->
-			<!--END: ITEM_TEMPLATE_0--> 
-		<!--END: CATEGORY_ITEMS-->
-	<!--END: FEATURE_MENU-->
-</div>
+    <!-- CSS --> 
+
+    <link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
+
+    <link rel="stylesheet" href="assets/templates/[template]/bower_components/animate.css/animate.min.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/templates/[template]/bower_components/sidr/dist/stylesheets/jquery.sidr.light.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
+    <script src="https://use.fontawesome.com/d266c066de.js"></script>
+    
+    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=asda2343we23423" /> 
+
+    <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
+
+    <!-- IE hacks -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css"/>
+    <link rel="stylesheet" href="/assets/templates/[template]/style/vex.css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/style/vex-theme-flat-attack.css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/style/animate.min.css" />
+
+    <!-- jQuery MagnificPopup CSS -->
+</head>
+
+<body id="viewCartQuick">
+   <style>
+   @media (max-width: 480px) {
+      body#viewCartQuick .quickCartRows .row-item > div.item-qty::before {
+         content: "[shoppingcart_quantity]";
+         position: absolute;
+         left: 0;
+      }
+      body#viewCartQuick .quickCartRows .row-item > div.item-price::before {
+         content: "[shoppingcart_price]";
+         position: absolute;
+         left: 0;
+      }
+      body#viewCartQuick .quickCartRows .row-item > div.item-total::before {
+         content: "[shoppingcart_total]";
+         position: absolute;
+         left: 0;
+      }
+   }
+   </style>
+   <section>
+      <div class="header hidden-mobile">
+         <h3>[viewcart_quick-header]</h3>
+      </div>
+      <div class="row">
+         <div class="quickCartCheckout col-sm-5">
+            <h1 class="page_headers">[viewcart_quick-title]</h1>
+            <div class="header hidden-mobile">
+               <h3>[viewcart_quick-itemsincart]</h3>
+            </div>
+            <div class="quick-subtotal">Subtotal: <span class="price">[CARTSUBTOTAL]</span></div>
+            <div class="quick-chkbuttons">
+               <button type="button" onclick="parent.location.href = '[continue_url]';" class="btn btn-bordered">[viewcart_continue-shopping]</button>
+               <button type="button" onclick="parent.location.href = 'view_cart.asp';" class="btn btn-checkout">[viewcart_checkout-button]</button>
+            </div>
+         </div>
+         <div class="quickCartItems col-sm-7">
+            <div class="titles2">
+               <div class="item-info">[shoppingcart_items]</div>
+               <div class="item-qty">[shoppingcart_quantity]</div>
+               <div class="item-price">[shoppingcart_price]</div>
+               <div class="item-total">[shoppingcart_total]</div>
+            </div>
+            <div class="quickCartRows">
+               <!--START: SHOPPING_CART_ITEM-->
+               <div class="row-item">
+                  <div class="item-info">
+                     <div class="product-image">
+                        <!--START: itemthumbnail-->
+                        <a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=50&maxy=67" /></a>
+                        <!--END: itemthumbnail-->
+                     </div>
+                     <div class="product-name-options"><a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent">[ITEM_NAME]</a>
+                        <!--START: itemoptions-->
+                        <br />
+                        <a class="view-hide" href="javascript:void(0);" onclick="toggle('opt[ITEM_ID]')">View/Hide options</a>
+                        <br />
+                        <div id="opt[ITEM_ID]" name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div>
+                        <!--END: itemoptions-->
+                        <!--START: recurring_frequency-->
+                        <div>This item will Autoship every <strong>[recurring_frequency]</strong></div>
+                        <!--END: recurring_frequency-->
+                     </div>
+                  </div>
+                  <div class="item-qty">[ITEM_QUANTITY]</div>
+                  <div class="item-price">[ITEM_PRICE]</div>
+                  <div class="item-total">[ITEM_SUBTOTAL]</div>
+               </div>
+               <!--END: SHOPPING_CART_ITEM-->
+            </div>
+         </div>
+      </div>
+      <!--START: FEATURE_MENU-->
+      <div id="quickCartRelated" class="module-wrapper">
+         <h3 class="module-heading"><span>[viewcart_feature-header]</span></h3>
+         <div class="related-product">
+            <!--START: CATEGORY_ITEMS-->
+            <!--START: ITEM_TEMPLATE_0-->
+            <!--START: productblockcontainer-->
+            <!--END: productblockcontainer-->
+            <!--START: productcontainer-->
+            <!--END: productcontainer-->
+            <div class="prod-item">
+               <div class="prod-image">
+                  <a href="product.asp?itemid=[catalogid]" target="_parent"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=150" alt="[name]" /></a>
+               </div>
+               <div class="product-desc">
+                  <div class="name"><a href="product.asp?itemid=[catalogid]" target="_parent">[name]</a></div>
+                  <div class="price">
+                     <!--START: ITEMPRICE-->
+                     <span class="hidden">[product_yourprice]&nbsp;</span>[ITEMPRICE]
+                     <!--END: ITEMPRICE-->
+                     <!--START: SALEPRICE-->
+                     <del class="price2">[ITEMPRICE]</del>
+                     <span class="hidden">[product_onsale]&nbsp;</span><span class="sale-price">[ITEMSALEPRICE]</span>
+                     <div class="on-sale">[product_sale]</div>
+                     <!--END: SALEPRICE-->
+                  </div>
+               </div>
+            </div>
+            <!--START: productcontainer_close-->
+            <!--END: productcontainer_close-->
+            <!--START: productblockcontainer_close-->
+            <!--END: productblockcontainer_close-->
+            <!--END: ITEM_TEMPLATE_0-->
+            <!--END: CATEGORY_ITEMS-->
+         </div>
+      </div>
+      <!--START: FEATURE_MENU-->
+   </section>
+   <script type="text/javascript">
+   jQuery(document).ready(function($) {
+
+      var $quickCartScroll = $('.quickCartRows');
+        $quickCartScroll.mCustomScrollbar('destroy');
+        if(jQuery.browser.mobile) {
+            $quickCartScroll.mCustomScrollbar('destroy');
+        } else {
+            $quickCartScroll.mCustomScrollbar({
+                scrollInertia: 400
+            });
+        }
+
+   });
+   </script>
 </body>
+
 </html>

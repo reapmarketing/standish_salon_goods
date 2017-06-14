@@ -113,15 +113,20 @@ input::-moz-focus-inner {
     width: 5rem;
     height: 5rem !important;
     font-size: 1.25em;
+    border-radius: 0!important;
   }
-  #input-button-qty div.add-qty .btn.btn-number, #input-button-qty div.remove-qty .btn.btn-number {
-    padding: .8rem 1.7rem;
-    font-size: 2.5rem;
+
+  // mobile
+
+@media only screen and (max-width: 61.9375em) {
+  .product-form #input-button-qty.btn-group-horizontal div.add-qty .btn, .product-form #input-button-qty.btn-group-horizontal div.remove-qty .btn {
+    padding: .8rem 0.7rem!important;
   }
-  #input-button-qty div.add-qty, #input-button-qty div.remove-qty {
+  .option-row #input-button-qty div.add-qty, .option-row #input-button-qty div.remove-qty {
     /*display: block;
     float: left;*/
   }
+}
 
 /* bootstrap override */
 .alert-danger {

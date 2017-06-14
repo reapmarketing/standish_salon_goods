@@ -78,8 +78,8 @@
   
 
   #mobile-menu {
-    padding-top: 25px;
-    padding-bottom: 15px;
+    padding-top: 16px;
+    padding-bottom: 10px;
     background-color: lighten($neutral-dark, 65%);
     z-index: 5;
     width: 100%;
@@ -150,6 +150,45 @@
 	}
 }
 @media only screen and (max-width : $tablet) {
+
+	.logo {
+		background-image: url(/assets/templates/standish-responsive/images/StandishLogoMobile.png)!important;
+    	background-size: 50%;
+    	background-position: 0 4px;
+	}
+
+	.site-account {
+		a {
+
+			i.fa {
+				font-size: 2.5em;
+			    padding-top: 2px;
+			}
+			color: $dark-text;
+		}
+	}
+
+	.hello-container-mobile.hello-container {
+		background: $salmon-highlight;
+		height: 46px;
+	    padding-top: 13px;
+        width: 100%;
+
+		.hello-mobile-text {
+			a {
+				strong {
+					color: white;
+				}
+				color: white!important;
+			    font-size: 13px;
+
+			    &:hover {
+		    		color: white!important;
+			    }
+			}
+		}
+	}
+
 	.fancy-select,
 	.product-form .fancy-select,
 	.option-row .product-form .fancy-select {
