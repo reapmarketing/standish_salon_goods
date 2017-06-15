@@ -22,7 +22,7 @@ jQuery( function($) {
 
 	if ( window.mobilecheck() ) {
 		$('body').css('margin-bottom', 0);
-		$('.hello').hide();
+		// $('.hello').hide();
 	}
 
 	/*
