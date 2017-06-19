@@ -253,7 +253,7 @@
   },
   "Why Buy Standish?": {
     "order": 10,
-    "show_mobile": false,
+    "show_mobile": true,
     "show_children_mobile": true,
     "subcategories": {
       "Why Buy Standish?": {
