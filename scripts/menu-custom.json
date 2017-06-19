@@ -1,7 +1,7 @@
 {
    "<i class='fa fa-phone'></i> (888) 271-8434": {
     "order": 0,
-    "show_mobile": true,
+    "show_mobile": false,
     "single": true,
     "url": "tel:8882718434"
   },
