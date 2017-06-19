@@ -54,7 +54,7 @@
       "Replacement Parts": {
         "url": "replacement-parts"
       },
-      "Floor Mats": {
+      "Kurative Floor Mats": {
         "url": "salon-floor-mats"
       },
       "Trays and Trolleys": {
@@ -69,7 +69,7 @@
       "Barber Poles": {
         "url": "barber-poles"
       },
-      "Sale": {
+      "<strong>Sale</strong>": {
         "url": "salon-furniture-sale-and-deals"
       }
     }
@@ -106,16 +106,16 @@
       "Break Room Essentials": {
         "url": "Break-Room-Essentials_c_110616.html"
       },
-      "Trolleys and Trays": {
+      "Trays & Trolleys": {
         "url": "salon-trays-trolleys"
       },
-      "Tools and Equipment": {
+      "Tools & Equipment": {
         "url": "nail-salon-supplies-accessories"
       },
       "Artwork": {
         "url": "salon-artwork"
       },
-      "Sale": {
+      "<strong>Sale</strong>": {
         "url": "salon-furniture-sale-and-deals"
       }
     }
@@ -125,7 +125,7 @@
     "show_mobile":true,
     "show_children_mobile": true,
     "subcategories": {
-      "Packages and Gift Sets": {
+      "Packages & Gift Sets": {
         "url": "sunless-tanning-packages-gift-sets"
       },
       "Equipment": {
@@ -137,7 +137,7 @@
       "Retail Products": {
         "url": "tanning-retail-products"
       },
-      "Maintenance and Parts": {
+      "Maintenance & Parts": {
         "url": "tanning-equipment-maintenance-and-parts"
       },
       "Reception": {
@@ -149,7 +149,7 @@
       "Break Room Essentials": {
         "url": "Break-Room-Essentials_c_110616.html"
       },
-      "Trolleys and Trays": {
+      "Trolleys & Trays": {
         "url": "/salon-trays-trolleys"
       },
       "Accessories": {
@@ -158,7 +158,7 @@
       "Artwork": {
         "url": "salon-artwork"
       },
-      "Sale": {
+      "<strong>Sale</strong>": {
         "url": "salon-furniture-sale-and-deals"
       }
     }
@@ -216,6 +216,9 @@
       "King": {
         "url": "king"
       },
+      "Maletti": {
+        "url": "maletti-salon-furniture"
+      },
       "Marianna": {
         "url": "marianna"
       },
@@ -248,34 +251,6 @@
     "single": true,
     "url": "salon-equipment-financing"
   },
-  "About": {
-    "order": 7,
-    "show_mobile": true,
-    "show_children_mobile": true,
-    "subcategories": {
-      "Meet the Team": {
-        "url": "meet-the-team"
-      },
-      "What's a Standish": {
-        "url": "whats-a-standish"
-      },
-      "A Real eCommerce Store": {
-        "url": "a-real-ecommerce-store"
-      },
-      "Fly and Buy Program": {
-        "url": "salon-showroom-flight-reimbursement"
-      },
-      "Receiving Freight": {
-        "url": "receiving-freight"
-      },
-      "Contact Us": {
-        "url": "contact-us"
-      },
-      "FAQs": {
-        "url": "frequently-asked-questions"
-      }
-    }
-  },
   "Why Buy Standish?": {
     "order": 10,
     "show_mobile": false,
@@ -284,14 +259,14 @@
       "Why Buy Standish?": {
         "url": "why-standish"
       },
-      "Service": {
-        "url": "service"
+      "Testimonials": {
+        "url": "client-testimonials"
       },
-      "Quality": {
-        "url": "quality"
+      "Meet the Team": {
+        "url": "meet-the-team"
       },
-      "Craftmanship": {
-        "url": "craftmanship"
+      "Shipping": {
+        "url": "about-shipping"
       },
       "Warranty": {
         "url": "warranty"
@@ -299,11 +274,11 @@
       "Return Policy": {
         "url": "return-policy"
       },
-      "Safe & Secure": {
-        "url": "safe-secure"
+      "FAQ": {
+        "url": "frequently-asked-questions"
       },
-      "Testimonials": {
-        "url": "client-testimonials"
+      "Contact": {
+        "url": "contact-us"
       }
     }
   },
@@ -335,5 +310,12 @@
     "class": "min small",
     "single": true,
     "url": "blog.asp"
+  },
+  "My Account": {
+    "order": 12,
+    "show_mobile": true,
+    "class": "min small",
+    "single": true,
+    "url": "myaccount.asp"
   }
 }
