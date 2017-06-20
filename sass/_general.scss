@@ -981,11 +981,19 @@ body:not(.sidr-open) div#mobile-menu-modal {
       background:white;
       .hamburger-item {
         //height: 3rem;
-        text-align: center;
+        text-align: left;
         color: #f5f8dd;
         padding: .8em 0;
         a {
           color: #f5f8dd;
+        }
+
+        .one-line-text {
+          min-height: 44px;
+
+          .one-line {
+            padding-top: 20px;
+          }
         }
         .hamburger-text {
           font-size: 1em;
@@ -1007,6 +1015,9 @@ body:not(.sidr-open) div#mobile-menu-modal {
       }
       #get-financing {
         @include gradientGenDark(#ff7f50);
+      }
+      #showroom {
+        @include gradientGenDark(#59c3c3);
       }
     }
 
