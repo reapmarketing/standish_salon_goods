@@ -115,17 +115,31 @@
 	MobileMenu.init = function() {	
 		var el = this;		
 		return el.getItems().done(function(context) {
-			$('.toggle-navigation').sidr({
+			$('.toggle-navigation:not(.close-nav)').sidr({
 				name: 'mobile-open',
 				side: 'left',
 				source: '#mobile-menu-json',
 				onOpen: function() {
 					var el = this;
+					console.log(el);
+
 					$('body').on('click', "#mobile-open", function(event) {
 						this.stopPropagation();
 					}).on('click', this, function() {
 						$.sidr('close', 'mobile-open');
 					});
+
+					// close hamburger menu if it is open
+					if ( $('#rainbow-hamburger').is(':visible') ) {
+						$('#rainbow-hamburger').slideToggle();
+						$('#rainbow-hamburger').toggleClass('open');
+						$('.toggle-navigation').toggleClass('close-nav').children('i.fa').toggleClass('fa-bars').toggleClass('fa-times');
+					}
+
+					$('.toggle-navigation').toggleClass('close-nav').children('i.fa').toggleClass('fa-bars').toggleClass('fa-times');
+				},
+				onClose: function() {
+					$('.toggle-navigation').toggleClass('close-nav').children('i.fa').toggleClass('fa-bars').toggleClass('fa-times');
 				}
 			});
 			$('.sidr-inner > ul > li.sidr-class-subcategories').each(function() {
@@ -141,13 +155,26 @@
 
 			$('.standish-contact').on('click', function(e) {
 				e.preventDefault();
-				console.log(e);
+
 				$('#rainbow-hamburger').slideToggle();
+				$('#rainbow-hamburger').toggleClass('open');
+
+				if ($('#rainbow-hamburger').hasClass('open')) {
+					$('.toggle-navigation').addClass('close-nav').children('i.fa').removeClass('fa-bars').addClass('fa-times');
+				}
+				else {
+					$('.toggle-navigation').removeClass('close-nav').children('i.fa').addClass('fa-bars').removeClass('fa-times');
+				}
+
 			});
-			$('#rainbow-hamburger .close-icon').on('click', function(e) {
-				console.log(e);
-				$('#rainbow-hamburger').slideToggle();
-			});
+			/*
+			if ($('#rainbow-hamburger').is(":visible")) {
+				$('.close-nav-rainbow').on('click', function(e) {
+					$('#rainbow-hamburger').slideToggle();
+				});
+
+			}*/
+			
 			
 			
 		});
