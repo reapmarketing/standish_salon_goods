@@ -133,10 +133,17 @@
 					if ( $('#rainbow-hamburger').is(':visible') ) {
 						$('#rainbow-hamburger').slideToggle();
 						$('#rainbow-hamburger').toggleClass('open');
-						$('.toggle-navigation').toggleClass('close-nav').children('i.fa').toggleClass('fa-bars').toggleClass('fa-times');
 					}
 
+					$('.rainbow-hamburger').hide().removeClass('open');
+
+					$('.wrapper-list-items a i').each(function(i,v) {
+						var classAddBack = $(this).attr('data-swap-icon');
+						$(this).removeClass('fa-times').addClass(classAddBack);
+					});
+
 					$('.toggle-navigation').toggleClass('close-nav').children('i.fa').toggleClass('fa-bars').toggleClass('fa-times');
+
 				},
 				onClose: function() {
 					$('.toggle-navigation').toggleClass('close-nav').children('i.fa').toggleClass('fa-bars').toggleClass('fa-times');
@@ -153,17 +160,36 @@
 				});
 			});
 
-			$('.standish-contact').on('click', function(e) {
+			$('[data-open-tray]').on('click', function(e) {
 				e.preventDefault();
+				var targetClick = $(this).attr('data-tray');
 
-				$('#rainbow-hamburger').slideToggle();
-				$('#rainbow-hamburger').toggleClass('open');
+				var $notTargetDiv = $('.rainbow-hamburger').not(targetClick);
+				console.log($notTargetDiv);
 
-				if ($('#rainbow-hamburger').hasClass('open')) {
-					$('.toggle-navigation').addClass('close-nav').children('i.fa').removeClass('fa-bars').addClass('fa-times');
+				// Reset the other menus
+				$notTargetDiv.hide().removeClass('open');
+
+				$('.wrapper-list-items a i').each(function(i,v) {
+					var classAddBack = $(this).attr('data-swap-icon');
+					$(this).removeClass('fa-times').addClass(classAddBack);
+				});
+				// End Reset
+
+				$(targetClick).slideToggle();
+				$(targetClick).toggleClass('open');
+
+				var classStrip = $(this).children('i.fa').attr('data-swap-icon');
+				console.log($(targetClick).hasClass('open'));
+
+				// $(this).addClass('close-nav').children('i.fa').removeClass('fa-times').addClass(classStrip);
+
+
+				if ($(targetClick).hasClass('open')) {
+					$(this).addClass('close-nav').children('i.fa').removeClass(classStrip).addClass('fa-times');
 				}
 				else {
-					$('.toggle-navigation').removeClass('close-nav').children('i.fa').addClass('fa-bars').removeClass('fa-times');
+					$(this).removeClass('close-nav').children('i.fa').addClass(classStrip).removeClass('fa-times');
 				}
 
 			});

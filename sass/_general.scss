@@ -977,7 +977,7 @@ body:not(.sidr-open) div#mobile-menu-modal {
       z-index: 99999;
     }
 
-    #rainbow-hamburger {
+    .rainbow-hamburger {
       background:white;
       .hamburger-item {
         //height: 3rem;
@@ -1004,10 +1004,10 @@ body:not(.sidr-open) div#mobile-menu-modal {
         }
       }
 
-      #call-us {
+      #call-us, #bumper-login {
         background: #8ac926;
       }
-      #text-hannah {
+      #text-hannah, #view-cart {
         @include gradientGenDark(#fe5f55);
       }
       #email-us {
@@ -1016,7 +1016,7 @@ body:not(.sidr-open) div#mobile-menu-modal {
       #get-financing {
         @include gradientGenDark(#ff7f50);
       }
-      #showroom {
+      #showroom, #bumper-get-financing-2nd {
         @include gradientGenDark(#59c3c3);
       }
     }

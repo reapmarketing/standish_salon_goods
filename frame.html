@@ -519,7 +519,7 @@
   <!-- begin modal and hidden content -->
 
   <div id="mobile-menu-modal" class="hidden-lg hidden-md">
-    <div id="rainbow-hamburger" style="display:none;">
+    <div class="rainbow-hamburger" id="contact-tray" style="display:none;">
       <div id="call-us" class="hamburger-item row">
         <a href="tel:[store_phone]">
           <div class="col-sm-12 col-xs-12">
@@ -561,20 +561,46 @@
         </a>
       </div>
     </div>
+    <div class="rainbow-hamburger" id="cart-tray" style="display:none;">
+      <div id="bumper-login" class="hamburger-item row">
+        <a href="/myaccount.asp">
+          <div class="col-sm-12 col-xs-12">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-user" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text">Login</span></div>
+          </div>
+        </a>
+      </div>
+      <div id="view-cart" class="hamburger-item row">
+        <a href="/view_cart.asp" class="hamburger">
+          <div class="col-sm-12 col-xs-12">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-shopping-cart" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text">View Cart</span></div>
+          </div>
+        </a>
+      </div>
+      <div id="bumper-get-financing-2nd" class="hamburger-item row">
+        <a href="/salon-equipment-financing">
+          <div class="col-sm-12 col-xs-12 one-line-text">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-usd" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Apply for Financing</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
     <div id="fixed-bottom" class="fixed affix-bottom">
       <ul class="fixed-bottom-menu">
         <li>
           <div class="wrapper-list-items">
             <a class="standish-menu-open toggle-navigation" href="#">
-              <i class="fa fa-bars fa-2x clearfix" aria-hidden="true"></i>
+              <i class="fa fa-swap fa-bars fa-2x clearfix" data-swap-icon="fa-bars" aria-hidden="true"></i>
               <span class="menu-bottom-small">Menu</span>
             </a>
           </div>
         </li>
         <li>
           <div class="wrapper-list-items">
-            <a class="standish-contact" href="#rainbow-hamburger">
-              <i class="fa fa-phone-square fa-2x clearfix" aria-hidden="true"></i>
+            <a class="standish-contact" data-open-tray data-tray="#contact-tray">
+              <i class="fa fa-swap fa-phone-square fa-2x clearfix" data-swap-icon="fa-phone-square" aria-hidden="true"></i>
               <span class="menu-bottom-small">Contact</span>
             </a>
           </div>
@@ -582,7 +608,7 @@
         <li>
           <div class="wrapper-list-items">
             <a href="/">
-              <i class="fa fa-home fa-2x clearfix" aria-hidden="true"></i>
+              <i class="fa fa-swap fa-home fa-2x clearfix" aria-hidden="true"></i>
               <span class="menu-bottom-small">Home</span>
             </a>
           </div>
@@ -590,15 +616,15 @@
         <li>
           <div class="wrapper-list-items">
             <a href="/dallas-salon-furniture-showroom">
-              <i class="fa fa-search fa-2x clearfix" aria-hidden="true"></i>
+              <i class="fa fa-swap fa-search fa-2x clearfix" aria-hidden="true"></i>
               <span class="menu-bottom-small">Location</span>
             </a>
           </div>
         </li>
         <li>
           <div class="wrapper-list-items">
-            <a href="/view_cart.asp">
-              <i class="fa fa-shopping-cart fa-2x clearfix" aria-hidden="true"></i>
+            <a href="/view_cart.asp" data-open-tray data-tray="#cart-tray">
+              <i class="fa fa-swap fa-shopping-cart fa-2x clearfix" data-swap-icon="fa-shopping-cart" aria-hidden="true"></i>
               <span class="menu-bottom-small">Cart</span>
             </a>
           </div>
