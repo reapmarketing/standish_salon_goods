@@ -113,12 +113,15 @@ button.cart i {
   color: #fff;
   display: inline-block;
   font-size: .9em;
-/*   padding: 0 37px 0 34px; */
-/*   padding: 0 22px; */
+  /*   padding: 0 37px 0 34px; */
+  /*   padding: 0 22px; */
   padding: 0 19px;
-/*  padding: 0 16px; */
+  /*  padding: 0 16px; */
   /* padding: 0 14px; */
   text-decoration: none;
+  &.standishyellow-text {
+    color: $highlight-color;
+  }
 }
 .navigation ul li.brand-menu {
   .column ul {width: 162px;}
