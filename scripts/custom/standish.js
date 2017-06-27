@@ -34,6 +34,26 @@
     }
   };
 
+  Standish.footerSlide = function() {
+
+    $('[data-img-load]').magnificPopup({
+      type:'image',
+      closeBtnInside: '',
+      index: $('[data-img-load]').attr('data-index'),
+      gallery: {
+        enabled: true
+      }
+    });
+
+    $('.client__imspiration-local__row').slick({
+      infinite: true,
+      slidesToShow: 7,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true
+    });
+  };
+
   Standish.ActivateVideo = function() {
 
     var dataVid = Standish.Homepage.getData('w3rlbrw4r8');
@@ -536,6 +556,8 @@
     Standish.ActivateSpecialButtons();
 
     Standish.blogVideos();
+
+    Standish.footerSlide();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();
