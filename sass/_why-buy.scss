@@ -1,0 +1,112 @@
+.why-buy {
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	h1, h2, h3, p {
+		color: #3b323b!important;
+	}
+	p {
+		margin-top: 10px;
+		font-size: 18px;
+		font-weight: 100;
+	}
+
+	&__hero-top {
+		&__hero-image {
+
+		}
+		&__hero-description {
+			margin: 3em 0;
+			p {
+				text-align: center;
+			}
+		}
+	}
+
+	&__hero-middle {
+		margin: 2.5em 0;
+
+		h2, h3, p, .h2 {
+			text-align: center;
+		}
+
+		h2 {
+	    	margin-bottom: 30px;
+		    margin-top: 30px;
+		    @media screen and (min-width: $tablet) {
+		    	padding: 0 3em;
+	    	}
+		}
+
+		&__benifits {
+
+			&__benifit {
+				&__panel {
+					border: 1px solid #ff7f50;
+					border-radius: 3px;
+					padding: 2.6em 15px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+	}
+
+	&__profile-benifits {
+		background: #f5f5f5;
+		margin: 2.5em 0;
+
+		&__larger {
+			font-size: 1.5em;
+		}
+
+		&__img-wrapper {
+			padding: 0;
+		}
+
+		&__content-wrapper {
+			padding: 1.8em;
+
+			.profile-quote {
+				strong {
+					color: #9ea7b2!important;
+					padding-top: 10px;
+				}
+
+			    padding: 0 2em;
+				color: #9ea7b2!important;
+				font-style: italic;
+			    margin-bottom: 13px;
+			}
+		}
+	}
+
+	&__imspiration-local {
+		h2 {
+			text-align: center;
+		}
+		margin-top: 1.5em;
+		&__row {
+			&__item {
+			    padding-bottom: 25px;
+
+				.gallery-slide {
+					width: 100%;
+					height: 215px;
+					background-position: 50%;
+					background-size: 125%;
+					background-repeat: no-repeat;
+				    border-radius: 5px;
+				}
+			}
+		}
+		&__item {
+			padding-bottom: 1em;
+			padding-top: 1em;
+		}
+	}
+
+
+}
