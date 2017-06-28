@@ -39,13 +39,13 @@
                 <tr>
                   <td class="item" align="right"><strong>[registration_verification]:</strong></td>
 					<td class="item">
-                        <script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
-                        <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
-                        <noscript>
-                        <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
-                        <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
-                        <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
-                        </noscript>
+                  <script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+                  <script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+                  <noscript>
+                  <iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+                  <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                  <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                  </noscript>
 					</td>
 				</tr>
 				<!--END: recaptcha-->
@@ -53,9 +53,11 @@
       
       </div>
         <input type="submit" value="[login_button]" class="btn" id="Submit1" name="Submit1">
-        <!--START: fbconnect-->
-        <div class="fbconnect"><a onclick="popup('social_login.asp?p=fl&return=myaccount',1000,550)" href="#" title="Sign in with Facebook"><img src="assets/templates/common/images/facebook_signin.png" alt="Sign In with Facebook" width="150" height="22" /></a></div>
-        <!--END: fbconnect-->
+
+        <div class="fbconnect" style="display: inline-block;">
+          <a onclick="popup('social_login.asp?p=fl&return=myaccount',1000,550)" href="#" title="Sign in with Facebook" class="btn btn-fb btn-lg" style="color: white; background-color:#3b5998;">Sign In with Facebook</a>
+        </div>
+
         <div class="clear"></div>
     </form>
   </div>

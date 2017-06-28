@@ -124,9 +124,15 @@ button.cart i {
   padding: 0 19px;
   /*  padding: 0 16px; */
   /* padding: 0 14px; */
+
+
   text-decoration: none;
   &.standishyellow-text {
     color: $highlight-color;
+  } 
+
+  &.coral-text {
+    color: $primary-color;
   }
 }
 .navigation ul li.brand-menu {
