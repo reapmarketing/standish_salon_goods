@@ -58,6 +58,8 @@
   }
 
 
+
+
   // Mobile Menu Stuff!
   .search {
     .pull-right.input-group {
@@ -148,6 +150,9 @@
 			margin-bottom: 5px;
 		}
 	}
+	input.active-search {
+		border: 5px solid $primary-color;
+	}
 }
 @media only screen and (max-width : $tablet) {
 
@@ -171,7 +176,7 @@
 	.hello-container-mobile.hello-container {
 		background: $salmon-highlight;
 		height: 46px;
-	    padding-top: 13px;
+	    padding-top: 10px;
         width: 100%;
 
 		.hello-mobile-text {

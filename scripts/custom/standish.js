@@ -337,6 +337,15 @@
   
   });
 
+  Standish.DataClickSearch = function() {
+    $('[data-click="standish-search-bar"]').on('click', function() {
+
+      $('#standish-search-bar input').addClass('active-search');
+      $('#standish-search-bar input').focus();
+
+    });
+  };
+
   Standish.DataOpen = function() {
     $('[data-open]').on('click', function() {
       var thisID = $(this).attr('data-open');
@@ -536,6 +545,8 @@
     Standish.ActivateSpecialButtons();
 
     Standish.blogVideos();
+
+    Standish.DataClickSearch();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();
