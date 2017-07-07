@@ -1,10 +1,56 @@
 /* Stuff that goes in the footer */
+section {
+
+  &.client__imspiration-local__wrapper {
+    border-top: 1px solid #d8d8d8!important;
+  }
+  .client__imspiration-local {
+
+    &__title {
+      padding-top: 1em;
+      padding-bottom: 1.5em;
+    }
+
+    &__row {
+      &.slick-slider.slick-initialized {
+        margin-bottom: 0;
+      }
+
+      &__item {
+        padding: 2px;
+        .gallery-slide {
+          height: 215px;
+          background-position: 50%;
+          background-size: 125%;
+          background-repeat: no-repeat;
+
+        }
+      }
+    }
+
+    &__call-team {
+      background-color: #332e40;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      h5, p {
+        color: white;
+        a {
+          color: white;
+        }
+      }
+    }
+
+    &__wrapper {
+      border-top: 1px solid #e8e8e8;
+    }
+    
+  }
+}
+
 
 .bottom-container {
   background: #60437D url("/assets/templates/standish-responsive/images/congruent-pentagon-pattern-long.jpg") repeat;
 }
-
-
 
 .container-fluid.newsletter-signup {
   #newsletter-signup {
