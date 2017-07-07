@@ -600,13 +600,15 @@ body .vex.vex-theme-flat-attack .vex-content {
 }
 article.blog-item {
   &:first-of-type {
-    .video_popup_testimonial {
+    .video_popup_testimonial, .video-popup-testimonial {
+      box-shadow: 0 0 0 transparent;
       i {
         font-size: 7rem;
       }
     }
   }
-  .video_popup_testimonial {
+  .video_popup_testimonial, .video-popup-testimonial {
+    box-shadow: 0 0 0 transparent;
     padding-bottom: 20px!important;
     i {
       font-size: 4rem;
