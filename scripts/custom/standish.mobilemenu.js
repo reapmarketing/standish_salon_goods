@@ -105,7 +105,7 @@
 				}
 			}
 			unList = convertToArray(unList);
-			$('#mobile-menu-json').append('<ul />');
+			$('#mobile-menu-json').append('<div class="close"><a href="#" class="close text-right"><i class="fa fa-times-circle" aria-hidden="true"></i></a></div><ul></ul>');
 			for (var i in unList) {
 				$('#mobile-menu-json > ul').append(unList[i]);
 			}
@@ -126,6 +126,10 @@
 					$('body').on('click', "#mobile-open", function(event) {
 						this.stopPropagation();
 					}).on('click', this, function() {
+						$.sidr('close', 'mobile-open');
+					});
+
+					$('body').on('click', ".sidr-class-close", function(event) {
 						$.sidr('close', 'mobile-open');
 					});
 
@@ -167,6 +171,8 @@
 				var $notTargetDiv = $('.rainbow-hamburger').not(targetClick);
 				console.log($notTargetDiv);
 
+
+
 				// Reset the other menus
 				$notTargetDiv.hide().removeClass('open');
 
@@ -175,6 +181,10 @@
 					$(this).removeClass('fa-times').addClass(classAddBack);
 				});
 				// End Reset
+
+				$('.menu-close-wrapper').on('click', function(e) {
+					$(targetClick).hide();
+				});
 
 				$(targetClick).slideToggle();
 				$(targetClick).toggleClass('open');
