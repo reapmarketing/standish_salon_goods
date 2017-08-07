@@ -423,3 +423,41 @@ li.first.far a {
   }
 }
 
+div.sidr-class-close {
+  position: absolute;
+  right: 4px;
+  z-index: 21;
+}
+
+.sidr-class-fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a.sidr-class-close {
+  color: black!important;
+  z-index: 30;
+  font-size: 22px;
+
+}
+.sidr-class-fa-times-circle:before {
+  content: "\f057";
+}
+
+.menu-close-wrapper {
+  position: absolute;
+  z-index: 21;
+  top: -1px;
+  right: 2px;
+
+  a {
+    color: black!important;
+    z-index: 30;
+    font-size: 22px;
+  }
+
+
+}
