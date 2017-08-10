@@ -60,7 +60,10 @@
     <link rel="stylesheet" href="/assets/templates/[template]/style/vex-theme-flat-attack.css" />
     <link rel="stylesheet" href="/assets/templates/[template]/style/animate.min.css" />
     <!-- jQuery MagnificPopup CSS -->
-    <link href="https://cdn.jsdelivr.net/jquery.magnific-popup/1.0.0/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/style/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/templates/[template]/css/quick_view.css" rel="stylesheet" type="text/css" />
+
 
     <!--START: site scripts -->
     <!-- JS -->
@@ -737,6 +740,90 @@
     });
   </script>
 
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal fade modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div id="modal-hannah-chat" class="modal-body">
+         <section>
+            <div class="container-fluid">
+              <div class="row">
+
+                <div class="quickCartItems">
+                  <div class="quickCartRows">
+                     <!--START: SHOPPING_CART_ITEM-->
+                     <div class="row-item">
+                        <div class="item-info row">
+                           <div class="product-image col-xs-5 item-cell">
+                              <!--START: itemthumbnail-->
+                              <a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=100&maxy=100" /></a>
+                              <!--END: itemthumbnail-->
+                           </div>
+                           <div class="product-name-options col-xs-7 item-cell"><a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent">[ITEM_NAME]</a>
+                              <div class="row">
+                                <div class="item-qty col-xs-12 item-cell">[ITEM_QUANTITY] x [ITEM_PRICE]</div>
+                              </div>
+
+
+                              <div class="hidden">
+                                <!--START: itemoptions-->
+                                <br />
+                                <a class="view-hide" href="javascript:void(0);" onclick="toggle('opt[ITEM_ID]')">View/Hide options</a>
+                                <br />
+                                <div id="opt[ITEM_ID]" name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div>
+                                <!--END: itemoptions-->
+                                <!--START: recurring_frequency-->
+                                <div>This item will Autoship every <strong>[recurring_frequency]</strong></div>
+                                <!--END: recurring_frequency-->
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--END: SHOPPING_CART_ITEM-->
+                  </div>
+                  <div class="quickCartCheckout col-sm-12">
+                    <div class="quick-subtotal">Subtotal: <span class="price price-subtotal" baseprice="[CARTSUBTOTAL]">[CARTSUBTOTAL]</span></div>
+                    <div class="quick-shipping">Qualify for free shipping: <span class="ship-price" baseprice="5000"></span></div>
+
+                    <div class="quick-chkbuttons">
+                       <a onclick="parent.location.href = '[continue_url]';">Continue Shopping</a>
+                       <button type="button" onclick="parent.location.href = 'view_cart.asp';" class="btn btn-checkout-view-quick"> View Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <script type="text/javascript">
+            function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            jQuery(document).ready(function($) {
+              var subtotal = $('.price-subtotal').attr('baseprice').replace('$', '');
+              var shipBasePrice = $('.ship-price').attr('baseprice').replace('$', '');
+
+
+
+              var qualifyFree = Number(shipBasePrice) - Number(subtotal);
+
+              console.log(numberWithCommas(qualifyFree));
+
+              $('.quick-shipping .ship-price').text('$' + numberWithCommas(qualifyFree));
+
+
+
+            });
+          </script>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- /Cart Modal -->
 
   <!-- End of Footer Content -->
 
@@ -772,6 +859,8 @@
   <!-- <script asnyc src="/assets/templates/[template]/scripts/adroll-script.js"></script> -->
 
   <!-- BEGIN: Google Trusted Stores -->
+  <script type="text/javascript" src="assets/templates/[template]/scripts/jquery.magnific-popup.min.js"></script>
+
   <script asnyc type="text/javascript">
     var gts = gts || [];
 
@@ -792,7 +881,7 @@
     })();
   </script>
   <!-- END: Google Trusted Stores -->
-  <script type="text/javascript" src="assets/templates/[template]/scripts/jquery.magnific-popup.min.js"></script>
+
 
 </body>
 </html>
