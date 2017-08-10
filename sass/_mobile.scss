@@ -142,9 +142,9 @@
 	}
 }
 
-@media only screen and (max-width : $xs) {
+@media only screen and (max-width : $tablet) {
 	.buttons-order {
-		.button, .btn, input {
+		.button, .btn, input, .fbconnect {
 			width: 100%;
 			margin-top: 5px;
 			margin-bottom: 5px;

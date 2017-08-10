@@ -47,12 +47,14 @@ jQuery(function(){
 
 </script>
   <div class="col-md-12">
-    <div class="col-md-12 padd-top hidden-md hidden-lg hidden-xl">
+    <div class="col-md-12 padd-top hidden-sm hidden-md hidden-lg hidden-xl">
       <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg btn-block" id="Button7" name="Button7">
 
+      <a class="button btn-light btn btn-lg btn-block" style="color:white;" href="[continue_url]"><i class="fa fa-arrow-left"></i> | Continue Shopping</a>
 
       <a style="padding-top: 10px;" class="button standishgreen large center-block btn btn-lg btn-block" href ="/salon-equipment-financing"><i class="fa fa-credit-card"></i> Apply For Financing</a>
 
+      <a style="padding-top: 10px;margin-top: 10px;" class="button standishgray large center-block btn btn-lg btn-block" href="/myaccount.asp?action=save_cart"><span style="padding-right: 10px;"><i class="fa fa-floppy-o"></i></span>Save for Later</a>
 
     </div>
 
@@ -142,9 +144,14 @@ jQuery(function(){
       
         </div><!-- .cart-items -->
         <div class="buttons-order row">
-            <a class="button standishgray btn" style="color:white;" href="[continue_url]"><span class="add-on-left"><i class="fa fa-arrow-left"></i></span>Continue Shopping</a>
-            <a class="button standishgreen btn" href ="/myaccount.asp?action=save_cart"><span class="add-on-left"><i class="fa fa-floppy-o"></i></span>Save for Later</a>
-            <input type="submit" name="Add" value="[shoppingcart_updatecart]" class="update_cart_button btn btn-light" id="Submit2">
+            <a class="button btn-light btn btn-lg hidden-xs" style="color:white;" href="[continue_url]"><i class="fa fa-arrow-left"></i> Continue Shopping</a>
+
+            <a class="button standishgreen btn hidden btn-lg" href="/myaccount.asp?action=save_cart"><span class="add-on-left"><i class="fa fa-floppy-o"></i></span>Save for Later</a>
+
+            <div class="fbconnect" style="display: inline-block;">
+              <a onclick="popup('social_login.asp?p=fl&return=myaccount',1000,550)" href="#" title="Sign in with Facebook" class="btn btn-fb btn-lg" style="color: white; background-color:#3b5998; padding: 10px 20px;"><span class="add-on-left"><i class="fa fa-facebook"></i> </span>Sign In with Facebook</a>
+            </div>
+            <input type="submit" name="Add" value="[shoppingcart_updatecart]" class="update_cart_button btn btn-light btn-lg" id="Submit2">
         </div>
         <br />
         <br />
@@ -350,6 +357,8 @@ jQuery(function(){
         <input type="button" onclick="window.location='checkout.asp?step=1'" value="Proceed to Secure Checkout" class="button coral large center-block btn btn-lg btn-block btn-checkout" id="Button7" name="Button7">
 
         <a style="padding-top: 10px;" class="button standishgreen large center-block btn btn-lg btn-block" href ="/salon-equipment-financing"><i class="fa fa-credit-card"></i> Apply For Financing</a>
+
+        <a style="padding-top: 10px;" class="button standishgray large center-block btn btn-lg btn-block" href="/myaccount.asp?action=save_cart"><span style="padding-right: 10px;"><i class="fa fa-floppy-o"></i></span>Save for Later</a>
 
     
         <!--START: paypalexpress-->
