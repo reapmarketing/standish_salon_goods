@@ -17,6 +17,13 @@
     });
   };
 
+  Standish.QuickCart = function() {
+    if (window.location.search.indexOf("quickcart") != -1) {
+      $('#cart-modal').modal();
+    }
+  };
+
+
   // 1. Equal Heights
   Standish.EqualHeights = function() {
     if ($(window).width() >= 768) {
@@ -521,6 +528,8 @@
 
   // Events
   $(function() {
+
+    Standish.QuickCart();
 
     // 1. Activate Equal Heights
     Standish.EqualHeights();
