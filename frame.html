@@ -390,9 +390,6 @@
     <!-- End of Header -->
     <section class="container" id="prime-content">
 
-        <div class="col-md-12 share-area hidden">
-          <a href="share" data-share="discount" data-href="https://www.standishsalongoods.com/" data-title="Test" data-desc="This is a test." data-image="https://www.standishsalongoods.com/assets/templates/standish-responsive/images/standish-logo.png"><i class="fa fa-facebook-official" aria-hidden="true"></i> Share on Facebook for A discount Code! </a>
-        </div>
         <!--START: LEFT BAR-->
         <div class="col-md-2 hidden-sm hidden-xs left-bar">
           <!--START: LEFT_BAR_BLOCKS-->
@@ -451,7 +448,7 @@
     </div>
     <div class="clearfix"></div>
 
-    <section class="container-fluid client__imspiration-local__wrapper hidden-xs">
+    <section class="hidden container-fluid client__imspiration-local__wrapper hidden-xs">
       <div class="col-md-12 client__imspiration-local__title text-center">
         <h3 class="coral-text text-center">Get Inspiration From Some of Our Loyal Clients</h3>
       </div>
@@ -737,6 +734,106 @@
     });
   </script>
 
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal fade modal" tabindex="-1" role="dialog">
+    <div class="cart-modal-inner container">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div id="modal-hannah-chat" class="modal-body">
+           <section>
+              <div class="container-fluid">
+                <div class="row">
+
+                  <div class="quickCartItems">
+                    <div class="quickCartRows">
+                        <form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
+
+                         <!--START: SHOPPING_CART_ITEM-->
+                         <div class="row-item">
+                            <div class="item-info row">
+
+                              <div class="product-image col-xs-4 item-cell">
+                                <!--START: itemthumbnail-->
+                                <a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=200&maxy=200" /></a>
+                                <!--END: itemthumbnail-->
+                              </div>
+                              <div class="product-name-options col-xs-6 item-cell">
+                                <a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent"><strong>[ITEM_NAME]</strong></a>
+
+                                <div class="item-qty item-cell" style="padding-top: .8em;">[ITEM_QUANTITY] x [ITEM_PRICE]</div>
+
+                                <div class="hidden">
+                                  <!--START: itemoptions-->
+                                  <br />
+                                  <a class="view-hide" href="javascript:void(0);" onclick="toggle('opt[ITEM_ID]')">View/Hide options</a>
+                                  <br />
+                                  <div id="opt[ITEM_ID]" name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div>
+                                  <!--END: itemoptions-->
+                                  <!--START: recurring_frequency-->
+                                  <div>This item will Autoship every <strong>[recurring_frequency]</strong></div>
+                                  <!--END: recurring_frequency-->
+                                </div>
+                              </div>
+                              <div class="item-qty col-xs-1">
+                                <input type="text" name="qtyitemnum" value="[ITEM_QUANTITY]" size="3" maxlength="5" class="form-control hidden" />
+                                <input type="hidden" name="coliditemnum" value="[ITEM_ID]" size="3" maxlength="5" />
+                                <a class="item-remove" href="javascript:void(0);" onclick="if(confirm('Are you sure remove this item?')==true){document.recalculate.qtyitemnum.value = 0;document.recalculate.submit();}"><i class="fa fa-remove"></i></a>
+                                <a class="item-update hidden" href="javascript:void(0);" onclick="document.forms['recalculate'].submit();return false;" class="update-qty">UPDATE</a>
+                              </div>
+                            </div>
+                         </div>
+                         <!--END: SHOPPING_CART_ITEM-->
+                      </form>
+                    </div>
+                    <div class="quickCartCheckout col-sm-12">
+                      <hr>
+                      <div class="quick-subtotal">Subtotal: <span class="price price-subtotal" baseprice="[CARTSUBTOTAL]"><strong>[CARTSUBTOTAL]</strong></span></div>
+                      <div class="quick-shipping">Spend <span class="ship-price bold" baseprice="5000"></span> to Qualify for Free Shipping. </div>
+
+                      <div class="quick-chkbuttons row">
+                        <div class="col-xs-6" style="padding-top: .5em;">
+                          <a class="close-modal-bottom" data-dismiss="modal" aria-label="Close">Continue Shopping</a>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <button type="button" onclick="parent.location.href = 'view_cart.asp';" class="btn btn-checkout-view-quick btn-lg"> View Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <script type="text/javascript">
+              function numberWithCommas(x) {
+              return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              }
+
+              jQuery(document).ready(function($) {
+                var subtotal = $('.price-subtotal').attr('baseprice').replace('$', '');
+                var shipBasePrice = $('.ship-price').attr('baseprice').replace('$', '');
+
+
+                var qualifyFree = Number(shipBasePrice) - parseFloat(subtotal);
+
+                if (parseFloat(qualifyFree) > 0) {
+                  $('.quick-shipping .ship-price').text('$' + numberWithCommas(qualifyFree));
+                }
+                else {
+                  $('.quick-shipping .ship-price').text('You qualify for free shipping!');
+                }
+
+              });
+            </script>
+
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+  </div><!-- /.modal -->
+  <!-- /Cart Modal -->
 
   <!-- End of Footer Content -->
 

@@ -103,22 +103,25 @@
     },
     shareClick: function() {
       $shareBtn = $('[data-share="discount"]');
-      console.log($shareBtn);
+      var urlToShare = window.location.href;
+
+      console.log(urlToShare);
       $shareBtn.on('click', function(e) {
         e.preventDefault();
         FB.ui({
             method: 'share',
             display: 'popup',
-            href: 'www.standishsalongoods.com',
+            href: urlToShare,
           }, function(response){
             if (typeof response === "undefined") {
               return;
             }
             else {
               $('[data-share="discount"]').remove();
-              $('.share-area').append('Your Checkout code is OKBYE124');
+              if ($('#fb-modal-share').length > 0 ) {
+                $('#fb-modal-share').modal();
+              }
             }
-
           });
       });
     }

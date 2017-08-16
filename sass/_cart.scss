@@ -106,3 +106,53 @@ body .update_cart_button {
   background-position: 12px 15px !important;
   background-repeat: no-repeat !important;
 }
+
+
+// quick cart items
+
+#cart-modal {
+
+  .bold, strong {
+    color: $dark-text;
+  }
+  .modal-header {
+    border-bottom: 0 none;
+  }
+
+  .close-modal-bottom {
+    color: $dark-text;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: 700;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .cart-modal-inner {
+    position: relative;
+  }
+
+
+  @media only screen and (min-width : $medium) {
+    .modal-dialog {
+      position: absolute;
+      right: 0;
+      width: 350px;
+    }
+  }
+
+
+  .price-subtotal {
+    float: right;
+  }
+
+  .quick-chkbuttons {
+    padding-top: 1.5em;
+  }
+
+}
+

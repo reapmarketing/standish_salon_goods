@@ -18,7 +18,8 @@
   };
 
   Standish.QuickCart = function() {
-    if (window.location.search.indexOf("quickcart") != -1) {
+
+    if (window.location.search.indexOf("quickcart") != -1 && typeof window.cartTotal !== "undefined") {
       $('#cart-modal').modal();
     }
   };
