@@ -104,8 +104,12 @@
     shareClick: function() {
       $shareBtn = $('[data-share="discount"]');
       console.log($shareBtn);
+
       $shareBtn.on('click', function(e) {
         e.preventDefault();
+
+        var checkoff = $(this).find('input[type=checkbox]');
+
         FB.ui({
             method: 'share',
             display: 'popup',

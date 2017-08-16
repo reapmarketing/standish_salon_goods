@@ -35,6 +35,7 @@
   };
 
   Standish.footerSlide = function() {
+    $('.client__imspiration-local__wrapper').removeClass('hidden');
 
     $('[data-img-load]').magnificPopup({
       type:'image',
@@ -44,6 +45,7 @@
         enabled: true
       }
     });
+
 
     $('.client__imspiration-local__row').slick({
       infinite: true,
@@ -568,7 +570,7 @@
 
     Standish.DataClickSearch();
 
-    Standish.footerSlide();
+    // Standish.footerSlide();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();
