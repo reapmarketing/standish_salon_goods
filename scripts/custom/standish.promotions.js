@@ -115,6 +115,13 @@
             method: 'share',
             display: 'popup',
             href: urlToShare,
+      console.log($shareBtn);
+      $shareBtn.on('click', function(e) {
+        e.preventDefault();
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: 'www.standishsalongoods.com',
           }, function(response){
             if (typeof response === "undefined") {
               return;
