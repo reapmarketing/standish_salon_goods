@@ -192,3 +192,37 @@ h3.header-patriot {
   color: white;
   font-size: 1.15em;
 }
+
+
+#fb-modal-share {
+  .modal-body {
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+
+  h6 {
+    font-family: $default-font;
+    font-size: 1.5em;
+  }
+
+  h6, p {
+    text-align: center;
+  }
+
+  .promotion-code-box {
+
+    padding: 20px;
+    border: 3px dashed $primary-color;
+    @media only screen and (min-width : $tablet) {
+      margin: 2em 8em 3em;
+    }
+    text-align: center;
+
+    span {
+      text-align: center;
+    }
+  }
+
+}
+
+

@@ -18,6 +18,10 @@ jQuery( function($) {
 		$pagination_links.last().addClass('last');
 	}
 });
+
+window.CategoryPage = true;
+
+window.Listings = [];
 </script>
 
 <div class="right-side col-md-10">
@@ -35,43 +39,59 @@ jQuery( function($) {
 
   <hr class="hidden-xs hidden-sm" />
 	<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
+
 		<!--END: BODY_HEADER-->
 		<!-- <h1 class="page_headers">[categoryname]</h1> -->
 		<!--START: CATEGORY_HEADER-->
 			<div id="categoryHeader" class="data row">[CONTENT]</div>
 			<div class="hidden" data-catname="[categoryname]">[catid]</div>
-		<!--END: CATEGORY_HEADER-->
 
-		<!--START: FEATURE_MENU-->
-			<div class="titles">[category_Header-specials]</div>
-			<!--START: FEATURE_ITEMS-->
-				<!--START: FEATURE_ITEM_TEMPLATE_0-->
-					<!--START: product_review-->
-						<!--START: product_review_average-->
-							<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-							<!-- <div class="item">[review_count] Review(s)</div> -->
-						<!--END: product_review_average-->
-					<!--END: product_review-->
-					<div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-						<div class="listing-container">
-							<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" /></a>
-							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-							<!--START: ITEMPRICE-->
-							<!-- [product_yourprice] -->
-							<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-							<!--END: ITEMPRICE-->
-							<!--START: SALEPRICE-->
-							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<!-- <span class="coral-text">[product_onsale]: </span> -->
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>
-							<!--END: SALEPRICE-->
+		<!--END: CATEGORY_HEADER-->
+		<div id="category-wrapper">
+			<!--START: FEATURE_MENU-->
+				<div class="titles">[category_Header-specials]</div>
+				<!--START: FEATURE_ITEMS-->
+					<!--START: FEATURE_ITEM_TEMPLATE_0-->
+						<!--START: product_review-->
+							<!--START: product_review_average-->
+								<!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
+								<!-- <div class="item">[review_count] Review(s)</div> -->
+							<!--END: product_review_average-->
+						<!--END: product_review-->
+						
+						<div class="col-md-2-2 col-sm-4 col-xs-6 listing">
+
+							<script>
+								window.Listings.push({
+									review_average: [review_average],
+									name: [name],
+									catalogid: [catalogid],
+									price: [ITEMPRICE],
+									saleprice: [ITEMSALEPRICE],
+									review_count: [review_count]
+								});
+							</script>
+							<div class="listing-container">
+								<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" /></a>
+								<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+								<!--START: ITEMPRICE-->
+								<!-- [product_yourprice] -->
+								<p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+								<!--END: ITEMPRICE-->
+								<!--START: SALEPRICE-->
+								<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+								<!-- <span class="coral-text">[product_onsale]: </span> -->
+								<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>
+								<!--END: SALEPRICE-->
+							</div>
+							<!-- <button>Add to Cart</button> -->
+							<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
 						</div>
-						<!-- <button>Add to Cart</button> -->
-						<input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn" style="display:block; width: 100%;">
-					</div>
-				<!--END: FEATURE_ITEM_TEMPLATE_0-->
-			<!--END: FEATURE_ITEMS-->
-		<!--END: FEATURE_MENU-->
+					<!--END: FEATURE_ITEM_TEMPLATE_0-->
+				<!--END: FEATURE_ITEMS-->
+			<!--END: FEATURE_MENU-->
+		</div>
+
 	
 			<!--START: catFilterMainBlock--> 
 			<!-- filter block starts here-->
@@ -150,11 +170,33 @@ jQuery( function($) {
 			<!-- filter block ends here--> 
 		<!--END: catFilterMainBlock-->
 		</form>
+
+		<div class="listings col-md-12" data-bind="foreach: listings">
+			<div class="row">
+				<div class="listing-img col-sm-3"><img data-bind="attr:{src: img_src}"></div>
+				<div class="listing-img col-sm-9">
+					<h4 class="title"><a href="" data-bind="text:name, attr: { href: href }"></a></h4>
+					<h5 class="h3" data-bind="text:price"> </h3>
+					<h6 data-bind="text:saleprice"></h6>
+				</div>
+			</div>
+		</div>
 		<!--START: ITEMS-->
 	
 			<!--START: CATEGORY_ITEMS-->
 				<!--START: ITEM_TEMPLATE_0-->
 					<div class="col-md-2-2 col-sm-4 col-xs-6 listing">
+						<script>
+							window.Listings.push({
+								name: '[name]',
+								catalogid: '[catalogid]',
+								href: 'product.asp?itemid=[catalogid]',
+								price: '[ITEMPRICE]',
+								saleprice: '[ITEMSALEPRICE]',
+								review_count: '[review_count]',
+								img_src: "thumbnail.asp?file=[THUMBNAIL]&maxx=300&maxy=400"
+							});
+						</script>
 						<div class="listing-container">
 							<a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" border="0" style="max-height:190px; max-width:160px;"/></a>
 							<p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
@@ -164,7 +206,7 @@ jQuery( function($) {
 							<!--END: ITEMPRICE-->
 							<!--START: SALEPRICE-->
 							<p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>
+							<p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"> <span class="item-sale-price nozero" data-content>[ITEMSALEPRICE]</span></p>
 							<!--END: SALEPRICE-->
 							<!-- <button>Add to Cart</button> -->
 							<!-- value="[category_buyitlink]" -->
