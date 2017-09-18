@@ -3,28 +3,726 @@
 
 <script type="text/javascript">
 // initialize product - google analytics
-var product = {};
-$( function(){
-  product = {
-    'id': '[id]',
-    'name': '[name]',
-    'category': $('.breadcrumbs a').last().text().toString(),
-    'list': 'PDP',
-    'position': 1,
-  };
 
-  // GA Enhanced ECom Tracking
-  // _gaq.push('require', 'ec');
-  // console.log( // _gaq.push, $ );
 
-  // PDP Viewed
-  // _gaq.push('ec:addProduct', product);
-  // _gaq.push('ec:setAction', 'detail');
-});
 </script>
+<img property="og:image" src="/thumbnail.asp?file=[image1]&maxx=300&maxy=300" class="hidden" />
+
+
+
+
+<section class="post-header-slides place-outside row">
+  <div class="post-header-slides--inner col-md-12" data-bind="style: { backgroundImage: 'url(\'' + activeImg + '\')' }" style="background-color: #ccc; height: 350px; background-repeat: no-repeat; background-size: cover; background-position: 42% 32%;">
+    <!-- <img data-bind="// attr: {src: activeImg}"> -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="post-header-slides--inner--nav" data-bind="foreach: headerSlidesBackground">
+          <img data-bind="thumbnail"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="main-content-section col-md-12">
+  <div class="product-info row">
+    <div class="product-info--section col-sm-8">
+      <div class="product-info--section-1">
+        <h2 class="product-info--title" data-bind="text: title"></h2>
+        <p class="product-info--partnum" data-bind="text: partnum"></p>
+        <div class="product-info--reviews-block">
+          <span class="reviews" data-bind="foreach: reviewAvg">
+            <i class="fa fa-star review-star-avg" aria-hidden="true" style="color:#ff7f50;"></i> 
+          </span>
+          <span class="reviews" data-bind="foreach: negReviews">
+            <i class="fa fa-star review-star-avg null" aria-hidden="true" style="color:lightgrey;"></i> 
+          </span>
+          <span data-bind="text: numReviews"></span> Reviews
+        </div>
+      </div>
+      <div class="product-info--section-2">
+        <div class="product-info--section-2--badges" data-bind="// foreach: badges">
+          <a target="_blank" data-bind="// css:badgeClass" href="" style="" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product"><i></i><div data-bind="// text:badgeName" class="badge-text"></div></a>
+        </div>
+      </div>
+    </div>
+    <div class="product-form col-sm-4" style="border:1px solid grey;">
+      <!-- PUT FORM HERE -->
+
+      <div class="row">
+        <div class="product-form--section form-container">
+          <div class="product-form--section--header">
+            <span class="priceText" data-bind="text: price"></span>
+            <span class="onSale" data-bind="visible: onSale">On Sale!</span>
+            <span class="savings" data-bind="visible: onSale">You Save: <span class="savings-amt" data-bind="text:savings"> </span></span>
+          </div>
+
+          <div class="product-form--section--form">
+            <div class="row">
+              <div class="product-form--section--form--inner" data-bind="html: formHtml()">
+              </div>
+              <div class="product-form--section--submit-container">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-lg col-sm-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart</button>
+
+                  <a id="apply-financing" class="apply-financing white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      
+    </div><!-- /product-form -->
+
+  </div><!-- /product-info -->
+
+</section>
+
+
+<section id="post-header-breadcrumb-search" class="hidden-sm hidden-xs">
+  <div class="col-md-12 search-container hidden-sm hidden-xs">
+    <!--START: CATEGORY_FULLINE-->
+      <!--IF: CATEGORY_FULLINE-->
+        <!-- display breadcrumbs in the main template if they exist -->
+        <div class="col-md-8 breadcrumb hidden-xs">
+          [CATEGORY_FULLLINE]
+        </div>
+      <!--ENDIF: CATEGORY_FULLINE-->
+    <!--END: CATEGORY_FULLINE-->
+
+    <div class="col-md-4 pull-right search hidden-sm hidden-xs">
+      <form method="get" name="searchForm" action="search.html" _lpchecked="1">
+          <div class="input-group">
+            <input size="25" placeholder="" name="k" value="" id="fbsearchlight" class="search-text form-control fbinputkeys" autocomplete="on" type="text">
+            <span class="input-group-btn">
+                <button name="search" class="search-button gainsboro btn">
+                  <i class="fa fa-search"></i>
+                </button>
+            </span>
+          </div>
+      </form>
+    </div>
+  </div>
+  <hr class="hidden-sm hidden-xs"/>
+</section>
+
+<article class="col-md-12" itemscope itemtype="http://schema.org/Product">
+
+    <!--START: CATEGORY_HEADER-->
+      [CONTENT]
+    <!--END: CATEGORY_HEADER-->
+    <!-- DESKTOP/TABLET PRODUCT TITLE AND PART #-->
+    <div id="product-head" class="row clearfix hidden-xs">
+      <div class="col-md-8">
+        <!-- Title! -->
+        <h1 itemprop="name" class="product-title">[name]</h1>
+        <!--START: id-->
+          <p class="part-no hidden-xs">Part Number <span id="product_id">[id]</span></p>
+        <!--END: id-->
+      </div>
+      <div class="col-md-4 hidden-xs">
+        <div class="splatter">
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- DESKTOP/TABLET PRODUCT WRAPPER & DESKTOP/TABLET/MOBILE SLIDESHOW -->
+    <!-- Wrap product in column on tablet -->
+    <div class="row" id="product-whole-wrapper">
+
+      <!-- MOBILE/TABLET/DESKTOP Slider! -->
+      <div class="col-md-9 col-sm-8 product_left eqhgt padd-top" id="product-slider">
+          
+
+          <div class="main-slider" style="display:none;"></div>
+          <div class="col-md-12 nav-filters" style="display:none;background-color:#7a559e;padding: 7px 10px 4px;">
+            <strong style="color:white;">Filter Media: </strong>
+            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white; border-right:1px solid white;"><input type="checkbox" data-filter-media="3DCart" class="filterProductImg" value="1"> Product Images <i class="fa fa-camera" aria-hidden="true"></i></label>
+            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white;"><input type="checkbox" id="2" class="filterProductImg"  data-filter-media="wistia" value="1" > Product Videos <i class="fa fa-play" aria-hidden="true"></i></label>
+            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white; display:none;"><input type="checkbox" id="2" class="filterProductImg"  data-filter-media="instagram" value="1" > Happy Customers <i class="fa fa-smile-o" aria-hidden="true"></i></label>
+            <div class="pull-right"><a href="" style="text-decoration:underline;color:white;" class="show-all">Show all</a></div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="sub-slider" style="display:none;"></div>
+
+          <div id="loadingDiv"><i class="fa fa-spinner fa-pulse"></i></div>
+
+      </div>
+
+      <!-- PRODUCT INFO AND ADD TO CART --> 
+      <div id="product-info" class="eqhgt col-md-3 col-sm-4 product_right pricebox">
+        <div class="cornersprite hidden-xs"></div>
+        <!-- Review Block! -->
+        <div id="review-block" class="row text-center hidden-xs">
+          <span id="review-average" class="hidden" value="[review_average]"></span>
+          <p>[totalrating] <small><span id="review-count" value="[review_count]">[review_count]</span> Review(s)</small></p>
+          <!--START: totalrating-->
+          <!--END: totalrating-->
+        </div>
+        
+        <div id="cart-block">
+          <div id="product-actions-wrapper" style="min-height: 375px;">
+            <!-- PRICING - TABLET/DESKTOP Pricing Block! -->
+            <div id="pricing-block" class="hidden-xs">
+              <!--START: pricing-->
+
+              <!-- [product_yourprice] -->
+              <!--START: ITEMPRICE-->
+                <p id="price" class="price-wrapper dimgray-text row strike-perhaps nozero" itemprop="offers" data-prop="itemprice" itemscope itemtype="http://schema.org/Offer">
+                  <span data-prop="itemprice" itemprop="price" content="[price]" class="price nozero dimgray-text">[price]</span>
+                  <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
+                </p>
+              <!--END: ITEMPRICE-->
+              <!-- [product_onsale] -->
+              <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
+
+              <!--START: SALEPRICE-->
+                <p id="price" itemprop="price" data-prop="saleprice" content="[price]" class="row price-wrapper dimgray-text nozero"><span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
+              <!--END: SALEPRICE-->
+              <!--START: SAVINGS-->
+                <!-- [product_savings] -->
+                <p id="savings" class="coral-text italic bold row small "><span class="label">You Save:</span> <span class="nozero savings-val">[savings]</span></p>
+              <!--END: SAVINGS-->
+              <p id="financing-add" class="dimgray-text row small hidden text-center"> <a href="/financing">Or as low as <span class="financing-price"></span>/month!</a></p>
+
+              <div class="clearfix"></div>
+              <!--END: pricing-->
+            </div><!--#pricing-block-->
+
+            <!-- TABLET/DESKTOP Add to Cart! -->
+            <div id="customer-action-block" class="hidden-xs clearfix">
+              <button type="submit" class="btn btn-lg col-sm-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+              <div class="clearfix"></div>
+              <div class="row">
+                <div class="col-sm-6 col-md-6" style="padding-right: 5px;">
+                  <a id="apply-financing" class="apply-financing white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
+                </div>
+                <div class="col-sm-6 col-md-6" style="padding-left: 5px;">
+                  <a id="add-wishlist" class="add-wishlist standish-tooltip button btn-block btn btn-lg btn-purp" href="#">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div><!--#customer-action-block-->
+
+            <!-- MOBILE/TABLET/DESKTOP PRODUCT ADD AND OPTIONS-->
+
+            <div id="options-block">
+              <form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
+                <input type="hidden" name="item_id" value="[catalogid]" />
+                <input type="hidden" name="itemid" value="[id]" ID="itemid" />
+                <input type="hidden" name="category_id" value="[catid]" />
+
+                  <!-- [product_optionheader] -->
+                <div class="product-form">
+
+                  <!-- PRICING - MOBILE PRODUCT WRAPPER & TITLE -->
+                  <!-- @todo combine mobile and desktop to one -->
+                  <!-- !!!!!!important dont delete!!! Mobile Alteration Product Header --> 
+                  <div class="mobile-header visible-xs row">
+                    <div class="product-title col-sm-7 col-xs-7">
+                      <h1 itemprop="name" class="mobile-title product-title">
+                        [name]
+                      </h1>
+                      <p id="product_id">[id]</p>
+                    </div>
+                    <div class="product-pricing hidden-md hidden-lg col-sm-5 col-xs-5">
+                      <!--START: SALEPRICE-->
+                        <div id="sale-tag" class="hidden"><i class="fa fa-tag"></i> Sale!</div>
+                      <!--END: SALEPRICE-->
+                      <h2 id="priceMobile" class="row">
+                        <!--START: ITEMPRICE-->
+                          <span id="price-mobile" itemprop="offers" itemscope content="[price]" class="item-regprice-mobile price-wrapper itemprice price nozero dimgray-text">[price]</span>
+                        <!--END: ITEMPRICE-->
+                        <!--START: SALEPRICE-->
+                          <span id="price-mobile-sale" itemprop="price" content="[saleprice]" class="price-wrapper saleprice nozero">[saleprice]</span>
+                        <!--END: SALEPRICE-->
+
+                      </h2>
+                      <!--START: price2-->
+                        <p class="dimgrey-text row"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
+                      <!--END: price2-->
+
+                    </div>
+                  </div>
+
+                  <!-- MOBILE/TABLET/DESKTOP product options -->
+                  <fieldset class="product-options">
+
+                    <!--START: PRODUCT_OPTIONS_BLOCK-->
+
+                    <!--START: divOptionsBlock-->
+                    <!--START: optionstemplate--> 
+
+                    <!--START: textarea-format--> 
+                      [value]: [oprice]
+                      <textarea cols="30" rows="5" name="textarea[oname]" class="txtareaStyle">[option_value]</textarea>
+                    <!--END: textarea-format--> 
+
+                    <!--START: text-format--> 
+                      [value]: [oprice]
+                      <input type="text" size="30" name="text[oname]" value="[option_value]" class="txtBoxStyle" />
+                    <!--END: text-format-->
+
+                    <!--START: qty-format-->
+                      [value]
+                      [oprice]
+                      <input type="text" size="3" name="text[oname]" value="[option_value]" class="txtBoxStyle" />
+                    <!--END: qty-format-->
+
+                    <!--START: file-format-->
+                      <!-- [value]: -->
+                      <!-- [oprice] -->
+                      <input type="file" name="file[oname]" size="20" />
+                    <!--END: file-format-->
+
+                    <!--START: title-format-->
+                      [feature]
+                    <!--END: title-format-->
+
+                    <!--START: checkbox-format-->
+                    <label for="warranty" class="checkbox">
+                      <div class="checkbox">
+                        <label><input type="checkbox" name="cb[oname]" value="[value]" onclick="window.Standish.NoZeros();validateValues(document.add,1);" [selected] > [feature]: <span class="nozero">[oprice]</span></label>
+                      </div>
+                    </label>
+                    <!-- <input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] />[feature] [oprice] -->
+                    <!--END: checkbox-format-->
+
+                    <!--START: radio-format-->
+                      <div><input type="radio" name="[oname]" value="[value]" onclick="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);" [selected] />[feature] <span class="nozero">[oprice]</span></div>
+                    <!--END: radio-format-->
+
+                    <!--START: dropdown-format-->
+                      <div class="fancy-select form-group col-md-6 col-sm-6">
+                        <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
+                          <!--START: option-->
+                          <option value="[value]" [selected]>[feature]<span class="nozero">[oprice]</span></option>
+                          <!--END: option-->
+                        </select>
+                        <i class="fa fa-caret-down fa-sm"></i>
+                      </div>
+                    <!--END: dropdown-format-->
+
+                    <!--START: dropdownimage-format-->
+                      <div class="fancy-select form-group col-md-6 col-sm-6">
+                        <!-- note: image_click function changes image with option position -->
+                        <!-- image_click($(this).find(':selected').index()+1); -->
+                        <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
+                          <!--START: option-->
+                          <option value="[value]" [selected]>[feature]<span class="nozero">[oprice]</span></option>
+                          <!--END: option-->
+                        </select>
+                        <i class="fa fa-caret-down fa-sm"></i>
+                        <img name="img_[oname]" src="assets/templates/common/images/spacer.gif" alt="">
+                      </div>
+                    <!--END: dropdownimage-format-->
+                    <!--END: optionstemplate-->
+
+
+                    <!--START: options--> 
+                      <!--START: opt-title-->
+                        <!-- [OPTIONLABEL] [OPTIONFIELD] -->
+                      <!--END: opt-title-->
+                      <!--START: opt-regular-->
+                        <div class="option-row row">
+                          <div class="col-md-12">
+                            <label class="col-md-12" for="name">[OPTIONLABEL]: </label>
+                            [OPTIONFIELD]
+                          </div>
+                        </div>
+                        <!--START: help--> 
+                          <a href="#" onclick="popup('optionhelp.asp?optionid=[optid]',300,200)"><img src="assets/templates/common/images/help_icon.gif" alt="help" /></a>
+                        <!--END: help-->
+                      <!--END: opt-regular--> 
+                      <!--END: options-->
+
+                      <div class="share-area clearfix" style="margin-top: 10px; margin-bottom: 10px;">
+                        <p><a href="share" data-share="discount" class="facebook-share" style="color: #4267b2;">
+                          <label><input type="checkbox" name="facebook"> <i class="fa fa-facebook-official" aria-hidden="true"></i> Share this product page and reveal your 10% off discount!</label>
+                        </a></p> 
+                        <!-- data-href="https://www.standishsalongoods.com/" data-title="Test" data-desc="This is a test." data-image="https://www.standishsalongoods.com/assets/templates/standish-responsive/images/standish-logo.png" -->
+                      </div>
+                      <!--END: divOptionsBlock--> 
+
+                    <!--END: PRODUCT_OPTIONS_BLOCK-->
+
+                  </fieldset>
+
+                  <!-- MOBILE/TABLET/DESKTOP product quantityl -->
+                  <!--START: addtocart-->
+                  <div class="option-row row">
+                    <label for="quantity" class="col-md-12 col-sm-12 col-xs-12">[product_quantity]: </label>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div id="input-button-qty" class="input-group btn-group-horizontal">
+                        <div class="remove-qty input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="qty-0">
+                            <span class="glyphicon glyphicon-minus"></span>
+                          </button>
+                        </div>
+                        <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="window.Standish.NoZeros();validateValues(document.add,1);" class="form-control" max="1000" min="0" />
+                        <div class="add-qty input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="qty-0">
+                            <span class="glyphicon glyphicon-plus"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--END: addtocart-->
+
+                  <!-- ~~~~ MOBILE ~~~~ Add to Cart Button -->
+                  <div id="customer-action-block-mobile" class="visible-xs clearfix">
+                    <button type="submit" class="btn btn-lg col-xs-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+
+                    <div class="btn-group" role="group" aria-label="..." style="width:100%;">
+                      <a  href="/salon-equipment-financing" class="white-text button light-text btn btn-lg standishgreen" id="apply-financing" onclick="window.location='Charlotte_Contemporary_Red_Styling_Chair#product-videos-header'" style="width:50%;">Financing</a>
+                      <a id="add-wishlist" class="add-wishlist standish-tooltip button btn-block btn btn-lg btn-purp" href="#" style="width:50%;border-left: 1px solid white;">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                    </div>
+                  </div><!--#customer-action-block-->
+                  <div class="col-md-12 text-center padd-top option-row hidden-md hidden-sm hidden-lg"><span class="coral-text">Need Help?</span> Call <span class="bold">(888) 271-8434</span></div>
+
+                </div><!-- .product-form -->
+              </form>
+
+            </div> <!--#options-block-->
+            <!-- END ~~ MOBILE/TABLET/DESKTOP PRODUCT ADD AND OPTIONS-->
+          </div>
+
+          <!-- TABLET/DESKTOP CUSTOMER ENGAGEMENT BLOCK -->
+          <div id="customer-engagement-block" class="row hidden-xs">
+            <div class="col-md-12">
+              <div class="questions">(888) 271-8434</div>
+              <div class="shipping-notice">
+                <label>
+                  <span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 10-14 Business Days!</span>
+                </label>
+              </div>
+              <div class="social-media-block row">
+
+                <!-- Load Facebook SDK for JavaScript -->
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+
+                <!-- Your like button code -->
+                <div class="fb-like" 
+                  data-layout="standard" 
+                  data-action="like" 
+                  data-show-faces="false">
+                </div>
+
+                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js' ;fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                <a data-pin-do="buttonBookmark" data-pin-color="white" href="https://www.pinterest.com/pin/create/button/"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" /></a>
+                <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+
+                <a class="btn btn-xs btn-social email" href="mailto:?subject=&body=:%20" title="Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL),'_self',false); return false;"><i class="fa fa-envelope fa-sm"></i> Send</a>
+              </div>
+            </div>
+          </div><!-- #customer-engagement-block -->
+
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <!-- desktop/ instagram block! --> 
+
+      <div id="instagram-share" class="share-area clearfix col-md-12 hidden">
+        <p><span class="share-text">Share this product page and reveal your 10% off discount!</span> <a href="share" data-share="discount" class="btn btn-flat btn-pointy"><i class="fa fa-facebook-official" aria-hidden="true"></i> Share Now</a></p> 
+        <!-- data-href="https://www.standishsalongoods.com/" data-title="Test" data-desc="This is a test." data-image="https://www.standishsalongoods.com/assets/templates/standish-responsive/images/standish-logo.png" -->
+      </div>
+
+    </div>
+
+
+
+    <!-- BADGES LIST ~ POPULATED BY JS -->
+    <div class="row" id="product-badges-container">
+      
+      <div class="col-md-12 badges-list padd-top">
+        <h4 class="visible-xs info-header">Benefits and Features for this product<hr></h4>
+      </div>
+    </div>
+
+    <!-- Product Descriptions -->
+    <div id="product-description-whole" class="row">
+      <div id="product-description-whole-inner" class="col-md-12">
+        <!-- MOBILE/TABLET/DESKTOP description -->
+        <div class="product-description padd-top col-md-12">
+          <!-- START: extended_description -->
+          <h4 class="info-header">[name] Product Description
+            <!--START: create_first_review-->
+            <small class="pull-right">
+              <a href='#' class="hidden-xs" rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);"><i class="fa fa-star-o"></i> [reviews_first]</a>
+            </small>
+            <!--END: create_first_review-->
+            <hr></h4>
+          <!-- [product_Header-description] -->
+          <div itemprop="description" class="extended-description">[extended_description]</div>
+          <!-- END: extended_description -->
+        </div>
+
+        <!-- MOBILE/TABLET/DESKTOP product details -->
+        <div class="product-details padd-top col-md-12">
+          <h4 class="info-header">Product Details<hr></h4>
+          <ul class="details-list">
+            <!--START: PRODUCT_FEATURES_BLOCK-->
+              <!--START: PRODUCT_FEATURES-->
+                <li>[product_feature_name]</li>
+              <!--END: PRODUCT_FEATURES-->
+            <!--END: PRODUCT_FEATURES_BLOCK-->
+          </ul>
+        </div>
+
+        <!--START: extra_field_6-->
+        <div class="clearfix"></div>
+        <!-- TABLET/DESKTOP featured image -->
+          <div class="product-featured padd-top col-md-12">
+            <img src="[extra_field_6]"/>
+          </div>
+        <div class="clearfix"></div>
+        <!--START: extra_field_6-->
+
+        <div class="clearfix"></div>
+        <!-- TABLET/DESKTOP product video -->
+        <div id="product-videos-header" class="product-videos padd-top col-md-12">
+          <h4 class="info-header">Product Video<hr></h4>
+          <div class="details-video row">
+          </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!--START: reviews-->
+        <!-- Product Review -->
+        <div id="product-review" class="col-md-12 col-sm-12 hidden-xs">
+
+          <!--START: totalrating-->
+          <div class="totalrating padd-block" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"></div>
+          <!--END: totalrating-->
+
+          
+          <div class="reviews hidden-xs">
+            <div class="clearfix">
+              <h4 class="info-header">[reviews_header]<hr></h4>
+
+              <p class="pull-right">
+                <i class="fa fa-star-o"></i>
+
+                <!--START: create_review_link-->
+                <a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a>
+                <!--END: create_review_link-->
+              </p>
+            </div>
+
+            <div class="row grid">
+              <!-- [review_link] -->
+              <!--START: user_reviews-->
+                <div class="col-md-6 col-sm-6 review-wrapper grid-item">
+                  <div class="review arrow_box" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                    <h4 class="sans info-header"><span itemprop="name">[short_review]</span></h4>
+                    <div class="rating">
+                      <meta itemprop="worstRating" content="1">
+                      <span class="hidden" itemprop="ratingValue">[rating]</span>
+                      <meta itemprop="bestRating" content="5">
+                      <span class="stars">
+                      <img src="assets/templates/common/images/star[rating].png" alt="Rating" />
+                      </span> - <span itemprop="author">[user_name]</span> from [user_city]
+                      <!-- itemprop="author" -->
+                    </div>
+                    <p itemprop="description">[long_review]</p>
+                  </div>
+                  <!-- <div class="add-rating-link"><i class="icon-plus"></i> <a href="#addRating">Add A Rating &amp; Review</a></div> -->
+                </div>
+              <!--END: user_reviews-->
+            </div>
+          </div>
+        </div>
+        <!--END: reviews-->
+
+        <!--START: CATEGORY_FOOTER-->
+          <div id="promotion" class="padd-top">
+            [CONTENT]
+          </div>
+        <!--END: CATEGORY_FOOTER-->
+
+        <div class="clearfix"></div>
+        <!--START: extra_field_9-->
+        <div class="hidden field9" data-field9="[extra_field_9]"></div>
+        <!--END: extra_field_9-->
+
+        <!--START: extra_field_10-->
+        <div class="hidden field10" data-field10="[extra_field_10]"></div>
+        <!--END: extra_field_10-->
+
+        <!-- MOBILE/TABLET/DESKTOP related products -->
+        <!--START: related_0-->
+        <div class="clearfix"></div>
+        <div id="related-products" class="padd-top col-md-12">
+          <h4 class="info-header">[product_Header-relateditems]<hr></h4>
+          <div class="related-products row">
+
+            <!--START: related_items0-->
+            <div class="col-md-2 col-sm-3 col-xs-6 listing alpha">
+              <div class="listing-container">
+                <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" /></a>
+                <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+                <!--START: product_review-->
+                <!--START: product_review_average-->
+                  <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" /> -->
+                  <!-- [review_count] Review(s) -->
+                <!--END: product_review_average-->
+                <!--END: product_review-->
+                <!--START: ITEMPRICE-->
+                <p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+                <!--END: ITEMPRICE-->
+                <!--START: SALEPRICE-->
+                <p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
+                <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" id="mf281"> <span class="nozero salePrice">[ITEMSALEPRICE]</span></p>
+                <!--END: SALEPRICE-->
+              </div>
+              <input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">
+            </div>   
+            <!--END: related_items0-->
+          </div>
+        </div>
+        <!--END: related_0-->
+
+        <!--START: extra_field_11-->
+        <!-- MOBILE/TABLET/DESKTOP ingredients -->
+        <div itemprop="ingredients" class="padd-top product-description col-md-12">
+          <div>
+            <h4 class="info-header">[product_extrafield11]<hr></h4>
+            <p>[extra_field_11]</p>
+          </div>
+        </div>
+        <!--END: extra_field_11-->
+        <!--START: extra_field_12-->
+        <div class="clearfix"></div>
+        <!-- MOBILE/TABLET/DESKTOP suggested use -->
+        <div itemprop="suggested-use" class="padd-top product-description col-md-12">
+          <div>
+            <h4 class="info-header">[product_extrafield12]<hr></h4>
+            <p>[extra_field_12]</p>
+          </div>
+        </div>
+        <!--END: extra_field_12-->
+
+        <!-- MOBILE/TABLET/DESKTOP resources -->
+        <div class="clearfix"></div>
+        <div id="resources" class="padd-top col-md-12">
+          <h4 class="info-header">Resources<hr></h4>
+          <div class="resources row">
+            <div class="col-md-4" id="sub-resources-about-financing">
+              <h4>Financing</h4>
+              <p>Here at Standish we want to make the process for salon equipment financing as simple & painless as possible, so we have 2 third party lenders to choose from: Qualify instantly for up to $2500 with Snap Financing or request a credit review for funding orders $3,000 or greater via Quest Resources. Learn about these options and <a href="/salon-equipment-financing">apply online</a> today! </p>
+            </div>
+            <div class="col-md-4" id="sub-resources-about-shipping">
+              <h4>Shipping</h4>
+              <p>We want to make your delivery process as painless as possible! That's why we use reliable shipping companies, and offer a wide variety of shipping methods to get your furniture to you safe and sound! Many of our orders arrive to you in 10-14 business days from the date of purchase, unless it's a custom item. </p>
+            </div>
+            <!--START: extra_field_1-->
+            <div class="hidden field1" data-field1="[extra_field_1]"></div>
+            <div class="col-md-4" id="sub-resources-about-brand">
+              <h4>About this Brand</h4>
+              <p></p>
+            </div>
+            <!--END: extra_field_1-->
+          </div>
+        </div>
+
+        <!-- MOBILE/TABLET/DESKTOP more resources -->
+        <div class="clearfix"></div>
+        <div id="more-resources" class="padd-top col-md-12">
+          <h4 class="info-header">More Resources<hr></h4>
+          <div class="row">
+            <div class="col-md-4">
+              <a href="/free-salon-equipment-checklist" class="btn btn-xl btn-beige regal">Salon Checklist</a>
+            </div>
+            <div class="col-md-4">
+              <a href="/salon-equipment-financing" class="btn btn-xl standishgreen regal">Financing</a>
+            </div>
+            <div class="col-md-4">
+              <a href="/salon-showroom-flight-reimbursement" class="btn btn-xl button regal">Fly and Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-bind="visible: testActivated" class="col-sm-4">
+      </div>
+    </div>
+
+</article>
+
+
+<div id="fb-modal-share" class="modal fade modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0 none;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div id="fb-share-content" class="modal-body">
+        <h6>THANK YOU FOR SHARING</h3>
+        <p>Claim your discount by using this offer code at checkout:</p>
+        <div class="promotion-code-box">
+          <span class="h3">FBSHARE196</span>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
+<!--START: extra_field_2-->
+<div class="hidden field2" data-field2="[extra_field_2]"></div>
+<!--END: extra_field_2-->
+<!--START: extra_field_3-->
+<div class="hidden field3" data-field3="[extra_field_3]"></div>
+<!--END: extra_field_3-->
+
+<!--START: extra_field_4-->
+<div class="hidden field4" data-field4="[extra_field_4]"></div>
+<!--END: extra_field_4-->
+
+<!--START: extra_field_5-->
+<div class="hidden field5" data-field5="[extra_field_5]"></div>
+<!--END: extra_field_5-->
+
+
+<!--START: extra_field_7-->
+<div class="hidden field7" data-field7="[extra_field_7]"></div>
+<!--END: extra_field_7-->
+<!--START: extra_field_8-->
+<div class="hidden field8" data-field8="[extra_field_8]"></div>
+<!--END: extra_field_8-->
 <script type="text/javascript">
+
 window.Standish = window.Standish || {};
 Standish.SiteListing = Standish.SiteListing || {};
+
+Standish.SiteListing = {
+  'id': '[id]',
+  'name': '[name]',
+  'category': $('.breadcrumbs a').last().text().toString(),
+  'price': $('#price').text(),
+  'savings': $('#savings .savings-val').text(),
+  'list': 'PDP',
+  'position': 1,
+  'partnum': '[id]',
+  'reviewAvg': $('#review-average').attr('value'),
+  'numReviews': $('#review-count').attr('value')
+};
+
 Standish.SiteListing.loadedImages = [
   {
     image: '[image1]',
@@ -162,632 +860,16 @@ Standish.SiteListing.loadedImages = [
 ];
 </script>
 
-<section id="post-header-breadcrumb-search" class="hidden-sm hidden-xs">
-  <div class="col-md-12 search-container hidden-sm hidden-xs">
-    <!--START: CATEGORY_FULLINE-->
-      <!--IF: CATEGORY_FULLINE-->
-        <!-- display breadcrumbs in the main template if they exist -->
-        <div class="col-md-8 breadcrumb hidden-xs">
-          [CATEGORY_FULLLINE]
-        </div>
-      <!--ENDIF: CATEGORY_FULLINE-->
-    <!--END: CATEGORY_FULLINE-->
-
-    <div class="col-md-4 pull-right search hidden-sm hidden-xs">
-      <form method="get" name="searchForm" action="search.html" _lpchecked="1">
-          <div class="input-group">
-            <input size="25" placeholder="" name="k" value="" id="fbsearchlight" class="search-text form-control fbinputkeys" autocomplete="on" type="text">
-            <span class="input-group-btn">
-                <button name="search" class="search-button gainsboro btn">
-                  <i class="fa fa-search"></i>
-                </button>
-            </span>
-          </div>
-      </form>
-    </div>
-  </div>
-  <hr class="hidden-sm hidden-xs"/>
-</section>
-
-<article class="col-md-12" itemscope itemtype="http://schema.org/Product">
-
-  <form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add" class="product-form">
-    <input type="hidden" name="item_id" value="[catalogid]" />
-    <input type="hidden" name="itemid" value="[id]" ID="itemid" />
-    <input type="hidden" name="category_id" value="[catid]" />
-
-    <!--START: CATEGORY_HEADER-->
-      [CONTENT]
-    <!--END: CATEGORY_HEADER-->
-    <!-- DESKTOP/TABLET PRODUCT TITLE AND PART #-->
-    <div id="product-head" class="row clearfix hidden-xs">
-      <div class="col-md-8">
-        <!-- Title! -->
-        <h1 itemprop="name" class="product-title">[name]</h1>
-        <!--START: id-->
-          <p class="part-no hidden-xs">Part Number <span id="product_id">[id]</span></p>
-        <!--END: id-->
-      </div>
-      <div class="col-md-4 hidden-xs">
-        <div class="splatter">
-        </div>
-      </div>
-    </div>
-    <div class="clearfix"></div>
-    <!-- DESKTOP/TABLET PRODUCT WRAPPER & DESKTOP/TABLET/MOBILE SLIDESHOW -->
-    <!-- Wrap product in column on tablet -->
-    <div class="row" id="product-whole-wrapper">
-
-      <!-- MOBILE/TABLET/DESKTOP Slider! -->
-      <div class="col-md-9 col-sm-8 product_left eqhgt padd-top" id="product-slider">
-          
-
-          <div class="main-slider" style="display:none;"></div>
-          <div class="col-md-12 nav-filters" style="display:none;background-color:#7a559e;padding: 7px 10px 4px;">
-            <strong style="color:white;">Filter Media: </strong>
-            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white; border-right:1px solid white;"><input type="checkbox" data-filter-media="3DCart" class="filterProductImg" value="1"> Product Images <i class="fa fa-camera" aria-hidden="true"></i></label>
-            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white;"><input type="checkbox" id="2" class="filterProductImg"  data-filter-media="wistia" value="1" > Product Videos <i class="fa fa-play" aria-hidden="true"></i></label>
-            <label style="font-family: 'PT Sans', Arial, Helvetica, sans-serif; padding:0 6px; font-size: 16px; color: white; display:none;"><input type="checkbox" id="2" class="filterProductImg"  data-filter-media="instagram" value="1" > Happy Customers <i class="fa fa-smile-o" aria-hidden="true"></i></label>
-            <div class="pull-right"><a href="" style="text-decoration:underline;color:white;" class="show-all">Show all</a></div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="sub-slider" style="display:none;"></div>
-
-          <div id="loadingDiv"><i class="fa fa-spinner fa-pulse"></i></div>
-
-      </div>
-
-      <!-- PRODUCT INFO AND ADD TO CART --> 
-      <div id="product-info" class="eqhgt col-md-3 col-sm-4 product_right pricebox">
-        <div class="cornersprite hidden-xs"></div>
-        <!-- Review Block! -->
-        <div id="review-block" class="row text-center hidden-xs">
-          <span id="review-average" class="hidden" value="[review_average]"></span>
-          <p>[totalrating] <small><span id="review-count" value="[review_count]">[review_count]</span> Review(s)</small></p>
-          <!--START: totalrating-->
-          <!--END: totalrating-->
-        </div>
-        
-        <div id="cart-block">
-          <div id="product-actions-wrapper" style="min-height: 375px;">
-            <!-- PRICING - TABLET/DESKTOP Pricing Block! -->
-            <div id="pricing-block" class="hidden-xs">
-              <!--START: pricing-->
-
-              <!-- [product_yourprice] -->
-              <!--START: ITEMPRICE-->
-                <p id="price" class="price-wrapper dimgray-text row strike-perhaps nozero" itemprop="offers" data-prop="itemprice" itemscope itemtype="http://schema.org/Offer">
-                  <span data-prop="itemprice" itemprop="price" content="[price]" class="price nozero dimgray-text">[price]</span>
-                  <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
-                </p>
-              <!--END: ITEMPRICE-->
-              <!-- [product_onsale] -->
-              <link itemprop="availability" href="http://schema.org/[availability_itemprop]" />
-
-              <!--START: SALEPRICE-->
-                <p id="price" itemprop="price" data-prop="saleprice" content="[price]" class="row price-wrapper dimgray-text nozero"><span class="nozero dimgray-text" id="saleprice">[saleprice]</span></p>
-              <!--END: SALEPRICE-->
-              <!--START: SAVINGS-->
-                <!-- [product_savings] -->
-                <p id="savings" class="coral-text italic bold row small "><span class="label">You Save:</span> <span class="nozero">[savings]</span></p>
-              <!--END: SAVINGS-->
-              <p id="financing-add" class="dimgray-text row small hidden text-center"> <a href="/financing">Or as low as <span class="financing-price"></span>/month!</a></p>
-
-              <div class="clearfix"></div>
-              <!--END: pricing-->
-            </div><!--#pricing-block-->
-
-            <!-- TABLET/DESKTOP Add to Cart! -->
-            <div id="customer-action-block" class="hidden-xs clearfix">
-              <button type="submit" class="btn btn-lg col-sm-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-              <div class="clearfix"></div>
-              <div class="row">
-                <div class="col-sm-6 col-md-6" style="padding-right: 5px;">
-                  <a id="apply-financing" class="apply-financing white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
-                </div>
-                <div class="col-sm-6 col-md-6" style="padding-left: 5px;">
-                  <a id="add-wishlist" class="add-wishlist standish-tooltip button btn-block btn btn-lg btn-purp" href="#">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
-                </div>
-              </div>
-            </div><!--#customer-action-block-->
-
-            <!-- MOBILE/TABLET/DESKTOP PRODUCT ADD AND OPTIONS-->
-
-            <div id="options-block">
-             
-                  <!-- [product_optionheader] -->
-              <div class="product-form">
-
-                <!-- PRICING - MOBILE PRODUCT WRAPPER & TITLE -->
-                <!-- @todo combine mobile and desktop to one -->
-                <!-- !!!!!!important dont delete!!! Mobile Alteration Product Header --> 
-                <div class="mobile-header visible-xs row">
-                  <div class="product-title col-sm-7 col-xs-7">
-                    <h1 itemprop="name" class="mobile-title product-title">
-                      [name]
-                    </h1>
-                    <p id="product_id">[id]</p>
-                  </div>
-                  <div class="product-pricing hidden-md hidden-lg col-sm-5 col-xs-5">
-                    <!--START: SALEPRICE-->
-                      <div id="sale-tag" class="hidden"><i class="fa fa-tag"></i> Sale!</div>
-                    <!--END: SALEPRICE-->
-                    <h2 id="priceMobile" class="row">
-                      <!--START: ITEMPRICE-->
-                        <span id="price-mobile" itemprop="offers" itemscope content="[price]" class="item-regprice-mobile price-wrapper itemprice price nozero dimgray-text">[price]</span>
-                      <!--END: ITEMPRICE-->
-                      <!--START: SALEPRICE-->
-                        <span id="price-mobile-sale" itemprop="price" content="[saleprice]" class="price-wrapper saleprice nozero">[saleprice]</span>
-                      <!--END: SALEPRICE-->
-
-                    </h2>
-                    <!--START: price2-->
-                      <p class="dimgrey-text row"><span class="label">[product_retailprice]</span> <span class="nozero">[price2]</span></p>
-                    <!--END: price2-->
-
-                  </div>
-                </div>
-
-                <!-- MOBILE/TABLET/DESKTOP product options -->
-                <fieldset class="product-options">
-
-                  <!--START: PRODUCT_OPTIONS_BLOCK-->
-
-                  <!--START: divOptionsBlock-->
-                  <!--START: optionstemplate--> 
-
-                  <!--START: textarea-format--> 
-                    [value]: [oprice]
-                    <textarea cols="30" rows="5" name="textarea[oname]" class="txtareaStyle">[option_value]</textarea>
-                  <!--END: textarea-format--> 
-
-                  <!--START: text-format--> 
-                    [value]: [oprice]
-                    <input type="text" size="30" name="text[oname]" value="[option_value]" class="txtBoxStyle" />
-                  <!--END: text-format-->
-
-                  <!--START: qty-format-->
-                    [value]
-                    [oprice]
-                    <input type="text" size="3" name="text[oname]" value="[option_value]" class="txtBoxStyle" />
-                  <!--END: qty-format-->
-
-                  <!--START: file-format-->
-                    <!-- [value]: -->
-                    <!-- [oprice] -->
-                    <input type="file" name="file[oname]" size="20" />
-                  <!--END: file-format-->
-
-                  <!--START: title-format-->
-                    [feature]
-                  <!--END: title-format-->
-
-                  <!--START: checkbox-format-->
-                  <label for="warranty" class="checkbox">
-                    <div class="checkbox">
-                      <label><input type="checkbox" name="cb[oname]" value="[value]" onclick="window.Standish.NoZeros();validateValues(document.add,1);" [selected] > [feature]: <span class="nozero">+ [oprice]</span></label>
-                    </div>
-                  </label>
-                  <!-- <input type="checkbox" name="cb[oname]" value="[value]" onclick="validateValues(document.add,1);" [selected] />[feature] [oprice] -->
-                  <!--END: checkbox-format-->
-
-                  <!--START: radio-format-->
-                    <div><input type="radio" name="[oname]" value="[value]" onclick="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);" [selected] />[feature] <span class="nozero">[oprice]</span></div>
-                  <!--END: radio-format-->
-
-                  <!--START: dropdown-format-->
-                    <div class="fancy-select form-group col-md-6 col-sm-6">
-                      <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
-                        <!--START: option-->
-                        <option value="[value]" [selected]>[feature]<span class="nozero">[oprice]</span></option>
-                        <!--END: option-->
-                      </select>
-                      <i class="fa fa-caret-down fa-sm"></i>
-                    </div>
-                  <!--END: dropdown-format-->
-
-                  <!--START: dropdownimage-format-->
-                    <div class="fancy-select form-group col-md-6 col-sm-6">
-                      <!-- note: image_click function changes image with option position -->
-                      <!-- image_click($(this).find(':selected').index()+1); -->
-                      <select name="[oname]" onchange="window.Standish.NoZeros();validateValues(document.add,1);selectOption(this);">
-                        <!--START: option-->
-                        <option value="[value]" [selected]>[feature]<span class="nozero">[oprice]</span></option>
-                        <!--END: option-->
-                      </select>
-                      <i class="fa fa-caret-down fa-sm"></i>
-                      <img name="img_[oname]" src="assets/templates/common/images/spacer.gif" alt="">
-                    </div>
-                  <!--END: dropdownimage-format-->
-                  <!--END: optionstemplate-->
-
-
-                  <!--START: options--> 
-                    <!--START: opt-title-->
-                      <!-- [OPTIONLABEL] [OPTIONFIELD] -->
-                    <!--END: opt-title-->
-                    <!--START: opt-regular-->
-                      <div class="option-row row">
-                        <div class="col-md-12">
-                          <label class="col-md-12" for="name">[OPTIONLABEL]: </label>
-                          [OPTIONFIELD]
-                        </div>
-                      </div>
-                      <!--START: help--> 
-                        <a href="#" onclick="popup('optionhelp.asp?optionid=[optid]',300,200)"><img src="assets/templates/common/images/help_icon.gif" alt="help" /></a>
-                      <!--END: help-->
-                    <!--END: opt-regular--> 
-                    <!--END: options-->
-
-                    <div class="share-area clearfix" style="margin-top: 10px; margin-bottom: 10px;">
-                      <p><a href="share" data-share="discount" class="facebook-share" style="color: #4267b2;">
-                        <label><input type="checkbox" name="facebook"> <i class="fa fa-facebook-official" aria-hidden="true"></i> Share this product page and reveal your 10% off discount!</label>
-                      </a></p> 
-                      <!-- data-href="https://www.standishsalongoods.com/" data-title="Test" data-desc="This is a test." data-image="https://www.standishsalongoods.com/assets/templates/standish-responsive/images/standish-logo.png" -->
-                    </div>
-                    <!--END: divOptionsBlock--> 
-
-                  <!--END: PRODUCT_OPTIONS_BLOCK-->
-
-                </fieldset>
-
-                <!-- MOBILE/TABLET/DESKTOP product quantityl -->
-                <!--START: addtocart-->
-                <div class="option-row row">
-                  <label for="quantity" class="col-md-12 col-sm-12 col-xs-12">[product_quantity]: </label>
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div id="input-button-qty" class="input-group btn-group-horizontal">
-                      <div class="remove-qty input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="qty-0">
-                          <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                      </div>
-                      <input id="quantity" type="text" size="3" name="qty-0" value="1" onchange="window.Standish.NoZeros();validateValues(document.add,1);" class="form-control" max="1000" min="0" />
-                      <div class="add-qty input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="qty-0">
-                          <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--END: addtocart-->
-
-                <!-- ~~~~ MOBILE ~~~~ Add to Cart Button -->
-                <div id="customer-action-block-mobile" class="visible-xs clearfix">
-                  <button type="submit" class="btn btn-lg col-xs-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-
-                  <div class="btn-group" role="group" aria-label="..." style="width:100%;">
-                    <a  href="/salon-equipment-financing" class="white-text button light-text btn btn-lg standishgreen" id="apply-financing" onclick="window.location='Charlotte_Contemporary_Red_Styling_Chair#product-videos-header'" style="width:50%;">Financing</a>
-                    <a id="add-wishlist" class="add-wishlist standish-tooltip button btn-block btn btn-lg btn-purp" href="#" style="width:50%;border-left: 1px solid white;">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
-                  </div>
-                </div><!--#customer-action-block-->
-                <div class="col-md-12 text-center padd-top option-row hidden-md hidden-sm hidden-lg"><span class="coral-text">Need Help?</span> Call <span class="bold">(888) 271-8434</span></div>
-
-              </div><!-- .product-form -->
-              
-
-            </div> <!--#options-block-->
-            <!-- END ~~ MOBILE/TABLET/DESKTOP PRODUCT ADD AND OPTIONS-->
-          </div>
-
-          <!-- TABLET/DESKTOP CUSTOMER ENGAGEMENT BLOCK -->
-          <div id="customer-engagement-block" class="row hidden-xs">
-            <div class="col-md-12">
-              <div class="questions">(888) 271-8434</div>
-              <div class="shipping-notice">
-                <label>
-                  <span></span><span class="availability">Quick Shipping: Usually <br /> Arrives in 10-14 Business Days!</span>
-                </label>
-              </div>
-              <div class="social-media-block row">
-
-                <!-- Load Facebook SDK for JavaScript -->
-                <div id="fb-root"></div>
-                <script>(function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-                  fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));</script>
-
-                <!-- Your like button code -->
-                <div class="fb-like" 
-                  data-layout="standard" 
-                  data-action="like" 
-                  data-show-faces="false">
-                </div>
-
-                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js' ;fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-                <a data-pin-do="buttonBookmark" data-pin-color="white" href="https://www.pinterest.com/pin/create/button/"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_20.png" /></a>
-                <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-
-                <a class="btn btn-xs btn-social email" href="mailto:?subject=&body=:%20" title="Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL),'_self',false); return false;"><i class="fa fa-envelope fa-sm"></i> Send</a>
-              </div>
-            </div>
-          </div><!-- #customer-engagement-block -->
-
-        </div>
-      </div>
-      <div class="clearfix"></div>
-      <!-- desktop/ instagram block! --> 
-
-      <div id="instagram-share" class="share-area clearfix col-md-12 hidden">
-        <p><span class="share-text">Share this product page and reveal your 10% off discount!</span> <a href="share" data-share="discount" class="btn btn-flat btn-pointy"><i class="fa fa-facebook-official" aria-hidden="true"></i> Share Now</a></p> 
-        <!-- data-href="https://www.standishsalongoods.com/" data-title="Test" data-desc="This is a test." data-image="https://www.standishsalongoods.com/assets/templates/standish-responsive/images/standish-logo.png" -->
-      </div>
-
-    </div>
-
-
-
-    <!-- BADGES LIST ~ POPULATED BY JS -->
-    <div class="row" id="product-badges-container">
-      
-      <div class="col-md-12 badges-list padd-top">
-        <h4 class="visible-xs info-header">Benefits and Features for this product<hr></h4>
-      </div>
-    </div>
-
-    <!-- Product Descriptions -->
-    <div class="row">
-      
-      <!-- MOBILE/TABLET/DESKTOP description -->
-      <div class="product-description padd-top col-md-12">
-        <!-- START: extended_description -->
-        <h4 class="info-header">[name] Product Description
-          <!--START: create_first_review-->
-          <small class="pull-right">
-            <a href='#' class="hidden-xs" rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);"><i class="fa fa-star-o"></i> [reviews_first]</a>
-          </small>
-          <!--END: create_first_review-->
-          <hr></h4>
-        <!-- [product_Header-description] -->
-        <div itemprop="description" class="extended-description">[extended_description]</div>
-        <!-- END: extended_description -->
-      </div>
-
-      <!-- MOBILE/TABLET/DESKTOP product details -->
-      <div class="product-details padd-top col-md-12">
-        <h4 class="info-header">Product Details<hr></h4>
-        <ul class="details-list">
-          <!--START: PRODUCT_FEATURES_BLOCK-->
-            <!--START: PRODUCT_FEATURES-->
-              <li>[product_feature_name]</li>
-            <!--END: PRODUCT_FEATURES-->
-          <!--END: PRODUCT_FEATURES_BLOCK-->
-        </ul>
-      </div>
-
-      <!--START: extra_field_6-->
-      <div class="clearfix"></div>
-      <!-- TABLET/DESKTOP featured image -->
-        <div class="product-featured padd-top col-md-12">
-          <img src="[extra_field_6]"/>
-        </div>
-      <div class="clearfix"></div>
-      <!--START: extra_field_6-->
-
-      <div class="clearfix"></div>
-      <!-- TABLET/DESKTOP product video -->
-      <div id="product-videos-header" class="product-videos padd-top col-md-12">
-        <h4 class="info-header">Product Video<hr></h4>
-        <div class="details-video row">
-        </div>
-      </div>
-      <div class="clearfix"></div>
-
-      <!--START: reviews-->
-      <!-- Product Review -->
-      <div id="product-review" class="col-md-12 col-sm-12 hidden-xs">
-
-        <!--START: totalrating-->
-        <div class="totalrating padd-block" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"></div>
-        <!--END: totalrating-->
-
-        
-        <div class="reviews hidden-xs">
-          <div class="clearfix">
-            <h4 class="info-header">[reviews_header]<hr></h4>
-
-            <p class="pull-right">
-              <i class="fa fa-star-o"></i>
-
-              <!--START: create_review_link-->
-              <a href='#' rel="nofollow" onclick="javascript:popup('review.asp?action=newReview&catalogid=[catalogid]',510,500,false);">[reviews_new]</a>
-              <!--END: create_review_link-->
-            </p>
-          </div>
-
-          <div class="row grid">
-            <!-- [review_link] -->
-            <!--START: user_reviews-->
-              <div class="col-md-6 col-sm-6 review-wrapper grid-item">
-                <div class="review arrow_box" itemprop="review" itemscope itemtype="http://schema.org/Review">
-                  <h4 class="sans info-header"><span itemprop="name">[short_review]</span></h4>
-                  <div class="rating">
-                    <meta itemprop="worstRating" content="1">
-                    <span class="hidden" itemprop="ratingValue">[rating]</span>
-                    <meta itemprop="bestRating" content="5">
-                    <span class="stars">
-                    <img src="assets/templates/common/images/star[rating].png" alt="Rating" />
-                    </span> - <span itemprop="author">[user_name]</span> from [user_city]
-                    <!-- itemprop="author" -->
-                  </div>
-                  <p itemprop="description">[long_review]</p>
-                </div>
-                <!-- <div class="add-rating-link"><i class="icon-plus"></i> <a href="#addRating">Add A Rating &amp; Review</a></div> -->
-              </div>
-            <!--END: user_reviews-->
-          </div>
-        </div>
-      </div>
-      <!--END: reviews-->
-
-      <!--START: CATEGORY_FOOTER-->
-        <div id="promotion" class="padd-top">
-          [CONTENT]
-        </div>
-      <!--END: CATEGORY_FOOTER-->
-
-      <div class="clearfix"></div>
-      <!--START: extra_field_9-->
-      <div class="hidden field9" data-field9="[extra_field_9]"></div>
-      <!--END: extra_field_9-->
-
-      <!--START: extra_field_10-->
-      <div class="hidden field10" data-field10="[extra_field_10]"></div>
-      <!--END: extra_field_10-->
-
-      <!-- MOBILE/TABLET/DESKTOP related products -->
-      <!--START: related_0-->
-      <div class="clearfix"></div>
-      <div id="related-products" class="padd-top col-md-12">
-        <h4 class="info-header">[product_Header-relateditems]<hr></h4>
-        <div class="related-products row">
-
-          <!--START: related_items0-->
-          <div class="col-md-2 col-sm-3 col-xs-6 listing alpha">
-            <div class="listing-container">
-              <a href="product.asp?itemid=[catalogid]"><img class="product_thumb" src="thumbnail.asp?file=[THUMBNAIL]&maxx=240&maxy=308" alt="[name]" /></a>
-              <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-              <!--START: product_review-->
-              <!--START: product_review_average-->
-                <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" /> -->
-                <!-- [review_count] Review(s) -->
-              <!--END: product_review_average-->
-              <!--END: product_review-->
-              <!--START: ITEMPRICE-->
-              <p class="price">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-              <!--END: ITEMPRICE-->
-              <!--START: SALEPRICE-->
-              <p class="msrp">[product_yourprice] <span class="nozero">[ITEMPRICE]</span></p>
-              <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" id="mf281"> <span class="nozero">[ITEMSALEPRICE]</span></p>
-              <!--END: SALEPRICE-->
-            </div>
-            <input type="button" value="[category_buyitlink]" onclick="window.location='add_cart.asp?quick=1&item_id=[catalogid]'" class="button btn hidden-xs hidden-sm" style="display:block; width: 100%;">
-          </div>   
-          <!--END: related_items0-->
-        </div>
-      </div>
-      <!--END: related_0-->
-
-      <!--START: extra_field_11-->
-      <!-- MOBILE/TABLET/DESKTOP ingredients -->
-      <div itemprop="ingredients" class="padd-top product-description col-md-12">
-        <div>
-          <h4 class="info-header">[product_extrafield11]<hr></h4>
-          <p>[extra_field_11]</p>
-        </div>
-      </div>
-      <!--END: extra_field_11-->
-      <!--START: extra_field_12-->
-      <div class="clearfix"></div>
-      <!-- MOBILE/TABLET/DESKTOP suggested use -->
-      <div itemprop="suggested-use" class="padd-top product-description col-md-12">
-        <div>
-          <h4 class="info-header">[product_extrafield12]<hr></h4>
-          <p>[extra_field_12]</p>
-        </div>
-      </div>
-      <!--END: extra_field_12-->
-
-      <!-- MOBILE/TABLET/DESKTOP resources -->
-      <div class="clearfix"></div>
-      <div id="resources" class="padd-top col-md-12">
-        <h4 class="info-header">Resources<hr></h4>
-        <div class="resources row">
-          <div class="col-md-4" id="sub-resources-about-financing">
-            <h4>Financing</h4>
-            <p>Here at Standish we want to make the process for salon equipment financing as simple & painless as possible, so we have 2 third party lenders to choose from: Qualify instantly for up to $2500 with Snap Financing or request a credit review for funding orders $3,000 or greater via Quest Resources. Learn about these options and <a href="/salon-equipment-financing">apply online</a> today! </p>
-          </div>
-          <div class="col-md-4" id="sub-resources-about-shipping">
-            <h4>Shipping</h4>
-            <p>We want to make your delivery process as painless as possible! That's why we use reliable shipping companies, and offer a wide variety of shipping methods to get your furniture to you safe and sound! Many of our orders arrive to you in 10-14 business days from the date of purchase, unless it's a custom item. </p>
-          </div>
-          <!--START: extra_field_1-->
-          <div class="hidden field1" data-field1="[extra_field_1]"></div>
-          <div class="col-md-4" id="sub-resources-about-brand">
-            <h4>About this Brand</h4>
-            <p></p>
-          </div>
-          <!--END: extra_field_1-->
-        </div>
-      </div>
-
-      <!-- MOBILE/TABLET/DESKTOP more resources -->
-      <div class="clearfix"></div>
-      <div id="more-resources" class="padd-top col-md-12">
-        <h4 class="info-header">More Resources<hr></h4>
-        <div class="row">
-          <div class="col-md-4">
-            <a href="/free-salon-equipment-checklist" class="btn btn-xl btn-beige regal">Salon Checklist</a>
-          </div>
-          <div class="col-md-4">
-            <a href="/salon-equipment-financing" class="btn btn-xl standishgreen regal">Financing</a>
-          </div>
-          <div class="col-md-4">
-            <a href="/salon-showroom-flight-reimbursement" class="btn btn-xl button regal">Fly and Buy</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </form>
-</article>
-
-
-<div id="fb-modal-share" class="modal fade modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header" style="border-bottom: 0 none;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div id="fb-share-content" class="modal-body">
-        <h6>THANK YOU FOR SHARING</h3>
-        <p>Claim your discount by using this offer code at checkout:</p>
-        <div class="promotion-code-box">
-          <span class="h3">FBSHARE196</span>
-        </div>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-
-<!-- CUSTOM PRODUCT FIELD SETUP - Hidden fields provide data used in JS helpers -->
-<!--START: extra_field_2-->
-<div class="hidden field2" data-field2="[extra_field_2]"></div>
-<!--END: extra_field_2-->
-<!--START: extra_field_3-->
-<div class="hidden field3" data-field3="[extra_field_3]"></div>
-<!--END: extra_field_3-->
-
-<!--START: extra_field_4-->
-<div class="hidden field4" data-field4="[extra_field_4]"></div>
-<!--END: extra_field_4-->
-
-<!--START: extra_field_5-->
-<div class="hidden field5" data-field5="[extra_field_5]"></div>
-<!--END: extra_field_5-->
-
-
-<!--START: extra_field_7-->
-<div class="hidden field7" data-field7="[extra_field_7]"></div>
-<!--END: extra_field_7-->
-<!--START: extra_field_8-->
-<div class="hidden field8" data-field8="[extra_field_8]"></div>
-<!--END: extra_field_8-->
 
 <script type="text/javascript" src="/assets/templates/common/js/listing.js"></script>
 <!--START: qaScript-->
 <script type="text/javascript" src="updateQaStats.js"></script>
 <!--END: qaScript-->
+
+
+
+
+<script type="text/javascript" src="/assets/templates/[template]/scripts/custom/standish.opttest.js"></script>
 
 <!--START: OOS SCRIPT -->
 <script>

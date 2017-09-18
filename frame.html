@@ -364,6 +364,7 @@
                   <li><a title="Salon Showroom Flight Reimbursement" href="/salon-showroom-flight-reimbursement">Fly & Buy Reimbursement</a></li>
                   <li><a title="Marketing Promotions for Salons" href="/free-salon-promotion">FREE Salon Promotion</a></li>
                   <li><a title="Salon Industry Blog" href="/blog.asp">Blog</a></li>
+                  <li><a title="Standish Catalog" href="/catalog">Catalog</a></li>
                 </ul>
             </li>
             <li><a title="Blog" href="/blog.asp">Blog</a></li>
@@ -504,6 +505,16 @@
               formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
               onFormReady: function() {
                 $('#newsletter-target label').hide();
+              }, 
+              onFormSubmit: function() {
+                // ensures the optimizely object is defined globally using
+                window['optimizely'] = window['optimizely'] || [];
+
+                if (optimizely.activeExperiments.length > 0) {
+                  // sends a tracking call to Optimizely for the given event name. 
+                  window.optimizely.push(["trackEvent", "NewsletterSignups"]);
+                }
+                
               }
             });
           </script>
@@ -522,7 +533,7 @@
                 Dallas, TX 75226
                 </a>
               </address>
-              <span class="bold"><a href="tel:1[store_phone]">[store_phone]</a></span>
+              <span class="bold"><a href="tel:8882718434">[store_phone]</a></span>
             </div>
           </div>
           <div class="col-md-12 padd-top">
@@ -820,9 +831,8 @@
 
                 var qualifyFree = Number(shipBasePrice) - parseFloat(subtotal);
 
-
                 if (parseFloat(qualifyFree) > 0) {
-                  $('.quick-shipping .ship-price').text('$' + numberWithCommas(qualifyFree));
+                  $('.quick-shipping .ship-price').text('$' + numberWithCommas(qualifyFree.toFixed(2)));
                 }
                 else {
                   $('.quick-shipping').html('<div class="free-ship bold">You qualify for free shipping!</div>');
