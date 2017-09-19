@@ -131,6 +131,9 @@ body.vex-open {
   .extended-warranty {
     @include sprite($-extended-warranty);
   }
+  .ships-free {
+    @include sprite($-ships-free);
+  }
 }
 
 

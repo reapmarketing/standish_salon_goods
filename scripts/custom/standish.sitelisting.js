@@ -395,6 +395,10 @@
       'extended-warranty': {
         'title': 'Extended Warranty',
         'class': 'extended-warranty'
+      },
+      'ships-free': {
+        'title': 'Ships Free',
+        'class': 'ships-free'
       }
     };
 
