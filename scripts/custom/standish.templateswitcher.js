@@ -79,8 +79,15 @@
           Standish.Homepage.homepageBrands();
         }
       return;
+      case 'view_cart':
+        Standish.addCartCookie();
+      return;
       case 'checkout':
         Standish.ActivateVideo();
+        Standish.CheckAndShowFinancingCheckout();
+      return;
+      case 'category_0':
+        // Standish.categoryOptTest();
       return;
       default:
       return;
