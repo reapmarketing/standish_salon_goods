@@ -12,12 +12,12 @@
 
 
 <section class="post-header-slides place-outside row">
-  <div class="post-header-slides--inner col-md-12" data-bind="style: { backgroundImage: 'url(\'' + activeImg + '\')' }" style="background-color: #ccc; height: 350px; background-repeat: no-repeat; background-size: cover; background-position: 42% 32%;">
+  <div class="post-header-slides--inner col-md-12" data-bind="style: { backgroundImage: 'url(\'' + activeImg() + '\')' }" style="background-color: #ccc; height: 350px; background-repeat: no-repeat; background-size: cover; background-position: 42% 32%;">
     <!-- <img data-bind="// attr: {src: activeImg}"> -->
     <div class="row">
       <div class="col-md-12">
         <div class="post-header-slides--inner--nav" data-bind="foreach: headerSlidesBackground">
-          <img data-bind="thumbnail"/>
+          <a data-bind="click: $parent.setActiveImg(image)"><img data-bind="attr:{src: thumbnail}"/></a>
         </div>
       </div>
     </div>
@@ -40,42 +40,34 @@
         </div>
       </div>
       <div class="product-info--section-2">
-        <div class="product-info--section-2--badges" data-bind="// foreach: badges">
-          <a target="_blank" data-bind="// css:badgeClass" href="" style="" class="col-xs-12 col-md-1 col-sm-1 standish-tooltip badge-product"><i></i><div data-bind="// text:badgeName" class="badge-text"></div></a>
+        <div class="product-info--section-2--badges" data-bind="foreach: badges">
+          <a target="_blank" data-bind="attr: { 'class': 'badge-' + className + ' col-sm-6 standish-tooltip badge-product' }">
+            <i></i><div data-bind="text:title" class="badge-text"></div>
+          </a>
         </div>
       </div>
     </div>
     <div class="product-form col-sm-4" style="border:1px solid grey;">
       <!-- PUT FORM HERE -->
+      <div class="product-form--section form-container">
+        <div class="product-form--section--header">
+          <span class="priceText" data-bind="text: price"></span>
+          <span class="onSale" data-bind="visible: onSale">On Sale!</span>
+          <span class="savings" data-bind="visible: onSale">You Save: <span class="savings-amt" data-bind="text:savings"> </span></span>
+        </div>
 
-      <div class="row">
-        <div class="product-form--section form-container">
-          <div class="product-form--section--header">
-            <span class="priceText" data-bind="text: price"></span>
-            <span class="onSale" data-bind="visible: onSale">On Sale!</span>
-            <span class="savings" data-bind="visible: onSale">You Save: <span class="savings-amt" data-bind="text:savings"> </span></span>
+        <div class="product-form--section--form">
+          <div class="product-form--section--form--inner" data-bind="html: formHtml()">
           </div>
-
-          <div class="product-form--section--form">
-            <div class="row">
-              <div class="product-form--section--form--inner" data-bind="html: formHtml()">
-              </div>
-              <div class="product-form--section--submit-container">
-                <div class="col-md-12">
-                  <button type="submit" class="btn btn-lg col-sm-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart</button>
-
-                  <a id="apply-financing" class="apply-financing white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
-                </div>
-              </div>
+          <div class="product-form--section--submit-container">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-lg col-sm-12 add-cart" onclick="check_and_add(document.add); this.onclick=null; this.disabled = true;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart</button>
+              <div class="clearfix"></div>
+              <a id="apply-financing" class="apply-financing white-text button btn-block light-text btn btn-lg standishgreen" href="/salon-equipment-financing" target="_blank">Financing</a>
             </div>
           </div>
-
-
-
-
         </div>
       </div>
-      
     </div><!-- /product-form -->
 
   </div><!-- /product-info -->
@@ -710,7 +702,7 @@
 window.Standish = window.Standish || {};
 Standish.SiteListing = Standish.SiteListing || {};
 
-Standish.SiteListing = {
+var product = {
   'id': '[id]',
   'name': '[name]',
   'category': $('.breadcrumbs a').last().text().toString(),
@@ -722,6 +714,8 @@ Standish.SiteListing = {
   'reviewAvg': $('#review-average').attr('value'),
   'numReviews': $('#review-count').attr('value')
 };
+
+Standish.SiteListing = product;
 
 Standish.SiteListing.loadedImages = [
   {
