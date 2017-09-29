@@ -10,7 +10,14 @@
 
 
 
-
+<style type="text/css">
+  
+  .post-header-slides .wistia_embed {
+    position: absolute!important;
+    width: 100%!important;
+    height: 100%!important;
+  }
+</style>
 <section class="post-header-slides place-outside">
   <div class="post-header-slides--inner col-md-12" data-bind="style: { backgroundImage: 'url(\'' + activeImg() + '\')' }" style="background-color: #ccc; height: 350px; background-repeat: no-repeat; background-size: cover; background-position: 42% 32%; overflow: hidden;">
     <!-- <img data-bind="// attr: {src: activeImg}"> -->
@@ -34,6 +41,13 @@
         <a data-bind="click: function() { imgSlidesVisible(true); vidSlidesVisible(false); }" class="btn grey">Images Only</a>
         <a data-bind="click: function() { vidSlidesVisible(true); imgSlidesVisible(false); }" class="btn grey">Videos Only</a>
         <a data-bind="click: function() { vidSlidesVisible(true); imgSlidesVisible(true); }" class="btn grey">Show All</a>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <a data-bind="click: sliderMove('next', activeImg())">Next</a>
       </div>
     </div>
 

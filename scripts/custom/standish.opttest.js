@@ -251,15 +251,9 @@
     self.vidSlidesVisible = ko.observable(true);
     self.imgSlidesVisible = ko.observable(true);
 
-    console.log(self.vidSlidesVisible());
-    console.log(self.imgSlidesVisible());
-
-    var showHideSlides = function(observable1, observable2) {
-      // hide one and show another
-      observable1(true);
-      observable2(false);
-    }
-    self.showHideSlides = showHideSlides;
+    // Super Slider holder array
+    //self.slidesTotal = ko.observableArray();
+    self.slidesTotal = ko.observableArray();
 
     /* 
      * Reg Img Object Binding
@@ -271,6 +265,8 @@
       self.isVideo('hidden');
       self.activeImg(img);
     };
+
+
     /* 
      * END - Reg Img Object Binding
      */
@@ -283,6 +279,19 @@
     // ko.mapping.fromJS provides the ability to bind after AJAX
     addVideoImagesToSlideshow().done(function(data) {
       ko.mapping.fromJS(data, {}, self.videoObjs);
+
+
+      // Go ahead and make a slides total array just in case needed for later.
+      var slidesTotal = [];
+
+      for (var i = 0; i < data.length; i++) {
+        slidesTotal.push(data[i]);
+      }
+      for (var v = 0; v < Standish.SiteListing.loadedImages.length; v++) {
+        slidesTotal.push(Standish.SiteListing.loadedImages[v]);
+      }
+
+      ko.mapping.fromJS(slidesTotal, {}, self.slidesTotal);
     });
 
 
@@ -292,7 +301,6 @@
       self.isVideo('');
 
       self.popOverVidHTML(obj.videoHTML());
-      $('.post-header-slides .wistia_embed').css({ 'position': 'absolute', 'width': '100%', 'height': '100%', 'box-sizing': 'border-box' });
       $('.post-header-slides .wistia_embed').addClass('row');
 
       // Set Active SS image
@@ -343,6 +351,34 @@
     self.negReviews = negReviewsArr;
     /* 
      * END - Reviews
+     */
+
+    /* 
+     * Slider Functionality
+     */
+    // go back and forth
+    self.sliderMove = function(direction, currentSlide) {
+      //self.activeImg(img);
+
+      // console.log(self.slidesTotal());
+      console.log(currentSlide);
+
+      // check direction 
+
+      // Check to see if video or images only and filter array -- every time
+
+
+      if (direction == "next") {
+
+      }
+      if (direction == "prev") {
+        
+      }
+    };
+
+
+     /* 
+     * END - Slider Functionality
      */
 
   };
