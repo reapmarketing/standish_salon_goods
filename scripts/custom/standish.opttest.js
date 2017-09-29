@@ -4,6 +4,43 @@
 
   optTestRunning = false;
 
+
+    /* Video Utility Functions */
+  var getData = function(embed_code) {
+    // http://fast.wistia.net/oembed?url=https%3A%2F%2Fsupport.wistia.com%2Fmedias%2F26sk4lmiix&embedType=async&popover=true
+    var baseUrl = "https://fast.wistia.com/oembed/?url=";
+    var accountUrl = encodeURIComponent("https://support.com/medias/");
+    return $.getJSON(baseUrl + accountUrl + embed_code + "&embedType=async&format=json&popover=true");
+  };
+
+  var parseEmbedData = function(selector) {
+    var embed_data = $( selector ).attr( 'data-field10' );
+
+    if( typeof embed_data !== 'undefined' ) {
+      embed_data = embed_data.trim();
+      video_embed_codes = embed_data.split( ' ' );
+      return video_embed_codes;
+    }
+  };
+
+  function pushHello(index, type, pushedObj, pushObj) {
+    var source = (type == "video") ? 'wistia' : 'instagram';
+
+    pushedObj.push(
+      {
+        title: pushObj.title,
+        type: type,
+        videoID: video_embed_codes[index],
+        videoHTML: pushObj.html,
+        image: pushObj.thumbnail_url,
+        thumbnail: pushObj.thumbnail_url + '&image_crop_resized=75x75',
+        source: source
+      }
+    );
+  }
+
+  /* End -- Video Utility Functions */
+
   var getBadges = function() {
     // ---- FIELD 8: BADGES ---- //
     var badges = $( '.field8' ).data( 'field8' );
@@ -144,10 +181,54 @@
     return badges_list;
   };
 
+
+  var addVideoImagesToSlideshow = function(model) {
+    /* ~~ Variable Declaration ~~ */
+    var dfd = $.Deferred();
+
+    var AJAX = [],
+        video_embed_codes = parseEmbedData('.field10'),
+        videoHello = [];
+    // console.log(video_embed_codes);
+
+    if (video_embed_codes) {
+      $.each( video_embed_codes, function( i, embed_code ) {
+        if (embed_code !== "") {
+          AJAX.push(getData( embed_code ));
+        }
+      });
+      // console.log('ajax', AJAX);
+      $.when.apply($, AJAX).done(function() {
+        for ( var i = 0; i < AJAX.length; i++ ) {
+          if ( arguments[i].length ) {
+            // video_data[video_embed_codes[i]] = arguments[i][0];
+            pushHello(i, 'video', videoHello, arguments[i][0]);
+
+          } else {
+            // video_data[video_embed_codes[i]] = arguments[0];
+            pushHello(i, 'video', videoHello, arguments[0]);
+          }
+        }
+        window.videoObjs = videoHello;
+        console.log(videoHello);
+        dfd.resolve( videoHello );
+      });
+    }
+    else {
+      dfd.resolve( "No Video Codes" );
+    }
+    return dfd.promise();
+  };
+
+
+
+
   var listingPagePlacementModel = function() {
     var self = this;
 
     self.testActivated = true;
+
+    self.isVideo = false;
 
     self.name = Standish.SiteListing.name;
     self.price = Standish.SiteListing.price;
@@ -164,6 +245,89 @@
     self.partnum = Standish.SiteListing.partnum;
     self.numReviews = Standish.SiteListing.numReviews;
 
+    self.isVideo = ko.observable('hidden');
+    self.popOverVidHTML = ko.observable('');
+
+    self.vidSlidesVisible = ko.observable(true);
+    self.imgSlidesVisible = ko.observable(true);
+
+    console.log(self.vidSlidesVisible());
+    console.log(self.imgSlidesVisible());
+
+    var showHideSlides = function(observable1, observable2) {
+      // hide one and show another
+      observable1(true);
+      observable2(false);
+    }
+    self.showHideSlides = showHideSlides;
+
+    /* 
+     * Reg Img Object Binding
+     */
+    self.headerSlidesBackground = Standish.SiteListing.loadedImages || [];
+    self.activeImg = ko.observable(self.headerSlidesBackground[0].image);
+
+    self.setActiveImg = function(img) {
+      self.isVideo('hidden');
+      self.activeImg(img);
+    };
+    /* 
+     * END - Reg Img Object Binding
+     */
+
+    /* 
+     * Video Object Binding
+     */
+    self.videoObjs = ko.observableArray();
+
+    // ko.mapping.fromJS provides the ability to bind after AJAX
+    addVideoImagesToSlideshow().done(function(data) {
+      ko.mapping.fromJS(data, {}, self.videoObjs);
+    });
+
+
+    var setActiveVid = function(obj) {
+      console.log(obj);
+
+      self.isVideo('');
+
+      self.popOverVidHTML(obj.videoHTML());
+      $('.post-header-slides .wistia_embed').css({ 'position': 'absolute', 'width': '100%', 'height': '100%', 'box-sizing': 'border-box' });
+      $('.post-header-slides .wistia_embed').addClass('row');
+
+      // Set Active SS image
+      self.activeImg(obj.image());
+    };
+    self.setActiveVid = setActiveVid;
+    /* 
+     * END - Video Object Binding
+     */
+
+    /* 
+     * Form Copy and Bind
+     */
+    var formHtmlPlace = $('form.product-form').clone(true);
+
+    $('form.product-form').remove();
+
+    self.formHtml = function() {
+      return formHtmlPlace[0].outerHTML;
+    };
+    /* 
+     * END - Form Copy and Bind
+     */
+
+    /* 
+     * Badges
+     */
+    self.badges = getBadges();
+    /* 
+     * END - Badges
+     */
+
+    /* 
+     * Reviews
+     */
     var reviewAvg = parseInt(Standish.SiteListing.reviewAvg),
         reviewsArr = [],
         negReviewsArr = [];
@@ -177,27 +341,9 @@
       negReviewsArr.push(x);
     }
     self.negReviews = negReviewsArr;
-
-
-    self.headerSlidesBackground = Standish.SiteListing.loadedImages || [];
-    self.activeImg = ko.observable(self.headerSlidesBackground[0].image);
-
-    self.setActiveImg = function(img) {
-      self.activeImg(img);
-    };
-
-    var formHtmlPlace = $('form.product-form').clone(true);
-
-    $('form.product-form').remove();
-
-    self.formHtml = function() {
-      return formHtmlPlace[0].outerHTML;
-    };
-
-    self.badges = getBadges();
-
-    console.log(self.badges);
-
+    /* 
+     * END - Reviews
+     */
 
   };
 
@@ -214,6 +360,8 @@
   function init() {
 
     preliminaryFab();
+
+      // add  property to instance of model
 
 
     var listingPlace = new listingPagePlacementModel();

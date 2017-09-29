@@ -11,16 +11,32 @@
 
 
 
-<section class="post-header-slides place-outside row">
-  <div class="post-header-slides--inner col-md-12" data-bind="style: { backgroundImage: 'url(\'' + activeImg() + '\')' }" style="background-color: #ccc; height: 350px; background-repeat: no-repeat; background-size: cover; background-position: 42% 32%;">
+<section class="post-header-slides place-outside">
+  <div class="post-header-slides--inner col-md-12" data-bind="style: { backgroundImage: 'url(\'' + activeImg() + '\')' }" style="background-color: #ccc; height: 350px; background-repeat: no-repeat; background-size: cover; background-position: 42% 32%; overflow: hidden;">
     <!-- <img data-bind="// attr: {src: activeImg}"> -->
+    <div class="" data-bind="css: isVideo, html: popOverVidHTML()"></div>
+
     <div class="row">
       <div class="col-md-12">
-        <div class="post-header-slides--inner--nav" data-bind="foreach: headerSlidesBackground">
-          <a data-bind="click: $parent.setActiveImg(image)"><img data-bind="attr:{src: thumbnail}"/></a>
+        <div class="post-header-slides--inner--nav">
+          <div data-bind="foreach: headerSlidesBackground, visible: imgSlidesVisible">
+            <a data-bind="click: $parent.setActiveImg(image)"><img data-bind="attr:{src: thumbnail}"/></a>
+          </div>
+          <div data-bind="foreach: videoObjs, visible: vidSlidesVisible">
+            <a data-bind="click: $parent.setActiveVid($data)"><img data-bind="attr:{src: thumbnail}"/></a>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <a data-bind="click: function() { imgSlidesVisible(true); vidSlidesVisible(false); }" class="btn grey">Images Only</a>
+        <a data-bind="click: function() { vidSlidesVisible(true); imgSlidesVisible(false); }" class="btn grey">Videos Only</a>
+        <a data-bind="click: function() { vidSlidesVisible(true); imgSlidesVisible(true); }" class="btn grey">Show All</a>
+      </div>
+    </div>
+
   </div>
 </section>
 <section class="main-content-section col-md-12">
