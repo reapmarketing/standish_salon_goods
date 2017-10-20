@@ -91,24 +91,6 @@
       resizeColumns(groups);
     }
   };
-
-  Standish.categoryOptTest = function() {
-    if (window.CategoryPage && window.Listings) {
-
-
-
-    }
-
-    function listingsPagePlacementModel() {
-      this.listings = ko.observableArray(window.Listings);
-
-      console.log(this.listings);
-    }
-
-    var listingsPlace = new listingsPagePlacementModel();
-    ko.applyBindings(listingsPlace);
-  };
-
   // 3. convert search input large for mobile devices
   Standish.SearchForm = function() {
     var tabletBkPt = 991;
@@ -598,8 +580,6 @@
     Standish.DataClickSearch();
 
     // Standish.footerSlide();
-
-    Standish.categoryOptTest();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();

@@ -1058,6 +1058,31 @@ h4.info-header {
   }
 }
 
+// Category text
+.listings-cat-opt-test {
+  .listing-img {
+    .title {
+      font-size: 1.8em;
+      color: #342f40!important;
+      font-family: $default-font;
+      font-weight: 500;
+    }
+  }
+  .price {
+    color: #f17c4e;
+    font-family: "PT Sans",Arial,Helvetica,sans-serif;
+    font-size: 2.8em;
+    letter-spacing: 0;
+
+    .yousave {
+      color: #ababab;
+      font-size: .4em;
+    }
+  }
+  .star-review-avg {
+    color: #cbb52e;
+  }
+}
 
 
 
