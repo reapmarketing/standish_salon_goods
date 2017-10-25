@@ -1060,12 +1060,47 @@ h4.info-header {
 
 // Category text
 .listings-cat-opt-test {
+
+  
+
+  & >.row {
+    @media only screen and (min-width : $xs) {
+      
+      &:first-of-type {
+        border-top: 2px solid #eeeef0;
+      }
+      border-bottom: 2px solid #eeeef0;
+    }
+
+    @media only screen and (max-width : $xs) {
+      background-color: #f0f2f1;
+      border-radius: 3px;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      margin-bottom: 10px;
+    } 
+  }
+
   .listing-img {
     .title {
       font-size: 1.8em;
       color: #342f40!important;
       font-family: $default-font;
       font-weight: 500;
+
+      @media only screen and (max-width : $xs) {
+        font-size: 1.4em;
+        color: black;
+      }
+    }
+  }
+  @media only screen and (max-width : $xs) {
+    .review-average {
+      display: block;
+    }
+    .review-count {
+      display: block;
+      margin-bottom: 19px;
     }
   }
   .price {
@@ -1078,9 +1113,15 @@ h4.info-header {
       color: #ababab;
       font-size: .4em;
     }
+    @media only screen and (max-width : $xs) {
+      margin: 0;
+      font-size: 2em;
+      color: #423e42;
+      line-height: 36px;
+    }
   }
   .star-review-avg {
-    color: #cbb52e;
+    color: #e4e148;
   }
 }
 

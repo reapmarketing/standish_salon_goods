@@ -175,11 +175,13 @@ window.Listings = [];
 			<div class="row">
 				<div class="listing-img col-sm-3"><img data-bind="attr:{src: img_src}"></div>
 				<div class="listing-img col-sm-9">
-					<h4 class="title"><a href="" data-bind="text:name, attr: { href: href }"></a></h4>
-					<h5 class="h3 price" data-bind="html: $parent.getPrice(price, saleprice)"> </h3>
-					<div class="reviews">
-						<span data-bind="html: $parent.getReviewsAvg(review_average)"></span>
-						<span data-bind="html: $parent.getReviewsCount(review_count)"></span>
+					<h4 class="title col-md-12"><a href="" data-bind="text:name, attr: { href: href }"></a></h4>
+					<h5 class="h3 price col-xs-6 col-md-12" data-bind="html: $parent.getPrice(price, saleprice)"> </h3>
+					<div class="reviews col-xs-6 col-md-12">
+						<span class="review-average" data-bind="html: $parent.getReviewsAvg(review_average)"></span>
+						<span class="review-count" data-bind="html: $parent.getReviewsCount(review_count)"></span>
+
+						<a href="" class="button btn btn-block hidden-sm hidden-md hidden-lg" data-bind="text:'View', attr: { href: href }"></a>
 					</div>
 				</div>
 			</div>
@@ -199,7 +201,7 @@ window.Listings = [];
 								saleprice: '[ITEMSALEPRICE]',
 								review_count: '[review_count]',
 								review_average: '[review_average]',
-								img_src: "thumbnail.asp?file=[THUMBNAIL]&maxx=300&maxy=400"
+								img_src: "thumbnail.asp?file=[THUMBNAIL]&maxx=500&maxy=600"
 							});
 						</script>
 						<div class="listing-container">

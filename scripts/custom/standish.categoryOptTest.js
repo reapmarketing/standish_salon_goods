@@ -28,9 +28,9 @@
 
           if (pricenum > salepricenum) {
             var saveDiff = pricenum - salepricenum;
-            console.log(saveDiff);
+            // console.log(saveDiff);
             outPutHtml += '$' + salepricenum;
-            outPutHtml += '<small class="yousave">  You Save: $' + saveDiff + '</small>';
+            outPutHtml += '<small class="yousave">  <span class="hidden-xs">You</span> Save: $' + saveDiff + '</small>';
           }
           else {
             outPutHtml += price;
@@ -52,10 +52,12 @@
       };
 
       self.getReviewsCount = function(reviewCount) {
-        var reviewCountNum = Number(reviewCount);
         var outPutHtml = '';
-        if (reviewCountNum !== 0) {
-          outPutHtml += reviewCount + ' Review(s)';
+        if (reviewCount !== '[review_count]') {
+          var reviewCountNum = Number(reviewCount);
+          if (reviewCountNum !== 0) {
+            outPutHtml += reviewCount + ' Review(s)';
+          }
         }
         return outPutHtml;
       };
@@ -63,9 +65,15 @@
 
     var listingsPlace = new listingsPagePlacementModel();
 
+    var isTestActivated = window.optimizely.activeExperiments.indexOf("9111010936") > -1;
+
+    if (window.location.host == "devstandishsalongoods.3dcartstores.com") {
+      isTestActivated = true;
+    }
+  
     // Only activate if exp # is 9111010936
     window.optimizely = window.optimizely || [];
-    if (window.optimizely.activeExperiments.indexOf("9111010936") > -1) {
+    if (isTestActivated) {
       ko.applyBindings(listingsPlace);
 
       $(function() {

@@ -3,7 +3,78 @@
     
     <!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
     <script type="text/javascript">$('.left-bar').show();</script>
-    <div class="col-md-10">
+    <div class="opt-test opt-test--wrapper" data-bind="">
+      <div class="col-md-12 opt-test--top-section">
+        <div class="row">
+          <!-- Popular Products -->
+          <div class="col-md-10">
+            <h3>Popular Products</h3>
+            <div class="">
+              <div class="" data-bind="foreach: popularProd">
+                <img data-bind="attr:{src: prodImg}">
+                <p data-bind="text:prodContent"></p>
+              </div>
+            </div>
+          </div>
+          <!-- Categories -->
+          <div class="col-md-2">
+            <h4>Shop All Categories</h4>
+            <div class="sidebar-categories">
+              <ul class="" data-bind="foreach: categories">
+                <li>
+                  <a class="" data-bind="text: categoryName, href: categoryLink"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 opt-test--testimonials">
+        <div class="row">
+          <!-- Popular Products -->
+          <div class="col-md-6 eq-heights" data-bind="foreach: testimonials">
+            <img data-bind="attr:{src: img_src}">
+            <p data-bind="text:testimonial_content"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 opt-test--buyers-love">
+        <div class="row">
+          <!-- Popular Products -->
+          <div class="col-md-6 eq-heights" data-bind="foreach: buyersLove">
+            <img data-bind="attr:{src: img_src}">
+            <h5 data-bind="text: title"></h5>
+            <p data-bind="text: description"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 opt-test--steps-to-buy">
+        <div class="row">
+          <!-- Popular Products -->
+          <div class="col-md-4 eq-heights" data-bind="html: dreamSection">
+            
+          </div>
+          <div class="col-md-4 eq-heights" data-bind="html: trustSection">
+            
+          </div>
+          <div class="col-md-4 eq-heights" data-bind="html: saveSection">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 opt-test--steps-to-buy">
+        <div class="row">
+          <!-- Top Selling Products -->
+          <div data-bind="html: topProd()"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-10 content-main">
         <!-- [category_Header-specials] -->
         <!--START: CATEGORY_HEADER-->
         <div class="row hidden-xs" id="hoz-slider-container">
@@ -152,6 +223,7 @@
         </div>
         <div class="clearfix"></div>
 
+        <div class="products-wrapper">
         <!--START: FEATURE_MENU-->
             <!--START: CATEGORY_ITEMS-->
                 <!--START: ITEM_TEMPLATE_0-->
@@ -187,8 +259,10 @@
                 <!--END: ITEM_TEMPLATE_0-->
             <!--END: CATEGORY_ITEMS-->
         <!--END: FEATURE_MENU-->
+        </div>
 </div>
 
 <!-- END Template: home.html -->
+<script type="text/javascript" src="/assets/templates/[template]/scripts/custom/standish.homepageOptTest.js"></script>
 
 <!-- right-side -->
