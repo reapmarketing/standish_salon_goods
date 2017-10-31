@@ -1,7 +1,7 @@
-  <!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-  <title>[TITLE]</title>
+    <title>[TITLE]</title>
     <meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
     <!--Insert Meta tags at top -->
     [META]
@@ -64,6 +64,8 @@
 
     <!-- <link href="/assets/templates/[template]/css/quick_view.css" rel="stylesheet" type="text/css" /> -->
 
+    <!-- Josh's CSS -->
+    <link rel="stylesheet" href="/assets/templates/[template]/style/stylesheet.css" rel="stylesheet" type="text/css" />
 
     <!--START: site scripts -->
     <!-- JS -->
@@ -114,41 +116,41 @@
         $.fn.modal = $.fn.bootstrapModal.noConflict();
       }
     </script>
-  <script type="text/javascript">
-  // Optimizely Universal Analytics Integration Code
-  window.optimizely = window.optimizely || [];
-  window.optimizely.push("activateUniversalAnalytics");
-  </script>
-  <!-- Scroll Tracking Code Tracks scrolling and sends to GA -->
-  <!-- <script type="text/javascript" src="/assets/templates/[template]/scripts/custom/scroll-tracking.js"></script> -->
-  <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PPSN');</script>
-  <!-- End Google Tag Manager -->
+    <script type="text/javascript">
+      // Optimizely Universal Analytics Integration Code
+      window.optimizely = window.optimizely || [];
+      window.optimizely.push("activateUniversalAnalytics");
+    </script>
+    <!-- Scroll Tracking Code Tracks scrolling and sends to GA -->
+    <!-- <script type="text/javascript" src="/assets/templates/[template]/scripts/custom/scroll-tracking.js"></script> -->
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PPSN');</script>
+    <!-- End Google Tag Manager -->
 
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '1474161279271975',
-        xfbml      : true,
-        version    : 'v2.9'
-      });
-      FB.AppEvents.logPageView();
-    };
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1474161279271975',
+          xfbml      : true,
+          version    : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+      };
 
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <header>
         <div id="fb-root"></div>
@@ -164,15 +166,17 @@
                       <a href="/view_cart.asp"><button class="button cart large btn"><i class="fa fa-shopping-cart"></i><span class="hidden-xs hidden-sm">Your Cart</span><span class="cart-number">[ITEMSINCART]</span></button></a>
                     </div>
                 </div>
-            </div>
+              </div>
         </div>
 
         <div class="hello-container hello-container-mobile center-block col-sm-12 hidden-md hidden-lg" data-spy="affix" data-offset-top="60" data-offset-bottom="200" style="opacity: .04;">
-          <p class="hello-mobile-text pull-left"><a href=""><strong>FREE SHIPPING</strong> with LiftGate Services</a></p>
+
+          <p class="hello-mobile-text pull-left">
+            <a href=""><strong>FREE SHIPPING</strong> with LiftGate Services</a>
+          </p>
           <p class="hello-mobile-text pull-right"><a href="https://standishsalongoods.com/standish-salon-equipment-sale?__hstc=125570901.9f34fd2d1106d038cd721ac0800bd14a.1446766758506.1448897028003.1448990054135.4&amp;__hssc=125570901.1.1448990054135&amp;__hsfp=2859420846" style="text-decoration: underline;"><strong>Learn More</strong></a></p>
         </div>
 
-        </div>
         <div class="header center-block row">
             <div id="mobile-menu" class="hidden-md hidden-lg col-sm-12" style="">
               <div class="row">
@@ -270,6 +274,7 @@
                   <li class=""><a title="SALE" style="color: #fff; font-weight: bold;" href="/salon-furniture-sale-and-deals">SALE</a></li>
                 </ul>
               </div>
+            </li>
             <li class="tanning-menu"><a title="Tanning" href="#">Tanning</a>
               <div class="column col1">
                 <ul class="sub-menu eqhgt-g1">
@@ -325,7 +330,7 @@
               <div class="column col4">
                 <ul class="sub-menu eqhgt-g2">
                   <li><a title="Kurative Anti-Fatigue Floor Mats" href="/salon-floor-mats">Kurative</a></li>
-                  <li><a title="Maletti Salon Furniture" href="/Maletti_c_126463.html">Maletti <span class="menu-feature dimgray-text standishyellow"><i class="icon icon-star"></i> New</span></a>
+                  <li><a title="Maletti Salon Furniture" href="/Maletti_c_126463.html">Maletti <span class="menu-feature dimgray-text standishyellow"><i class="icon icon-star"></i> New</span></a></li>
                   <li><a title="Marianna Salon Supplies" href="/marianna">Marianna</a></li>
                   <li><a title="Norvell Sunless Tanning Equipment" href="/norvell-sunless-tanning-equipment">Norvell Tanning<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
                   <li><a title="Oakworks American Made Massage Tables" href="/oakworks">Oakworks<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
@@ -342,6 +347,7 @@
                   <li><a title="William Marvy American Made Barber Poles" href="/william-marvy">William Marvy<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
                 </ul>
               </div>
+            </li>
             <li><a title="Salon Equipment Financing" href="/salon-equipment-financing">Buy Now, Pay Later</a></li>
             <li class="why-menu"><a title="Why Buy Standish?" href="#">Why Buy Standish?</a>
               <ul class="sub-menu">
@@ -369,10 +375,11 @@
             <li><a title="Blog" href="/blog.asp">Blog</a></li>
             <li class="my-account"><a class="" title="Sign into your account to view your orders and add items to your wishlist." href="/myaccount.asp">My Account</a></li>
             <li class="wishlist"><a alt="Wishlist" title="Wishlist" href="/view_wishlist.asp"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+          </ul><!--nav-menu -->
         </div>
-              <!--main navigation -->
+        <!--main navigation -->
       </div>
-          <!--container -->
+      <!--container -->
     </nav>
 
     <!-- navbar -->
@@ -392,201 +399,202 @@
     <!-- End of Header -->
     <section class="container" id="prime-content">
 
-        <!--START: LEFT BAR-->
-        <div class="col-md-2 hidden-sm hidden-xs left-bar">
-          <!--START: LEFT_BAR_BLOCKS-->
-          <div class="row search-container clearfix hidden-sm hidden-xs">
-            <div class="search" style="padding-right: 10px;">
-              <form method="get" name="searchForm" action="/search.html">
-                  <div class="input-group">
-                    <input size="25" placeholder="Search" name="k" value="" id="searchlight" class="search-text form-control fbinputkeys" autocomplete="off" type="text">
-                    <span class="input-group-btn">
-                      <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
-                    </span>
-                  </div>
-              </form>
-            </div>
+      <!--START: LEFT BAR-->
+      <div class="col-md-2 hidden-sm hidden-xs left-bar">
+        <!--START: LEFT_BAR_BLOCKS-->
+        <div class="row search-container clearfix hidden-sm hidden-xs">
+          <div class="search" style="padding-right: 10px;">
+            <form method="get" name="searchForm" action="/search.html">
+                <div class="input-group">
+                  <input size="25" placeholder="Search" name="k" value="" id="searchlight" class="search-text form-control fbinputkeys" autocomplete="off" type="text">
+                  <span class="input-group-btn">
+                    <button name="search" class="search-button gainsboro btn"><i class="fa fa-search"></i></i></button>
+                  </span>
+                </div>
+            </form>
           </div>
-
-          <!--START: LEFT_BANNER-->
-          <div class="row">[LEFT_BANNER]</div>
-          <!--END: LEFT_BANNER-->
-
-      <!--END: LEFT_BAR_BLOCKS-->
-      <div id="left-bar-testimonials" class="uppercase">
-        <h4>Testimonials</h4>
-      </div>
-
-    </div>
-    <!--END: LEFT BAR-->
-
-    <!-- Main Content -->
-    MIDDLE
-    <!-- End of Main Content -->
-  </section>
-<!--START: username-->
-
-<!--END: username-->
-
-  <!-- Footer -->
-  <footer>
-    <div class="clearfix"></div>
-    <div class="container">
-      <div class="col-md-10 col-md-offset-2">
-        <div id="homepage-badges-list" class="row hidden-xs">
-          <h3 class="coral-text col-md-12">Why Buy Salon and Spa Equipment from Standish?</h3>
-          <a class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
-
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
-
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
-
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
-
-          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
-
         </div>
-      </div>
-    </div>
-    <div class="clearfix"></div>
 
-    <section class="hidden container-fluid client__imspiration-local__wrapper hidden-xs">
-      <div class="col-md-12 client__imspiration-local__title text-center">
-        <h3 class="coral-text text-center">Get Inspiration From Some of Our Loyal Clients</h3>
-      </div>
+        <!--START: LEFT_BANNER-->
+        <div class="row">[LEFT_BANNER]</div>
+        <!--END: LEFT_BANNER-->
 
-      <div class="clearfix"></div>
-
-      <div class="client__imspiration-local__row">
-        <div class="client__imspiration-local__row__item text-center">
-          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery1.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery1.jpg" data-lightbox="roadtrip" data-index="1"></div>
-        </div>
-        <div class="client__imspiration-local__row__item text-center">
-          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery2.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery2.jpg" data-lightbox="roadtrip" data-index="2"></div>
-        </div>
-        <div class="client__imspiration-local__row__item text-center">
-          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery3.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery3.jpg" data-lightbox="roadtrip" data-index="3"></div>
-        </div>
-        <div class="client__imspiration-local__row__item text-center">
-          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery4.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery4.jpg" data-lightbox="roadtrip" data-index="4"></div>
-        </div>
-        <div class="client__imspiration-local__row__item text-center">
-          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery5.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery5.jpg" data-lightbox="roadtrip" data-index="5"></div>
-        </div>
-        <div class="client__imspiration-local__row__item text-center">
-          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery6.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery6.jpg" data-lightbox="roadtrip" data-index="6"></div>
-        </div>
-        <div class="client__imspiration-local__row__item text-center">
-          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery7.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery7.jpg" data-lightbox="roadtrip" data-index="7"></div>
+        <!--END: LEFT_BAR_BLOCKS-->
+        <div id="left-bar-testimonials" class="uppercase">
+          <h4>Testimonials</h4>
         </div>
       </div>
 
-      <div class="col-md-12 client__imspiration-local__call-team text-center">
-        <h5>Need help? Call our sales team: <a href="tel:8882718434">888-271-8434</a></h5>
-        <p>Monday through Friday from 9am - 6pm CDT/CST</p>
-      </div>
+
+      <!--END: LEFT BAR-->
+
+      <!-- Main Content -->
+      MIDDLE
+      <!-- End of Main Content -->
     </section>
+    <!--START: username-->
 
-    <div class="container-fluid bottom-container newsletter-signup">
-      <div class="col-xs-12">
-        <h3 class="col-md-6 col-sm-6">Get Deals Straight to Your Inbox!</h3>
-        <div class="col-md-6 col-sm-6" id="newsletter-target">
-          <!--[if lte IE 8]>
-          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-          <![endif]-->
-          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-          <script>
-            hbspt.forms.create({
-              css: '',
-              submitButtonClass: 'button',
-              portalId: '239485',
-              target: '#newsletter-target',
-              formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
-              onFormReady: function() {
-                $('#newsletter-target label').hide();
-              }
-            });
-          </script>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid footer-content padd-top padd-bottom-10">
-      <div class="container">
-        <div class="col-md-3 col-sm-4 info-block branding">
-          <div class="col-md-12">
-            <div id="standish-logo"><img src="assets/templates/[template]/images/Standish-logo-footer-mobile-transp.png"/></div>
-            <div class="info-block">
-              <address>
-                <a href="https://www.google.com/maps/place/Standish+Salon+Furniture+Showroom/@32.7854244,-96.773118,17z/data=!3m1!4b1!4m2!3m1!1s0x864e98c052142245:0x7a2cd7d8d0feb952">
-                3720 Canton St #104 <br/>
-                Dallas, TX 75226
-                </a>
-              </address>
-              <span class="bold"><a href="tel:1[store_phone]">[store_phone]</a></span>
-            </div>
-          </div>
-          <div class="col-md-12 padd-top">
-            <div id="social-icons" class="social-icons">
-              <a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest"></i></a>
-              <a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter"></i></a>
-              <a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook"></i></a>
-              <a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus"></i></a>
-            </div>
-          </div>
-        </div>
+    <!--END: username-->
 
-        <div id="global-footer" class="col-md-6 hidden-sm hidden-xs">
-        </div>
-
-        <hr class="hidden-md hidden-lg clearfix"/>
-
-        <div class="col-md-3 col-sm-4 footer-logos">
-          <div class="row">
-            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
-              <a href="https://probeauty.org/">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBASymbol.png">
-              </a>
-            </div>
-            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
-              <a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/SecureBrowsingSymbol.png">
-              </a>
-            </div>
-            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
-              <a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/AwardWinningSymbol.png">
-              </a>
-            </div>
-            <div class="padd-top col-md-12 clearfix"></div>
-            <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top">
-              <a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
-              <img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript async src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
-            </div>
-            <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top center-block text-center">
-              <a href="">
-                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/BravoSymbol.png">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <!-- Footer -->
+    <footer>
       <div class="clearfix"></div>
-    </div>
-  </footer>
+      <div class="container">
+        <div class="col-md-10 col-md-offset-2">
+          <div id="homepage-badges-list" class="row hidden-xs">
+            <h3 class="coral-text col-md-12">Why Buy Salon and Spa Equipment from Standish?</h3>
+            <a class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
 
-  <div class="container-fluid bottom-footer text-center standishgray padd-top"><p class="">&copy; 2015-2016 Standish Salon Goods. All rights reserved.</p></div>
+            <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
+
+            <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
+
+            <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
+
+            <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+
+      <section class="hidden container-fluid client__imspiration-local__wrapper hidden-xs">
+        <div class="col-md-12 client__imspiration-local__title text-center">
+          <h3 class="coral-text text-center">Get Inspiration From Some of Our Loyal Clients</h3>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="client__imspiration-local__row">
+          <div class="client__imspiration-local__row__item text-center">
+            <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery1.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery1.jpg" data-lightbox="roadtrip" data-index="1"></div>
+          </div>
+          <div class="client__imspiration-local__row__item text-center">
+            <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery2.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery2.jpg" data-lightbox="roadtrip" data-index="2"></div>
+          </div>
+          <div class="client__imspiration-local__row__item text-center">
+            <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery3.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery3.jpg" data-lightbox="roadtrip" data-index="3"></div>
+          </div>
+          <div class="client__imspiration-local__row__item text-center">
+            <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery4.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery4.jpg" data-lightbox="roadtrip" data-index="4"></div>
+          </div>
+          <div class="client__imspiration-local__row__item text-center">
+            <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery5.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery5.jpg" data-lightbox="roadtrip" data-index="5"></div>
+          </div>
+          <div class="client__imspiration-local__row__item text-center">
+            <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery6.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery6.jpg" data-lightbox="roadtrip" data-index="6"></div>
+          </div>
+          <div class="client__imspiration-local__row__item text-center">
+            <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery7.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery7.jpg" data-lightbox="roadtrip" data-index="7"></div>
+          </div>
+        </div>
+
+        <div class="col-md-12 client__imspiration-local__call-team text-center">
+          <h5>Need help? Call our sales team: <a href="tel:8882718434">888-271-8434</a></h5>
+          <p>Monday through Friday from 9am - 6pm CDT/CST</p>
+        </div>
+      </section>
+
+      <div class="container-fluid bottom-container newsletter-signup">
+        <div class="col-xs-12">
+          <h3 class="col-md-6 col-sm-6">Get Deals Straight to Your Inbox!</h3>
+          <div class="col-md-6 col-sm-6" id="newsletter-target">
+            <!--[if lte IE 8]>
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+            <![endif]-->
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+            <script>
+              hbspt.forms.create({
+                css: '',
+                submitButtonClass: 'button',
+                portalId: '239485',
+                target: '#newsletter-target',
+                formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
+                onFormReady: function() {
+                  $('#newsletter-target label').hide();
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid footer-content padd-top padd-bottom-10">
+        <div class="container">
+          <div class="col-md-3 col-sm-4 info-block branding">
+            <div class="col-md-12">
+              <div id="standish-logo"><img src="assets/templates/[template]/images/Standish-logo-footer-mobile-transp.png"/></div>
+              <div class="info-block">
+                <address>
+                  <a href="https://www.google.com/maps/place/Standish+Salon+Furniture+Showroom/@32.7854244,-96.773118,17z/data=!3m1!4b1!4m2!3m1!1s0x864e98c052142245:0x7a2cd7d8d0feb952">
+                  3720 Canton St #104 <br/>
+                  Dallas, TX 75226
+                  </a>
+                </address>
+                <span class="bold"><a href="tel:1[store_phone]">[store_phone]</a></span>
+              </div>
+            </div>
+            <div class="col-md-12 padd-top">
+              <div id="social-icons" class="social-icons">
+                <a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest"></i></a>
+                <a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook"></i></a>
+                <a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div id="global-footer" class="col-md-6 hidden-sm hidden-xs">
+          </div>
+
+          <hr class="hidden-md hidden-lg clearfix"/>
+
+          <div class="col-md-3 col-sm-4 footer-logos">
+            <div class="row">
+              <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+                <a href="https://probeauty.org/">
+                  <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBASymbol.png">
+                </a>
+              </div>
+              <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+                <a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
+                  <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/SecureBrowsingSymbol.png">
+                </a>
+              </div>
+              <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+                <a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
+                  <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/AwardWinningSymbol.png">
+                </a>
+              </div>
+              <div class="padd-top col-md-12 clearfix"></div>
+              <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top">
+                <a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
+                <img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript async src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+              </div>
+              <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top center-block text-center">
+                <a href="">
+                  <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/BravoSymbol.png">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </footer>
+
+    <div class="container-fluid bottom-footer text-center standishgray padd-top"><p class="">&copy; 2015-2016 Standish Salon Goods. All rights reserved.</p></div>
 
 
-  <!--START: shopping_cart-->
-    <!--START: shopping_cart_full-->
-    <script type="text/javascript">
-      window.cartTotal = '[CARTTOTAL]';
-      window.cartSubTotal = '[CARTSUBTOTAL]';
-      window.cartNumItems = '[ITEMSINCART]';
-    </script>
-    <!--END: shopping_cart_full-->
-  <!--END: shopping_cart-->
+    <!--START: shopping_cart-->
+      <!--START: shopping_cart_full-->
+      <script type="text/javascript">
+        window.cartTotal = '[CARTTOTAL]';
+        window.cartSubTotal = '[CARTSUBTOTAL]';
+        window.cartNumItems = '[ITEMSINCART]';
+      </script>
+      <!--END: shopping_cart_full-->
+    <!--END: shopping_cart-->
 
   <!-- begin modal and hidden content -->
 

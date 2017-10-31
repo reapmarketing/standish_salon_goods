@@ -1,266 +1,338 @@
-    <!-- Template: home.html -->
-    <div class="template" style="display:none" data-template="home"></div>
-    
-    <!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
-    <script type="text/javascript">$('.left-bar').show();</script>
-    <div class="opt-test opt-test--wrapper" data-bind="">
-      <div class="col-md-12 opt-test--top-section">
-        <div class="row">
-          <!-- Popular Products -->
-          <div class="col-md-10">
-            <h3>Popular Products</h3>
-            <div class="">
-              <div class="" data-bind="foreach: popularProd">
-                <img data-bind="attr:{src: prodImg}">
-                <p data-bind="text:prodContent"></p>
-              </div>
-            </div>
-          </div>
-          <!-- Categories -->
-          <div class="col-md-2">
-            <h4>Shop All Categories</h4>
-            <div class="sidebar-categories">
-              <ul class="" data-bind="foreach: categories">
-                <li>
-                  <a class="" data-bind="text: categoryName, href: categoryLink"></a>
-                </li>
-              </ul>
+<!-- Template: home.html -->
+<div class="template" style="display:none" data-template="home"></div>
+
+<!-- Uncomment here and at the very bottom for a left navigation bar on the homepage -->
+<script type="text/javascript">$('.left-bar').show();</script>
+
+<div class="col-md-10 content-main">
+
+
+  <div class="opt-test opt-test--wrapper" data-bind="visible: isTestActivated">
+    <!-- Popular products / categories -->
+    <div class="container opt-test--top-section">
+      <div class="row">
+        <!-- Popular Products -->
+        <div class="col-sm-9">
+          <h2 class="text-center">Shop Our Popular Products</h2>
+          <div class="opt-test--top-section--popularProd" data-bind="foreach: popularProd">
+            <div class="col-md-4 text-center opt-test--top-section--popularProd--item">
+              <img data-bind="attr:{src: prodImg}">
+              <p class="opt-test--top-section--inner-text">
+                <a class="btn button btn-lg" data-bind="text:prodLinkText, attr: {href: prodLink}"></a>
+              </p>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-12 opt-test--testimonials">
-        <div class="row">
-          <!-- Popular Products -->
-          <div class="col-md-6 eq-heights" data-bind="foreach: testimonials">
-            <img data-bind="attr:{src: img_src}">
-            <p data-bind="text:testimonial_content"></p>
+        <!-- Categories -->
+        <div class="col-sm-3 hidden-xs">
+          <h4>Shop All Categories</h4>
+          <div class="sidebar-categories">
+            <ul class="list-unstyled" data-bind="foreach: categories">
+              <li>
+                <a data-bind="text: categoryName, attr: {href: categoryLink}"></a>
+              </li>
+            </ul>
           </div>
-        </div>
-      </div>
-
-      <div class="col-md-12 opt-test--buyers-love">
-        <div class="row">
-          <!-- Popular Products -->
-          <div class="col-md-6 eq-heights" data-bind="foreach: buyersLove">
-            <img data-bind="attr:{src: img_src}">
-            <h5 data-bind="text: title"></h5>
-            <p data-bind="text: description"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-12 opt-test--steps-to-buy">
-        <div class="row">
-          <!-- Popular Products -->
-          <div class="col-md-4 eq-heights" data-bind="html: dreamSection">
-            
-          </div>
-          <div class="col-md-4 eq-heights" data-bind="html: trustSection">
-            
-          </div>
-          <div class="col-md-4 eq-heights" data-bind="html: saveSection">
-            
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-12 opt-test--steps-to-buy">
-        <div class="row">
-          <!-- Top Selling Products -->
-          <div data-bind="html: topProd()"></div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-10 content-main">
-        <!-- [category_Header-specials] -->
-        <!--START: CATEGORY_HEADER-->
-        <div class="row hidden-xs" id="hoz-slider-container">
-          <div class="hoz-slider-loader">
-            <div id="loadingDiv"><i class="fa fa-spinner fa-pulse"></i></div>
-          </div>
-
-          <div class="hoz-slider-top col-md-10-2 no-padd hidden-xs">
-          </div>
-          <div class="hoz-slider-sub col-md-2-2 hidden-sm hidden-xs no-padd" style="padding-left: 2px!important;">
-          </div>
-        </div>
-        <div class="visible-xs row" id="hoz-mobile-container" data-bind="mobile-promos">
-          <div data-bind="mobile-slot">
-            <a href="/standish-salon-equipment-sale">
-              <img class="img-responsive hidden" src="" style="width:100%;"/>
-            </a>
-          </div>
-          <div data-bind="mobile-slot hidden">
-            <a href="/american-made-salon-furniture">
-              <img class="img-responsive hidden" src="" style="width:100%;"/>
-            </a>
-          </div>
-          <div data-bind="mobile-slot hidden">
-            <a href="tel:[store_phone]" alt="Tap to call.">
-              <img class="img-responsive hidden" src="" style="width:100%;"/>
-            </a>
-          </div>
-          <div data-bind="mobile-slot hidden">
-            <a href="/new-salon-equipment-products">
-              <img class="img-responsive hidden" src="" style="width:100%;"/>
-            </a>
-          </div>
-        </div>
-        <div class="clearfix"></div>
-        <!--END: CATEGORY_HEADER-->
-        <div class="col-md-12 hidden-md hidden-sm hidden-lg filters">
-            <br/>
-            <div class="fancy-select-special form-group col-md-12" style="overflow: hidden;">
-                <i class="fa fa-angle-down fa-2x fa-first"></i>
-                <h4 class="uppercase absolute">View Products</h4>
-                <select class="input-lg" onchange="location = this.options[this.selectedIndex].value;">
-                  <option value="">View Products</option>
-                  <optgroup label="Furniture Packages:">
-                      <option value="/salon-furnitures-packages">Salon Equipment Packages</option>
-                  </optgroup>
-                  <optgroup label="Chairs:">
-                      <option value="/salon-styling-chairs">Styling Chairs</option>
-                      <option value="/all-purpose-salon-chairs">All-Purpose Chairs</option>
-                      <option value="/barber-shop-chairs">Barber Chairs</option>
-                      <option value="/salon-dryer-chairs">Dryer Chairs</option>
-                      <option value="/salon-stools">Stools</option>
-                      <option value="/salon-chair-covers">Chair Covers</option>
-                  </optgroup>
-                  <optgroup label="Stations:">
-                      <option value="/single-salon-stations">Single Stations</option>
-                      <option value="/back-to-back-salon-stations">Back-to-Back Stations</option>
-                      <option value="/tower-salon-stations">Tower Stations</option>   
-                  </optgroup>
-                  <optgroup label="Color Bars:">
-                      <option value="/hair-salon-color-bars">Color Bar Units</option>
-                  </optgroup>
-                  <optgroup label="Trays & Trolleys:">
-                      <option value="/salon-trays-trolleys">Trays & Trolleys</option>
-                  </optgroup>            
-                  <optgroup label="Manicure & Pedicure:">
-                      <option value="/pedicure-manicure-equipment">Manicure and Pedicure Equipment</option>
-                  </optgroup>
-                  <optgroup label="Shampoo:">
-                      <option value="/salon-shampoo-chairs">Shampoo Chairs</option>
-                      <option value="/salon-wet-stations">Wet Stations</option>
-                      <option value="/shampoo-shuttles">Shuttles</option>
-                      <option value="/salon-shampoo-bowls">Shampoo Bowls</option>
-                      <option value="/salon-shampoo-cabinets">Cabinet Units</option>
-                  </optgroup>
-                  <optgroup label="Towels:">
-                      <option value="/hair-salon-towels">Towels</option>
-                  </optgroup>
-                  <optgroup label="Reception:">
-                      <option value="/salon-reception-furniture">Reception Furniture</option>
-                  </optgroup>
-                  <optgroup label="Break Room:">
-                      <option value="/break-room-appliances">Break Room Appliances</option>
-                  </optgroup>
-                  <optgroup label="Tools:">
-                      <option value="/hair-salon-supplies-online">Hair</option>
-                      <option value="/nail-salon-supplies-accessories">Nails</option>
-                      <option value="/makeup-supplies-accessories">Makeup</option>
-                  </optgroup>
-                </select>
-                <i class="fa fa-angle-down fa-2x fa-first"></i>
-            </div>
-        </div>
-
-        <div id="homepage-featured-panel-list" class="col-md-12 hidden-xs">
-          <h3 class="coral-text">Resources for furnishing your salon or spa...</h3>
-
-          <div class="clearfix"></div>
+    <!-- Testimonials -->
+    <div class="container-fluid opt-test--testimonials">
+      <div class="container text-center">
+        <h3 class="text-center">Testimonials from Our Customers</h3>
+      </div>
+      <div class="container" data-bind="foreach: testimonials">
+        <!-- Popular Products -->
+        <div class="col-md-6 eq-heights opt-test--testimonials-testimonial">
           <div class="row">
-            <div class="col-md-4 col-sm-4">
-              <div class="panel panel-homepage-special panel-bottom">
-                <a href="tel:+8882718434"><img src="/assets/templates/[template]/images/CallAnExpert.png"/></a>
-                <div class="panel-footer text-center">
-                  <a alt="Tap to call." class="white-text underline uppercase" href="tel:[store_phone]">[store_phone]</a>
-                </div>
-              </div>
+            <div class="col-xs-4">
+              <a data-bind="href: testimonial_link"><img data-bind="attr:{src: img_src}"></a>
             </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="panel panel-homepage-special panel-bottom">
-                <a href="/salon-equipment-financing"><img src="/assets/templates/[template]/images/GetFinancing.png"/></a>
-                <div class="panel-footer text-center">
-                  <a class="white-text underline uppercase" href="/salon-equipment-financing" >Watch The Video</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="panel panel-homepage-special panel-bottom">
-                <a  href="/guide-to-starting-a-salon"><img src="/assets/templates/[template]/images/GuideToStartingASalon-Button.jpg"/></a>
-                <div class="panel-footer text-center" style="padding: 10px 5px;">
-                  <a class="white-text underline uppercase" href="/guide-to-starting-a-salon">Guide to Starting a Salon</a>
-                </div>
-              </div>
+            <div class="col-xs-8">
+              <p class="opt-test--testimonials-testimonial-content" data-bind="text:testimonial_content"></p>
+              <p class="opt-test--testimonials-testimonial-name">
+                <a data-bind="text:testimonial_name, attr: {href: testimonial_link}"></a>
+              </p>
+              <p class="opt-test--testimonials-testimonial-link">
+                <a data-bind="text:testimonial_link_title, attr: {href: testimonial_link}"></a>
+              </p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!--START: CATEGORY_FOOTER-->
-        <div id="promotion" class="col-md-12 hidden-xs">
-          [CONTENT]
+    <!-- Why Buyers -->
+    <div class="container opt-test--buyers-love">
+      <h3 class="text-center">Why Buyers <i class="fa fa-heart red-text" aria-hidden="true"></i> Standish</h3>
+
+      <div class="row opt-test--buyers-love--items" data-bind="foreach: buyersLove">
+        <!-- Popular Products -->
+        <div class="opt-test--buyers-love--items-item col-md-3 col-xs-6 eq-heights text-center" style="min-height: 232px;">
+          <img data-bind="attr:{src: img_src}">
+          <h5 data-bind="text: title"></h5>
+          <p data-bind="text: description"></p>
         </div>
-        <!--END: CATEGORY_FOOTER-->
+      </div>
+    </div>
 
-        <div id="homepage-poular-videos" class="col-md-12 hidden-xs">
-          <h3 class="coral-text">Watch Our Most Popular Salon Furniture Product Videos</h3>
-
-          <div class="clearfix"></div>
-          <div class="brand-videos"></div>
-
+    <!-- Dream/Trust/Save -->
+    <div class="container opt-test--steps-to-buy">
+      <div class="row">
+        <!-- Popular Products -->
+        <div class="col-md-4 eq-heights" data-bind="html: dreamSection">
         </div>
-
-        <div id="homepage-brands" class="col-md-12 hidden-xs">
-
-          <div class="clearfix"></div>
-          <div class="homepage-brands"></div>
-
+        <div class="col-md-4 eq-heights" data-bind="html: trustSection">
         </div>
-        <div class="clearfix"></div>
-
-        <div class="products-wrapper">
-        <!--START: FEATURE_MENU-->
-            <!--START: CATEGORY_ITEMS-->
-                <!--START: ITEM_TEMPLATE_0-->
-                    <!--START: product_review-->
-                        <!--START: product_review_average-->
-                            <!-- <img src="assets/templates/common/images/star[review_average].png" alt="Average Rating" border="0" /> -->
-                            <!-- <div class="item">[review_count] Review(s)</div> -->
-                        <!--END: product_review_average-->
-                    <!--END: product_review-->
-                    <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
-                      <a href="product.asp?itemid=[catalogid]" class="product-image-container">
-                          <img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=140&maxy=208" alt="[name]" height="140" width="208"/>
-                      </a>
-                      <div class="listing-container" style="height:91px;">
-                          <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
-                      <!--START: ITEMPRICE-->
-                          <!-- [product_yourprice] -->
-                          <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
-                      <!--END: ITEMPRICE-->
-                      <!--START: SALEPRICE-->
-                          <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
-                          <!-- <span class="coral-text">[product_onsale]: </span> --> 
-                          <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"><span class="nozero">[ITEMSALEPRICE]</span></p>
-                      <!--END: SALEPRICE-->
-                      <!-- <button>Add to Cart</button> -->
-                      <!-- [category_buyitlink] -->
-                      </div>
-                      <div class="btn-group" role="group" aria-label="..." style="width:100%;">
-                        <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.location='product.asp?itemid=[catalogid]#product-videos-header'" style="width:50%;"><i class="fa fa-play"></i></button>
-                        <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.location='product.asp?itemid=[catalogid]#product-videos-header'" style="width:50%;border-left: 1px solid white;"><i class="fa fa-eye"></i></button>
-                      </div>
-                    </div>
-                <!--END: ITEM_TEMPLATE_0-->
-            <!--END: CATEGORY_ITEMS-->
-        <!--END: FEATURE_MENU-->
+        <div class="col-md-4 eq-heights" data-bind="html: saveSection">
         </div>
+      </div>
+    </div>
+
+    <!-- Top Selling -->
+    <div class="container opt-test--top-selling">
+      <h3 class="text-center">Shop Some of Our Top Selling Products</h3>
+      <div class="row">
+        <!-- Top Selling Products -->
+        <div class="" data-bind="html: topProd ()">
+        </div>
+      </div>
+    </div>
+
+    <!-- Catalog Form -->
+    <div class="container-fluid opt-test--buy-form">
+      <div class="container">
+        <div class="row opt-test--buy-form--inner">
+          <div class="col-sm-3">
+            <img src="/assets/templates/[template]/images/DownloadThumbnail.jpg"/>
+          </div>
+          <div class="col-sm-9">
+            <h3 class="violet opt-test--buy-form--header-text">
+              Not Ready to Buy?
+              <br>
+              <small>
+                Download our FREE Guide To Starting a Salon today!
+              </small>
+            </h3>
+            <div id="target-form"></div>
+          </div>
+        </div>
+      </div>
+      <!--[if lte IE 8]>
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+      <![endif]-->
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+      <script>
+        hbspt.forms.create({ 
+          portalId: '239485',
+          formId: '8c3c7a21-c1b3-4d53-8e25-02ee8f6ae716',
+          target: '#target-form',
+          submitButtonClass: 'button btn'
+        });
+      </script>
+    </div>
+
+  </div>
+
+
+  <div class="default-homepage-content" data-bind="visible: !isTestActivated">
+
+    <div class="row hidden-xs" id="hoz-slider-container">
+      <div class="hoz-slider-loader">
+        <div id="loadingDiv"><i class="fa fa-spinner fa-pulse"></i></div>
+      </div>
+
+      <div class="hoz-slider-top col-md-10-2 no-padd hidden-xs">
+      </div>
+      <div class="hoz-slider-sub col-md-2-2 hidden-sm hidden-xs no-padd" style="padding-left: 2px!important;">
+      </div>
+    </div>
+    <div class="visible-xs row" id="hoz-mobile-container" data-bind="mobile-promos">
+      <div data-bind="mobile-slot">
+        <a href="/standish-salon-equipment-sale">
+          <img class="img-responsive hidden" src="" style="width:100%;"/>
+        </a>
+      </div>
+      <div data-bind="mobile-slot hidden">
+        <a href="/american-made-salon-furniture">
+          <img class="img-responsive hidden" src="" style="width:100%;"/>
+        </a>
+      </div>
+      <div data-bind="mobile-slot hidden">
+        <a href="tel:[store_phone]" alt="Tap to call.">
+          <img class="img-responsive hidden" src="" style="width:100%;"/>
+        </a>
+      </div>
+      <div data-bind="mobile-slot hidden">
+        <a href="/new-salon-equipment-products">
+          <img class="img-responsive hidden" src="" style="width:100%;"/>
+        </a>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="col-md-12 hidden-md hidden-sm hidden-lg filters">
+        <div class="fancy-select-special form-group col-md-12" style="overflow: hidden;">
+            <i class="fa fa-angle-down fa-2x fa-first"></i>
+            <h4 class="uppercase absolute">View Products</h4>
+            <select class="input-lg" onchange="location = this.options[this.selectedIndex].value;">
+              <option value="">View Products</option>
+              <optgroup label="Furniture Packages:">
+                  <option value="/salon-furnitures-packages">Salon Equipment Packages</option>
+              </optgroup>
+              <optgroup label="Chairs:">
+                  <option value="/salon-styling-chairs">Styling Chairs</option>
+                  <option value="/all-purpose-salon-chairs">All-Purpose Chairs</option>
+                  <option value="/barber-shop-chairs">Barber Chairs</option>
+                  <option value="/salon-dryer-chairs">Dryer Chairs</option>
+                  <option value="/salon-stools">Stools</option>
+                  <option value="/salon-chair-covers">Chair Covers</option>
+              </optgroup>
+              <optgroup label="Stations:">
+                  <option value="/single-salon-stations">Single Stations</option>
+                  <option value="/back-to-back-salon-stations">Back-to-Back Stations</option>
+                  <option value="/tower-salon-stations">Tower Stations</option>   
+              </optgroup>
+              <optgroup label="Color Bars:">
+                  <option value="/hair-salon-color-bars">Color Bar Units</option>
+              </optgroup>
+              <optgroup label="Trays & Trolleys:">
+                  <option value="/salon-trays-trolleys">Trays & Trolleys</option>
+              </optgroup>            
+              <optgroup label="Manicure & Pedicure:">
+                  <option value="/pedicure-manicure-equipment">Manicure and Pedicure Equipment</option>
+              </optgroup>
+              <optgroup label="Shampoo:">
+                  <option value="/salon-shampoo-chairs">Shampoo Chairs</option>
+                  <option value="/salon-wet-stations">Wet Stations</option>
+                  <option value="/shampoo-shuttles">Shuttles</option>
+                  <option value="/salon-shampoo-bowls">Shampoo Bowls</option>
+                  <option value="/salon-shampoo-cabinets">Cabinet Units</option>
+              </optgroup>
+              <optgroup label="Towels:">
+                  <option value="/hair-salon-towels">Towels</option>
+              </optgroup>
+              <optgroup label="Reception:">
+                  <option value="/salon-reception-furniture">Reception Furniture</option>
+              </optgroup>
+              <optgroup label="Break Room:">
+                  <option value="/break-room-appliances">Break Room Appliances</option>
+              </optgroup>
+              <optgroup label="Tools:">
+                  <option value="/hair-salon-supplies-online">Hair</option>
+                  <option value="/nail-salon-supplies-accessories">Nails</option>
+                  <option value="/makeup-supplies-accessories">Makeup</option>
+              </optgroup>
+            </select>
+            <i class="fa fa-angle-down fa-2x fa-first"></i>
+        </div>
+    </div>
+
+    <div id="homepage-featured-panel-list" class="col-md-12 hidden-xs">
+      <h3 class="coral-text">Resources for furnishing your salon or spa...</h3>
+
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <div class="panel panel-homepage-special panel-bottom">
+            <a href="tel:+8882718434"><img src="/assets/templates/[template]/images/CallAnExpert.png"/></a>
+            <div class="panel-footer text-center">
+              <a alt="Tap to call." class="white-text underline uppercase" href="tel:[store_phone]">[store_phone]</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="panel panel-homepage-special panel-bottom">
+            <a href="/salon-equipment-financing"><img src="/assets/templates/[template]/images/GetFinancing.png"/></a>
+            <div class="panel-footer text-center">
+              <a class="white-text underline uppercase" href="/salon-equipment-financing" >Watch The Video</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="panel panel-homepage-special panel-bottom">
+            <a  href="/guide-to-starting-a-salon"><img src="/assets/templates/[template]/images/GuideToStartingASalon-Button.jpg"/></a>
+            <div class="panel-footer text-center" style="padding: 10px 5px;">
+              <a class="white-text underline uppercase" href="/guide-to-starting-a-salon">Guide to Starting a Salon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--START: CATEGORY_FOOTER-->
+    <div id="promotion" class="col-md-12 hidden-xs">
+      [CONTENT]
+    </div>
+    <!--END: CATEGORY_FOOTER-->
+
+    <div id="homepage-poular-videos" class="col-md-12 hidden-xs">
+      <h3 class="coral-text">Watch Our Most Popular Salon Furniture Product Videos</h3>
+
+      <div class="clearfix"></div>
+      <div class="brand-videos"></div>
+
+    </div>
+
+    <div id="homepage-brands" class="col-md-12 hidden-xs">
+
+      <div class="clearfix"></div>
+      <div class="homepage-brands"></div>
+
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="products-wrapper">
+
+      <!--START: FEATURE_MENU--> 
+        <div class="product-wrapper-inner">
+          <!--START: CATEGORY_ITEMS-->
+          <!--START: ITEM_TEMPLATE_0-->
+            <div class="col-md-2-2 col-sm-4 col-xs-6 listing">
+              <script type="text/javascript">
+                window.Standish = window.Standish || {};
+                window.Standish.homeListings = window.Standish.homeListings || [];
+
+                window.Standish.homeListings.push({
+                  name: '[name]',
+                  itemPrice: '[ITEMPRICE]',
+                  itemSalePrice: '[ITEMSALEPRICE]',
+                  link: 'product.asp?itemid=[catalogid]#product-videos-header'
+                });
+              </script>
+
+              <a href="product.asp?itemid=[catalogid]" class="product-image-container">
+                <img class="product_thumb center-block" src="thumbnail.asp?file=[THUMBNAIL]&maxx=280&maxy=416" alt="[name]" height="140" width="208"/>
+              </a>
+              <div class="listing-container" style="height:91px;">
+                <p class="title"><a href="product.asp?itemid=[catalogid]">[name]</a></p>
+                <!--START: ITEMPRICE-->
+                  <p class="price nozero">[product_yourprice] [ITEMPRICE]</p>
+                <!--END: ITEMPRICE-->
+                <!--START: SALEPRICE-->
+                  <p class="msrp nozero">[product_yourprice] [ITEMPRICE]</p>
+                  <p class="price bold allcaps"><img src="assets/templates/common/images/on_sale.png" alt="On Sale" style="position: relative;" border="0" id="mf281"><span class="nozero">[ITEMSALEPRICE]</span></p>
+                <!--END: SALEPRICE-->
+              </div>
+              <div class="btn-group" role="group" aria-label="" style="width:100%;">
+                <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.location='product.asp?itemid=[catalogid]#product-videos-header'" style="width:50%;"><i class="fa fa-play"></i>
+                </button>
+                <button type="submit" class="button btn hidden-sm hidden-xs" onclick="window.location='product.asp?itemid=[catalogid]#product-videos-header'" style="width:50%;border-left: 1px solid white;"><i class="fa fa-eye"></i>
+                </button>
+              </div>
+            </div>
+          <!--END: ITEM_TEMPLATE_0-->
+          <!--END: CATEGORY_ITEMS-->
+        </div>
+      <!--END: FEATURE_MENU-->
+
+    </div>
+  </div>
+
 </div>
+
+
 
 <!-- END Template: home.html -->
 <script type="text/javascript" src="/assets/templates/[template]/scripts/custom/standish.homepageOptTest.js"></script>
