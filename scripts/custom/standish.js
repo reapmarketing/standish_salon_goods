@@ -17,13 +17,61 @@
     });
   };
 
-  Standish.QuickCart = function() {
+  Standish.setCookie = function(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  };
 
+  /* Check for existence of Cookie. */
+  Standish.checkCookie = function(token) {
+    var name = token + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length,c.length);
+        }
+    }
+    return false;
+  };
+
+  Standish.QuickCart = function() {
     if (window.location.search.indexOf("quickcart") != -1 && typeof window.cartTotal !== "undefined") {
       $('#cart-modal').modal();
     }
   };
 
+  Standish.addCartCookie = function() {
+    $('[data-set-cookie="financing-set"]').click(function(e) {
+      e.preventDefault();
+      var cookieName= "financing-set",
+          d = new Date();
+
+      d.setTime(d.getTime() + (60 * 1000));
+
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cookieName + "=true;" + expires + ";path=/";
+
+      window.location='checkout.asp?step=1';
+    });
+  };
+
+  Standish.CheckAndShowFinancingCheckout = function() {
+    if (Standish.checkCookie('financing-set')) {
+      $('#sameAsBilling').click();
+      $('.rightCol.shipping').hide();
+      $('#checkoutSinglePage > div > h2 > span').text('Order Review For Financing');
+      $('#checkout-shipping-method-info').hide();
+      $('.divPayment--inner > div:not(.customGateway:last-of-type)').hide();
+      $(".customGateway:last-of-type input[type=radio]").click();
+      $('.btn-checkout').text('Submit For Review');
+    }
+  };
 
   // 1. Equal Heights
   Standish.EqualHeights = function() {
@@ -579,7 +627,11 @@
 
     Standish.DataClickSearch();
 
+    // Standish.addCartCookie();
+
     // Standish.footerSlide();
+
+    // Standish.categoryOptTest();
 
     // Run nozeros for templates that haven't been updated.
     nozeros();

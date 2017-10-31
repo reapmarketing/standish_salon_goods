@@ -234,7 +234,7 @@
                     </div>
                 </div>
                 <!-- Shipping -->
-                <div class="col-md-6 col-sm-6 rightCol">
+                <div class="col-md-6 col-sm-6 rightCol shipping">
                     <h3 class="section-header double-line"><span>[checkout1_Header-shippinginformation]</span><hr/></h3>
                     <div class="panel panel-checkout">
                         <div class="header">
@@ -363,8 +363,8 @@
 
             <div class="clearfix"></div>
             <div>
-                <!-- Checkout Shipping Method-->
-                <div class="col-md-6">
+                <!-- Checkout Shipping Method -->
+                <div class="col-md-6" id="checkout-shipping-method-info">
                     <h3 class="section-header double-line"><span>[checkout3_Header-shippingmethodinfo]</span><hr/></h3>
 
                     <div class="divShippingMethod panel panel-checkout">
@@ -598,766 +598,768 @@
                     <div class="no-payment-method">There's no payment options available to your address. Please check the entered address and try again.</div>
                     <!--END: NO_PAYMENT_BLOCK-->
 
-                    <!--START: checkoutMasterPass-->
-                    <div class="checkoutMasterPass col-md-12">
-                        <h4>MasterPass&trade;</h4>
-                        <a href="masterpass.asp?ac=token" title="Checkout with MasterPass&trade;"><img id="imgMasterPass" src="assets/templates/common/images/mcpp_wllt_btn_chk_147x034px.png" alt="Checkout with MasterPass&trade;" /></a><br />
-                        <a href="javascript:void(0);" title="Learn more about MasterPass&trade;" onclick="window.open('http://www.mastercard.com/mc_us/wallet/learnmore/en/','','scrollbars=no,width=700,height=700'); return false;"><i class="icon-info-circled"></i>Learn more</a>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: checkoutMasterPass-->
+                    <div class="divPayment--inner">
+                        <!--START: checkoutMasterPass-->
+                        <div class="checkoutMasterPass col-md-12">
+                            <h4>MasterPass&trade;</h4>
+                            <a href="masterpass.asp?ac=token" title="Checkout with MasterPass&trade;"><img id="imgMasterPass" src="assets/templates/common/images/mcpp_wllt_btn_chk_147x034px.png" alt="Checkout with MasterPass&trade;" /></a><br />
+                            <a href="javascript:void(0);" title="Learn more about MasterPass&trade;" onclick="window.open('http://www.mastercard.com/mc_us/wallet/learnmore/en/','','scrollbars=no,width=700,height=700'); return false;"><i class="icon-info-circled"></i>Learn more</a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--END: checkoutMasterPass-->
 
-                    <!--START: checkout_visacheckout-->
-                    <!--START: visacheckout_jscript-->
-                    <style id="antiClickjack">
-                        body {
-                            display: none;
-                        }
-                    </style>
-                    <script type="text/javascript">
-                        if (self === top) {
-                            var antiClickjack = document.getElementById("antiClickjack");
-                            if (antiClickjack)
-                                antiClickjack.parentNode.removeChild(antiClickjack);
-                        } else {
-                            top.location = self.location;
-                        }
-                    </script>
-                    <script type="text/javascript">
-                        function onVmeReady() {
-                            //alert(apiKey);
-                            var apiKey = '[visacheckout_api_key]';
-                            var dataq = '';
+                        <!--START: checkout_visacheckout-->
+                        <!--START: visacheckout_jscript-->
+                        <style id="antiClickjack">
+                            body {
+                                display: none;
+                            }
+                        </style>
+                        <script type="text/javascript">
+                            if (self === top) {
+                                var antiClickjack = document.getElementById("antiClickjack");
+                                if (antiClickjack)
+                                    antiClickjack.parentNode.removeChild(antiClickjack);
+                            } else {
+                                top.location = self.location;
+                            }
+                        </script>
+                        <script type="text/javascript">
+                            function onVmeReady() {
+                                //alert(apiKey);
+                                var apiKey = '[visacheckout_api_key]';
+                                var dataq = '';
 
-                            V.init({
-                                apikey: apiKey,
-                                externalClientId: '[visacheckout_externalclientid]',
-                                sourceId: "",
-                                settings: {
-                                    locale: "[visacheckout_locale]",
-                                    countryCode: "[visacheckout_country]",
-                                    displayName: "[storename]",
-                                    logoUrl: "[visacheckout_logourl]",
-                                    websiteUrl: "[visacheckout_domainname]",
-                                    shipping: {
-                                        acceptedRegions: [[visacheckout_shippingcountries]],
-                                        collectShipping: "[visacheckout_collectshipping]"
+                                V.init({
+                                    apikey: apiKey,
+                                    externalClientId: '[visacheckout_externalclientid]',
+                                    sourceId: "",
+                                    settings: {
+                                        locale: "[visacheckout_locale]",
+                                        countryCode: "[visacheckout_country]",
+                                        displayName: "[storename]",
+                                        logoUrl: "[visacheckout_logourl]",
+                                        websiteUrl: "[visacheckout_domainname]",
+                                        shipping: {
+                                            acceptedRegions: [[visacheckout_shippingcountries]],
+                                            collectShipping: "[visacheckout_collectshipping]"
+                                        },
+                                        payment: {
+                                            cardBrands: [[cardsaccepted]],
+                                            acceptCanadianVisaDebit: "[visacheckout_acceptcanadadebitcard]"
+                                        },
+                                        review: {
+                                            buttonAction: "Continue"
+                                        },
+                                        dataLevel: "FULL"
                                     },
-                                    payment: {
-                                        cardBrands: [[cardsaccepted]],
-                                        acceptCanadianVisaDebit: "[visacheckout_acceptcanadadebitcard]"
-                                    },
-                                    review: {
-                                        buttonAction: "Continue"
-                                    },
-                                    dataLevel: "FULL"
-                                },
-                                paymentRequest: {
-                                    merchantRequestId: "[visacheckout_orderid]",
-                                    currencyCode: "[currency_code]",
-                                    subtotal: "[visacheckout_amount]",
-                                    total: "[visacheckout_amount]"
+                                    paymentRequest: {
+                                        merchantRequestId: "[visacheckout_orderid]",
+                                        currencyCode: "[currency_code]",
+                                        subtotal: "[visacheckout_amount]",
+                                        total: "[visacheckout_amount]"
+                                    }
+                                }
+                                );
+                                V.on("payment.success", function (payment) {
+
+                                    dataq = JSON.stringify(payment);
+
+                                    jQuery.ajax({
+                                        url: 'visacheckout.asp',
+                                        data: 'jdata=' + dataq + '&ac=unpackdata',
+                                        dataType: 'json',
+                                        type: 'post',
+                                        cache: false,
+                                        error: reportRuleError
+                                    })
+                                    .done(function (response) {
+                                        if (response.k == null)
+                                            alert('No response from VISA Checkout.  Try again or use another payment method.');
+                                        else {
+                                            window.location = 'checkout_one.asp?k=' + response.k + '&wid=' + response.wid;
+                                        }
+                                    })
+                                        .fail(function (strResult) {
+                                            alert('VISA Checkout Process call failed');
+                                        });
+
+                                });
+
+                                V.on("payment.cancel", function (payment) {
+                                    alert("VISA Checkout Payment method selection canceled.");
+                                });
+
+                                V.on("payment.error", function (payment, error) {
+                                    alert("Problem encountered with VISA Checkout service");
+                                });
+
+                            }
+
+                            function reportRuleError(jqXHR, textStatus) {
+                                if (jqXHR.status > 0) {
+                                    alert("Error processing VISA Checkout request ");
                                 }
                             }
-                            );
-                            V.on("payment.success", function (payment) {
-
-                                dataq = JSON.stringify(payment);
-
-                                jQuery.ajax({
-                                    url: 'visacheckout.asp',
-                                    data: 'jdata=' + dataq + '&ac=unpackdata',
-                                    dataType: 'json',
-                                    type: 'post',
-                                    cache: false,
-                                    error: reportRuleError
-                                })
-                                .done(function (response) {
-                                    if (response.k == null)
-                                        alert('No response from VISA Checkout.  Try again or use another payment method.');
-                                    else {
-                                        window.location = 'checkout_one.asp?k=' + response.k + '&wid=' + response.wid;
-                                    }
-                                })
-                                    .fail(function (strResult) {
-                                        alert('VISA Checkout Process call failed');
-                                    });
-
-                            });
-
-                            V.on("payment.cancel", function (payment) {
-                                alert("VISA Checkout Payment method selection canceled.");
-                            });
-
-                            V.on("payment.error", function (payment, error) {
-                                alert("Problem encountered with VISA Checkout service");
-                            });
-
-                        }
-
-                        function reportRuleError(jqXHR, textStatus) {
-                            if (jqXHR.status > 0) {
-                                alert("Error processing VISA Checkout request ");
-                            }
-                        }
-                    </script>
-                    <!--END: visacheckout_jscript-->
-                    <div class="checkout_visacheckout col-md-12">
-                        <h4>Checkout with Visa Checkout</h4>
-                        <img alt="Visa Checkout" class="v-button" role="button" src="[visacheckout_button]" />
-                        <script type="text/javascript" src="[visacheckout_jscriptsdk]"></script>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: checkout_visacheckout-->
-
-                    <!--START: VME_SELECTED-->
-                    <div class="vmeSelected col-md-12">
-                        <input type="hidden" name="payment" value="online-[id]" checked />
-                        <img src="assets/templates/common/images/vme_accpt_mark.png" alt="V.me by Visa" />
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: VME_SELECTED-->
-                
-                    <!--START: checkoutByAmazon-->
-                    <div class="checkoutByAmazon col-md-12">
-                        <h4>[payment_description]</h4>
-                        <div class="payment-method">[amazon_cba_form]</div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: checkoutByAmazon--> 
-                
-                    <!--START: PPCREDIT-->
-                    <div class="ppExpress col-md-12">
-                        <h4>[payment_description]</h4>
-                        <div class="ppe-radio">
-                            <input name="payment" id="online-[id]-ppc" onclick="javascript: checkoutSwitch(true); window.location.href = 'paypal_express.asp?ch=0&ppc=1';" type="radio" value="online-[id]" />
+                        </script>
+                        <!--END: visacheckout_jscript-->
+                        <div class="checkout_visacheckout col-md-12">
+                            <h4>Checkout with Visa Checkout</h4>
+                            <img alt="Visa Checkout" class="v-button" role="button" src="[visacheckout_button]" />
+                            <script type="text/javascript" src="[visacheckout_jscriptsdk]"></script>
+                            <div class="clearfix"></div>
                         </div>
-                        <div class="ppe-logo" style="width:150px;">
-                            <a href="javascript:document.getElementById('online-[id]-ppc').click();"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit-logo-medium.png" alt="PayPal Credit" height="35" /></a>
-                            <a href="https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=AU826TU8&content=/bmlweb/ppwpsiw.html" alt="PayPal Credit" target="_blank"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_bml_text.png" /></a>
-                        </div>
-                    </div>
-                    <!--END: PPCREDIT--> 
+                        <!--END: checkout_visacheckout-->
 
-                    <!--START: PAYPALADV-->
-                    <div class="ppAdv col-md-12">
-                        <h4>
-                            <label for="online-[id]">
-                                    <input onclick="javascript:checkoutSwitch(true);doCheckout(document.billing);" id="online-[id]" name="payment" type="radio" value="online-[id]" />
-                                    [payment_description]
-                            </label>
-                        </h4>
-                        <div class="clearfix"></div>
-                        <div id="divPayPalAdv" style="display:none;">
-                            <div style="text-align:left;">
-                                <iframe id="iframePayPalAdv" name="iframePayPalAdv" src="assets/images/spacer.gif" width="490" height="565" frameborder="0" scrolling="no"></iframe>
+                        <!--START: VME_SELECTED-->
+                        <div class="vmeSelected col-md-12">
+                            <input type="hidden" name="payment" value="online-[id]" checked />
+                            <img src="assets/templates/common/images/vme_accpt_mark.png" alt="V.me by Visa" />
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--END: VME_SELECTED-->
+                    
+                        <!--START: checkoutByAmazon-->
+                        <div class="checkoutByAmazon col-md-12">
+                            <h4>[payment_description]</h4>
+                            <div class="payment-method">[amazon_cba_form]</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--END: checkoutByAmazon--> 
+                    
+                        <!--START: PPCREDIT-->
+                        <div class="ppExpress col-md-12">
+                            <h4>[payment_description]</h4>
+                            <div class="ppe-radio">
+                                <input name="payment" id="online-[id]-ppc" onclick="javascript: checkoutSwitch(true); window.location.href = 'paypal_express.asp?ch=0&ppc=1';" type="radio" value="online-[id]" />
+                            </div>
+                            <div class="ppe-logo" style="width:150px;">
+                                <a href="javascript:document.getElementById('online-[id]-ppc').click();"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/ppcredit-logo-medium.png" alt="PayPal Credit" height="35" /></a>
+                                <a href="https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=AU826TU8&content=/bmlweb/ppwpsiw.html" alt="PayPal Credit" target="_blank"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_bml_text.png" /></a>
                             </div>
                         </div>
-                    </div>
-                    <!--END: PAYPALADV-->
+                        <!--END: PPCREDIT--> 
 
-                    <!--START: FUTUREPAY-->
-                    <div class="fpay col-md-12">
+                        <!--START: PAYPALADV-->
+                        <div class="ppAdv col-md-12">
+                            <h4>
+                                <label for="online-[id]">
+                                        <input onclick="javascript:checkoutSwitch(true);doCheckout(document.billing);" id="online-[id]" name="payment" type="radio" value="online-[id]" />
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div class="clearfix"></div>
+                            <div id="divPayPalAdv" style="display:none;">
+                                <div style="text-align:left;">
+                                    <iframe id="iframePayPalAdv" name="iframePayPalAdv" src="assets/images/spacer.gif" width="490" height="565" frameborder="0" scrolling="no"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END: PAYPALADV-->
+
+                        <!--START: FUTUREPAY-->
+                        <div class="fpay col-md-12">
+                                <h4>[payment_description]</h4>
+                                <div class="desc-message">[payment_description_message]</div>
+                                <div class="fpay-radio">
+                                <input name="payment" onclick="javascript: checkoutSwitch(false); doCheckout(document.billing);" type="radio" value="online-[id]" />
+                                        <input type="hidden" id="hdnFuturePayID" name="hdnFuturePayID" value="online-[id]" />
+                                        <input type="hidden" id="hdnFuturePayRef" name="hdnFuturePayRef" value="" />
+                                </div>
+                                <div class="fpay-logo"><img src="assets/images/default/fp-logo.png" height="35" /></div>
+                                <div class="payment-desc">[payment_description]</div>
+                                <div class="clearfix"></div>
+                                <div id="futurepay_form" style="display:block;"></div>
+                        </div>
+                        <!--END: FUTUREPAY--> 
+
+                        <!--START: WEPAY-->
+                        <script type="text/javascript" src="https://static.wepay.com/min/js/tokenization.v2.js">
+                        </script>
+                        <div class="wpay col-md-12">
                             <h4>[payment_description]</h4>
                             <div class="desc-message">[payment_description_message]</div>
-                            <div class="fpay-radio">
-                            <input name="payment" onclick="javascript: checkoutSwitch(false); doCheckout(document.billing);" type="radio" value="online-[id]" />
-                                    <input type="hidden" id="hdnFuturePayID" name="hdnFuturePayID" value="online-[id]" />
-                                    <input type="hidden" id="hdnFuturePayRef" name="hdnFuturePayRef" value="" />
+                            <div class="wpay-radio">
+                                <input name="payment" onclick="javascript: checkoutSwitch(false); controlDivPayment('[id]');" type="radio" value="online-[id]">
+                                <input type="hidden" id="hdnWePayID" name="hdnWePayID" value="online-[id]" />
+                                <input type="hidden" id="hdnWePayClientID" name="hdnWePayClientID" value="[hdnWePayClientID]" />
+                                <input type="hidden" id="hdnWePayRef" name="hdnWePayRef" value="" /> 
+                                <input type="hidden" id="hdnWePayGenericErrorMsg" name="hdnWePayGenericErrorMsg" value="[hdnWePayGenericErrorMsg]" />
                             </div>
-                            <div class="fpay-logo"><img src="assets/images/default/fp-logo.png" height="35" /></div>
+                            <div class="wpay-logo"><img src="assets/templates/common/images/wepay-logo.png"></div>
                             <div class="payment-desc">[payment_description]</div>
-                            <div class="clearfix"></div>
-                            <div id="futurepay_form" style="display:block;"></div>
-                    </div>
-                    <!--END: FUTUREPAY--> 
+                                
 
-                    <!--START: WEPAY-->
-                    <script type="text/javascript" src="https://static.wepay.com/min/js/tokenization.v2.js">
-                    </script>
-                    <div class="wpay col-md-12">
-                        <h4>[payment_description]</h4>
-                        <div class="desc-message">[payment_description_message]</div>
-                        <div class="wpay-radio">
-                            <input name="payment" onclick="javascript: checkoutSwitch(false); controlDivPayment('[id]');" type="radio" value="online-[id]">
-                            <input type="hidden" id="hdnWePayID" name="hdnWePayID" value="online-[id]" />
-                            <input type="hidden" id="hdnWePayClientID" name="hdnWePayClientID" value="[hdnWePayClientID]" />
-                            <input type="hidden" id="hdnWePayRef" name="hdnWePayRef" value="" /> 
-                            <input type="hidden" id="hdnWePayGenericErrorMsg" name="hdnWePayGenericErrorMsg" value="[hdnWePayGenericErrorMsg]" />
-                        </div>
-                        <div class="wpay-logo"><img src="assets/templates/common/images/wepay-logo.png"></div>
-                        <div class="payment-desc">[payment_description]</div>
-                            
-
-                        <div id="divPaymentOption[id]" class="wepaydiv" name="divPaymentOption" style="display:none;">
-                            <div class="ccgField">
-                                <label for="creditcardnumber">[CustomerInfo_creditcardnumber]</label>
-                                <input type="text" onchange="clearContent(this);" id="wepay_ocardno" name="wepay_ocardno" size="30" class="form-control">
-                                <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                            </div>
-                            <div class="ccgField">
-                                <label for="creditexpiration">[CustomerInfo_creditexpiration]</label>
-                                <select id="wepay_ocardexpiresmonth" name="wepay_ocardexpiresmonth" class="form-control">
-                                    [monthlist]
-                                </select>
-                                <select id="wepay_ocardexpiresyear" name="wepay_ocardexpiresyear" class="text-control">
-                                    [yearlist]
-                                </select>
-                                <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                            </div>
-                            <div class="ccgField">
-                                <label for="cvv2">CVV2</label>
-                                <input type="text" id="wepay_ocardcvv2" name="wepay_ocardcvv2" size="3" class="form-control">
-                                <a href="#" onclick="javascript:window.open('assets/templates/common/images/cvv2.gif','new','menubars=no, resizable=no, statusbar=no, titlebar=no, width=300, height=500');" class="cvv2-help">What's this?</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--END: WEPAY-->
-
-                    <!--START: PAYMETRIC-->
-                    <div class="ccGateway col-md-12">
-                        <h4>
-                            <label for="online-[id]">
-                                <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] id="paymetric-[id]">
-                                    [payment_description]
-                            </label>
-                        </h4>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-                            <table width="100%" cellpadding="0" cellspacing="3">
-                                <tr>
-                                    <td colspan="2" class="item">[payment_description_message]</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="item">
-                                        <style>
-                                        .PaymentPage_PayNowButton{
-                                            display: none;
-                                        }
-                                        .DataIntercept {
-                                            font-weight: bold;
-                                        }
-                                        .DataIntercept td {
-                                            padding: 2px;
-                                        }
-                                        .DataInterceptCreditCardType:nth-child(1), .DataInterceptCreditCardNumber:nth-child(1), .DataInterceptExpirationDate:nth-child(1), .DataInterceptCVV:nth-child(1){
-                                            text-align: right;
-                                        }
-                                        </style>
-                                        <div id="divPaymetricContainer">
-                                            <script src="[paymetric_url]" type="text/javascript"></script>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <input name="Paymetric_HFSignedData" id="HFSignedData" type="hidden" value="[paymetric_signature]" />
-                            <script type="text/javascript">
-                                UpdatePaymentPageContent(document.getElementById('HFSignedData').value);
-                            </script>
-                        </div>
-                    </div>
-                    <!--END: PAYMETRIC-->
-
-                    <!--START: AFFIRM-->
-                    <div class="affirm col-md-12">
-                        <h4>[payment_description]</h4>
-                        <div class="desc-message"></div>
-                        <div class="affirm-radio">
-                                <input name="payment" onclick="javascript: checkoutSwitch(false); " type="radio" value="online-[id]" />
-                                <input type="hidden" id="hdnAffirmID" name="hdnAffirmID" value="online-[id]" />
-                        </div>
-                        <div class="affirm-logo" style="width:400px"><img src="assets/images/default/affirm-logo.png" /><b>[payment_description_message]</b></div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: AFFIRM--> 
-
-                    <!--START: TRANSFLOW-->
-                    <div class="transFlow col-md-12">
-                        <h4>
-                            <label for="transflow-[id]">
-                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="transflow-[id]" name="payment" type="radio" value="transflow-[id]" [FIRSTOPTIONCHECKED] />
-                                    [payment_description]
-                            </label>
-                        </h4>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-                            <div class="desc-message">[payment_description_message]</div>
-                            <strong>Your Mobile Number</strong>
-                            <input type="text" onChange="clearContent(this);" name="ff[id]_ocardno" size="20" class="txtBoxStyle" />
-                            <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                        </div>
-                    </div>
-                    <!--END: TRANSFLOW-->
-
-                    <!--START: SHOPATRON-->
-                    <div class="shopaTron col-md-12">
-                        <h4>[payment_description]</h4>
-                        <div class="desc-message">[payment_description_message]</div>
-                        <div class="st-button">
-                            <input name="payment" onclick="window.location.href='shopatron.asp';" type="button" class="btn" onmouseover=="this.className='btn_over'" onmouseout="this.className='btn'" value="Checkout with Shopatron" />
-                        </div>
-                        <div class="payment-desc">[payment_description]</div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: SHOPATRON--> 
-
-                    <!--START: KLARNA--> 
-                    <div class="klarna col-md-12">
-                        <script src="https://cdn.klarna.com/public/kitt/toc/v1.0/js/klarna.terms.min.js" type="text/javascript" charset="utf-8"></script>
-                        <input type="hidden" name="klarna_method" id="klarna_method" value="[klarna_default_method]" />
-                        <script type="text/javascript">
-                                function setKlarnaMethod(strMethod) {
-                                        document.getElementById("klarna_method").value = strMethod;
-                                }
-                        </script> 
-                        <!--START: KLARNA_INVOICE-->
-                        <div class="klarnaInvoice">
-                            <div class="klarna-invoice-radio">
-                                <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]invoice');setKlarnaMethod('INVOICE');" name="payment" type="radio" value="online-[id]-klarna" [FIRSTOPTIONINVOICECHECKED] />
-                            </div>
-                            <div class="klarna-invoice-logo"><img src="[klarna_invoice_logo]?eid=[klarna_storeid]&width=80" alt="Klarna Invoice Logo" /> <span>pay within 14 days</span></div>
-                            <div class="clearfix"></div>
-                            <div class="klarna-invoice-details">In order to finalize your purchase, please provide the following additional details:</div>
-                            <div id="divPaymentOption[id]invoice" name="divPaymentOption" style="display:none;"> 
-                                <!--START: KLARNA_INVOICE_GD-->
-                                <div class="klarnaField">
-                                    <div class="label">Gender:</div>
-                                    <input type="radio" value="1" name="klarna_invoice_gender[id]" id="klarna_male" />
-                                    <label for="klarna_male">Male</label>
-                                    <input type="radio" value="0" name="klarna_invoice_gender[id]" id="klarna_female" />
-                                    <label for="klarna_female">Female</label>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--END: KLARNA_INVOICE_GD--> 
-                                <!--START: KLARNA_INVOICE_SSN-->
-                                <div class="klarnaField">
-                                    <div class="label">Personal Number:</div>
-                                    <input type="text" name="klarna_invoice_ssn[id]" value="" size="10" maxlength="14" class="txtBoxStyle" />
-                                    <span>([klarna_po_format])</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--END: KLARNA_INVOICE_SSN--> 
-                                <!--START: KLARNA_INVOICE_BD-->
-                                <div class="klarnaField">
-                                    <div class="label">Birth Date:</div>
-                                    <select name="klarna_invoice_birthdate_day[id]" class="txtBoxStyle">
-                                        <option value="">day</option>
-                                        [klarna_birthdate_day]
-                                    </select>
-                                    <select name="klarna_invoice_birthdate_month[id]" class="txtBoxStyle">
-                                        <option value="">month</option>
-                                        [klarna_birthdate_month]
-                                    </select>
-                                    <select name="klarna_invoice_birthdate_year[id]" class="txtBoxStyle">
-                                        <option value="">year</option>
-                                        [klarna_birthdate_year]
-                                    </select>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--END: KLARNA_INVOICE_BD-->
-                                <div id="klarna_invoiceterms"></div>
-                                <script type="text/javascript">
-                                        var klarnaterms = new Klarna.Terms.Invoice({
-                                                el: 'klarna_invoiceterms',
-                                                eid: [klarna_storeid],
-                                                country: '[klarna_country]',
-                                                charge: 0
-                                        })
-                                </script> 
-                                <!--START: KLARNA_INVOICE_DE_BLOCK-->
-                                <div id="afm_banner">
-                                    <input type="checkbox" name="klarna_afm_de_invoice" value="1" />
-                                    Mit der ?bermittlung der f?r die Abwicklung der gew?hlten Klarna Zahlungsmethode und einer Identit?ts- und 
-                                    Bonit?tspr?fung erforderlichen Daten an Klarna bin ich einverstanden. Meine <a href="https://online.klarna.com/consent_de.yaws" target="_blank">Einwilligung</a> kann ich jederzeit mit Wirkung f?r die Zukunft widerrufen. 
-                                    Es gelten die AGB des H?ndlers. </div>
-                                <!--END: KLARNA_INVOICE_DE_BLOCK-->
-                            </div>
-                        </div>
-                        <!--END: KLARNA_INVOICE--> 
-                        
-                        <!--START: KLARNA_ACCOUNT-->
-                        <div class="klarnaAccount">
-                            <div class="klarna-account-radio">
-                                <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]account');setKlarnaMethod('ACCOUNT');" name="payment" type="radio" value="online-[id]-klarna" [FIRSTOPTIONACCOUNTCHECKED] />
-                            </div>
-                            <div class="klarna-account-logo"><img src="[klarna_account_logo]?eid=[klarna_storeid]&width=80" alt="Klarna Account Logo" /> <span>part pay from [klarna_monthly_cost] / month</span></div>
-                            <div class="clearfix"></div>
-                            <div class="klarna-account-details">In order to finalize your purchase, please provide the following additional details:</div>
-                            <div id="divPaymentOption[id]account" name="divPaymentOption" style="display:none;"> 
-                                <!--START: KLARNA_ACCOUNT_GD-->
-                                <div class="klarnaField">
-                                    <div class="label">Gender:</div>
-                                    <input type="radio" value="1" name="klarna_account_gender[id]" id="klarna_male" />
-                                    <label for="klarna_male">Male</label>
-                                    <input type="radio" value="0" name="klarna_account_gender[id]" id="klarna_female" />
-                                    <label for="klarna_female">Female</label>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--END: KLARNA_ACCOUNT_GD--> 
-                                <!--START: KLARNA_ACCOUNT_SSN-->
-                                <div class="klarnaField">
-                                    <div class="label">Personal Number:</div>
-                                    <input type="text" name="klarna_account_ssn[id]" value="" size="10" maxlength="14" class="txtBoxStyle" />
-                                    <span>([klarna_po_format])</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--END: KLARNA_ACCOUNT_SSN--> 
-                                <!--START: KLARNA_ACCOUNT_BD-->
-                                <div class="klarnaField">
-                                    <div class="label">Birth Date:</div>
-                                    <select name="klarna_account_birthdate_day[id]" class="txtBoxStyle">
-                                        <option value="">day</option>
-                                        [klarna_birthdate_day]
-                                    </select>
-                                    <select name="klarna_account_birthdate_month[id]" class="txtBoxStyle">
-                                        <option value="">month</option>
-                                        [klarna_birthdate_month]
-                                    </select>
-                                    <select name="klarna_account_birthdate_year[id]" class="txtBoxStyle">
-                                        <option value="">year</option>
-                                        [klarna_birthdate_year]
-                                    </select>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--END: KLARNA_ACCOUNT_BD-->
-                                <div id="klarna_accountterms"></div>
-                                <script type="text/javascript">
-                                        var klarnaterms2 = new Klarna.Terms.Account({
-                                                el: 'klarna_accountterms',
-                                                eid: [klarna_storeid],
-                                                country: '[klarna_country]',
-                                                charge: 0
-                                        })  
-                                </script> 
-                                <!--START: KLARNA_ACCOUNT_DE_BLOCK-->
-                                <div id="afm_banner">
-                                    <input type="checkbox" name="klarna_afm_de_account" value="1" />
-                                    Mit der ?bermittlung der f?r die Abwicklung der gew?hlten Klarna Zahlungsmethode und einer Identit?ts- und 
-                                    Bonit?tspr?fung erforderlichen Daten an Klarna bin ich einverstanden. Meine <a href="https://online.klarna.com/consent_de.yaws" target="_blank">Einwilligung</a> kann ich jederzeit mit Wirkung f?r die Zukunft widerrufen. 
-                                    Es gelten die AGB des H?ndlers. </div>
-                                <!--END: KLARNA_ACCOUNT_DE_BLOCK--> 
-                                <!--START: KLARNA_ACCOUNT_NL_BLOCK-->
-                                <div id="afm_banner"> <img src="assets/templates/common/images/balk_afm3-jpg.jpg" width="320" /> </div>
-                                <!--END: KLARNA_ACCOUNT_NL_BLOCK-->
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--END: KLARNA_ACCOUNT-->
-                    </div>
-                    <!--END: KLARNA-->
-
-                    <!--START: CCGATEWAY-->
-                    <div class="ccGateway col-md-12">
-                        <label for="online-[id]" style="display:block;">
-                            <div class="col-md-1 col-sm-1 col-xs-2 padd-top">
-                                <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
-                            </div>
-                            <div class="col-md-11 col-sm-11 col-xs-10">
-                                <h6 class="row">
-                                    <span class="col-md-4">[payment_description] </span><img class="col-md-4" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png"> 
-                                </h6>
-                            </div>
-                        </label>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" class="col-md-offset-1">
-                            <hr />
-                            <div class="desc-message">[payment_description_message]</div>
-                            <div class="ccgField form-group">
-                                <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div id="divPaymentOption[id]" class="wepaydiv" name="divPaymentOption" style="display:none;">
+                                <div class="ccgField">
                                     <label for="creditcardnumber">[CustomerInfo_creditcardnumber]</label>
+                                    <input type="text" onchange="clearContent(this);" id="wepay_ocardno" name="wepay_ocardno" size="30" class="form-control">
                                     <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
                                 </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" />
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <!--START: ccStartDate-->
-                            <div class="ccgField form-group">
-                                <div class="col-md-4 col-sm-4 col-xs-6">
-                                    <label for="creditstartdate">[CustomerInfo_creditstartdate]</label>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-4">
-                                    <select name="ff[id]_ocardstartmonth" class="txtBoxStyle form-control">
-                                        <option value=""></option>
+                                <div class="ccgField">
+                                    <label for="creditexpiration">[CustomerInfo_creditexpiration]</label>
+                                    <select id="wepay_ocardexpiresmonth" name="wepay_ocardexpiresmonth" class="form-control">
                                         [monthlist]
                                     </select>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-4">
-                                    <select name="ff[id]_ocardstartyear" class="txtBoxStyle form-control">
-                                        <option value=""></option>
-                                        [yearlistdtstart]
-                                    </select>
-                                </div>
-                                (Maestro, Solo and Amex only) <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                                <div class="clearfix"></div>
-                            </div>
-                            <!--END: ccStartDate-->
-                            <div class="ccgField form-group">
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <label for="creditexpiration">
-                                        [CustomerInfo_creditexpiration]
-                                    </label>
-                                    <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-6">
-                                    <select name="ff[id]_ocardexpiresmonth" class="txtBoxStyle form-control">
-                                        [monthlist]
-                                    </select>
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-6">
-                                    <select name="ff[id]_ocardexpiresyear" class="txtBoxStyle form-control">
+                                    <select id="wepay_ocardexpiresyear" name="wepay_ocardexpiresyear" class="text-control">
                                         [yearlist]
                                     </select>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="ccgField form-group">
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <label for="cardtype">[CustomerInfo_cardtype]</label>
                                     <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
                                 </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <select name="ff[id]_ocardtype" class="txtBoxStyle form-control">
-                                        [cctype]
-                                    </select>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <!--START: ccIssueNumber-->
-                            <div class="ccgField form-group">
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <label for="creditissuenumber">[CustomerInfo_creditissuenumber]</label>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <input type="text" name="ff[id]_ocardissue" maxlength="10" size="3" class="txtBoxStyle form-control" />
-                                </div>
-                                (Maestro and Solo only) <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                                <div class="clearfix"></div>
-                            </div>
-                            <!--END: ccIssueNumber-->
-                            <div class="ccgField form-group">
-                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="ccgField">
                                     <label for="cvv2">CVV2</label>
-                                    <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                                </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <input type="text" name="ff[id]_ocardcvv2" size="3" class="txtBoxStyle form-control" />
-                                    <!--START: cvvrequired--><input type="hidden" name="hdnCvvRequired" id="hdnCvvRequired" value="1" />
-                                    <!--END: cvvrequired--> 
+                                    <input type="text" id="wepay_ocardcvv2" name="wepay_ocardcvv2" size="3" class="form-control">
                                     <a href="#" onclick="javascript:window.open('assets/templates/common/images/cvv2.gif','new','menubars=no, resizable=no, statusbar=no, titlebar=no, width=300, height=500');" class="cvv2-help">What's this?</a>
-                                <div class="clearfix"></div>
                                 </div>
-                                
                             </div>
+                        </div>
+                        <!--END: WEPAY-->
+
+                        <!--START: PAYMETRIC-->
+                        <div class="ccGateway col-md-12">
+                            <h4>
+                                <label for="online-[id]">
+                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] id="paymetric-[id]">
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                <table width="100%" cellpadding="0" cellspacing="3">
+                                    <tr>
+                                        <td colspan="2" class="item">[payment_description_message]</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="item">
+                                            <style>
+                                            .PaymentPage_PayNowButton{
+                                                display: none;
+                                            }
+                                            .DataIntercept {
+                                                font-weight: bold;
+                                            }
+                                            .DataIntercept td {
+                                                padding: 2px;
+                                            }
+                                            .DataInterceptCreditCardType:nth-child(1), .DataInterceptCreditCardNumber:nth-child(1), .DataInterceptExpirationDate:nth-child(1), .DataInterceptCVV:nth-child(1){
+                                                text-align: right;
+                                            }
+                                            </style>
+                                            <div id="divPaymetricContainer">
+                                                <script src="[paymetric_url]" type="text/javascript"></script>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input name="Paymetric_HFSignedData" id="HFSignedData" type="hidden" value="[paymetric_signature]" />
+                                <script type="text/javascript">
+                                    UpdatePaymentPageContent(document.getElementById('HFSignedData').value);
+                                </script>
+                            </div>
+                        </div>
+                        <!--END: PAYMETRIC-->
+
+                        <!--START: AFFIRM-->
+                        <div class="affirm col-md-12">
+                            <h4>[payment_description]</h4>
+                            <div class="desc-message"></div>
+                            <div class="affirm-radio">
+                                    <input name="payment" onclick="javascript: checkoutSwitch(false); " type="radio" value="online-[id]" />
+                                    <input type="hidden" id="hdnAffirmID" name="hdnAffirmID" value="online-[id]" />
+                            </div>
+                            <div class="affirm-logo" style="width:400px"><img src="assets/images/default/affirm-logo.png" /><b>[payment_description_message]</b></div>
                             <div class="clearfix"></div>
                         </div>
-                    </div>
-                    <!--END: CCGATEWAY-->
+                        <!--END: AFFIRM--> 
 
-                    <!--START: PPEXPRESS-->
-                    <div class="ppExpress col-md-12">
-                        
-                        <div class="ppe-radio form-group">
-                            <div class="col-md-1 col-sm-1 col-xs-2 padd-top">
-                                <input name="payment" id="online-[id]-ppe" onclick="javascript:checkoutSwitch(true);window.location.href='paypal_express.asp?ch=0';" type="radio" value="online-[id]" />
-                            </div>
-                            <div class="ppe-logo col-md-11 col-sm-11 col-xs-10">
-                                <h6>[payment_description]</h6>
-                                <a href="javascript:document.getElementById('online-[id]-ppe').click();">
-                                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: PPEXPRESS--> 
-
-                    <!--START: AUTHNETCIMBLOCK-->
-                    <div class="authneticIMBlock col-md-12">
-                        <h4>
-                            <label for="online-[id]-CIM">
-                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]CIM');" id="online-[id]-CIM" name="payment" type="radio" value="online-[id]-CIM" [FIRSTOPTIONCHECKED] />
-                                    [payment_description]
-                            </label>
-                        </h4>
-                        <div class="clearfix"></div>
-                        <div id="divPaymentOption[id]CIM" name="divPaymentOptionCIM" style="display:none;"> 
-                            <!--START: authCIMBlock-->
-                            <div class="cimField">
-                                <label for="use-creditcard-on-file">[checkout3_use-creditcard-on-file]</label>
-                                <select name="authCIMProfileID" id="authCIMProfileID" class="txtBoxStyle form-control">
-                                    <!--START: authCIMPaymentProfileItem-->
-                                    <option value="authCIMProfileID_[custProfId]_[custPmntProfId]_[authCIMProfileID_cardlastdigits]_[authCIMProfileID_cardexp]"> [checkout3_creditcard-last-digits]: [authCIMProfileID_cardlastdigits] / [CustomerInfo_creditexpiration]: [authCIMProfileID_cardexp]</option>
-                                    <!--END: authCIMPaymentProfileItem-->
-                                </select>
-                                <div class="clearfix"></div>
-                            </div>
-                            <!--END: authCIMBlock--> 
-                        </div>
-                    </div>
-                    <!--END: AUTHNETCIMBLOCK-->
-
-                    <!--START: MILITARYSTAR-->
-                    <div class="militaryStar col-md-12">
-                        <h4>
-                            <label for="online-[id]">
-                            <input type="hidden" value="1" name="ff[id]_isstarcard" id="ff[id]_isstarcard" />
-                                    <input  onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
-                                    [payment_description]
-                            </label>
-                        </h4>
-                        <div class="clearfix"></div>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-                            <div class="desc-message">[payment_description_message]</div>
-                            <div class="msField">
-                                <label for="ff[id]_ocardno">[CustomerInfo_creditcardnumber]</label>
-                                <input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" />
+                        <!--START: TRANSFLOW-->
+                        <div class="transFlow col-md-12">
+                            <h4>
+                                <label for="transflow-[id]">
+                                        <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="transflow-[id]" name="payment" type="radio" value="transflow-[id]" [FIRSTOPTIONCHECKED] />
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                <div class="desc-message">[payment_description_message]</div>
+                                <strong>Your Mobile Number</strong>
+                                <input type="text" onChange="clearContent(this);" name="ff[id]_ocardno" size="20" class="txtBoxStyle" />
                                 <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                            </div>
+                        </div>
+                        <!--END: TRANSFLOW-->
+
+                        <!--START: SHOPATRON-->
+                        <div class="shopaTron col-md-12">
+                            <h4>[payment_description]</h4>
+                            <div class="desc-message">[payment_description_message]</div>
+                            <div class="st-button">
+                                <input name="payment" onclick="window.location.href='shopatron.asp';" type="button" class="btn" onmouseover=="this.className='btn_over'" onmouseout="this.className='btn'" value="Checkout with Shopatron" />
+                            </div>
+                            <div class="payment-desc">[payment_description]</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--END: SHOPATRON--> 
+
+                        <!--START: KLARNA--> 
+                        <div class="klarna col-md-12">
+                            <script src="https://cdn.klarna.com/public/kitt/toc/v1.0/js/klarna.terms.min.js" type="text/javascript" charset="utf-8"></script>
+                            <input type="hidden" name="klarna_method" id="klarna_method" value="[klarna_default_method]" />
+                            <script type="text/javascript">
+                                    function setKlarnaMethod(strMethod) {
+                                            document.getElementById("klarna_method").value = strMethod;
+                                    }
+                            </script> 
+                            <!--START: KLARNA_INVOICE-->
+                            <div class="klarnaInvoice">
+                                <div class="klarna-invoice-radio">
+                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]invoice');setKlarnaMethod('INVOICE');" name="payment" type="radio" value="online-[id]-klarna" [FIRSTOPTIONINVOICECHECKED] />
+                                </div>
+                                <div class="klarna-invoice-logo"><img src="[klarna_invoice_logo]?eid=[klarna_storeid]&width=80" alt="Klarna Invoice Logo" /> <span>pay within 14 days</span></div>
+                                <div class="clearfix"></div>
+                                <div class="klarna-invoice-details">In order to finalize your purchase, please provide the following additional details:</div>
+                                <div id="divPaymentOption[id]invoice" name="divPaymentOption" style="display:none;"> 
+                                    <!--START: KLARNA_INVOICE_GD-->
+                                    <div class="klarnaField">
+                                        <div class="label">Gender:</div>
+                                        <input type="radio" value="1" name="klarna_invoice_gender[id]" id="klarna_male" />
+                                        <label for="klarna_male">Male</label>
+                                        <input type="radio" value="0" name="klarna_invoice_gender[id]" id="klarna_female" />
+                                        <label for="klarna_female">Female</label>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: KLARNA_INVOICE_GD--> 
+                                    <!--START: KLARNA_INVOICE_SSN-->
+                                    <div class="klarnaField">
+                                        <div class="label">Personal Number:</div>
+                                        <input type="text" name="klarna_invoice_ssn[id]" value="" size="10" maxlength="14" class="txtBoxStyle" />
+                                        <span>([klarna_po_format])</span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: KLARNA_INVOICE_SSN--> 
+                                    <!--START: KLARNA_INVOICE_BD-->
+                                    <div class="klarnaField">
+                                        <div class="label">Birth Date:</div>
+                                        <select name="klarna_invoice_birthdate_day[id]" class="txtBoxStyle">
+                                            <option value="">day</option>
+                                            [klarna_birthdate_day]
+                                        </select>
+                                        <select name="klarna_invoice_birthdate_month[id]" class="txtBoxStyle">
+                                            <option value="">month</option>
+                                            [klarna_birthdate_month]
+                                        </select>
+                                        <select name="klarna_invoice_birthdate_year[id]" class="txtBoxStyle">
+                                            <option value="">year</option>
+                                            [klarna_birthdate_year]
+                                        </select>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: KLARNA_INVOICE_BD-->
+                                    <div id="klarna_invoiceterms"></div>
+                                    <script type="text/javascript">
+                                            var klarnaterms = new Klarna.Terms.Invoice({
+                                                    el: 'klarna_invoiceterms',
+                                                    eid: [klarna_storeid],
+                                                    country: '[klarna_country]',
+                                                    charge: 0
+                                            })
+                                    </script> 
+                                    <!--START: KLARNA_INVOICE_DE_BLOCK-->
+                                    <div id="afm_banner">
+                                        <input type="checkbox" name="klarna_afm_de_invoice" value="1" />
+                                        Mit der ?bermittlung der f?r die Abwicklung der gew?hlten Klarna Zahlungsmethode und einer Identit?ts- und 
+                                        Bonit?tspr?fung erforderlichen Daten an Klarna bin ich einverstanden. Meine <a href="https://online.klarna.com/consent_de.yaws" target="_blank">Einwilligung</a> kann ich jederzeit mit Wirkung f?r die Zukunft widerrufen. 
+                                        Es gelten die AGB des H?ndlers. </div>
+                                    <!--END: KLARNA_INVOICE_DE_BLOCK-->
+                                </div>
+                            </div>
+                            <!--END: KLARNA_INVOICE--> 
+                            
+                            <!--START: KLARNA_ACCOUNT-->
+                            <div class="klarnaAccount">
+                                <div class="klarna-account-radio">
+                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]account');setKlarnaMethod('ACCOUNT');" name="payment" type="radio" value="online-[id]-klarna" [FIRSTOPTIONACCOUNTCHECKED] />
+                                </div>
+                                <div class="klarna-account-logo"><img src="[klarna_account_logo]?eid=[klarna_storeid]&width=80" alt="Klarna Account Logo" /> <span>part pay from [klarna_monthly_cost] / month</span></div>
+                                <div class="clearfix"></div>
+                                <div class="klarna-account-details">In order to finalize your purchase, please provide the following additional details:</div>
+                                <div id="divPaymentOption[id]account" name="divPaymentOption" style="display:none;"> 
+                                    <!--START: KLARNA_ACCOUNT_GD-->
+                                    <div class="klarnaField">
+                                        <div class="label">Gender:</div>
+                                        <input type="radio" value="1" name="klarna_account_gender[id]" id="klarna_male" />
+                                        <label for="klarna_male">Male</label>
+                                        <input type="radio" value="0" name="klarna_account_gender[id]" id="klarna_female" />
+                                        <label for="klarna_female">Female</label>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: KLARNA_ACCOUNT_GD--> 
+                                    <!--START: KLARNA_ACCOUNT_SSN-->
+                                    <div class="klarnaField">
+                                        <div class="label">Personal Number:</div>
+                                        <input type="text" name="klarna_account_ssn[id]" value="" size="10" maxlength="14" class="txtBoxStyle" />
+                                        <span>([klarna_po_format])</span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: KLARNA_ACCOUNT_SSN--> 
+                                    <!--START: KLARNA_ACCOUNT_BD-->
+                                    <div class="klarnaField">
+                                        <div class="label">Birth Date:</div>
+                                        <select name="klarna_account_birthdate_day[id]" class="txtBoxStyle">
+                                            <option value="">day</option>
+                                            [klarna_birthdate_day]
+                                        </select>
+                                        <select name="klarna_account_birthdate_month[id]" class="txtBoxStyle">
+                                            <option value="">month</option>
+                                            [klarna_birthdate_month]
+                                        </select>
+                                        <select name="klarna_account_birthdate_year[id]" class="txtBoxStyle">
+                                            <option value="">year</option>
+                                            [klarna_birthdate_year]
+                                        </select>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <!--END: KLARNA_ACCOUNT_BD-->
+                                    <div id="klarna_accountterms"></div>
+                                    <script type="text/javascript">
+                                            var klarnaterms2 = new Klarna.Terms.Account({
+                                                    el: 'klarna_accountterms',
+                                                    eid: [klarna_storeid],
+                                                    country: '[klarna_country]',
+                                                    charge: 0
+                                            })  
+                                    </script> 
+                                    <!--START: KLARNA_ACCOUNT_DE_BLOCK-->
+                                    <div id="afm_banner">
+                                        <input type="checkbox" name="klarna_afm_de_account" value="1" />
+                                        Mit der ?bermittlung der f?r die Abwicklung der gew?hlten Klarna Zahlungsmethode und einer Identit?ts- und 
+                                        Bonit?tspr?fung erforderlichen Daten an Klarna bin ich einverstanden. Meine <a href="https://online.klarna.com/consent_de.yaws" target="_blank">Einwilligung</a> kann ich jederzeit mit Wirkung f?r die Zukunft widerrufen. 
+                                        Es gelten die AGB des H?ndlers. </div>
+                                    <!--END: KLARNA_ACCOUNT_DE_BLOCK--> 
+                                    <!--START: KLARNA_ACCOUNT_NL_BLOCK-->
+                                    <div id="afm_banner"> <img src="assets/templates/common/images/balk_afm3-jpg.jpg" width="320" /> </div>
+                                    <!--END: KLARNA_ACCOUNT_NL_BLOCK-->
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--END: KLARNA_ACCOUNT-->
+                        </div>
+                        <!--END: KLARNA-->
+
+                        <!--START: CCGATEWAY-->
+                        <div class="ccGateway col-md-12">
+                            <label for="online-[id]" style="display:block;">
+                                <div class="col-md-1 col-sm-1 col-xs-2 padd-top">
+                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                                </div>
+                                <div class="col-md-11 col-sm-11 col-xs-10">
+                                    <h6 class="row">
+                                        <span class="col-md-4">[payment_description] </span><img class="col-md-4" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png"> 
+                                    </h6>
+                                </div>
+                            </label>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" class="col-md-offset-1">
+                                <hr />
+                                <div class="desc-message">[payment_description_message]</div>
+                                <div class="ccgField form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <label for="creditcardnumber">[CustomerInfo_creditcardnumber]</label>
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--START: ccStartDate-->
+                                <div class="ccgField form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-6">
+                                        <label for="creditstartdate">[CustomerInfo_creditstartdate]</label>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-4">
+                                        <select name="ff[id]_ocardstartmonth" class="txtBoxStyle form-control">
+                                            <option value=""></option>
+                                            [monthlist]
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-4">
+                                        <select name="ff[id]_ocardstartyear" class="txtBoxStyle form-control">
+                                            <option value=""></option>
+                                            [yearlistdtstart]
+                                        </select>
+                                    </div>
+                                    (Maestro, Solo and Amex only) <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: ccStartDate-->
+                                <div class="ccgField form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <label for="creditexpiration">
+                                            [CustomerInfo_creditexpiration]
+                                        </label>
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-6">
+                                        <select name="ff[id]_ocardexpiresmonth" class="txtBoxStyle form-control">
+                                            [monthlist]
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-6">
+                                        <select name="ff[id]_ocardexpiresyear" class="txtBoxStyle form-control">
+                                            [yearlist]
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="ccgField form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <label for="cardtype">[CustomerInfo_cardtype]</label>
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <select name="ff[id]_ocardtype" class="txtBoxStyle form-control">
+                                            [cctype]
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--START: ccIssueNumber-->
+                                <div class="ccgField form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <label for="creditissuenumber">[CustomerInfo_creditissuenumber]</label>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <input type="text" name="ff[id]_ocardissue" maxlength="10" size="3" class="txtBoxStyle form-control" />
+                                    </div>
+                                    (Maestro and Solo only) <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: ccIssueNumber-->
+                                <div class="ccgField form-group">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <label for="cvv2">CVV2</label>
+                                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <input type="text" name="ff[id]_ocardcvv2" size="3" class="txtBoxStyle form-control" />
+                                        <!--START: cvvrequired--><input type="hidden" name="hdnCvvRequired" id="hdnCvvRequired" value="1" />
+                                        <!--END: cvvrequired--> 
+                                        <a href="#" onclick="javascript:window.open('assets/templates/common/images/cvv2.gif','new','menubars=no, resizable=no, statusbar=no, titlebar=no, width=300, height=500');" class="cvv2-help">What's this?</a>
+                                    <div class="clearfix"></div>
+                                    </div>
+                                    
+                                </div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                    </div>
-                    <!--END: MILITARYSTAR--> 
+                        <!--END: CCGATEWAY-->
 
-                    <!--START: GEMONEY-->
-                    <div class="geMoney col-md-12">
-                        <h4>
-                            <label for="online-[id]">
-                            <input type="hidden" value="1" name="ff[id]_isstarcard" />
-                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
-                                    [payment_description]
-                            </label>
-                        </h4>
-                        <div class="clearfix"></div>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-                            <div class="desc-message">[payment_description_message]</div>
-                            <div class="gmField">
-                                <label for="ff[id]_ocardno">[CustomerInfo_creditcardnumber]</label>
-                                <input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" />
-                                <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                                <input type="hidden" name="ff[id]_ocardexpiresmonth" value="12" />
-                                <input type="hidden" name="ff[id]_ocardexpiresyear" value="49" />
+                        <!--START: PPEXPRESS-->
+                        <div class="ppExpress col-md-12">
+                            
+                            <div class="ppe-radio form-group">
+                                <div class="col-md-1 col-sm-1 col-xs-2 padd-top">
+                                    <input name="payment" id="online-[id]-ppe" onclick="javascript:checkoutSwitch(true);window.location.href='paypal_express.asp?ch=0';" type="radio" value="online-[id]" />
+                                </div>
+                                <div class="ppe-logo col-md-11 col-sm-11 col-xs-10">
+                                    <h6>[payment_description]</h6>
+                                    <a href="javascript:document.getElementById('online-[id]-ppe').click();">
+                                        <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--END: PPEXPRESS--> 
+
+                        <!--START: AUTHNETCIMBLOCK-->
+                        <div class="authneticIMBlock col-md-12">
+                            <h4>
+                                <label for="online-[id]-CIM">
+                                        <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]CIM');" id="online-[id]-CIM" name="payment" type="radio" value="online-[id]-CIM" [FIRSTOPTIONCHECKED] />
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div class="clearfix"></div>
+                            <div id="divPaymentOption[id]CIM" name="divPaymentOptionCIM" style="display:none;"> 
+                                <!--START: authCIMBlock-->
+                                <div class="cimField">
+                                    <label for="use-creditcard-on-file">[checkout3_use-creditcard-on-file]</label>
+                                    <select name="authCIMProfileID" id="authCIMProfileID" class="txtBoxStyle form-control">
+                                        <!--START: authCIMPaymentProfileItem-->
+                                        <option value="authCIMProfileID_[custProfId]_[custPmntProfId]_[authCIMProfileID_cardlastdigits]_[authCIMProfileID_cardexp]"> [checkout3_creditcard-last-digits]: [authCIMProfileID_cardlastdigits] / [CustomerInfo_creditexpiration]: [authCIMProfileID_cardexp]</option>
+                                        <!--END: authCIMPaymentProfileItem-->
+                                    </select>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: authCIMBlock--> 
+                            </div>
+                        </div>
+                        <!--END: AUTHNETCIMBLOCK-->
+
+                        <!--START: MILITARYSTAR-->
+                        <div class="militaryStar col-md-12">
+                            <h4>
+                                <label for="online-[id]">
+                                <input type="hidden" value="1" name="ff[id]_isstarcard" id="ff[id]_isstarcard" />
+                                        <input  onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div class="clearfix"></div>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                <div class="desc-message">[payment_description_message]</div>
+                                <div class="msField">
+                                    <label for="ff[id]_ocardno">[CustomerInfo_creditcardnumber]</label>
+                                    <input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" />
+                                    <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END: MILITARYSTAR--> 
+
+                        <!--START: GEMONEY-->
+                        <div class="geMoney col-md-12">
+                            <h4>
+                                <label for="online-[id]">
+                                <input type="hidden" value="1" name="ff[id]_isstarcard" />
+                                        <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div class="clearfix"></div>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                <div class="desc-message">[payment_description_message]</div>
+                                <div class="gmField">
+                                    <label for="ff[id]_ocardno">[CustomerInfo_creditcardnumber]</label>
+                                    <input type="text" onchange="clearContent(this);" name="ff[id]_ocardno" size="30" class="txtBoxStyle form-control" />
+                                    <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                                    <input type="hidden" name="ff[id]_ocardexpiresmonth" value="12" />
+                                    <input type="hidden" name="ff[id]_ocardexpiresyear" value="49" />
+                                    <div class="clearfix"></div>
+                                </div>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: GEMONEY--> 
+                        <!--END: GEMONEY--> 
 
-                    <!--START: CHECKGATEWAY-->
-                    <div class="chkGateway col-md-12">
-                        <h4>
-                        <label for="online-[id]">
-                        <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
-                        [payment_description]
-                        </label>
-                        </h4>
-                        <div class="clearfix"></div>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-                        <div class="desc-message">[payment_description_message]</div>
-                        <div class="chkField">
-                        <label for="ff[id]_ochecktype">[CustomerInfo_check-type]</label>
-                        <select name="ff[id]_ochecktype" class="txtBoxStyle form-control">
-                        [checktypelist]
-                        </select>
-                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="chkField">
-                        <label for="ff[id]_ocheckaccttype">[CustomerInfo_check-acct-type]</label>
-                        <select name="ff[id]_ocheckaccttype" class="txtBoxStyle form-control">
-                        [checkaccttypelist]
-                        </select>
-                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="chkField">
-                        <label for="ff[id]_ocheckrouting">[CustomerInfo_check-routing]</label>
-                        <input type="text" name="ff[id]_ocheckrouting" maxlength="9" size="10" class="txtBoxStyle form-control" />
-                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="chkField">
-                        <label for="ff[id]_ocheckaccount">[CustomerInfo_check-acct]</label>
-                        <input type="text" name="ff[id]_ocheckaccount" maxlength="30" size="10" class="txtBoxStyle form-control" />
-                        <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
-                        <div class="clearfix"></div>
-                        </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: CHECKGATEWAY--> 
-                
-                    <!--START: LINKGATEWAY-->
-                    <div class="linkGateway col-md-12">
-                        <h4>
+                        <!--START: CHECKGATEWAY-->
+                        <div class="chkGateway col-md-12">
+                            <h4>
                             <label for="online-[id]">
-                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
-                                    [payment_description]
+                            <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                            [payment_description]
                             </label>
-                        </h4>
-                        <div class="clearfix"></div>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-                            <div class="desc-message">[payment_description_message]</div>
-                            <div class="payment-desc">Pay [payment_description]</div>
+                            </h4>
                             <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: LINKGATEWAY--> 
-
-                    <!--START: ELAYAWAYGATEWAY-->
-                    <div class="elayawayGateway col-md-12">
-                        <h4>
-                            <label for="online-[id]">
-                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
-                                    [payment_description]
-                            </label>
-                        </h4>
-                        <div class="clearfix"></div>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
                             <div class="desc-message">[payment_description_message]</div>
-                            <div class="divElayaway"><a name="eLayAway"></a> <a onclick="eLayaway.button_click({amount:'[lay_order_total]', 
-                        merchant_name:'[company_name]',
-                        max_lay_length: [max_lay_length],
-                        eci_form: 'eci_form',
-                        months_field: 'months',
-                        payment_frequency_field: 'payment_frequency',
-                        currency_code:'[currency_code]'}, event);" href="javascript:void(0);">Select Term</a>
-                                <div name="divElayawayInfo" id="divElayawayInfo"></div>
+                            <div class="chkField">
+                            <label for="ff[id]_ochecktype">[CustomerInfo_check-type]</label>
+                            <select name="ff[id]_ochecktype" class="txtBoxStyle form-control">
+                            [checktypelist]
+                            </select>
+                            <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                            <div class="clearfix"></div>
+                            </div>
+                            <div class="chkField">
+                            <label for="ff[id]_ocheckaccttype">[CustomerInfo_check-acct-type]</label>
+                            <select name="ff[id]_ocheckaccttype" class="txtBoxStyle form-control">
+                            [checkaccttypelist]
+                            </select>
+                            <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                            <div class="clearfix"></div>
+                            </div>
+                            <div class="chkField">
+                            <label for="ff[id]_ocheckrouting">[CustomerInfo_check-routing]</label>
+                            <input type="text" name="ff[id]_ocheckrouting" maxlength="9" size="10" class="txtBoxStyle form-control" />
+                            <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                            <div class="clearfix"></div>
+                            </div>
+                            <div class="chkField">
+                            <label for="ff[id]_ocheckaccount">[CustomerInfo_check-acct]</label>
+                            <input type="text" name="ff[id]_ocheckaccount" maxlength="30" size="10" class="txtBoxStyle form-control" />
+                            <img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" />
+                            <div class="clearfix"></div>
+                            </div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!--END: ELAYAWAYGATEWAY--> 
-
-                    <!--START: CUSTOM-->
-                    <div class="clearfix"></div>
-                    <div class="customGateway col-md-12">
-                        <label for="offline-[id]" style="display:block;">
-                            <div class="col-md-1 col-sm-1 col-xs-2 padd-top">
-                                <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="offline-[id]" name="payment" type="radio" value="offline-[id]" [FIRSTOPTIONCHECKED] />
-                            </div>
-                            <div class="col-md-11 col-sm-11 col-xs-10">
-                                <h6>[payment_type]</h6>
-                            </div>
-                        </label>
-                        <div class="clearfix"></div>
-                        <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
-                            <div class="payment-desc col-md-offset-1">[payment_description]</div>
-                            <!--START: CUSTOM_FIELD-->
-                            <div class="custField col-md-offset-1">
-                                <div class="cust-input">[InputName]</div>
-                                <div class="cust-field">[field]</div>
+                        <!--END: CHECKGATEWAY--> 
+                    
+                        <!--START: LINKGATEWAY-->
+                        <div class="linkGateway col-md-12">
+                            <h4>
+                                <label for="online-[id]">
+                                        <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div class="clearfix"></div>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                <div class="desc-message">[payment_description_message]</div>
+                                <div class="payment-desc">Pay [payment_description]</div>
                                 <div class="clearfix"></div>
                             </div>
-                            <!--END: CUSTOM_FIELD-->
                             <div class="clearfix"></div>
                         </div>
+                        <!--END: LINKGATEWAY--> 
+
+                        <!--START: ELAYAWAYGATEWAY-->
+                        <div class="elayawayGateway col-md-12">
+                            <h4>
+                                <label for="online-[id]">
+                                        <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="online-[id]" name="payment" type="radio" value="online-[id]" [FIRSTOPTIONCHECKED] />
+                                        [payment_description]
+                                </label>
+                            </h4>
+                            <div class="clearfix"></div>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                <div class="desc-message">[payment_description_message]</div>
+                                <div class="divElayaway"><a name="eLayAway"></a> <a onclick="eLayaway.button_click({amount:'[lay_order_total]', 
+                            merchant_name:'[company_name]',
+                            max_lay_length: [max_lay_length],
+                            eci_form: 'eci_form',
+                            months_field: 'months',
+                            payment_frequency_field: 'payment_frequency',
+                            currency_code:'[currency_code]'}, event);" href="javascript:void(0);">Select Term</a>
+                                    <div name="divElayawayInfo" id="divElayawayInfo"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--END: ELAYAWAYGATEWAY--> 
+
+                        <!--START: CUSTOM-->
                         <div class="clearfix"></div>
+                        <div class="customGateway col-md-12">
+                            <label for="offline-[id]" style="display:block;">
+                                <div class="col-md-1 col-sm-1 col-xs-2 padd-top">
+                                    <input onclick="javascript:checkoutSwitch(false);controlDivPayment('[id]');" id="offline-[id]" name="payment" type="radio" value="offline-[id]" [FIRSTOPTIONCHECKED] />
+                                </div>
+                                <div class="col-md-11 col-sm-11 col-xs-10">
+                                    <h6>[payment_type]</h6>
+                                </div>
+                            </label>
+                            <div class="clearfix"></div>
+                            <div id="divPaymentOption[id]" name="divPaymentOption" style="display:none;">
+                                <div class="payment-desc col-md-offset-1">[payment_description]</div>
+                                <!--START: CUSTOM_FIELD-->
+                                <div class="custField col-md-offset-1">
+                                    <div class="cust-input">[InputName]</div>
+                                    <div class="cust-field">[field]</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: CUSTOM_FIELD-->
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--END: CUSTOM-->
                     </div>
-                    <!--END: CUSTOM-->
 
                     <div id="divCheckoutQuestionsFake" class="panel-checkout col-md-12">
                         <div class="chkQuestions col-md-12"> 
