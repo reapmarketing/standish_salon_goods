@@ -1,11 +1,24 @@
 (function($) {
 
   optTestNum = '';
-
   optTestRunning = false;
 
+	productPageTest = function() {
+		 // Only activate if exp # is 9173926467
+		window.optimizely = window.optimizely || [];
+		var isTestActivated = false;
 
-    /* Video Utility Functions */
+		if (window.optimizely.data.state.activeExperiments.length > 0) {
+			if (window.optimizely.activeExperiments.indexOf("9173926467") > -1) {
+				var experimentID = "9173926467";
+				var variationID = window.optimizely.data.state.variationIdsMap[experimentID];
+				console.log(variationID);
+				isTestActivated = variationID == "9181684539";
+			}
+		}
+	}
+
+	/* Video Utility Functions */
   var getData = function(embed_code) {
     // http://fast.wistia.net/oembed?url=https%3A%2F%2Fsupport.wistia.com%2Fmedias%2F26sk4lmiix&embedType=async&popover=true
     var baseUrl = "https://fast.wistia.com/oembed/?url=";
@@ -396,7 +409,7 @@
   function init() {
 
     preliminaryFab();
-
+	productPageTest();
       // add  property to instance of model
 
 
