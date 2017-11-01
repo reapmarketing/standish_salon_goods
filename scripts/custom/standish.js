@@ -63,9 +63,17 @@
 
   Standish.CheckAndShowFinancingCheckout = function() {
     if (Standish.checkCookie('financing-set')) {
+      $('#divPaymentMethods > h3').hide();
       $('#sameAsBilling').click();
       $('.rightCol.shipping').hide();
+
+ 
+      $('#divPaymentOption51 h6').text('Finance This Order');
+      $('#divPaymentOption51 .payment-desc').text('Standish partners with multiple 3rd party lenders to provide ways for you to buy now, pay later. By checking this button you are requesting we review the total order and amount needed to provide you with the best lenders to place an official credit or income based application with.');
+
+      $('.chk-questions-section .checkbox').html('<label class="checkbox"><input type="checkbox" name="cq1OPTREQ" class="txtBoxStyle" value="Shipping &amp; Receiving"><img src="assets/templates/common/images/error2.gif" width="12" height="12"> By purchasing you agree to all of Standish terms and policy listed under <a href="/why-standish">Why Buy Standish</a></label>');
       $('#checkoutSinglePage > div > h2 > span').text('Order Review For Financing');
+
       $('#checkout-shipping-method-info').hide();
       $('.divPayment--inner > div:not(.customGateway:last-of-type)').hide();
       $(".customGateway:last-of-type input[type=radio]").click();
