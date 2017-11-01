@@ -1,0 +1,169 @@
+.catalog-banner {
+	margin-top: -20px;
+	position: relative;
+}
+
+.catalog-banner h2 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 7%;
+	color: #FFF;
+	font-size: 2.6vw;
+}
+
+.catalog-banner h1 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 20%;	
+	color: #ff7f50;
+	font-size: 3.5vw;
+}
+
+
+.catalog-content h3,
+.catalog-desc span {
+	color: #ff7f50;
+}
+
+.catalog-desc span {
+	display: block;
+	font-weight: bold;
+}
+
+.catalog-content strong {
+	color: #000;
+}
+
+.catalog-row {
+	margin-top: 20px;
+}
+
+.catalog-desc {
+	margin-bottom: 20px;
+}
+
+.catalog-form-wrap {
+	padding: 20px;
+}
+
+.catalog-form h3,
+.catalog-form span {
+	display: block;
+	text-align: center;
+	color: #594072;
+}
+.catalog-form span {
+	font-weight: bold;
+}
+
+.catalog-form {
+	background: #e0e0e0;
+	border: 1px solid #e0e0e0;
+	border-radius: 2px;
+	margin-top: -150px;
+}
+
+@media (max-width: 768px) {
+	.catalog-form {
+		margin-top: 0px;
+	}
+	
+}
+
+.catalog-form .hs-button.primary {
+	display: block;
+	background: #594072;
+	width: 88%;
+	border-color: transparent;
+	font-family: "PT Serif","Times New Roman",Times,serif;
+	font-size: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.catalog-form .hbspt-form {
+	padding: 10px;
+}
+
+.catalog-events {
+	position: relative;
+	margin-top: 20px;
+}
+
+.catalog-events .event-list {
+	position: absolute;
+	top: 13%;
+	right: 0;
+}
+
+.catalog-events .col-md-12 {
+	text-align: right;
+	color: #ff7f50;
+	font-size: 22px;
+	margin-bottom: 5px;
+	font-family: "PT Serif","Times New Roman",Times,serif;
+}
+
+.catalog-events .col-md-12 img {
+	margin-left: 5px;
+}
+
+.design-events {
+	position: relative;
+	margin-top: 20px;
+}
+
+.design-events .event-list {
+	position: absolute;
+	top: 10%;
+	right: 0;
+}
+
+.design-events .col-md-12 {
+	text-align: right;
+	color: #ff7f50;
+	font-size: 22px;
+	margin-bottom: 5px;
+	font-family: "PT Serif","Times New Roman",Times,serif;
+}
+
+.design-events .col-md-12 img {
+	margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+	.catalog-banner h2 {
+		top: 7%;
+		font-size: 5vw;
+	}
+
+	.catalog-banner h1 {
+		top: 30%;	
+		font-size: 6vw;
+	}
+	.catalog-form {
+		margin-top: 0px;
+	}
+	.catalog-events .event-list,
+	.design-events .event-list {
+		position: relative;
+		top: 0;
+	}
+	.catalog-events .col-md-12,
+	.design-events .col-md-12 {
+		text-align: left;
+		font-size: 17px;
+	}
+	.catalog-events .col-md-12 img,
+	.design-events .col-md-12 img {
+		display: block;
+		clear: both;
+	}
+	.catalog-events > img,
+	.design-events > img {
+		margin-bottom: 15px;
+	}
+	
+}

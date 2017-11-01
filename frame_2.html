@@ -1,0 +1,860 @@
+  <!doctype html>
+<html>
+  <head>
+  <title>[TITLE]</title>
+    <meta name="google-site-verification" content="oNVXhQhAbUqSkzWN_iojtz9flX9pgrMngn7B9usgRaQ" />
+    <!--Insert Meta tags at top -->
+    [META]
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+
+    <!-- OPTIMIZELY and jQuery important -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script async type="text/javascript" src="assets/templates/[template]/dist/js/jquery.migrate.min.js"></script>
+     <!-- utility scripts -->
+    <script type="text/javascript" src="assets/templates/common/js/utilities.js"></script>
+
+    <!-- OPTIMIZELY note:needs to stay in header in order to work properly -->
+    <script src="//cdn.optimizely.com/js/2743921241.js"></script>
+
+    <!-- CSS -->
+    <style>
+    /* Not sure what this is for... */
+    html.wait{
+      cursor: wait !important;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    </style>
+
+
+    <link rel="shortcut icon" href="assets/images/Favicon/favicon.ico"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/templates/[template]/bower_components/sidr/dist/stylesheets/jquery.sidr.light.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" />
+
+    <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.2.0.1.min.css?cachebuster=89343augsdfd25sfsad273" />
+
+    <!-- <link rel="stylesheet" href="assets/templates/[template]/dist/css/main.css?cachebuster=89327498324273" /> -->
+
+
+    <link rel="stylesheet" href="assets/templates/common/quicksearch/quicksearch.css" />
+
+    <!-- IE hacks -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css"/>
+    <link rel="stylesheet" href="/assets/templates/[template]/style/vex.css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/style/vex-theme-flat-attack.css" />
+    <link rel="stylesheet" href="/assets/templates/[template]/style/animate.min.css" />
+    <!-- jQuery MagnificPopup CSS -->
+    <link rel="stylesheet" href="/assets/templates/[template]/style/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <!-- <link href="/assets/templates/[template]/css/quick_view.css" rel="stylesheet" type="text/css" /> -->
+
+    <!-- Josh's CSS -->
+    <link rel="stylesheet" href="/assets/templates/[template]/style/stylesheet.css" rel="stylesheet" type="text/css" />
+
+    <!--START: site scripts -->
+    <!-- JS -->
+    <script asnyc type="text/javascript">
+      var account_greeting = '[account_greeting]';
+      var username = '[username]';
+      (function($) {
+        $(function() {
+          // Change Account link when user is logged in.
+          if ( username !== 'Guest' ) {
+            $('.account-button.login').html('<i class="fa fa-sign-out"></i> Logout of your account');
+            $('.account-button.login').attr('href', '/logout.asp');
+          }
+        });
+      })(jQuery);
+    </script>
+
+    <!-- schema.org site search optimization options -->
+    <script type="application/ld+json">{"@context": "http://schema.org","@type": "WebSite","url": "https://www.standishsalongoods.com","potentialAction": {"@type": "SearchAction","target": "https://www.standishsalongoods.com/search.asp?keyword={search_term_string}","query-input": "required name=search_term_string"}}</script>
+
+    <!-- Javascript Support -->
+    <script asnyc type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+    <!-- <script asnyc type='text/javascript' src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> -->
+
+    <!-- Equal Heights -->
+    <script asnyc type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.6.0/jquery.matchHeight-min.js"></script>
+    <!-- Images loaded if needed -->
+    <script asnyc src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <!--  quick search search the site -->
+    <script asnyc type="text/javascript" src="assets/templates/common/quicksearch/jquery.quicksearch.js"></script>
+    <!-- Hubspot Form Script ~ necessary -->
+    <script asnyc charset="utf-8" src="https://js.hubspot.com/forms/current.js"></script>
+
+    <!-- MINIFIED & UGLIFIED -->
+    <!-- [3RD PARTY SCRIPTS: Bootstrap | sidr | slick | instafeed | masonry] [CUSTOM SCRIPTS: scrollDepth | hacks | standish - standish, mobilemenu, sitelisting, homepage, templateswitcher | hubspot-newsletter-sign-up-form | template-slug -->
+
+    <script type='text/javascript'>
+      if ( typeof $.fn.modal !== 'undefined' ) {
+        $.fn.bootstrapModal = $.fn.modal.noConflict();
+      }
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  </head>
+  <body>
+    <script type='text/javascript'>
+      if ( typeof $.fn.bootstrapModal !== "undefined" ) {
+        $.fn.modal = $.fn.bootstrapModal.noConflict();
+      }
+    </script>
+  <script type="text/javascript">
+  // Optimizely Universal Analytics Integration Code
+  window.optimizely = window.optimizely || [];
+  window.optimizely.push("activateUniversalAnalytics");
+  </script>
+  <!-- Scroll Tracking Code Tracks scrolling and sends to GA -->
+  <!-- <script type="text/javascript" src="/assets/templates/[template]/scripts/custom/scroll-tracking.js"></script> -->
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPSN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PPSN');</script>
+  <!-- End Google Tag Manager -->
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1474161279271975',
+        xfbml      : true,
+        version    : 'v2.9'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+    <header>
+        <div id="fb-root"></div>
+        <!-- Header -->
+        <div class="hello-container center-block col-md-12 hidden-sm hidden-xs" data-spy="affix" data-offset-top="60" data-offset-bottom="200" style="opacity: .04;">
+              <div class="hello container">
+                <div class="col-md-8 hbar_content hidden-xs" style="margin-top:-3px;">
+                  <p style="margin-left: 0px;color:white;" class="padd-top">
+                    <strong>Free Shipping</strong> with LiftGate Service. <a style="margin-left:2.5rem;" href="https://standishsalongoods.com/standish-salon-equipment-sale?__hstc=125570901.9f34fd2d1106d038cd721ac0800bd14a.1446766758506.1448897028003.1448990054135.4&amp;__hssc=125570901.1.1448990054135&amp;__hsfp=2859420846" class="btn btn-default btn-x-light btn-sm uppercase design-text">Learn More</a></p>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-right" style="margin-top:-14px;">
+                      <a href="/view_cart.asp"><button class="button cart large btn"><i class="fa fa-shopping-cart"></i><span class="hidden-xs hidden-sm">Your Cart</span><span class="cart-number">[ITEMSINCART]</span></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hello-container hello-container-mobile center-block col-sm-12 hidden-md hidden-lg" data-spy="affix" data-offset-top="60" data-offset-bottom="200" style="opacity: .04;">
+          <p class="hello-mobile-text pull-left"><a href=""><strong>FREE SHIPPING</strong> with LiftGate Services</a></p>
+          <p class="hello-mobile-text pull-right"><a href="https://standishsalongoods.com/standish-salon-equipment-sale?__hstc=125570901.9f34fd2d1106d038cd721ac0800bd14a.1446766758506.1448897028003.1448990054135.4&amp;__hssc=125570901.1.1448990054135&amp;__hsfp=2859420846" style="text-decoration: underline;"><strong>Learn More</strong></a></p>
+        </div>
+
+        </div>
+        <div class="header center-block row">
+            <div id="mobile-menu" class="hidden-md hidden-lg col-sm-12" style="">
+              <div class="row">
+                <div class="site-branding col-sm-9 col-xs-9">
+                  <a href="/">
+                    <h2 class="logo">Standish Salon Furniture</h2>
+                  </a>
+                </div>
+                <div class="site-account col-sm-3 col-xs-3 text-right">
+                  <a href="/myaccount.asp"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+            <div id="mobile-menu-json" class="hidden"></div>
+
+            <div class="container hidden-sm hidden-xs">
+
+                <div class="col-md-4 no-padd">
+                  <div class="site-branding col-md-12">
+                    <a href="/">
+                      <h2 class="logo">Standish Salon Furniture</h2>
+                    </a>
+                  </div>
+                  <div class="credentials-icons col-md-12 no-padd">
+                    <div class="credentials-logo header-norton"></div>
+                    <!-- <div class="credentials-logo header-boa"></div> -->
+                    <div class="credentials-logo header-pba"></div>
+                    <div class="credentials-logo header-bravo"></div>
+                    <div class="credentials-logo header-bbb"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-8 text-right padd-top no-padd">
+                  <div id="made-usa-block" class="inline no-padd">
+                    <a href="/quality"><img src="assets/templates/[template]/images/made-usa-custom-available.png"/></a>
+                  </div>
+                  <div id="call-sales-team" class="inline no-padd">
+                    <img src="assets/templates/[template]/images/call-sales-team.jpg"/>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navigation navbar hidden-xs hidden-sm">
+      <div class="container">
+        <div class="main-navigation">
+          <ul class="nav-menu">
+            <li class=""><a class="standishyellow-text" href="/standish-salon-equipment-sale">Deals</a>
+            <ul class="sub-menu">
+              <li><a title="Salon Equipment Sales and Promotions" href="/standish-salon-equipment-sale">Promotions and Discounts</a></li>
+              <li><a title="Salon Furniture Items on Sale" href="/salon-furniture-sale-and-deals">Items on Sale</a></li>
+            </ul>
+            </li><li class="equipment-menu"><a title="Shop Salon Equipment" href="#">Salon</a>
+              <div class="column col1">
+                <ul class="sub-menu eqhgt">
+                  <li><a title="Salon Furniture Packages" href="/salon-furniture-packages">Packages</a></li>
+                  <li><a title="Hair Salon Chairs" href="/hair-salon-chairs">Chairs</a></li>
+                  <li><a title="Salon Styling Stations" href="/salon-styling-stations">Stations</a></li>
+                  <li><a title="Salon Styling Stations" href="/salon-shampoo-area">Shampoo</a></li>
+                  <li><a title="Salon Dryer Chairs" href="/salon-hair-dryers">Dryers</a></li>
+                  <li><a title="Salon Reception Furniture" href="/salon-reception-furniture">Reception</a></li>
+                  <li><a title="Hair Salon Color Bars" href="/hair-salon-color-bars">Color Bars</a></li>
+                  <li><a title="Sunless Tanning Equipment" href="/sunless-tanning-equipment">Sunless Tanning</a></li>
+                </ul>
+              </div>
+
+              <div class="column col2">
+                <ul class="sub-menu eqhgt">
+                  <li><a title="Replacement Parts" href="/replacement-parts">Replacement Parts</a></li>
+                  <li><a title="Kurative Salon Floor Mats" href="/salon-floor-mats">Kurative Floor Mats</a></li>
+                  <li><a title="Salon Trolleys" href="/salon-trolleys">Trays & Trolleys</a></li>
+                  <li><a title="Accessories" href="/salon-supplies-online">Accessories</a></li>
+                  <li><a title="Barber Poles" href="/barber-poles">Barber Poles</a></li>
+                  <li class=""><a title="SALE" href="/salon-furniture-sale-and-deals" style="color: #fff; font-weight: bold;">SALE</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="spa-menu"><a title="Spa Equipment" href="#">Spa</a>
+              <div class="column col1">
+                <ul class="sub-menu eqhgt-g1">
+                  <li><a title="Spa Equipment Packages" href="/spa-equipment-packages">Packages</a></li>
+                  <li><a title="Facial Beds" href="/facial-beds">Facial Beds</a></li>
+                  <li><a title="Massage Beds" href="/massage-chairs-beds">Massage Beds</a></li>
+                  <li><a title="Manicure and Pedicure Equipment" href="/manicure-pedicure-equipment">Mani & Pedi</a></li>
+                  <li><a title="Client and Tech Chairs" href="salon-spa-client-tech-chairs">Chairs</a></li>
+                  <li><a title="Tanning" href="/sunless-tanning-equipment">Tanning</a></li>
+                  <li><a title="Spa Reception Furniture" href="/salon-reception-furniture">Reception</a></li>
+                  <li><a title="Spa Retail Displays" href="/salon-retail-displays">Retail Displays</a></li>
+                </ul>
+              </div>
+              <div class="column col2">
+                <ul class="sub-menu eqhgt-g1">
+                  <li><a title="Pedicure Carts and Trolleys" href="/salon-trays-trolleys">Trolleys & Trays</a></li>
+                  <li><a title="Spa Tools and Equipment" href="/nail-salon-supplies-accessories">Tools & Equipment</a></li>
+                  <li class=""><a title="SALE" style="color: #fff; font-weight: bold;" href="/salon-furniture-sale-and-deals">SALE</a></li>
+                </ul>
+              </div>
+            <li class="tanning-menu"><a title="Tanning" href="#">Tanning</a>
+              <div class="column col1">
+                <ul class="sub-menu eqhgt-g1">
+                  <li><a title="Tanning Packages" href="/sunless-tanning-packages-gift-sets" class="cat">Packages & Gift Sets</a></li>
+                  <li><a title="Tanning Equipment" href="/sunless-tanning-equipment">Equipment</a></li>
+                  <li><a title="Sunless Solution" href="/sunless-tanning-solution-products">Sunless Solution</a></li>
+                  <li><a title="Tanning Retail Products" href="/tanning-retail-products">Retail Products</a></li>
+                  <li><a title="Maintenance & Parts" href="/tanning-equipment-maintenance-and-parts">Maintenance & Parts</a></li>
+                  <li><a title="Tanning Salon Reception Furniture" href="/salon-reception-furniture">Reception</a></li>
+                  <li><a title="Tanning Salon Retail Displays" href="/salon-retail-displays">Retail Displays</a></li>
+                  <li><a title="Tanning Carts and Trolleys" href="/salon-trolleys">Trolleys & Trays</a></li>
+                </ul>
+              </div>
+              <div class="column col2">
+                <ul class="sub-menu eqhgt eqhgt-g1">
+                  <li><a title="Tanning Accessories" href="/salon-supplies-online">Accessories</a></li>
+                  <li><a title="Tanning Artwork" href="/salon-artwork">Artwork</a></li>
+                  <li class=""><a title="SALE" style="color: #fff; font-weight: bold;" href="/salon-furniture-sale-and-deals">SALE</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="brand-menu"><a title="Trusted Salon Brands We Carry" href="#">Brands</a>
+              <div class="column col1">
+                <ul class="sub-menu eqhgt-g2">
+                  <li><a title="Adjust-a-Sink Automatic Sinks" href="/adjust-a-sink">Adjust-a-Sink<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
+                  <li><a title="Andrea Lashes" href="/andrea-lashes">Andrea</a></li>
+                  <li><a title="Belava Pedicure Spas and Equipment" href="/belava">Belava<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a>
+                  </li>
+                  <li><a title="Betty Dain Hair Supplies" href="/betty-dain">Betty Dain</a></li>
+                  <li><a title="Burmax Salon Equipment" href="/burmax">Burmax</a></li>
+                  <li><a title="Cardinal Salon Combs" href="/cardinal-salon-combs">Cardinal</a></li>
+                </ul>
+              </div>
+              <div class="column col2">
+                <ul class="sub-menu eqhgt-g2">
+                  <li><a title="Continuum Pedicure Spas" href="/continuum-pedicure-spas">Continuum<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
+                  <li><a title="Diane Salon Supplies" href="/diane-salon-supplies">Diane</a></li>
+                  <li><a title="Ecoheads Shower Head" href="/ecoheads">Ecoheads<span class="menu-feature dimgray-text standishyellow"><i class="icon icon-star"></i> New</span></a></li>
+                  <li><a title="Fromm Salon Supplies" href="/fromm-salon-supplies">Fromm</a></li>
+                  <li><a title="Graham Professional Beauty Products" href="/graham-professional-beauty-products">Graham</a></li>
+                </ul>
+              </div>
+              <div class="column col3">
+                <ul class="sub-menu eqhgt-g2">
+                  <li><a title="Gulfstream Pedicure and Salon Equipment" href="/gulfstream-pedicure-salon-equipment">Gulfstream</a></li>
+                  <li><a title="Helen of Troy Salon Supplies" href="/helen-of-troy">Helen of Troy</a></li>
+                  <li><a title="Inspire Salon Inspiration Books and Tools" href="/inspire">Inspire</a></li>
+                  <li><a title="Isabel-Cristina Salon Supplies" href="/isabel-cristina">Isabel-Cristina</a></li>
+                  <li><a title="Kaemark American-Made Salon Furnishings" href="/kaemark-salon-furnishings">Kaemark<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
+                  <li><a title="King Salon Supplies" href="/king">King</a></li>
+                </ul>
+              </div>
+              <div class="column col4">
+                <ul class="sub-menu eqhgt-g2">
+                  <li><a title="Kurative Anti-Fatigue Floor Mats" href="/salon-floor-mats">Kurative</a></li>
+                  <li><a title="Maletti Salon Furniture" href="/Maletti_c_126463.html">Maletti <span class="menu-feature dimgray-text standishyellow"><i class="icon icon-star"></i> New</span></a>
+                  <li><a title="Marianna Salon Supplies" href="/marianna">Marianna</a></li>
+                  <li><a title="Norvell Sunless Tanning Equipment" href="/norvell-sunless-tanning-equipment">Norvell Tanning<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
+                  <li><a title="Oakworks American Made Massage Tables" href="/oakworks">Oakworks<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
+                </ul>
+              </div>
+              <div class="column col5">
+                <ul class="sub-menu eqhgt-g2">
+                  <li><a title="One World Inspired Custom Salon Furniture" href="/one-world-inspired-custom-salon-furniture">One World Inspired<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
+                  <li><a title="Partex Towels" href="/partex-towels">Partex</a></li>
+                  <li><a title="Salon Italy" href="/salon-italy">Salon Italy <span class="menu-feature dimgray-text standishyellow"><i class="icon icon-star"></i> New</span></a></li>
+                  <li><a title="Savvy Salon Equipment" href="/savvy-salon-equipment">Savvy</a></li>
+                  <li><a title="Standish Salon Goods" href="/standish">Standish</a></li>
+                  <li><a title="TouchAmerica" href="/TouchAmerica">TouchAmerica<span class="menu-feature dimgray-text standishyellow"><i class="icon icon-star"></i> New</span></a></li>
+                  <li><a title="William Marvy American Made Barber Poles" href="/william-marvy">William Marvy<span class="menu-feature gainsboro dimgray-text"><i class="icon icon-star"></i> USA</span></a></li>
+                </ul>
+              </div>
+            <li><a title="Salon Equipment Financing" href="/salon-equipment-financing">Buy Now, Pay Later</a></li>
+            <li class="why-menu"><a title="Why Buy Standish?" href="#">Why Buy Standish?</a>
+              <ul class="sub-menu">
+                <li class=""><a title="Why Buy Standish?" href="/why-standish">Why Buy Standish?</a></li>
+                <li><a title="Standish Salon Equipment Testimonials" href="/client-testimonials">Testimonials</a></li>
+                <li><a title="Meet the Standish Team" href="/meet-the-team">Meet the Team</a></li>
+                <li><a title="About Shipping" href="/about-shipping">Shipping</a></li>
+                <li><a title="Salon Equipment Warranty" href="/warranty">Warranty</a></li>
+                <li><a title="Salon Furniture Return Policy" href="/return-policy">Return Policy</a></li>
+                <li><a title="FAQ" href="/frequently-asked-questions">FAQ</a></li>
+                <li><a title="Contact Us" href="/contact-us">Contact</a></li>
+              </ul>
+            </li>
+            <li class="freebies-menu"><a title="Freebies" href="#">Freebies</a>
+                <ul class="sub-menu">
+                  <li><a title="Free Catalog Download" href="/catalog">Free Catalog Download</a></li>
+                  <li><a title="Salon space planning" href="/free-salon-space-planning">FREE Layout & Space Planning</a></li>
+                  <li><a title="Salon Equipment Checklist" href="/free-salon-equipment-checklist">FREE Salon Equipment Checklist</a></li>
+                  <li><a title="Guide to Starting a Salon" href="/guide-to-starting-a-salon">FREE Guide to Starting a Salon</a></li>
+                  <li><a title="Salon Showroom Flight Reimbursement" href="/salon-showroom-flight-reimbursement">Fly & Buy Reimbursement</a></li>
+                  <li><a title="Marketing Promotions for Salons" href="/free-salon-promotion">FREE Salon Promotion</a></li>
+                  <li><a title="Salon Industry Blog" href="/blog.asp">Blog</a></li>
+                </ul>
+            </li>
+            <li><a title="Blog" href="/blog.asp">Blog</a></li>
+            <li class="my-account"><a class="" title="Sign into your account to view your orders and add items to your wishlist." href="/myaccount.asp">My Account</a></li>
+            <li class="wishlist"><a alt="Wishlist" title="Wishlist" href="/view_wishlist.asp"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+        </div>
+              <!--main navigation -->
+      </div>
+          <!--container -->
+    </nav>
+
+    <!-- End of Header -->
+    <section class="container catalog-content" id="prime-content">
+    <!-- Main Content -->
+	[content]
+    <!-- End of Main Content -->
+	</section>
+<!--START: username-->
+
+<!--END: username-->
+
+  <!-- Footer -->
+  <footer>
+    <div class="clearfix"></div>
+    <div class="container">
+      <div class="col-md-10 col-md-offset-2">
+        <div id="homepage-badges-list" class="row hidden-xs">
+          <h3 class="coral-text col-md-12">Why Buy Salon and Spa Equipment from Standish?</h3>
+          <a class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-made-usa" title="Made in the USA"><i></i><div class="badge-text"><small>U.S. Items Available</small></div></a>
+
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-free-shipping" title="Free Shipping"><i></i><div class="badge-text"><small>Low Shipping Costs</small></div></a>
+
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-service" title="Personal Service"><i></i><div class="badge-text"><small>Outstanding Service</small></div></a>
+
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-inspected" title="Digital Marketing"><i></i><div class="badge-text"><small>Free Digital Marketing</small></div></a>
+
+          <a style="display:block;color:#696969;" class="col-xs-2 col-md-2-2 col-sm-2 standish-tooltip badge-product badge-home badge-warranty" title="2-5 Yr. Warranty"><i></i><div class="badge-text"><small>2 Yr. Warranty</small></div></a>
+
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <section class="hidden container-fluid client__imspiration-local__wrapper hidden-xs">
+      <div class="col-md-12 client__imspiration-local__title text-center">
+        <h3 class="coral-text text-center">Get Inspiration From Some of Our Loyal Clients</h3>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="client__imspiration-local__row">
+        <div class="client__imspiration-local__row__item text-center">
+          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery1.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery1.jpg" data-lightbox="roadtrip" data-index="1"></div>
+        </div>
+        <div class="client__imspiration-local__row__item text-center">
+          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery2.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery2.jpg" data-lightbox="roadtrip" data-index="2"></div>
+        </div>
+        <div class="client__imspiration-local__row__item text-center">
+          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery3.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery3.jpg" data-lightbox="roadtrip" data-index="3"></div>
+        </div>
+        <div class="client__imspiration-local__row__item text-center">
+          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery4.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery4.jpg" data-lightbox="roadtrip" data-index="4"></div>
+        </div>
+        <div class="client__imspiration-local__row__item text-center">
+          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery5.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery5.jpg" data-lightbox="roadtrip" data-index="5"></div>
+        </div>
+        <div class="client__imspiration-local__row__item text-center">
+          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery6.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery6.jpg" data-lightbox="roadtrip" data-index="6"></div>
+        </div>
+        <div class="client__imspiration-local__row__item text-center">
+          <div class="gallery-slide" style="background-image: url(/assets/images/Salon%20Guide/gallery7.jpg);" data-img-load href="/assets/images/Salon%20Guide/gallery7.jpg" data-lightbox="roadtrip" data-index="7"></div>
+        </div>
+      </div>
+
+      <div class="col-md-12 client__imspiration-local__call-team text-center">
+        <h5>Need help? Call our sales team: <a href="tel:8882718434">888-271-8434</a></h5>
+        <p>Monday through Friday from 9am - 6pm CDT/CST</p>
+      </div>
+    </section>
+
+    <div class="container-fluid bottom-container newsletter-signup">
+      <div class="col-xs-12">
+        <h3 class="col-md-6 col-sm-6">Get Deals Straight to Your Inbox!</h3>
+        <div class="col-md-6 col-sm-6" id="newsletter-target">
+          <!--[if lte IE 8]>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+          <![endif]-->
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              css: '',
+              submitButtonClass: 'button',
+              portalId: '239485',
+              target: '#newsletter-target',
+              formId: '934570fd-43b6-4393-b73a-43cc4bcaea41',
+              onFormReady: function() {
+                $('#newsletter-target label').hide();
+              }
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid footer-content padd-top padd-bottom-10">
+      <div class="container">
+        <div class="col-md-3 col-sm-4 info-block branding">
+          <div class="col-md-12">
+            <div id="standish-logo"><img src="assets/templates/[template]/images/Standish-logo-footer-mobile-transp.png"/></div>
+            <div class="info-block">
+              <address>
+                <a href="https://www.google.com/maps/place/Standish+Salon+Furniture+Showroom/@32.7854244,-96.773118,17z/data=!3m1!4b1!4m2!3m1!1s0x864e98c052142245:0x7a2cd7d8d0feb952">
+                3720 Canton St #104 <br/>
+                Dallas, TX 75226
+                </a>
+              </address>
+              <span class="bold"><a href="tel:1[store_phone]">[store_phone]</a></span>
+            </div>
+          </div>
+          <div class="col-md-12 padd-top">
+            <div id="social-icons" class="social-icons">
+              <a target="_blank" href="http://pinterest.com/standishstuff"><i class="fa fa-pinterest"></i></a>
+              <a target="_blank" href="http://twitter.com/StandishStuff"><i class="fa fa-twitter"></i></a>
+              <a target="_blank" href="http://www.facebook.com/standishstuff"><i class="fa fa-facebook"></i></a>
+              <a target="_blank" href="https://plus.google.com/116238618067398415215/about?gl=us&hl=en"><i class="fa fa-google-plus"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="global-footer" class="col-md-6 hidden-sm hidden-xs">
+        </div>
+
+        <hr class="hidden-md hidden-lg clearfix"/>
+
+        <div class="col-md-3 col-sm-4 footer-logos">
+          <div class="row">
+            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+              <a href="https://probeauty.org/">
+                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/PBASymbol.png">
+              </a>
+            </div>
+            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+              <a href="https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.standishsalongoods.com&lang=en">
+                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/SecureBrowsingSymbol.png">
+              </a>
+            </div>
+            <div class="footer-logo-sm no-padd col-md-4 col-sm-4 col-xs-4 center-block text-center">
+              <a href="http://interestingcompanies.com/portfolio/standish-salon-goods/">
+                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/AwardWinningSymbol.png">
+              </a>
+            </div>
+            <div class="padd-top col-md-12 clearfix"></div>
+            <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top">
+              <a target="_blank" id="bbblink" class="ruhzbus" href="https://www.bbb.org/dallas/business-reviews/beauty-supplies-and-equipment/standish-salon-goods-in-dallas-tx-90402331#bbblogo" title="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX" style="display: block;position: relative;overflow: hidden; width: 100px; height: 45px; margin: 0px; padding: 0px;">
+              <img class="footer-creds" style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/ruhzbus/standish-salon-goods-90402331.png" alt="Standish Salon Goods, LLC, Beauty Supplies & Equipment, Dallas, TX"></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript async src='" + bbbprotocol + 'seal-dallas.bbb.org' + unescape('%2Flogo%2Fstandish-salon-goods-90402331.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+            </div>
+            <div class="footer-logo-sm no-padd col-md-6 col-sm-6 col-xs-6 padd-top center-block text-center">
+              <a href="">
+                <img class="img-responsive center-block footer-creds" src="/assets/templates/[template]/images/BravoSymbol.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </footer>
+
+  <div class="container-fluid bottom-footer text-center standishgray padd-top"><p class="">&copy; 2015-2016 Standish Salon Goods. All rights reserved.</p></div>
+
+
+  <!--START: shopping_cart-->
+    <!--START: shopping_cart_full-->
+    <script type="text/javascript">
+      window.cartTotal = '[CARTTOTAL]';
+      window.cartSubTotal = '[CARTSUBTOTAL]';
+      window.cartNumItems = '[ITEMSINCART]';
+    </script>
+    <!--END: shopping_cart_full-->
+  <!--END: shopping_cart-->
+
+  <!-- begin modal and hidden content -->
+
+  <div id="mobile-menu-modal" class="hidden-lg hidden-md">
+    <div class="rainbow-hamburger" id="contact-tray" style="display:none;">
+      <div class="menu-close-wrapper"> <a class="menu-close"><i class="fa fa-times-circle" aria-hidden="true"></i></a> </div>
+      <div id="call-us" class="hamburger-item row">
+        <a href="tel:[store_phone]">
+          <div class="col-sm-12 col-xs-12">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-phone" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Call us <br> [store_phone]</span></div>
+          </div>
+        </a>
+      </div>
+      <div id="text-hannah" class="hamburger-item row">
+        <a href="sms://2143999198" class="hamburger">
+          <div class="col-sm-12 col-xs-12">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-commenting" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Text Our Team <br> [store_phone2] </span></div>
+          </div>
+        </a>
+      </div>
+      <div id="email-us" class="hamburger-item row">
+        <a href="mailto:hello@stand.sh">
+          <div class="col-sm-12 col-xs-12 one-line-text">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-envelope" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Email Us</span></div>
+          </div>
+        </a>
+      </div>
+      <div id="get-financing" class="hamburger-item row">
+        <a href="/salon-equipment-financing">
+          <div class="col-sm-12 col-xs-12 one-line-text">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-usd" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Get Financing</span></div>
+          </div>
+        </a>
+      </div>
+      <div id="showroom" class="hamburger-item row">
+        <a href="/dallas-salon-furniture-showroom">
+          <div class="col-sm-12 col-xs-12 one-line-text">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-map-marker" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Visit the Showroom</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="rainbow-hamburger" id="cart-tray" style="display:none;">
+      <div class="menu-close-wrapper"> <a class="menu-close"><i class="fa fa-times-circle" aria-hidden="true"></i></a> </div>
+      <div id="bumper-login" class="hamburger-item row">
+        <a href="/myaccount.asp">
+          <div class="col-sm-12 col-xs-12 one-line-text">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-user" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Login</span></div>
+          </div>
+        </a>
+      </div>
+      <div id="view-cart" class="hamburger-item row">
+        <a href="/view_cart.asp" class="hamburger">
+          <div class="col-sm-12 col-xs-12 one-line-text">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-shopping-cart" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">View Cart</span></div>
+          </div>
+        </a>
+      </div>
+      <div id="bumper-get-financing-2nd" class="hamburger-item row">
+        <a href="/salon-equipment-financing">
+          <div class="col-sm-12 col-xs-12 one-line-text">
+            <div class="col-xs-4 text-right"><i class="fa fa-3x fa-usd" aria-hidden="true"></i></div>
+            <div class="col-xs-8"><span class="hamburger-text one-line">Apply for Financing</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="fixed-bottom" class="fixed affix-bottom">
+      <ul class="fixed-bottom-menu">
+        <li>
+          <div class="wrapper-list-items">
+            <a class="standish-menu-open toggle-navigation" href="#">
+              <i class="fa fa-swap fa-bars fa-2x clearfix" data-swap-icon="fa-bars" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Menu</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a class="standish-contact" data-open-tray data-tray="#contact-tray">
+              <i class="fa fa-swap fa-phone-square fa-2x clearfix" data-swap-icon="fa-phone-square" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Contact</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/">
+              <i class="fa fa-swap fa-home fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Home</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="#" data-click="standish-search-bar">
+              <i class="fa fa-swap fa-search fa-2x clearfix" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Search</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="wrapper-list-items">
+            <a href="/view_cart.asp" data-open-tray data-tray="#cart-tray">
+              <i class="fa fa-swap fa-shopping-cart fa-2x clearfix" data-swap-icon="fa-shopping-cart" aria-hidden="true"></i>
+              <span class="menu-bottom-small">Cart</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="hannah-chat" class="hannah-chat fadeIn animated" href="#contact-hannah">
+    <img src="/assets/templates/[template]/images/hannah-chat.png">
+  </div>
+  <div id="chat-modal-hannah" class="modal fade modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div id="modal-hannah-chat" class="modal-body">
+          <script src="//fast.wistia.com/embed/medias/kqigp4qizr.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_kqigp4qizr popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div>
+
+          <div id="modal-hannah-chat-inner">
+          </div>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <script>
+    hbspt.forms.create({
+      portalId: '239485',
+      target: '#modal-hannah-chat-inner',
+      css: '',
+      formId: '6fdb06ec-7a4f-4b9b-9b13-738e5aff1344'
+    });
+  </script>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal fade modal" tabindex="-1" role="dialog">
+    <div class="cart-modal-inner container">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div id="modal-hannah-chat" class="modal-body">
+           <section>
+              <div class="container-fluid">
+                <div class="row">
+
+                  <div class="quickCartItems">
+                    <div class="quickCartRows">
+                        <form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
+
+                         <!--START: SHOPPING_CART_ITEM-->
+                         <div class="row-item">
+                            <div class="item-info row">
+
+                              <div class="product-image col-xs-4 item-cell">
+                                <!--START: itemthumbnail-->
+                                <a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=200&maxy=200" /></a>
+                                <!--END: itemthumbnail-->
+                              </div>
+                              <div class="product-name-options col-xs-6 item-cell">
+                                <a href="product.asp?itemid=[ITEM_CATALOGID]" target="_parent"><strong>[ITEM_NAME]</strong></a>
+
+                                <div class="item-qty item-cell" style="padding-top: .8em;">[ITEM_QUANTITY] x [ITEM_PRICE]</div>
+
+                                <div class="hidden">
+                                  <!--START: itemoptions-->
+                                  <br />
+                                  <a class="view-hide" href="javascript:void(0);" onclick="toggle('opt[ITEM_ID]')">View/Hide options</a>
+                                  <br />
+                                  <div id="opt[ITEM_ID]" name=opt[ITEM_ID] style="display:none;">[OPTIONS]</div>
+                                  <!--END: itemoptions-->
+                                  <!--START: recurring_frequency-->
+                                  <div>This item will Autoship every <strong>[recurring_frequency]</strong></div>
+                                  <!--END: recurring_frequency-->
+                                </div>
+                              </div>
+                              <div class="item-qty col-xs-1">
+                                <input type="text" name="qtyitemnum" value="[ITEM_QUANTITY]" size="3" maxlength="5" class="form-control hidden" />
+                                <input type="hidden" name="coliditemnum" value="[ITEM_ID]" size="3" maxlength="5" />
+                                <a class="item-remove" href="javascript:void(0);" onclick="if(confirm('Are you sure remove this item?')==true){document.recalculate.qtyitemnum.value = 0;document.recalculate.submit();}"><i class="fa fa-remove"></i></a>
+                                <a class="item-update hidden" href="javascript:void(0);" onclick="document.forms['recalculate'].submit();return false;" class="update-qty">UPDATE</a>
+                              </div>
+                            </div>
+                         </div>
+                         <!--END: SHOPPING_CART_ITEM-->
+                      </form>
+                    </div>
+                    <div class="quickCartCheckout col-sm-12">
+                      <hr>
+                      <div class="quick-subtotal">Subtotal: <span class="price price-subtotal" baseprice="[CARTSUBTOTAL]"><strong>[CARTSUBTOTAL]</strong></span></div>
+                      <div class="quick-shipping">Spend <span class="ship-price bold" baseprice="5000"></span> to Qualify for Free Shipping. </div>
+
+                      <div class="quick-chkbuttons row">
+                        <div class="col-xs-6" style="padding-top: .5em;">
+                          <a class="close-modal-bottom" data-dismiss="modal" aria-label="Close">Continue Shopping</a>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                          <button type="button" onclick="parent.location.href = 'view_cart.asp';" class="btn btn-checkout-view-quick btn-lg"> View Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <script type="text/javascript">
+              function numberWithCommas(x) {
+              return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              }
+
+              jQuery(document).ready(function($) {
+                var subtotal = $('.price-subtotal').attr('baseprice').replace('$', '').replace(',', '');
+                var shipBasePrice = $('.ship-price').attr('baseprice').replace('$', '');
+
+
+                var qualifyFree = Number(shipBasePrice) - parseFloat(subtotal);
+
+
+                if (parseFloat(qualifyFree) > 0) {
+                  $('.quick-shipping .ship-price').text('$' + numberWithCommas(qualifyFree));
+                }
+                else {
+                  $('.quick-shipping').html('<div class="free-ship bold">You qualify for free shipping!</div>');
+                }
+
+              });
+            </script>
+
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+  </div><!-- /.modal -->
+  <!-- /Cart Modal -->
+
+  <!-- End of Footer Content -->
+
+
+  <!--START: SITE SCRIPTS -->
+  <!-- Latest compiled and minified JavaScript -->
+  <script asnyc src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.min.js?cachebuster=89343dsfdsfd273"></script>
+
+  <!--<script asnyc type="text/javascript" src="assets/templates/[template]/dist/js/app.js"></script>-->
+
+  <script src="https://use.fontawesome.com/d266c066de.js"></script>
+
+  <!-- Add Vex -->
+  <script asnyc src="/assets/templates/[template]/scripts/vex.combined.min.js"></script>
+  <script>vex.defaultOptions.className = 'vex-theme-flat-attack';</script>
+
+  <!--End: site scripts -->
+  <!--- EXTERNAL OPTIMIZATIONS AND TRACKING SCRIPTS -->
+
+  <!-- Start of Async HubSpot Analytics Code -->
+  <script asnyc async type="text/javascript" src="/assets/templates/[template]/scripts/async-hubspot-analytics.js"></script>
+  <!-- End of Async HubSpot Analytics Code -->
+
+  <!--  Enversa Global Tracking Pixel -->
+  <!-- <script asnyc type="text/javascript" src="/assets/templates/[template]/scripts/enversa-global-tracking-pixel.js"></script> -->
+  <!-- End of Enversa Global Tracking Pixel -->
+  <!--  Pinterest Tracking Pixel -->
+  <!-- <img style="display:none;" height="1" width="1" alt="" src="https://ct.pinterest.com/?tid=9vm4Li6QLNo"/>-->
+  <!-- End of Pinterest Tracking Pixel -->
+  <!-- Adroll -->
+  <!-- <script asnyc src="/assets/templates/[template]/scripts/adroll-script.js"></script> -->
+
+  <script type="text/javascript" src="assets/templates/[template]/scripts/jquery.magnific-popup.min.js"></script>
+
+  <!-- BEGIN: Google Trusted Stores -->
+
+  <script asnyc type="text/javascript">
+    var gts = gts || [];
+
+    gts.push(["id", "413590"]);
+    gts.push(["badge_position", "BOTTOM_LEFT"]);
+    gts.push(["locale", "en"]);
+    gts.push(["google_base_subaccount_id", "100652317"]);
+    gts.push(["google_base_country", "US"]);
+    gts.push(["google_base_language", "en"]);
+
+    (function() {
+      var gts = document.createElement("script");
+      gts.type = "text/javascript";
+      gts.async = true;
+      gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(gts, s);
+    })();
+  </script>
+  <!-- END: Google Trusted Stores -->
+
+
+</body>
+</html>
