@@ -7,12 +7,12 @@
 		 // Only activate if exp # is 9173926467
 		window.optimizely = window.optimizely || [];
 		var isTestActivated = false;
-
+console.log('running productPageTest');
 		if (window.optimizely.data.state.activeExperiments.length > 0) {
 			if (window.optimizely.activeExperiments.indexOf("9173926467") > -1) {
 				var experimentID = "9173926467";
 				var variationID = window.optimizely.data.state.variationIdsMap[experimentID];
-				console.log(variationID);
+				console.log('Variation ID ' + variationID);
 				isTestActivated = variationID == "9181684539";
 			}
 		}
