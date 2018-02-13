@@ -304,7 +304,7 @@
       }
     }
   },
-  "Blog": {
+  "Ideas": {
     "order": 12,
     "show_mobile": true,
     "class": "min small",
